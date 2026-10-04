@@ -13,7 +13,7 @@
   const html=(id,value)=>{
     if(rendered.get(id)===value)return;
     const container=$(id),focused=container.contains(document.activeElement)?document.activeElement:null;
-    const key=focused&&Object.entries(focused.dataset).find(([key])=>['project','engineering','upgrade','paper','workload','runWorkload'].includes(key));
+    const key=focused&&Object.entries(focused.dataset).find(([key])=>['project','engineering','upgrade','paper','workload','runWorkload','stationTarget'].includes(key));
     container.innerHTML=value;rendered.set(id,value);
     if(key){const [name,identity]=key,attribute=name.replace(/[A-Z]/g,c=>'-'+c.toLowerCase()),replacement=container.querySelector('[data-'+attribute+'="'+identity+'"]');(replacement&&!replacement.disabled?replacement:container.querySelector('button:not(:disabled)'))?.focus({preventScroll:true});}
   };
@@ -102,6 +102,21 @@
     ][phase]);
     if(phase===4)write('instrument-note','Protection consumes footprint. Operations consume time. Current memory model: '+(m.pL===null?'unqualified':m.pL.toExponential(2)+' per qubit-cycle')+'. Factories require ≤1e−4, qualified operations, and fresh-state capacity.');
   }
+  function renderStation(m,phase){
+    if(!$('campus-station'))return;
+    const camera=document.querySelector('[data-camera][aria-pressed=true]')?.dataset.camera||'overview',next=nextDiscovery();
+    let title='A campus built around the next question',detail=next?'Next research: '+next.title+'. Funding, effort and engineering designs must all be ready.':'Inspect the apparatus and choose a measured question.',target=s.started?'discoveries-section':'run-experiment',label=s.started?'Visit the research desk':'Prepare the first signal',upgrade=null;
+    if(camera==='research'){title='People turn evidence into plans';detail=m.freeTrust+' unassigned trust · '+num(m.effortCap)+' effort capacity · '+m.designBonus+'× design generation. Notebook space takes trust away from researchers.';target='economy-section';label='Allocate researchers and notebooks';}
+    else if(['cryostat','processor'].includes(camera)){title='Installed hardware needs commissioned support';detail=num(m.installed)+' installed · '+num(m.capacity)+' supported · '+num(m.active)+' active. '+(m.installed>m.capacity?'Control and cooling limit the active footprint.':m.capacity>m.installed?'Installed hardware limits the active footprint.':'Chip and support footprints are balanced.');upgrade=m.installed>m.capacity?'rack':'hardware';target='engineering-section';label='Inspect expansion costs';}
+    else if(camera==='control'){title=phase>=3?'Streaming capacity and feedback are separate':'Control makes an experiment repeatable';detail=phase>=3?num(m.syndromeRate)+' syndrome events / μs; decoder capacity '+num(m.decoderRate)+' / μs. Feedback takes '+num(m.feedback)+' μs. '+(m.decoderOK?'The streaming lane keeps up.':'The streaming lane is behind.'):'Effective noise '+pct(m.pEff,3)+' under the selected scenario. Pulse tooling changes this noise assumption; calibration controls drift.';upgrade=phase>=3?'decoder':'pulse';target='engineering-section';label='Inspect control engineering';}
+    else if(camera==='memory'){title='Protection occupies real footprint';detail=num(m.totalPatches)+' ideal patches · '+num(m.reserved)+' reserved · '+num(m.slots)+' application slots at distance '+s.distance+'. '+(m.pL===null?'The declared memory model is unqualified.':'Conditional memory error '+m.pL.toExponential(2)+' / cycle.');target=has('surface')?'memory-controls':'discoveries-section';label=has('surface')?'Compare code distances':'Open the correction research';}
+    else if(camera==='planning'){title='A schedule needs fresh resources';detail=has('ancilla')?s.factories+' allocated factories · '+num(m.modelFactoryRate,3)+' accepted states / μs under the selected model. Rehearsal credits are classical bookkeeping.':'The foundry is planned. Qualified memory, logical operations and fresh-state supply open its schedule.';target=phase===5?'workload-section':'discoveries-section';label=phase===5?'Compare complete workload budgets':'Visit the next research';}
+    else if(camera==='fabrication'){title='The commissioning dock';detail=G.hasEngineering(s,'workshop')?s.workshops+' construction teams · '+num(m.fabricationRate,2)+' installed and '+num(m.integrationRate,2)+' supported positions / lab s. Active capacity needs both streams.':'Construction teams and delivery commitments open after the workshop engineering advance.';target=G.hasEngineering(s,'workshop')?'workshop-control':'engineering-section';label=G.hasEngineering(s,'workshop')?'Balance commissioning streams':'Inspect workshop engineering';}
+    else if(camera==='service'){title='A gallery with two kinds of customer';detail=has('nisq')?num(m.delivered,2)+' known-preparation batches / lab s · '+num(m.revenue,2)+' funding / lab s. Customer work competes with analysis and explicit experiments.':'Known-preparation services open with the noisy processor. Precision work later needs fresh trial evidence.';target=has('nisq')?'service-control':'discoveries-section';label=has('nisq')?'Balance customer and analysis duty':'Visit the next research';}
+    if($(target)?.hidden){target='run-experiment';label='Return to the next experiment';}
+    const u=upgrade&&G.upgradeInfo(s,upgrade),purchase=u?.available&&!u.max?'<button type="button" data-upgrade="'+upgrade+'" '+(!u.ready?'disabled':'')+'>'+esc(u.label)+' · '+num(u.cost)+' funding · '+num(u.designs)+' designs ↗</button>':'';
+    html('campus-station','<div><span class="eyebrow">Inside the inspected facility</span><h3>'+esc(title)+'</h3><p>'+esc(detail)+'</p></div><div class="station-actions">'+purchase+'<button type="button" data-station-target="'+target+'">'+esc(label)+' →</button></div>');
+  }
   function discoveryCard(p){
     const q=papers.find(q=>q.id===p.papers[0]),status=G.projectStatus(s,p.id);
     return '<article class="discovery"><div class="discovery-top"><div class="paper-year">'+esc(q.date)+' / '+esc(q.authors.split(';')[0])+'</div>'+diagram(p.chapter)+'</div><h3>'+esc(p.title)+'</h3><p>'+esc(p.effect)+'</p><div class="discovery-cost">'+costLabel(p.cost)+'</div><button type="button" data-project="'+p.id+'" '+(!status.ready?'disabled':'')+'><span>Research discovery</span><span aria-hidden="true">→</span></button><div class="limiter">'+esc(status.reasons.join(' · '))+'</div><button type="button" class="paper-notes" data-paper="'+p.id+'">Read the primary '+(p.papers.length>1?'papers':'paper')+' ↗</button></article>';
@@ -125,11 +140,13 @@
   }
   function renderResearch(){
     const query=$('paper-search').value.trim().toLowerCase();
-    const items=archive==='papers'?papers:archive==='engineering'?C.engineering:C.projects;
+    const paperCollection=archive==='papers'||archive==='frontier',year=p=>Math.max(...(p.date.match(/\d{4}/g)||[0]).map(Number));
+    const items=archive==='frontier'?papers.filter(p=>year(p)>=2024).sort((a,b)=>year(b)-year(a)):archive==='papers'?papers:archive==='engineering'?C.engineering:C.projects;
+    write('archive-source-count','The archive / '+papers.length+' primary sources');
     html('archive-list',items.filter(p=>JSON.stringify(p).toLowerCase().includes(query)).map(p=>{
       if(archive==='engineering')return engineeringCard(p,true);
-      const q=archive==='papers'?p:papers.find(q=>q.id===p.papers[0]);
-      return '<article class="archive-row"><span class="year">'+esc(q.date.match(/\d{4}/)?.[0]||'—')+'</span><div>'+(archive==='discoveries'?'<span class="archive-mark">'+diagram(p.chapter)+'</span>':'')+'<h3>'+esc(p.title)+'</h3><p>'+esc(archive==='papers'?q.authors+' · '+q.type:p.effect)+'</p><span class="archive-status">'+(archive==='papers'?esc(q.id+' / primary source'):has(p.id)?'Discovered':'Available to read before discovery')+'</span></div><button type="button" data-paper="'+p.id+'">Read '+(archive==='papers'?'source':'papers')+' ↗</button></article>';
+      const q=paperCollection?p:papers.find(q=>q.id===p.papers[0]);
+      return '<article class="archive-row"><span class="year">'+esc(paperCollection?year(q):q.date.match(/\d{4}/)?.[0]||'—')+'</span><div>'+(archive==='discoveries'?'<span class="archive-mark">'+diagram(p.chapter)+'</span>':'')+'<h3>'+esc(p.title)+'</h3><p>'+esc(paperCollection?q.authors+' · '+q.type:p.effect)+'</p>'+(paperCollection?'<p class="archive-date">'+esc(q.date)+'</p>':'')+'<span class="archive-status">'+(paperCollection?esc(q.id+' / primary source'):has(p.id)?'Discovered':'Available to read before discovery')+'</span></div><button type="button" data-paper="'+p.id+'">Read '+(paperCollection?'source':'papers')+' ↗</button></article>';
     }).join('')||'<p class="quiet-message">No matching source. Try a title, author, or topic.</p>');
     document.querySelectorAll('[data-archive]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.archive===archive)));
     $('archive-list').classList.toggle('engineering-archive',archive==='engineering');
@@ -247,7 +264,7 @@
     write('pause-toggle',s.paused?'Resume':'Pause');$('pause-toggle').disabled=!s.started||s.ended;
     const soundActive=s.sound&&audio?.state==='running';
     write('sound-toggle',soundActive?'Sound on':s.sound?'Enable sound':'Sound off');$('sound-toggle').setAttribute('aria-pressed',String(!!soundActive));write('theme-toggle',s.theme==='dark'?'Use light appearance':'Use dark appearance');$('volume').value=s.volume*100;write('volume-value',pct(s.volume,0));
-    write('archive-count',s.done.length);write('discoveries-count',s.done.length+' / 30 discoveries');
+    write('archive-count',s.done.length);write('discoveries-count',s.done.length+' / '+C.projects.length+' discoveries');
     const discoveries=C.projects.filter(p=>!has(p.id)&&G.projectStatus(s,p.id).available);
     html('discovery-list',discoveries.map(discoveryCard).join('')||'<p class="quiet-message">'+(s.ended?'Every discovery is in the archive. The machine has a purpose.':'The desk is clear. The next experiment will open another question.')+'</p>');
     const upgrades=['hardware','rack','pulse','decoder','automation','workshop'].map(id=>({id,...G.upgradeInfo(s,id)})).filter(u=>u.available);
@@ -268,7 +285,7 @@
       write('ending-result',C.workloads.find(w=>s.completed.includes(w.id)&&['dynamics','molecule'].includes(w.id))?.validation||'A scientific resource scenario is complete.');
       html('ending-stats','<span><strong>'+clock(s.elapsed)+'</strong>visible laboratory time</span><span><strong>'+s.done.length+'</strong>discoveries</span><span><strong>'+num(m.active)+'</strong>physical qubits supported</span><span><strong>'+s.distance+'</strong>code distance</span>');
     }
-    draw();
+    draw();renderStation(m,phase);
   }
   function draw(time=performance.now()){if(window.CoherentArt)CoherentArt.draw(s,{workload,view,time});}
   function motionActive(){return view==='lab'&&!document.hidden&&!s.paused&&!s.ended&&(s.job||G.metrics(s).creditRate>0&&s.credits<2000)&&!matchMedia('(prefers-reduced-motion: reduce)').matches;}
@@ -286,6 +303,7 @@
     else if(b.dataset.engineering)act(()=>G.buyEngineering(s,b.dataset.engineering));
     else if(b.dataset.assign)act(()=>G.assign(s,b.dataset.assign,Number(b.dataset.delta)));
     else if(b.dataset.upgrade)act(()=>G.buyUpgrade(s,b.dataset.upgrade));
+    else if(b.dataset.stationTarget){const target=$(b.dataset.stationTarget);target.scrollIntoView({block:'center'});(target.matches('button,input,select')?target:target.querySelector('button:not(:disabled),input:not(:disabled),select:not(:disabled)'))?.focus({preventScroll:true});}
     else if(b.dataset.distance)act(()=>G.configure(s,'distance',Number(b.dataset.distance)));
     else if(b.dataset.workload){workload=b.dataset.workload;render();}
     else if(b.dataset.runWorkload)act(()=>G.startWorkload(s,b.dataset.runWorkload));
