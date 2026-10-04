@@ -151,7 +151,7 @@
     "title": "Quantum error correction below the surface code threshold",
     "date": "preprint 2024, Nature volume publication 2025",
     "type": "Experiment",
-    "finding": "A specific demonstrated memory-scaling result and decoding implementation; not proof of a complete application-scale gate stack",
+    "finding": "A specific demonstrated memory-scaling result and decoding implementation; not proof of a complete application-scale gate stack. The 2026 author correction fixes figure 3a repetition-code and reference labels; it is not a new performance result.",
     "links": [
       {
         "label": "arXiv",
@@ -160,6 +160,10 @@
       {
         "label": "Nature DOI",
         "url": "https://doi.org/10.1038/s41586-024-08449-y"
+      },
+      {
+        "label": "2026 author correction",
+        "url": "https://doi.org/10.1038/s41586-026-10559-8"
       }
     ]
   },
@@ -689,7 +693,7 @@
     "authors": "Emma Rosenfeld et al.",
     "title": "Magic state cultivation on a superconducting quantum processor",
     "date": "preprint 2025",
-    "type": "Experimental preprint",
+    "type": "Experimental cultivation study",
     "finding": "A superconducting cultivation study includes switching into a surface code and a fidelity-bounding protocol. Its retained-output fidelity and acceptance yield are distinct; rejected attempts still consume resources.",
     "links": [
       {
