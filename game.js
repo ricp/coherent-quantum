@@ -7,6 +7,7 @@
 })(globalThis, function (C) {
   'use strict';
   const POOLS = [1,9,25,81,257,769,2049];
+  const MAX_STAFF = 32;
   const HARDWARE_COST = [120,450,1800,7200,24000,64000];
   const RACK_COST = [90,350,1400,5600,18000,48000];
   const has = (s,id) => s.done.includes(id);
@@ -15,7 +16,7 @@
   const patchSize = d => 2*d*d-1;
   const stage = s => has(s,'accounting') ? 5 : has(s,'threshold') ? 4 : has(s,'classical') ? 3 : has(s,'coupled') ? 2 : has(s,'nakamura') ? 1 : 0;
   function newGame(seed = 424242) {
-    return {version:2,notebooks:1,designs:0,engineering:[],price:8,autoPrice:false,autoCalibration:false,automation:0,workshops:0,fabrication:.5,fabricated:0,integrated:0,started:false,paused:false,elapsed:0,funds:60,effort:0,done:[],qualified:[],module:0,rack:0,staff:1,pulse:0,decoder:0,drift:.3,distance:3,factories:0,calibration:0,service:0,theta:20,shots:1,mitigate:false,credits:0,reputation:0,seed:seed>>>0,job:null,result:null,tutorial:null,completed:[],ended:false,volume:.2,sound:false,theme:'dark',log:[]};
+    return {version:2,notebooks:1,designs:0,engineering:[],price:8,autoPrice:false,autoCalibration:false,automation:0,analysisShare:1,workshops:0,fabrication:.5,fabricated:0,integrated:0,started:false,paused:false,elapsed:0,funds:60,effort:0,done:[],qualified:[],module:0,rack:0,staff:1,pulse:0,decoder:0,drift:.3,distance:3,factories:0,calibration:0,service:0,theta:20,shots:1,mitigate:false,credits:0,reputation:0,seed:seed>>>0,job:null,result:null,tutorial:null,completed:[],ended:false,volume:.2,sound:false,theme:'dark',log:[]};
   }
   function random(s) {
     s.seed = (Math.imul(s.seed,1664525)+1013904223)>>>0;
@@ -40,16 +41,18 @@
     const trust=2+2*s.reputation+Math.floor(s.done.length/4)+(hasEngineering(s,'open')?4:0),freeTrust=trust-s.staff-s.notebooks;
     const storageTier=['storage1','storage2','storage3'].filter(id=>hasEngineering(s,id)).length;
     const effortCap=120*s.notebooks*4**storageTier,fullBank=s.effort>=effortCap-1e-6;
-    const atomic=!!s.job&&(s.job.workload||['memory','gates','factory'].includes(s.job.id));
+    const manualCalibration=s.job?.id==='calibrate';
+    const atomic=!!s.job&&(s.job.workload||['calibrate','memory','gates','factory'].includes(s.job.id));
     // These are game maintenance/controller presets, not measured device laws.
     const maintenance=Math.min(.55,(.08+.018*Math.log2(active+1)+.04*(atomic?0:s.service))*(hasEngineering(s,'verified')?.8:hasEngineering(s,'rapid')?1.2:1));
-    const calibrationDuty=s.autoCalibration?Math.min(.6,maintenance+.02):s.calibration;
+    const calibrationDuty=manualCalibration?1:s.autoCalibration?Math.min(.6,maintenance+.02):s.calibration;
     const effectiveServiceDuty=atomic?0:(1-calibrationDuty)*s.service;
     const experimentDuty=atomic?1-calibrationDuty:(1-calibrationDuty)*(1-s.service);
     const lanes=has(s,'nisq')?Math.min(1+2*s.rack,Math.floor(active/2)):0;
     const sharedCapacity=lanes*1.5*effectiveServiceDuty;
-    const automationRunning=Math.min(s.automation,sharedCapacity),customerCapacity=Math.max(0,sharedCapacity-automationRunning);
-    const fairPrice=8*(1+.2*s.reputation)*(hasEngineering(s,'open')?.7:hasEngineering(s,'proprietary')?1.5:1);
+    const automationRequested=s.automation*s.analysisShare;
+    const automationRunning=Math.min(automationRequested,sharedCapacity),customerCapacity=Math.max(0,sharedCapacity-automationRunning);
+    const fairPrice=3*(1+.2*s.reputation)*(hasEngineering(s,'open')?.7:hasEngineering(s,'proprietary')?1.5:1);
     const demandAtFair=Math.min(60,(1+.4*s.reputation)*(hasEngineering(s,'open')?1.5:1));
     const matchingPrice=customerCapacity>0?clamp(fairPrice*(demandAtFair/customerCapacity)**(1/1.4),.5,200):200;
     const price=s.autoPrice?matchingPrice:s.price,demand=Math.min(60,demandAtFair*(fairPrice/price)**1.4);
@@ -78,14 +81,14 @@
     const researchMultiplier=(hasEngineering(s,'workflow')?2:1)*(hasEngineering(s,'scheduler')?2:1);
     const effortRate=(1.2*s.staff+3*automationRunning)*researchMultiplier;
     const designBonus=fullBank?4:1;
-    const designRate=has(s,'deutsch')?(.018*s.staff**1.2+.09*automationRunning)*designBonus*(hasEngineering(s,'synthesis')?2:1):0;
-    return {chapter,installed,capacity,active,pEff,rbError,circuitFault,noFault:(1-circuitFault)**12,below,pL,gateError:pL===null?null:2*pL,patch,totalPatches,routing,spares,factoryUnits,reserved,slots,syndromeRate,decoderRate,feedback,decoderOK,memoryOK,gatesOK,factoryOK,pT:has(s,'ancilla')?1e-7:1e-3,modelFactoryRate:factoryOK?s.factories/(8*s.distance):0,creditRate:factoryOK?s.factories*8/s.distance:0,trust,freeTrust,effortCap,fullBank,designRate,designBonus,maintenance,calibrationDuty,effectiveServiceDuty,experimentDuty,atomic,lanes,sharedCapacity,automationRunning,customerCapacity,fairPrice,matchingPrice,demand,delivered,price,revenue,serviceQualified,workshopRate,fabricationRate,integrationRate,grants,services:revenue,upkeep,netFunding:grants+revenue-upkeep,effortRate,bias:has(s,'mitigation')&&s.mitigate?.002:has(s,'readout')?.008:.04};
+    const designRate=has(s,'deutsch')?(.04*s.staff**1.2+.3*automationRunning)*designBonus*(hasEngineering(s,'workflow')?1.25:1)*(hasEngineering(s,'scheduler')?1.5:1)*(hasEngineering(s,'synthesis')?2:1):0;
+    return {chapter,installed,capacity,active,pEff,rbError,circuitFault,noFault:(1-circuitFault)**12,below,pL,gateError:pL===null?null:2*pL,patch,totalPatches,routing,spares,factoryUnits,reserved,slots,syndromeRate,decoderRate,feedback,decoderOK,memoryOK,gatesOK,factoryOK,pT:has(s,'ancilla')?1e-7:1e-3,modelFactoryRate:factoryOK?s.factories/(8*s.distance):0,creditRate:factoryOK?s.factories*8/s.distance:0,trust,freeTrust,effortCap,fullBank,designRate,designBonus,maintenance,calibrationDuty,effectiveServiceDuty,experimentDuty,atomic,lanes,sharedCapacity,automationRequested,automationRunning,customerCapacity,fairPrice,matchingPrice,demand,delivered,price,revenue,serviceQualified,workshopRate,fabricationRate,integrationRate,grants,services:revenue,upkeep,netFunding:grants+revenue-upkeep,effortRate,bias:has(s,'mitigation')&&s.mitigate?.002:has(s,'readout')?.008:.04};
   }
   function upgradeInfo(s,id) {
     const m=metrics(s),entries={
       hardware:{label:'Install a larger chip',cost:HARDWARE_COST[s.module],designs:16*2.2**s.module,available:has(s,'rb'),max:s.module>=6,detail:'Installed preset '+POOLS[Math.min(6,s.module+1)]+' physical qubits; commissioned construction is additional'},
       rack:{label:'Control & cooling rack',cost:RACK_COST[s.rack],designs:12*2.2**s.rack,available:has(s,'divincenzo'),max:s.rack>=6,detail:'Support preset '+POOLS[Math.min(6,s.rack+1)]+' physical qubits; adds control/readout lanes'},
-      staff:{label:'Assign a research colleague',cost:0,designs:0,available:has(s,'feynman'),max:s.staff>=24||m.freeTrust<1,detail:'Uses one trust assignment; release it to make notebook space'},
+      staff:{label:'Assign a research colleague',cost:0,designs:0,available:has(s,'feynman'),max:s.staff>=MAX_STAFF||m.freeTrust<1,detail:'Uses one trust assignment; release it to make notebook space'},
       pulse:{label:'Refine the control pulses',cost:140*2**s.pulse,designs:20*1.8**s.pulse,available:has(s,'rb'),max:s.pulse>=8,detail:'Lower the selected stochastic error scenario'},
       decoder:{label:'Upgrade classical decoding',cost:180*2**s.decoder,designs:30*2**s.decoder,available:has(s,'decoder'),max:s.decoder>=5,detail:'More streaming throughput and shorter feedback latency'},
       automation:{label:'Add an analysis station',cost:1800*1.7**s.automation,designs:180*1.6**s.automation,available:hasEngineering(s,'automation'),max:s.automation>=16,detail:'One controller-batch slot before customers; contributes classical research/design work'},
@@ -103,7 +106,7 @@
   }
   function assign(s,key,delta) {
     if(s.ended||!['staff','notebooks'].includes(key)||![1,-1].includes(delta)||!has(s,'feynman'))return false;
-    if(s[key]+delta<(key==='notebooks'?1:0)||s[key]+delta>(key==='notebooks'?64:24)||delta>0&&metrics(s).freeTrust<1)return false;
+    if(s[key]+delta<(key==='notebooks'?1:0)||s[key]+delta>(key==='notebooks'?64:MAX_STAFF)||delta>0&&metrics(s).freeTrust<1)return false;
     if(key==='notebooks'&&delta<0&&s.effort>metrics({...s,notebooks:s.notebooks-1}).effortCap)return false;
     s[key]+=delta;
     note(s,(delta>0?'Assigned':'Released')+' one '+(key==='staff'?'research colleague':'notebook assignment')+'.','engineering');return true;
@@ -172,6 +175,7 @@
     else if(key==='price'){if(!has(s,'nisq')||!Number.isFinite(value)||value<.5||value>200)return false;s.price=value;}
     else if(key==='autoPrice'){if(!hasEngineering(s,'pricing')||typeof value!=='boolean')return false;s.autoPrice=value;}
     else if(key==='autoCalibration'){if(!hasEngineering(s,'autoCalibration')||s.job?.workload||typeof value!=='boolean')return false;s.autoCalibration=value;}
+    else if(key==='analysisShare'){if(!hasEngineering(s,'automation')||!Number.isFinite(value)||value<0||value>1)return false;s.analysisShare=value;}
     else if(key==='fabrication'){if(!hasEngineering(s,'workshop')||!Number.isFinite(value)||value<0||value>1)return false;s.fabrication=value;}
     else if(key==='theta'){if(!has(s,'vqe')||!Number.isFinite(value)||value<0||value>90)return false;s.theta=value;}
     else if(key==='shots'){if(!has(s,'vqe')||![0,1,2,3].includes(value))return false;s.shots=value;}
@@ -350,7 +354,7 @@
     let envelope;try{envelope=JSON.parse(text);}catch{throw new Error('This file is not valid JSON. Your current laboratory is unchanged.');}
     if(envelope?.game!=='coherent'||envelope.version!==2||envelope.state?.version!==2)throw new Error(envelope?.version===1?'This is a short-campaign baseline save. It remains preserved; the deeper campaign begins in a new laboratory.':'This is not a supported Coherent save.');
     const input=envelope.state,base=newGame(),s={};
-    const ranges={elapsed:[0,1e9],funds:[0,1e12],effort:[0,1e9],module:[0,6],rack:[0,6],staff:[0,24],notebooks:[1,64],designs:[0,1e9],price:[.5,200],automation:[0,16],workshops:[0,12],fabrication:[0,1],fabricated:[0,8192],integrated:[0,8192],pulse:[0,8],decoder:[0,5],drift:[.005,1],distance:[3,9],factories:[0,3],calibration:[0,.6],service:[0,.9],theta:[0,90],shots:[0,3],credits:[0,2000],reputation:[0,1000],seed:[0,4294967295],volume:[0,1]};
+    const ranges={elapsed:[0,1e9],funds:[0,1e12],effort:[0,1e9],module:[0,6],rack:[0,6],staff:[0,MAX_STAFF],notebooks:[1,64],designs:[0,1e9],price:[.5,200],automation:[0,16],analysisShare:[0,1],workshops:[0,12],fabrication:[0,1],fabricated:[0,8192],integrated:[0,8192],pulse:[0,8],decoder:[0,5],drift:[.005,1],distance:[3,9],factories:[0,3],calibration:[0,.6],service:[0,.9],theta:[0,90],shots:[0,3],credits:[0,2000],reputation:[0,1000],seed:[0,4294967295],volume:[0,1]};
     const integers=['notebooks','automation','workshops','module','rack','staff','pulse','decoder','distance','factories','shots','reputation','seed'];
     for(const [key,value] of Object.entries(base)){
       if(!(key in input))throw new Error('Save is missing '+key+'.');
@@ -364,7 +368,7 @@
     validateIds(s.engineering,(C.engineering||[]).map(e=>e.id),'engineering advances');
     for(const e of C.engineering||[])if(hasEngineering(s,e.id)&&(e.requires.some(id=>!has(s,id))||e.engineeringRequires.some(id=>!hasEngineering(s,id))||e.group&&(C.engineering||[]).some(other=>other.id!==e.id&&other.group===e.group&&hasEngineering(s,other.id))))throw new Error('Invalid engineering prerequisites or exclusive choice.');
     if(s.staff+s.notebooks>metrics(s).trust||s.effort>metrics(s).effortCap+1e-6||s.reputation!==s.qualified.length+2*s.completed.length)throw new Error('Research assignments or capacity exceed earned trust.');
-    if(s.automation&&!hasEngineering(s,'automation')||s.workshops&&!hasEngineering(s,'workshop')||(s.fabricated||s.integrated)&&!hasEngineering(s,'workshop')||s.autoPrice&&!hasEngineering(s,'pricing')||s.autoCalibration&&!hasEngineering(s,'autoCalibration'))throw new Error('Engineering configuration is unavailable.');
+    if((s.automation||s.analysisShare!==1)&&!hasEngineering(s,'automation')||s.workshops&&!hasEngineering(s,'workshop')||(s.fabricated||s.integrated)&&!hasEngineering(s,'workshop')||s.autoPrice&&!hasEngineering(s,'pricing')||s.autoCalibration&&!hasEngineering(s,'autoCalibration'))throw new Error('Engineering configuration is unavailable.');
     validateIds(s.done,C.projects.map(p=>p.id),'discoveries');validateIds(s.qualified,C.experiments.map(e=>e.id),'qualifications');validateIds(s.completed,C.workloads.map(w=>w.id),'completed workloads');
     for(const p of C.projects)if(has(s,p.id)&&(p.requires.some(id=>!has(s,id))||p.qualification&&p.qualification!=='coupled'&&!s.qualified.includes(p.qualification)))throw new Error('Discovery prerequisites or historical qualifications are missing.');
     for(const e of C.experiments)if(s.qualified.includes(e.id)&&e.requires.some(id=>!has(s,id)))throw new Error('Qualification prerequisites are missing.');
@@ -407,5 +411,5 @@
     if(s.ended&&(!has(s,'audit')||!s.completed.some(id=>['dynamics','molecule'].includes(id))))throw new Error('Ending requirements are missing.');
     return JSON.parse(JSON.stringify(s));
   }
-  return {content:C,POOLS,newGame,stage,has,hasEngineering,assign,engineeringStatus,buyEngineering,metrics,patchSize,upgradeInfo,buyUpgrade,qualificationNow,projectStatus,buyProject,configure,experimentRecipe,experimentStatus,startExperiment,calibrate,tutorialEnergy,workloadStatus,startWorkload,liveWorkloadStatus,tick,pause,cancel,serialize,parseSave};
+  return {content:C,POOLS,MAX_STAFF,newGame,stage,has,hasEngineering,assign,engineeringStatus,buyEngineering,metrics,patchSize,upgradeInfo,buyUpgrade,qualificationNow,projectStatus,buyProject,configure,experimentRecipe,experimentStatus,startExperiment,calibrate,tutorialEnergy,workloadStatus,startWorkload,liveWorkloadStatus,tick,pause,cancel,serialize,parseSave};
 });

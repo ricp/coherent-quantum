@@ -47,4 +47,4 @@ The independent AI quantum reviewer found the proposed extension scientifically 
 
 ## Current checkpoint
 
-The connected engine and content are implemented. Existing measurement and resource-model checks pass, while the previous campaign players fail because they lack notebook, design, and service decisions. New legal adaptive policies, measured balance, interface verification, and final independent reviews are in progress. This is not yet a completed balance claim.
+The connected engine, content, and interface are implemented. The combined engine suite currently passes 35 checks with no failures or skipped tests, including four legal adaptive policies and save roundtrips. Initial tuning was rejected when designs dominated 98% of progress; current tuning adds an earned midgame efficiency transition and reversible analysis duty. Comparative pacing, ablation policies, browser verification, and final independent reviews remain in progress. This is not yet a completed balance claim.

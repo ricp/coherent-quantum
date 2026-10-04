@@ -12,15 +12,19 @@ For a local browser preview, run this command in the repository and open [localh
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Begin with the first experiment. The next-step panel points to evidence, discoveries, and engineering constraints. Six chapters introduce calibration, noisy circuits, protected memory, logical allocation, and named workload budgets. The research archive contains all 30 discoveries and 36 primary sources, available before purchase.
+Begin with the first experiment. The next-step panel points to evidence, discoveries, and engineering constraints. Six chapters introduce calibration, noisy circuits, protected memory, logical allocation, and named workload budgets. The research archive contains all 30 discoveries and 36 primary sources, available before purchase. A separate collection explains 14 classical engineering advances and their game assumptions.
 
-Funding and abstract research effort accumulate during visible, unpaused play. Automatic calibration uses apparatus time; service contracts trade research effort for funding. Later, code distance trades protection against footprint and duration, while factories compete with application slots. The ending requires an audited scientific resource scenario. Toy factor and search certificates are separate achievements.
+Research assignments and notebook storage compete for earned trust. Notes are bounded; a full bank produces engineering designs four times faster, while spending a discovery loses that bonus. Qualified customer contracts and classical analysis stations compete for shared controller capacity. Pricing, calibration, and hypothetical fabrication versus control/cooling integration introduce new investment decisions; paid workflow tools later improve their production. These loops adapt the strategies in Keir’s original game.
+
+Code distance still trades protection against footprint and duration, while magic-state factories compete with application slots. The ending requires an audited scientific resource scenario. Toy factor and search certificates remain optional. Progress advances during visible, unpaused play.
 
 Settings provide light/dark appearance, manual save, JSON export/import, and a confirmed reset. Sound is off initially and always requires a click to start. Reduced motion follows the browser/OS preference. All controls support keyboard operation.
 
 ## Saves
 
-The game saves to this browser's local storage under `coherent.v1`, on actions, periodically, and when leaving the page. A successful status is shown only after storage accepts the save. Export JSON to move a laboratory between browsers or keep an independent backup. Files opened directly and HTTP pages may use different storage; use export/import to move between them.
+The game saves to this browser's local storage under `coherent.v2`, on actions, periodically, and when leaving the page. A successful status is shown only after storage accepts the save. Export JSON to move a laboratory between browsers or keep an independent backup. Files opened directly and HTTP pages may use different storage; use export/import to move between them.
+
+Earlier `coherent.v1` runs are preserved separately and can be exported through Settings. Their short-campaign economy is not migrated into the deeper campaign. Starting or resetting the new laboratory does not delete that earlier run.
 
 Hidden, closed, paused, and chapter-transition screens receive no progress. Reopening resumes the recorded state without offline catch-up. Imported paused games remain paused. Invalid imports leave the current laboratory unchanged; an unreadable stored save is preserved until an explicit import or reset replaces it. If storage is unavailable, the game remains playable in memory and clearly asks for an export.
 
@@ -33,16 +37,14 @@ Read [MODEL.md](MODEL.md) for equations and assumptions, [PAPERS.md](PAPERS.md) 
 ## Verify
 
 ```sh
-node --test tests/game.test.cjs
+node --test tests/game.test.cjs tests/economy.test.cjs
 node tests/playthrough.cjs --write-evidence
 node tests/contrast.cjs
 ```
 
-The deterministic engine tests cover intent: real costs and prerequisites, scientific distinctions, footprint/decoder tradeoffs, degraded-workload recovery, malformed imports, and legal complete campaigns. Automated compact and wide strategies each complete all six chapters and all 30 discoveries in 1,078 simulated laboratory seconds. A separate test completes the electronic workload ending. These are legal engine playthroughs, not human fun ratings or browser recordings.
+The deterministic engine tests cover intent: real costs and prerequisites, bounded storage and reversible trust assignments, the full-bank design tradeoff, delivered revenue, automation opportunity costs, conservation of apparatus duty, construction support, scientific distinctions, footprint/decoder tradeoffs, degraded-workload recovery, and malformed imports. Legal adaptive campaign policies check feasibility and save roundtrips. They do not establish human enjoyment or a measured human play time.
 
-`evidence/coherent/` contains exported legal chapter states, pacing records, rendered scene captures, and browser interaction evidence. Later-scene visual QA uses those states through the ordinary save import control; it does not establish a second human playthrough.
-
-See [VERIFICATION.md](VERIFICATION.md) for the baseline acceptance evidence and its limits. The user's first run finished in 15:33 laboratory time with 27/30 discoveries; they found this much shorter and simpler than Singular Value. Campaign depth and pacing are being revised from that baseline.
+`evidence/coherent/` and [VERIFICATION.md](VERIFICATION.md) preserve the first playable baseline. The user's first run finished in 15:33 laboratory time with 27/30 discoveries, versus 1h33 for Singular Value. The deeper campaign is being tested on `feature/campaign-depth`, with new evidence under `evidence/coherent-depth/`. [CAMPAIGN-DEPTH.md](CAMPAIGN-DEPTH.md) records the strategic adaptation and independent AI review criteria. The provisional target is about 90 minutes for an active first human play; that target remains unverified by a human.
 
 ## Small by design
 
