@@ -1,0 +1,77 @@
+Browser tab: 730430386, Title: "Coherent 3D — one qubit in return", URL: "http://dev.localhost:5500/index-3d.html".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 22, 33-34, 39, 46, 67, 71-84, 133, 135-136, 142, 169, 174, 176, 179, 181, 183, 185, 212-232, 241
+~		12 button Pause, ID: pause-toggle
++	244 text LAB 18:48
++			245 text 4,345
++			246 text +0.5 / lab s after upkeep
++			247 text 1,424
++			248 text Saved locally · 04:09 AM
+~			45 button (disabled) Running · 5%, ID: run-experiment
++				249 text Running · 5%
+~							55 checkbox Overview, Value: 0
+~							58 checkbox Research, Value: 1
+~						62 checkbox Manual inspection, Value: 0, ID: three-follow
+~						64 button Pause lab, ID: three-pause
++						250 text People, notebooks and classical research
++					251 text Calibration reserve · customers and commissioning pause
+~					69 container ID: three-canvas, Description: Every assigned researcher adds a visible seat and terminal; later hires share larger desk groups. Staff work, notebook space and engineering output are classical game abstractions.
++						252 container Active physical
++							253 text Active physical
++						254 text 9
++						255 container Calibration duty
++							256 text Calibration duty
++						257 text 25%
++						258 container Delivered service
++							259 text Delivered service
++						260 text 1.18 / lab s
++						261 container Research
++							262 text Research
++						263 text 45.6 / lab s
++					264 text Every assigned researcher adds a visible seat and terminal; later hires share larger desk groups. Staff work, notebook space and engineering output are classical game abstractions.
++					265 text Choose a wing to inspect. Moving indicators show schematic activity, never an unknown quantum state.
++				266 container job-progress
++					267 text Calibrating
++					268 text 5%
++					269 progress indicator Description: Experiment progress, Value: 0.04997500032186508, ID: job-meter
++					270 button Cancel experiment · costs stay spent, ID: cancel-job
+~					120 slider (disabled, settable, integer) Ansatz angle θ, Value: 65, ID: theta
+~					122 pop up button (disabled, collapsed, settable) Shots per Pauli group, Value: 16,384 · precise, ID: shot-count, Secondary Actions: Expand
+~					128 checkbox (disabled, settable, integer) Description: Mitigation · 4× modeled acquisition, Value: 0, ID: mitigate
++						271 text 100%
+~						134 slider (disabled, settable, integer) Calibration duty, Value: 100, ID: calibration
++						272 text Maintenance target 14.0%
++						273 text Drift 0.03
++			274 text Grants 1.84 · upkeep 1.34 funding / lab s
++				275 text Reserved
+~				173 container Description: Apparatus time: Calibration 100% · service 0% · experiments 0%., ID: apparatus-track
++				276 text Calibration 100% · service 0% · experiments 0%
++				277 text 0 batch slots / lab s
+~				177 container ID: queue-track, Description: Controller capacity: 0 classical automation, 0 delivered customer batches, 0 unused slots per laboratory second.
++				278 text 0.04
++				279 text 0
++				280 text 0
++				281 text Manual calibration reserves the entire apparatus. Customer contracts and bench automation pause until it finishes.
+~				187 stepper (disabled, settable, integer) Price / delivered batch, Value: 200, ID: contract-price
++				282 container
++					283 heading Install a larger chip, Value: 3
++						284 text Install a larger chip
++					285 text Installed preset 25 physical qubits; commissioned construction is additional
++					286 button Install a larger chip, 450 funding and 36 designs
++						287 text 450 funding
++						288 text 36 designs ↗
++				289 container
++					290 heading Control & cooling rack, Value: 3
++						291 text Control & cooling rack
++					292 text Support preset 25 physical qubits; adds control/readout lanes
++					293 button Control & cooling rack, 350 funding and 27 designs
++						294 text 350 funding
++						295 text 27 designs ↗
++				296 container
++					297 heading Refine the control pulses, Value: 3
++						298 text Refine the control pulses
++					299 text Effective noise 0.236% → 0.118%; selected scenario
++					300 button Refine the control pulses, 560 funding and 65 designs
++						301 text 560 funding
++						302 text 65 designs ↗
+The focused UI element is 1 AXWebArea Coherent 3D — one qubit in return, URL: dev.localhost:5500/index-3d.html

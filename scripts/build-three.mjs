@@ -11,4 +11,8 @@ const workbench = '<div class="workbench" id="workbench">';
 if (!instrument || !action || !next || !page.includes(workbench)) throw new Error('Original laboratory markup could not be located.');
 const theater = '<div class="lab-presentation"><div class="lab-command-bar"><div>' + next[0] + '</div>' + action[0] + '</div>\n' + instrument[0].replace('class="instrument"', 'class="instrument lab-theater"') + '</div>';
 page = page.replace(instrument[0], '').replace(action[0], '').replace(next[0], '').replace(workbench, theater + '\n' + workbench);
+// Keep the result compact above peer control cards instead of a tall sidebar.
+const summary = page.match(/            <p class="rail-copy" id="next-copy">[\s\S]*?(?=            <section class="bench-controls")/);
+if (!summary) throw new Error('Original experiment summary could not be located.');
+page = page.replace(summary[0], '<div class="experiment-summary">\n' + summary[0] + '</div>\n');
 await writeFile('index-3d.html',page);

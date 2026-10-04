@@ -49,6 +49,7 @@
             <div class="lab-warning" id="lab-warning" role="status" hidden></div>
           </div>
           <aside class="experiment-rail" aria-label="Your next experiment">
+<div class="experiment-summary">
             <p class="rail-copy" id="next-copy">Prepare a known state. Apply a pulse. Measure. Repeat. A signal begins with five seconds of patience.</p>
             <div class="experiment-picker" id="experiment-picker" hidden><label for="experiment-select">Experiment</label><select id="experiment-select"></select></div>
             <div class="experiment-cost"><span id="experiment-cost-label">First preparation</span><span class="mono" id="experiment-cost">128 shots · 5 lab s</span></div>
@@ -56,6 +57,7 @@
             <div class="job-progress" id="job-progress" hidden><div class="progress-label"><span id="job-label">Preparing</span><span class="mono" id="job-percent">0%</span></div><progress id="job-meter" max="1" value="0" aria-label="Experiment progress"></progress><button type="button" class="text-button" id="cancel-job">Cancel experiment</button></div>
             <p id="experiment-feedback" class="experiment-feedback" aria-live="polite"></p>
             <button type="button" id="calibrate-button" class="secondary-button" hidden>Calibrate the apparatus <span class="mono">8 funding · 4 lab s</span></button>
+</div>
             <section class="bench-controls" id="noisy-controls" hidden aria-label="Variational tutorial controls">
               <div class="control-header"><label for="theta">Ansatz angle θ</label><output id="theta-value" for="theta">20°</output></div><input id="theta" type="range" min="0" max="90" step="1" value="20">
               <label for="shot-count">Shots per Pauli group</label><select id="shot-count"><option value="0">1,024 · coarse</option><option value="1" selected>4,096 · exploratory</option><option value="2">16,384 · precise</option><option value="3">65,536 · careful</option></select>
