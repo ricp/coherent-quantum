@@ -58,7 +58,7 @@ The accepted scientific rules are:
 
 There are no remaining scientific objections to this **proposal** from the independent reviewer. The complete original-game analysis, project inventory, source checks, legal winning simulation, bibliography, and design brief are saved locally.
 
-Implementation still needs hardware scenario tables, workload instances, gate/decoder/factory resource data, prices, pacing, save behavior, complete strategy testing, final art, and desktop/mobile visual QA. Those are explicitly unbuilt parts of the new game. Consensus is not a substitute for those checks, and the surprise gift has not been published or sent.
+At the proposal-review checkpoint, implementation still needed hardware scenario tables, workload instances, gate/decoder/factory resource data, prices, pacing, save behavior, complete strategy testing, final art, and desktop/mobile visual QA. The separate implementation reviews below and `DEPTH-VERIFICATION.md` record the subsequent work. Consensus is not a substitute for those checks, and the surprise gift has not been published or sent.
 
 ## Implemented model and interface review — 4 October 2026
 
@@ -76,3 +76,26 @@ The preceding sections describe the proposal review. The implementation is now s
 The reviewer independently checked the depicted rotated-patch construction at distances 3, 5, 7, and 9: `d²` data qubits, `d²−1` ancillas, totals 17/49/97/161, commuting opposite checks, and independent check counts. The graphics use selected coherence scenarios, actual classically simulated sample groups, an exact classical two-spin curve/reference, conditional allocation budgets, and one-execution schedule lanes followed by the repeated total.
 
 This consensus accepts the **declared educational model, citation identities and mappings, small classical tutorial/certificates, scientific interface wording, and source-level graphics geometry**. It does not establish experimental hardware reliability, universal resource estimates, reproduction of every cited study, numerical quantum performance prediction, or demonstrated advantage. Browser visual inspection, accessibility, artistic judgment, and complete gameplay verification remain distinct evidence; scientific acceptance alone does not prove them.
+
+## Implemented campaign economy review — 4 October 2026
+
+The user's 15:33 playtest rejected the first campaign's strategic depth. An independent AI incremental-game specialist examined Keir's original engine, the short campaign, and measured legal policies. Its first review found that research accumulation dominated nearly the entire short route. The redesign follows the original's shared researcher/storage allocation, bounded notes, full-store idea bonus, delivered customer revenue, capacity-consuming automation, earned efficiency upgrades, and fabrication versus supporting infrastructure.
+
+The first deeper tuning was also rejected: designs blocked about 98% of the run, with ten-minute purchase gaps. Subsequent revisions add paid midgame design efficiencies, reversible analysis-station duty, and measured dissemination tradeoffs. The specialist's final conclusion is **ACCEPT — consensus on the implemented campaign revision, its strategic tradeoffs, and the reviewed interface**. It verified current source hashes, 20 legal campaign finishes, 320 saved-state checks, 18 matched comparisons, and both recovery routes from the same stalled save. It independently ran all 36 engine/economy tests with no failures or skips.
+
+The reference policies finish in 69–82 minutes; the strongest recorded comparison takes 62:10. Open dissemination wins with two analysis stations, while proprietary service wins in the matched four-station plan. Additional stations, paid synthesis timing, pricing automation, and reversible analysis duty have measured consequences. The specialist inspected browser evidence for research/storage reassignment, losing the full-bank bonus after a purchase, station idling, calibration recovery, protected reservation, desktop/mobile layouts, and the separate engineering archive.
+
+The specialist explicitly accepted the revision with limitations: the longest reference gap between recorded meaningful actions remains 7:25; explicit experiment jobs occupy only a small portion of the campaign; a 90-minute first human play and human enjoyment remain unverified. Its additional read-only legal probe used ordinary settings to stop pulse investment at level six and adopt distance five in the final chapter, retaining two factories. That probe finished in 71:00 with 3,306 physical qubits, 1.398% modeled risk, a valid save, and a 5:15 maximum action gap. This reviewer observation supports an existing footprint/fidelity alternative; it is separate from the stored 20-run matrix and does not certify a human experience.
+
+An independent AI source reviewer also returned **ACCEPT** for engine and interface changes against the preserved `ac4e485` baseline. It inspected exports and UI callers, persistence, prerequisites, numeric bounds, allocations, pricing, recovery, focus, reset/import behavior, and scientific endings. Its additional 37 malformed-save probes all rejected invalid states, and a legal opening save round-tripped. The persistence assertions are saved in `tests/depth-save.test.cjs`. This review concerns source correctness; the reviewer did not perform browser actions or certify human pacing.
+
+The independent AI quantum reviewer then inspected the implemented `game.js`, `content.js`, `app.js`, `index.html`, and `MODEL.md`, and performed deterministic fixture probes. It returned **ACCEPT — scientific consensus on the implemented economy**. The probes verified:
+
+- Ordinary apparatus duty sums to one; automation reserves shared controller capacity before customers; revenue equals delivered batches times price.
+- Quantum-service quality holds stop customer revenue while classical analysis can continue. Its production is not a quantum advantage claim.
+- Fractional construction contributes only completed integer qubits, and unsupported fabrication cannot increase active capacity.
+- Memory, gate, factory, and full-workload reservations pause customers, analysis stations, and commissioning. Manual calibration reserves the entire apparatus for four laboratory seconds.
+- Existing logical error, footprint, fresh-state, feedback, repetition, and complete workload accounting remain distinct. The added engineering coefficients are game assumptions, separate from primary-paper findings.
+- Reviewed fixture states round-trip through the depth campaign's version-two validation.
+
+The review recommended explicitly documenting the uniform selected noise/control scenario for all commissioned qubits; that clarification is now in `MODEL.md`. These were scientific fixture probes, not legal pacing playthroughs or hardware experiments. Economic coefficient tuning does not change their scientific boundary. Acceptance covers accounting and claim integrity; it does not certify human play duration, strategic balance, visual excellence, or a real quantum device. No human specialist or Keir was contacted.

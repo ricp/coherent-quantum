@@ -1,0 +1,2485 @@
+{
+  "status": "candidate",
+  "sourceHashes": {
+    "game.js": "0a30b83cbd36390bd68d8f5d5bc5709246fe6cef334db0c26540b292c4e2a891",
+    "content.js": "0bd72d8ecca580c6d4baf0b1d50e6fcea7fa071712227f0df635fec668ddffbe",
+    "tests/playthrough.cjs": "ac8ad2cc15f2e8ff66c2a5a209c555309941f22244fa3b2b78819468aa55856a"
+  },
+  "runs": [
+    {
+      "strategy": "frontier",
+      "ended": true,
+      "seconds": 4925,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "open",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "storage3",
+        "rapid",
+        "workshop",
+        "scheduler",
+        "synthesis"
+      ],
+      "physical": 4422,
+      "module": 2,
+      "rack": 3,
+      "pulse": 8,
+      "decoder": 3,
+      "distance": 3,
+      "factories": 2,
+      "staff": 31,
+      "notebooks": 1,
+      "automation": 4,
+      "analysisShare": 0.2,
+      "workshops": 2,
+      "funds": 3530,
+      "designs": 24222,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 483
+        },
+        {
+          "chapter": 4,
+          "at": 1381
+        },
+        {
+          "chapter": 5,
+          "at": 2984
+        }
+      ],
+      "measurements": {
+        "policy": "frontier",
+        "seed": 1,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 163,
+        "idle": 4762,
+        "calibrationDuty": 1485.2326425012432,
+        "serviceDuty": 1743.665086954706,
+        "experimentDuty": 124.36719939927211,
+        "fullStore": 2395,
+        "designsWhileFull": 46901.16331881312,
+        "designsWhileNotFull": 7841.316130466012,
+        "grants": 10015.880000000296,
+        "revenue": 171335.84246873987,
+        "upkeep": 17073.62106014688,
+        "delivered": 12621.139996082033,
+        "automationWork": 4356.000000000191,
+        "fabricated": 4397.674662591356,
+        "integrated": 4341.226662591355,
+        "longestNoAction": 445,
+        "blocked": {
+          "funding": 2586,
+          "effort": 1635,
+          "designs": 3741,
+          "capacity": 12,
+          "qualification": 414
+        },
+        "actions": {
+          "assignment": 74,
+          "engineering": 12,
+          "equipment": 22,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 3,
+          "service": 0.55,
+          "automation": 4,
+          "workshops": 2,
+          "dissemination": "open",
+          "rollout": "rapid"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 4408,
+          "to": 4853,
+          "previous": "assignment/staff+1",
+          "next": "equipment/pulse"
+        },
+        "priceChecks": 13,
+        "priceAdjustments": 5,
+        "analysisAdjustments": 51,
+        "investmentCount": 34,
+        "assignmentCount": 74,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "revenue",
+      "ended": true,
+      "seconds": 4171,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "proprietary",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "rapid",
+        "storage3",
+        "workshop",
+        "scheduler",
+        "synthesis"
+      ],
+      "physical": 1729,
+      "module": 2,
+      "rack": 5,
+      "pulse": 8,
+      "decoder": 3,
+      "distance": 3,
+      "factories": 2,
+      "staff": 27,
+      "notebooks": 1,
+      "automation": 2,
+      "analysisShare": 1,
+      "workshops": 1,
+      "funds": 63883,
+      "designs": 1096,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 550
+        },
+        {
+          "chapter": 4,
+          "at": 1660
+        },
+        {
+          "chapter": 5,
+          "at": 3371
+        }
+      ],
+      "measurements": {
+        "policy": "revenue",
+        "seed": 1,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 160,
+        "idle": 4011,
+        "calibrationDuty": 1165.3099971044965,
+        "serviceDuty": 2326.1231935225137,
+        "experimentDuty": 123.97448110436157,
+        "fullStore": 1366,
+        "designsWhileFull": 19595.20595508812,
+        "designsWhileNotFull": 10591.947863084986,
+        "grants": 8219.79999999981,
+        "revenue": 229322.3219483649,
+        "upkeep": 10028.863999999661,
+        "delivered": 27279.247494894837,
+        "automationWork": 5342,
+        "fabricated": 1704.1919999999734,
+        "integrated": 960.2880000000156,
+        "longestNoAction": 302,
+        "blocked": {
+          "funding": 69,
+          "effort": 1843,
+          "designs": 4025,
+          "capacity": 12,
+          "qualification": 446
+        },
+        "actions": {
+          "assignment": 70,
+          "engineering": 12,
+          "equipment": 21,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 3,
+          "service": 0.85,
+          "automation": 2,
+          "workshops": 1,
+          "dissemination": "proprietary",
+          "rollout": "rapid"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 3815,
+          "to": 4117,
+          "previous": "assignment/notebooks+1",
+          "next": "discovery/audit"
+        },
+        "priceChecks": 16,
+        "priceAdjustments": 5,
+        "analysisAdjustments": 0,
+        "investmentCount": 33,
+        "assignmentCount": 70,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "infrastructure",
+      "ended": true,
+      "seconds": 4212,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "open",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "rapid",
+        "storage3",
+        "workshop",
+        "scheduler"
+      ],
+      "physical": 3727,
+      "module": 3,
+      "rack": 4,
+      "pulse": 7,
+      "decoder": 3,
+      "distance": 5,
+      "factories": 1,
+      "staff": 30,
+      "notebooks": 2,
+      "automation": 4,
+      "analysisShare": 0.2,
+      "workshops": 3,
+      "funds": 3510,
+      "designs": 2437,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 483
+        },
+        {
+          "chapter": 4,
+          "at": 1407
+        },
+        {
+          "chapter": 5,
+          "at": 3066
+        }
+      ],
+      "measurements": {
+        "policy": "infrastructure",
+        "seed": 1,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 162,
+        "idle": 4050,
+        "calibrationDuty": 1289.3868312559189,
+        "serviceDuty": 1858.2302284984057,
+        "experimentDuty": 122.89855660351226,
+        "fullStore": 1698,
+        "designsWhileFull": 23028.154141766907,
+        "designsWhileNotFull": 8134.772521593086,
+        "grants": 8448.119999999777,
+        "revenue": 159082.3637214158,
+        "upkeep": 14975.60800000002,
+        "delivered": 16943.519721819277,
+        "automationWork": 5900.600000000057,
+        "fabricated": 3646.2720000000195,
+        "integrated": 3471.888000000022,
+        "longestNoAction": 269,
+        "blocked": {
+          "funding": 2548,
+          "effort": 1656,
+          "designs": 3729,
+          "capacity": 12,
+          "qualification": 468
+        },
+        "actions": {
+          "assignment": 72,
+          "engineering": 11,
+          "equipment": 24,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 5,
+          "service": 0.7,
+          "automation": 4,
+          "workshops": 4,
+          "dissemination": "open",
+          "rollout": "rapid"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 3661,
+          "to": 3930,
+          "previous": "assignment/notebooks+1",
+          "next": "equipment/workshop"
+        },
+        "priceChecks": 13,
+        "priceAdjustments": 6,
+        "analysisAdjustments": 27,
+        "investmentCount": 35,
+        "assignmentCount": 72,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "cautious",
+      "ended": true,
+      "seconds": 4365,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "proprietary",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "verified",
+        "storage3",
+        "workshop",
+        "scheduler",
+        "synthesis"
+      ],
+      "physical": 1911,
+      "module": 3,
+      "rack": 4,
+      "pulse": 7,
+      "decoder": 3,
+      "distance": 5,
+      "factories": 1,
+      "staff": 27,
+      "notebooks": 1,
+      "automation": 2,
+      "analysisShare": 1,
+      "workshops": 2,
+      "funds": 64972,
+      "designs": 9705,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 550
+        },
+        {
+          "chapter": 4,
+          "at": 1616
+        },
+        {
+          "chapter": 5,
+          "at": 3379
+        }
+      ],
+      "measurements": {
+        "policy": "cautious",
+        "seed": 1,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 149,
+        "idle": 4216,
+        "calibrationDuty": 984.9012399343954,
+        "serviceDuty": 1711.2682224427722,
+        "experimentDuty": 123.60199198778531,
+        "fullStore": 1564,
+        "designsWhileFull": 27393.666074802022,
+        "designsWhileNotFull": 10613.06002548186,
+        "grants": 8646.959999999952,
+        "revenue": 203713.72249390022,
+        "upkeep": 11278.600000000166,
+        "delivered": 15195.343281894082,
+        "automationWork": 5802,
+        "fabricated": 1830.5280000000375,
+        "integrated": 1654.2720000000304,
+        "longestNoAction": 302,
+        "blocked": {
+          "funding": 86,
+          "effort": 1843,
+          "designs": 4003,
+          "capacity": 12,
+          "qualification": 534
+        },
+        "actions": {
+          "assignment": 70,
+          "engineering": 12,
+          "equipment": 21,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 5,
+          "service": 0.55,
+          "automation": 2,
+          "workshops": 2,
+          "dissemination": "proprietary",
+          "rollout": "verified"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 3796,
+          "to": 4098,
+          "previous": "assignment/notebooks+1",
+          "next": "discovery/audit"
+        },
+        "priceChecks": 16,
+        "priceAdjustments": 6,
+        "analysisAdjustments": 0,
+        "investmentCount": 33,
+        "assignmentCount": 70,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "frontier",
+      "ended": true,
+      "seconds": 4925,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "open",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "storage3",
+        "rapid",
+        "workshop",
+        "scheduler",
+        "synthesis"
+      ],
+      "physical": 4422,
+      "module": 2,
+      "rack": 3,
+      "pulse": 8,
+      "decoder": 3,
+      "distance": 3,
+      "factories": 2,
+      "staff": 31,
+      "notebooks": 1,
+      "automation": 4,
+      "analysisShare": 0.2,
+      "workshops": 2,
+      "funds": 3530,
+      "designs": 24222,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 483
+        },
+        {
+          "chapter": 4,
+          "at": 1381
+        },
+        {
+          "chapter": 5,
+          "at": 2984
+        }
+      ],
+      "measurements": {
+        "policy": "frontier",
+        "seed": 42,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 163,
+        "idle": 4762,
+        "calibrationDuty": 1485.2326425012432,
+        "serviceDuty": 1743.665086954706,
+        "experimentDuty": 124.36719939927211,
+        "fullStore": 2395,
+        "designsWhileFull": 46901.16331881312,
+        "designsWhileNotFull": 7841.316130466012,
+        "grants": 10015.880000000296,
+        "revenue": 171335.84246873987,
+        "upkeep": 17073.62106014688,
+        "delivered": 12621.139996082033,
+        "automationWork": 4356.000000000191,
+        "fabricated": 4397.674662591356,
+        "integrated": 4341.226662591355,
+        "longestNoAction": 445,
+        "blocked": {
+          "funding": 2586,
+          "effort": 1635,
+          "designs": 3741,
+          "capacity": 12,
+          "qualification": 414
+        },
+        "actions": {
+          "assignment": 74,
+          "engineering": 12,
+          "equipment": 22,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 3,
+          "service": 0.55,
+          "automation": 4,
+          "workshops": 2,
+          "dissemination": "open",
+          "rollout": "rapid"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 4408,
+          "to": 4853,
+          "previous": "assignment/staff+1",
+          "next": "equipment/pulse"
+        },
+        "priceChecks": 13,
+        "priceAdjustments": 5,
+        "analysisAdjustments": 51,
+        "investmentCount": 34,
+        "assignmentCount": 74,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "revenue",
+      "ended": true,
+      "seconds": 4171,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "proprietary",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "rapid",
+        "storage3",
+        "workshop",
+        "scheduler",
+        "synthesis"
+      ],
+      "physical": 1729,
+      "module": 2,
+      "rack": 5,
+      "pulse": 8,
+      "decoder": 3,
+      "distance": 3,
+      "factories": 2,
+      "staff": 27,
+      "notebooks": 1,
+      "automation": 2,
+      "analysisShare": 1,
+      "workshops": 1,
+      "funds": 63883,
+      "designs": 1096,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 550
+        },
+        {
+          "chapter": 4,
+          "at": 1660
+        },
+        {
+          "chapter": 5,
+          "at": 3371
+        }
+      ],
+      "measurements": {
+        "policy": "revenue",
+        "seed": 42,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 160,
+        "idle": 4011,
+        "calibrationDuty": 1165.3099971044965,
+        "serviceDuty": 2326.1231935225137,
+        "experimentDuty": 123.97448110436157,
+        "fullStore": 1366,
+        "designsWhileFull": 19595.20595508812,
+        "designsWhileNotFull": 10591.947863084986,
+        "grants": 8219.79999999981,
+        "revenue": 229322.3219483649,
+        "upkeep": 10028.863999999661,
+        "delivered": 27279.247494894837,
+        "automationWork": 5342,
+        "fabricated": 1704.1919999999734,
+        "integrated": 960.2880000000156,
+        "longestNoAction": 302,
+        "blocked": {
+          "funding": 69,
+          "effort": 1843,
+          "designs": 4025,
+          "capacity": 12,
+          "qualification": 446
+        },
+        "actions": {
+          "assignment": 70,
+          "engineering": 12,
+          "equipment": 21,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 3,
+          "service": 0.85,
+          "automation": 2,
+          "workshops": 1,
+          "dissemination": "proprietary",
+          "rollout": "rapid"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 3815,
+          "to": 4117,
+          "previous": "assignment/notebooks+1",
+          "next": "discovery/audit"
+        },
+        "priceChecks": 16,
+        "priceAdjustments": 5,
+        "analysisAdjustments": 0,
+        "investmentCount": 33,
+        "assignmentCount": 70,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "infrastructure",
+      "ended": true,
+      "seconds": 4212,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "open",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "rapid",
+        "storage3",
+        "workshop",
+        "scheduler"
+      ],
+      "physical": 3727,
+      "module": 3,
+      "rack": 4,
+      "pulse": 7,
+      "decoder": 3,
+      "distance": 5,
+      "factories": 1,
+      "staff": 30,
+      "notebooks": 2,
+      "automation": 4,
+      "analysisShare": 0.2,
+      "workshops": 3,
+      "funds": 3510,
+      "designs": 2437,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 483
+        },
+        {
+          "chapter": 4,
+          "at": 1407
+        },
+        {
+          "chapter": 5,
+          "at": 3066
+        }
+      ],
+      "measurements": {
+        "policy": "infrastructure",
+        "seed": 42,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 162,
+        "idle": 4050,
+        "calibrationDuty": 1289.3868312559189,
+        "serviceDuty": 1858.2302284984057,
+        "experimentDuty": 122.89855660351226,
+        "fullStore": 1698,
+        "designsWhileFull": 23028.154141766907,
+        "designsWhileNotFull": 8134.772521593086,
+        "grants": 8448.119999999777,
+        "revenue": 159082.3637214158,
+        "upkeep": 14975.60800000002,
+        "delivered": 16943.519721819277,
+        "automationWork": 5900.600000000057,
+        "fabricated": 3646.2720000000195,
+        "integrated": 3471.888000000022,
+        "longestNoAction": 269,
+        "blocked": {
+          "funding": 2548,
+          "effort": 1656,
+          "designs": 3729,
+          "capacity": 12,
+          "qualification": 468
+        },
+        "actions": {
+          "assignment": 72,
+          "engineering": 11,
+          "equipment": 24,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 5,
+          "service": 0.7,
+          "automation": 4,
+          "workshops": 4,
+          "dissemination": "open",
+          "rollout": "rapid"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 3661,
+          "to": 3930,
+          "previous": "assignment/notebooks+1",
+          "next": "equipment/workshop"
+        },
+        "priceChecks": 13,
+        "priceAdjustments": 6,
+        "analysisAdjustments": 27,
+        "investmentCount": 35,
+        "assignmentCount": 72,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "cautious",
+      "ended": true,
+      "seconds": 4365,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "proprietary",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "verified",
+        "storage3",
+        "workshop",
+        "scheduler",
+        "synthesis"
+      ],
+      "physical": 1911,
+      "module": 3,
+      "rack": 4,
+      "pulse": 7,
+      "decoder": 3,
+      "distance": 5,
+      "factories": 1,
+      "staff": 27,
+      "notebooks": 1,
+      "automation": 2,
+      "analysisShare": 1,
+      "workshops": 2,
+      "funds": 64972,
+      "designs": 9705,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 550
+        },
+        {
+          "chapter": 4,
+          "at": 1616
+        },
+        {
+          "chapter": 5,
+          "at": 3379
+        }
+      ],
+      "measurements": {
+        "policy": "cautious",
+        "seed": 42,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 149,
+        "idle": 4216,
+        "calibrationDuty": 984.9012399343954,
+        "serviceDuty": 1711.2682224427722,
+        "experimentDuty": 123.60199198778531,
+        "fullStore": 1564,
+        "designsWhileFull": 27393.666074802022,
+        "designsWhileNotFull": 10613.06002548186,
+        "grants": 8646.959999999952,
+        "revenue": 203713.72249390022,
+        "upkeep": 11278.600000000166,
+        "delivered": 15195.343281894082,
+        "automationWork": 5802,
+        "fabricated": 1830.5280000000375,
+        "integrated": 1654.2720000000304,
+        "longestNoAction": 302,
+        "blocked": {
+          "funding": 86,
+          "effort": 1843,
+          "designs": 4003,
+          "capacity": 12,
+          "qualification": 534
+        },
+        "actions": {
+          "assignment": 70,
+          "engineering": 12,
+          "equipment": 21,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 5,
+          "service": 0.55,
+          "automation": 2,
+          "workshops": 2,
+          "dissemination": "proprietary",
+          "rollout": "verified"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 3796,
+          "to": 4098,
+          "previous": "assignment/notebooks+1",
+          "next": "discovery/audit"
+        },
+        "priceChecks": 16,
+        "priceAdjustments": 6,
+        "analysisAdjustments": 0,
+        "investmentCount": 33,
+        "assignmentCount": 70,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "frontier",
+      "ended": true,
+      "seconds": 4925,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "open",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "storage3",
+        "rapid",
+        "workshop",
+        "scheduler",
+        "synthesis"
+      ],
+      "physical": 4422,
+      "module": 2,
+      "rack": 3,
+      "pulse": 8,
+      "decoder": 3,
+      "distance": 3,
+      "factories": 2,
+      "staff": 31,
+      "notebooks": 1,
+      "automation": 4,
+      "analysisShare": 0.2,
+      "workshops": 2,
+      "funds": 3530,
+      "designs": 24222,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 483
+        },
+        {
+          "chapter": 4,
+          "at": 1381
+        },
+        {
+          "chapter": 5,
+          "at": 2984
+        }
+      ],
+      "measurements": {
+        "policy": "frontier",
+        "seed": 1337,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 163,
+        "idle": 4762,
+        "calibrationDuty": 1485.2326425012432,
+        "serviceDuty": 1743.665086954706,
+        "experimentDuty": 124.36719939927211,
+        "fullStore": 2395,
+        "designsWhileFull": 46901.16331881312,
+        "designsWhileNotFull": 7841.316130466012,
+        "grants": 10015.880000000296,
+        "revenue": 171335.84246873987,
+        "upkeep": 17073.62106014688,
+        "delivered": 12621.139996082033,
+        "automationWork": 4356.000000000191,
+        "fabricated": 4397.674662591356,
+        "integrated": 4341.226662591355,
+        "longestNoAction": 445,
+        "blocked": {
+          "funding": 2586,
+          "effort": 1635,
+          "designs": 3741,
+          "capacity": 12,
+          "qualification": 414
+        },
+        "actions": {
+          "assignment": 74,
+          "engineering": 12,
+          "equipment": 22,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 3,
+          "service": 0.55,
+          "automation": 4,
+          "workshops": 2,
+          "dissemination": "open",
+          "rollout": "rapid"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 4408,
+          "to": 4853,
+          "previous": "assignment/staff+1",
+          "next": "equipment/pulse"
+        },
+        "priceChecks": 13,
+        "priceAdjustments": 5,
+        "analysisAdjustments": 51,
+        "investmentCount": 34,
+        "assignmentCount": 74,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "revenue",
+      "ended": true,
+      "seconds": 4171,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "proprietary",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "rapid",
+        "storage3",
+        "workshop",
+        "scheduler",
+        "synthesis"
+      ],
+      "physical": 1729,
+      "module": 2,
+      "rack": 5,
+      "pulse": 8,
+      "decoder": 3,
+      "distance": 3,
+      "factories": 2,
+      "staff": 27,
+      "notebooks": 1,
+      "automation": 2,
+      "analysisShare": 1,
+      "workshops": 1,
+      "funds": 63883,
+      "designs": 1096,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 550
+        },
+        {
+          "chapter": 4,
+          "at": 1660
+        },
+        {
+          "chapter": 5,
+          "at": 3371
+        }
+      ],
+      "measurements": {
+        "policy": "revenue",
+        "seed": 1337,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 160,
+        "idle": 4011,
+        "calibrationDuty": 1165.3099971044965,
+        "serviceDuty": 2326.1231935225137,
+        "experimentDuty": 123.97448110436157,
+        "fullStore": 1366,
+        "designsWhileFull": 19595.20595508812,
+        "designsWhileNotFull": 10591.947863084986,
+        "grants": 8219.79999999981,
+        "revenue": 229322.3219483649,
+        "upkeep": 10028.863999999661,
+        "delivered": 27279.247494894837,
+        "automationWork": 5342,
+        "fabricated": 1704.1919999999734,
+        "integrated": 960.2880000000156,
+        "longestNoAction": 302,
+        "blocked": {
+          "funding": 69,
+          "effort": 1843,
+          "designs": 4025,
+          "capacity": 12,
+          "qualification": 446
+        },
+        "actions": {
+          "assignment": 70,
+          "engineering": 12,
+          "equipment": 21,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 3,
+          "service": 0.85,
+          "automation": 2,
+          "workshops": 1,
+          "dissemination": "proprietary",
+          "rollout": "rapid"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 3815,
+          "to": 4117,
+          "previous": "assignment/notebooks+1",
+          "next": "discovery/audit"
+        },
+        "priceChecks": 16,
+        "priceAdjustments": 5,
+        "analysisAdjustments": 0,
+        "investmentCount": 33,
+        "assignmentCount": 70,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "infrastructure",
+      "ended": true,
+      "seconds": 4212,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "open",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "rapid",
+        "storage3",
+        "workshop",
+        "scheduler"
+      ],
+      "physical": 3727,
+      "module": 3,
+      "rack": 4,
+      "pulse": 7,
+      "decoder": 3,
+      "distance": 5,
+      "factories": 1,
+      "staff": 30,
+      "notebooks": 2,
+      "automation": 4,
+      "analysisShare": 0.2,
+      "workshops": 3,
+      "funds": 3510,
+      "designs": 2437,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 483
+        },
+        {
+          "chapter": 4,
+          "at": 1407
+        },
+        {
+          "chapter": 5,
+          "at": 3066
+        }
+      ],
+      "measurements": {
+        "policy": "infrastructure",
+        "seed": 1337,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 162,
+        "idle": 4050,
+        "calibrationDuty": 1289.3868312559189,
+        "serviceDuty": 1858.2302284984057,
+        "experimentDuty": 122.89855660351226,
+        "fullStore": 1698,
+        "designsWhileFull": 23028.154141766907,
+        "designsWhileNotFull": 8134.772521593086,
+        "grants": 8448.119999999777,
+        "revenue": 159082.3637214158,
+        "upkeep": 14975.60800000002,
+        "delivered": 16943.519721819277,
+        "automationWork": 5900.600000000057,
+        "fabricated": 3646.2720000000195,
+        "integrated": 3471.888000000022,
+        "longestNoAction": 269,
+        "blocked": {
+          "funding": 2548,
+          "effort": 1656,
+          "designs": 3729,
+          "capacity": 12,
+          "qualification": 468
+        },
+        "actions": {
+          "assignment": 72,
+          "engineering": 11,
+          "equipment": 24,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 5,
+          "service": 0.7,
+          "automation": 4,
+          "workshops": 4,
+          "dissemination": "open",
+          "rollout": "rapid"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 3661,
+          "to": 3930,
+          "previous": "assignment/notebooks+1",
+          "next": "equipment/workshop"
+        },
+        "priceChecks": 13,
+        "priceAdjustments": 6,
+        "analysisAdjustments": 27,
+        "investmentCount": 35,
+        "assignmentCount": 72,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "cautious",
+      "ended": true,
+      "seconds": 4365,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "proprietary",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "verified",
+        "storage3",
+        "workshop",
+        "scheduler",
+        "synthesis"
+      ],
+      "physical": 1911,
+      "module": 3,
+      "rack": 4,
+      "pulse": 7,
+      "decoder": 3,
+      "distance": 5,
+      "factories": 1,
+      "staff": 27,
+      "notebooks": 1,
+      "automation": 2,
+      "analysisShare": 1,
+      "workshops": 2,
+      "funds": 64972,
+      "designs": 9705,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 550
+        },
+        {
+          "chapter": 4,
+          "at": 1616
+        },
+        {
+          "chapter": 5,
+          "at": 3379
+        }
+      ],
+      "measurements": {
+        "policy": "cautious",
+        "seed": 1337,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 149,
+        "idle": 4216,
+        "calibrationDuty": 984.9012399343954,
+        "serviceDuty": 1711.2682224427722,
+        "experimentDuty": 123.60199198778531,
+        "fullStore": 1564,
+        "designsWhileFull": 27393.666074802022,
+        "designsWhileNotFull": 10613.06002548186,
+        "grants": 8646.959999999952,
+        "revenue": 203713.72249390022,
+        "upkeep": 11278.600000000166,
+        "delivered": 15195.343281894082,
+        "automationWork": 5802,
+        "fabricated": 1830.5280000000375,
+        "integrated": 1654.2720000000304,
+        "longestNoAction": 302,
+        "blocked": {
+          "funding": 86,
+          "effort": 1843,
+          "designs": 4003,
+          "capacity": 12,
+          "qualification": 534
+        },
+        "actions": {
+          "assignment": 70,
+          "engineering": 12,
+          "equipment": 21,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 5,
+          "service": 0.55,
+          "automation": 2,
+          "workshops": 2,
+          "dissemination": "proprietary",
+          "rollout": "verified"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 3796,
+          "to": 4098,
+          "previous": "assignment/notebooks+1",
+          "next": "discovery/audit"
+        },
+        "priceChecks": 16,
+        "priceAdjustments": 6,
+        "analysisAdjustments": 0,
+        "investmentCount": 33,
+        "assignmentCount": 70,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "frontier",
+      "ended": true,
+      "seconds": 4925,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "open",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "storage3",
+        "rapid",
+        "workshop",
+        "scheduler",
+        "synthesis"
+      ],
+      "physical": 4422,
+      "module": 2,
+      "rack": 3,
+      "pulse": 8,
+      "decoder": 3,
+      "distance": 3,
+      "factories": 2,
+      "staff": 31,
+      "notebooks": 1,
+      "automation": 4,
+      "analysisShare": 0.2,
+      "workshops": 2,
+      "funds": 3530,
+      "designs": 24222,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 483
+        },
+        {
+          "chapter": 4,
+          "at": 1381
+        },
+        {
+          "chapter": 5,
+          "at": 2984
+        }
+      ],
+      "measurements": {
+        "policy": "frontier",
+        "seed": 424242,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 163,
+        "idle": 4762,
+        "calibrationDuty": 1485.2326425012432,
+        "serviceDuty": 1743.665086954706,
+        "experimentDuty": 124.36719939927211,
+        "fullStore": 2395,
+        "designsWhileFull": 46901.16331881312,
+        "designsWhileNotFull": 7841.316130466012,
+        "grants": 10015.880000000296,
+        "revenue": 171335.84246873987,
+        "upkeep": 17073.62106014688,
+        "delivered": 12621.139996082033,
+        "automationWork": 4356.000000000191,
+        "fabricated": 4397.674662591356,
+        "integrated": 4341.226662591355,
+        "longestNoAction": 445,
+        "blocked": {
+          "funding": 2586,
+          "effort": 1635,
+          "designs": 3741,
+          "capacity": 12,
+          "qualification": 414
+        },
+        "actions": {
+          "assignment": 74,
+          "engineering": 12,
+          "equipment": 22,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 3,
+          "service": 0.55,
+          "automation": 4,
+          "workshops": 2,
+          "dissemination": "open",
+          "rollout": "rapid"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 4408,
+          "to": 4853,
+          "previous": "assignment/staff+1",
+          "next": "equipment/pulse"
+        },
+        "priceChecks": 13,
+        "priceAdjustments": 5,
+        "analysisAdjustments": 51,
+        "investmentCount": 34,
+        "assignmentCount": 74,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "revenue",
+      "ended": true,
+      "seconds": 4171,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "proprietary",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "rapid",
+        "storage3",
+        "workshop",
+        "scheduler",
+        "synthesis"
+      ],
+      "physical": 1729,
+      "module": 2,
+      "rack": 5,
+      "pulse": 8,
+      "decoder": 3,
+      "distance": 3,
+      "factories": 2,
+      "staff": 27,
+      "notebooks": 1,
+      "automation": 2,
+      "analysisShare": 1,
+      "workshops": 1,
+      "funds": 63883,
+      "designs": 1096,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 550
+        },
+        {
+          "chapter": 4,
+          "at": 1660
+        },
+        {
+          "chapter": 5,
+          "at": 3371
+        }
+      ],
+      "measurements": {
+        "policy": "revenue",
+        "seed": 424242,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 160,
+        "idle": 4011,
+        "calibrationDuty": 1165.3099971044965,
+        "serviceDuty": 2326.1231935225137,
+        "experimentDuty": 123.97448110436157,
+        "fullStore": 1366,
+        "designsWhileFull": 19595.20595508812,
+        "designsWhileNotFull": 10591.947863084986,
+        "grants": 8219.79999999981,
+        "revenue": 229322.3219483649,
+        "upkeep": 10028.863999999661,
+        "delivered": 27279.247494894837,
+        "automationWork": 5342,
+        "fabricated": 1704.1919999999734,
+        "integrated": 960.2880000000156,
+        "longestNoAction": 302,
+        "blocked": {
+          "funding": 69,
+          "effort": 1843,
+          "designs": 4025,
+          "capacity": 12,
+          "qualification": 446
+        },
+        "actions": {
+          "assignment": 70,
+          "engineering": 12,
+          "equipment": 21,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 3,
+          "service": 0.85,
+          "automation": 2,
+          "workshops": 1,
+          "dissemination": "proprietary",
+          "rollout": "rapid"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 3815,
+          "to": 4117,
+          "previous": "assignment/notebooks+1",
+          "next": "discovery/audit"
+        },
+        "priceChecks": 16,
+        "priceAdjustments": 5,
+        "analysisAdjustments": 0,
+        "investmentCount": 33,
+        "assignmentCount": 70,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "infrastructure",
+      "ended": true,
+      "seconds": 4212,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "open",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "rapid",
+        "storage3",
+        "workshop",
+        "scheduler"
+      ],
+      "physical": 3727,
+      "module": 3,
+      "rack": 4,
+      "pulse": 7,
+      "decoder": 3,
+      "distance": 5,
+      "factories": 1,
+      "staff": 30,
+      "notebooks": 2,
+      "automation": 4,
+      "analysisShare": 0.2,
+      "workshops": 3,
+      "funds": 3510,
+      "designs": 2437,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 483
+        },
+        {
+          "chapter": 4,
+          "at": 1407
+        },
+        {
+          "chapter": 5,
+          "at": 3066
+        }
+      ],
+      "measurements": {
+        "policy": "infrastructure",
+        "seed": 424242,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 162,
+        "idle": 4050,
+        "calibrationDuty": 1289.3868312559189,
+        "serviceDuty": 1858.2302284984057,
+        "experimentDuty": 122.89855660351226,
+        "fullStore": 1698,
+        "designsWhileFull": 23028.154141766907,
+        "designsWhileNotFull": 8134.772521593086,
+        "grants": 8448.119999999777,
+        "revenue": 159082.3637214158,
+        "upkeep": 14975.60800000002,
+        "delivered": 16943.519721819277,
+        "automationWork": 5900.600000000057,
+        "fabricated": 3646.2720000000195,
+        "integrated": 3471.888000000022,
+        "longestNoAction": 269,
+        "blocked": {
+          "funding": 2548,
+          "effort": 1656,
+          "designs": 3729,
+          "capacity": 12,
+          "qualification": 468
+        },
+        "actions": {
+          "assignment": 72,
+          "engineering": 11,
+          "equipment": 24,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 5,
+          "service": 0.7,
+          "automation": 4,
+          "workshops": 4,
+          "dissemination": "open",
+          "rollout": "rapid"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 3661,
+          "to": 3930,
+          "previous": "assignment/notebooks+1",
+          "next": "equipment/workshop"
+        },
+        "priceChecks": 13,
+        "priceAdjustments": 6,
+        "analysisAdjustments": 27,
+        "investmentCount": 35,
+        "assignmentCount": 72,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "cautious",
+      "ended": true,
+      "seconds": 4365,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "proprietary",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "verified",
+        "storage3",
+        "workshop",
+        "scheduler",
+        "synthesis"
+      ],
+      "physical": 1911,
+      "module": 3,
+      "rack": 4,
+      "pulse": 7,
+      "decoder": 3,
+      "distance": 5,
+      "factories": 1,
+      "staff": 27,
+      "notebooks": 1,
+      "automation": 2,
+      "analysisShare": 1,
+      "workshops": 2,
+      "funds": 64972,
+      "designs": 9705,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 550
+        },
+        {
+          "chapter": 4,
+          "at": 1616
+        },
+        {
+          "chapter": 5,
+          "at": 3379
+        }
+      ],
+      "measurements": {
+        "policy": "cautious",
+        "seed": 424242,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 149,
+        "idle": 4216,
+        "calibrationDuty": 984.9012399343954,
+        "serviceDuty": 1711.2682224427722,
+        "experimentDuty": 123.60199198778531,
+        "fullStore": 1564,
+        "designsWhileFull": 27393.666074802022,
+        "designsWhileNotFull": 10613.06002548186,
+        "grants": 8646.959999999952,
+        "revenue": 203713.72249390022,
+        "upkeep": 11278.600000000166,
+        "delivered": 15195.343281894082,
+        "automationWork": 5802,
+        "fabricated": 1830.5280000000375,
+        "integrated": 1654.2720000000304,
+        "longestNoAction": 302,
+        "blocked": {
+          "funding": 86,
+          "effort": 1843,
+          "designs": 4003,
+          "capacity": 12,
+          "qualification": 534
+        },
+        "actions": {
+          "assignment": 70,
+          "engineering": 12,
+          "equipment": 21,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 5,
+          "service": 0.55,
+          "automation": 2,
+          "workshops": 2,
+          "dissemination": "proprietary",
+          "rollout": "verified"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 3796,
+          "to": 4098,
+          "previous": "assignment/notebooks+1",
+          "next": "discovery/audit"
+        },
+        "priceChecks": 16,
+        "priceAdjustments": 6,
+        "analysisAdjustments": 0,
+        "investmentCount": 33,
+        "assignmentCount": 70,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "frontier",
+      "ended": true,
+      "seconds": 4925,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "open",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "storage3",
+        "rapid",
+        "workshop",
+        "scheduler",
+        "synthesis"
+      ],
+      "physical": 4422,
+      "module": 2,
+      "rack": 3,
+      "pulse": 8,
+      "decoder": 3,
+      "distance": 3,
+      "factories": 2,
+      "staff": 31,
+      "notebooks": 1,
+      "automation": 4,
+      "analysisShare": 0.2,
+      "workshops": 2,
+      "funds": 3530,
+      "designs": 24222,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 483
+        },
+        {
+          "chapter": 4,
+          "at": 1381
+        },
+        {
+          "chapter": 5,
+          "at": 2984
+        }
+      ],
+      "measurements": {
+        "policy": "frontier",
+        "seed": 4294967295,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 163,
+        "idle": 4762,
+        "calibrationDuty": 1485.2326425012432,
+        "serviceDuty": 1743.665086954706,
+        "experimentDuty": 124.36719939927211,
+        "fullStore": 2395,
+        "designsWhileFull": 46901.16331881312,
+        "designsWhileNotFull": 7841.316130466012,
+        "grants": 10015.880000000296,
+        "revenue": 171335.84246873987,
+        "upkeep": 17073.62106014688,
+        "delivered": 12621.139996082033,
+        "automationWork": 4356.000000000191,
+        "fabricated": 4397.674662591356,
+        "integrated": 4341.226662591355,
+        "longestNoAction": 445,
+        "blocked": {
+          "funding": 2586,
+          "effort": 1635,
+          "designs": 3741,
+          "capacity": 12,
+          "qualification": 414
+        },
+        "actions": {
+          "assignment": 74,
+          "engineering": 12,
+          "equipment": 22,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 3,
+          "service": 0.55,
+          "automation": 4,
+          "workshops": 2,
+          "dissemination": "open",
+          "rollout": "rapid"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 4408,
+          "to": 4853,
+          "previous": "assignment/staff+1",
+          "next": "equipment/pulse"
+        },
+        "priceChecks": 13,
+        "priceAdjustments": 5,
+        "analysisAdjustments": 51,
+        "investmentCount": 34,
+        "assignmentCount": 74,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "revenue",
+      "ended": true,
+      "seconds": 4171,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "proprietary",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "rapid",
+        "storage3",
+        "workshop",
+        "scheduler",
+        "synthesis"
+      ],
+      "physical": 1729,
+      "module": 2,
+      "rack": 5,
+      "pulse": 8,
+      "decoder": 3,
+      "distance": 3,
+      "factories": 2,
+      "staff": 27,
+      "notebooks": 1,
+      "automation": 2,
+      "analysisShare": 1,
+      "workshops": 1,
+      "funds": 63883,
+      "designs": 1096,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 550
+        },
+        {
+          "chapter": 4,
+          "at": 1660
+        },
+        {
+          "chapter": 5,
+          "at": 3371
+        }
+      ],
+      "measurements": {
+        "policy": "revenue",
+        "seed": 4294967295,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 160,
+        "idle": 4011,
+        "calibrationDuty": 1165.3099971044965,
+        "serviceDuty": 2326.1231935225137,
+        "experimentDuty": 123.97448110436157,
+        "fullStore": 1366,
+        "designsWhileFull": 19595.20595508812,
+        "designsWhileNotFull": 10591.947863084986,
+        "grants": 8219.79999999981,
+        "revenue": 229322.3219483649,
+        "upkeep": 10028.863999999661,
+        "delivered": 27279.247494894837,
+        "automationWork": 5342,
+        "fabricated": 1704.1919999999734,
+        "integrated": 960.2880000000156,
+        "longestNoAction": 302,
+        "blocked": {
+          "funding": 69,
+          "effort": 1843,
+          "designs": 4025,
+          "capacity": 12,
+          "qualification": 446
+        },
+        "actions": {
+          "assignment": 70,
+          "engineering": 12,
+          "equipment": 21,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 3,
+          "service": 0.85,
+          "automation": 2,
+          "workshops": 1,
+          "dissemination": "proprietary",
+          "rollout": "rapid"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 3815,
+          "to": 4117,
+          "previous": "assignment/notebooks+1",
+          "next": "discovery/audit"
+        },
+        "priceChecks": 16,
+        "priceAdjustments": 5,
+        "analysisAdjustments": 0,
+        "investmentCount": 33,
+        "assignmentCount": 70,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "infrastructure",
+      "ended": true,
+      "seconds": 4212,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "open",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "rapid",
+        "storage3",
+        "workshop",
+        "scheduler"
+      ],
+      "physical": 3727,
+      "module": 3,
+      "rack": 4,
+      "pulse": 7,
+      "decoder": 3,
+      "distance": 5,
+      "factories": 1,
+      "staff": 30,
+      "notebooks": 2,
+      "automation": 4,
+      "analysisShare": 0.2,
+      "workshops": 3,
+      "funds": 3510,
+      "designs": 2437,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 483
+        },
+        {
+          "chapter": 4,
+          "at": 1407
+        },
+        {
+          "chapter": 5,
+          "at": 3066
+        }
+      ],
+      "measurements": {
+        "policy": "infrastructure",
+        "seed": 4294967295,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 162,
+        "idle": 4050,
+        "calibrationDuty": 1289.3868312559189,
+        "serviceDuty": 1858.2302284984057,
+        "experimentDuty": 122.89855660351226,
+        "fullStore": 1698,
+        "designsWhileFull": 23028.154141766907,
+        "designsWhileNotFull": 8134.772521593086,
+        "grants": 8448.119999999777,
+        "revenue": 159082.3637214158,
+        "upkeep": 14975.60800000002,
+        "delivered": 16943.519721819277,
+        "automationWork": 5900.600000000057,
+        "fabricated": 3646.2720000000195,
+        "integrated": 3471.888000000022,
+        "longestNoAction": 269,
+        "blocked": {
+          "funding": 2548,
+          "effort": 1656,
+          "designs": 3729,
+          "capacity": 12,
+          "qualification": 468
+        },
+        "actions": {
+          "assignment": 72,
+          "engineering": 11,
+          "equipment": 24,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 5,
+          "service": 0.7,
+          "automation": 4,
+          "workshops": 4,
+          "dissemination": "open",
+          "rollout": "rapid"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 3661,
+          "to": 3930,
+          "previous": "assignment/notebooks+1",
+          "next": "equipment/workshop"
+        },
+        "priceChecks": 13,
+        "priceAdjustments": 6,
+        "analysisAdjustments": 27,
+        "investmentCount": 35,
+        "assignmentCount": 72,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    },
+    {
+      "strategy": "cautious",
+      "ended": true,
+      "seconds": 4365,
+      "discoveries": 27,
+      "engineering": [
+        "workflow",
+        "storage1",
+        "proprietary",
+        "storage2",
+        "pricing",
+        "autoCalibration",
+        "automation",
+        "verified",
+        "storage3",
+        "workshop",
+        "scheduler",
+        "synthesis"
+      ],
+      "physical": 1911,
+      "module": 3,
+      "rack": 4,
+      "pulse": 7,
+      "decoder": 3,
+      "distance": 5,
+      "factories": 1,
+      "staff": 27,
+      "notebooks": 1,
+      "automation": 2,
+      "analysisShare": 1,
+      "workshops": 2,
+      "funds": 64972,
+      "designs": 9705,
+      "completed": [
+        "dynamics"
+      ],
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 550
+        },
+        {
+          "chapter": 4,
+          "at": 1616
+        },
+        {
+          "chapter": 5,
+          "at": 3379
+        }
+      ],
+      "measurements": {
+        "policy": "cautious",
+        "seed": 4294967295,
+        "allDiscoveries": false,
+        "limit": 14400,
+        "busy": 149,
+        "idle": 4216,
+        "calibrationDuty": 984.9012399343954,
+        "serviceDuty": 1711.2682224427722,
+        "experimentDuty": 123.60199198778531,
+        "fullStore": 1564,
+        "designsWhileFull": 27393.666074802022,
+        "designsWhileNotFull": 10613.06002548186,
+        "grants": 8646.959999999952,
+        "revenue": 203713.72249390022,
+        "upkeep": 11278.600000000166,
+        "delivered": 15195.343281894082,
+        "automationWork": 5802,
+        "fabricated": 1830.5280000000375,
+        "integrated": 1654.2720000000304,
+        "longestNoAction": 302,
+        "blocked": {
+          "funding": 86,
+          "effort": 1843,
+          "designs": 4003,
+          "capacity": 12,
+          "qualification": 534
+        },
+        "actions": {
+          "assignment": 70,
+          "engineering": 12,
+          "equipment": 21,
+          "experiment": 10,
+          "calibration": 0,
+          "workload": 1
+        },
+        "aborts": 0,
+        "inputs": {
+          "distance": 5,
+          "service": 0.55,
+          "automation": 2,
+          "workshops": 2,
+          "dissemination": "proprietary",
+          "rollout": "verified"
+        },
+        "initialElapsed": 0,
+        "resumed": false,
+        "longestNoActionWindow": {
+          "from": 3796,
+          "to": 4098,
+          "previous": "assignment/notebooks+1",
+          "next": "discovery/audit"
+        },
+        "priceChecks": 16,
+        "priceAdjustments": 6,
+        "analysisAdjustments": 0,
+        "investmentCount": 33,
+        "assignmentCount": 70,
+        "milestoneCount": 37
+      },
+      "restoredSnapshots": 16
+    }
+  ]
+}

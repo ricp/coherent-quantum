@@ -1,0 +1,297 @@
+{
+  "game": "coherent",
+  "version": 2,
+  "state": {
+    "version": 2,
+    "notebooks": 2,
+    "designs": 34.71695654372104,
+    "engineering": [
+      "workflow",
+      "storage1"
+    ],
+    "price": 8,
+    "autoPrice": false,
+    "autoCalibration": false,
+    "automation": 0,
+    "analysisShare": 1,
+    "workshops": 0,
+    "fabrication": 0.5,
+    "fabricated": 0,
+    "integrated": 0,
+    "started": true,
+    "paused": false,
+    "elapsed": 194,
+    "funds": 1875.5200000000023,
+    "effort": 960,
+    "done": [
+      "feynman",
+      "deutsch",
+      "divincenzo",
+      "nakamura",
+      "ramsey",
+      "echo",
+      "readout",
+      "rb",
+      "coupled"
+    ],
+    "qualified": [
+      "signal",
+      "ramsey",
+      "echo",
+      "readout",
+      "benchmark",
+      "circuit"
+    ],
+    "module": 1,
+    "rack": 1,
+    "staff": 14,
+    "pulse": 0,
+    "decoder": 0,
+    "drift": 0.05000325879911646,
+    "distance": 3,
+    "factories": 0,
+    "calibration": 0.2,
+    "service": 0,
+    "theta": 20,
+    "shots": 1,
+    "mitigate": false,
+    "credits": 0,
+    "reputation": 6,
+    "seed": 3230122805,
+    "job": null,
+    "result": {
+      "id": "circuit",
+      "shots": 2048,
+      "bins": [
+        948,
+        89,
+        90,
+        921
+      ],
+      "message": "Known Bell-state preparation sampled. Entanglement alone proves no advantage."
+    },
+    "tutorial": null,
+    "completed": [],
+    "ended": false,
+    "volume": 0.2,
+    "sound": false,
+    "theme": "dark",
+    "log": [
+      {
+        "time": 5,
+        "message": "First signal. One qubit. An entire room to keep it cold.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 5,
+        "message": "A world to simulate. Give the first experiment a purpose.",
+        "kind": "discovery"
+      },
+      {
+        "time": 6,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 6,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 11,
+        "message": "A universal idea. Open the circuit notebook.",
+        "kind": "discovery"
+      },
+      {
+        "time": 28,
+        "message": "The physical checklist. Make hardware readiness part of the plan.",
+        "kind": "discovery"
+      },
+      {
+        "time": 56,
+        "message": "Coherent control. Enter the control room.",
+        "kind": "discovery"
+      },
+      {
+        "time": 56,
+        "message": "The laboratory learns to listen.",
+        "kind": "chapter"
+      },
+      {
+        "time": 57,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 63,
+        "message": "A fringe emerges from the noise.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 63,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 63,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 79,
+        "message": "A laboratory that takes notes. Double staff research output and improve classical design organization by 25%. Game coefficients; no quantum speedup is claimed.",
+        "kind": "engineering"
+      },
+      {
+        "time": 89,
+        "message": "A fringe in the noise. Expose drift and the Ramsey T₂* estimate.",
+        "kind": "discovery"
+      },
+      {
+        "time": 96,
+        "message": "The echo is clearer. It is still not a way to undo every error.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 96,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 96,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 102,
+        "message": "A measurement is now a little less opinionated.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 102,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 102,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 103,
+        "message": "An echo, not a miracle. Separate echo T₂ from Ramsey T₂*.",
+        "kind": "discovery"
+      },
+      {
+        "time": 115,
+        "message": "Read the result carefully. Reduce the scenario’s residual readout bias.",
+        "kind": "discovery"
+      },
+      {
+        "time": 116,
+        "message": "Released one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 116,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 124,
+        "message": "The control pulses have acquired error bars.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 124,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 124,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 134,
+        "message": "Room for the next idea. Give each notebook four times its notes capacity. More storage delays the full-store design bonus.",
+        "kind": "engineering"
+      },
+      {
+        "time": 135,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 135,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 135,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 135,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 144,
+        "message": "Characterize the gates. Unlock pulse engineering. Manual calibration still requires apparatus time.",
+        "kind": "discovery"
+      },
+      {
+        "time": 145,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 156,
+        "message": "Install a larger chip. Installed preset 9 physical qubits; commissioned construction is additional.",
+        "kind": "engineering"
+      },
+      {
+        "time": 159,
+        "message": "Control & cooling rack. Support preset 9 physical qubits; adds control/readout lanes.",
+        "kind": "engineering"
+      },
+      {
+        "time": 165,
+        "message": "The second conversation. Connect calibrated qubits. Enter the noisy era.",
+        "kind": "discovery"
+      },
+      {
+        "time": 165,
+        "message": "One qubit becomes a machine.",
+        "kind": "chapter"
+      },
+      {
+        "time": 166,
+        "message": "Released one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 166,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 176,
+        "message": "The second qubit has something to say to the first.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 176,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 176,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      }
+    ]
+  }
+}

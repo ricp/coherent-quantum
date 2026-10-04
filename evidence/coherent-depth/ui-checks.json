@@ -1,0 +1,367 @@
+{
+  "kind": "actual UI checks using legally generated candidate fixtures; rates are plans while paused",
+  "checks": [
+    {
+      "label": "last trust researcher assignment retains useful focus",
+      "observed": {
+        "width": 1280,
+        "scroll": 1280,
+        "theme": "dark",
+        "focus": "Release one researcher",
+        "bank": "15,360 / 15,360",
+        "service": "4.33",
+        "analysis": "0%"
+      }
+    },
+    {
+      "label": "desktop light workshop",
+      "observed": {
+        "width": 1280,
+        "scroll": 1280,
+        "theme": "light",
+        "focus": null,
+        "bank": "15,360 / 15,360",
+        "service": "4.33",
+        "analysis": "0%"
+      }
+    },
+    {
+      "label": "mobile 375 research",
+      "observed": {
+        "width": 375,
+        "scroll": 375,
+        "theme": "light",
+        "focus": null,
+        "bank": "15,360 / 15,360",
+        "service": "4.33",
+        "analysis": "0%"
+      }
+    },
+    {
+      "label": "mobile 375 service",
+      "observed": {
+        "width": 375,
+        "scroll": 375,
+        "theme": "light",
+        "focus": null,
+        "bank": "15,360 / 15,360",
+        "service": "4.33",
+        "analysis": "0%"
+      }
+    },
+    {
+      "label": "mobile 375 workshop",
+      "observed": {
+        "width": 375,
+        "scroll": 375,
+        "theme": "light",
+        "focus": null,
+        "bank": "15,360 / 15,360",
+        "service": "4.33",
+        "analysis": "0%"
+      }
+    },
+    {
+      "label": "mobile 320 service",
+      "observed": {
+        "width": 320,
+        "scroll": 320,
+        "theme": "light",
+        "focus": null,
+        "bank": "15,360 / 15,360",
+        "service": "4.33",
+        "analysis": "0%"
+      }
+    },
+    {
+      "label": "manual price changes through native number field",
+      "observed": {
+        "width": 320,
+        "scroll": 320,
+        "theme": "dark",
+        "focus": "auto-price",
+        "bank": "15,360 / 15,360",
+        "service": "1.36",
+        "analysis": "100%",
+        "requested": "2 running / 2 requested / 2 owned analysis-station equivalents. Automation uses capacity first; these are classical bench batches.",
+        "copy": "Delivered batches are limited by both customer demand and spare controller capacity.",
+        "price": "20",
+        "autoPrice": "false"
+      }
+    },
+    {
+      "label": "manual calibration duty changes through keyboard",
+      "observed": {
+        "width": 320,
+        "scroll": 320,
+        "theme": "dark",
+        "focus": "calibration",
+        "bank": "15,360 / 15,360",
+        "service": "1.36",
+        "analysis": "100%",
+        "requested": "2 running / 2 requested / 2 owned analysis-station equivalents. Automation uses capacity first; these are classical bench batches.",
+        "copy": "Delivered batches are limited by both customer demand and spare controller capacity.",
+        "calibration": "0%",
+        "forecast": "Drift is rising. Reserve more calibration duty or reset drift manually."
+      }
+    },
+    {
+      "label": "atomic logical job reserves service and bench automation",
+      "observed": {
+        "width": 1280,
+        "scroll": 1280,
+        "theme": "dark",
+        "focus": "pause-toggle",
+        "bank": "7,680 / 7,680",
+        "service": "0",
+        "analysis": "100%",
+        "requested": "0 running / 2 requested / 2 owned analysis-station equivalents. Automation uses capacity first; these are classical bench batches.",
+        "copy": "The protected-memory or logical job reserves all post-calibration apparatus time. Customer contracts and bench automation pause until it finishes.",
+        "serviceDisabled": true,
+        "price": "200"
+      }
+    },
+    {
+      "label": "reduced motion honored",
+      "observed": {
+        "width": 1280,
+        "scroll": 1280,
+        "theme": "dark",
+        "focus": "pause-toggle",
+        "bank": "7,680 / 7,680",
+        "service": "0",
+        "analysis": "100%",
+        "requested": "0 running / 2 requested / 2 owned analysis-station equivalents. Automation uses capacity first; these are classical bench batches.",
+        "copy": "The protected-memory or logical job reserves all post-calibration apparatus time. Customer contracts and bench automation pause until it finishes.",
+        "reducedMotion": true,
+        "cssTransition": "0s"
+      }
+    },
+    {
+      "label": "engineering archive distinct from academic source archive",
+      "observed": {
+        "width": 375,
+        "scroll": 375,
+        "theme": "dark",
+        "focus": null,
+        "bank": "7,680 / 7,680",
+        "service": "0",
+        "analysis": "100%",
+        "requested": "0 running / 2 requested / 2 owned analysis-station equivalents. Automation uses capacity first; these are classical bench batches.",
+        "copy": "The protected-memory or logical job reserves all post-calibration apparatus time. Customer contracts and bench automation pause until it finishes.",
+        "engineeringCards": 14
+      }
+    },
+    {
+      "label": "chapter VI next action prioritizes main discovery and resource allocation over optional recipes",
+      "observed": {
+        "first": {
+          "chapter": "Chapter VI / Useful work",
+          "next": "Next: “Let the spins evolve”. Need 2,391 more engineering designs. Fill the effort bank for 4× generation. Give classical analysis stations controller duty; balance their research against paying customers. Spending research effort removes the full-bank bonus.",
+          "button": "Plan engineering designs"
+        },
+        "target": {
+          "top": 0.15625,
+          "focus": "Release one researcher",
+          "next": "Next: “Let the spins evolve”. Need 2,391 more engineering designs. Fill the effort bank for 4× generation. Give classical analysis stations controller duty; balance their research against paying customers. Spending research effort removes the full-bank bonus.",
+          "scrollWidth": 1280
+        }
+      }
+    },
+    {
+      "label": "v1 storage is preserved verbatim, export is exact, v2 saves separately; sentinel tests storage only",
+      "observed": {
+        "v1": {
+          "version": 1,
+          "fixture": "preserve-earlier-run"
+        },
+        "v2Version": 2,
+        "notice": true,
+        "unstarted": "Begin with one qubit"
+      }
+    },
+    {
+      "label": "fresh opening desktop-light",
+      "observed": {
+        "width": 1280,
+        "scroll": 1280
+      }
+    },
+    {
+      "label": "fresh opening mobile-light",
+      "observed": {
+        "width": 375,
+        "scroll": 375
+      }
+    },
+    {
+      "label": "fresh opening 320-light",
+      "observed": {
+        "width": 320,
+        "scroll": 320
+      }
+    },
+    {
+      "label": "actual paper purchase spends banked effort and removes fourfold design bonus",
+      "observed": {
+        "before": {
+          "bank": "7,680 / 7,680",
+          "bonus": "4× designs"
+        },
+        "after": {
+          "bank": "1,180 / 7,680",
+          "bonus": "1× designs",
+          "chapter": "Chapter V / Logical machine"
+        }
+      }
+    },
+    {
+      "label": "invalid old-format import leaves current paused laboratory intact",
+      "observed": {
+        "bank": "1,180 / 7,680",
+        "chapter": "Chapter V / Logical machine",
+        "feedback": "Import failed: This is a short-campaign baseline save. It remains preserved; the deeper campaign begins in a new laboratory. Your current laboratory is unchanged."
+      }
+    },
+    {
+      "label": "quantum quality hold stops customer delivery while classical analysis still has capacity",
+      "observed": {
+        "delivery": "0",
+        "automation": "1 running / 1 requested / 1 owned analysis-station equivalents. Automation uses capacity first; these are classical bench batches.",
+        "reason": "Customer quality hold: a qualified known-preparation circuit, effective noise ≤0.4%, and drift ≤0.25 are required. Classical analysis can still use controller capacity.",
+        "drift": "Drift 0.378"
+      }
+    },
+    {
+      "label": "manual calibration atomically reserves 100 percent apparatus time and pauses service and bench work",
+      "observed": {
+        "job": "Calibrating",
+        "calibration": "100%",
+        "delivery": "0",
+        "automation": "0 running / 1 requested / 1 owned analysis-station equivalents. Automation uses capacity first; these are classical bench batches.",
+        "reason": "Manual calibration reserves the entire apparatus. Customer contracts and bench automation pause until it finishes.",
+        "sliderDisabled": true
+      }
+    },
+    {
+      "label": "real visible manual calibration completes and restores qualified customer delivery",
+      "observed": {
+        "delivery": "4.78",
+        "automation": "1 running / 1 requested / 1 owned analysis-station equivalents. Automation uses capacity first; these are classical bench batches.",
+        "drift": "Drift 0.005",
+        "result": "Calibration complete. Drift is reduced; it is not eliminated forever."
+      }
+    },
+    {
+      "label": "legal imported ending desktop",
+      "observed": {
+        "width": 1280,
+        "scroll": 1280,
+        "ending": true,
+        "dedication": "For Keir, who turned one neuron into a world.Here is one qubit in return."
+      }
+    },
+    {
+      "label": "legal imported ending mobile",
+      "observed": {
+        "width": 375,
+        "scroll": 375,
+        "ending": true,
+        "dedication": "For Keir, who turned one neuron into a world.Here is one qubit in return."
+      }
+    }
+  ],
+  "errors": "",
+  "sourceScope": [
+    "app.js",
+    "index.html",
+    "style.css"
+  ],
+  "browserSession": "coherent-depth-ui",
+  "limits": [
+    "Fixture observations establish rendering and control behavior, not human campaign pacing or fun.",
+    "Browser states were imported through the native save input from legally generated candidate saves; coefficient tuning may continue.",
+    "The v1 sentinel tests byte-for-byte storage preservation only and is not a campaign save."
+  ],
+  "finalVisualMatrix": {
+    "model": "current source and regenerated legal frontier-workshop candidate save, paused planned rates",
+    "opening": [
+      {
+        "width": 1280,
+        "scroll": 1280,
+        "scrollY": 0,
+        "theme": "dark",
+        "firstAction": "Begin with one qubit"
+      },
+      {
+        "width": 375,
+        "scroll": 375,
+        "scrollY": 0,
+        "theme": "dark",
+        "firstAction": "Begin with one qubit"
+      },
+      {
+        "width": 320,
+        "scroll": 320,
+        "scrollY": 0,
+        "theme": "dark",
+        "firstAction": "Begin with one qubit"
+      },
+      {
+        "width": 1280,
+        "scroll": 1280,
+        "scrollY": 0,
+        "theme": "light",
+        "firstAction": "Begin with one qubit"
+      },
+      {
+        "width": 375,
+        "scroll": 375,
+        "scrollY": 0,
+        "theme": "light",
+        "firstAction": "Begin with one qubit"
+      },
+      {
+        "width": 320,
+        "scroll": 320,
+        "scrollY": 0,
+        "theme": "light",
+        "firstAction": "Begin with one qubit"
+      }
+    ],
+    "economy": [
+      {
+        "width": 1280,
+        "scroll": 1280,
+        "theme": "dark"
+      },
+      {
+        "width": 375,
+        "scroll": 375,
+        "theme": "dark"
+      },
+      {
+        "width": 320,
+        "scroll": 320,
+        "theme": "dark"
+      },
+      {
+        "width": 1280,
+        "scroll": 1280,
+        "theme": "light"
+      },
+      {
+        "width": 375,
+        "scroll": 375,
+        "theme": "light"
+      },
+      {
+        "width": 320,
+        "scroll": 320,
+        "theme": "light"
+      }
+    ],
+    "errors": ""
+  },
+  "sessionClosed": true
+}

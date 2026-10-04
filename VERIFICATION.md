@@ -1,5 +1,7 @@
 # First playable baseline — 4 October 2026
 
+The current deeper revision is documented separately in [DEPTH-VERIFICATION.md](DEPTH-VERIFICATION.md). The results below describe the preserved short baseline.
+
 The first implementation is playable, private, and saved locally. It contains six chapters, 30 discoveries, 36 primary sources, original canvas instruments, optional original tones, validated saves, two scientific resource scenarios, two toy certificates, and Keir's gift ending. It uses six static runtime files and bundled fonts, without runtime dependencies or a build step.
 
 **Player feedback supersedes the initial pacing assessment.** The user finished in 15:33 laboratory time with 769 qubits and 27/30 discoveries; three discoveries remained optional. Their Singular Value run took 1h33. They found this campaign too short and simple. The implementation below is the verified baseline for a deeper revision, not evidence that the current game meets their desired difficulty or length.

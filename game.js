@@ -53,7 +53,7 @@
     const automationRequested=s.automation*s.analysisShare;
     const automationRunning=Math.min(automationRequested,sharedCapacity),customerCapacity=Math.max(0,sharedCapacity-automationRunning);
     const fairPrice=3*(1+.2*s.reputation)*(hasEngineering(s,'open')?.7:hasEngineering(s,'proprietary')?1.5:1);
-    const demandAtFair=Math.min(60,(1+.4*s.reputation)*(hasEngineering(s,'open')?1.5:1));
+    const demandAtFair=Math.min(60,(1+.4*s.reputation)*(hasEngineering(s,'open')?2:1));
     const matchingPrice=customerCapacity>0?clamp(fairPrice*(demandAtFair/customerCapacity)**(1/1.4),.5,200):200;
     const price=s.autoPrice?matchingPrice:s.price,demand=Math.min(60,demandAtFair*(fairPrice/price)**1.4);
     const pEff=.012*2**(-s.pulse)*(has(s,'readout')?.85:1)*(has(s,'echo')?.9:1)*(1+s.drift);
@@ -86,7 +86,7 @@
   }
   function upgradeInfo(s,id) {
     const m=metrics(s),entries={
-      hardware:{label:'Install a larger chip',cost:HARDWARE_COST[s.module],designs:16*2.2**s.module,available:has(s,'rb'),max:s.module>=6,detail:'Installed preset '+POOLS[Math.min(6,s.module+1)]+' physical qubits; commissioned construction is additional'},
+      hardware:{label:'Install a larger chip',cost:HARDWARE_COST[s.module],designs:16*2.2**s.module,available:has(s,'rb'),max:s.module>=6||m.installed>=8193,detail:'Installed preset '+POOLS[Math.min(6,s.module+1)]+' physical qubits; commissioned construction is additional'},
       rack:{label:'Control & cooling rack',cost:RACK_COST[s.rack],designs:12*2.2**s.rack,available:has(s,'divincenzo'),max:s.rack>=6,detail:'Support preset '+POOLS[Math.min(6,s.rack+1)]+' physical qubits; adds control/readout lanes'},
       staff:{label:'Assign a research colleague',cost:0,designs:0,available:has(s,'feynman'),max:s.staff>=MAX_STAFF||m.freeTrust<1,detail:'Uses one trust assignment; release it to make notebook space'},
       pulse:{label:'Refine the control pulses',cost:140*2**s.pulse,designs:20*1.8**s.pulse,available:has(s,'rb'),max:s.pulse>=8,detail:'Lower the selected stochastic error scenario'},
@@ -149,7 +149,7 @@
     const available=project.requires.every(key=>has(s,key));
     const reasons=[];
     if(!available)reasons.push('Complete the prerequisite discoveries');
-    if(project.qualification&&!qualificationNow(s,project.qualification))reasons.push(project.qualification==='coupled'?'Support at least two active physical qubits':'Qualify '+(C.experiments.find(e=>e.id===project.qualification)?.name.toLowerCase()||project.qualification));
+    if(project.qualification&&!qualificationNow(s,project.qualification))reasons.push(project.qualification==='coupled'?'Support at least two active physical qubits':'Required evidence: '+(C.experiments.find(e=>e.id===project.qualification)?.name||project.qualification));
     if(s.funds<project.cost.funds)reasons.push('Need '+Math.ceil(project.cost.funds-s.funds)+' more funding');
     if(s.effort<project.cost.effort)reasons.push('Need '+Math.ceil(project.cost.effort-s.effort)+' more research effort');
     if(s.designs<(project.cost.designs||0))reasons.push('Need '+Math.ceil(project.cost.designs-s.designs)+' engineering designs');

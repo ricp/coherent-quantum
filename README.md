@@ -37,14 +37,14 @@ Read [MODEL.md](MODEL.md) for equations and assumptions, [PAPERS.md](PAPERS.md) 
 ## Verify
 
 ```sh
-node --test tests/game.test.cjs tests/economy.test.cjs
-node tests/playthrough.cjs --write-evidence
+node --test tests/game.test.cjs tests/economy.test.cjs tests/depth-save.test.cjs
+node tests/playthrough.cjs --matrix --write-evidence
 node tests/contrast.cjs
 ```
 
 The deterministic engine tests cover intent: real costs and prerequisites, bounded storage and reversible trust assignments, the full-bank design tradeoff, delivered revenue, automation opportunity costs, conservation of apparatus duty, construction support, scientific distinctions, footprint/decoder tradeoffs, degraded-workload recovery, and malformed imports. Legal adaptive campaign policies check feasibility and save roundtrips. They do not establish human enjoyment or a measured human play time.
 
-`evidence/coherent/` and [VERIFICATION.md](VERIFICATION.md) preserve the first playable baseline. The user's first run finished in 15:33 laboratory time with 27/30 discoveries, versus 1h33 for Singular Value. The deeper campaign is being tested on `feature/campaign-depth`, with new evidence under `evidence/coherent-depth/`. [CAMPAIGN-DEPTH.md](CAMPAIGN-DEPTH.md) records the strategic adaptation and independent AI review criteria. The provisional target is about 90 minutes for an active first human play; that target remains unverified by a human.
+`evidence/coherent/` and [VERIFICATION.md](VERIFICATION.md) preserve the short baseline. The user's first run finished in 15:33 laboratory time with 27/30 discoveries, versus 1h33 for Singular Value. The deeper revision on `feature/campaign-depth` has independent AI game-design, quantum, and code-review acceptance. Its 20 legal matrix runs finish in 69–82 minutes; the fastest tested comparison takes 62:10. These are automated main-ending routes, not measured human playtimes. Long action gaps still reach 7:25, and explicit experiment jobs occupy only a small share of the run. [DEPTH-VERIFICATION.md](DEPTH-VERIFICATION.md) records the current checks, comparisons, recovery evidence, and limitations; [CAMPAIGN-DEPTH.md](CAMPAIGN-DEPTH.md) explains the adaptation. The provisional 90-minute first-human-play target and enjoyment remain unverified.
 
 ## Small by design
 

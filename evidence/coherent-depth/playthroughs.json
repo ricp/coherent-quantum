@@ -1,0 +1,4081 @@
+[
+  {
+    "strategy": "frontier",
+    "ended": true,
+    "seconds": 4925,
+    "discoveries": 27,
+    "engineering": [
+      "workflow",
+      "storage1",
+      "open",
+      "storage2",
+      "pricing",
+      "autoCalibration",
+      "automation",
+      "storage3",
+      "rapid",
+      "workshop",
+      "scheduler",
+      "synthesis"
+    ],
+    "physical": 4422,
+    "module": 2,
+    "rack": 3,
+    "pulse": 8,
+    "decoder": 3,
+    "distance": 3,
+    "factories": 2,
+    "staff": 31,
+    "notebooks": 1,
+    "automation": 4,
+    "analysisShare": 0.2,
+    "workshops": 2,
+    "funds": 3530,
+    "designs": 24222,
+    "completed": [
+      "dynamics"
+    ],
+    "chapters": [
+      {
+        "chapter": 0,
+        "at": 0
+      },
+      {
+        "chapter": 1,
+        "at": 57
+      },
+      {
+        "chapter": 2,
+        "at": 166
+      },
+      {
+        "chapter": 3,
+        "at": 483
+      },
+      {
+        "chapter": 4,
+        "at": 1381
+      },
+      {
+        "chapter": 5,
+        "at": 2984
+      }
+    ],
+    "measurements": {
+      "policy": "frontier",
+      "seed": 424242,
+      "allDiscoveries": false,
+      "limit": 14400,
+      "busy": 163,
+      "idle": 4762,
+      "calibrationDuty": 1485.2326425012432,
+      "serviceDuty": 1743.665086954706,
+      "experimentDuty": 124.36719939927211,
+      "fullStore": 2395,
+      "designsWhileFull": 46901.16331881312,
+      "designsWhileNotFull": 7841.316130466012,
+      "grants": 10015.880000000296,
+      "revenue": 171335.84246873987,
+      "upkeep": 17073.62106014688,
+      "delivered": 12621.139996082033,
+      "automationWork": 4356.000000000191,
+      "fabricated": 4397.674662591356,
+      "integrated": 4341.226662591355,
+      "longestNoAction": 445,
+      "blocked": {
+        "funding": 2586,
+        "effort": 1635,
+        "designs": 3741,
+        "capacity": 12,
+        "qualification": 414
+      },
+      "actions": {
+        "assignment": 74,
+        "engineering": 12,
+        "equipment": 22,
+        "experiment": 10,
+        "calibration": 0,
+        "workload": 1
+      },
+      "investments": [
+        {
+          "at": 79,
+          "kind": "engineering",
+          "id": "workflow",
+          "funds": 160,
+          "effort": 90,
+          "designs": 12
+        },
+        {
+          "at": 134,
+          "kind": "engineering",
+          "id": "storage1",
+          "funds": 90,
+          "effort": 80,
+          "designs": 18
+        },
+        {
+          "at": 156,
+          "kind": "equipment",
+          "id": "hardware",
+          "funds": 120,
+          "effort": 0,
+          "designs": 16
+        },
+        {
+          "at": 159,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 90,
+          "effort": 0,
+          "designs": 12
+        },
+        {
+          "at": 212,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 140,
+          "effort": 0,
+          "designs": 20
+        },
+        {
+          "at": 235,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 350,
+          "effort": 0,
+          "designs": 27
+        },
+        {
+          "at": 243,
+          "kind": "equipment",
+          "id": "hardware",
+          "funds": 450,
+          "effort": 0,
+          "designs": 36
+        },
+        {
+          "at": 252,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 280,
+          "effort": 0,
+          "designs": 36
+        },
+        {
+          "at": 266,
+          "kind": "engineering",
+          "id": "open",
+          "funds": 300,
+          "effort": 250,
+          "designs": 60
+        },
+        {
+          "at": 430,
+          "kind": "engineering",
+          "id": "storage2",
+          "funds": 600,
+          "effort": 700,
+          "designs": 150
+        },
+        {
+          "at": 514,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 560,
+          "effort": 0,
+          "designs": 65
+        },
+        {
+          "at": 539,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 1120,
+          "effort": 0,
+          "designs": 117
+        },
+        {
+          "at": 562,
+          "kind": "engineering",
+          "id": "pricing",
+          "funds": 900,
+          "effort": 900,
+          "designs": 180
+        },
+        {
+          "at": 832,
+          "kind": "engineering",
+          "id": "autoCalibration",
+          "funds": 1800,
+          "effort": 1800,
+          "designs": 350
+        },
+        {
+          "at": 1039,
+          "kind": "engineering",
+          "id": "automation",
+          "funds": 2400,
+          "effort": 2400,
+          "designs": 450
+        },
+        {
+          "at": 1070,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 1400,
+          "effort": 0,
+          "designs": 59
+        },
+        {
+          "at": 1106,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 1800,
+          "effort": 0,
+          "designs": 180
+        },
+        {
+          "at": 1138,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 3060,
+          "effort": 0,
+          "designs": 288
+        },
+        {
+          "at": 1316,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 5202,
+          "effort": 0,
+          "designs": 461
+        },
+        {
+          "at": 1394,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 180,
+          "effort": 0,
+          "designs": 30
+        },
+        {
+          "at": 1414,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 360,
+          "effort": 0,
+          "designs": 60
+        },
+        {
+          "at": 1483,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 2240,
+          "effort": 0,
+          "designs": 210
+        },
+        {
+          "at": 1581,
+          "kind": "engineering",
+          "id": "storage3",
+          "funds": 4000,
+          "effort": 4200,
+          "designs": 650
+        },
+        {
+          "at": 1732,
+          "kind": "engineering",
+          "id": "rapid",
+          "funds": 4000,
+          "effort": 4000,
+          "designs": 600
+        },
+        {
+          "at": 2002,
+          "kind": "engineering",
+          "id": "workshop",
+          "funds": 6000,
+          "effort": 5500,
+          "designs": 900
+        },
+        {
+          "at": 2104,
+          "kind": "equipment",
+          "id": "workshop",
+          "funds": 4000,
+          "effort": 0,
+          "designs": 400
+        },
+        {
+          "at": 2376,
+          "kind": "equipment",
+          "id": "workshop",
+          "funds": 6600,
+          "effort": 0,
+          "designs": 640
+        },
+        {
+          "at": 2666,
+          "kind": "engineering",
+          "id": "scheduler",
+          "funds": 7000,
+          "effort": 6500,
+          "designs": 1200
+        },
+        {
+          "at": 3007,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 720,
+          "effort": 0,
+          "designs": 120
+        },
+        {
+          "at": 3089,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 4480,
+          "effort": 0,
+          "designs": 378
+        },
+        {
+          "at": 3411,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 8844,
+          "effort": 0,
+          "designs": 738
+        },
+        {
+          "at": 3865,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 8960,
+          "effort": 0,
+          "designs": 681
+        },
+        {
+          "at": 4407,
+          "kind": "engineering",
+          "id": "synthesis",
+          "funds": 12000,
+          "effort": 10000,
+          "designs": 1800
+        },
+        {
+          "at": 4853,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 17920,
+          "effort": 0,
+          "designs": 1225
+        }
+      ],
+      "milestones": [
+        {
+          "at": 5,
+          "id": "signal",
+          "kind": "qualification",
+          "chapter": 0
+        },
+        {
+          "at": 5,
+          "id": "feynman",
+          "chapter": 0
+        },
+        {
+          "at": 11,
+          "id": "deutsch",
+          "chapter": 0
+        },
+        {
+          "at": 28,
+          "id": "divincenzo",
+          "chapter": 0
+        },
+        {
+          "at": 56,
+          "id": "nakamura",
+          "chapter": 1
+        },
+        {
+          "at": 63,
+          "id": "ramsey",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 89,
+          "id": "ramsey",
+          "chapter": 1
+        },
+        {
+          "at": 96,
+          "id": "echo",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 102,
+          "id": "readout",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 103,
+          "id": "echo",
+          "chapter": 1
+        },
+        {
+          "at": 115,
+          "id": "readout",
+          "chapter": 1
+        },
+        {
+          "at": 124,
+          "id": "benchmark",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 144,
+          "id": "rb",
+          "chapter": 1
+        },
+        {
+          "at": 165,
+          "id": "coupled",
+          "chapter": 2
+        },
+        {
+          "at": 176,
+          "id": "circuit",
+          "kind": "qualification",
+          "chapter": 2
+        },
+        {
+          "at": 197,
+          "id": "nisq",
+          "chapter": 2
+        },
+        {
+          "at": 294,
+          "id": "vqe",
+          "chapter": 2
+        },
+        {
+          "at": 322,
+          "id": "ansatz",
+          "chapter": 2
+        },
+        {
+          "at": 369,
+          "id": "mitigation",
+          "chapter": 2
+        },
+        {
+          "at": 387,
+          "id": "vqe",
+          "kind": "qualification",
+          "chapter": 2
+        },
+        {
+          "at": 482,
+          "id": "classical",
+          "chapter": 3
+        },
+        {
+          "at": 606,
+          "id": "shor",
+          "chapter": 3
+        },
+        {
+          "at": 728,
+          "id": "stabilizer",
+          "chapter": 3
+        },
+        {
+          "at": 911,
+          "id": "surface",
+          "chapter": 3
+        },
+        {
+          "at": 1185,
+          "id": "decoder",
+          "chapter": 3
+        },
+        {
+          "at": 1198,
+          "id": "memory",
+          "kind": "qualification",
+          "chapter": 3
+        },
+        {
+          "at": 1380,
+          "id": "threshold",
+          "chapter": 4
+        },
+        {
+          "at": 1857,
+          "id": "surgery",
+          "chapter": 4
+        },
+        {
+          "at": 2166,
+          "id": "gates",
+          "kind": "qualification",
+          "chapter": 4
+        },
+        {
+          "at": 2199,
+          "id": "gates",
+          "chapter": 4
+        },
+        {
+          "at": 2489,
+          "id": "ancilla",
+          "chapter": 4
+        },
+        {
+          "at": 2509,
+          "id": "factory",
+          "kind": "qualification",
+          "chapter": 4
+        },
+        {
+          "at": 2780,
+          "id": "factories",
+          "chapter": 4
+        },
+        {
+          "at": 2983,
+          "id": "accounting",
+          "chapter": 5
+        },
+        {
+          "at": 3223,
+          "id": "lloyd",
+          "chapter": 5
+        },
+        {
+          "at": 3628,
+          "id": "hamiltonian",
+          "chapter": 5
+        },
+        {
+          "at": 4110,
+          "id": "audit",
+          "chapter": 5
+        }
+      ],
+      "assignments": [
+        {
+          "at": 6,
+          "id": "staff+1",
+          "staff": 2,
+          "notebooks": 1
+        },
+        {
+          "at": 6,
+          "id": "staff+1",
+          "staff": 3,
+          "notebooks": 1
+        },
+        {
+          "at": 57,
+          "id": "notebooks+1",
+          "staff": 3,
+          "notebooks": 2
+        },
+        {
+          "at": 63,
+          "id": "staff+1",
+          "staff": 4,
+          "notebooks": 2
+        },
+        {
+          "at": 63,
+          "id": "staff+1",
+          "staff": 5,
+          "notebooks": 2
+        },
+        {
+          "at": 96,
+          "id": "staff+1",
+          "staff": 6,
+          "notebooks": 2
+        },
+        {
+          "at": 96,
+          "id": "staff+1",
+          "staff": 7,
+          "notebooks": 2
+        },
+        {
+          "at": 102,
+          "id": "staff+1",
+          "staff": 8,
+          "notebooks": 2
+        },
+        {
+          "at": 102,
+          "id": "staff+1",
+          "staff": 9,
+          "notebooks": 2
+        },
+        {
+          "at": 116,
+          "id": "staff−1",
+          "staff": 8,
+          "notebooks": 2
+        },
+        {
+          "at": 116,
+          "id": "notebooks+1",
+          "staff": 8,
+          "notebooks": 3
+        },
+        {
+          "at": 124,
+          "id": "staff+1",
+          "staff": 9,
+          "notebooks": 3
+        },
+        {
+          "at": 124,
+          "id": "staff+1",
+          "staff": 10,
+          "notebooks": 3
+        },
+        {
+          "at": 135,
+          "id": "notebooks−1",
+          "staff": 10,
+          "notebooks": 2
+        },
+        {
+          "at": 135,
+          "id": "notebooks−1",
+          "staff": 10,
+          "notebooks": 1
+        },
+        {
+          "at": 135,
+          "id": "staff+1",
+          "staff": 11,
+          "notebooks": 1
+        },
+        {
+          "at": 135,
+          "id": "staff+1",
+          "staff": 12,
+          "notebooks": 1
+        },
+        {
+          "at": 145,
+          "id": "staff+1",
+          "staff": 13,
+          "notebooks": 1
+        },
+        {
+          "at": 166,
+          "id": "staff−1",
+          "staff": 12,
+          "notebooks": 1
+        },
+        {
+          "at": 166,
+          "id": "notebooks+1",
+          "staff": 12,
+          "notebooks": 2
+        },
+        {
+          "at": 176,
+          "id": "staff+1",
+          "staff": 13,
+          "notebooks": 2
+        },
+        {
+          "at": 176,
+          "id": "staff+1",
+          "staff": 14,
+          "notebooks": 2
+        },
+        {
+          "at": 198,
+          "id": "staff−1",
+          "staff": 13,
+          "notebooks": 2
+        },
+        {
+          "at": 198,
+          "id": "notebooks+1",
+          "staff": 13,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 14,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 15,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 16,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 17,
+          "notebooks": 3
+        },
+        {
+          "at": 323,
+          "id": "notebooks+1",
+          "staff": 17,
+          "notebooks": 4
+        },
+        {
+          "at": 370,
+          "id": "staff−1",
+          "staff": 16,
+          "notebooks": 4
+        },
+        {
+          "at": 370,
+          "id": "notebooks+1",
+          "staff": 16,
+          "notebooks": 5
+        },
+        {
+          "at": 387,
+          "id": "staff+1",
+          "staff": 17,
+          "notebooks": 5
+        },
+        {
+          "at": 387,
+          "id": "staff+1",
+          "staff": 18,
+          "notebooks": 5
+        },
+        {
+          "at": 431,
+          "id": "notebooks−1",
+          "staff": 18,
+          "notebooks": 4
+        },
+        {
+          "at": 431,
+          "id": "notebooks−1",
+          "staff": 18,
+          "notebooks": 3
+        },
+        {
+          "at": 431,
+          "id": "notebooks−1",
+          "staff": 18,
+          "notebooks": 2
+        },
+        {
+          "at": 431,
+          "id": "staff+1",
+          "staff": 19,
+          "notebooks": 2
+        },
+        {
+          "at": 431,
+          "id": "staff+1",
+          "staff": 20,
+          "notebooks": 2
+        },
+        {
+          "at": 431,
+          "id": "staff+1",
+          "staff": 21,
+          "notebooks": 2
+        },
+        {
+          "at": 607,
+          "id": "staff−1",
+          "staff": 20,
+          "notebooks": 2
+        },
+        {
+          "at": 607,
+          "id": "notebooks+1",
+          "staff": 20,
+          "notebooks": 3
+        },
+        {
+          "at": 729,
+          "id": "staff+1",
+          "staff": 21,
+          "notebooks": 3
+        },
+        {
+          "at": 1186,
+          "id": "staff−1",
+          "staff": 20,
+          "notebooks": 3
+        },
+        {
+          "at": 1186,
+          "id": "notebooks+1",
+          "staff": 20,
+          "notebooks": 4
+        },
+        {
+          "at": 1198,
+          "id": "staff+1",
+          "staff": 21,
+          "notebooks": 4
+        },
+        {
+          "at": 1198,
+          "id": "staff+1",
+          "staff": 22,
+          "notebooks": 4
+        },
+        {
+          "at": 1381,
+          "id": "staff−1",
+          "staff": 21,
+          "notebooks": 4
+        },
+        {
+          "at": 1381,
+          "id": "notebooks+1",
+          "staff": 21,
+          "notebooks": 5
+        },
+        {
+          "at": 1582,
+          "id": "notebooks−1",
+          "staff": 21,
+          "notebooks": 4
+        },
+        {
+          "at": 1582,
+          "id": "notebooks−1",
+          "staff": 21,
+          "notebooks": 3
+        },
+        {
+          "at": 1582,
+          "id": "notebooks−1",
+          "staff": 21,
+          "notebooks": 2
+        },
+        {
+          "at": 1582,
+          "id": "staff+1",
+          "staff": 22,
+          "notebooks": 2
+        },
+        {
+          "at": 1582,
+          "id": "staff+1",
+          "staff": 23,
+          "notebooks": 2
+        },
+        {
+          "at": 1582,
+          "id": "staff+1",
+          "staff": 24,
+          "notebooks": 2
+        },
+        {
+          "at": 1858,
+          "id": "staff+1",
+          "staff": 25,
+          "notebooks": 2
+        },
+        {
+          "at": 2166,
+          "id": "staff+1",
+          "staff": 26,
+          "notebooks": 2
+        },
+        {
+          "at": 2166,
+          "id": "staff+1",
+          "staff": 27,
+          "notebooks": 2
+        },
+        {
+          "at": 2509,
+          "id": "staff+1",
+          "staff": 28,
+          "notebooks": 2
+        },
+        {
+          "at": 2509,
+          "id": "staff+1",
+          "staff": 29,
+          "notebooks": 2
+        },
+        {
+          "at": 2781,
+          "id": "staff−1",
+          "staff": 28,
+          "notebooks": 2
+        },
+        {
+          "at": 2781,
+          "id": "notebooks+1",
+          "staff": 28,
+          "notebooks": 3
+        },
+        {
+          "at": 2984,
+          "id": "staff+1",
+          "staff": 29,
+          "notebooks": 3
+        },
+        {
+          "at": 3224,
+          "id": "staff−1",
+          "staff": 28,
+          "notebooks": 3
+        },
+        {
+          "at": 3224,
+          "id": "notebooks+1",
+          "staff": 28,
+          "notebooks": 4
+        },
+        {
+          "at": 3629,
+          "id": "staff−1",
+          "staff": 27,
+          "notebooks": 4
+        },
+        {
+          "at": 3629,
+          "id": "notebooks+1",
+          "staff": 27,
+          "notebooks": 5
+        },
+        {
+          "at": 4111,
+          "id": "notebooks−1",
+          "staff": 27,
+          "notebooks": 4
+        },
+        {
+          "at": 4111,
+          "id": "notebooks−1",
+          "staff": 27,
+          "notebooks": 3
+        },
+        {
+          "at": 4111,
+          "id": "notebooks−1",
+          "staff": 27,
+          "notebooks": 2
+        },
+        {
+          "at": 4111,
+          "id": "staff+1",
+          "staff": 28,
+          "notebooks": 2
+        },
+        {
+          "at": 4111,
+          "id": "staff+1",
+          "staff": 29,
+          "notebooks": 2
+        },
+        {
+          "at": 4111,
+          "id": "staff+1",
+          "staff": 30,
+          "notebooks": 2
+        },
+        {
+          "at": 4408,
+          "id": "notebooks−1",
+          "staff": 30,
+          "notebooks": 1
+        },
+        {
+          "at": 4408,
+          "id": "staff+1",
+          "staff": 31,
+          "notebooks": 1
+        }
+      ],
+      "aborts": 0,
+      "inputs": {
+        "distance": 3,
+        "service": 0.55,
+        "automation": 4,
+        "workshops": 2,
+        "dissemination": "open",
+        "rollout": "rapid"
+      },
+      "initialElapsed": 0,
+      "resumed": false,
+      "longestNoActionWindow": {
+        "from": 4408,
+        "to": 4853,
+        "previous": "assignment/staff+1",
+        "next": "equipment/pulse"
+      },
+      "priceChecks": 13,
+      "priceAdjustments": 5,
+      "analysisAdjustments": 51
+    }
+  },
+  {
+    "strategy": "revenue",
+    "ended": true,
+    "seconds": 4171,
+    "discoveries": 27,
+    "engineering": [
+      "workflow",
+      "storage1",
+      "proprietary",
+      "storage2",
+      "pricing",
+      "autoCalibration",
+      "automation",
+      "rapid",
+      "storage3",
+      "workshop",
+      "scheduler",
+      "synthesis"
+    ],
+    "physical": 1729,
+    "module": 2,
+    "rack": 5,
+    "pulse": 8,
+    "decoder": 3,
+    "distance": 3,
+    "factories": 2,
+    "staff": 27,
+    "notebooks": 1,
+    "automation": 2,
+    "analysisShare": 1,
+    "workshops": 1,
+    "funds": 63883,
+    "designs": 1096,
+    "completed": [
+      "dynamics"
+    ],
+    "chapters": [
+      {
+        "chapter": 0,
+        "at": 0
+      },
+      {
+        "chapter": 1,
+        "at": 57
+      },
+      {
+        "chapter": 2,
+        "at": 166
+      },
+      {
+        "chapter": 3,
+        "at": 550
+      },
+      {
+        "chapter": 4,
+        "at": 1660
+      },
+      {
+        "chapter": 5,
+        "at": 3371
+      }
+    ],
+    "measurements": {
+      "policy": "revenue",
+      "seed": 424242,
+      "allDiscoveries": false,
+      "limit": 14400,
+      "busy": 160,
+      "idle": 4011,
+      "calibrationDuty": 1165.3099971044965,
+      "serviceDuty": 2326.1231935225137,
+      "experimentDuty": 123.97448110436157,
+      "fullStore": 1366,
+      "designsWhileFull": 19595.20595508812,
+      "designsWhileNotFull": 10591.947863084986,
+      "grants": 8219.79999999981,
+      "revenue": 229322.3219483649,
+      "upkeep": 10028.863999999661,
+      "delivered": 27279.247494894837,
+      "automationWork": 5342,
+      "fabricated": 1704.1919999999734,
+      "integrated": 960.2880000000156,
+      "longestNoAction": 302,
+      "blocked": {
+        "funding": 69,
+        "effort": 1843,
+        "designs": 4025,
+        "capacity": 12,
+        "qualification": 446
+      },
+      "actions": {
+        "assignment": 70,
+        "engineering": 12,
+        "equipment": 21,
+        "experiment": 10,
+        "calibration": 0,
+        "workload": 1
+      },
+      "investments": [
+        {
+          "at": 79,
+          "kind": "engineering",
+          "id": "workflow",
+          "funds": 160,
+          "effort": 90,
+          "designs": 12
+        },
+        {
+          "at": 134,
+          "kind": "engineering",
+          "id": "storage1",
+          "funds": 90,
+          "effort": 80,
+          "designs": 18
+        },
+        {
+          "at": 156,
+          "kind": "equipment",
+          "id": "hardware",
+          "funds": 120,
+          "effort": 0,
+          "designs": 16
+        },
+        {
+          "at": 159,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 90,
+          "effort": 0,
+          "designs": 12
+        },
+        {
+          "at": 212,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 140,
+          "effort": 0,
+          "designs": 20
+        },
+        {
+          "at": 235,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 350,
+          "effort": 0,
+          "designs": 27
+        },
+        {
+          "at": 243,
+          "kind": "equipment",
+          "id": "hardware",
+          "funds": 450,
+          "effort": 0,
+          "designs": 36
+        },
+        {
+          "at": 252,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 280,
+          "effort": 0,
+          "designs": 36
+        },
+        {
+          "at": 266,
+          "kind": "engineering",
+          "id": "proprietary",
+          "funds": 300,
+          "effort": 250,
+          "designs": 60
+        },
+        {
+          "at": 484,
+          "kind": "engineering",
+          "id": "storage2",
+          "funds": 600,
+          "effort": 700,
+          "designs": 150
+        },
+        {
+          "at": 591,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 560,
+          "effort": 0,
+          "designs": 65
+        },
+        {
+          "at": 620,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 1120,
+          "effort": 0,
+          "designs": 117
+        },
+        {
+          "at": 650,
+          "kind": "engineering",
+          "id": "pricing",
+          "funds": 900,
+          "effort": 900,
+          "designs": 180
+        },
+        {
+          "at": 677,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 1400,
+          "effort": 0,
+          "designs": 59
+        },
+        {
+          "at": 1002,
+          "kind": "engineering",
+          "id": "autoCalibration",
+          "funds": 1800,
+          "effort": 1800,
+          "designs": 350
+        },
+        {
+          "at": 1264,
+          "kind": "engineering",
+          "id": "automation",
+          "funds": 2400,
+          "effort": 2400,
+          "designs": 450
+        },
+        {
+          "at": 1330,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 5600,
+          "effort": 0,
+          "designs": 128
+        },
+        {
+          "at": 1360,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 1800,
+          "effort": 0,
+          "designs": 180
+        },
+        {
+          "at": 1398,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 18000,
+          "effort": 0,
+          "designs": 282
+        },
+        {
+          "at": 1436,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 3060,
+          "effort": 0,
+          "designs": 288
+        },
+        {
+          "at": 1671,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 180,
+          "effort": 0,
+          "designs": 30
+        },
+        {
+          "at": 1697,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 360,
+          "effort": 0,
+          "designs": 60
+        },
+        {
+          "at": 1791,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 2240,
+          "effort": 0,
+          "designs": 210
+        },
+        {
+          "at": 1879,
+          "kind": "engineering",
+          "id": "rapid",
+          "funds": 4000,
+          "effort": 4000,
+          "designs": 600
+        },
+        {
+          "at": 2008,
+          "kind": "engineering",
+          "id": "storage3",
+          "funds": 4000,
+          "effort": 4200,
+          "designs": 650
+        },
+        {
+          "at": 2392,
+          "kind": "engineering",
+          "id": "workshop",
+          "funds": 6000,
+          "effort": 5500,
+          "designs": 900
+        },
+        {
+          "at": 2496,
+          "kind": "equipment",
+          "id": "workshop",
+          "funds": 4000,
+          "effort": 0,
+          "designs": 400
+        },
+        {
+          "at": 2801,
+          "kind": "engineering",
+          "id": "scheduler",
+          "funds": 7000,
+          "effort": 6500,
+          "designs": 1200
+        },
+        {
+          "at": 3263,
+          "kind": "engineering",
+          "id": "synthesis",
+          "funds": 12000,
+          "effort": 10000,
+          "designs": 1800
+        },
+        {
+          "at": 3381,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 720,
+          "effort": 0,
+          "designs": 120
+        },
+        {
+          "at": 3421,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 4480,
+          "effort": 0,
+          "designs": 378
+        },
+        {
+          "at": 3485,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 8960,
+          "effort": 0,
+          "designs": 681
+        },
+        {
+          "at": 3518,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 17920,
+          "effort": 0,
+          "designs": 1225
+        }
+      ],
+      "milestones": [
+        {
+          "at": 5,
+          "id": "signal",
+          "kind": "qualification",
+          "chapter": 0
+        },
+        {
+          "at": 5,
+          "id": "feynman",
+          "chapter": 0
+        },
+        {
+          "at": 11,
+          "id": "deutsch",
+          "chapter": 0
+        },
+        {
+          "at": 28,
+          "id": "divincenzo",
+          "chapter": 0
+        },
+        {
+          "at": 56,
+          "id": "nakamura",
+          "chapter": 1
+        },
+        {
+          "at": 63,
+          "id": "ramsey",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 89,
+          "id": "ramsey",
+          "chapter": 1
+        },
+        {
+          "at": 96,
+          "id": "echo",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 102,
+          "id": "readout",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 103,
+          "id": "echo",
+          "chapter": 1
+        },
+        {
+          "at": 115,
+          "id": "readout",
+          "chapter": 1
+        },
+        {
+          "at": 124,
+          "id": "benchmark",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 144,
+          "id": "rb",
+          "chapter": 1
+        },
+        {
+          "at": 165,
+          "id": "coupled",
+          "chapter": 2
+        },
+        {
+          "at": 176,
+          "id": "circuit",
+          "kind": "qualification",
+          "chapter": 2
+        },
+        {
+          "at": 197,
+          "id": "nisq",
+          "chapter": 2
+        },
+        {
+          "at": 290,
+          "id": "vqe",
+          "chapter": 2
+        },
+        {
+          "at": 335,
+          "id": "ansatz",
+          "chapter": 2
+        },
+        {
+          "at": 404,
+          "id": "mitigation",
+          "chapter": 2
+        },
+        {
+          "at": 417,
+          "id": "vqe",
+          "kind": "qualification",
+          "chapter": 2
+        },
+        {
+          "at": 549,
+          "id": "classical",
+          "chapter": 3
+        },
+        {
+          "at": 717,
+          "id": "shor",
+          "chapter": 3
+        },
+        {
+          "at": 871,
+          "id": "stabilizer",
+          "chapter": 3
+        },
+        {
+          "at": 1102,
+          "id": "surface",
+          "chapter": 3
+        },
+        {
+          "at": 1490,
+          "id": "decoder",
+          "chapter": 3
+        },
+        {
+          "at": 1503,
+          "id": "memory",
+          "kind": "qualification",
+          "chapter": 3
+        },
+        {
+          "at": 1659,
+          "id": "threshold",
+          "chapter": 4
+        },
+        {
+          "at": 2211,
+          "id": "surgery",
+          "chapter": 4
+        },
+        {
+          "at": 2558,
+          "id": "gates",
+          "kind": "qualification",
+          "chapter": 4
+        },
+        {
+          "at": 2591,
+          "id": "gates",
+          "chapter": 4
+        },
+        {
+          "at": 2907,
+          "id": "ancilla",
+          "chapter": 4
+        },
+        {
+          "at": 2926,
+          "id": "factory",
+          "kind": "qualification",
+          "chapter": 4
+        },
+        {
+          "at": 3049,
+          "id": "factories",
+          "chapter": 4
+        },
+        {
+          "at": 3370,
+          "id": "accounting",
+          "chapter": 5
+        },
+        {
+          "at": 3582,
+          "id": "lloyd",
+          "chapter": 5
+        },
+        {
+          "at": 3814,
+          "id": "hamiltonian",
+          "chapter": 5
+        },
+        {
+          "at": 4117,
+          "id": "audit",
+          "chapter": 5
+        }
+      ],
+      "assignments": [
+        {
+          "at": 6,
+          "id": "staff+1",
+          "staff": 2,
+          "notebooks": 1
+        },
+        {
+          "at": 6,
+          "id": "staff+1",
+          "staff": 3,
+          "notebooks": 1
+        },
+        {
+          "at": 57,
+          "id": "notebooks+1",
+          "staff": 3,
+          "notebooks": 2
+        },
+        {
+          "at": 63,
+          "id": "staff+1",
+          "staff": 4,
+          "notebooks": 2
+        },
+        {
+          "at": 63,
+          "id": "staff+1",
+          "staff": 5,
+          "notebooks": 2
+        },
+        {
+          "at": 96,
+          "id": "staff+1",
+          "staff": 6,
+          "notebooks": 2
+        },
+        {
+          "at": 96,
+          "id": "staff+1",
+          "staff": 7,
+          "notebooks": 2
+        },
+        {
+          "at": 102,
+          "id": "staff+1",
+          "staff": 8,
+          "notebooks": 2
+        },
+        {
+          "at": 102,
+          "id": "staff+1",
+          "staff": 9,
+          "notebooks": 2
+        },
+        {
+          "at": 116,
+          "id": "staff−1",
+          "staff": 8,
+          "notebooks": 2
+        },
+        {
+          "at": 116,
+          "id": "notebooks+1",
+          "staff": 8,
+          "notebooks": 3
+        },
+        {
+          "at": 124,
+          "id": "staff+1",
+          "staff": 9,
+          "notebooks": 3
+        },
+        {
+          "at": 124,
+          "id": "staff+1",
+          "staff": 10,
+          "notebooks": 3
+        },
+        {
+          "at": 135,
+          "id": "notebooks−1",
+          "staff": 10,
+          "notebooks": 2
+        },
+        {
+          "at": 135,
+          "id": "notebooks−1",
+          "staff": 10,
+          "notebooks": 1
+        },
+        {
+          "at": 135,
+          "id": "staff+1",
+          "staff": 11,
+          "notebooks": 1
+        },
+        {
+          "at": 135,
+          "id": "staff+1",
+          "staff": 12,
+          "notebooks": 1
+        },
+        {
+          "at": 145,
+          "id": "staff+1",
+          "staff": 13,
+          "notebooks": 1
+        },
+        {
+          "at": 166,
+          "id": "staff−1",
+          "staff": 12,
+          "notebooks": 1
+        },
+        {
+          "at": 166,
+          "id": "notebooks+1",
+          "staff": 12,
+          "notebooks": 2
+        },
+        {
+          "at": 176,
+          "id": "staff+1",
+          "staff": 13,
+          "notebooks": 2
+        },
+        {
+          "at": 176,
+          "id": "staff+1",
+          "staff": 14,
+          "notebooks": 2
+        },
+        {
+          "at": 198,
+          "id": "staff−1",
+          "staff": 13,
+          "notebooks": 2
+        },
+        {
+          "at": 198,
+          "id": "notebooks+1",
+          "staff": 13,
+          "notebooks": 3
+        },
+        {
+          "at": 336,
+          "id": "notebooks+1",
+          "staff": 13,
+          "notebooks": 4
+        },
+        {
+          "at": 405,
+          "id": "staff−1",
+          "staff": 12,
+          "notebooks": 4
+        },
+        {
+          "at": 405,
+          "id": "notebooks+1",
+          "staff": 12,
+          "notebooks": 5
+        },
+        {
+          "at": 417,
+          "id": "staff+1",
+          "staff": 13,
+          "notebooks": 5
+        },
+        {
+          "at": 417,
+          "id": "staff+1",
+          "staff": 14,
+          "notebooks": 5
+        },
+        {
+          "at": 485,
+          "id": "notebooks−1",
+          "staff": 14,
+          "notebooks": 4
+        },
+        {
+          "at": 485,
+          "id": "notebooks−1",
+          "staff": 14,
+          "notebooks": 3
+        },
+        {
+          "at": 485,
+          "id": "notebooks−1",
+          "staff": 14,
+          "notebooks": 2
+        },
+        {
+          "at": 485,
+          "id": "staff+1",
+          "staff": 15,
+          "notebooks": 2
+        },
+        {
+          "at": 485,
+          "id": "staff+1",
+          "staff": 16,
+          "notebooks": 2
+        },
+        {
+          "at": 485,
+          "id": "staff+1",
+          "staff": 17,
+          "notebooks": 2
+        },
+        {
+          "at": 718,
+          "id": "staff−1",
+          "staff": 16,
+          "notebooks": 2
+        },
+        {
+          "at": 718,
+          "id": "notebooks+1",
+          "staff": 16,
+          "notebooks": 3
+        },
+        {
+          "at": 872,
+          "id": "staff+1",
+          "staff": 17,
+          "notebooks": 3
+        },
+        {
+          "at": 1491,
+          "id": "staff−1",
+          "staff": 16,
+          "notebooks": 3
+        },
+        {
+          "at": 1491,
+          "id": "notebooks+1",
+          "staff": 16,
+          "notebooks": 4
+        },
+        {
+          "at": 1503,
+          "id": "staff+1",
+          "staff": 17,
+          "notebooks": 4
+        },
+        {
+          "at": 1503,
+          "id": "staff+1",
+          "staff": 18,
+          "notebooks": 4
+        },
+        {
+          "at": 1660,
+          "id": "staff−1",
+          "staff": 17,
+          "notebooks": 4
+        },
+        {
+          "at": 1660,
+          "id": "notebooks+1",
+          "staff": 17,
+          "notebooks": 5
+        },
+        {
+          "at": 2009,
+          "id": "notebooks−1",
+          "staff": 17,
+          "notebooks": 4
+        },
+        {
+          "at": 2009,
+          "id": "notebooks−1",
+          "staff": 17,
+          "notebooks": 3
+        },
+        {
+          "at": 2009,
+          "id": "notebooks−1",
+          "staff": 17,
+          "notebooks": 2
+        },
+        {
+          "at": 2009,
+          "id": "staff+1",
+          "staff": 18,
+          "notebooks": 2
+        },
+        {
+          "at": 2009,
+          "id": "staff+1",
+          "staff": 19,
+          "notebooks": 2
+        },
+        {
+          "at": 2009,
+          "id": "staff+1",
+          "staff": 20,
+          "notebooks": 2
+        },
+        {
+          "at": 2212,
+          "id": "staff+1",
+          "staff": 21,
+          "notebooks": 2
+        },
+        {
+          "at": 2558,
+          "id": "staff+1",
+          "staff": 22,
+          "notebooks": 2
+        },
+        {
+          "at": 2558,
+          "id": "staff+1",
+          "staff": 23,
+          "notebooks": 2
+        },
+        {
+          "at": 2926,
+          "id": "staff+1",
+          "staff": 24,
+          "notebooks": 2
+        },
+        {
+          "at": 2926,
+          "id": "staff+1",
+          "staff": 25,
+          "notebooks": 2
+        },
+        {
+          "at": 3050,
+          "id": "staff−1",
+          "staff": 24,
+          "notebooks": 2
+        },
+        {
+          "at": 3050,
+          "id": "notebooks+1",
+          "staff": 24,
+          "notebooks": 3
+        },
+        {
+          "at": 3371,
+          "id": "staff+1",
+          "staff": 25,
+          "notebooks": 3
+        },
+        {
+          "at": 3583,
+          "id": "staff−1",
+          "staff": 24,
+          "notebooks": 3
+        },
+        {
+          "at": 3583,
+          "id": "notebooks+1",
+          "staff": 24,
+          "notebooks": 4
+        },
+        {
+          "at": 3815,
+          "id": "staff−1",
+          "staff": 23,
+          "notebooks": 4
+        },
+        {
+          "at": 3815,
+          "id": "notebooks+1",
+          "staff": 23,
+          "notebooks": 5
+        },
+        {
+          "at": 4118,
+          "id": "notebooks−1",
+          "staff": 23,
+          "notebooks": 4
+        },
+        {
+          "at": 4118,
+          "id": "notebooks−1",
+          "staff": 23,
+          "notebooks": 3
+        },
+        {
+          "at": 4118,
+          "id": "notebooks−1",
+          "staff": 23,
+          "notebooks": 2
+        },
+        {
+          "at": 4118,
+          "id": "notebooks−1",
+          "staff": 23,
+          "notebooks": 1
+        },
+        {
+          "at": 4118,
+          "id": "staff+1",
+          "staff": 24,
+          "notebooks": 1
+        },
+        {
+          "at": 4118,
+          "id": "staff+1",
+          "staff": 25,
+          "notebooks": 1
+        },
+        {
+          "at": 4118,
+          "id": "staff+1",
+          "staff": 26,
+          "notebooks": 1
+        },
+        {
+          "at": 4118,
+          "id": "staff+1",
+          "staff": 27,
+          "notebooks": 1
+        }
+      ],
+      "aborts": 0,
+      "inputs": {
+        "distance": 3,
+        "service": 0.85,
+        "automation": 2,
+        "workshops": 1,
+        "dissemination": "proprietary",
+        "rollout": "rapid"
+      },
+      "initialElapsed": 0,
+      "resumed": false,
+      "longestNoActionWindow": {
+        "from": 3815,
+        "to": 4117,
+        "previous": "assignment/notebooks+1",
+        "next": "discovery/audit"
+      },
+      "priceChecks": 16,
+      "priceAdjustments": 5,
+      "analysisAdjustments": 0
+    }
+  },
+  {
+    "strategy": "infrastructure",
+    "ended": true,
+    "seconds": 4212,
+    "discoveries": 27,
+    "engineering": [
+      "workflow",
+      "storage1",
+      "open",
+      "storage2",
+      "pricing",
+      "autoCalibration",
+      "automation",
+      "rapid",
+      "storage3",
+      "workshop",
+      "scheduler"
+    ],
+    "physical": 3727,
+    "module": 3,
+    "rack": 4,
+    "pulse": 7,
+    "decoder": 3,
+    "distance": 5,
+    "factories": 1,
+    "staff": 30,
+    "notebooks": 2,
+    "automation": 4,
+    "analysisShare": 0.2,
+    "workshops": 3,
+    "funds": 3510,
+    "designs": 2437,
+    "completed": [
+      "dynamics"
+    ],
+    "chapters": [
+      {
+        "chapter": 0,
+        "at": 0
+      },
+      {
+        "chapter": 1,
+        "at": 57
+      },
+      {
+        "chapter": 2,
+        "at": 166
+      },
+      {
+        "chapter": 3,
+        "at": 483
+      },
+      {
+        "chapter": 4,
+        "at": 1407
+      },
+      {
+        "chapter": 5,
+        "at": 3066
+      }
+    ],
+    "measurements": {
+      "policy": "infrastructure",
+      "seed": 424242,
+      "allDiscoveries": false,
+      "limit": 14400,
+      "busy": 162,
+      "idle": 4050,
+      "calibrationDuty": 1289.3868312559189,
+      "serviceDuty": 1858.2302284984057,
+      "experimentDuty": 122.89855660351226,
+      "fullStore": 1698,
+      "designsWhileFull": 23028.154141766907,
+      "designsWhileNotFull": 8134.772521593086,
+      "grants": 8448.119999999777,
+      "revenue": 159082.3637214158,
+      "upkeep": 14975.60800000002,
+      "delivered": 16943.519721819277,
+      "automationWork": 5900.600000000057,
+      "fabricated": 3646.2720000000195,
+      "integrated": 3471.888000000022,
+      "longestNoAction": 269,
+      "blocked": {
+        "funding": 2548,
+        "effort": 1656,
+        "designs": 3729,
+        "capacity": 12,
+        "qualification": 468
+      },
+      "actions": {
+        "assignment": 72,
+        "engineering": 11,
+        "equipment": 24,
+        "experiment": 10,
+        "calibration": 0,
+        "workload": 1
+      },
+      "investments": [
+        {
+          "at": 79,
+          "kind": "engineering",
+          "id": "workflow",
+          "funds": 160,
+          "effort": 90,
+          "designs": 12
+        },
+        {
+          "at": 134,
+          "kind": "engineering",
+          "id": "storage1",
+          "funds": 90,
+          "effort": 80,
+          "designs": 18
+        },
+        {
+          "at": 156,
+          "kind": "equipment",
+          "id": "hardware",
+          "funds": 120,
+          "effort": 0,
+          "designs": 16
+        },
+        {
+          "at": 159,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 90,
+          "effort": 0,
+          "designs": 12
+        },
+        {
+          "at": 212,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 140,
+          "effort": 0,
+          "designs": 20
+        },
+        {
+          "at": 235,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 350,
+          "effort": 0,
+          "designs": 27
+        },
+        {
+          "at": 243,
+          "kind": "equipment",
+          "id": "hardware",
+          "funds": 450,
+          "effort": 0,
+          "designs": 36
+        },
+        {
+          "at": 252,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 280,
+          "effort": 0,
+          "designs": 36
+        },
+        {
+          "at": 266,
+          "kind": "engineering",
+          "id": "open",
+          "funds": 300,
+          "effort": 250,
+          "designs": 60
+        },
+        {
+          "at": 430,
+          "kind": "engineering",
+          "id": "storage2",
+          "funds": 600,
+          "effort": 700,
+          "designs": 150
+        },
+        {
+          "at": 511,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 1400,
+          "effort": 0,
+          "designs": 59
+        },
+        {
+          "at": 531,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 560,
+          "effort": 0,
+          "designs": 65
+        },
+        {
+          "at": 549,
+          "kind": "equipment",
+          "id": "hardware",
+          "funds": 1800,
+          "effort": 0,
+          "designs": 78
+        },
+        {
+          "at": 574,
+          "kind": "engineering",
+          "id": "pricing",
+          "funds": 900,
+          "effort": 900,
+          "designs": 180
+        },
+        {
+          "at": 626,
+          "kind": "engineering",
+          "id": "autoCalibration",
+          "funds": 1800,
+          "effort": 1800,
+          "designs": 350
+        },
+        {
+          "at": 1042,
+          "kind": "engineering",
+          "id": "automation",
+          "funds": 2400,
+          "effort": 2400,
+          "designs": 450
+        },
+        {
+          "at": 1094,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 5600,
+          "effort": 0,
+          "designs": 128
+        },
+        {
+          "at": 1118,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 1800,
+          "effort": 0,
+          "designs": 180
+        },
+        {
+          "at": 1157,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 3060,
+          "effort": 0,
+          "designs": 288
+        },
+        {
+          "at": 1342,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 5202,
+          "effort": 0,
+          "designs": 461
+        },
+        {
+          "at": 1410,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 180,
+          "effort": 0,
+          "designs": 30
+        },
+        {
+          "at": 1427,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 360,
+          "effort": 0,
+          "designs": 60
+        },
+        {
+          "at": 1465,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 1120,
+          "effort": 0,
+          "designs": 117
+        },
+        {
+          "at": 1563,
+          "kind": "engineering",
+          "id": "rapid",
+          "funds": 4000,
+          "effort": 4000,
+          "designs": 600
+        },
+        {
+          "at": 1668,
+          "kind": "engineering",
+          "id": "storage3",
+          "funds": 4000,
+          "effort": 4200,
+          "designs": 650
+        },
+        {
+          "at": 1968,
+          "kind": "engineering",
+          "id": "workshop",
+          "funds": 6000,
+          "effort": 5500,
+          "designs": 900
+        },
+        {
+          "at": 2054,
+          "kind": "equipment",
+          "id": "workshop",
+          "funds": 4000,
+          "effort": 0,
+          "designs": 400
+        },
+        {
+          "at": 2194,
+          "kind": "equipment",
+          "id": "workshop",
+          "funds": 6600,
+          "effort": 0,
+          "designs": 640
+        },
+        {
+          "at": 2568,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 8844,
+          "effort": 0,
+          "designs": 738
+        },
+        {
+          "at": 2929,
+          "kind": "engineering",
+          "id": "scheduler",
+          "funds": 7000,
+          "effort": 6500,
+          "designs": 1200
+        },
+        {
+          "at": 3086,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 720,
+          "effort": 0,
+          "designs": 120
+        },
+        {
+          "at": 3127,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 2240,
+          "effort": 0,
+          "designs": 210
+        },
+        {
+          "at": 3178,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 4480,
+          "effort": 0,
+          "designs": 378
+        },
+        {
+          "at": 3478,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 8960,
+          "effort": 0,
+          "designs": 681
+        },
+        {
+          "at": 3930,
+          "kind": "equipment",
+          "id": "workshop",
+          "funds": 10890,
+          "effort": 0,
+          "designs": 1025
+        }
+      ],
+      "milestones": [
+        {
+          "at": 5,
+          "id": "signal",
+          "kind": "qualification",
+          "chapter": 0
+        },
+        {
+          "at": 5,
+          "id": "feynman",
+          "chapter": 0
+        },
+        {
+          "at": 11,
+          "id": "deutsch",
+          "chapter": 0
+        },
+        {
+          "at": 28,
+          "id": "divincenzo",
+          "chapter": 0
+        },
+        {
+          "at": 56,
+          "id": "nakamura",
+          "chapter": 1
+        },
+        {
+          "at": 63,
+          "id": "ramsey",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 89,
+          "id": "ramsey",
+          "chapter": 1
+        },
+        {
+          "at": 96,
+          "id": "echo",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 102,
+          "id": "readout",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 103,
+          "id": "echo",
+          "chapter": 1
+        },
+        {
+          "at": 115,
+          "id": "readout",
+          "chapter": 1
+        },
+        {
+          "at": 124,
+          "id": "benchmark",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 144,
+          "id": "rb",
+          "chapter": 1
+        },
+        {
+          "at": 165,
+          "id": "coupled",
+          "chapter": 2
+        },
+        {
+          "at": 176,
+          "id": "circuit",
+          "kind": "qualification",
+          "chapter": 2
+        },
+        {
+          "at": 197,
+          "id": "nisq",
+          "chapter": 2
+        },
+        {
+          "at": 292,
+          "id": "vqe",
+          "chapter": 2
+        },
+        {
+          "at": 317,
+          "id": "ansatz",
+          "chapter": 2
+        },
+        {
+          "at": 369,
+          "id": "mitigation",
+          "chapter": 2
+        },
+        {
+          "at": 382,
+          "id": "vqe",
+          "kind": "qualification",
+          "chapter": 2
+        },
+        {
+          "at": 482,
+          "id": "classical",
+          "chapter": 3
+        },
+        {
+          "at": 681,
+          "id": "shor",
+          "chapter": 3
+        },
+        {
+          "at": 803,
+          "id": "stabilizer",
+          "chapter": 3
+        },
+        {
+          "at": 913,
+          "id": "surface",
+          "chapter": 3
+        },
+        {
+          "at": 1223,
+          "id": "decoder",
+          "chapter": 3
+        },
+        {
+          "at": 1237,
+          "id": "memory",
+          "kind": "qualification",
+          "chapter": 3
+        },
+        {
+          "at": 1406,
+          "id": "threshold",
+          "chapter": 4
+        },
+        {
+          "at": 1826,
+          "id": "surgery",
+          "chapter": 4
+        },
+        {
+          "at": 2194,
+          "id": "gates",
+          "kind": "qualification",
+          "chapter": 4
+        },
+        {
+          "at": 2270,
+          "id": "gates",
+          "chapter": 4
+        },
+        {
+          "at": 2421,
+          "id": "ancilla",
+          "chapter": 4
+        },
+        {
+          "at": 2440,
+          "id": "factory",
+          "kind": "qualification",
+          "chapter": 4
+        },
+        {
+          "at": 2683,
+          "id": "factories",
+          "chapter": 4
+        },
+        {
+          "at": 3065,
+          "id": "accounting",
+          "chapter": 5
+        },
+        {
+          "at": 3305,
+          "id": "lloyd",
+          "chapter": 5
+        },
+        {
+          "at": 3660,
+          "id": "hamiltonian",
+          "chapter": 5
+        },
+        {
+          "at": 4143,
+          "id": "audit",
+          "chapter": 5
+        }
+      ],
+      "assignments": [
+        {
+          "at": 6,
+          "id": "staff+1",
+          "staff": 2,
+          "notebooks": 1
+        },
+        {
+          "at": 6,
+          "id": "staff+1",
+          "staff": 3,
+          "notebooks": 1
+        },
+        {
+          "at": 57,
+          "id": "notebooks+1",
+          "staff": 3,
+          "notebooks": 2
+        },
+        {
+          "at": 63,
+          "id": "staff+1",
+          "staff": 4,
+          "notebooks": 2
+        },
+        {
+          "at": 63,
+          "id": "staff+1",
+          "staff": 5,
+          "notebooks": 2
+        },
+        {
+          "at": 96,
+          "id": "staff+1",
+          "staff": 6,
+          "notebooks": 2
+        },
+        {
+          "at": 96,
+          "id": "staff+1",
+          "staff": 7,
+          "notebooks": 2
+        },
+        {
+          "at": 102,
+          "id": "staff+1",
+          "staff": 8,
+          "notebooks": 2
+        },
+        {
+          "at": 102,
+          "id": "staff+1",
+          "staff": 9,
+          "notebooks": 2
+        },
+        {
+          "at": 116,
+          "id": "staff−1",
+          "staff": 8,
+          "notebooks": 2
+        },
+        {
+          "at": 116,
+          "id": "notebooks+1",
+          "staff": 8,
+          "notebooks": 3
+        },
+        {
+          "at": 124,
+          "id": "staff+1",
+          "staff": 9,
+          "notebooks": 3
+        },
+        {
+          "at": 124,
+          "id": "staff+1",
+          "staff": 10,
+          "notebooks": 3
+        },
+        {
+          "at": 135,
+          "id": "notebooks−1",
+          "staff": 10,
+          "notebooks": 2
+        },
+        {
+          "at": 135,
+          "id": "notebooks−1",
+          "staff": 10,
+          "notebooks": 1
+        },
+        {
+          "at": 135,
+          "id": "staff+1",
+          "staff": 11,
+          "notebooks": 1
+        },
+        {
+          "at": 135,
+          "id": "staff+1",
+          "staff": 12,
+          "notebooks": 1
+        },
+        {
+          "at": 145,
+          "id": "staff+1",
+          "staff": 13,
+          "notebooks": 1
+        },
+        {
+          "at": 166,
+          "id": "staff−1",
+          "staff": 12,
+          "notebooks": 1
+        },
+        {
+          "at": 166,
+          "id": "notebooks+1",
+          "staff": 12,
+          "notebooks": 2
+        },
+        {
+          "at": 176,
+          "id": "staff+1",
+          "staff": 13,
+          "notebooks": 2
+        },
+        {
+          "at": 176,
+          "id": "staff+1",
+          "staff": 14,
+          "notebooks": 2
+        },
+        {
+          "at": 198,
+          "id": "staff−1",
+          "staff": 13,
+          "notebooks": 2
+        },
+        {
+          "at": 198,
+          "id": "notebooks+1",
+          "staff": 13,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 14,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 15,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 16,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 17,
+          "notebooks": 3
+        },
+        {
+          "at": 318,
+          "id": "notebooks+1",
+          "staff": 17,
+          "notebooks": 4
+        },
+        {
+          "at": 370,
+          "id": "staff−1",
+          "staff": 16,
+          "notebooks": 4
+        },
+        {
+          "at": 370,
+          "id": "notebooks+1",
+          "staff": 16,
+          "notebooks": 5
+        },
+        {
+          "at": 382,
+          "id": "staff+1",
+          "staff": 17,
+          "notebooks": 5
+        },
+        {
+          "at": 382,
+          "id": "staff+1",
+          "staff": 18,
+          "notebooks": 5
+        },
+        {
+          "at": 431,
+          "id": "notebooks−1",
+          "staff": 18,
+          "notebooks": 4
+        },
+        {
+          "at": 431,
+          "id": "notebooks−1",
+          "staff": 18,
+          "notebooks": 3
+        },
+        {
+          "at": 431,
+          "id": "notebooks−1",
+          "staff": 18,
+          "notebooks": 2
+        },
+        {
+          "at": 431,
+          "id": "staff+1",
+          "staff": 19,
+          "notebooks": 2
+        },
+        {
+          "at": 431,
+          "id": "staff+1",
+          "staff": 20,
+          "notebooks": 2
+        },
+        {
+          "at": 431,
+          "id": "staff+1",
+          "staff": 21,
+          "notebooks": 2
+        },
+        {
+          "at": 682,
+          "id": "staff−1",
+          "staff": 20,
+          "notebooks": 2
+        },
+        {
+          "at": 682,
+          "id": "notebooks+1",
+          "staff": 20,
+          "notebooks": 3
+        },
+        {
+          "at": 804,
+          "id": "staff+1",
+          "staff": 21,
+          "notebooks": 3
+        },
+        {
+          "at": 1224,
+          "id": "staff−1",
+          "staff": 20,
+          "notebooks": 3
+        },
+        {
+          "at": 1224,
+          "id": "notebooks+1",
+          "staff": 20,
+          "notebooks": 4
+        },
+        {
+          "at": 1237,
+          "id": "staff+1",
+          "staff": 21,
+          "notebooks": 4
+        },
+        {
+          "at": 1237,
+          "id": "staff+1",
+          "staff": 22,
+          "notebooks": 4
+        },
+        {
+          "at": 1407,
+          "id": "staff−1",
+          "staff": 21,
+          "notebooks": 4
+        },
+        {
+          "at": 1407,
+          "id": "notebooks+1",
+          "staff": 21,
+          "notebooks": 5
+        },
+        {
+          "at": 1669,
+          "id": "notebooks−1",
+          "staff": 21,
+          "notebooks": 4
+        },
+        {
+          "at": 1669,
+          "id": "notebooks−1",
+          "staff": 21,
+          "notebooks": 3
+        },
+        {
+          "at": 1669,
+          "id": "notebooks−1",
+          "staff": 21,
+          "notebooks": 2
+        },
+        {
+          "at": 1669,
+          "id": "staff+1",
+          "staff": 22,
+          "notebooks": 2
+        },
+        {
+          "at": 1669,
+          "id": "staff+1",
+          "staff": 23,
+          "notebooks": 2
+        },
+        {
+          "at": 1669,
+          "id": "staff+1",
+          "staff": 24,
+          "notebooks": 2
+        },
+        {
+          "at": 1827,
+          "id": "staff+1",
+          "staff": 25,
+          "notebooks": 2
+        },
+        {
+          "at": 2194,
+          "id": "staff+1",
+          "staff": 26,
+          "notebooks": 2
+        },
+        {
+          "at": 2194,
+          "id": "staff+1",
+          "staff": 27,
+          "notebooks": 2
+        },
+        {
+          "at": 2440,
+          "id": "staff+1",
+          "staff": 28,
+          "notebooks": 2
+        },
+        {
+          "at": 2440,
+          "id": "staff+1",
+          "staff": 29,
+          "notebooks": 2
+        },
+        {
+          "at": 2684,
+          "id": "staff−1",
+          "staff": 28,
+          "notebooks": 2
+        },
+        {
+          "at": 2684,
+          "id": "notebooks+1",
+          "staff": 28,
+          "notebooks": 3
+        },
+        {
+          "at": 3066,
+          "id": "staff+1",
+          "staff": 29,
+          "notebooks": 3
+        },
+        {
+          "at": 3306,
+          "id": "staff−1",
+          "staff": 28,
+          "notebooks": 3
+        },
+        {
+          "at": 3306,
+          "id": "notebooks+1",
+          "staff": 28,
+          "notebooks": 4
+        },
+        {
+          "at": 3661,
+          "id": "staff−1",
+          "staff": 27,
+          "notebooks": 4
+        },
+        {
+          "at": 3661,
+          "id": "notebooks+1",
+          "staff": 27,
+          "notebooks": 5
+        },
+        {
+          "at": 4144,
+          "id": "notebooks−1",
+          "staff": 27,
+          "notebooks": 4
+        },
+        {
+          "at": 4144,
+          "id": "notebooks−1",
+          "staff": 27,
+          "notebooks": 3
+        },
+        {
+          "at": 4144,
+          "id": "notebooks−1",
+          "staff": 27,
+          "notebooks": 2
+        },
+        {
+          "at": 4144,
+          "id": "staff+1",
+          "staff": 28,
+          "notebooks": 2
+        },
+        {
+          "at": 4144,
+          "id": "staff+1",
+          "staff": 29,
+          "notebooks": 2
+        },
+        {
+          "at": 4144,
+          "id": "staff+1",
+          "staff": 30,
+          "notebooks": 2
+        }
+      ],
+      "aborts": 0,
+      "inputs": {
+        "distance": 5,
+        "service": 0.7,
+        "automation": 4,
+        "workshops": 4,
+        "dissemination": "open",
+        "rollout": "rapid"
+      },
+      "initialElapsed": 0,
+      "resumed": false,
+      "longestNoActionWindow": {
+        "from": 3661,
+        "to": 3930,
+        "previous": "assignment/notebooks+1",
+        "next": "equipment/workshop"
+      },
+      "priceChecks": 13,
+      "priceAdjustments": 6,
+      "analysisAdjustments": 27
+    }
+  },
+  {
+    "strategy": "cautious",
+    "ended": true,
+    "seconds": 4365,
+    "discoveries": 27,
+    "engineering": [
+      "workflow",
+      "storage1",
+      "proprietary",
+      "storage2",
+      "pricing",
+      "autoCalibration",
+      "automation",
+      "verified",
+      "storage3",
+      "workshop",
+      "scheduler",
+      "synthesis"
+    ],
+    "physical": 1911,
+    "module": 3,
+    "rack": 4,
+    "pulse": 7,
+    "decoder": 3,
+    "distance": 5,
+    "factories": 1,
+    "staff": 27,
+    "notebooks": 1,
+    "automation": 2,
+    "analysisShare": 1,
+    "workshops": 2,
+    "funds": 64972,
+    "designs": 9705,
+    "completed": [
+      "dynamics"
+    ],
+    "chapters": [
+      {
+        "chapter": 0,
+        "at": 0
+      },
+      {
+        "chapter": 1,
+        "at": 57
+      },
+      {
+        "chapter": 2,
+        "at": 166
+      },
+      {
+        "chapter": 3,
+        "at": 550
+      },
+      {
+        "chapter": 4,
+        "at": 1616
+      },
+      {
+        "chapter": 5,
+        "at": 3379
+      }
+    ],
+    "measurements": {
+      "policy": "cautious",
+      "seed": 424242,
+      "allDiscoveries": false,
+      "limit": 14400,
+      "busy": 149,
+      "idle": 4216,
+      "calibrationDuty": 984.9012399343954,
+      "serviceDuty": 1711.2682224427722,
+      "experimentDuty": 123.60199198778531,
+      "fullStore": 1564,
+      "designsWhileFull": 27393.666074802022,
+      "designsWhileNotFull": 10613.06002548186,
+      "grants": 8646.959999999952,
+      "revenue": 203713.72249390022,
+      "upkeep": 11278.600000000166,
+      "delivered": 15195.343281894082,
+      "automationWork": 5802,
+      "fabricated": 1830.5280000000375,
+      "integrated": 1654.2720000000304,
+      "longestNoAction": 302,
+      "blocked": {
+        "funding": 86,
+        "effort": 1843,
+        "designs": 4003,
+        "capacity": 12,
+        "qualification": 534
+      },
+      "actions": {
+        "assignment": 70,
+        "engineering": 12,
+        "equipment": 21,
+        "experiment": 10,
+        "calibration": 0,
+        "workload": 1
+      },
+      "investments": [
+        {
+          "at": 79,
+          "kind": "engineering",
+          "id": "workflow",
+          "funds": 160,
+          "effort": 90,
+          "designs": 12
+        },
+        {
+          "at": 134,
+          "kind": "engineering",
+          "id": "storage1",
+          "funds": 90,
+          "effort": 80,
+          "designs": 18
+        },
+        {
+          "at": 156,
+          "kind": "equipment",
+          "id": "hardware",
+          "funds": 120,
+          "effort": 0,
+          "designs": 16
+        },
+        {
+          "at": 159,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 90,
+          "effort": 0,
+          "designs": 12
+        },
+        {
+          "at": 212,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 140,
+          "effort": 0,
+          "designs": 20
+        },
+        {
+          "at": 235,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 350,
+          "effort": 0,
+          "designs": 27
+        },
+        {
+          "at": 243,
+          "kind": "equipment",
+          "id": "hardware",
+          "funds": 450,
+          "effort": 0,
+          "designs": 36
+        },
+        {
+          "at": 252,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 280,
+          "effort": 0,
+          "designs": 36
+        },
+        {
+          "at": 266,
+          "kind": "engineering",
+          "id": "proprietary",
+          "funds": 300,
+          "effort": 250,
+          "designs": 60
+        },
+        {
+          "at": 484,
+          "kind": "engineering",
+          "id": "storage2",
+          "funds": 600,
+          "effort": 700,
+          "designs": 150
+        },
+        {
+          "at": 587,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 1400,
+          "effort": 0,
+          "designs": 59
+        },
+        {
+          "at": 610,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 560,
+          "effort": 0,
+          "designs": 65
+        },
+        {
+          "at": 623,
+          "kind": "equipment",
+          "id": "hardware",
+          "funds": 1800,
+          "effort": 0,
+          "designs": 78
+        },
+        {
+          "at": 653,
+          "kind": "engineering",
+          "id": "pricing",
+          "funds": 900,
+          "effort": 900,
+          "designs": 180
+        },
+        {
+          "at": 995,
+          "kind": "engineering",
+          "id": "autoCalibration",
+          "funds": 1800,
+          "effort": 1800,
+          "designs": 350
+        },
+        {
+          "at": 1258,
+          "kind": "engineering",
+          "id": "automation",
+          "funds": 2400,
+          "effort": 2400,
+          "designs": 450
+        },
+        {
+          "at": 1323,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 5600,
+          "effort": 0,
+          "designs": 128
+        },
+        {
+          "at": 1354,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 1800,
+          "effort": 0,
+          "designs": 180
+        },
+        {
+          "at": 1392,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 3060,
+          "effort": 0,
+          "designs": 288
+        },
+        {
+          "at": 1626,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 180,
+          "effort": 0,
+          "designs": 30
+        },
+        {
+          "at": 1653,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 360,
+          "effort": 0,
+          "designs": 60
+        },
+        {
+          "at": 1705,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 1120,
+          "effort": 0,
+          "designs": 117
+        },
+        {
+          "at": 1825,
+          "kind": "engineering",
+          "id": "verified",
+          "funds": 4000,
+          "effort": 4000,
+          "designs": 600
+        },
+        {
+          "at": 1954,
+          "kind": "engineering",
+          "id": "storage3",
+          "funds": 4000,
+          "effort": 4200,
+          "designs": 650
+        },
+        {
+          "at": 2338,
+          "kind": "engineering",
+          "id": "workshop",
+          "funds": 6000,
+          "effort": 5500,
+          "designs": 900
+        },
+        {
+          "at": 2442,
+          "kind": "equipment",
+          "id": "workshop",
+          "funds": 4000,
+          "effort": 0,
+          "designs": 400
+        },
+        {
+          "at": 2502,
+          "kind": "equipment",
+          "id": "workshop",
+          "funds": 6600,
+          "effort": 0,
+          "designs": 640
+        },
+        {
+          "at": 2809,
+          "kind": "engineering",
+          "id": "scheduler",
+          "funds": 7000,
+          "effort": 6500,
+          "designs": 1200
+        },
+        {
+          "at": 3271,
+          "kind": "engineering",
+          "id": "synthesis",
+          "funds": 12000,
+          "effort": 10000,
+          "designs": 1800
+        },
+        {
+          "at": 3388,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 720,
+          "effort": 0,
+          "designs": 120
+        },
+        {
+          "at": 3410,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 2240,
+          "effort": 0,
+          "designs": 210
+        },
+        {
+          "at": 3450,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 4480,
+          "effort": 0,
+          "designs": 378
+        },
+        {
+          "at": 3499,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 8960,
+          "effort": 0,
+          "designs": 681
+        }
+      ],
+      "milestones": [
+        {
+          "at": 5,
+          "id": "signal",
+          "kind": "qualification",
+          "chapter": 0
+        },
+        {
+          "at": 5,
+          "id": "feynman",
+          "chapter": 0
+        },
+        {
+          "at": 11,
+          "id": "deutsch",
+          "chapter": 0
+        },
+        {
+          "at": 28,
+          "id": "divincenzo",
+          "chapter": 0
+        },
+        {
+          "at": 56,
+          "id": "nakamura",
+          "chapter": 1
+        },
+        {
+          "at": 63,
+          "id": "ramsey",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 89,
+          "id": "ramsey",
+          "chapter": 1
+        },
+        {
+          "at": 96,
+          "id": "echo",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 102,
+          "id": "readout",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 103,
+          "id": "echo",
+          "chapter": 1
+        },
+        {
+          "at": 115,
+          "id": "readout",
+          "chapter": 1
+        },
+        {
+          "at": 124,
+          "id": "benchmark",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 144,
+          "id": "rb",
+          "chapter": 1
+        },
+        {
+          "at": 165,
+          "id": "coupled",
+          "chapter": 2
+        },
+        {
+          "at": 176,
+          "id": "circuit",
+          "kind": "qualification",
+          "chapter": 2
+        },
+        {
+          "at": 197,
+          "id": "nisq",
+          "chapter": 2
+        },
+        {
+          "at": 293,
+          "id": "vqe",
+          "chapter": 2
+        },
+        {
+          "at": 335,
+          "id": "ansatz",
+          "chapter": 2
+        },
+        {
+          "at": 404,
+          "id": "mitigation",
+          "chapter": 2
+        },
+        {
+          "at": 417,
+          "id": "vqe",
+          "kind": "qualification",
+          "chapter": 2
+        },
+        {
+          "at": 549,
+          "id": "classical",
+          "chapter": 3
+        },
+        {
+          "at": 711,
+          "id": "shor",
+          "chapter": 3
+        },
+        {
+          "at": 865,
+          "id": "stabilizer",
+          "chapter": 3
+        },
+        {
+          "at": 1096,
+          "id": "surface",
+          "chapter": 3
+        },
+        {
+          "at": 1446,
+          "id": "decoder",
+          "chapter": 3
+        },
+        {
+          "at": 1459,
+          "id": "memory",
+          "kind": "qualification",
+          "chapter": 3
+        },
+        {
+          "at": 1615,
+          "id": "threshold",
+          "chapter": 4
+        },
+        {
+          "at": 2157,
+          "id": "surgery",
+          "chapter": 4
+        },
+        {
+          "at": 2594,
+          "id": "gates",
+          "kind": "qualification",
+          "chapter": 4
+        },
+        {
+          "at": 2599,
+          "id": "gates",
+          "chapter": 4
+        },
+        {
+          "at": 2914,
+          "id": "ancilla",
+          "chapter": 4
+        },
+        {
+          "at": 2931,
+          "id": "factory",
+          "kind": "qualification",
+          "chapter": 4
+        },
+        {
+          "at": 3056,
+          "id": "factories",
+          "chapter": 4
+        },
+        {
+          "at": 3378,
+          "id": "accounting",
+          "chapter": 5
+        },
+        {
+          "at": 3562,
+          "id": "lloyd",
+          "chapter": 5
+        },
+        {
+          "at": 3795,
+          "id": "hamiltonian",
+          "chapter": 5
+        },
+        {
+          "at": 4098,
+          "id": "audit",
+          "chapter": 5
+        }
+      ],
+      "assignments": [
+        {
+          "at": 6,
+          "id": "staff+1",
+          "staff": 2,
+          "notebooks": 1
+        },
+        {
+          "at": 6,
+          "id": "staff+1",
+          "staff": 3,
+          "notebooks": 1
+        },
+        {
+          "at": 57,
+          "id": "notebooks+1",
+          "staff": 3,
+          "notebooks": 2
+        },
+        {
+          "at": 63,
+          "id": "staff+1",
+          "staff": 4,
+          "notebooks": 2
+        },
+        {
+          "at": 63,
+          "id": "staff+1",
+          "staff": 5,
+          "notebooks": 2
+        },
+        {
+          "at": 96,
+          "id": "staff+1",
+          "staff": 6,
+          "notebooks": 2
+        },
+        {
+          "at": 96,
+          "id": "staff+1",
+          "staff": 7,
+          "notebooks": 2
+        },
+        {
+          "at": 102,
+          "id": "staff+1",
+          "staff": 8,
+          "notebooks": 2
+        },
+        {
+          "at": 102,
+          "id": "staff+1",
+          "staff": 9,
+          "notebooks": 2
+        },
+        {
+          "at": 116,
+          "id": "staff−1",
+          "staff": 8,
+          "notebooks": 2
+        },
+        {
+          "at": 116,
+          "id": "notebooks+1",
+          "staff": 8,
+          "notebooks": 3
+        },
+        {
+          "at": 124,
+          "id": "staff+1",
+          "staff": 9,
+          "notebooks": 3
+        },
+        {
+          "at": 124,
+          "id": "staff+1",
+          "staff": 10,
+          "notebooks": 3
+        },
+        {
+          "at": 135,
+          "id": "notebooks−1",
+          "staff": 10,
+          "notebooks": 2
+        },
+        {
+          "at": 135,
+          "id": "notebooks−1",
+          "staff": 10,
+          "notebooks": 1
+        },
+        {
+          "at": 135,
+          "id": "staff+1",
+          "staff": 11,
+          "notebooks": 1
+        },
+        {
+          "at": 135,
+          "id": "staff+1",
+          "staff": 12,
+          "notebooks": 1
+        },
+        {
+          "at": 145,
+          "id": "staff+1",
+          "staff": 13,
+          "notebooks": 1
+        },
+        {
+          "at": 166,
+          "id": "staff−1",
+          "staff": 12,
+          "notebooks": 1
+        },
+        {
+          "at": 166,
+          "id": "notebooks+1",
+          "staff": 12,
+          "notebooks": 2
+        },
+        {
+          "at": 176,
+          "id": "staff+1",
+          "staff": 13,
+          "notebooks": 2
+        },
+        {
+          "at": 176,
+          "id": "staff+1",
+          "staff": 14,
+          "notebooks": 2
+        },
+        {
+          "at": 198,
+          "id": "staff−1",
+          "staff": 13,
+          "notebooks": 2
+        },
+        {
+          "at": 198,
+          "id": "notebooks+1",
+          "staff": 13,
+          "notebooks": 3
+        },
+        {
+          "at": 336,
+          "id": "notebooks+1",
+          "staff": 13,
+          "notebooks": 4
+        },
+        {
+          "at": 405,
+          "id": "staff−1",
+          "staff": 12,
+          "notebooks": 4
+        },
+        {
+          "at": 405,
+          "id": "notebooks+1",
+          "staff": 12,
+          "notebooks": 5
+        },
+        {
+          "at": 417,
+          "id": "staff+1",
+          "staff": 13,
+          "notebooks": 5
+        },
+        {
+          "at": 417,
+          "id": "staff+1",
+          "staff": 14,
+          "notebooks": 5
+        },
+        {
+          "at": 485,
+          "id": "notebooks−1",
+          "staff": 14,
+          "notebooks": 4
+        },
+        {
+          "at": 485,
+          "id": "notebooks−1",
+          "staff": 14,
+          "notebooks": 3
+        },
+        {
+          "at": 485,
+          "id": "notebooks−1",
+          "staff": 14,
+          "notebooks": 2
+        },
+        {
+          "at": 485,
+          "id": "staff+1",
+          "staff": 15,
+          "notebooks": 2
+        },
+        {
+          "at": 485,
+          "id": "staff+1",
+          "staff": 16,
+          "notebooks": 2
+        },
+        {
+          "at": 485,
+          "id": "staff+1",
+          "staff": 17,
+          "notebooks": 2
+        },
+        {
+          "at": 712,
+          "id": "staff−1",
+          "staff": 16,
+          "notebooks": 2
+        },
+        {
+          "at": 712,
+          "id": "notebooks+1",
+          "staff": 16,
+          "notebooks": 3
+        },
+        {
+          "at": 866,
+          "id": "staff+1",
+          "staff": 17,
+          "notebooks": 3
+        },
+        {
+          "at": 1447,
+          "id": "staff−1",
+          "staff": 16,
+          "notebooks": 3
+        },
+        {
+          "at": 1447,
+          "id": "notebooks+1",
+          "staff": 16,
+          "notebooks": 4
+        },
+        {
+          "at": 1459,
+          "id": "staff+1",
+          "staff": 17,
+          "notebooks": 4
+        },
+        {
+          "at": 1459,
+          "id": "staff+1",
+          "staff": 18,
+          "notebooks": 4
+        },
+        {
+          "at": 1616,
+          "id": "staff−1",
+          "staff": 17,
+          "notebooks": 4
+        },
+        {
+          "at": 1616,
+          "id": "notebooks+1",
+          "staff": 17,
+          "notebooks": 5
+        },
+        {
+          "at": 1955,
+          "id": "notebooks−1",
+          "staff": 17,
+          "notebooks": 4
+        },
+        {
+          "at": 1955,
+          "id": "notebooks−1",
+          "staff": 17,
+          "notebooks": 3
+        },
+        {
+          "at": 1955,
+          "id": "notebooks−1",
+          "staff": 17,
+          "notebooks": 2
+        },
+        {
+          "at": 1955,
+          "id": "staff+1",
+          "staff": 18,
+          "notebooks": 2
+        },
+        {
+          "at": 1955,
+          "id": "staff+1",
+          "staff": 19,
+          "notebooks": 2
+        },
+        {
+          "at": 1955,
+          "id": "staff+1",
+          "staff": 20,
+          "notebooks": 2
+        },
+        {
+          "at": 2158,
+          "id": "staff+1",
+          "staff": 21,
+          "notebooks": 2
+        },
+        {
+          "at": 2594,
+          "id": "staff+1",
+          "staff": 22,
+          "notebooks": 2
+        },
+        {
+          "at": 2594,
+          "id": "staff+1",
+          "staff": 23,
+          "notebooks": 2
+        },
+        {
+          "at": 2931,
+          "id": "staff+1",
+          "staff": 24,
+          "notebooks": 2
+        },
+        {
+          "at": 2931,
+          "id": "staff+1",
+          "staff": 25,
+          "notebooks": 2
+        },
+        {
+          "at": 3057,
+          "id": "staff−1",
+          "staff": 24,
+          "notebooks": 2
+        },
+        {
+          "at": 3057,
+          "id": "notebooks+1",
+          "staff": 24,
+          "notebooks": 3
+        },
+        {
+          "at": 3379,
+          "id": "staff+1",
+          "staff": 25,
+          "notebooks": 3
+        },
+        {
+          "at": 3563,
+          "id": "staff−1",
+          "staff": 24,
+          "notebooks": 3
+        },
+        {
+          "at": 3563,
+          "id": "notebooks+1",
+          "staff": 24,
+          "notebooks": 4
+        },
+        {
+          "at": 3796,
+          "id": "staff−1",
+          "staff": 23,
+          "notebooks": 4
+        },
+        {
+          "at": 3796,
+          "id": "notebooks+1",
+          "staff": 23,
+          "notebooks": 5
+        },
+        {
+          "at": 4099,
+          "id": "notebooks−1",
+          "staff": 23,
+          "notebooks": 4
+        },
+        {
+          "at": 4099,
+          "id": "notebooks−1",
+          "staff": 23,
+          "notebooks": 3
+        },
+        {
+          "at": 4099,
+          "id": "notebooks−1",
+          "staff": 23,
+          "notebooks": 2
+        },
+        {
+          "at": 4099,
+          "id": "notebooks−1",
+          "staff": 23,
+          "notebooks": 1
+        },
+        {
+          "at": 4099,
+          "id": "staff+1",
+          "staff": 24,
+          "notebooks": 1
+        },
+        {
+          "at": 4099,
+          "id": "staff+1",
+          "staff": 25,
+          "notebooks": 1
+        },
+        {
+          "at": 4099,
+          "id": "staff+1",
+          "staff": 26,
+          "notebooks": 1
+        },
+        {
+          "at": 4099,
+          "id": "staff+1",
+          "staff": 27,
+          "notebooks": 1
+        }
+      ],
+      "aborts": 0,
+      "inputs": {
+        "distance": 5,
+        "service": 0.55,
+        "automation": 2,
+        "workshops": 2,
+        "dissemination": "proprietary",
+        "rollout": "verified"
+      },
+      "initialElapsed": 0,
+      "resumed": false,
+      "longestNoActionWindow": {
+        "from": 3796,
+        "to": 4098,
+        "previous": "assignment/notebooks+1",
+        "next": "discovery/audit"
+      },
+      "priceChecks": 16,
+      "priceAdjustments": 6,
+      "analysisAdjustments": 0
+    }
+  }
+]

@@ -1,0 +1,433 @@
+{
+  "game": "coherent",
+  "version": 2,
+  "state": {
+    "version": 2,
+    "notebooks": 4,
+    "designs": 7.216758609999706,
+    "engineering": [
+      "workflow",
+      "storage1",
+      "open",
+      "storage2",
+      "pricing",
+      "autoCalibration",
+      "automation"
+    ],
+    "price": 9.577155067379046,
+    "autoPrice": true,
+    "autoCalibration": true,
+    "automation": 2,
+    "analysisShare": 1,
+    "workshops": 0,
+    "fabrication": 0.5,
+    "fabricated": 0,
+    "integrated": 0,
+    "started": true,
+    "paused": false,
+    "elapsed": 1186,
+    "funds": 1114.9116809754191,
+    "effort": 310.4,
+    "done": [
+      "feynman",
+      "deutsch",
+      "divincenzo",
+      "nakamura",
+      "ramsey",
+      "echo",
+      "readout",
+      "rb",
+      "coupled",
+      "nisq",
+      "vqe",
+      "ansatz",
+      "mitigation",
+      "classical",
+      "shor",
+      "stabilizer",
+      "surface",
+      "decoder"
+    ],
+    "qualified": [
+      "signal",
+      "ramsey",
+      "echo",
+      "readout",
+      "benchmark",
+      "circuit",
+      "vqe"
+    ],
+    "module": 2,
+    "rack": 3,
+    "staff": 20,
+    "pulse": 4,
+    "decoder": 0,
+    "drift": 0.005,
+    "distance": 3,
+    "factories": 0,
+    "calibration": 0.2,
+    "service": 0.55,
+    "theta": 65,
+    "shots": 2,
+    "mitigate": true,
+    "credits": 0,
+    "reputation": 7,
+    "seed": 2863825717,
+    "job": {
+      "id": "memory",
+      "workload": false,
+      "progress": 0.8153920850734604,
+      "duration": 10,
+      "shots": 100,
+      "theta": 65,
+      "mitigate": true,
+      "bias": 0.002
+    },
+    "result": {
+      "id": "vqe",
+      "shots": 16384,
+      "bins": [],
+      "message": "Tutorial reproduced within its declared uncertainty and residual-bias budget."
+    },
+    "tutorial": {
+      "theta": 65,
+      "energy": -1.5497314453125,
+      "exact": -1.5620409414293128,
+      "reference": -1.5620499351813308,
+      "statistical": 0.05318408942119493,
+      "se": 0.007403397570523343,
+      "bias": 0.0044,
+      "ansatzError": 0.00000899375201801611,
+      "shots": 49152,
+      "modeledShots": 196608,
+      "groups": [
+        {
+          "label": "ZZ",
+          "plus": 2981,
+          "minus": 13403,
+          "estimate": -0.6361083984375
+        },
+        {
+          "label": "X₀",
+          "plus": 1963,
+          "minus": 14421,
+          "estimate": -0.7603759765625
+        },
+        {
+          "label": "X₁",
+          "plus": 1947,
+          "minus": 14437,
+          "estimate": -0.7623291015625
+        }
+      ],
+      "qualified": true
+    },
+    "completed": [],
+    "ended": false,
+    "volume": 0.2,
+    "sound": false,
+    "theme": "dark",
+    "log": [
+      {
+        "time": 135,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 135,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 144,
+        "message": "Characterize the gates. Unlock pulse engineering. Manual calibration still requires apparatus time.",
+        "kind": "discovery"
+      },
+      {
+        "time": 145,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 156,
+        "message": "Install a larger chip. Installed preset 9 physical qubits; commissioned construction is additional.",
+        "kind": "engineering"
+      },
+      {
+        "time": 159,
+        "message": "Control & cooling rack. Support preset 9 physical qubits; adds control/readout lanes.",
+        "kind": "engineering"
+      },
+      {
+        "time": 165,
+        "message": "The second conversation. Connect calibrated qubits. Enter the noisy era.",
+        "kind": "discovery"
+      },
+      {
+        "time": 165,
+        "message": "One qubit becomes a machine.",
+        "kind": "chapter"
+      },
+      {
+        "time": 166,
+        "message": "Released one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 166,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 176,
+        "message": "The second qubit has something to say to the first.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 176,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 176,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 197,
+        "message": "The noisy intermediate era. Open explicitly qualified laboratory service contracts.",
+        "kind": "discovery"
+      },
+      {
+        "time": 198,
+        "message": "Released one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 198,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 212,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 235,
+        "message": "Control & cooling rack. Support preset 25 physical qubits; adds control/readout lanes.",
+        "kind": "engineering"
+      },
+      {
+        "time": 243,
+        "message": "Install a larger chip. Installed preset 25 physical qubits; commissioned construction is additional.",
+        "kind": "engineering"
+      },
+      {
+        "time": 252,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 266,
+        "message": "An open laboratory notebook. Choose open dissemination: gain four trust slots and double service demand, with a 30% lower fair price. Excludes proprietary dissemination.",
+        "kind": "engineering"
+      },
+      {
+        "time": 267,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 267,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 267,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 267,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 294,
+        "message": "A hybrid conversation. Optimize a classically reproducible two-spin tutorial.",
+        "kind": "discovery"
+      },
+      {
+        "time": 322,
+        "message": "Choose the question well. Reveal the tutorial’s exact variational energy landscape.",
+        "kind": "discovery"
+      },
+      {
+        "time": 323,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 369,
+        "message": "More shots. Less bias.. Enable a costly measurement-mitigation scenario.",
+        "kind": "discovery"
+      },
+      {
+        "time": 370,
+        "message": "Released one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 370,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 387,
+        "message": "A two-spin energy, reproduced against an exact classical reference.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 387,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 387,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 430,
+        "message": "An indexed research library. Multiply notebook capacity by four again. Keep researchers and storage in balance.",
+        "kind": "engineering"
+      },
+      {
+        "time": 431,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 431,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 431,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 431,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 431,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 431,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 482,
+        "message": "The classical challenger. Validate the tutorial; open the path to correction.",
+        "kind": "discovery"
+      },
+      {
+        "time": 482,
+        "message": "The information survives.",
+        "kind": "chapter"
+      },
+      {
+        "time": 514,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 539,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 562,
+        "message": "A price for the work delivered. Automatically match contract prices to available service capacity. Revenue still requires delivered jobs.",
+        "kind": "engineering"
+      },
+      {
+        "time": 606,
+        "message": "Information worth protecting. Introduce encoded-memory experiments.",
+        "kind": "discovery"
+      },
+      {
+        "time": 607,
+        "message": "Released one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 607,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 728,
+        "message": "Read errors, not secrets. Reveal syndrome detection events.",
+        "kind": "discovery"
+      },
+      {
+        "time": 729,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 832,
+        "message": "Let the instruments keep time. Automatically reserve calibration duty for the current maintenance target. Calibration still consumes apparatus time.",
+        "kind": "engineering"
+      },
+      {
+        "time": 911,
+        "message": "A patch of protection. Allocate ideal rotated memory patches.",
+        "kind": "discovery"
+      },
+      {
+        "time": 1039,
+        "message": "The classical night shift. Unlock classical automation station purchases. Their notes and designs consume shared service capacity.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1070,
+        "message": "Control & cooling rack. Support preset 81 physical qubits; adds control/readout lanes.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1106,
+        "message": "Add an analysis station. One controller-batch slot before customers; contributes classical research/design work.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1138,
+        "message": "Add an analysis station. One controller-batch slot before customers; contributes classical research/design work.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1185,
+        "message": "A classical companion. Unlock streaming decoder upgrades.",
+        "kind": "discovery"
+      },
+      {
+        "time": 1186,
+        "message": "Released one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1186,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      }
+    ]
+  }
+}
