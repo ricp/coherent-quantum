@@ -1,0 +1,144 @@
+{
+  "sourceHashes": {
+    "instrument-3d.js": "680ea026dc64eaecf6eb9b84afb3a233e642c8d4d2175235cba9cd4bdbe2cef0",
+    "style-3d.css": "7481ba7682fc816cba2e683484b02e2008dab02c4ae583da1b875c12921511e9",
+    "scripts/build-three.mjs": "3c3ec92b792dec63f73cf1cb090a36cb95519513bd2163d9133670b39a870924"
+  },
+  "originalRuntimeMatchesBase": "62cf6c255d1fa053a8670d27d3c1d84b53c5d1dd",
+  "originalHashes": {
+    "index.html": "a8e6c256388d58f178191a6c5fcce8e52b2ccf5639ecc49e7acc0f50028fad6d",
+    "style.css": "141264e0e427cc4b684796712cf47e89259b7699ea835f9cc0d66d7266d370ea",
+    "app.js": "9c353db2c51088783196d4db0d0991cb2c93fb80d16a4a5ebb342b9946ac95a2",
+    "instrument.js": "b40ffd6ad1eeb66552b60591b7cf3c8166660a403337bb3c39d508b05b13d8cf",
+    "game.js": "8c82dbef4b72c2d38e565b5ab12344538b1096a075e09a3e760d21d158e84847",
+    "content.js": "0bd72d8ecca580c6d4baf0b1d50e6fcea7fa071712227f0df635fec668ddffbe"
+  },
+  "originalHtmlIdsPreservedExactlyOnce": 169,
+  "packaging": {
+    "command": "npm run build:3d",
+    "verifiedReproducible": true,
+    "hashes": {
+      "index-3d.html": "0bae8d7a84ede4b32603f2a863ec36c3c61674584d042c1576bde6dd4b501e0f",
+      "assets/three/three-tools.min.js": "67ef3fc1c45ee2ec978e392b08ecffca0c7ece7414deb61d11f4e63cb605fdab",
+      "assets/three/LICENSE.txt": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    }
+  },
+  "tests": {
+    "command": "npm test",
+    "total": 43,
+    "passed": 43,
+    "failed": 0,
+    "skipped": 0
+  },
+  "fixtureValidation": [
+    {
+      "path": "context-loss-export.json",
+      "sha256": "3cf903aa74e6b697b59ebcfaf8676a150fb911e77768907805d5697f695a96af",
+      "validated": true
+    },
+    {
+      "path": "fallback-export.json",
+      "sha256": "e80d92ad3dff3e97e51699ff5dc6e455147f7187ba5875c86a5f56a831d6838b",
+      "validated": true
+    },
+    {
+      "path": "legal-early-automation-before.json",
+      "sha256": "a87123fe075c6d3591d2e3517c5f266b7bd595c86baf0bb9d15f0c07caade7fc",
+      "validated": true
+    },
+    {
+      "path": "legal-growth-before.json",
+      "sha256": "52d8dcc9afcfb66d31c8749035b2a452277b403f5d09128b6d7a606e68bf5fd3",
+      "validated": true
+    },
+    {
+      "path": "legal-growth-commissioned.json",
+      "sha256": "684ce3dcadabc72aebce0e198edde82f1190d084b031287bb1ea6df225344e13",
+      "validated": true
+    },
+    {
+      "path": "legal-growth-decoder.json",
+      "sha256": "f74c08e84a8de4f9c18ce6c738b46d873276fc46be04b0a08d27dc62860e49a3",
+      "validated": true
+    },
+    {
+      "path": "legal-growth-hardware.json",
+      "sha256": "a74df1344bf5caead3ce27bb13a5dcaf6f6dba469ada737b74c2e26834664339",
+      "validated": true
+    },
+    {
+      "path": "legal-growth-pulse.json",
+      "sha256": "e7c11c45798f3d92eaa64ee89a973c6c7025c9f69030cbdf0c68677d9c92fb44",
+      "validated": true
+    },
+    {
+      "path": "legal-growth-rack.json",
+      "sha256": "2a0ecde4b7ae56491ee26afae963e1c9391d658363ec2f1a871ed08430383cab",
+      "validated": true
+    },
+    {
+      "path": "legal-growth-workshop.json",
+      "sha256": "a1f39c93dbf38e83a3f5288abaa9730714fec839fd6bd42b5c469996044c84dc",
+      "validated": true
+    },
+    {
+      "path": "legal-native-before.json",
+      "sha256": "6dccff6956030ef17b0cfb324fb52303c48bb1fca22f331fde21ff5bcb99d377",
+      "validated": true
+    },
+    {
+      "path": "legal-staff-after.json",
+      "sha256": "83150fda5a7057a4adec592bb2f16c391225c716ed762d2df3b6e52038d5e6e7",
+      "validated": true
+    },
+    {
+      "path": "legal-staff-before.json",
+      "sha256": "7ba9ca8641a4e73083beafcf71bf8606dd413a90200b6db94b8da6ba0a95ace2",
+      "validated": true
+    },
+    {
+      "path": "legal-zero-flow.json",
+      "sha256": "6b68666d4998e0caee30c5a5f525b8398de91ff71f1755317c1c85fac7bdbac9",
+      "validated": true
+    },
+    {
+      "path": "renderer-full-banks.json",
+      "sha256": "5c72d5ff5a066b16d1829d99e3b3e5a488f11e6cde1d15b8c84778ebacffe7d6",
+      "validated": true
+    },
+    {
+      "path": "renderer-stress-all-equipment.json",
+      "sha256": "8c2178a60d158eac1fe48921e0e6a538bdb678832b34467814956ba1c06fb286",
+      "validated": true
+    },
+    {
+      "path": "unstarted.json",
+      "sha256": "f74d3df981aeed057d29f7de3c23abb58c8f12a436ad9056a0563b22d5cae573",
+      "validated": true
+    }
+  ],
+  "browserEvidenceSourceHashes": {
+    "instrument-3d.js": "680ea026dc64eaecf6eb9b84afb3a233e642c8d4d2175235cba9cd4bdbe2cef0",
+    "style-3d.css": "7481ba7682fc816cba2e683484b02e2008dab02c4ae583da1b875c12921511e9"
+  },
+  "recording": {
+    "duration": "15.095926",
+    "size": "2638131",
+    "codec_name": "vp9",
+    "width": 1372,
+    "height": 620,
+    "sha256": "f7c885acfdf66ef04e38c1386da7ee16efc9b41b9c6ff461c71db27ed14af5c0",
+    "scope": "Native legal purchase, camera, funded construction and visible active planning motion; canvas only"
+  },
+  "independentAIReview": {
+    "outcome": "ACCEPT",
+    "rendererSha256": "680ea026dc64eaecf6eb9b84afb3a233e642c8d4d2175235cba9cd4bdbe2cef0",
+    "stylesheetSha256": "7481ba7682fc816cba2e683484b02e2008dab02c4ae583da1b875c12921511e9",
+    "record": "IMMERSIVE-LAB-REVIEW.md",
+    "unverified": [
+      "Human enjoyment and first-play pacing",
+      "Physical-device performance",
+      "Native back/forward-cache restoration"
+    ]
+  }
+}

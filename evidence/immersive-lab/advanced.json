@@ -1,0 +1,885 @@
+{
+  "earlyBefore": {
+    "description": "Your laboratory grows with staff, control racks, processor modules, pulse tools, decoder capacity and commissioning. Visible apparatus is schematic; exact measurements and scientific assumptions remain inspectable.",
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 58,
+      "camera": "overview",
+      "chapter": 3,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 4,
+      "geometries": 21,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "chapter": 3,
+        "chipCommissioningGroups": 0,
+        "coax": 18,
+        "controlRacks": 3,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 2,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 21,
+        "researchers": 21,
+        "supportCommissioningGroups": 0,
+        "supported": 25
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 20,
+      "triangles": 68080,
+      "visible": true,
+      "width": 1372
+    },
+    "errors": [],
+    "focus": "Your quantum laboratory",
+    "growth": "25 installed \u00b7 25 supported \u00b7 21 researchers \u00b7 3 control racks",
+    "legend": "Active physical25Calibration duty25%Planned service3.09 / lab sPlanned research50.4 / lab s",
+    "overflow": false
+  },
+  "earlyAfter": {
+    "description": "Your laboratory grows with staff, control racks, processor modules, pulse tools, decoder capacity and commissioning. Visible apparatus is schematic; exact measurements and scientific assumptions remain inspectable.",
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 80,
+      "camera": "overview",
+      "chapter": 3,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 5,
+      "geometries": 22,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "analysisStations": 1,
+        "chapter": 3,
+        "chipCommissioningGroups": 0,
+        "coax": 18,
+        "controlRacks": 3,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 2,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 21,
+        "researchers": 21,
+        "supportCommissioningGroups": 0,
+        "supported": 25
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 21,
+      "triangles": 104518,
+      "visible": true,
+      "width": 1372
+    },
+    "errors": [],
+    "focus": "Your quantum laboratory",
+    "growth": "25 installed \u00b7 25 supported \u00b7 21 researchers \u00b7 3 control racks",
+    "legend": "Active physical25Calibration duty25%Planned service2.09 / lab sPlanned research56.4 / lab s",
+    "overflow": false
+  },
+  "fullscreenWorkloadNavigation": {
+    "containsWorkloads": true,
+    "target": "main",
+    "top": -0.46875,
+    "viewport": 1050,
+    "visible": true
+  },
+  "fullscreenActive": {
+    "description": "Parallel operations, fresh states and feedback overlap. The six lanes use one-execution modeled durations; 1 repetition gives 2,580 \u03bcs full modeled time. Laboratory seconds use a separate pacing clock; the cursor follows that clock, not the lane \u03bcs scale.",
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": true,
+        "construction": false,
+        "experiment": true,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": false
+      },
+      "available": true,
+      "cadence": 30,
+      "calls": 75,
+      "camera": "planning",
+      "chapter": 5,
+      "driverActive": true,
+      "enabled": true,
+      "followExperiment": true,
+      "frames": 40,
+      "geometries": 29,
+      "height": 705,
+      "inViewport": true,
+      "model": {
+        "active": 4422,
+        "allocation": {
+          "kinds": {
+            "application": 249,
+            "factory": 8,
+            "routing": 2,
+            "spare": 1
+          },
+          "remaining": 2,
+          "requested": {
+            "application": 249,
+            "factory": 8,
+            "routing": 2,
+            "spare": 1
+          },
+          "shortage": 0,
+          "total": 260
+        },
+        "analysisStations": 4,
+        "chapter": 5,
+        "chipCommissioningGroups": 4,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 8,
+        "installed": 4422,
+        "modulePackages": 3,
+        "notebooks": 1,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 36,
+        "researchSeats": 31,
+        "researchers": 31,
+        "schedule": {
+          "finish": 2580,
+          "lanes": [
+            {
+              "duration": 80,
+              "name": "Preparation",
+              "start": 0
+            },
+            {
+              "duration": 2400,
+              "name": "Operations",
+              "start": 80
+            },
+            {
+              "duration": 2304,
+              "name": "Fresh states",
+              "start": 80
+            },
+            {
+              "duration": 2000,
+              "name": "Feedback",
+              "start": 80
+            },
+            {
+              "duration": 40,
+              "name": "Readout",
+              "start": 2480
+            },
+            {
+              "duration": 60,
+              "name": "Classical",
+              "start": 2520
+            }
+          ],
+          "qualified": true,
+          "repetitions": 1,
+          "runtime": 2580,
+          "workload": "dynamics"
+        },
+        "supportCommissioningGroups": 4,
+        "supported": 4422,
+        "workshopCells": 2,
+        "workshops": 2
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 29,
+      "triangles": 104846,
+      "visible": true,
+      "width": 1414
+    },
+    "errors": [],
+    "focus": "The complete useful-work schedule",
+    "growth": "4,423 installed \u00b7 4,422 supported \u00b7 31 researchers \u00b7 4 control racks",
+    "legend": "Preparation80 \u03bcsOperations2,400 \u03bcsFresh states2,304 \u03bcsFeedback2,000 \u03bcsReadout40 \u03bcsClassical60 \u03bcs",
+    "overflow": false
+  },
+  "fullscreenEnding": {
+    "containsEnding": true,
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 72,
+      "camera": "overview",
+      "chapter": 5,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": true,
+      "frames": 1476,
+      "geometries": 29,
+      "height": 705,
+      "inViewport": true,
+      "model": {
+        "active": 4422,
+        "allocation": {
+          "kinds": {
+            "application": 249,
+            "factory": 8,
+            "routing": 2,
+            "spare": 1
+          },
+          "remaining": 2,
+          "requested": {
+            "application": 249,
+            "factory": 8,
+            "routing": 2,
+            "spare": 1
+          },
+          "shortage": 0,
+          "total": 260
+        },
+        "analysisStations": 4,
+        "chapter": 5,
+        "chipCommissioningGroups": 4,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 8,
+        "installed": 4422,
+        "modulePackages": 3,
+        "notebooks": 1,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 36,
+        "researchSeats": 31,
+        "researchers": 31,
+        "schedule": {
+          "finish": 2580,
+          "lanes": [
+            {
+              "duration": 80,
+              "name": "Preparation",
+              "start": 0
+            },
+            {
+              "duration": 2400,
+              "name": "Operations",
+              "start": 80
+            },
+            {
+              "duration": 2304,
+              "name": "Fresh states",
+              "start": 80
+            },
+            {
+              "duration": 2000,
+              "name": "Feedback",
+              "start": 80
+            },
+            {
+              "duration": 40,
+              "name": "Readout",
+              "start": 2480
+            },
+            {
+              "duration": 60,
+              "name": "Classical",
+              "start": 2520
+            }
+          ],
+          "qualified": true,
+          "repetitions": 1,
+          "runtime": 2580,
+          "workload": "dynamics"
+        },
+        "supportCommissioningGroups": 4,
+        "supported": 4422,
+        "workshopCells": 2,
+        "workshops": 2
+      },
+      "pixelRatio": 1,
+      "scene": "ending",
+      "textures": 29,
+      "triangles": 104422,
+      "visible": true,
+      "width": 1414
+    },
+    "endingVisible": true,
+    "target": "main"
+  },
+  "lightTheme": {
+    "description": "A schematic dilution refrigerator: copper stages, suspended coax and a known-preparation circuit. Geometry and temperature behavior are illustrative.",
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 57,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 1480,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77238,
+      "visible": true,
+      "width": 1372
+    },
+    "errors": [],
+    "focus": "The copper heart of the laboratory",
+    "growth": "25 installed \u00b7 81 supported \u00b7 22 researchers \u00b7 4 control racks",
+    "legend": "Active physical25Calibration duty21%Planned service3.98 / lab sPlanned research56.4 / lab s",
+    "overflow": false
+  },
+  "orbitDrag": {
+    "follow": false,
+    "unchanged": true
+  },
+  "contextLoss": {
+    "description": "A schematic dilution refrigerator: copper stages, suspended coax and a known-preparation circuit. Geometry and temperature behavior are illustrative.",
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": false,
+      "cadence": 0,
+      "calls": 58,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": false,
+      "followExperiment": false,
+      "frames": 1481,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": false,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77250,
+      "visible": false,
+      "width": 1372
+    },
+    "errors": [],
+    "focus": "The copper heart of the laboratory",
+    "growth": "25 installed \u00b7 81 supported \u00b7 22 researchers \u00b7 4 control racks",
+    "legend": "Active physical25Calibration duty21%Planned service3.98 / lab sPlanned research56.4 / lab s",
+    "overflow": false,
+    "unchanged": true,
+    "machine": "block"
+  },
+  "contextRestorationKeepsFallback": true,
+  "reloadRecovery": {
+    "description": "Your laboratory grows with staff, control racks, processor modules, pulse tools, decoder capacity and commissioning. Visible apparatus is schematic; exact measurements and scientific assumptions remain inspectable.",
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 80,
+      "camera": "overview",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": true,
+      "frames": 1,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 22,
+      "triangles": 116976,
+      "visible": true,
+      "width": 1372
+    },
+    "errors": [],
+    "focus": "Your quantum laboratory",
+    "growth": "25 installed \u00b7 81 supported \u00b7 22 researchers \u00b7 4 control racks",
+    "legend": "Active physical25Calibration duty21%Planned service3.98 / lab sPlanned research56.4 / lab s",
+    "overflow": false
+  },
+  "unqualifiedSchedule": {
+    "description": "Parallel operations, fresh states and feedback overlap. The six lanes use one-execution modeled durations; Full modeled time remains unqualified because fresh-state timing is missing. Downstream bar positions show a lower bound; the schedule has no qualified finish. Laboratory seconds use a separate pacing clock; the cursor follows that clock, not the lane \u03bcs scale.",
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 70,
+      "camera": "planning",
+      "chapter": 5,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 3,
+      "geometries": 27,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 1258,
+        "allocation": {
+          "kinds": {
+            "application": 71,
+            "factory": 0,
+            "routing": 2,
+            "spare": 1
+          },
+          "remaining": 0,
+          "requested": {
+            "application": 71,
+            "factory": 0,
+            "routing": 2,
+            "spare": 1
+          },
+          "shortage": 0,
+          "total": 74
+        },
+        "analysisStations": 3,
+        "chapter": 5,
+        "chipCommissioningGroups": 3,
+        "coax": 26,
+        "controlRacks": 4,
+        "decoderRacks": 3,
+        "desks": 8,
+        "installed": 1258,
+        "modulePackages": 3,
+        "notebooks": 3,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 36,
+        "researchSeats": 28,
+        "researchers": 28,
+        "schedule": {
+          "finish": null,
+          "lanes": [
+            {
+              "duration": 80,
+              "name": "Preparation",
+              "start": 0
+            },
+            {
+              "duration": 2400,
+              "name": "Operations",
+              "start": 80
+            },
+            {
+              "duration": null,
+              "name": "Fresh states",
+              "start": 80
+            },
+            {
+              "duration": 4000,
+              "name": "Feedback",
+              "start": 80
+            },
+            {
+              "duration": 40,
+              "name": "Readout",
+              "start": 4080
+            },
+            {
+              "duration": 60,
+              "name": "Classical",
+              "start": 4120
+            }
+          ],
+          "qualified": false,
+          "repetitions": 1,
+          "runtime": null,
+          "workload": "dynamics"
+        },
+        "supportCommissioningGroups": 3,
+        "supported": 1258,
+        "workshopCells": 2,
+        "workshops": 2
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 28,
+      "triangles": 94840,
+      "visible": true,
+      "width": 1372
+    },
+    "errors": [],
+    "focus": "The complete useful-work schedule",
+    "growth": "1,258 installed \u00b7 1,258 supported \u00b7 28 researchers \u00b7 4 control racks",
+    "legend": "Preparation80 \u03bcsOperations2,400 \u03bcsFresh statesunqualifiedFeedback4,000 \u03bcsReadout40 \u03bcsClassical60 \u03bcs",
+    "overflow": false
+  },
+  "mobileMotion": {
+    "after": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 20,
+      "calls": 51,
+      "camera": "planning",
+      "chapter": 4,
+      "driverActive": true,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 28,
+      "geometries": 18,
+      "height": 440,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1.25,
+      "scene": "laboratory",
+      "textures": 19,
+      "triangles": 73526,
+      "visible": true,
+      "width": 339
+    },
+    "before": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 20,
+      "calls": 51,
+      "camera": "planning",
+      "chapter": 4,
+      "driverActive": true,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 10,
+      "geometries": 18,
+      "height": 440,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1.25,
+      "scene": "laboratory",
+      "textures": 19,
+      "triangles": 73526,
+      "visible": true,
+      "width": 339
+    },
+    "delta": 18,
+    "ms": 1000
+  },
+  "mobileKeyboardLastStation": {
+    "camera": "overview",
+    "focus": "Reset",
+    "scroll": 295
+  },
+  "errors": []
+}

@@ -1,0 +1,548 @@
+[
+  {
+    "chapter": 0,
+    "description": "A schematic dilution refrigerator: copper stages, suspended coax and a known-preparation circuit. Geometry and temperature behavior are illustrative.",
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 45,
+      "camera": "cryostat",
+      "chapter": 0,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 155,
+      "geometries": 17,
+      "height": 440,
+      "inViewport": true,
+      "model": {
+        "active": 1,
+        "chapter": 0,
+        "coax": 10,
+        "controlRacks": 1,
+        "decoderRacks": 0,
+        "desks": 1,
+        "installed": 1,
+        "modulePackages": 1,
+        "notebooks": 1,
+        "researchSeats": 1,
+        "researchers": 1,
+        "supported": 1
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 18,
+      "triangles": 26172,
+      "visible": true,
+      "width": 284
+    },
+    "errors": [],
+    "focus": "The copper heart of the laboratory",
+    "growth": "1 installed \u00b7 1 supported \u00b7 1 researcher \u00b7 1 control rack",
+    "legend": "Active physical1Calibration duty0%Planned service0 / lab sPlanned research1.2 / lab s",
+    "overflow": false
+  },
+  {
+    "chapter": 1,
+    "description": "A schematic dilution refrigerator: copper stages, suspended coax and a known-preparation circuit. Geometry and temperature behavior are illustrative.",
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 46,
+      "camera": "cryostat",
+      "chapter": 1,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 157,
+      "geometries": 15,
+      "height": 440,
+      "inViewport": true,
+      "model": {
+        "active": 1,
+        "chapter": 1,
+        "coax": 10,
+        "controlRacks": 1,
+        "decoderRacks": 0,
+        "desks": 3,
+        "installed": 1,
+        "modulePackages": 1,
+        "notebooks": 1,
+        "researchSeats": 3,
+        "researchers": 3,
+        "supported": 1
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 16,
+      "triangles": 28508,
+      "visible": true,
+      "width": 284
+    },
+    "errors": [],
+    "focus": "The copper heart of the laboratory",
+    "growth": "1 installed \u00b7 1 supported \u00b7 3 researchers \u00b7 1 control rack",
+    "legend": "Active physical1Calibration duty0%Planned service0 / lab sPlanned research3.6 / lab s",
+    "overflow": false
+  },
+  {
+    "chapter": 2,
+    "description": "A schematic dilution refrigerator: copper stages, suspended coax and a known-preparation circuit. Geometry and temperature behavior are illustrative.",
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 47,
+      "camera": "cryostat",
+      "chapter": 2,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 159,
+      "geometries": 16,
+      "height": 440,
+      "inViewport": true,
+      "model": {
+        "active": 9,
+        "chapter": 2,
+        "chipCommissioningGroups": 0,
+        "coax": 12,
+        "controlRacks": 2,
+        "decoderRacks": 0,
+        "desks": 8,
+        "installed": 9,
+        "modulePackages": 2,
+        "notebooks": 1,
+        "processorSites": 9,
+        "researchSeats": 13,
+        "researchers": 13,
+        "supportCommissioningGroups": 0,
+        "supported": 9
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 17,
+      "triangles": 43736,
+      "visible": true,
+      "width": 284
+    },
+    "errors": [],
+    "focus": "The copper heart of the laboratory",
+    "growth": "9 installed \u00b7 9 supported \u00b7 13 researchers \u00b7 2 control racks",
+    "legend": "Active physical9Calibration duty20%Planned service0 / lab sPlanned research31.2 / lab s",
+    "overflow": false
+  },
+  {
+    "chapter": 3,
+    "description": "A schematic dilution refrigerator: copper stages, suspended coax and a known-preparation circuit. Geometry and temperature behavior are illustrative.",
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 51,
+      "camera": "cryostat",
+      "chapter": 3,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 161,
+      "geometries": 19,
+      "height": 440,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "chapter": 3,
+        "chipCommissioningGroups": 0,
+        "coax": 18,
+        "controlRacks": 3,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 2,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 21,
+        "researchers": 21,
+        "supportCommissioningGroups": 0,
+        "supported": 25
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 20,
+      "triangles": 63948,
+      "visible": true,
+      "width": 284
+    },
+    "errors": [],
+    "focus": "The copper heart of the laboratory",
+    "growth": "25 installed \u00b7 25 supported \u00b7 21 researchers \u00b7 3 control racks",
+    "legend": "Active physical25Calibration duty25%Planned service3.09 / lab sPlanned research50.4 / lab s",
+    "overflow": false
+  },
+  {
+    "chapter": 4,
+    "description": "A schematic dilution refrigerator: copper stages, suspended coax and a known-preparation circuit. Geometry and temperature behavior are illustrative.",
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 53,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 163,
+      "geometries": 22,
+      "height": 440,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 23,
+      "triangles": 73122,
+      "visible": true,
+      "width": 284
+    },
+    "errors": [],
+    "focus": "The copper heart of the laboratory",
+    "growth": "25 installed \u00b7 81 supported \u00b7 22 researchers \u00b7 4 control racks",
+    "legend": "Active physical25Calibration duty21%Planned service3.98 / lab sPlanned research56.4 / lab s",
+    "overflow": false
+  },
+  {
+    "chapter": 5,
+    "description": "Your laboratory grows with staff, control racks, processor modules, pulse tools, decoder capacity and commissioning. Visible apparatus is schematic; exact measurements and scientific assumptions remain inspectable.",
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 71,
+      "camera": "overview",
+      "chapter": 5,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 165,
+      "geometries": 28,
+      "height": 440,
+      "inViewport": true,
+      "model": {
+        "active": 1258,
+        "allocation": {
+          "kinds": {
+            "application": 67,
+            "factory": 4,
+            "routing": 2,
+            "spare": 1
+          },
+          "remaining": 0,
+          "requested": {
+            "application": 67,
+            "factory": 4,
+            "routing": 2,
+            "spare": 1
+          },
+          "shortage": 0,
+          "total": 74
+        },
+        "analysisStations": 3,
+        "chapter": 5,
+        "chipCommissioningGroups": 3,
+        "coax": 26,
+        "controlRacks": 4,
+        "decoderRacks": 3,
+        "desks": 8,
+        "installed": 1258,
+        "modulePackages": 3,
+        "notebooks": 3,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 36,
+        "researchSeats": 28,
+        "researchers": 28,
+        "schedule": {
+          "finish": 4788,
+          "lanes": [
+            {
+              "duration": 80,
+              "name": "Preparation",
+              "start": 0
+            },
+            {
+              "duration": 2400,
+              "name": "Operations",
+              "start": 80
+            },
+            {
+              "duration": 4608,
+              "name": "Fresh states",
+              "start": 80
+            },
+            {
+              "duration": 4000,
+              "name": "Feedback",
+              "start": 80
+            },
+            {
+              "duration": 40,
+              "name": "Readout",
+              "start": 4688
+            },
+            {
+              "duration": 60,
+              "name": "Classical",
+              "start": 4728
+            }
+          ],
+          "qualified": true,
+          "repetitions": 1,
+          "runtime": 4788,
+          "workload": "dynamics"
+        },
+        "supportCommissioningGroups": 3,
+        "supported": 1258,
+        "workshopCells": 2,
+        "workshops": 2
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 28,
+      "triangles": 95296,
+      "visible": true,
+      "width": 284
+    },
+    "errors": [],
+    "focus": "Your quantum laboratory",
+    "growth": "1,258 installed \u00b7 1,258 supported \u00b7 28 researchers \u00b7 4 control racks",
+    "legend": "Active physical1,258Calibration duty36%Planned service3.07 / lab sPlanned research141.6 / lab s",
+    "overflow": false
+  },
+  {
+    "chapter": 6,
+    "description": "The complete laboratory, from one known signal to a named useful resource scenario. Modeled completion: no large fault-tolerant quantum computation or large quantum answer was produced.",
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 72,
+      "camera": "overview",
+      "chapter": 5,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 167,
+      "geometries": 29,
+      "height": 440,
+      "inViewport": true,
+      "model": {
+        "active": 4422,
+        "allocation": {
+          "kinds": {
+            "application": 249,
+            "factory": 8,
+            "routing": 2,
+            "spare": 1
+          },
+          "remaining": 2,
+          "requested": {
+            "application": 249,
+            "factory": 8,
+            "routing": 2,
+            "spare": 1
+          },
+          "shortage": 0,
+          "total": 260
+        },
+        "analysisStations": 4,
+        "chapter": 5,
+        "chipCommissioningGroups": 4,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 8,
+        "installed": 4422,
+        "modulePackages": 3,
+        "notebooks": 1,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 36,
+        "researchSeats": 31,
+        "researchers": 31,
+        "schedule": {
+          "finish": 2580,
+          "lanes": [
+            {
+              "duration": 80,
+              "name": "Preparation",
+              "start": 0
+            },
+            {
+              "duration": 2400,
+              "name": "Operations",
+              "start": 80
+            },
+            {
+              "duration": 2304,
+              "name": "Fresh states",
+              "start": 80
+            },
+            {
+              "duration": 2000,
+              "name": "Feedback",
+              "start": 80
+            },
+            {
+              "duration": 40,
+              "name": "Readout",
+              "start": 2480
+            },
+            {
+              "duration": 60,
+              "name": "Classical",
+              "start": 2520
+            }
+          ],
+          "qualified": true,
+          "repetitions": 1,
+          "runtime": 2580,
+          "workload": "dynamics"
+        },
+        "supportCommissioningGroups": 4,
+        "supported": 4422,
+        "workshopCells": 2,
+        "workshops": 2
+      },
+      "pixelRatio": 1,
+      "scene": "ending",
+      "textures": 29,
+      "triangles": 104422,
+      "visible": true,
+      "width": 282
+    },
+    "errors": [],
+    "focus": "Your quantum laboratory",
+    "growth": "4,422 installed \u00b7 4,422 supported \u00b7 31 researchers \u00b7 4 control racks",
+    "legend": "Active physical4,422Calibration duty40%Planned service2.64 / lab sPlanned research158.4 / lab s",
+    "overflow": false
+  }
+]
