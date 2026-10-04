@@ -1,6 +1,6 @@
 # Research campus verification
 
-Branch: `feature/quantum-research-campus`, from `c8cd43a`. Private local development, 5 October 2026. This is a running evidence record; implementation acceptance and the normal Chrome ending are still pending.
+Branch: `feature/quantum-research-campus`, from `c8cd43a`. Private local development, 5 October 2026. Scientific and 3D implementation reviews have reached bounded independent AI consensus. The normal Chrome campaign is still in progress.
 
 ## Engine and intent tests
 
@@ -12,12 +12,17 @@ The gameplay builder and independent AI quantum reviewer verified ten legal runs
 
 The user's existing tab remains `http://dev.localhost:5500/index-3d.html`. The lead selected **Enter expanded campus** using the native visible button while paused and idle. Before and after, the accessibility state showed **19:36 laboratory time, 5,375 funding, 3,840 effort, 1,757 designs, 13 discoveries, nine installed and supported qubits**. New frontier counts were **0/6 goals and 0/6 requests**. No old evidence inferred a new award. Local saving remained visible. During concurrent development a newly required empty completion-recipe map rejected this just-created campus save. Its raw data remained protected. The reviewed narrow previous-block transition restored exactly the same visible values on native Chrome Reload; malformed or historical partial blocks remain rejected. Normal play subsequently resumed and earned fresh goals and a precision request. The main normal-player campaign has not yet reached its ending.
 
-## Graphics and interaction evidence still required
+## Accepted campus graphics and camera coverage
 
-- Fresh integrated early/middle/late captures and all eight station cameras plus overview, whole-campus and top. Preliminary captures exposed empty opening floor and beam/roof occlusion; renderer corrections are underway. Some earlier late captures were blank during concurrent UI integration and do not count as visual evidence.
-- Desktop and 320/375px opening, VQE, procurement and logical controls; keyboard focus, reduced motion, offline/fallback/save recovery and paused/inactive rendering checks.
-- Independent AI 3D implementation review, independent quantum numerical/code review, final gameplay balance conclusion, and resolution of actual findings.
-- Resume the earned Chrome run using normal controls and real visible laboratory time, complete the main ending, then inspect deliberate continuation and remaining work. No resource, save or time injection is permitted in that player run.
+The builder and independent AI visual reviewer accepted final renderer SHA256 `7992d2fdf096316dfb88bcbbccdf28d575e816317e76518c08673e49138ad9c8`. The connected schematic 110 × 85 campus develops an inhabited copper annex, research atrium, control hall, protected-memory court, scheduling foundry, commissioning dock and customer gallery. It uses original procedural geometry. [CAMPUS-VISUAL-REVIEW.md](CAMPUS-VISUAL-REVIEW.md) records the actual review and corrections; [CAMPUS-RENDERER-NOTES.md](CAMPUS-RENDERER-NOTES.md) preserves the builder's checkpoints and superseded evidence boundaries.
+
+The independent native desktop sweep covered 8 early, 11 middle and 12 late camera buttons, including Reset. The late set contains all eight stations plus Overview, Whole campus and Top. All 24 late views at 320/375px matched the requested camera through native focus and Enter, with no document horizontal overflow, DPR 1.25 and no paused renderer driver. Accepted screenshots and per-view results are saved in [evidence/campus/](evidence/campus/). Initial blank and incorrectly selected captures do not count; final dock images supersede the older dock in the late contact sheet.
+
+Independent checks verified native keyboard focus, fullscreen and exit, manual orbit preservation across growth/resize, automatic Overview growth, actual delivery progress, received stock, Settings/reduced-motion/offscreen/background suspension and recovery, 2D toggle and deliberate isolated WebGL context-loss fallback. Constructed stress probes measured 136 draw calls / 180,480 triangles during structural shadow rebuild and 109 / 124,824 on an ordinary frame. Cadence caps of 30 Hz desktop and 20 Hz narrow layouts are code limits, not measured device FPS. Fixtures and deliberate context loss were confined to the reviewer's isolated browser, never the user's earned Chrome run.
+
+## Remaining normal-player verification
+
+The actual Chrome campaign has reached **55:48**, chapter V, **24/33 discoveries**, **5/6 objectives**, **5/6 precision requests** and **792 active physical qubits**. Factory rehearsal passed after allocating its explicit footprint. Two bulk equipment deliveries arrived and are being commissioned by two paid construction teams. The run uses ordinary buttons, visible real laboratory time and earned resources; no resource, save, internal engine action or time injection is permitted. Complete the main ending, then deliberately continue for remaining research and tasks before claiming the game solved.
 
 Human enjoyment, a 90-minute first human play and performance across physical mobile devices remain unverified. Mesh counts and legal simulated completion alone do not establish an outstanding game.
 

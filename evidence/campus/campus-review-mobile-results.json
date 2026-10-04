@@ -1,0 +1,410 @@
+[
+  {
+    "width": 375,
+    "camera": "overview",
+    "actual": "overview",
+    "filename": "/tmp/campus-review-mobile375-overview.png",
+    "overflow": false,
+    "calls": 93,
+    "triangles": 79922,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      98.12389380530972,
+      80.68141592920355,
+      117.2035398230088
+    ]
+  },
+  {
+    "width": 375,
+    "camera": "campus",
+    "actual": "campus",
+    "filename": "/tmp/campus-review-mobile375-campus.png",
+    "overflow": false,
+    "calls": 93,
+    "triangles": 79922,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      134.92035398230084,
+      115.11504424778762,
+      162.1769911504424
+    ]
+  },
+  {
+    "width": 375,
+    "camera": "cryostat",
+    "actual": "cryostat",
+    "filename": "/tmp/campus-review-mobile375-cryostat.png",
+    "overflow": false,
+    "calls": 57,
+    "triangles": 75180,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      5.628318584070797,
+      7.799999999999998,
+      28.78938053097345
+    ]
+  },
+  {
+    "width": 375,
+    "camera": "control",
+    "actual": "control",
+    "filename": "/tmp/campus-review-mobile375-control.png",
+    "overflow": false,
+    "calls": 44,
+    "triangles": 60362,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      46.716814159292035,
+      4.500000000000002,
+      4.16814159292035
+    ]
+  },
+  {
+    "width": 375,
+    "camera": "research",
+    "actual": "research",
+    "filename": "/tmp/campus-review-mobile375-research.png",
+    "overflow": false,
+    "calls": 38,
+    "triangles": 59324,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      -57.96637168141593,
+      24.58938053097345,
+      7.619469026548671
+    ]
+  },
+  {
+    "width": 375,
+    "camera": "processor",
+    "actual": "processor",
+    "filename": "/tmp/campus-review-mobile375-processor.png",
+    "overflow": false,
+    "calls": 57,
+    "triangles": 75732,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      19.03716814159292,
+      8.300000000000004,
+      24.672566371681413
+    ]
+  },
+  {
+    "width": 375,
+    "camera": "memory",
+    "actual": "memory",
+    "filename": "/tmp/campus-review-mobile375-memory.png",
+    "overflow": false,
+    "calls": 47,
+    "triangles": 65520,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      -22,
+      9.85132743362832,
+      20
+    ]
+  },
+  {
+    "width": 375,
+    "camera": "planning",
+    "actual": "planning",
+    "filename": "/tmp/campus-review-mobile375-planning.png",
+    "overflow": false,
+    "calls": 53,
+    "triangles": 63886,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      41.21106194690265,
+      5.799999999999998,
+      29.861946902654857
+    ]
+  },
+  {
+    "width": 375,
+    "camera": "fabrication",
+    "actual": "fabrication",
+    "filename": "/tmp/campus-review-mobile375-fabrication.png",
+    "overflow": false,
+    "calls": 79,
+    "triangles": 76662,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      -50.17168141592919,
+      8.305000000000003,
+      48.44601769911503
+    ]
+  },
+  {
+    "width": 375,
+    "camera": "service",
+    "actual": "service",
+    "filename": "/tmp/campus-review-mobile375-service.png",
+    "overflow": false,
+    "calls": 47,
+    "triangles": 61614,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      1.400669949156514,
+      3.22948378739149,
+      43.23939704575914
+    ]
+  },
+  {
+    "width": 375,
+    "camera": "top",
+    "actual": "top",
+    "filename": "/tmp/campus-review-mobile375-top.png",
+    "overflow": false,
+    "calls": 93,
+    "triangles": 79922,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      0,
+      199.6957337401603,
+      16.009827579437772
+    ]
+  },
+  {
+    "width": 375,
+    "camera": "reset",
+    "actual": "overview",
+    "filename": "/tmp/campus-review-mobile375-reset.png",
+    "overflow": false,
+    "calls": 93,
+    "triangles": 79922,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      98.12389380530972,
+      80.68141592920355,
+      117.2035398230088
+    ]
+  },
+  {
+    "width": 320,
+    "camera": "overview",
+    "actual": "overview",
+    "filename": "/tmp/campus-review-mobile320-overview.png",
+    "overflow": false,
+    "calls": 93,
+    "triangles": 79922,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      117.12676056338027,
+      95.72535211267608,
+      139.90140845070422
+    ]
+  },
+  {
+    "width": 320,
+    "camera": "campus",
+    "actual": "campus",
+    "filename": "/tmp/campus-review-mobile320-campus.png",
+    "overflow": false,
+    "calls": 93,
+    "triangles": 79922,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      161.0492957746479,
+      137.0211267605634,
+      193.5845070422535
+    ]
+  },
+  {
+    "width": 320,
+    "camera": "cryostat",
+    "actual": "cryostat",
+    "filename": "/tmp/campus-review-mobile320-cryostat.png",
+    "overflow": false,
+    "calls": 58,
+    "triangles": 75182,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      8.267605633802816,
+      7.800000000000002,
+      32.27323943661972
+    ]
+  },
+  {
+    "width": 320,
+    "camera": "control",
+    "actual": "control",
+    "filename": "/tmp/campus-review-mobile320-control.png",
+    "overflow": false,
+    "calls": 45,
+    "triangles": 60364,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      50.12446205328673,
+      4.937265172627388,
+      8.624296531221102
+    ]
+  },
+  {
+    "width": 320,
+    "camera": "research",
+    "actual": "research",
+    "filename": "/tmp/campus-review-mobile320-research.png",
+    "overflow": false,
+    "calls": 37,
+    "triangles": 59322,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      -63.033802816901414,
+      28.07323943661972,
+      13.16197183098592
+    ]
+  },
+  {
+    "width": 320,
+    "camera": "processor",
+    "actual": "processor",
+    "filename": "/tmp/campus-review-mobile320-processor.png",
+    "overflow": false,
+    "calls": 54,
+    "triangles": 75060,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      21.755633802816902,
+      8.300000000000002,
+      27.70774647887324
+    ]
+  },
+  {
+    "width": 320,
+    "camera": "memory",
+    "actual": "memory",
+    "filename": "/tmp/campus-review-mobile320-memory.png",
+    "overflow": false,
+    "calls": 47,
+    "triangles": 65520,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      -22,
+      10.907042253521126,
+      20
+    ]
+  },
+  {
+    "width": 320,
+    "camera": "planning",
+    "actual": "planning",
+    "filename": "/tmp/campus-review-mobile320-planning.png",
+    "overflow": false,
+    "calls": 52,
+    "triangles": 63884,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      43.54683098591549,
+      5.799999999999997,
+      33.39859154929577
+    ]
+  },
+  {
+    "width": 320,
+    "camera": "fabrication",
+    "actual": "fabrication",
+    "filename": "/tmp/campus-review-mobile320-fabrication.png",
+    "overflow": false,
+    "calls": 79,
+    "triangles": 76662,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      -53.49718309859155,
+      8.305,
+      51.243661971830974
+    ]
+  },
+  {
+    "width": 320,
+    "camera": "service",
+    "actual": "service",
+    "filename": "/tmp/campus-review-mobile320-service.png",
+    "overflow": false,
+    "calls": 47,
+    "triangles": 61614,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      -1.2218032516176454,
+      3.5629946931971963,
+      45.599622926455886
+    ]
+  },
+  {
+    "width": 320,
+    "camera": "top",
+    "actual": "top",
+    "filename": "/tmp/campus-review-mobile320-top.png",
+    "overflow": false,
+    "calls": 93,
+    "triangles": 79922,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      0,
+      238.36920330251533,
+      19.11032235714579
+    ]
+  },
+  {
+    "width": 320,
+    "camera": "reset",
+    "actual": "overview",
+    "filename": "/tmp/campus-review-mobile320-reset.png",
+    "overflow": false,
+    "calls": 93,
+    "triangles": 79922,
+    "driverActive": false,
+    "cadence": 0,
+    "pixelRatio": 1.25,
+    "eye": [
+      117.12676056338027,
+      95.72535211267608,
+      139.90140845070422
+    ]
+  }
+]
