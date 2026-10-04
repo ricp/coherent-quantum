@@ -1,0 +1,116 @@
+{
+  "game": "coherent",
+  "version": 2,
+  "state": {
+    "version": 2,
+    "notebooks": 1,
+    "designs": 6.876434786677649,
+    "engineering": [],
+    "price": 8,
+    "autoPrice": false,
+    "autoCalibration": false,
+    "automation": 0,
+    "analysisShare": 1,
+    "workshops": 0,
+    "fabrication": 0.5,
+    "fabricated": 0,
+    "integrated": 0,
+    "started": true,
+    "paused": true,
+    "elapsed": 57,
+    "funds": 152.69999999999987,
+    "effort": 6.799999999999974,
+    "done": [
+      "feynman",
+      "deutsch",
+      "divincenzo",
+      "nakamura"
+    ],
+    "qualified": [
+      "signal"
+    ],
+    "module": 0,
+    "rack": 0,
+    "staff": 3,
+    "pulse": 0,
+    "decoder": 0,
+    "drift": 0.3223440000000002,
+    "distance": 3,
+    "factories": 0,
+    "calibration": 0,
+    "service": 0,
+    "theta": 20,
+    "shots": 1,
+    "mitigate": false,
+    "credits": 0,
+    "reputation": 1,
+    "seed": 2846191538,
+    "job": {
+      "id": "ramsey",
+      "workload": false,
+      "progress": 1,
+      "duration": 7,
+      "shots": 512,
+      "theta": 20,
+      "mitigate": false,
+      "bias": 0.04
+    },
+    "result": {
+      "id": "signal",
+      "shots": 128,
+      "bins": [
+        75,
+        53
+      ],
+      "message": "A signal from repeated known preparations."
+    },
+    "tutorial": null,
+    "completed": [],
+    "ended": false,
+    "volume": 0.2,
+    "sound": false,
+    "theme": "dark",
+    "log": [
+      {
+        "time": 5,
+        "message": "First signal. One qubit. An entire room to keep it cold.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 5,
+        "message": "A world to simulate. Give the first experiment a purpose.",
+        "kind": "discovery"
+      },
+      {
+        "time": 6,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 6,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 11,
+        "message": "A universal idea. Open the circuit notebook.",
+        "kind": "discovery"
+      },
+      {
+        "time": 28,
+        "message": "The physical checklist. Make hardware readiness part of the plan.",
+        "kind": "discovery"
+      },
+      {
+        "time": 56,
+        "message": "Coherent control. Enter the control room.",
+        "kind": "discovery"
+      },
+      {
+        "time": 56,
+        "message": "The laboratory learns to listen.",
+        "kind": "chapter"
+      }
+    ]
+  }
+}

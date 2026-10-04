@@ -1,0 +1,101 @@
+{
+  "source": "evidence/coherent-3d/frontier-4.json",
+  "method": "Unpaused engine ticks bank 600 laboratory seconds without purchases. Upgrade sequence uses only buyUpgrade/buyEngineering/assign and validates each save. Commissioned snapshot uses 120 further engine seconds; these are renderer growth checks, not first-human-play evidence.",
+  "actions": [
+    {
+      "id": "hardware",
+      "before": {
+        "stage": 4,
+        "module": 2,
+        "rack": 3,
+        "pulse": 4,
+        "decoder": 0,
+        "funds": 22770.225895304742,
+        "designs": 4660.03956864963
+      },
+      "after": {
+        "stage": 4,
+        "module": 3,
+        "rack": 3,
+        "pulse": 4,
+        "decoder": 0,
+        "funds": 20970.225895304742,
+        "designs": 4582.03956864963
+      }
+    },
+    {
+      "id": "rack",
+      "before": {
+        "stage": 4,
+        "module": 3,
+        "rack": 3,
+        "pulse": 4,
+        "decoder": 0,
+        "funds": 20970.225895304742,
+        "designs": 4582.03956864963
+      },
+      "after": {
+        "stage": 4,
+        "module": 3,
+        "rack": 4,
+        "pulse": 4,
+        "decoder": 0,
+        "funds": 15370.225895304742,
+        "designs": 4454.03956864963
+      }
+    },
+    {
+      "id": "pulse",
+      "before": {
+        "stage": 4,
+        "module": 3,
+        "rack": 4,
+        "pulse": 4,
+        "decoder": 0,
+        "funds": 15370.225895304742,
+        "designs": 4454.03956864963
+      },
+      "after": {
+        "stage": 4,
+        "module": 3,
+        "rack": 4,
+        "pulse": 5,
+        "decoder": 0,
+        "funds": 13130.225895304742,
+        "designs": 4244.03956864963
+      }
+    },
+    {
+      "id": "decoder",
+      "before": {
+        "stage": 4,
+        "module": 3,
+        "rack": 4,
+        "pulse": 5,
+        "decoder": 0,
+        "funds": 13130.225895304742,
+        "designs": 4244.03956864963
+      },
+      "after": {
+        "stage": 4,
+        "module": 3,
+        "rack": 4,
+        "pulse": 5,
+        "decoder": 1,
+        "funds": 12950.225895304742,
+        "designs": 4214.03956864963
+      }
+    }
+  ],
+  "final": {
+    "stage": 4,
+    "module": 3,
+    "rack": 4,
+    "pulse": 5,
+    "decoder": 1,
+    "workshops": 1,
+    "fabricated": 72.00000000000003,
+    "integrated": 72.00000000000003,
+    "active": 153
+  }
+}

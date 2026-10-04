@@ -35,22 +35,24 @@
       <section id="lab-view" aria-label="Laboratory">
         <div class="headline-row"><div><h1 id="headline">One qubit.<br><em>A world of possibility.</em></h1><p id="chapter-subtitle" class="subtitle">A room. A refrigerator. A very fragile beginning.</p></div><div class="headline-number"><strong id="headline-count">1</strong><span id="headline-unit">physical qubit</span><span class="headline-caption" id="headline-caption">superconducting laboratory</span></div></div>
         <div class="resource-strip" id="resource-strip" hidden><div><span>Funding</span><strong id="funds">60</strong><small id="funding-rate">Grants after upkeep</small></div><div><span>Research effort</span><strong id="effort">0</strong><small id="effort-rate">Abstract staff work</small></div><div><span id="third-resource-label">Engineering designs</span><strong id="third-resource">0</strong><small id="third-resource-note">Plans, not quantum states</small></div><div class="save-readout"><span class="live-dot" aria-hidden="true"></span><span id="save-status">New laboratory</span></div></div>
-        <div class="workbench" id="workbench">
-          <div class="instrument-column">
-            <section class="instrument" aria-labelledby="instrument-title">
+        <div class="lab-presentation"><div class="lab-command-bar"><div><div class="eyebrow" id="next-label">Your first experiment</div><h2 id="next-title">Start with<br>one fragile thing.</h2></div><button class="primary-button" type="button" id="run-experiment"><span id="run-label">Begin with one qubit</span><span aria-hidden="true">→</span></button></div>
+            <section class="instrument lab-theater" aria-labelledby="instrument-title">
               <div class="instrument-header"><h2 id="instrument-title">The first apparatus</h2><span class="mono" id="instrument-code">SC / Q01</span></div>
               <figure class="machine-figure"><canvas id="machine" role="img" aria-label="Illustrative superconducting laboratory apparatus">Your laboratory instrument is drawn here. All controls and measurements are available as text.</canvas><figcaption><span id="instrument-legend">○ Physical qubit &nbsp; ▪ Control port</span><span id="instrument-mode">Illustrative schematic</span></figcaption></figure>
               <div class="instrument-readouts" id="instrument-readouts"></div>
-            </section>
+            </section></div>
+<div class="workbench" id="workbench">
+          <div class="instrument-column">
+
             <section class="measurement-panel" id="measurement-panel" aria-labelledby="measurement-title" hidden><div class="measurement-heading"><h3 id="measurement-title">The signal</h3><span class="mono" id="measurement-context">Repeated preparations</span></div><canvas id="measurement" role="img" aria-label="Educational experiment measurement display"></canvas><p class="caption" id="measurement-caption"></p></section>
             <p class="instrument-note" id="instrument-note">One qubit is a beginning. A qualified experiment is progress.</p>
             <div class="lab-warning" id="lab-warning" role="status" hidden></div>
           </div>
           <aside class="experiment-rail" aria-label="Your next experiment">
-            <div class="eyebrow" id="next-label">Your first experiment</div><h2 id="next-title">Start with<br>one fragile thing.</h2><p class="rail-copy" id="next-copy">Prepare a known state. Apply a pulse. Measure. Repeat. A signal begins with five seconds of patience.</p>
+            <p class="rail-copy" id="next-copy">Prepare a known state. Apply a pulse. Measure. Repeat. A signal begins with five seconds of patience.</p>
             <div class="experiment-picker" id="experiment-picker" hidden><label for="experiment-select">Experiment</label><select id="experiment-select"></select></div>
             <div class="experiment-cost"><span id="experiment-cost-label">First preparation</span><span class="mono" id="experiment-cost">128 shots · 5 lab s</span></div>
-            <button class="primary-button" type="button" id="run-experiment"><span id="run-label">Begin with one qubit</span><span aria-hidden="true">→</span></button>
+            
             <div class="job-progress" id="job-progress" hidden><div class="progress-label"><span id="job-label">Preparing</span><span class="mono" id="job-percent">0%</span></div><progress id="job-meter" max="1" value="0" aria-label="Experiment progress"></progress><button type="button" class="text-button" id="cancel-job">Cancel experiment</button></div>
             <p id="experiment-feedback" class="experiment-feedback" aria-live="polite"></p>
             <button type="button" id="calibrate-button" class="secondary-button" hidden>Calibrate the apparatus <span class="mono">8 funding · 4 lab s</span></button>

@@ -1,4 +1,6 @@
-# Coherent: the precision laboratory in three dimensions
+# Coherent: compact 3D direction — superseded
+
+The user rejected this compact presentation after playtesting. See `IMMERSIVE-LAB-DESIGN.md` for the authorized large, evolving facility that supersedes the compositions below. This file preserves the earlier reviewed direction and does not claim acceptance of the current request.
 
 The user requested a Three.js upgrade and an independent AI 3D specialist review. The specialist inspected the existing renderer and callers, scientific constraints, legal scenes, and desktop/mobile captures. Its proposed port is accepted as a design direction; actual implementation review remains pending.
 
