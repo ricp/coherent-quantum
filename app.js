@@ -332,7 +332,7 @@
     }
     draw();renderStation(m,phase);
   }
-  function draw(time=performance.now()){if(window.CoherentArt)CoherentArt.draw(s,{workload,recipe:s.job?.workload?s.job.recipe:s.logicalRecipe,view,time});}
+  function draw(time=performance.now()){const record=view==='ending'?s.endingRecord:null;if(window.CoherentArt)CoherentArt.draw(s,{workload:record?.workload||workload,recipe:record?.recipe||(s.job?.workload?s.job.recipe:s.logicalRecipe),view,time});}
   function motionActive(){return view==='lab'&&!document.hidden&&!s.paused&&!s.ended&&(s.job||G.metrics(s).creditRate>0&&s.credits<2000)&&!matchMedia('(prefers-reduced-motion: reduce)').matches;}
   function animate(time){animation=0;if(!motionActive())return;draw(time);animation=requestAnimationFrame(animate);}
   function ensureAnimation(){if(!animation&&motionActive())animation=requestAnimationFrame(animate);}

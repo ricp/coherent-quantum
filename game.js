@@ -161,6 +161,7 @@
     const available=project.requires.every(key=>has(s,key))&&(!project.optional||s.campusRevision===1);
     const reasons=[];
     if(!available)reasons.push('Complete the prerequisite discoveries');
+    if(id==='audit'&&!s.epilogue&&s.job&&s.completed.some(key=>['dynamics','molecule'].includes(key)))reasons.push('Finish or explicitly cancel the current apparatus job before completing the campaign; its entry costs stay spent.');
     if(project.qualification&&!qualificationNow(s,project.qualification))reasons.push(project.qualification==='coupled'?'Support at least two active physical qubits':'Required evidence: '+(C.experiments.find(e=>e.id===project.qualification)?.name||project.qualification));
     if(s.funds<project.cost.funds)reasons.push('Need '+Math.ceil(project.cost.funds-s.funds)+' more funding');
     if(s.effort<project.cost.effort)reasons.push('Need '+Math.ceil(project.cost.effort-s.effort)+' more research effort');

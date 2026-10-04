@@ -1,0 +1,608 @@
+{
+  "evidenceKind": "independent isolated native fixture QA; not earned Chrome play",
+  "fixture": "/tmp/campus-ui-molecule-first-both-ending.json",
+  "automaticEnding": {
+    "diagnostics": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "cameraEye": [
+        99,
+        85,
+        118.99999999999999
+      ],
+      "cameraTarget": [
+        0,
+        2,
+        0
+      ],
+      "frames": 2,
+      "calls": 121,
+      "triangles": 140504,
+      "geometries": 38,
+      "textures": 36,
+      "width": 1372,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": true,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 36,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 2,
+        "modulePackages": 3,
+        "installed": 8193,
+        "supported": 8193,
+        "active": 8193,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 29,
+        "researchSeats": 29,
+        "researchers": 29,
+        "notebooks": 5,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 3,
+          "data": 9,
+          "ancilla": 8,
+          "physical": 17
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 481,
+          "kinds": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 16
+        },
+        "schedule": {
+          "workload": "molecule",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 60
+            },
+            {
+              "name": "Operations",
+              "start": 60,
+              "duration": 2280
+            },
+            {
+              "name": "Fresh states",
+              "start": 60,
+              "duration": 1152
+            },
+            {
+              "name": "Feedback",
+              "start": 60,
+              "duration": 1900
+            },
+            {
+              "name": "Readout",
+              "start": 2340,
+              "duration": 30
+            },
+            {
+              "name": "Classical",
+              "start": 2370,
+              "duration": 90
+            }
+          ],
+          "qualified": true,
+          "finish": 2460,
+          "runtime": 4920,
+          "repetitions": 2
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "endingCaption": "Recorded milestone \u00b7 An electronic energy, carefully \u00b7 modeled resource scenario",
+    "endingResult": "Modeled Hubbard resource-study completion. No electronic energy, catalyst, or industrial process is computed.",
+    "description": "The complete laboratory, from one known signal to a named useful resource scenario. Modeled completion: no large fault-tolerant quantum computation or large quantum answer was produced.",
+    "legend": "Active physical8,193Calibration duty36%Planned service0 / lab sPlanned research139.2 / lab s",
+    "overflow": false,
+    "viewport": [
+      1440,
+      1100
+    ]
+  },
+  "manualPlanning": {
+    "diagnostics": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "planning",
+      "cameraOrbited": false,
+      "cameraEye": [
+        38,
+        5.800000000000001,
+        25
+      ],
+      "cameraTarget": [
+        29.15,
+        2.7,
+        11.6
+      ],
+      "frames": 3,
+      "calls": 76,
+      "triangles": 90746,
+      "geometries": 38,
+      "textures": 36,
+      "width": 1372,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 36,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 2,
+        "modulePackages": 3,
+        "installed": 8193,
+        "supported": 8193,
+        "active": 8193,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 29,
+        "researchSeats": 29,
+        "researchers": 29,
+        "notebooks": 5,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 3,
+          "data": 9,
+          "ancilla": 8,
+          "physical": 17
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 481,
+          "kinds": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 16
+        },
+        "schedule": {
+          "workload": "molecule",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 60
+            },
+            {
+              "name": "Operations",
+              "start": 60,
+              "duration": 2280
+            },
+            {
+              "name": "Fresh states",
+              "start": 60,
+              "duration": 1152
+            },
+            {
+              "name": "Feedback",
+              "start": 60,
+              "duration": 1900
+            },
+            {
+              "name": "Readout",
+              "start": 2340,
+              "duration": 30
+            },
+            {
+              "name": "Classical",
+              "start": 2370,
+              "duration": 90
+            }
+          ],
+          "qualified": true,
+          "finish": 2460,
+          "runtime": 4920,
+          "repetitions": 2
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "endingCaption": "Recorded milestone \u00b7 An electronic energy, carefully \u00b7 modeled resource scenario",
+    "endingResult": "Modeled Hubbard resource-study completion. No electronic energy, catalyst, or industrial process is computed.",
+    "description": "The complete laboratory, from one known signal to a named useful resource scenario. Modeled completion: no large fault-tolerant quantum computation or large quantum answer was produced.",
+    "legend": "Preparation60 \u03bcsOperations2,280 \u03bcsFresh states1,152 \u03bcsFeedback1,900 \u03bcsReadout30 \u03bcsClassical90 \u03bcs",
+    "overflow": false,
+    "viewport": [
+      1440,
+      1100
+    ]
+  },
+  "narrowPlanning": {
+    "diagnostics": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "planning",
+      "cameraOrbited": false,
+      "cameraEye": [
+        41.282640949554896,
+        5.8000000000000025,
+        29.97032640949555
+      ],
+      "cameraTarget": [
+        29.15,
+        2.7,
+        11.6
+      ],
+      "frames": 4,
+      "calls": 53,
+      "triangles": 76966,
+      "geometries": 38,
+      "textures": 36,
+      "width": 337,
+      "height": 440,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 36,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 2,
+        "modulePackages": 3,
+        "installed": 8193,
+        "supported": 8193,
+        "active": 8193,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 29,
+        "researchSeats": 29,
+        "researchers": 29,
+        "notebooks": 5,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 3,
+          "data": 9,
+          "ancilla": 8,
+          "physical": 17
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 481,
+          "kinds": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 16
+        },
+        "schedule": {
+          "workload": "molecule",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 60
+            },
+            {
+              "name": "Operations",
+              "start": 60,
+              "duration": 2280
+            },
+            {
+              "name": "Fresh states",
+              "start": 60,
+              "duration": 1152
+            },
+            {
+              "name": "Feedback",
+              "start": 60,
+              "duration": 1900
+            },
+            {
+              "name": "Readout",
+              "start": 2340,
+              "duration": 30
+            },
+            {
+              "name": "Classical",
+              "start": 2370,
+              "duration": 90
+            }
+          ],
+          "qualified": true,
+          "finish": 2460,
+          "runtime": 4920,
+          "repetitions": 2
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "endingCaption": "Recorded milestone \u00b7 An electronic energy, carefully \u00b7 modeled resource scenario",
+    "endingResult": "Modeled Hubbard resource-study completion. No electronic energy, catalyst, or industrial process is computed.",
+    "description": "The complete laboratory, from one known signal to a named useful resource scenario. Modeled completion: no large fault-tolerant quantum computation or large quantum answer was produced.",
+    "legend": "Preparation60 \u03bcsOperations2,280 \u03bcsFresh states1,152 \u03bcsFeedback1,900 \u03bcsReadout30 \u03bcsClassical90 \u03bcs",
+    "overflow": false,
+    "viewport": [
+      375,
+      900
+    ]
+  },
+  "narrowReloadEnding": {
+    "diagnostics": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "cameraEye": [
+        135.72106824925817,
+        115.78635014836796,
+        163.13946587537092
+      ],
+      "cameraTarget": [
+        0,
+        2,
+        0
+      ],
+      "frames": 1,
+      "calls": 121,
+      "triangles": 140504,
+      "geometries": 38,
+      "textures": 36,
+      "width": 337,
+      "height": 440,
+      "pixelRatio": 1,
+      "followExperiment": true,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 36,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 2,
+        "modulePackages": 3,
+        "installed": 8193,
+        "supported": 8193,
+        "active": 8193,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 29,
+        "researchSeats": 29,
+        "researchers": 29,
+        "notebooks": 5,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 3,
+          "data": 9,
+          "ancilla": 8,
+          "physical": 17
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 481,
+          "kinds": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 16
+        },
+        "schedule": {
+          "workload": "molecule",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 60
+            },
+            {
+              "name": "Operations",
+              "start": 60,
+              "duration": 2280
+            },
+            {
+              "name": "Fresh states",
+              "start": 60,
+              "duration": 1152
+            },
+            {
+              "name": "Feedback",
+              "start": 60,
+              "duration": 1900
+            },
+            {
+              "name": "Readout",
+              "start": 2340,
+              "duration": 30
+            },
+            {
+              "name": "Classical",
+              "start": 2370,
+              "duration": 90
+            }
+          ],
+          "qualified": true,
+          "finish": 2460,
+          "runtime": 4920,
+          "repetitions": 2
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "endingCaption": "Recorded milestone \u00b7 An electronic energy, carefully \u00b7 modeled resource scenario",
+    "endingResult": "Modeled Hubbard resource-study completion. No electronic energy, catalyst, or industrial process is computed.",
+    "description": "The complete laboratory, from one known signal to a named useful resource scenario. Modeled completion: no large fault-tolerant quantum computation or large quantum answer was produced.",
+    "legend": "Active physical8,193Calibration duty36%Planned service0 / lab sPlanned research139.2 / lab s",
+    "overflow": false,
+    "viewport": [
+      375,
+      900
+    ]
+  }
+}

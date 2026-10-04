@@ -1,7 +1,7 @@
 {
   "evidenceKind": "constructed numerical model fixture; not legal earned progression",
   "sourceHashes": {
-    "game.js": "66bd3bbb40fca08b1f90194312f485a4868b8377c1fa02932803c17ff994f6dc",
+    "game.js": "9754289c53199152b2c3513a7076f0cdf0898e78f2a8849e6635d286e09da90f",
     "content.js": "26181066d2a55682ec8c42fa649aa0daa954e96d868de293192c2e295a34b66f"
   },
   "scenarios": [
