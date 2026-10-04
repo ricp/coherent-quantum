@@ -1,0 +1,182 @@
+[
+  {
+    "camera": "overview",
+    "canvas": {
+      "bottom": 770.09375,
+      "height": 620,
+      "left": 61.5,
+      "right": 1593.5,
+      "top": 150.09375,
+      "width": 1532,
+      "x": 61.5,
+      "y": 150.09375
+    },
+    "clock": "PAUSED 67:37",
+    "title": "Your growing quantum research campus"
+  },
+  {
+    "camera": "campus",
+    "canvas": {
+      "bottom": 770.09375,
+      "height": 620,
+      "left": 61.5,
+      "right": 1593.5,
+      "top": 150.09375,
+      "width": 1532,
+      "x": 61.5,
+      "y": 150.09375
+    },
+    "clock": "PAUSED 67:37",
+    "title": "The whole research campus / schematic scale"
+  },
+  {
+    "camera": "cryostat",
+    "canvas": {
+      "bottom": 769.09375,
+      "height": 620,
+      "left": 61.5,
+      "right": 1593.5,
+      "top": 149.09375,
+      "width": 1532,
+      "x": 61.5,
+      "y": 149.09375
+    },
+    "clock": "PAUSED 67:37",
+    "title": "The copper heart of the laboratory"
+  },
+  {
+    "camera": "control",
+    "canvas": {
+      "bottom": 770.09375,
+      "height": 620,
+      "left": 61.5,
+      "right": 1593.5,
+      "top": 150.09375,
+      "width": 1532,
+      "x": 61.5,
+      "y": 150.09375
+    },
+    "clock": "PAUSED 67:37",
+    "title": "Control, readout and classical decoding"
+  },
+  {
+    "camera": "research",
+    "canvas": {
+      "bottom": 770.09375,
+      "height": 620,
+      "left": 61.5,
+      "right": 1593.5,
+      "top": 150.09375,
+      "width": 1532,
+      "x": 61.5,
+      "y": 150.09375
+    },
+    "clock": "PAUSED 67:37",
+    "title": "The growing research atrium / 32 assigned colleagues"
+  },
+  {
+    "camera": "processor",
+    "canvas": {
+      "bottom": 770.09375,
+      "height": 620,
+      "left": 61.5,
+      "right": 1593.5,
+      "top": 150.09375,
+      "width": 1532,
+      "x": 61.5,
+      "y": 150.09375
+    },
+    "clock": "PAUSED 67:37",
+    "title": "Installed hardware, supported capacity"
+  },
+  {
+    "camera": "memory",
+    "canvas": {
+      "bottom": 770.09375,
+      "height": 620,
+      "left": 61.5,
+      "right": 1593.5,
+      "top": 150.09375,
+      "width": 1532,
+      "x": 61.5,
+      "y": 150.09375
+    },
+    "clock": "PAUSED 67:37",
+    "title": "Protected memory, with its assumptions intact"
+  },
+  {
+    "camera": "planning",
+    "canvas": {
+      "bottom": 770.09375,
+      "height": 620,
+      "left": 61.5,
+      "right": 1593.5,
+      "top": 150.09375,
+      "width": 1532,
+      "x": 61.5,
+      "y": 150.09375
+    },
+    "clock": "PAUSED 67:37",
+    "title": "The complete useful-work schedule"
+  },
+  {
+    "camera": "fabrication",
+    "canvas": {
+      "bottom": 770.09375,
+      "height": 620,
+      "left": 61.5,
+      "right": 1593.5,
+      "top": 150.09375,
+      "width": 1532,
+      "x": 61.5,
+      "y": 150.09375
+    },
+    "clock": "PAUSED 67:37",
+    "title": "Delivery staging and funded commissioning"
+  },
+  {
+    "camera": "service",
+    "canvas": {
+      "bottom": 770.09375,
+      "height": 620,
+      "left": 61.5,
+      "right": 1593.5,
+      "top": 150.09375,
+      "width": 1532,
+      "x": 61.5,
+      "y": 150.09375
+    },
+    "clock": "PAUSED 67:37",
+    "title": "Known-preparation customer service"
+  },
+  {
+    "camera": "top",
+    "canvas": {
+      "bottom": 770.09375,
+      "height": 620,
+      "left": 61.5,
+      "right": 1593.5,
+      "top": 150.09375,
+      "width": 1532,
+      "x": 61.5,
+      "y": 150.09375
+    },
+    "clock": "PAUSED 67:37",
+    "title": "Campus plan and connected infrastructure"
+  },
+  {
+    "camera": "overview",
+    "canvas": {
+      "bottom": 770.09375,
+      "height": 620,
+      "left": 61.5,
+      "right": 1593.5,
+      "top": 150.09375,
+      "width": 1532,
+      "x": 61.5,
+      "y": 150.09375
+    },
+    "clock": "PAUSED 67:37",
+    "title": "Your growing quantum research campus"
+  }
+]

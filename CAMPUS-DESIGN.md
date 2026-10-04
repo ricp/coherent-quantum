@@ -20,7 +20,7 @@ The [Singular Value analysis](SINGULAR-VALUE-GAMEPLAY-REVIEW.md) identifies inte
 - **Logical recipes:** retain the current balanced scenario. Optional compact and parallel recipes solve the same named 32-site task with different width, depth and state demand. Workspace, fresh states, repetitions, idle exposure, gates, preparation, readout, decoder streaming and feedback remain accounted for.
 - **Epilogue:** deliberately continuing after the gift milestone preserves the original completion record and one-time rewards. Remaining discoveries and frontier work can still be pursued.
 
-Existing version-two saves receive no inferred new rewards. The proposed explicit campus opt-in preserves earned balances and refuses to rewrite an active legacy job. New games start with the expanded mechanics. The concrete engine contract must receive quantum review before implementation acceptance.
+Existing version-two saves receive no inferred new rewards. The implemented explicit campus opt-in preserves earned balances and refuses to rewrite an active legacy job. New games start with the expanded mechanics. The actual engine and strict save contract received independent AI quantum/gameplay acceptance; see the implementation reviews below.
 
 ## Research frontier
 
@@ -30,17 +30,17 @@ The playable architecture remains superconducting hardware with the existing rot
 
 ## Independent AI design review
 
-The lead accepts the independent 3D review's architectural direction: avoid equally bright finished boxes on an oversized slab; keep the opening occupied and legible; expand the skyline; retain bounded geometry and native controls. Delivery activity depends on the forthcoming actual procurement contract. This is design consensus, not acceptance of rendered implementation.
+The lead accepts the independent 3D review's architectural direction: avoid equally bright finished boxes on an oversized slab; keep the opening occupied and legible; expand the skyline; retain bounded geometry and native controls. Delivery activity follows actual paid orders and funded commissioning. The implemented renderer received independent native camera/lifecycle acceptance in [CAMPUS-VISUAL-REVIEW.md](CAMPUS-VISUAL-REVIEW.md), with a separately accepted ending delta in [CAMPUS-ENDING-VISUAL-REVIEW.md](CAMPUS-ENDING-VISUAL-REVIEW.md).
 
-The lead accepts the independent AI quantum review's scientific contracts for captured finite trials, distinct service payments, full logical accounting, explicit procurement and preserved completion records. The gameplay specialist must agree the concrete APIs and save contract, followed by review of actual code and numerical tests. No credentialed human review has occurred.
+The lead accepts the independent AI quantum review's scientific contracts for captured finite trials, distinct service payments, full logical accounting, explicit procurement and preserved completion records. The gameplay specialist and independent AI quantum reviewer accepted the concrete APIs, parser, numerical crossovers and final paid-job guard. [QUANTUM-FRONTIER-REVIEW.md](QUANTUM-FRONTIER-REVIEW.md), [CAMPUS-GAMEPLAY-UI-REVIEW.md](CAMPUS-GAMEPLAY-UI-REVIEW.md) and [CAMPUS-EXPORT-REVIEW.md](CAMPUS-EXPORT-REVIEW.md) record the actual conclusions. No credentialed human review has occurred.
 
 ## Acceptance evidence required
 
 1. Early, middle and late campus compositions differ visibly; growth within chapters reflects actual earned infrastructure. Eight station views reveal their useful apparatus.
 2. Native controls expose a clear next decision and its resource consequence. Precision versus throughput, cash versus committed equipment and compact versus parallel recipes each have at least two useful conditions.
 3. Intent tests prove finite rewards, fresh qualification, captured jobs, acquisition/time accounting, procurement receipt versus commissioning, caps, cancellation, pause/save recovery and original ending preservation.
-4. Legal complete campaign simulations record actions and changing constraints. Simulation results are separate from the unfinished normal Chrome playthrough and a future human enjoyment assessment.
+4. Legal complete campaign simulations record actions and changing constraints. Simulation results are separate from the completed normal Chrome continuation and a future human enjoyment assessment.
 5. Desktop and 320/375px opening, variational and logical states are visually checked. Keyboard focus, reduced motion, fallback, offline loading and save recovery work. Rendering stops while paused, hidden, offscreen or inactive and resources remain bounded through repeated traversals.
 6. Independent AI gameplay, quantum and 3D reviewers inspect implementation and resolve findings. Record their actual scope and remaining limitations before claiming completion.
 
-More waiting, more counters or more meshes alone do not satisfy these criteria. The original earned Chrome run remains paused at 19:36 and has not reached the ending.
+More waiting, more counters or more meshes alone do not satisfy these criteria. The original earned Chrome run continued from 19:36 and finished at **78:19**, with all 33 discoveries, all four workloads and all twelve finite tasks. [CAMPUS-VERIFICATION.md](CAMPUS-VERIFICATION.md) maps the acceptance evidence and limitations. Human enjoyment, a blind first-human duration and physical-device frame rates remain unverified.

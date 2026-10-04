@@ -78,3 +78,8 @@ content.js     26181066d2a55682ec8c42fa649aa0daa954e96d868de293192c2e295a34b66f
 ```
 
 Scratch visual evidence: `evidence/campus/campus-ui-frontier-320.png`, `evidence/campus/campus-ui-dock-320.png`, `evidence/campus/campus-ui-recipes-375.png` and the earlier `evidence/campus/campus-ui-frontier-375.png`. The recipe screenshot includes a normal purchase acknowledgement; the receiving-dock screenshot captures zero stock before the subsequent native delivery. Scratch save fixtures are machine-local QA inputs and should not be committed as user saves.
+
+
+## Subsequent scoped finalization
+
+The source hashes above identify this review's original full matrix. The later ending-only presentation changes were independently accepted at final `app.js` SHA256 `977976b1ba6c4102c66d484797d7ee04d0a7a23f803a3c415d726056cb4da02e` and `instrument-3d.js` SHA256 `f974ce18592c0b1117779d798cb2198bb68cb717918d3ac1e26094753b40a697`; they do not change geometry or camera destinations. [CAMPUS-ENDING-VISUAL-REVIEW.md](CAMPUS-ENDING-VISUAL-REVIEW.md) records the actual native replay and limits. The final paid-job Audit guard and downloads were separately accepted in [CAMPUS-EXPORT-REVIEW.md](CAMPUS-EXPORT-REVIEW.md). [CAMPUS-VERIFICATION.md](CAMPUS-VERIFICATION.md) records final 73-test and completed earned-Chrome evidence; earlier full matrices are not claimed to have been repeated on these final hashes.

@@ -1,0 +1,436 @@
+- link "Skip to the laboratory":
+  - /url: "#main"
+- banner:
+  - link "Coherent laboratory":
+    - /url: "#main"
+    - text: coherent
+    - generic: .
+  - navigation "Game navigation":
+    - button "Laboratory" [pressed]
+    - button "Research 33"
+    - button "Journal"
+  - button "Sound off"
+  - button "Pause" [disabled]
+  - button "Settings"
+- generic: Chapter VI / Useful work
+- generic "Campaign chapters":
+  - generic "First signal, reached"
+  - generic "Control room, reached"
+  - generic "Noisy circuits, reached"
+  - generic "Protected memory, reached"
+  - generic "Logical machine, reached"
+  - generic "Useful work, current"
+- generic: COMPLETE 78:19
+- main:
+  - region "Laboratory":
+    - heading "A little less noise. A little more possibility." [level=1]:
+      - text: A little less noise.
+      - emphasis: A little more possibility.
+    - paragraph: The machine is ready for a question worth asking.
+    - strong: 2,678
+    - generic: active physical qubits
+    - generic: Installed 2,678 · supported 2,790
+    - generic: Funding
+    - strong: 23,490
+    - generic: +120.15 / lab s after upkeep
+    - generic: Research effort
+    - strong: 4,400
+    - generic: +165.6 / lab s · capped at 38,400
+    - generic: Engineering designs
+    - strong: 1,623
+    - generic: +5.362 / lab s · classical plans
+    - generic: Loaded local save
+    - generic: The laboratory is complete
+    - heading "Give the machine a question." [level=2]
+    - button "Inspect useful work" [disabled]:
+      - generic: Inspect useful work
+      - generic: →
+    - region "The useful instrument":
+      - heading "The useful instrument" [level=2]
+      - generic: SC / WORK
+      - figure "Preparation · parallel work · readout Assumed recipe schedule":
+        - group "Explore your laboratory":
+          - text: THE QUANTUM LABORATORY
+          - group "Laboratory camera stations":
+            - button "Overview"
+            - button "Whole campus" [pressed]
+            - button "Cryostat"
+            - button "Control / decoder"
+            - button "Research"
+            - button "Processor"
+            - button "Memory"
+            - button "Planning"
+            - button "Fabrication"
+            - button "Service gallery"
+            - button "Top"
+            - button "Reset"
+          - button "Follow experiment" [pressed]
+          - button "Expand lab"
+          - button "Pause lab" [disabled]
+          - button "2D view" [pressed]
+        - generic: The whole research campus / schematic scale
+        - generic: 2,678 installed · 2,790 supported · 32 researchers · 5 control racks
+        - status: Recorded milestone · Thirty-two spins. One question. · modeled resource scenario
+        - img "A schematic 110 × 85 research campus. Its buildings and finite equipment cohorts express game progression, not real qubits-per-refrigerator or square-metres-per-qubit laws. Planned foundations identify wings awaiting research.": The full laboratory remains available in two dimensions and as text.
+        - term: Active physical
+        - definition: 2,678
+        - term: Calibration duty
+        - definition: 31%
+        - term: Planned service
+        - definition: 6.5 / lab s
+        - term: Planned research
+        - definition: 165.6 / lab s
+        - paragraph: A schematic 110 × 85 research campus. Its buildings and finite equipment cohorts express game progression, not real qubits-per-refrigerator or square-metres-per-qubit laws. Planned foundations identify wings awaiting research.
+        - status: A quiet record of the completed resource scenario.
+        - generic: Preparation · parallel work · readout
+        - generic: Assumed recipe schedule
+      - generic: Application footprint
+      - strong: 43 slots
+      - generic: "Ideal patch count: 54"
+      - generic: Memory / gate error
+      - strong: 3.0e-7 / 6.0e-7
+      - generic: Per qubit-cycle / per operation
+      - generic: Factory output error
+      - strong: "1.0e-7"
+      - generic: Total accepted-state assumption
+    - region "Inspected facility controls":
+      - text: Inside the inspected facility
+      - heading "A campus built around the next question" [level=3]
+      - paragraph: Inspect the apparatus and choose a measured question.
+      - button "Visit the research desk →"
+    - region "Experiment notebook":
+      - heading "Experiment notebook" [level=3]
+      - generic: Educational scenario
+      - img "Calibration reduces drift. Conditions remain current."
+      - paragraph: "Classical oracle check: entry 4 is cobalt. All modeled oracle and repetition costs were counted; no speedup is claimed."
+    - paragraph: "One complete budget: memory, gates, preparation, fresh states, feedback, repetitions, and time."
+    - complementary "Your next experiment":
+      - paragraph: Inspect a named workload below. Trade code distance, pulses, decoder capacity, and factory footprint until the complete budget qualifies.
+      - generic: Next action
+      - generic: Inspect the workload budget
+      - paragraph
+      - button "Calibrate the apparatus 8 funding · 4 lab s" [disabled]:
+        - text: Calibrate the apparatus
+        - generic: 8 funding · 4 lab s
+      - region "Variational tutorial controls":
+        - generic: Ansatz angle θ
+        - status: 45°
+        - slider "Ansatz angle θ" [disabled]: "45"
+        - generic: Shots per Pauli group
+        - combobox "Shots per Pauli group" [disabled]:
+          - option "1,024 · coarse"
+          - option "4,096 · exploratory"
+          - option "16,384 · precise"
+          - option "65,536 · careful" [selected]
+        - checkbox "Mitigation · 4× modeled acquisition" [checked] [disabled]
+        - text: Mitigation · 4× modeled acquisition
+        - paragraph: 196,608 actual samples; 786,432 modeled acquisitions · 419 funding. Bias and statistical precision are distinct.
+      - region "Logical allocation controls":
+        - generic: Code distance
+        - status: 49 physical / patch
+        - generic "Code distance":
+          - button "3" [disabled]
+          - button "5" [disabled] [pressed]
+          - button "7" [disabled]
+          - button "9" [disabled]
+        - paragraph: More protection below threshold. Fewer patches. Longer operations.
+        - generic: Factory allocation
+        - combobox "Factory allocation" [disabled]:
+          - option "No factories · free the footprint"
+          - option "One factory · 4 patch-sized units"
+          - option "Two factories · 8 patch-sized units" [selected]
+          - option "Three factories · 12 patch-sized units"
+        - paragraph: Fictional layout. Credits are scheduling rehearsals, not stored quantum states.
+      - region "Classical decoder profile":
+        - generic: Classical controller profile
+        - generic: 2026 frontier
+        - combobox "Classical controller profile" [disabled]:
+          - option "Balanced · existing scenario"
+          - option "Streaming · more throughput, slower feedback"
+          - option "Responsive · less throughput, faster feedback" [selected]
+        - paragraph: "Selected response scenario: 3,072 / μs throughput; 5 μs feedback. These authored presets do not change physical noise or decoding accuracy."
+        - term: balanced
+        - definition: 4,096 / μs · 10 μs
+        - term: streaming
+        - definition: 8,192 / μs · 15 μs
+        - term: response
+        - definition: 3,072 / μs · 5 μs
+        - button "Research finding & game assumptions ↗"
+      - region "Apparatus maintenance":
+        - generic: Calibration duty
+        - status: 31%
+        - slider "Calibration duty" [disabled]: "31"
+        - generic: Maintenance target 28.5%
+        - generic: Drift 0.005
+        - paragraph: Drift is falling. Calibration uses apparatus time before services and experiments.
+        - button "Automatic calibration on · use manual" [disabled] [pressed]
+    - region "What will you measure next?":
+      - text: A question between breakthroughs
+      - heading "What will you measure next?" [level=2]
+      - generic: 6 / 6 goals · 6 / 6 requests
+      - paragraph: Angle, sampling precision and bias solve different problems. Each challenge needs a fresh trial; successful rewards are finite.
+      - region "The experiment frontier":
+        - heading "The experiment frontier" [level=3]
+        - generic: Evidence earns trust
+        - paragraph: The current frontier is recorded. New research opens the next question.
+      - region "The precision desk":
+        - heading "The precision desk" [level=3]
+        - generic: Payment after qualification
+        - paragraph: Every available request is delivered. The known-preparation service desk can keep earning funding.
+      - generic "Completed trials and delivery receipts"
+    - region "People. Plans. Apparatus time.":
+      - text: Keep the laboratory moving
+      - heading "People. Plans. Apparatus time." [level=2]
+      - paragraph: Laboratory complete. The final allocation is recorded.
+      - region "The research desk":
+        - heading "The research desk" [level=3]
+        - generic: 19 free / 56 trust
+        - paragraph: Evidence earns trust assignments. Move them between researchers and notebook space.
+        - text: Researchers
+        - generic: Generate abstract effort & designs
+        - button "Release one researcher" [disabled]: −
+        - status "Assigned researchers": "32"
+        - button "Assign one researcher" [disabled]: +
+        - text: Notebooks
+        - generic: Hold research effort
+        - button "Release one notebook assignment" [disabled]: −
+        - status "Notebook assignments": "5"
+        - button "Assign one notebook" [disabled]: +
+        - generic: Banked effort
+        - status: 4,400 / 38,400
+        - progressbar
+        - strong: 1× designs
+        - generic: Fill this bank for 4× design generation.
+        - paragraph: More storage admits larger discoveries, but takes longer to fill for the design bonus.
+      - region "The service desk":
+        - heading "The service desk" [level=3]
+        - generic: Complete
+        - generic: Share after calibration
+        - status: 80%
+        - slider "Share after calibration" [disabled]: "80"
+        - 'img "Apparatus time: Calibration 31% · service 56% · experiments 14%."'
+        - paragraph: Calibration 31% · service 56% · experiments 14%
+        - generic: Analysis station duty
+        - status: 100%
+        - slider "Analysis station duty" [disabled]: "100"
+        - paragraph: Idle classical stations to give controller capacity back to paying customers.
+        - generic: Shared controller queue
+        - generic: 7.5 batch slots / lab s
+        - 'img "Controller capacity: 1 classical automation, 6.5 delivered customer batches, 0 unused slots per laboratory second."'
+        - generic: Customer demand
+        - strong: "6.5"
+        - generic: →
+        - generic: Delivered
+        - strong: "6.5"
+        - generic: Revenue / lab s
+        - strong: "121.63"
+        - paragraph: 1 running / 1 requested / 1 owned analysis-station equivalents. Automation uses capacity first; these are classical bench batches.
+        - paragraph: Delivered batches are limited by both customer demand and spare controller capacity.
+        - generic: Price / delivered batch
+        - spinbutton "Price / delivered batch" [disabled]: "18.7"
+        - generic: funding
+        - button "Automatic pricing on · use manual" [disabled] [pressed]
+        - paragraph: "One customer batch: 1,024 known Bell preparations, measured in the computational basis. Jobs per laboratory second are fictional game rates."
+      - region "The construction floor":
+        - heading "The construction floor" [level=3]
+        - generic: 2 construction teams
+        - generic: Fabrication / integration
+        - status: 50% / 50%
+        - slider "Fabrication / integration" [disabled]: "50"
+        - generic: Installed qubits
+        - strong: 2,678
+        - generic: +1.2 / lab s
+        - generic: Supported by control & cooling
+        - strong: 2,790
+        - generic: +1.2 / lab s
+        - paragraph: 2,678 active · 112 supported positions await fabricated qubits.
+        - paragraph: "Total laboratory upkeep: 4.64 funding / lab s, including construction. These are fictional build rates; active qubits require both installation and support."
+    - region "The receiving dock.":
+      - text: Cash today. Capacity after commissioning.
+      - heading "The receiving dock." [level=2]
+      - generic: 0 / 2 scheduled deliveries
+      - paragraph: Choose smaller quick deliveries or commit to a bulk quote. Received equipment waits for funded workshop commissioning. Orders are final; delivery clocks run only during visible, unpaused laboratory time.
+      - generic: Received · awaiting commissioning
+      - strong: "0"
+      - paragraph: Chip assemblies
+      - generic: Received · awaiting commissioning
+      - strong: "0"
+      - paragraph: Control & cooling assemblies
+      - paragraph: "Both commissioning streams share the funded construction allocation. Prefab commissioning runs at 2× the in-house rate: 0.4 funding per unit versus 0.8 in-house. In-house work resumes when stock runs out."
+      - paragraph: "Current funded flow / lab s: chip 0 prefab + 1.2 in-house; support 0 prefab + 1.2 in-house."
+      - article:
+        - text: Local instrument supplier
+        - heading "64 unit equivalents" [level=3]
+        - paragraph: 20 lab s lead · 220 funding · 12 designs
+        - button "Order chip assemblies →" [disabled]
+        - paragraph
+        - button "Order support assemblies →" [disabled]
+        - paragraph
+        - text: Final quote · no cancellation · capacity after commissioning
+      - article:
+        - text: Scheduled bulk delivery
+        - heading "512 unit equivalents" [level=3]
+        - paragraph: 90 lab s lead · 1,200 funding · 64 designs
+        - button "Order chip assemblies →" [disabled]
+        - paragraph
+        - button "Order support assemblies →" [disabled]
+        - paragraph
+        - text: Final quote · no cancellation · capacity after commissioning
+      - generic "Scheduled equipment deliveries":
+        - paragraph: No delivery commitments. Keep cash flexible or reserve a quote above.
+    - region "A question worth asking.":
+      - text: Choose useful work
+      - heading "A question worth asking." [level=2]
+      - paragraph:
+        - text: Named recipes. Full budgets.
+        - text: No real-world advantage claim.
+      - button "Future scenario Thirty-two spins. One question. Complete" [pressed]:
+        - text: Future scenario
+        - strong: Thirty-two spins. One question.
+        - generic: Complete
+      - button "Classical tutorial + modeled execution The fifteen certificate Complete":
+        - text: Classical tutorial + modeled execution
+        - strong: The fifteen certificate
+        - generic: Complete
+      - button "Classical tutorial + modeled execution A search with all the costs Complete":
+        - text: Classical tutorial + modeled execution
+        - strong: A search with all the costs
+        - generic: Complete
+      - button "Future scenario An electronic energy, carefully Complete":
+        - text: Future scenario
+        - strong: An electronic energy, carefully
+        - generic: Complete
+      - text: The same 32-site Ising task
+      - heading "Choose the space–time plan." [level=3]
+      - paragraph: Authored resource scenarios. Extra workspace and fresh states count toward the complete budget.
+      - button "Balanced schedule 32 application registers · depth 200 · 192 fresh states" [disabled] [pressed]:
+        - strong: Balanced schedule
+        - generic: 32 application registers · depth 200 · 192 fresh states
+      - button "Compact floor plan 32 application registers · depth 320 · 128 fresh states" [disabled]:
+        - strong: Compact floor plan
+        - generic: 32 application registers · depth 320 · 128 fresh states
+      - button "Parallel workspace 40 application registers · depth 160 · 256 fresh states" [disabled]:
+        - strong: Parallel workspace
+        - generic: 40 application registers · depth 160 · 256 fresh states
+      - region "Selected workload budget":
+        - text: Future scenario
+        - heading "Thirty-two spins. One question." [level=3]
+        - paragraph: "Recorded completion: Balanced schedule. Current planning preview: Balanced schedule."
+        - paragraph: Periodic 32-site Ising model, J=1, hₓ=0.7, h_z=0.3. Start |0…0〉, evolve to t=1; target mean Z magnetization within 0.02.
+        - generic: Required / available application slots
+        - strong: 32 / 43
+        - generic: 32 data + 0 workspace · 54 patches · 11 reserved
+        - generic: Total conditional risk
+        - strong: 1.40%
+        - generic: Recipe ceiling 4%
+        - generic: Full modeled time
+        - strong: 4,180 μs
+        - generic: 1 execution(s); ceiling 20,000 μs
+        - generic: Fresh states / rehearsal credits
+        - strong: "192"
+        - generic: 600 funding · 35 apparatus s
+        - generic: memory 0.01
+        - generic: gates 0.003
+        - generic: states 1.9e-5
+        - generic: preparation 0.001
+        - generic: other 5.0e-4
+        - paragraph: Uncapped additive risk terms cover all repetitions; 1.00 corresponds to 100%. Total risk is capped at 100%.
+        - paragraph: "Assumed recipe precision: 0.02; target 0.02. Gate schedule 4,000 μs; fresh-state supply 3,840 μs; feedback 1,000 μs. Parallel lanes overlap; waiting increases memory exposure."
+        - paragraph: This workload is complete. Rewards are awarded once.
+        - button "Scenario completed" [disabled]:
+          - generic: Scenario completed
+          - generic: →
+        - paragraph: Modeled scenario completion. No large-system magnetization is computed in this browser.
+    - region "Every breakthrough has a beginning.":
+      - text: On the research desk
+      - heading "Every breakthrough has a beginning." [level=2]
+      - generic: 33 / 33 discoveries
+      - paragraph: Every discovery is in the archive. The machine has a purpose.
+    - region "Better tools. Better questions.":
+      - text: Build the laboratory
+      - heading "Better tools. Better questions." [level=2]
+      - generic: Classical engineering, separate from the papers.
+      - generic: Lab policy
+      - paragraph:
+        - text: An open laboratory notebook
+        - generic: "Other path closed: A private service desk."
+      - button "Review decisions ↗"
+      - article:
+        - generic: Classical engineering
+        - heading "Ideas that can leave the notebook" [level=3]
+        - paragraph: Double classical design generation. Designs are engineering plans, not quantum states or scientific evidence.
+        - generic: Requires Below the threshold · Every station has a schedule
+        - generic: 12,000 funding · 10,000 effort · 1,800 designs
+        - button "Implement engineering" [disabled]:
+          - generic: Implement engineering
+          - generic: →
+        - generic: Need 5600 research effort · Need 177 engineering designs
+      - article:
+        - generic: Choose a rollout
+        - heading "Commission before expansion" [level=3]
+        - paragraph: "Choose verified rollout: workshop output falls 20%, and maintenance need falls 20%. Excludes rapid rollout; coefficients are game assumptions."
+        - generic: "Permanent choice: closes “Build ahead of the queue”."
+        - generic: Requires Below the threshold
+        - generic: 4,000 funding · 4,000 effort · 600 designs
+        - button "Choose this path" [disabled]:
+          - generic: Choose this path
+          - generic: →
+      - article:
+        - generic: Choose a rollout
+        - heading "Build ahead of the queue" [level=3]
+        - paragraph: "Choose rapid rollout: workshop output rises 40%, and maintenance need rises 20%. Excludes verified rollout; coefficients are game assumptions."
+        - generic: "Permanent choice: closes “Commission before expansion”."
+        - generic: Requires Below the threshold
+        - generic: 4,000 funding · 4,000 effort · 600 designs
+        - button "Choose this path" [disabled]:
+          - generic: Choose this path
+          - generic: →
+      - article:
+        - heading "Install a larger chip" [level=3]
+        - paragraph: Installed preset 257 physical qubits; commissioned construction is additional
+        - paragraph
+        - button "Install a larger chip, 7,200 funding and 171 designs" [disabled]:
+          - generic: 7,200 funding
+          - generic: 171 designs ↗
+      - article:
+        - heading "Control & cooling rack" [level=3]
+        - paragraph: Support preset 769 physical qubits; adds control/readout lanes
+        - paragraph
+        - button "Control & cooling rack, 18,000 funding and 282 designs" [disabled]:
+          - generic: 18,000 funding
+          - generic: 282 designs ↗
+      - article:
+        - heading "Refine the control pulses" [level=3]
+        - paragraph: Effective noise 0.014% → 0.007%; selected scenario
+        - paragraph
+        - button "Refine the control pulses, 8,960 funding and 681 designs" [disabled]:
+          - generic: 8,960 funding
+          - generic: 681 designs ↗
+      - article:
+        - heading "Upgrade classical decoding" [level=3]
+        - paragraph: Stream 3,072 → 12,288 / μs; feedback 5 → 2.5 μs
+        - paragraph
+        - button "Upgrade classical decoding, 1,440 funding and 240 designs" [disabled]:
+          - generic: 1,440 funding
+          - generic: 240 designs ↗
+      - article:
+        - heading "Add an analysis station" [level=3]
+        - paragraph: One controller-batch slot before customers; contributes classical research/design work
+        - paragraph
+        - button "Add an analysis station, 3,060 funding and 288 designs" [disabled]:
+          - generic: 3,060 funding
+          - generic: 288 designs ↗
+      - article:
+        - heading "Add a construction team" [level=3]
+        - paragraph: Split hypothetical fabrication and control/cooling integration
+        - paragraph
+        - button "Add a construction team, 10,890 funding and 1,025 designs" [disabled]:
+          - generic: 10,890 funding
+          - generic: 1,025 designs ↗
+    - generic: From the journal
+    - paragraph: Useful at last. A modeled scientific scenario is complete. For Keir, one qubit in return.
+- contentinfo:
+  - emphasis: For Keir. One qubit in return.
+  - button "Model & assumptions"
+  - link "Inspired by Singular Value ↗":
+    - /url: https://singularvalue.org/

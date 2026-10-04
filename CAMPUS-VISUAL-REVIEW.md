@@ -83,3 +83,8 @@ This review did not measure simultaneous maximum staffing, automation and notebo
 - `evidence/campus/campus-review-context-fallback.png`
 
 The root agent should copy the useful final evidence and this review into the authorized repository and commit it locally. No publishing, messaging Keir, remote changes, or user-Chrome modifications were performed by this reviewer.
+
+
+## Subsequent scoped finalization
+
+The source hashes above identify this review's original full matrix. The later ending-only presentation changes were independently accepted at final `app.js` SHA256 `977976b1ba6c4102c66d484797d7ee04d0a7a23f803a3c415d726056cb4da02e` and `instrument-3d.js` SHA256 `f974ce18592c0b1117779d798cb2198bb68cb717918d3ac1e26094753b40a697`; they do not change geometry or camera destinations. [CAMPUS-ENDING-VISUAL-REVIEW.md](CAMPUS-ENDING-VISUAL-REVIEW.md) records the actual native replay and limits. The final paid-job Audit guard and downloads were separately accepted in [CAMPUS-EXPORT-REVIEW.md](CAMPUS-EXPORT-REVIEW.md). [CAMPUS-VERIFICATION.md](CAMPUS-VERIFICATION.md) records final 73-test and completed earned-Chrome evidence; earlier full matrices are not claimed to have been repeated on these final hashes.
