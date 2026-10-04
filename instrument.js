@@ -165,23 +165,90 @@
     }
     document.getElementById('machine').setAttribute('aria-label','Fictional logical allocation budget: '+total+' complete patch-sized units, '+m.slots+' application slots, '+m.routing+' routing units, '+m.spares+' spare unit, '+m.factoryUnits+' factory units. Factory motion represents scheduling rehearsals; no quantum states are stored.');
   }
-  function schedule(a,s,m,id,recipe) {
-    grid(a);const running=s.job?.workload&&s.job.id===id,w=G.workloadRecipe?G.workloadRecipe(s,id,running?s.job.recipe:recipe):C.workloads.find(w=>w.id===id)||C.workloads[0],b=running?G.liveWorkloadStatus(s,w.id):G.workloadStatus(s,w.id),parallel=Math.max(b.gateTime,b.factoryTime,b.feedbackTime),known=Number.isFinite(parallel),effective=known?parallel:Math.max(b.gateTime,b.feedbackTime),finish=w.preparation+effective+w.readout+w.classical;
-    text(a,'06 / THE COMPLETE SCHEDULE',20,24,a.p.copper,10);text(a,'Selected recipe · one execution · μs',20,45,a.p.muted,a.w<430?9:10);
-    const left=a.w<430?104:139,right=24,pw=a.w-left-right,top=83,gap=(a.h-169)/6;
-    const items=[['Preparation',0,w.preparation,a.p.muted],['Operations',w.preparation,b.gateTime,a.p.teal],['Fresh states',w.preparation,b.factoryTime,a.p.copper],['Feedback',w.preparation,b.feedbackTime,a.p.warning],['Readout',w.preparation+effective,w.readout,a.p.muted],['Classical',w.preparation+effective+w.readout,w.classical,a.p.muted]];
-    for(let k=0;k<=4;k++)line(a,left+pw*k/4,top-13,left+pw*k/4,top+gap*5+15,a.p.line,1,[2,5]);
-    items.forEach(([label,start,duration,color],i)=>{
-      const y=top+i*gap;text(a,label,18,y,a.p.ink,a.w<430?10:11,'left',sans);
-      const bx=left+pw*start/finish,bw=Number.isFinite(duration)?Math.max(2,pw*duration/finish):Math.max(12,pw*.65);
-      if(Number.isFinite(duration)){box(a,bx,y-5,bw,10,color,null,1);text(a,num(duration),a.w-14,y+15,a.p.muted,9,'right');}
-      else{box(a,bx,y-5,bw,10,a.p.panel,a.p.warning,1);text(a,'factory unqualified',a.w-14,y+15,a.p.warning,9,'right');}
-    });
-    const axis=top+gap*5+29;text(a,'0',left,axis,a.p.muted,9);text(a,known?num(finish)+' μs':'time not qualified',a.w-24,axis,a.p.muted,9,'right');
-    line(a,20,a.h-60,a.w-20,a.h-60,a.p.line);if(running)line(a,20,a.h-60,20+(a.w-40)*Math.min(1,s.job.progress/s.job.duration),a.h-60,a.p.teal,2);
-    text(a,w.repetitions+' repetition'+(w.repetitions===1?'':'s')+' · '+num(b.runtime)+' μs full modeled task',a.w/2,a.h-43,a.p.ink,a.w<430?10:11,'center',sans);
-    text(a,running?'Lab progress ≠ modeled wall time.':a.w<430?'Parallel stages overlap; overhead follows.':'Overlapping work takes the maximum, then sequential overhead.',a.w/2,a.h-20,a.p.muted,10,'center');
-    document.getElementById('machine').setAttribute('aria-label','Selected educational workload schedule. Preparation '+w.preparation+' microseconds, operations '+num(b.gateTime)+', fresh-state production '+num(b.factoryTime)+', feedback '+num(b.feedbackTime)+', readout '+w.readout+', classical processing '+w.classical+'. '+w.repetitions+' repetitions. Full modeled runtime '+num(b.runtime)+' microseconds. Laboratory progress is a separate pacing clock.');
+  function schedule(a,s,m,id,recipe,phase) {
+    grid(a);const running=s.job?.workload&&s.job.id===id,w=G.workloadRecipe?G.workloadRecipe(s,id,running?s.job.recipe:recipe):C.workloads.find(w=>w.id===id)||C.workloads[0],b=running?G.liveWorkloadStatus(s,w.id):G.workloadStatus(s,w.id),lanes=[['OPERATIONS',b.gateTime,a.p.teal],['FRESH STATES',b.factoryTime,a.p.copper],['FEEDBACK',b.feedbackTime,a.p.warning]];
+    const parallel=Math.max(...lanes.map(([,duration])=>duration)),known=Number.isFinite(parallel),finish=known?w.preparation+parallel+w.readout+w.classical:Infinity;
+    const criticalLanes=known?lanes.filter(([,duration])=>duration===parallel).map(([label])=>label):[],critical=known?criticalLanes.join(' + '):'FRESH-STATE SUPPLY',narrow=a.w<640,pad=narrow?15:20;
+    const riskOver=b.risk>w.maxRisk,risk=(b.risk*100).toFixed(1)+'% / '+(w.maxRisk*100).toFixed(0)+'%';
+    const maxFinite=Math.max(1,...lanes.map(([,duration])=>Number.isFinite(duration)?duration:0));
+    text(a,narrow?'06 / PER EXEC':'06 / ONE EXECUTION',pad,19,a.p.copper,narrow?9:10);
+    text(a,(riskOver?'TASK RISK OVER · ':'TASK RISK · ')+risk,a.w-pad,19,riskOver?a.p.warning:a.p.muted,narrow?9:10,'right');
+    text(a,known?num(finish)+' μs':'TIME OPEN',pad,narrow?55:67,known?a.p.ink:a.p.warning,narrow?30:43,'left',serif);
+    text(a,known?(narrow?(criticalLanes.length>1?(criticalLanes.length===3?'THREE':'TWO')+' LANES SET THE WAIT':'WAIT SET BY '+critical):critical+(criticalLanes.length>1?' SET':' SETS')+' THE PARALLEL WAIT'):'FRESH-STATE RATE UNQUALIFIED',narrow?pad:a.w-pad,narrow?84:77,known?a.p.teal:a.p.warning,narrow?10:11,narrow?'left':'right',sans);
+
+    function laneSet(x,y,w,h,small) {
+      box(a,x,y,w,h,a.p.chip,a.p.line,6);
+      text(a,small?'02 / PARALLEL · SCHEMATIC':'02 / PARALLEL ENGINE · SCHEMATIC ROUTES',x+12,y+13,a.p.muted,small?9:10);
+      const start=x+(small?12:17),end=x+w-(small?12:17),first=y+(small?26:42),gap=(h-(small?47:78))/2,traceYs=[];
+      lanes.forEach(([label,duration,color],i)=>{
+        const labelY=first+i*gap,ty=labelY+(small?11:17),focus=known?duration===parallel:i===1,finite=Number.isFinite(duration);
+        traceYs.push(ty);
+        if(focus)box(a,x+6,labelY-(small?10:16),w-12,small?28:47,a.p.soft,null,4);
+        text(a,label,x+12,labelY,focus?color:a.p.ink,small?9:10);
+        text(a,finite?num(duration)+' μs':'NO RATE',x+w-12,labelY,finite?(focus?color:a.p.muted):a.p.warning,small?9:10,'right');
+        if(!finite){line(a,start,ty,end,ty,a.p.warning,1.5,[4,5]);return;}
+        const length=Math.max(3,(end-start)*duration/maxFinite),stop=start+length;
+        line(a,start,ty,stop,ty,color,focus?2.5:1.5);
+        if(stop<end-2)line(a,stop,ty,end,ty,a.p.muted,1,[2,5]);
+        const marks=Math.max(1,Math.min(small?4:7,Math.floor(length/(small?28:42))));
+        for(let k=0;k<marks;k++){
+          const px=start+(k+.32)*length/marks;
+          if(i===0){line(a,px,ty,px,ty-6,color,1.5);line(a,px,ty-6,px+Math.min(9,length/marks*.3),ty-6,color,1.5);}
+          else if(i===1)box(a,px-2,ty-3,5,5,color,null,1);
+          else{line(a,px,ty,px,ty+5,color,1.5);line(a,px,ty+5,px+Math.min(8,length/marks*.3),ty+5,color,1.5);}
+        }
+        dot(a,stop,ty,focus?3:2,a.p.chip,color);
+      });
+      if(running&&phase){
+        const scan=start+(end-start)*Math.min(1,s.job.progress/s.job.duration);
+        a.x.save();a.x.globalAlpha=.55;line(a,scan,y+21,scan,y+h-7,a.p.copper,1);dot(a,scan,y+21,2,a.p.copper);a.x.restore();
+      }
+      return {start,end,traceYs};
+    }
+    function module(x,y,w,h,label,value,color,small=false) {
+      box(a,x,y,w,h,a.p.chip,color,5);
+      line(a,x+9,y+8,x+9,y+h-8,color,2);
+      text(a,label,x+(small?18:21),y+(small?8:23),color,small?9:10);
+      text(a,value,x+(small?18:21),y+(small?20:49),a.p.ink,small?11:19,'left',small?mono:serif);
+    }
+    if(narrow){
+      const panelY=124,panelH=Math.min(150,Math.max(105,a.h-205)),bottom=panelY+panelH,prepW=112,unitY=bottom+10,unitW=(a.w-2*pad-8)/2;
+      module(pad,96,prepW,27,'01 / PREP',num(w.preparation)+' μs',a.p.copper,true);
+      const p=laneSet(pad,panelY,a.w-2*pad,panelH,true),input=pad+8,output=a.w-pad-5;
+      line(a,pad+prepW/2,123,pad+prepW/2,panelY+3,a.p.copper);line(a,pad+prepW/2,panelY+3,input,panelY+3,a.p.copper);
+      line(a,input,p.traceYs[0],input,p.traceYs[2],a.p.copper);
+      p.traceYs.forEach((ty,i)=>{line(a,input,ty,p.start,ty,a.p.line);line(a,p.end,ty,output,ty,known&&lanes[i][1]===parallel?lanes[i][2]:a.p.line);});
+      line(a,output,p.traceYs[0],output,unitY-5,known?a.p.teal:a.p.warning);
+      line(a,output,unitY-5,pad+unitW/2,unitY-5,known?a.p.teal:a.p.warning);
+      line(a,pad+unitW/2,unitY-5,pad+unitW/2,unitY,known?a.p.teal:a.p.warning);
+      module(pad,unitY,unitW,27,'03 / READOUT',num(w.readout)+' μs',a.p.teal,true);
+      module(pad+unitW+8,unitY,unitW,27,'04 / CLASSICAL',num(w.classical)+' μs',a.p.copper,true);
+      line(a,pad+unitW,unitY+13,pad+unitW+8,unitY+13,a.p.teal,1.5);
+      const foot=a.h-31;box(a,pad,foot,a.w-2*pad,26,a.p.chip,a.p.line,4);
+      if(running)line(a,pad,foot+25,pad+(a.w-2*pad)*Math.min(1,s.job.progress/s.job.duration),foot+25,a.p.teal,2);
+      text(a,w.repetitions+'× · FULL TASK '+(known?num(b.runtime)+' μs':'TIME OPEN'),pad+9,foot+13,a.p.ink,10);
+      text(a,running?'LAB SCAN':'MODEL',a.w-pad-9,foot+13,a.p.muted,9,'right');
+    }else{
+      const prepW=Math.max(111,a.w*.15),panelX=pad+prepW+26,readW=79,panelW=a.w-panelX-pad-16-readW*2-8,readX=panelX+panelW+16,unitY=180,unitH=75;
+      const p=laneSet(panelX,110,panelW,212,false),branchX=panelX-11,mergeX=panelX+panelW+10,cy=unitY+unitH/2;
+      line(a,pad+prepW,cy,branchX,cy,a.p.copper,1.5);line(a,branchX,p.traceYs[0],branchX,p.traceYs[2],a.p.copper,1.5);
+      p.traceYs.forEach((ty,i)=>{line(a,branchX,ty,p.start,ty,a.p.line);line(a,p.end,ty,mergeX,ty,known&&lanes[i][1]===parallel?lanes[i][2]:a.p.line);});
+      line(a,mergeX,p.traceYs[0],mergeX,p.traceYs[2],known?a.p.teal:a.p.warning,1.5);
+      line(a,mergeX,cy,readX,cy,known?a.p.teal:a.p.warning,1.5,known?[]:[3,4]);
+      text(a,'MAX',mergeX,unitY-22,known?a.p.teal:a.p.warning,10,'center');
+      module(pad,unitY,prepW,unitH,'01 / PREP',num(w.preparation)+' μs',a.p.copper);
+      module(readX,unitY,readW,unitH,'READOUT',num(w.readout)+' μs',a.p.teal);
+      module(readX+readW+8,unitY,readW,unitH,'CLASSICAL',num(w.classical)+' μs',a.p.copper);
+      line(a,readX+readW,cy,readX+readW+8,cy,a.p.teal,1.5);
+      box(a,pad,337,a.w-2*pad,59,a.p.chip,a.p.line,5);
+      text(a,num(w.preparation)+' + max('+lanes.map(([,duration])=>Number.isFinite(duration)?num(duration):'—').join(', ')+') + '+num(w.readout)+' + '+num(w.classical),pad+13,354,a.p.muted,11);
+      text(a,known?'= '+num(finish)+' μs':'= TIME OPEN',a.w-pad-13,354,known?a.p.ink:a.p.warning,17,'right',serif);
+      line(a,pad+13,369,a.w-pad-13,369,a.p.line);
+      if(running)line(a,pad+13,369,pad+13+(a.w-2*pad-26)*Math.min(1,s.job.progress/s.job.duration),369,a.p.teal,2);
+      text(a,w.repetitions+'× · FULL MODELED TASK '+(known?num(b.runtime)+' μs':'TIME OPEN'),pad+13,383,a.p.ink,10);
+      text(a,running?'LAB SCAN · SEPARATE CLOCK':'TIMING ROUTES SCHEMATIC',a.w-pad-13,383,a.p.muted,9,'right');
+    }
+    document.getElementById('machine').setAttribute('aria-label','Selected educational workload timing instrument. Per execution: preparation '+w.preparation+' microseconds, operations '+num(b.gateTime)+', fresh-state production '+num(b.factoryTime)+', feedback '+num(b.feedbackTime)+', readout '+w.readout+', classical processing '+w.classical+'. Parallel durations overlap; '+(known?critical+(criticalLanes.length>1?' jointly set ':' sets ')+'the '+num(parallel)+' microsecond wait.':'fresh-state supply has no qualified rate, so total time is unqualified.')+' '+w.repetitions+' repetitions. Full modeled runtime '+num(b.runtime)+' microseconds. Full-task risk '+risk+(riskOver?', over the separate recipe budget.':'.')+' Finite lane lengths compare modeled durations; routes are schematic timing dependencies, not quantum states or measured hardware traces. '+(running?'The scan indicates laboratory job progress, not modeled microsecond time.':'Laboratory progress uses a separate pacing clock.'));
   }
   function measurement(a,s,m) {
     const result=s.result;if(!result&&!s.tutorial)return;
@@ -189,9 +256,8 @@
       const t=s.tutorial,left=38,pw=a.w-64;const cols=[a.p.teal,a.p.copper];
       text(a,'+1 counts',left,13,cols[0],10);text(a,'−1 counts',a.w-25,13,cols[1],10,'right');
       t.groups.forEach((g,i)=>{const y=42+i*37,sum=g.plus+g.minus; text(a,g.label,8,y,a.p.ink,11);box(a,left,y-7,pw*g.plus/sum,14,cols[0],null,1);box(a,left+pw*g.plus/sum,y-7,pw*g.minus/sum,14,cols[1],null,1);text(a,num(g.plus)+' / '+num(g.minus),left+pw/2,y+16,a.p.muted,9,'center');});
-      const named=result.task&&result.task.angle!==null,reference=named?'E('+t.theta+'°) = '+num(result.task.reference,4):'−√2.44';
-      text(a,'Classical reference: '+reference,a.w/2,151,a.p.muted,10,'center');
-      document.getElementById('measurement').setAttribute('aria-label','Actual classically simulated Pauli sample groups: '+t.groups.map(g=>g.label+', '+g.plus+' plus-one and '+g.minus+' minus-one counts').join('; ')+(named?'. Exact classical reference at the recorded '+t.theta+' degree angle is '+num(result.task.reference,4)+'.':'. Classical ground-state reference is negative square root of 2.44.'));return;
+      text(a,'Classical reference: −√2.44',a.w/2,151,a.p.muted,10,'center');
+      document.getElementById('measurement').setAttribute('aria-label','Actual classically simulated Pauli sample groups: '+t.groups.map(g=>g.label+', '+g.plus+' plus-one and '+g.minus+' minus-one counts').join('; ')+'. Classical ground-state reference is negative square root of 2.44.');return;
     }
     const bins=result?.bins||[];
     if(bins.length){
@@ -226,7 +292,7 @@
   }
   function draw(s,opts={}) {
     const p=palette(),m=G.metrics(s),a=fit('machine',p),phase=!reduced.matches&&!s.paused&&!s.ended&&(s.job||(m.factoryOK&&s.credits<2000))?(opts.time??performance.now())/1000:0;
-    if(a)[opening,control,noisy,surface,logical,(a,s,m)=>schedule(a,s,m,opts.workload,opts.recipe)][G.stage(s)](a,s,m,phase);
+    if(a)[opening,control,noisy,surface,logical,(a,s,m)=>schedule(a,s,m,opts.workload,opts.recipe,phase)][G.stage(s)](a,s,m,phase);
     const b=fit('measurement',p);if(b)measurement(b,s,m);
     const e=fit('ending-art',p);if(e)evolution(e,s);
   }
@@ -235,13 +301,13 @@
     a.x.fillStyle=p.bg;a.x.fillRect(0,0,1200,720);box(a,24,24,1152,672,null,p.line,9);
     text(a,'COHERENT.',64,69,p.ink,21,'left',sans);text(a,'ONE QUBIT IN RETURN',1136,69,p.copper,12,'right');
     text(a,'The machine has a purpose.',600,150,p.ink,63,'center',serif);
-    text(a,'From one qubit to a useful instrument.',600,219,p.ink,29,'center',serif);
+    text(a,'For Keir, who turned one neuron into a world.',600,219,p.ink,29,'center',serif);
     text(a,'Here is one qubit in return.',600,256,p.copper,31,'center',serif);
     a.x.save();a.x.translate(110,290);evolution({x:a.x,w:980,h:210,p},s);a.x.restore();
-    const record=s.endingRecord,seconds=Math.floor(record?.elapsed??s.elapsed),clock=Math.floor(seconds/60)+'m '+seconds%60+'s';
-    const stats=[[clock,'visible laboratory time'],[(record?.discoveries??s.done.length)+' / '+C.projects.length,'research discoveries'],[num(record?.active??m.active),'active physical qubits'],record?[String(record.distance),'code distance at milestone']:[String(s.completed.length),'named recipes completed']];
+    const seconds=Math.floor(s.elapsed),clock=Math.floor(seconds/60)+'m '+seconds%60+'s';
+    const stats=[[clock,'visible laboratory time'],[s.done.length+' / 30','research discoveries'],[num(m.active),'active physical qubits'],[String(s.completed.length),'named recipes completed']];
     stats.forEach(([value,label],i)=>{const x=168+i*288;text(a,value,x,550,p.ink,28,'center',mono);text(a,label,x,583,p.muted,12,'center',sans);});
-    line(a,64,622,1136,622,p.line);text(a,'Modeled scenario completion · no large quantum result is computed.',64,656,p.muted,11,'left',sans);text(a,'Inspired by Paperclips · decisionproblem.com/paperclips',1136,648,p.copper,11,'right',sans);text(a,'and Singular Value · singularvalue.org',1136,670,p.copper,11,'right',sans);
+    line(a,64,622,1136,622,p.line);text(a,'Modeled scenario completion · no large quantum result is computed.',64,656,p.muted,11,'left',sans);text(a,'Inspired by Singular Value · singularvalue.org',1136,656,p.copper,11,'right',sans);
     return canvas;
   }
   window.CoherentArt={draw,postcard};

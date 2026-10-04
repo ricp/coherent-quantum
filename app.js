@@ -92,7 +92,7 @@
       [['Application footprint',num(m.slots)+' slots','Ideal patch count: '+m.totalPatches],['Memory / gate error',m.pL===null?'Unqualified':m.pL.toExponential(1)+' / '+m.gateError.toExponential(1),'Per qubit-cycle / per operation'],['Factory output error',m.pT.toExponential(1),'Total accepted-state assumption']]
     ];
     readouts(cases[phase]);
-    write('instrument-legend',['○ Physical qubit · ▪ Control port','Pulse · selected coherence traces','○ Coupled physical qubits','○ Data · ◇ check ancilla · amber event','Application · routing · factory · spare','Preparation · parallel work · readout'][phase]);
+    write('instrument-legend',['○ Physical qubit · ▪ Control port','Pulse · selected coherence traces','○ Coupled physical qubits','○ Data · ◇ check ancilla · amber event','Application · routing · factory · spare','Preparation · parallel work · readout · classical'][phase]);
     write('instrument-mode',['Illustrative schematic','Selected model traces','Representative connectivity','One ideal rotated patch','Fictional allocation layout','Assumed recipe schedule'][phase]);
     $('machine').setAttribute('aria-label',C.chapters[phase].instrument+'. '+cases[phase].map(x=>x[0]+': '+x[1]+'. '+x[2]).join('. '));
     let warning='';
