@@ -24,6 +24,10 @@ Independent checks verified native keyboard focus, fullscreen and exit, manual o
 
 The actual Chrome campaign has reached **55:48**, chapter V, **24/33 discoveries**, **5/6 objectives**, **5/6 precision requests** and **792 active physical qubits**. Factory rehearsal passed after allocating its explicit footprint. Two bulk equipment deliveries arrived and are being commissioned by two paid construction teams. The run uses ordinary buttons, visible real laboratory time and earned resources; no resource, save, internal engine action or time injection is permitted. Complete the main ending, then deliberately continue for remaining research and tasks before claiming the game solved.
 
+## Independent gameplay and native interface consensus
+
+The lead and independent AI gameplay reviewer accepted five corrected interface issues: unique task focus survives disappearing neighboring cards; completed workload captions distinguish recorded recipes from current previews; commissioning rates and expenses are actually disclosed; fresh task feedback survives automatic renders; historical ending copy follows the recorded workload. [CAMPUS-GAMEPLAY-UI-REVIEW.md](CAMPUS-GAMEPLAY-UI-REVIEW.md) records bounded native 320/375px rechecks, exact named-reference receipts and one-time payments, natural delivery/commissioning, workload reservations and both first-Dynamics and first-Molecule epilogue cases. Those isolated public-action fixtures never touched the user's Chrome/save. Accepted app SHA256: `de90b7fca18cf871c0a3b7f45dd8caec289bc024d82579dde0ae11a9a64a1233`.
+
 Human enjoyment, a 90-minute first human play and performance across physical mobile devices remain unverified. Mesh counts and legal simulated completion alone do not establish an outstanding game.
 
 ## Independent scientific implementation consensus
