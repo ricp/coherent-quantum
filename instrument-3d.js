@@ -274,7 +274,7 @@
     if(s.job&&s.job!==followJob&&!s.paused){
       followJob=s.job;const id=s.job.workload?'planning':s.job.id==='memory'?'memory':['gates','factory'].includes(s.job.id)?'planning':'cryostat';
       text($('three-event-caption'),s.job.workload?'The complete resource recipe · cursor follows laboratory pacing':s.job.id==='memory'?'Memory qualification · only check ancillas are highlighted':s.job.id==='calibrate'?'Calibration reserve · customers and commissioning pause':'Known preparation → control → readout · schematic workflow');
-      if(follow&&cameraMode==='overview'){autoFocused=true;if(targets[id]&&inViewport)setCamera(id);else pendingFocus=id;host.scrollIntoView({block:'start'});}
+      if(follow){autoFocused=true;if(targets[id]&&inViewport)setCamera(id);else pendingFocus=id;host.scrollIntoView({block:'start'});}
     }else if(!s.job&&followJob){
       followJob=null;text($('three-event-caption'),s.result?'Workflow complete · '+s.result.message:'The apparatus is available again.');
       if(!s.paused&&!s.ended&&!reduced.matches)completionAt=performance.now();
@@ -309,7 +309,7 @@
     const button=event.target.closest('button');if(!button)return;
     if(button===toggle){enabled=!enabled;dirty=true;display();if(enabled&&state)draw(state,options);else stop();}
     else if(button.id==='three-expand'){try{const presentation=host.closest('main')||host;if(document.fullscreenElement===presentation)await document.exitFullscreen();else await presentation.requestFullscreen();}catch{ text(status,'Expanded view is unavailable. The wide laboratory remains available here.');}}
-    else if(button.id==='three-follow'){follow=!follow;button.setAttribute('aria-pressed',String(follow));button.textContent=follow?'Follow experiment':'Manual inspection';autoFocused=false;}
+    else if(button.id==='three-follow'){follow=!follow;button.setAttribute('aria-pressed',String(follow));button.textContent=follow?'Follow experiment':'Manual inspection';autoFocused=false;if(follow){followJob=null;if(state)draw(state,options);}}
     else if(button.id==='three-pause')$('pause-toggle').click();
     else if(button.dataset.camera){follow=false;autoFocused=false;$('three-follow').setAttribute('aria-pressed','false');$('three-follow').textContent='Manual inspection';setCamera(button.dataset.camera);if(state)annotate();}
   });

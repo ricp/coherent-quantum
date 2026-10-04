@@ -6,7 +6,7 @@ The user playtested and rejected the compact 3D instrument as boring and visuall
 
 The parent and independent AI 3D specialist agree on a substantial cutaway facility: a tall copper cryostat, elevated coax routes, research desks, control cabinets, processor infrastructure, and later classical/logical/construction wings. The facility must occupy the full instrument width, keep a strong architectural silhouette, and feel active and inhabited. A larger static floor is insufficient.
 
-The separate index-3d.html shares the unchanged game engine, campaign, paper archive and saves. The original instrument and next-action controls move to a full-width theater in this entry only. A sticky native action bar makes the player's next experiment accessible above the facility. The 2D entry remains unchanged. Successful upgrades offer a fixed inspection cue without moving routine purchase controls; returning reveals the actual changed apparatus. Follow mode brings new experiments into view from Overview, while manual inspection remains under player control.
+The separate index-3d.html shares the unchanged game engine, campaign, paper archive and saves. The original instrument and next-action controls move to a full-width theater in this entry only. A sticky native action bar makes the player's next experiment accessible above the facility. The 2D entry remains unchanged. Successful upgrades offer a fixed inspection cue without moving routine purchase controls; returning reveals the actual changed apparatus. Explicitly enabling Follow brings the current or next experiment into view from any station. Selecting a station or orbiting returns to manual inspection.
 
 | Player change | Visible consequence | Honest meaning |
 | --- | --- | --- |
