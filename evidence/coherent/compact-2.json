@@ -1,0 +1,180 @@
+{
+  "game": "coherent",
+  "version": 1,
+  "state": {
+    "version": 1,
+    "started": true,
+    "paused": false,
+    "elapsed": 71,
+    "funds": 77.5,
+    "effort": 9.600000000000023,
+    "done": [
+      "feynman",
+      "deutsch",
+      "divincenzo",
+      "nakamura",
+      "ramsey",
+      "echo",
+      "readout",
+      "rb",
+      "coupled"
+    ],
+    "qualified": [
+      "signal",
+      "ramsey",
+      "echo",
+      "readout",
+      "benchmark"
+    ],
+    "module": 1,
+    "rack": 1,
+    "staff": 5,
+    "pulse": 0,
+    "decoder": 0,
+    "drift": 0.0490749999999999,
+    "distance": 3,
+    "factories": 0,
+    "calibration": 0.3,
+    "service": 0,
+    "theta": 20,
+    "shots": 1,
+    "mitigate": false,
+    "credits": 0,
+    "reputation": 5,
+    "seed": 2846191538,
+    "job": {
+      "id": "circuit",
+      "workload": false,
+      "progress": 0.7,
+      "duration": 8,
+      "shots": 2048,
+      "theta": 20,
+      "mitigate": false,
+      "bias": 0.008
+    },
+    "result": {
+      "id": "benchmark",
+      "shots": 4096,
+      "bins": [],
+      "message": "Illustrative RB estimate: 1.47%. Its assumptions differ from the threshold scenario."
+    },
+    "tutorial": null,
+    "completed": [],
+    "ended": false,
+    "volume": 0.2,
+    "sound": false,
+    "theme": "dark",
+    "log": [
+      {
+        "time": 5,
+        "message": "First signal. One qubit. An entire room to keep it cold.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 5,
+        "message": "A world to simulate. Give the first experiment a purpose.",
+        "kind": "discovery"
+      },
+      {
+        "time": 6,
+        "message": "Add a research colleague. More abstract research effort; allocation remains reversible.",
+        "kind": "engineering"
+      },
+      {
+        "time": 7,
+        "message": "A universal idea. Open the circuit notebook.",
+        "kind": "discovery"
+      },
+      {
+        "time": 13,
+        "message": "The physical checklist. Make hardware readiness part of the plan.",
+        "kind": "discovery"
+      },
+      {
+        "time": 22,
+        "message": "Add a research colleague. More abstract research effort; allocation remains reversible.",
+        "kind": "engineering"
+      },
+      {
+        "time": 27,
+        "message": "Coherent control. Enter the control room.",
+        "kind": "discovery"
+      },
+      {
+        "time": 27,
+        "message": "The laboratory learns to listen.",
+        "kind": "chapter"
+      },
+      {
+        "time": 35,
+        "message": "A fringe emerges from the noise.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 35,
+        "message": "A fringe in the noise. Expose drift and the Ramsey T₂* estimate.",
+        "kind": "discovery"
+      },
+      {
+        "time": 42,
+        "message": "The echo is clearer. It is still not a way to undo every error.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 42,
+        "message": "Add a research colleague. More abstract research effort; allocation remains reversible.",
+        "kind": "engineering"
+      },
+      {
+        "time": 44,
+        "message": "An echo, not a miracle. Separate echo T₂ from Ramsey T₂*.",
+        "kind": "discovery"
+      },
+      {
+        "time": 48,
+        "message": "A measurement is now a little less opinionated.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 48,
+        "message": "Read the result carefully. Reduce the scenario’s residual readout bias.",
+        "kind": "discovery"
+      },
+      {
+        "time": 57,
+        "message": "The control pulses have acquired error bars.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 58,
+        "message": "Add a research colleague. More abstract research effort; allocation remains reversible.",
+        "kind": "engineering"
+      },
+      {
+        "time": 61,
+        "message": "Characterize the gates. Unlock pulse engineering and automatic calibration.",
+        "kind": "discovery"
+      },
+      {
+        "time": 63,
+        "message": "Control & cooling rack. Support 9 active physical qubits.",
+        "kind": "engineering"
+      },
+      {
+        "time": 66,
+        "message": "Install a larger chip. Installed capacity 9 physical qubits.",
+        "kind": "engineering"
+      },
+      {
+        "time": 70,
+        "message": "The second conversation. Connect calibrated qubits. Enter the noisy era.",
+        "kind": "discovery"
+      },
+      {
+        "time": 70,
+        "message": "One qubit becomes a machine.",
+        "kind": "chapter"
+      }
+    ]
+  }
+}

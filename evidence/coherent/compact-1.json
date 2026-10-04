@@ -1,0 +1,95 @@
+{
+  "game": "coherent",
+  "version": 1,
+  "state": {
+    "version": 1,
+    "started": true,
+    "paused": false,
+    "elapsed": 28,
+    "funds": 22,
+    "effort": 34.8,
+    "done": [
+      "feynman",
+      "deutsch",
+      "divincenzo",
+      "nakamura"
+    ],
+    "qualified": [
+      "signal"
+    ],
+    "module": 0,
+    "rack": 0,
+    "staff": 3,
+    "pulse": 0,
+    "decoder": 0,
+    "drift": 0.31982499999999964,
+    "distance": 3,
+    "factories": 0,
+    "calibration": 0,
+    "service": 0,
+    "theta": 20,
+    "shots": 1,
+    "mitigate": false,
+    "credits": 0,
+    "reputation": 1,
+    "seed": 2846191538,
+    "job": null,
+    "result": {
+      "id": "signal",
+      "shots": 128,
+      "bins": [
+        75,
+        53
+      ],
+      "message": "A signal from repeated known preparations."
+    },
+    "tutorial": null,
+    "completed": [],
+    "ended": false,
+    "volume": 0.2,
+    "sound": false,
+    "theme": "dark",
+    "log": [
+      {
+        "time": 5,
+        "message": "First signal. One qubit. An entire room to keep it cold.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 5,
+        "message": "A world to simulate. Give the first experiment a purpose.",
+        "kind": "discovery"
+      },
+      {
+        "time": 6,
+        "message": "Add a research colleague. More abstract research effort; allocation remains reversible.",
+        "kind": "engineering"
+      },
+      {
+        "time": 7,
+        "message": "A universal idea. Open the circuit notebook.",
+        "kind": "discovery"
+      },
+      {
+        "time": 13,
+        "message": "The physical checklist. Make hardware readiness part of the plan.",
+        "kind": "discovery"
+      },
+      {
+        "time": 22,
+        "message": "Add a research colleague. More abstract research effort; allocation remains reversible.",
+        "kind": "engineering"
+      },
+      {
+        "time": 27,
+        "message": "Coherent control. Enter the control room.",
+        "kind": "discovery"
+      },
+      {
+        "time": 27,
+        "message": "The laboratory learns to listen.",
+        "kind": "chapter"
+      }
+    ]
+  }
+}

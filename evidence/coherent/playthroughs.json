@@ -1,0 +1,78 @@
+[
+  {
+    "strategy": "compact",
+    "ended": true,
+    "seconds": 1078,
+    "discoveries": 30,
+    "physical": 769,
+    "distance": 3,
+    "factories": 2,
+    "completed": [
+      "dynamics"
+    ],
+    "chapters": [
+      {
+        "chapter": 0,
+        "at": 0
+      },
+      {
+        "chapter": 1,
+        "at": 28
+      },
+      {
+        "chapter": 2,
+        "at": 71
+      },
+      {
+        "chapter": 3,
+        "at": 161
+      },
+      {
+        "chapter": 4,
+        "at": 322
+      },
+      {
+        "chapter": 5,
+        "at": 588
+      }
+    ]
+  },
+  {
+    "strategy": "wide",
+    "ended": true,
+    "seconds": 1078,
+    "discoveries": 30,
+    "physical": 2049,
+    "distance": 5,
+    "factories": 1,
+    "completed": [
+      "dynamics"
+    ],
+    "chapters": [
+      {
+        "chapter": 0,
+        "at": 0
+      },
+      {
+        "chapter": 1,
+        "at": 28
+      },
+      {
+        "chapter": 2,
+        "at": 71
+      },
+      {
+        "chapter": 3,
+        "at": 161
+      },
+      {
+        "chapter": 4,
+        "at": 322
+      },
+      {
+        "chapter": 5,
+        "at": 588
+      }
+    ]
+  }
+]
