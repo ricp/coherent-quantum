@@ -631,46 +631,64 @@
   }
 };
   const chapters = [
-    {name:'First signal',title:'One qubit.',accent:'A world of possibility.',subtitle:'A room. A refrigerator. A very fragile beginning.',instrument:'The first apparatus',goal:'Prepare a qubit. Find a signal. Give it a purpose.',transition:'A signal worth listening to.',story:'You have persuaded a superconducting circuit to behave coherently. The room is still larger than the computer.'},
-    {name:'Control room',title:'Listen closely.',accent:'The noise has a shape.',subtitle:'Preparation, control, and measurement. In that order.',instrument:'The control room',goal:'Characterize the device, then connect a second qubit.',transition:'The laboratory learns to listen.',story:'Every good result begins with a calibration. Every calibration ends with another question.'},
-    {name:'Noisy circuits',title:'Small errors.',accent:'Bigger possibilities.',subtitle:'A processor is more than the sum of its qubits.',instrument:'The noisy processor',goal:'Optimize a two-spin tutorial and reproduce its energy.',transition:'One qubit becomes a machine.',story:'The chip is growing. So is the list of things that can go wrong. Your first useful calculation is waiting.'},
-    {name:'Protected memory',title:'Fragile parts.',accent:'A steadier whole.',subtitle:'Many physical qubits. One carefully protected idea.',instrument:'The surface-code memory',goal:'Trade physical space for qualified logical memory.',transition:'The information survives.',story:'You do not read the unknown state. You read the evidence of errors, and let the decoder do its work.'},
-    {name:'Logical machine',title:'Keep it alive.',accent:'Then put it to work.',subtitle:'Memory, operations, routing, and an actual schedule.',instrument:'The logical foundry',goal:'Qualify gates and rehearse a factory schedule.',transition:'Protection becomes orchestration.',story:'A memory can remember. A computer must also act. The difference takes rather more space than the brochure suggested.'},
-    {name:'Useful work',title:'A little less noise.',accent:'A little more possibility.',subtitle:'The machine is ready for a question worth asking.',instrument:'The useful instrument',goal:'Complete a named workload within its full resource budget.',transition:'At last, a question worth asking.',story:'The machine is no longer the point. The experiment is. Choose your work, and give it the resources it needs.'}
+    {name:'First signal',title:'One qubit.',accent:'A world of possibility.',subtitle:'A room. A refrigerator. A very fragile beginning.',instrument:'The first apparatus',goal:'Find a signal. Balance researchers, notes storage, and engineering designs.',transition:'A signal worth listening to.',story:'You have persuaded a superconducting circuit to behave coherently. The room is still larger than the computer.'},
+    {name:'Control room',title:'Listen closely.',accent:'The noise has a shape.',subtitle:'Preparation, control, and measurement. In that order.',instrument:'The control room',goal:'Characterize the device. Reserve calibration time before expanding.',transition:'The laboratory learns to listen.',story:'Every good result begins with a calibration. Every calibration ends with another question.'},
+    {name:'Noisy circuits',title:'Small errors.',accent:'Bigger possibilities.',subtitle:'A processor is more than the sum of its qubits.',instrument:'The noisy processor',goal:'Fund the laboratory with delivered service jobs, then validate the two-spin tutorial.',transition:'One qubit becomes a machine.',story:'The chip is growing. So is the list of things that can go wrong. Your first useful calculation is waiting.'},
+    {name:'Protected memory',title:'Fragile parts.',accent:'A steadier whole.',subtitle:'Many physical qubits. One carefully protected idea.',instrument:'The surface-code memory',goal:'Expand notes storage and automate routine work. Trade physical space for qualified memory.',transition:'The information survives.',story:'You do not read the unknown state. You read the evidence of errors, and let the decoder do its work.'},
+    {name:'Logical machine',title:'Keep it alive.',accent:'Then put it to work.',subtitle:'Memory, operations, routing, and an actual schedule.',instrument:'The logical foundry',goal:'Balance fabrication, maintenance, and service while qualifying gates and factories.',transition:'Protection becomes orchestration.',story:'A memory can remember. A computer must also act. The difference takes rather more space than the brochure suggested.'},
+    {name:'Useful work',title:'A little less noise.',accent:'A little more possibility.',subtitle:'The machine is ready for a question worth asking.',instrument:'The useful instrument',goal:'Bring the whole laboratory together for a named workload and its full resource budget.',transition:'At last, a question worth asking.',story:'The machine is no longer the point. The experiment is. Choose your work, and give it the resources it needs.'}
   ];
-  // id, chapter, title, game effect, papers, prerequisites, funding, effort, qualification
+  // Prices and designs are game-economy choices, not findings from the cited papers.
+  // id, chapter, title, game effect, papers, prerequisites, funding, effort, designs, qualification
   const projects = [
-    ['feynman',0,'A world to simulate','Give the first experiment a purpose.',['Q01'],[],15,8,'signal'],
-    ['deutsch',0,'A universal idea','Open the circuit notebook.',['Q02'],['feynman'],25,14],
-    ['divincenzo',0,'The physical checklist','Make hardware readiness part of the plan.',['Q03'],['deutsch'],45,22],
-    ['nakamura',0,'Coherent control','Enter the control room.',['Q24'],['divincenzo'],70,30],
-    ['ramsey',1,'A fringe in the noise','Expose drift and the Ramsey T₂* estimate.',['Q04'],['nakamura'],90,45,'ramsey'],
-    ['echo',1,'An echo, not a miracle','Separate echo T₂ from Ramsey T₂*.',['Q04'],['ramsey'],110,60,'echo'],
-    ['readout',1,'Read the result carefully','Reduce the scenario’s residual readout bias.',['Q04'],['ramsey'],120,65,'readout'],
-    ['rb',1,'Characterize the gates','Unlock pulse engineering and automatic calibration.',['Q05'],['echo','readout'],150,85,'benchmark'],
-    ['coupled',1,'The second conversation','Connect calibrated qubits. Enter the noisy era.',['Q04','Q26'],['rb'],200,110,'coupled'],
-    ['nisq',2,'The noisy intermediate era','Open explicitly qualified laboratory service contracts.',['Q06'],['coupled'],260,140,'circuit'],
-    ['vqe',2,'A hybrid conversation','Optimize a classically reproducible two-spin tutorial.',['Q16'],['nisq'],320,170],
-    ['ansatz',2,'Choose the question well','Reveal the tutorial’s exact variational energy landscape.',['Q17'],['vqe'],350,180],
-    ['mitigation',2,'More shots. Less bias.','Enable a costly measurement-mitigation scenario.',['Q18'],['vqe','readout'],400,210],
-    ['classical',2,'The classical challenger','Validate the tutorial; open the path to correction.',['Q33','Q34'],['ansatz','mitigation'],500,250,'vqe'],
-    ['shor',3,'Information worth protecting','Introduce encoded-memory experiments.',['Q07'],['classical'],600,290],
-    ['stabilizer',3,'Read errors, not secrets','Reveal syndrome detection events.',['Q30','Q29'],['shor'],650,320],
-    ['surface',3,'A patch of protection','Allocate ideal rotated memory patches.',['Q08'],['stabilizer'],700,340],
-    ['decoder',3,'A classical companion','Unlock streaming decoder upgrades.',['Q09'],['surface'],800,370],
-    ['threshold',3,'Below the threshold','Qualify the current memory regime; enter logical engineering.',['Q09'],['decoder'],900,420,'memory'],
-    ['surgery',4,'Make room to operate','Reserve routing and spare footprint for logical operations.',['Q25'],['threshold'],1100,480],
-    ['gates',4,'A memory learns to act','Qualify a separate logical-operation model.',['Q30'],['surgery'],1200,520,'gates'],
-    ['ancilla',4,'A careful kind of resource','Enable the selected distillation-output scenario.',['Q11'],['gates'],1400,570],
-    ['factories',4,'A factory needs a floor plan','Allocate factories and produce scheduling rehearsal credits.',['Q10'],['ancilla'],1600,620,'factory'],
-    ['accounting',4,'Count everything that matters','Open full resource previews and the useful-work chapter.',['Q20','Q21'],['factories'],1800,700],
-    ['lloyd',5,'Let the spins evolve','Open the named Ising-dynamics resource scenario.',['Q14'],['accounting'],2000,780],
-    ['hamiltonian',5,'A better simulation recipe','Qualify the selected dynamics precision recipe.',['Q15'],['lloyd'],2200,840],
-    ['factoring',5,'Fifteen, without the theatre','Open a toy factor certificate and its logical resource recipe.',['Q12'],['accounting'],1700,650],
-    ['grover',5,'A search with an honest oracle','Count the toy oracle, its access, and repetition costs.',['Q13'],['accounting'],1700,650],
-    ['chemistry',5,'An energy, not a miracle cure','Open a named electronic-model resource scenario.',['Q19'],['hamiltonian'],2300,880],
-    ['audit',5,'Useful, with the caveats intact','Audit the interpretation. Completing a scientific scenario unlocks the ending.',['Q22','Q23'],['hamiltonian'],2500,950]
-  ].map(([id,chapter,title,effect,papers,requires,funds,effort,qualification]) => ({id,chapter,title,effect,papers,requires,cost:{funds,effort},qualification}));
+    ['feynman',0,'A world to simulate','Give the first experiment a purpose.',['Q01'],[],15,8,0,'signal'],
+    ['deutsch',0,'A universal idea','Open the circuit notebook.',['Q02'],['feynman'],25,24,0],
+    ['divincenzo',0,'The physical checklist','Make hardware readiness part of the plan.',['Q03'],['deutsch'],45,60,0],
+    ['nakamura',0,'Coherent control','Enter the control room.',['Q24'],['divincenzo'],70,100,0],
+    ['ramsey',1,'A fringe in the noise','Expose drift and the Ramsey T₂* estimate.',['Q04'],['nakamura'],90,160,0,'ramsey'],
+    ['echo',1,'An echo, not a miracle','Separate echo T₂ from Ramsey T₂*.',['Q04'],['ramsey'],110,210,8,'echo'],
+    ['readout',1,'Read the result carefully','Reduce the scenario’s residual readout bias.',['Q04'],['ramsey'],120,240,10,'readout'],
+    ['rb',1,'Characterize the gates','Unlock pulse engineering. Manual calibration still requires apparatus time.',['Q05'],['echo','readout'],150,320,18,'benchmark'],
+    ['coupled',1,'The second conversation','Connect calibrated qubits. Enter the noisy era.',['Q04','Q26'],['rb'],200,440,25,'coupled'],
+    ['nisq',2,'The noisy intermediate era','Open explicitly qualified laboratory service contracts.',['Q06'],['coupled'],520,650,45,'circuit'],
+    ['vqe',2,'A hybrid conversation','Optimize a classically reproducible two-spin tutorial.',['Q16'],['nisq'],800,1000,75],
+    ['ansatz',2,'Choose the question well','Reveal the tutorial’s exact variational energy landscape.',['Q17'],['vqe'],700,1300,90],
+    ['mitigation',2,'More shots. Less bias.','Enable a costly measurement-mitigation scenario.',['Q18'],['vqe','readout'],1200,1600,110],
+    ['classical',2,'The classical challenger','Validate the tutorial; open the path to correction.',['Q33','Q34'],['ansatz','mitigation'],1500,2200,150,'vqe'],
+    ['shor',3,'Information worth protecting','Introduce encoded-memory experiments.',['Q07'],['classical'],1800,3200,240],
+    ['stabilizer',3,'Read errors, not secrets','Reveal syndrome detection events.',['Q30','Q29'],['shor'],1950,3900,300],
+    ['surface',3,'A patch of protection','Allocate ideal rotated memory patches.',['Q08'],['stabilizer'],2100,4700,400],
+    ['decoder',3,'A classical companion','Unlock streaming decoder upgrades.',['Q09'],['surface'],2400,5500,480],
+    ['threshold',3,'Below the threshold','Qualify the current memory regime; enter logical engineering.',['Q09'],['decoder'],2700,6500,600,'memory'],
+    ['surgery',4,'Make room to operate','Reserve routing and spare footprint for logical operations.',['Q25'],['threshold'],3300,8000,800],
+    ['gates',4,'A memory learns to act','Qualify a separate logical-operation model.',['Q30'],['surgery'],3600,9500,1000,'gates'],
+    ['ancilla',4,'A careful kind of resource','Enable the selected distillation-output scenario.',['Q11'],['gates'],4200,11000,1200],
+    ['factories',4,'A factory needs a floor plan','Allocate factories and produce scheduling rehearsal credits.',['Q10'],['ancilla'],4800,13500,1500,'factory'],
+    ['accounting',4,'Count everything that matters','Open full resource previews and the useful-work chapter.',['Q20','Q21'],['factories'],5400,16000,1900],
+    ['lloyd',5,'Let the spins evolve','Open the named Ising-dynamics resource scenario.',['Q14'],['accounting'],6000,20000,2400],
+    ['hamiltonian',5,'A better simulation recipe','Qualify the selected dynamics precision recipe.',['Q15'],['lloyd'],8800,26000,3000],
+    ['factoring',5,'Fifteen, without the theatre','Open a toy factor certificate and its logical resource recipe.',['Q12'],['accounting'],5100,10000,900],
+    ['grover',5,'A search with an honest oracle','Count the toy oracle, its access, and repetition costs.',['Q13'],['accounting'],5100,12000,1100],
+    ['chemistry',5,'An energy, not a miracle cure','Open a named electronic-model resource scenario.',['Q19'],['hamiltonian'],6900,24000,2800],
+    ['audit',5,'Useful, with the caveats intact','Audit the interpretation. Completing a scientific scenario unlocks the ending.',['Q22','Q23'],['hamiltonian'],10000,34000,4000]
+  ].map(([id,chapter,title,effect,papers,requires,funds,effort,designs,qualification]) => ({id,chapter,title,effect,papers,requires,cost:{funds,effort,designs},qualification}));
+  // Classical laboratory engineering. Every numerical effect below is a game rule.
+  const engineering = [
+    {id:'workflow',title:'A laboratory that takes notes',effect:'Double abstract staff research output. A classical workflow upgrade; no quantum speedup is claimed.',requires:['deutsch'],engineeringRequires:[],cost:{funds:160,effort:90,designs:12},group:null},
+    {id:'storage1',title:'Room for the next idea',effect:'Give each notebook four times its notes capacity. More storage delays the full-store design bonus.',requires:['deutsch'],engineeringRequires:[],cost:{funds:90,effort:80,designs:18},group:null},
+    {id:'storage2',title:'An indexed research library',effect:'Multiply notebook capacity by four again. Keep researchers and storage in balance.',requires:['nisq'],engineeringRequires:['storage1'],cost:{funds:600,effort:700,designs:150},group:null},
+    {id:'pricing',title:'A price for the work delivered',effect:'Automatically match contract prices to available service capacity. Revenue still requires delivered jobs.',requires:['nisq'],engineeringRequires:[],cost:{funds:900,effort:900,designs:180},group:null},
+    {id:'autoCalibration',title:'Let the instruments keep time',effect:'Automatically reserve calibration duty for the current maintenance target. Calibration still consumes apparatus time.',requires:['classical'],engineeringRequires:[],cost:{funds:1800,effort:1800,designs:350},group:null},
+    {id:'automation',title:'The classical night shift',effect:'Unlock classical automation station purchases. Their notes and designs consume shared service capacity.',requires:['classical'],engineeringRequires:[],cost:{funds:2400,effort:2400,designs:450},group:null},
+    {id:'storage3',title:'A library with a floor plan',effect:'Multiply notebook capacity by four again. Larger discoveries need space as well as staff.',requires:['surface'],engineeringRequires:['storage2'],cost:{funds:4000,effort:4200,designs:650},group:null},
+    {id:'scheduler',title:'Every station has a schedule',effect:'Double staff and automation research output through classical scheduling. The multiplier is a game coefficient.',requires:['threshold'],engineeringRequires:['automation'],cost:{funds:7000,effort:6500,designs:1200},group:null},
+    {id:'workshop',title:'Build the laboratory around it',effect:'Unlock fabrication and integration station purchases. These build game hardware, not magic states.',requires:['threshold'],engineeringRequires:[],cost:{funds:6000,effort:5500,designs:900},group:null},
+    {id:'synthesis',title:'Ideas that can leave the notebook',effect:'Double classical design generation. Designs are engineering plans, not quantum states or scientific evidence.',requires:['factories'],engineeringRequires:[],cost:{funds:12000,effort:10000,designs:1800},group:null},
+    {id:'open',title:'An open laboratory notebook',effect:'Choose open dissemination: gain four trust slots and 50% more service demand, with a 30% lower fair price. Excludes proprietary dissemination.',requires:['nisq'],engineeringRequires:[],cost:{funds:300,effort:250,designs:60},group:'dissemination'},
+    {id:'proprietary',title:'A private service desk',effect:'Choose proprietary dissemination: a 50% higher fair price. Excludes open dissemination. These contract effects are game assumptions.',requires:['nisq'],engineeringRequires:[],cost:{funds:300,effort:250,designs:60},group:'dissemination'},
+    {id:'verified',title:'Commission before expansion',effect:'Choose verified rollout: workshop output falls 20%, and maintenance need falls 20%. Excludes rapid rollout; coefficients are game assumptions.',requires:['threshold'],engineeringRequires:[],cost:{funds:4000,effort:4000,designs:600},group:'rollout'},
+    {id:'rapid',title:'Build ahead of the queue',effect:'Choose rapid rollout: workshop output rises 40%, and maintenance need rises 20%. Excludes verified rollout; coefficients are game assumptions.',requires:['threshold'],engineeringRequires:[],cost:{funds:4000,effort:4000,designs:600},group:'rollout'}
+  ];
   const experiments = [
     {id:'signal',name:'Prepare & measure',chapter:0,requires:[],seconds:5,cost:0,shots:128,description:'Prepare a known state, apply a pulse, and collect repeated measurements.'},
     {id:'ramsey',name:'Run a Ramsey scan',chapter:1,requires:['nakamura'],seconds:7,cost:6,shots:512,description:'A selected T₂* scenario, with drift and inhomogeneous dephasing.'},
@@ -689,5 +707,5 @@
     {id:'search',name:'A search with all the costs',tag:'Classical tutorial + modeled execution',requires:['grover'],width:3,gates:60,depth:24,magic:12,repetitions:2,preparation:20,readout:10,classical:15,preparationRisk:.0005,otherRisk:.0002,maxRisk:.06,maxTime:12000,precision:0,target:0,fee:150,payout:700,seconds:18,description:'Eight known entries; the marked entry is cobalt. The recipe includes reversible-oracle and data-access operations.',validation:'The browser checks the returned index against the known oracle. No quantum search advantage is claimed.'},
     {id:'molecule',name:'An electronic energy, carefully',tag:'Future scenario',requires:['chemistry'],width:12,gates:2200,depth:190,magic:96,repetitions:2,preparation:60,readout:30,classical:90,preparationRisk:.001,otherRisk:.0005,maxRisk:.04,maxTime:30000,precision:.01,target:.01,fee:450,payout:2500,seconds:28,description:'Six-site periodic Hubbard ring: nearest-neighbor hopping t=1, on-site U=4, six electrons, balanced spins, 12 spin orbitals. Target ground-state energy per site within 0.01. A selected recipe, not a compiled chemistry calculation.',validation:'Modeled Hubbard resource-study completion. No electronic energy, catalyst, or industrial process is computed.'}
   ];
-  return {papers,chapters,projects,experiments,workloads};
+  return {papers,chapters,projects,engineering,experiments,workloads};
 });

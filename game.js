@@ -7,14 +7,15 @@
 })(globalThis, function (C) {
   'use strict';
   const POOLS = [1,9,25,81,257,769,2049];
-  const HARDWARE_COST = [120,360,900,2400,6000,16000];
-  const RACK_COST = [90,280,700,1800,4500,12000];
+  const HARDWARE_COST = [120,450,1800,7200,24000,64000];
+  const RACK_COST = [90,350,1400,5600,18000,48000];
   const has = (s,id) => s.done.includes(id);
+  const hasEngineering = (s,id) => s.engineering.includes(id);
   const clamp = (value,min,max) => Math.max(min,Math.min(max,value));
   const patchSize = d => 2*d*d-1;
   const stage = s => has(s,'accounting') ? 5 : has(s,'threshold') ? 4 : has(s,'classical') ? 3 : has(s,'coupled') ? 2 : has(s,'nakamura') ? 1 : 0;
   function newGame(seed = 424242) {
-    return {version:1,started:false,paused:false,elapsed:0,funds:60,effort:0,done:[],qualified:[],module:0,rack:0,staff:1,pulse:0,decoder:0,drift:.3,distance:3,factories:0,calibration:0,service:0,theta:20,shots:1,mitigate:false,credits:0,reputation:0,seed:seed>>>0,job:null,result:null,tutorial:null,completed:[],ended:false,volume:.2,sound:false,theme:'dark',log:[]};
+    return {version:2,notebooks:1,designs:0,engineering:[],price:8,autoPrice:false,autoCalibration:false,automation:0,workshops:0,fabrication:.5,fabricated:0,integrated:0,started:false,paused:false,elapsed:0,funds:60,effort:0,done:[],qualified:[],module:0,rack:0,staff:1,pulse:0,decoder:0,drift:.3,distance:3,factories:0,calibration:0,service:0,theta:20,shots:1,mitigate:false,credits:0,reputation:0,seed:seed>>>0,job:null,result:null,tutorial:null,completed:[],ended:false,volume:.2,sound:false,theme:'dark',log:[]};
   }
   function random(s) {
     s.seed = (Math.imul(s.seed,1664525)+1013904223)>>>0;
@@ -31,11 +32,27 @@
   }
   function qualify(s,id,message) {
     if(s.qualified.includes(id))return;
-    s.qualified.push(id);s.reputation++;s.funds+=35+20*s.reputation;s.effort+=8;
+    s.qualified.push(id);s.reputation++;s.funds+=80+120*s.reputation;s.effort=Math.min(metrics(s).effortCap,s.effort+8);
     note(s,message,'breakthrough');
   }
   function metrics(s) {
-    const chapter=stage(s),installed=POOLS[s.module],capacity=POOLS[s.rack],active=Math.min(installed,capacity);
+    const chapter=stage(s),installed=Math.min(8193,POOLS[s.module]+Math.floor(s.fabricated)),capacity=Math.min(8193,POOLS[s.rack]+Math.floor(s.integrated)),active=Math.min(installed,capacity);
+    const trust=2+2*s.reputation+Math.floor(s.done.length/4)+(hasEngineering(s,'open')?4:0),freeTrust=trust-s.staff-s.notebooks;
+    const storageTier=['storage1','storage2','storage3'].filter(id=>hasEngineering(s,id)).length;
+    const effortCap=120*s.notebooks*4**storageTier,fullBank=s.effort>=effortCap-1e-6;
+    const atomic=!!s.job&&(s.job.workload||['memory','gates','factory'].includes(s.job.id));
+    // These are game maintenance/controller presets, not measured device laws.
+    const maintenance=Math.min(.55,(.08+.018*Math.log2(active+1)+.04*(atomic?0:s.service))*(hasEngineering(s,'verified')?.8:hasEngineering(s,'rapid')?1.2:1));
+    const calibrationDuty=s.autoCalibration?Math.min(.6,maintenance+.02):s.calibration;
+    const effectiveServiceDuty=atomic?0:(1-calibrationDuty)*s.service;
+    const experimentDuty=atomic?1-calibrationDuty:(1-calibrationDuty)*(1-s.service);
+    const lanes=has(s,'nisq')?Math.min(1+2*s.rack,Math.floor(active/2)):0;
+    const sharedCapacity=lanes*1.5*effectiveServiceDuty;
+    const automationRunning=Math.min(s.automation,sharedCapacity),customerCapacity=Math.max(0,sharedCapacity-automationRunning);
+    const fairPrice=8*(1+.2*s.reputation)*(hasEngineering(s,'open')?.7:hasEngineering(s,'proprietary')?1.5:1);
+    const demandAtFair=Math.min(60,(1+.4*s.reputation)*(hasEngineering(s,'open')?1.5:1));
+    const matchingPrice=customerCapacity>0?clamp(fairPrice*(demandAtFair/customerCapacity)**(1/1.4),.5,200):200;
+    const price=s.autoPrice?matchingPrice:s.price,demand=Math.min(60,demandAtFair*(fairPrice/price)**1.4);
     const pEff=.012*2**(-s.pulse)*(has(s,'readout')?.85:1)*(has(s,'echo')?.9:1)*(1+s.drift);
     const rbError=.018*.62**s.pulse*(has(s,'readout')?.8:1)*(1+.4*s.drift);
     const circuitFault=.01*.55**s.pulse*(has(s,'readout')?.8:1)*(1+.5*s.drift);
@@ -50,29 +67,68 @@
     const memoryOK=has(s,'surface')&&below&&pL<=.001&&slots>=1&&decoderOK;
     const gatesOK=has(s,'gates')&&memoryOK&&slots>=2&&feedback<=40;
     const factoryOK=has(s,'ancilla')&&gatesOK&&s.factories>=1&&pL<=.0001;
-    const grants=6+8*s.reputation+8*chapter*chapter;
-    const services=has(s,'nisq')&&s.qualified.includes('circuit')?s.service*80*(1+.15*s.staff):0;
-    const upkeep=.5*s.staff+2*s.module+3*s.rack;
-    const effortRate=1.8*s.staff*(1-s.service);
-    return {chapter,installed,capacity,active,pEff,rbError,circuitFault,noFault:(1-circuitFault)**12,below,pL,gateError:pL===null?null:2*pL,patch,totalPatches,routing,spares,factoryUnits,reserved,slots,syndromeRate,decoderRate,feedback,decoderOK,memoryOK,gatesOK,factoryOK,pT:has(s,'ancilla')?1e-7:1e-3,modelFactoryRate:factoryOK?s.factories/(8*s.distance):0,creditRate:factoryOK?s.factories*8/s.distance:0,grants,services,upkeep,netFunding:grants+services-upkeep,effortRate,bias:has(s,'mitigation')&&s.mitigate?.002:has(s,'readout')?.008:.04};
+    const serviceQualified=has(s,'nisq')&&s.qualified.includes('circuit')&&pEff<=.004&&s.drift<=.25;
+    const delivered=serviceQualified?Math.min(customerCapacity,demand):0,revenue=delivered*price;
+    const grants=1+.12*s.reputation;
+    const workshopRate=hasEngineering(s,'workshop')&&!atomic?s.workshops*1.2*(hasEngineering(s,'rapid')?1.4:hasEngineering(s,'verified')?.8:1):0;
+    const constructionDuty=workshopRate>0?Math.min(1,Math.max(0,s.funds)/(workshopRate*.8)):0;
+    const fabricationRate=installed<8193?workshopRate*s.fabrication*constructionDuty:0;
+    const integrationRate=capacity<8193?workshopRate*(1-s.fabrication)*constructionDuty:0;
+    const upkeep=.06*s.staff+.1*s.module+.1*s.rack+.1*automationRunning+.8*(fabricationRate+integrationRate);
+    const researchMultiplier=(hasEngineering(s,'workflow')?2:1)*(hasEngineering(s,'scheduler')?2:1);
+    const effortRate=(1.2*s.staff+3*automationRunning)*researchMultiplier;
+    const designBonus=fullBank?4:1;
+    const designRate=has(s,'deutsch')?(.018*s.staff**1.2+.09*automationRunning)*designBonus*(hasEngineering(s,'synthesis')?2:1):0;
+    return {chapter,installed,capacity,active,pEff,rbError,circuitFault,noFault:(1-circuitFault)**12,below,pL,gateError:pL===null?null:2*pL,patch,totalPatches,routing,spares,factoryUnits,reserved,slots,syndromeRate,decoderRate,feedback,decoderOK,memoryOK,gatesOK,factoryOK,pT:has(s,'ancilla')?1e-7:1e-3,modelFactoryRate:factoryOK?s.factories/(8*s.distance):0,creditRate:factoryOK?s.factories*8/s.distance:0,trust,freeTrust,effortCap,fullBank,designRate,designBonus,maintenance,calibrationDuty,effectiveServiceDuty,experimentDuty,atomic,lanes,sharedCapacity,automationRunning,customerCapacity,fairPrice,matchingPrice,demand,delivered,price,revenue,serviceQualified,workshopRate,fabricationRate,integrationRate,grants,services:revenue,upkeep,netFunding:grants+revenue-upkeep,effortRate,bias:has(s,'mitigation')&&s.mitigate?.002:has(s,'readout')?.008:.04};
   }
   function upgradeInfo(s,id) {
-    const entries={
-      hardware:{label:'Install a larger chip',cost:HARDWARE_COST[s.module],available:has(s,'rb'),max:s.module>=6,detail:'Installed capacity '+POOLS[Math.min(6,s.module+1)]+' physical qubits'},
-      rack:{label:'Control & cooling rack',cost:RACK_COST[s.rack],available:has(s,'divincenzo'),max:s.rack>=6,detail:'Support '+POOLS[Math.min(6,s.rack+1)]+' active physical qubits'},
-      staff:{label:'Add a research colleague',cost:90*2**(s.staff-1),available:has(s,'feynman'),max:s.staff>=6,detail:'More abstract research effort; allocation remains reversible'},
-      pulse:{label:'Refine the control pulses',cost:140*2**s.pulse,available:has(s,'rb'),max:s.pulse>=8,detail:'Lower the selected stochastic error scenario'},
-      decoder:{label:'Upgrade classical decoding',cost:180*2**s.decoder,available:has(s,'decoder'),max:s.decoder>=5,detail:'More streaming throughput and shorter feedback latency'}
+    const m=metrics(s),entries={
+      hardware:{label:'Install a larger chip',cost:HARDWARE_COST[s.module],designs:16*2.2**s.module,available:has(s,'rb'),max:s.module>=6,detail:'Installed preset '+POOLS[Math.min(6,s.module+1)]+' physical qubits; commissioned construction is additional'},
+      rack:{label:'Control & cooling rack',cost:RACK_COST[s.rack],designs:12*2.2**s.rack,available:has(s,'divincenzo'),max:s.rack>=6,detail:'Support preset '+POOLS[Math.min(6,s.rack+1)]+' physical qubits; adds control/readout lanes'},
+      staff:{label:'Assign a research colleague',cost:0,designs:0,available:has(s,'feynman'),max:s.staff>=24||m.freeTrust<1,detail:'Uses one trust assignment; release it to make notebook space'},
+      pulse:{label:'Refine the control pulses',cost:140*2**s.pulse,designs:20*1.8**s.pulse,available:has(s,'rb'),max:s.pulse>=8,detail:'Lower the selected stochastic error scenario'},
+      decoder:{label:'Upgrade classical decoding',cost:180*2**s.decoder,designs:30*2**s.decoder,available:has(s,'decoder'),max:s.decoder>=5,detail:'More streaming throughput and shorter feedback latency'},
+      automation:{label:'Add an analysis station',cost:1800*1.7**s.automation,designs:180*1.6**s.automation,available:hasEngineering(s,'automation'),max:s.automation>=16,detail:'One controller-batch slot before customers; contributes classical research/design work'},
+      workshop:{label:'Add a construction team',cost:4000*1.65**s.workshops,designs:400*1.6**s.workshops,available:hasEngineering(s,'workshop'),max:s.workshops>=12,detail:'Split hypothetical fabrication and control/cooling integration'}
     };
-    return entries[id]||null;
+    const item=entries[id];if(!item)return null;
+    item.cost=Math.ceil(item.cost||0);item.designs=Math.ceil(item.designs);
+    const reasons=[];
+    if(!item.available)reasons.push('Research the engineering prerequisites');
+    if(item.max)reasons.push('At capacity');
+    if(s.funds<item.cost)reasons.push('Need '+Math.ceil(item.cost-s.funds)+' funding');
+    if(s.designs<item.designs)reasons.push('Need '+Math.ceil(item.designs-s.designs)+' engineering designs');
+    if(s.job?.workload&&['hardware','rack','pulse','decoder'].includes(id))reasons.push('A full logical schedule reserves the apparatus');
+    return {...item,ready:!reasons.length&&!s.ended,reasons};
+  }
+  function assign(s,key,delta) {
+    if(s.ended||!['staff','notebooks'].includes(key)||![1,-1].includes(delta)||!has(s,'feynman'))return false;
+    if(s[key]+delta<(key==='notebooks'?1:0)||s[key]+delta>(key==='notebooks'?64:24)||delta>0&&metrics(s).freeTrust<1)return false;
+    if(key==='notebooks'&&delta<0&&s.effort>metrics({...s,notebooks:s.notebooks-1}).effortCap)return false;
+    s[key]+=delta;
+    note(s,(delta>0?'Assigned':'Released')+' one '+(key==='staff'?'research colleague':'notebook assignment')+'.','engineering');return true;
   }
   function buyUpgrade(s,id) {
-    const item=upgradeInfo(s,id);
-    if(!item||!item.available||item.max||s.funds<item.cost||s.ended)return false;
-    if(s.job?.workload&&['hardware','rack','pulse','decoder'].includes(id))return false;
-    s.funds-=item.cost;
-    const key={hardware:'module',rack:'rack',staff:'staff',pulse:'pulse',decoder:'decoder'}[id];s[key]++;
+    if(id==='staff')return assign(s,'staff',1);
+    const item=upgradeInfo(s,id);if(!item?.ready)return false;
+    s.funds-=item.cost;s.designs-=item.designs;
+    const key={hardware:'module',rack:'rack',pulse:'pulse',decoder:'decoder',automation:'automation',workshop:'workshops'}[id];s[key]++;
     note(s,item.label+'. '+item.detail+'.','engineering');return true;
+  }
+  function engineeringStatus(s,id) {
+    const e=(C.engineering||[]).find(e=>e.id===id);if(!e)return {available:false,ready:false,reasons:['Unknown engineering advance']};
+    const chosen=e.group&&(C.engineering||[]).find(item=>item.group===e.group&&hasEngineering(s,item.id));
+    const available=!hasEngineering(s,id)&&!chosen&&e.requires.every(id=>has(s,id))&&e.engineeringRequires.every(id=>hasEngineering(s,id));
+    const reasons=[];
+    if(!available)reasons.push(chosen?'Choice already made: '+chosen.title:'Complete the engineering prerequisites');
+    for(const [key,label] of [['funds','funding'],['effort','research effort'],['designs','engineering designs']])if(s[key]<(e.cost[key]||0))reasons.push('Need '+Math.ceil(e.cost[key]-s[key])+' '+label);
+    if(e.cost.effort>metrics(s).effortCap)reasons.push('Expand notebook capacity to '+e.cost.effort);
+    return {available,ready:available&&!reasons.length&&!s.ended,reasons};
+  }
+  function buyEngineering(s,id) {
+    if(!engineeringStatus(s,id).ready)return false;
+    const e=C.engineering.find(e=>e.id===id);for(const key of ['funds','effort','designs'])s[key]-=e.cost[key]||0;
+    s.engineering.push(id);note(s,e.title+'. '+e.effect,'engineering');return true;
   }
   function qualificationNow(s,id) {
     const m=metrics(s);
@@ -93,12 +149,14 @@
     if(project.qualification&&!qualificationNow(s,project.qualification))reasons.push(project.qualification==='coupled'?'Support at least two active physical qubits':'Qualify '+(C.experiments.find(e=>e.id===project.qualification)?.name.toLowerCase()||project.qualification));
     if(s.funds<project.cost.funds)reasons.push('Need '+Math.ceil(project.cost.funds-s.funds)+' more funding');
     if(s.effort<project.cost.effort)reasons.push('Need '+Math.ceil(project.cost.effort-s.effort)+' more research effort');
+    if(s.designs<(project.cost.designs||0))reasons.push('Need '+Math.ceil(project.cost.designs-s.designs)+' engineering designs');
+    if(project.cost.effort>metrics(s).effortCap)reasons.push('Expand notebook capacity to '+project.cost.effort);
     return {available,ready:available&&!reasons.length&&!s.ended,reasons};
   }
   function buyProject(s,id) {
     const status=projectStatus(s,id);if(!status.ready)return false;
     const project=C.projects.find(p=>p.id===id),before=stage(s);
-    s.funds-=project.cost.funds;s.effort-=project.cost.effort;s.done.push(id);
+    s.funds-=project.cost.funds;s.effort-=project.cost.effort;s.designs-=project.cost.designs||0;s.done.push(id);
     note(s,project.title+'. '+project.effect,'discovery');
     if(id==='rb')s.calibration=.25;
     if(stage(s)>before)note(s,C.chapters[stage(s)].transition,'chapter');
@@ -110,7 +168,11 @@
     if(key==='distance'){if(!has(s,'surface')||![3,5,7,9].includes(value))return false;s.distance=value;}
     else if(key==='factories'){if(!has(s,'ancilla')||!Number.isInteger(value)||value<0||value>3)return false;s.factories=value;}
     else if(key==='calibration'){if(!has(s,'rb')||!Number.isFinite(value)||value<0||value>.6)return false;s.calibration=value;}
-    else if(key==='service'){if(!has(s,'nisq')||!Number.isFinite(value)||value<0||value>.75)return false;s.service=value;}
+    else if(key==='service'){if(!has(s,'nisq')||s.job?.workload||!Number.isFinite(value)||value<0||value>.9)return false;s.service=value;}
+    else if(key==='price'){if(!has(s,'nisq')||!Number.isFinite(value)||value<.5||value>200)return false;s.price=value;}
+    else if(key==='autoPrice'){if(!hasEngineering(s,'pricing')||typeof value!=='boolean')return false;s.autoPrice=value;}
+    else if(key==='autoCalibration'){if(!hasEngineering(s,'autoCalibration')||s.job?.workload||typeof value!=='boolean')return false;s.autoCalibration=value;}
+    else if(key==='fabrication'){if(!hasEngineering(s,'workshop')||!Number.isFinite(value)||value<0||value>1)return false;s.fabrication=value;}
     else if(key==='theta'){if(!has(s,'vqe')||!Number.isFinite(value)||value<0||value>90)return false;s.theta=value;}
     else if(key==='shots'){if(!has(s,'vqe')||![0,1,2,3].includes(value))return false;s.shots=value;}
     else if(key==='mitigate'){if(!has(s,'mitigation')||typeof value!=='boolean')return false;s.mitigate=value;}
@@ -251,13 +313,14 @@
     // One-second steps keep automated simulations and normal browser updates consistent.
     if(seconds>1){while(seconds>0){const dt=Math.min(1,seconds);tick(s,dt);seconds-=dt;}return;}
     const m=metrics(s),dt=seconds;s.elapsed+=dt;
-    s.funds=clamp(s.funds+m.netFunding*dt,0,1e12);s.effort=clamp(s.effort+m.effortRate*dt,0,1e9);
-    s.drift=clamp(s.drift+dt*(.00065*(s.job?1.5:1)-.004*s.calibration),.005,1);
+    s.funds=clamp(s.funds+m.netFunding*dt,0,1e12);s.effort=clamp(s.effort+m.effortRate*dt,0,m.effortCap);s.designs=clamp(s.designs+m.designRate*dt,0,1e9);
+    s.drift=clamp(s.drift+dt*.004*(m.maintenance-m.calibrationDuty),.005,1);
+    s.fabricated=clamp(s.fabricated+m.fabricationRate*dt,0,8192);s.integrated=clamp(s.integrated+m.integrationRate*dt,0,8192);
     s.credits=clamp(s.credits+m.creditRate*dt,0,2000);
     if(!s.job)return;
     const job=s.job;
     if(job.workload&&!liveWorkloadStatus(s,job.id).ready){s.job=null;s.result={id:job.id,shots:0,bins:[],message:'Schedule stopped: current conditions no longer meet its model budget. Funding and rehearsal credits were spent; your laboratory is intact.'};note(s,s.result.message,'warning');return;}
-    job.progress+=dt*(job.id==='calibrate'?1:1-s.calibration);
+    job.progress+=dt*(job.id==='calibrate'?1:m.experimentDuty);
     if(job.progress<job.duration)return;
     s.job=null;
     if(job.workload){
@@ -275,20 +338,20 @@
         if(!s.result.certificate.valid)throw new Error('Search certificate failed');
         s.result.message='Classical oracle check: entry '+index+' is '+target+'. All modeled oracle and repetition costs were counted; no speedup is claimed.';
       }
-      if(!s.completed.includes(w.id)){s.completed.push(w.id);s.funds+=w.payout;s.reputation+=2;s.effort+=100;note(s,w.name+'. '+w.validation,'workload');}
+      if(!s.completed.includes(w.id)){s.completed.push(w.id);s.funds+=w.payout;s.reputation+=2;s.effort=Math.min(metrics(s).effortCap,s.effort+100);note(s,w.name+'. '+w.validation,'workload');}
       checkEnding(s);
     }else finishExperiment(s,job);
   }
   function pause(s) {if(!s.started)return false;s.paused=!s.paused;return true;}
   function cancel(s) {if(!s.job)return false;s.job=null;note(s,'Experiment cancelled. The apparatus is available again. Entry costs are not refunded.','event');return true;}
-  function serialize(s) {return JSON.stringify({game:'coherent',version:1,state:s},null,2);}
+  function serialize(s) {return JSON.stringify({game:'coherent',version:2,state:s},null,2);}
   function parseSave(text) {
     if(typeof text!=='string'||text.length>250000)throw new Error('Save must be a JSON file smaller than 250 KB.');
     let envelope;try{envelope=JSON.parse(text);}catch{throw new Error('This file is not valid JSON. Your current laboratory is unchanged.');}
-    if(envelope?.game!=='coherent'||envelope.version!==1||envelope.state?.version!==1)throw new Error('This is not a supported Coherent save.');
+    if(envelope?.game!=='coherent'||envelope.version!==2||envelope.state?.version!==2)throw new Error(envelope?.version===1?'This is a short-campaign baseline save. It remains preserved; the deeper campaign begins in a new laboratory.':'This is not a supported Coherent save.');
     const input=envelope.state,base=newGame(),s={};
-    const ranges={elapsed:[0,1e9],funds:[0,1e12],effort:[0,1e9],module:[0,6],rack:[0,6],staff:[1,6],pulse:[0,8],decoder:[0,5],drift:[.005,1],distance:[3,9],factories:[0,3],calibration:[0,.6],service:[0,.75],theta:[0,90],shots:[0,3],credits:[0,2000],reputation:[0,1000],seed:[0,4294967295],volume:[0,1]};
-    const integers=['module','rack','staff','pulse','decoder','distance','factories','shots','reputation','seed'];
+    const ranges={elapsed:[0,1e9],funds:[0,1e12],effort:[0,1e9],module:[0,6],rack:[0,6],staff:[0,24],notebooks:[1,64],designs:[0,1e9],price:[.5,200],automation:[0,16],workshops:[0,12],fabrication:[0,1],fabricated:[0,8192],integrated:[0,8192],pulse:[0,8],decoder:[0,5],drift:[.005,1],distance:[3,9],factories:[0,3],calibration:[0,.6],service:[0,.9],theta:[0,90],shots:[0,3],credits:[0,2000],reputation:[0,1000],seed:[0,4294967295],volume:[0,1]};
+    const integers=['notebooks','automation','workshops','module','rack','staff','pulse','decoder','distance','factories','shots','reputation','seed'];
     for(const [key,value] of Object.entries(base)){
       if(!(key in input))throw new Error('Save is missing '+key+'.');
       if(ranges[key]){const n=input[key],[min,max]=ranges[key];if(typeof n!=='number'||!Number.isFinite(n)||n<min||n>max||(integers.includes(key)&&!Number.isInteger(n)))throw new Error('Invalid '+key+' in save.');s[key]=n;}
@@ -297,6 +360,11 @@
     }
     if(![3,5,7,9].includes(s.distance)||!['dark','light'].includes(s.theme))throw new Error('Invalid laboratory configuration.');
     const validateIds=(value,allowed,label)=>{if(!Array.isArray(value)||value.length>allowed.length||new Set(value).size!==value.length||value.some(id=>!allowed.includes(id)))throw new Error('Invalid '+label+' in save.');};
+    validateIds(s.qualified,C.experiments.map(e=>e.id),'qualifications');
+    validateIds(s.engineering,(C.engineering||[]).map(e=>e.id),'engineering advances');
+    for(const e of C.engineering||[])if(hasEngineering(s,e.id)&&(e.requires.some(id=>!has(s,id))||e.engineeringRequires.some(id=>!hasEngineering(s,id))||e.group&&(C.engineering||[]).some(other=>other.id!==e.id&&other.group===e.group&&hasEngineering(s,other.id))))throw new Error('Invalid engineering prerequisites or exclusive choice.');
+    if(s.staff+s.notebooks>metrics(s).trust||s.effort>metrics(s).effortCap+1e-6||s.reputation!==s.qualified.length+2*s.completed.length)throw new Error('Research assignments or capacity exceed earned trust.');
+    if(s.automation&&!hasEngineering(s,'automation')||s.workshops&&!hasEngineering(s,'workshop')||(s.fabricated||s.integrated)&&!hasEngineering(s,'workshop')||s.autoPrice&&!hasEngineering(s,'pricing')||s.autoCalibration&&!hasEngineering(s,'autoCalibration'))throw new Error('Engineering configuration is unavailable.');
     validateIds(s.done,C.projects.map(p=>p.id),'discoveries');validateIds(s.qualified,C.experiments.map(e=>e.id),'qualifications');validateIds(s.completed,C.workloads.map(w=>w.id),'completed workloads');
     for(const p of C.projects)if(has(s,p.id)&&(p.requires.some(id=>!has(s,id))||p.qualification&&p.qualification!=='coupled'&&!s.qualified.includes(p.qualification)))throw new Error('Discovery prerequisites or historical qualifications are missing.');
     for(const e of C.experiments)if(s.qualified.includes(e.id)&&e.requires.some(id=>!has(s,id)))throw new Error('Qualification prerequisites are missing.');
@@ -339,5 +407,5 @@
     if(s.ended&&(!has(s,'audit')||!s.completed.some(id=>['dynamics','molecule'].includes(id))))throw new Error('Ending requirements are missing.');
     return JSON.parse(JSON.stringify(s));
   }
-  return {content:C,POOLS,newGame,stage,has,metrics,patchSize,upgradeInfo,buyUpgrade,qualificationNow,projectStatus,buyProject,configure,experimentRecipe,experimentStatus,startExperiment,calibrate,tutorialEnergy,workloadStatus,startWorkload,liveWorkloadStatus,tick,pause,cancel,serialize,parseSave};
+  return {content:C,POOLS,newGame,stage,has,hasEngineering,assign,engineeringStatus,buyEngineering,metrics,patchSize,upgradeInfo,buyUpgrade,qualificationNow,projectStatus,buyProject,configure,experimentRecipe,experimentStatus,startExperiment,calibrate,tutorialEnergy,workloadStatus,startWorkload,liveWorkloadStatus,tick,pause,cancel,serialize,parseSave};
 });
