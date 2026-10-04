@@ -1,0 +1,359 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+#coherent-preview {
+  --cq-bg: light-dark(#f5f3ed,#0c1418); --cq-panel: light-dark(#eeeee7,#121e23);
+  --cq-ink: light-dark(#1d302f,#e8eee7); --cq-muted: light-dark(#5a6c67,#a0b5ae);
+  --cq-line: light-dark(#cdd4ca,#2c3c3e); --cq-copper: light-dark(#985635,#d9a079);
+  --cq-teal: light-dark(#21685a,#8acaba); --cq-soft: light-dark(#dce7df,#243b35);
+  --cq-chip: light-dark(#e4e7de,#182b2b); --cq-node: light-dark(#fcfbf6,#183536);
+  --cq-shadow: light-dark(#18352d13,#00000024); --cq-button: light-dark(#244c43,#a7d6c0);
+  --cq-button-text: light-dark(#f8f8f0,#132620); --cq-warning: light-dark(#996032,#dbad7f);
+  background:var(--cq-bg); color:var(--cq-ink); font:14px/1.5 'DM Sans',sans-serif;
+  min-width:0; isolation:isolate; border:1px solid var(--cq-line); border-radius:14px;
+  overflow:clip; text-align:left; position:relative; --cq-instrument-height:var(--cq-desktop-height,342px);
+}
+#coherent-preview * {box-sizing:border-box}
+#coherent-preview [hidden] {display:none!important}
+#coherent-preview button,#coherent-preview select {font:inherit;color:inherit}
+#coherent-preview button {background:none;border:0;margin:0}
+#coherent-preview a {color:var(--cq-teal);text-decoration:none}
+#coherent-preview a:hover {text-decoration:underline}
+#coherent-preview h1,#coherent-preview h2,#coherent-preview h3,#coherent-preview p {margin:0}
+#coherent-preview .cq-mono {font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.04em;font-weight:400}
+#coherent-preview .cq-eyebrow {color:var(--cq-muted);text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:500}
+#coherent-preview .cq-chrome {display:flex;align-items:center;justify-content:space-between;gap:20px;padding:19px 29px;border-bottom:1px solid var(--cq-line)}
+#coherent-preview .cq-brand {font-size:22px;letter-spacing:-1.1px;display:flex;align-items:center;gap:10px;font-weight:600}
+#coherent-preview .cq-brand i,#coherent-preview .cq-brand svg {color:var(--cq-copper);width:21px;height:21px}
+#coherent-preview .cq-nav {display:flex;gap:26px;align-items:center}
+#coherent-preview .cq-nav button {padding:8px 0;color:var(--cq-muted);font-size:12px;position:relative}
+#coherent-preview .cq-nav button[aria-pressed=true] {color:var(--cq-ink)}
+#coherent-preview .cq-nav button[aria-pressed=true]:after {content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--cq-copper)}
+#coherent-preview .cq-preview {color:var(--cq-muted);font-size:11px;display:flex;align-items:center;gap:7px}
+#coherent-preview .cq-dot {height:6px;width:6px;background:var(--cq-teal);border-radius:50%;display:inline-block;flex:none}
+#coherent-preview .cq-chapterbar {padding:15px 29px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--cq-line)}
+#coherent-preview .cq-chapters {display:flex;gap:5px;flex-wrap:wrap}
+#coherent-preview .cq-chapters button {padding:7px 11px;border-radius:5px;font-size:11px;color:var(--cq-muted)}
+#coherent-preview .cq-chapters button[aria-pressed=true] {background:var(--cq-soft);color:var(--cq-ink)}
+#coherent-preview .cq-chapters .cq-step {margin-right:7px;color:var(--cq-copper);font-family:'IBM Plex Mono',monospace;font-size:10px}
+#coherent-preview .cq-sample {font-size:10px;color:var(--cq-muted);white-space:nowrap}
+#coherent-preview .cq-main {padding:30px 29px 25px}
+#coherent-preview .cq-heading {display:flex;gap:22px;justify-content:space-between;align-items:end;margin-bottom:26px}
+#coherent-preview h1 {font:400 clamp(40px,5.1vw,57px)/.98 'Instrument Serif',Georgia,serif;letter-spacing:-1.7px;margin-top:10px}
+#coherent-preview h1 em {font-weight:400;color:var(--cq-copper)}
+#coherent-preview .cq-count {text-align:right;min-width:115px;padding-bottom:2px}
+#coherent-preview .cq-count strong {font:400 44px/1 'Instrument Serif',Georgia,serif;display:block;letter-spacing:-1px}
+#coherent-preview .cq-count span {font-size:11px;color:var(--cq-muted)}
+#coherent-preview .cq-workbench {display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:25px;align-items:start}
+#coherent-preview .cq-instrument {background:var(--cq-panel);border:1px solid var(--cq-line);border-radius:9px;overflow:clip}
+#coherent-preview .cq-instrument-head {display:flex;justify-content:space-between;align-items:center;gap:15px;padding:17px 18px}
+#coherent-preview .cq-instrument-title {font-size:12px;font-weight:500;display:flex;align-items:center;gap:8px}
+#coherent-preview .cq-instrument-title svg {width:14px;height:14px;color:var(--cq-copper)}
+#coherent-preview .cq-hardware {display:block;width:100%;height:var(--cq-instrument-height)}
+#coherent-preview .cq-hardware .cq-trace {stroke:var(--cq-line);stroke-width:1;fill:none}
+#coherent-preview .cq-hardware .cq-coupler {stroke:var(--cq-copper);stroke-width:2;fill:none;opacity:.75}
+#coherent-preview .cq-hardware .cq-data {fill:var(--cq-node);stroke:var(--cq-teal);stroke-width:1.6}
+#coherent-preview .cq-hardware .cq-syndrome {fill:var(--cq-soft);stroke:var(--cq-copper);stroke-width:1.3}
+#coherent-preview .cq-hardware .cq-cell {fill:var(--cq-soft);opacity:.55;stroke:none}
+#coherent-preview .cq-hardware .cq-data-inner {fill:var(--cq-teal);opacity:.65}
+#coherent-preview .cq-hardware .cq-active {fill:var(--cq-copper);opacity:1}
+#coherent-preview .cq-hardware text {fill:var(--cq-muted);font:10px 'IBM Plex Mono',monospace}
+#coherent-preview .cq-legend {padding:12px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--cq-muted);font-size:10px}
+#coherent-preview .cq-legend-items {display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+#coherent-preview .cq-key {display:flex;align-items:center;gap:6px}
+#coherent-preview .cq-key-dot {display:inline-block;width:7px;height:7px;border:1.5px solid var(--cq-teal);border-radius:50%}
+#coherent-preview .cq-key-square {display:inline-block;width:7px;height:7px;background:var(--cq-copper);border-radius:1px}
+#coherent-preview .cq-readout {padding:17px 18px;border-top:1px solid var(--cq-line);display:grid;grid-template-columns:1fr 1fr;gap:18px}
+#coherent-preview .cq-readout-label {color:var(--cq-muted);font-size:11px;margin-bottom:5px}
+#coherent-preview .cq-readout-value {font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:-.6px;font-variant-numeric:tabular-nums}
+#coherent-preview .cq-readout-value small {font:11px 'DM Sans',sans-serif;color:var(--cq-muted);letter-spacing:0;margin-left:6px}
+#coherent-preview .cq-note {margin-top:11px;color:var(--cq-muted);font-size:11px}
+#coherent-preview .cq-rail {padding-top:2px}
+#coherent-preview .cq-next h2 {font:400 29px/1.1 'Instrument Serif',Georgia,serif;letter-spacing:-.4px;margin:9px 0 12px}
+#coherent-preview .cq-copy {color:var(--cq-muted);font-size:12px;line-height:1.65}
+#coherent-preview .cq-resources {display:flex;justify-content:space-between;gap:12px;margin:21px 0 12px;align-items:center;font-size:11px;color:var(--cq-muted)}
+#coherent-preview .cq-resources strong {color:var(--cq-ink);font:400 12px 'IBM Plex Mono',monospace}
+#coherent-preview .cq-primary {display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:13px 16px;background:var(--cq-button);color:var(--cq-button-text);border-radius:5px;font-weight:500;font-size:12px;transition:filter .15s}
+#coherent-preview .cq-primary:hover {filter:brightness(1.08)}
+#coherent-preview .cq-primary svg {width:16px;height:16px}
+#coherent-preview .cq-primary:disabled {opacity:.7;cursor:default}
+#coherent-preview .cq-result {color:var(--cq-teal);font-size:11px;margin-top:11px;min-height:18px}
+#coherent-preview .cq-paper-card {border-top:1px solid var(--cq-line);padding-top:21px;margin-top:18px}
+#coherent-preview .cq-paper-card h3 {font:400 23px/1.15 'Instrument Serif',Georgia,serif;margin:10px 0 9px;letter-spacing:-.25px}
+#coherent-preview .cq-paper-meta {color:var(--cq-muted);font-size:11px}
+#coherent-preview .cq-paper-link {display:flex;align-items:center;gap:7px;margin-top:14px;font-size:11px;color:var(--cq-teal);padding:5px 0}
+#coherent-preview .cq-paper-link svg {width:13px;height:13px}
+#coherent-preview .cq-journal-strip {display:flex;gap:18px;align-items:center;margin-top:25px;padding-top:18px;border-top:1px solid var(--cq-line);font-size:11px;color:var(--cq-muted)}
+#coherent-preview .cq-journal-strip .cq-eyebrow {white-space:nowrap;color:var(--cq-copper)}
+#coherent-preview .cq-footer {padding:17px 29px;border-top:1px solid var(--cq-line);display:flex;justify-content:space-between;gap:20px;font-size:10px;color:var(--cq-muted);align-items:center}
+#coherent-preview .cq-footer em {font:400 15px 'Instrument Serif',Georgia,serif}
+#coherent-preview .cq-footer a {white-space:nowrap;font-size:10px}
+#coherent-preview .cq-research h2,#coherent-preview .cq-journal-page h2 {font:400 42px/1.05 'Instrument Serif',Georgia,serif;letter-spacing:-.8px;margin:10px 0 25px}
+#coherent-preview .cq-paper-row {display:grid;grid-template-columns:50px minmax(0,1fr) auto;gap:18px;align-items:center;border-top:1px solid var(--cq-line);padding:22px 0}
+#coherent-preview .cq-paper-year {font:400 12px 'IBM Plex Mono',monospace;color:var(--cq-copper)}
+#coherent-preview .cq-paper-row h3 {font:400 24px/1.2 'Instrument Serif',Georgia,serif;margin-bottom:6px}
+#coherent-preview .cq-paper-row p {color:var(--cq-muted);font-size:11px}
+#coherent-preview .cq-open {border:1px solid var(--cq-line);padding:9px 12px;border-radius:5px;font-size:11px;white-space:nowrap}
+#coherent-preview .cq-log {display:grid;grid-template-columns:64px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--cq-line)}
+#coherent-preview .cq-log p {font:400 21px/1.3 'Instrument Serif',Georgia,serif}
+#coherent-preview .cq-log small {color:var(--cq-muted);font-size:11px;display:block;margin-top:7px}
+#coherent-preview .cq-drawer {margin-top:25px;padding:22px;background:var(--cq-panel);border:1px solid var(--cq-line);border-radius:7px;position:relative}
+#coherent-preview .cq-drawer-header {display:flex;justify-content:space-between;align-items:center;gap:12px}
+#coherent-preview .cq-close {display:flex;align-items:center;gap:5px;color:var(--cq-muted);font-size:11px;padding:4px 0}
+#coherent-preview .cq-close svg {width:14px;height:14px}
+#coherent-preview .cq-drawer h3 {font:400 27px/1.15 'Instrument Serif',Georgia,serif;margin:13px 0 9px;max-width:700px}
+#coherent-preview .cq-drawer p {font-size:12px;color:var(--cq-muted);margin-top:12px;max-width:710px}
+#coherent-preview .cq-external {display:inline-flex;align-items:center;gap:7px;padding:8px 0;margin-top:11px;font-size:12px}
+#coherent-preview .cq-external svg {width:14px;height:14px}
+@media(max-width:790px) {
+  #coherent-preview .cq-workbench {grid-template-columns:minmax(0,1fr) 230px;gap:18px}
+  #coherent-preview .cq-chrome,#coherent-preview .cq-chapterbar {padding-left:22px;padding-right:22px}
+  #coherent-preview .cq-main {padding:26px 22px 22px}
+  #coherent-preview .cq-preview {display:none}
+  #coherent-preview .cq-chapters button {padding:7px 8px}
+}
+@media(max-width:650px) {
+  #coherent-preview {--cq-instrument-height:300px}
+  #coherent-preview .cq-chrome {padding:16px 18px;gap:12px}
+  #coherent-preview .cq-brand {font-size:21px;gap:7px}
+  #coherent-preview .cq-nav {gap:17px}
+  #coherent-preview .cq-nav button {font-size:11px}
+  #coherent-preview .cq-chapterbar {padding:12px 14px;flex-wrap:wrap;gap:7px}
+  #coherent-preview .cq-chapters {width:100%;justify-content:space-between;gap:3px}
+  #coherent-preview .cq-chapters button {font-size:10px;padding:8px 6px}
+  #coherent-preview .cq-chapters .cq-step {margin-right:4px}
+  #coherent-preview .cq-sample {padding:0 5px;font-size:10px}
+  #coherent-preview .cq-main {padding:24px 18px 20px}
+  #coherent-preview .cq-heading {margin-bottom:22px;gap:14px}
+  #coherent-preview h1 {font-size:43px;letter-spacing:-1.2px}
+  #coherent-preview .cq-count {min-width:66px}
+  #coherent-preview .cq-count strong {font-size:36px}
+  #coherent-preview .cq-count span {font-size:10px;display:block;max-width:70px}
+  #coherent-preview .cq-eyebrow {font-size:10px;letter-spacing:.1em}
+  #coherent-preview .cq-workbench {grid-template-columns:1fr;gap:26px}
+  #coherent-preview .cq-rail {display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  #coherent-preview .cq-paper-card {margin-top:0;padding-top:0;border:0}
+  #coherent-preview .cq-footer {padding:16px 18px;align-items:start;flex-wrap:wrap;gap:8px}
+  #coherent-preview .cq-footer em {font-size:14px}
+  #coherent-preview .cq-journal-strip {align-items:start;gap:13px}
+  #coherent-preview .cq-paper-row {grid-template-columns:38px 1fr;gap:12px}
+  #coherent-preview .cq-paper-row .cq-open {grid-column:2;justify-self:start}
+}
+@media(max-width:450px) {
+  #coherent-preview .cq-chrome {flex-wrap:wrap;gap:8px}
+  #coherent-preview .cq-brand {flex:1}
+  #coherent-preview .cq-preview {display:flex;order:2;font-size:10px}
+  #coherent-preview .cq-nav {order:3;width:100%;justify-content:space-between;gap:12px}
+  #coherent-preview .cq-nav button {font-size:12px;min-height:36px}
+  #coherent-preview .cq-rail {grid-template-columns:1fr;gap:0}
+  #coherent-preview .cq-paper-card {border-top:1px solid var(--cq-line);margin-top:17px;padding-top:21px}
+  #coherent-preview .cq-instrument-head {padding:15px 13px}
+  #coherent-preview .cq-instrument-head .cq-mono {font-size:10px}
+  #coherent-preview .cq-readout {padding:15px 13px;gap:12px}
+  #coherent-preview .cq-readout-value {font-size:18px}
+  #coherent-preview .cq-legend {padding-left:13px;padding-right:13px;font-size:10px}
+  #coherent-preview .cq-legend-items {gap:12px}
+  #coherent-preview .cq-journal-strip {display:block}
+  #coherent-preview .cq-journal-strip .cq-eyebrow {display:block;margin-bottom:7px}
+  #coherent-preview .cq-drawer {padding:17px}
+}
+@media(pointer:coarse) {
+  #coherent-preview .cq-nav button,#coherent-preview .cq-chapters button,#coherent-preview .cq-close,#coherent-preview .cq-paper-link,#coherent-preview .cq-open,#coherent-preview .cq-external {min-height:44px}
+}
+@media(prefers-reduced-motion:reduce) {#coherent-preview .cq-primary {transition:none}}
+</style>
+<div id="coherent-preview" aria-label="Coherent quantum computing game concept">
+  <header class="cq-chrome">
+    <div class="cq-brand"><i data-lucide="circuit-board" aria-hidden="true"></i>coherent<span style="color:var(--cq-copper)">.</span></div>
+    <nav class="cq-nav" aria-label="Game navigation">
+      <button type="button" class="cursor-interaction" data-view="lab" aria-pressed="true">Laboratory</button>
+      <button type="button" class="cursor-interaction" data-view="research" aria-pressed="false">Research</button>
+      <button type="button" class="cursor-interaction" data-view="journal" aria-pressed="false">Journal</button>
+    </nav>
+    <div class="cq-preview"><span class="cq-dot"></span>Concept preview</div>
+  </header>
+  <div class="cq-chapterbar">
+    <div class="cq-chapters" aria-label="Preview chapters">
+      <button type="button" class="cursor-interaction" data-stage="signal" aria-pressed="false"><span class="cq-step">01</span>First signal</button>
+      <button type="button" class="cursor-interaction" data-stage="processor" aria-pressed="true"><span class="cq-step">02</span>Noisy processor</button>
+      <button type="button" class="cursor-interaction" data-stage="logical" aria-pressed="false"><span class="cq-step">03</span>Logical memory</button>
+    </div>
+    <span class="cq-sample">Illustrative scenario · UI concept</span>
+  </div>
+  <main class="cq-main">
+    <section data-panel="lab" aria-label="Laboratory">
+      <div class="cq-heading">
+        <div><div class="cq-eyebrow" data-field="chapter">Chapter II / The noisy machine</div><h1 data-field="headline">Small errors.<br><em>Bigger possibilities.</em></h1></div>
+        <div class="cq-count"><strong data-field="qubits">9</strong><span>physical qubits</span></div>
+      </div>
+      <div class="cq-workbench">
+        <div>
+          <section class="cq-instrument" aria-label="Quantum chip instrument">
+            <div class="cq-instrument-head"><span class="cq-instrument-title"><i data-lucide="cpu" aria-hidden="true"></i><span data-field="instrument">The processor</span></span><span class="cq-mono" data-field="device">SC / 3 × 3</span></div>
+            <svg class="cq-hardware" role="img" aria-label="Illustrative superconducting chip with nine coupled physical qubits"></svg>
+            <div class="cq-legend"><div class="cq-legend-items"><span class="cq-key"><span class="cq-key-dot"></span><span data-field="data-key">Physical qubit</span></span><span class="cq-key"><span class="cq-key-square"></span><span data-field="syndrome-key">Control port</span></span></div><span>Illustrative schematic</span></div>
+            <div class="cq-readout">
+              <div><div class="cq-readout-label" data-field="metric-one-label">Two-qubit error estimate</div><div class="cq-readout-value"><span data-field="metric-one">0.90%</span><small data-field="metric-one-note">sample</small></div></div>
+              <div><div class="cq-readout-label" data-field="metric-two-label">Calibration shots</div><div class="cq-readout-value"><span data-field="metric-two">4,096</span><small data-field="metric-two-note">shots</small></div></div>
+            </div>
+          </section>
+          <div class="cq-note" data-field="instrument-note">More qubits. More connections to get right.</div>
+        </div>
+        <aside class="cq-rail" aria-label="Next experiment and research">
+          <section class="cq-next">
+            <div class="cq-eyebrow">Next experiment</div>
+            <h2 data-field="action-title">Find the quiet<br>between the noise.</h2>
+            <p class="cq-copy" data-field="action-copy">Tune the control pulses. The next breakthrough begins with a better measurement.</p>
+            <div class="cq-resources"><span data-field="resource-label">Experiment budget</span><strong data-field="resource-value">8,192 shots</strong></div>
+            <button type="button" class="cq-primary cursor-interaction" data-action="experiment"><span data-field="action-label">Run calibration</span><i data-lucide="arrow-right" aria-hidden="true"></i></button>
+            <div class="cq-result" aria-live="polite" data-field="result">Ready when you are.</div>
+          </section>
+          <section class="cq-paper-card">
+            <div class="cq-eyebrow">On the research desk</div>
+            <h3 data-field="paper-name">The engineering<br>of a qubit</h3>
+            <div class="cq-paper-meta" data-field="paper-meta">Krantz et al. · 2019 · Review</div>
+            <button type="button" class="cq-paper-link cursor-interaction" data-action="paper"><i data-lucide="book-open" aria-hidden="true"></i>Open the paper notes<i data-lucide="arrow-up-right" aria-hidden="true"></i></button>
+          </section>
+        </aside>
+      </div>
+      <div class="cq-journal-strip"><span class="cq-eyebrow">From the journal</span><span data-field="journal-line">The board requests more qubits. The decoder requests a chair.</span></div>
+    </section>
+    <section class="cq-research" data-panel="research" hidden aria-label="Research archive">
+      <div class="cq-eyebrow">The research archive / Primary sources</div><h2>Every breakthrough<br><em>has a beginning.</em></h2>
+      <div class="cq-paper-row"><span class="cq-paper-year">2019</span><div><h3>A quantum engineer's guide to superconducting qubits</h3><p>Krantz et al. · Review · Control, coherence, and readout</p></div><button type="button" class="cq-open cursor-interaction" data-paper="engineering">Paper notes ↗</button></div>
+      <div class="cq-paper-row"><span class="cq-paper-year">2012</span><div><h3>Surface codes: Towards practical large-scale quantum computation</h3><p>Fowler et al. · Theory and numerical analysis · Error correction</p></div><button type="button" class="cq-open cursor-interaction" data-paper="surface">Paper notes ↗</button></div>
+      <div class="cq-paper-row"><span class="cq-paper-year">2024</span><div><h3>Quantum error correction below the surface code threshold</h3><p>Acharya et al. · Experimental preprint · Logical memory</p></div><button type="button" class="cq-open cursor-interaction" data-paper="threshold">Paper notes ↗</button></div>
+    </section>
+    <section class="cq-journal-page" data-panel="journal" hidden aria-label="Laboratory journal">
+      <div class="cq-eyebrow">Laboratory notebook / Sample campaign entries</div><h2>A record of<br><em>small impossibilities.</em></h2>
+      <div class="cq-log"><span class="cq-mono">DAY 001</span><div><p>One qubit. An entire room to keep it cold.</p><small>First signal · Superconducting laboratory</small></div></div>
+      <div class="cq-log"><span class="cq-mono">DAY 019</span><div><p>The histogram is prettier. The error bars remain unconvinced.</p><small>Calibration · Sample fictional entry</small></div></div>
+      <div class="cq-log"><span class="cq-mono">DAY 042</span><div><p>The board requests more qubits. The decoder requests a chair.</p><small>Error correction · Sample fictional entry</small></div></div>
+    </section>
+    <aside class="cq-drawer" hidden aria-label="Academic paper notes">
+      <div class="cq-drawer-header"><span class="cq-eyebrow">The science behind the discovery</span><button type="button" class="cq-close cursor-interaction" data-action="close">Close<i data-lucide="x" aria-hidden="true"></i></button></div>
+      <h3 data-field="citation-title"></h3><div class="cq-paper-meta" data-field="citation-meta"></div>
+      <p data-field="citation-finding"></p><p data-field="citation-game"></p>
+      <a class="cq-external cursor-interaction" data-field="citation-link" href="https://arxiv.org/abs/1904.06560" target="_blank" rel="noopener noreferrer">Read the original paper<i data-lucide="external-link" aria-hidden="true"></i></a>
+    </aside>
+  </main>
+  <footer class="cq-footer"><em>For Keir. One qubit in return.</em><a class="cursor-interaction" href="https://singularvalue.org" target="_blank" rel="noopener noreferrer">Inspired by Singular Value ↗</a></footer>
+</div>
+<script>
+(() => {
+  const root = document.getElementById('coherent-preview');
+  const field = name => root.querySelector('[data-field="' + name + '"]');
+  const papers = {
+    engineering:{title:"A quantum engineer's guide to superconducting qubits",meta:'Krantz et al. · 2019 · Review · arXiv:1904.06560',url:'https://arxiv.org/abs/1904.06560',finding:'Scientific source: An engineering review of superconducting circuits, control, coherence, and readout.',game:'Game abstraction: A calibration upgrade improves a sample error estimate. The displayed numbers are illustrative; the browser has not measured a quantum device.'},
+    surface:{title:'Surface codes: Towards practical large-scale quantum computation',meta:'Fowler et al. · 2012 · Theory and numerical analysis · arXiv:1208.0928',url:'https://arxiv.org/abs/1208.0928',finding:'Scientific source: Surface-code error correction uses repeated syndrome measurements to infer faults while protecting logical information.',game:'Game abstraction: The preview shows an ideal distance-3 rotated memory patch: 9 data qubits and 8 syndrome qubits. Protected memory does not by itself qualify a processor for logical gates.'},
+    threshold:{title:'Quantum error correction below the surface code threshold',meta:'Acharya et al. · 2024 preprint · Experiment · arXiv:2408.13687',url:'https://arxiv.org/abs/2408.13687',finding:'Scientific source: An experimental demonstration of surface-code memories operating below threshold, with error suppression as code distance increases.',game:'Game abstraction: The memory trial is a fictional example. Its detection events do not reveal the unknown data state, and no experimental accuracy or quantum advantage is claimed.'}
+  };
+  const stages = {
+    signal:{chapter:'Chapter I / A first signal',headline:'One qubit.<br><em>A world of possibility.</em>',qubits:'1',instrument:'The first qubit',device:'SC / Q01',oneLabel:'Ramsey T₂* estimate',one:'18.4 μs',oneAfter:'23.1 μs',twoLabel:'Ramsey sampling',two:'512',twoAfter:'1,024',twoNote:'shots',note:'Repeated measurements. A signal begins to emerge.',title:'Listen for<br>the first signal.',copy:'Prepare. Wait. Measure. Repeat. Build a Ramsey estimate from repeated preparations.',resource:'Sampling budget',budget:'1,024 shots',action:'Run Ramsey experiment',paper:'engineering',paperName:'The engineering<br>of a qubit',paperMeta:'Krantz et al. · 2019 · Review',journal:'One qubit. An entire room to keep it cold.',result:'Sample Ramsey estimate updated. No hardware connected.'},
+    processor:{chapter:'Chapter II / The noisy machine',headline:'Small errors.<br><em>Bigger possibilities.</em>',qubits:'9',instrument:'The processor',device:'SC / 3 × 3',oneLabel:'Two-qubit error estimate',one:'0.90%',oneAfter:'0.42%',twoLabel:'Calibration shots',two:'4,096',twoAfter:'8,192',twoNote:'shots',note:'More qubits. More connections to get right.',title:'Find the quiet<br>between the noise.',copy:'Tune the control pulses. The next breakthrough begins with a better measurement.',resource:'Experiment budget',budget:'8,192 shots',action:'Run calibration',paper:'engineering',paperName:'The engineering<br>of a qubit',paperMeta:'Krantz et al. · 2019 · Review',journal:'The board requests more qubits. The decoder requests a chair.',result:'Sample calibration complete. Error estimate updated.'},
+    logical:{chapter:'Chapter III / A protected memory',headline:'Fragile parts.<br><em>A steadier whole.</em>',qubits:'17',instrument:'The logical memory',device:'ROTATED PATCH / d = 3',oneLabel:'Memory slots',one:'1',oneAfter:'1',twoLabel:'Syndrome rounds',two:'0',twoAfter:'100',twoNote:'rounds',note:'9 data + 8 syndrome qubits. Memory before computation.',title:'Keep a little<br>possibility alive.',copy:'Run repeated syndrome measurements. Look for detection events without reading the unknown data state.',resource:'Memory trial',budget:'100 rounds',action:'Run memory trial',paper:'surface',paperName:'A surface code<br>for fragile things',paperMeta:'Fowler et al. · 2012 · Theory',journal:'The information is protected. The funding remains exposed.',result:'100 sample rounds complete. Detection events shown.'}
+  };
+  const state = {stage:'processor',view:'lab',completed:[],paper:null};
+  const design = {finish:'copper',instrumentHeight:342};
+  function restore(saved) {
+    const value = saved?.privateContent;
+    if (!value) return;
+    if (stages[value.stage]) state.stage = value.stage;
+    if (['lab','research','journal'].includes(value.view)) state.view=value.view;
+    state.completed = Array.isArray(value.completed) ? value.completed.filter(key=>stages[key]) : [];
+    state.paper = papers[value.paper] ? value.paper : null;
+  }
+  function remember() {
+    if (typeof window.openai?.setWidgetState === 'function') window.openai.setWidgetState({modelContent:{concept:'Coherent',chapter:state.stage,screen:state.view,completedPreviewExperiments:state.completed},privateContent:{...state}}).catch(()=>{});
+  }
+  function showPaper(key) {
+    const paper = papers[key];
+    field('citation-title').textContent=paper.title;field('citation-meta').textContent=paper.meta;
+    field('citation-finding').textContent=paper.finding;field('citation-game').textContent=paper.game;
+    field('citation-link').href=paper.url;
+    root.querySelector('.cq-drawer').hidden=false;
+  }
+  function drawChip() {
+    const svg=root.querySelector('.cq-hardware');
+    const width=Math.max(230,svg.clientWidth), height=svg.clientHeight;
+    svg.setAttribute('viewBox','0 0 '+width+' '+height);
+    const centerX=width/2,centerY=height/2,step=Math.min(78,(width-88)/3.25,(height-60)/3.5);
+    const startX=centerX-step,startY=centerY-step;
+    const isLogical=state.stage==='logical',done=state.completed.includes(state.stage);
+    const pieces=['<title>'+ (state.stage==='signal'?'A single superconducting qubit with illustrative control traces':isLogical?'An ideal rotated distance-3 memory patch: nine data and eight syndrome qubits':'Nine coupled superconducting physical qubits with illustrative control traces')+'</title>'];
+    const line=(x1,y1,x2,y2,cls)=>'<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" class="'+cls+'"/>';
+    const circle=(x,y,r,cls)=>'<circle cx="'+x+'" cy="'+y+'" r="'+r+'" class="'+cls+'"/>';
+    const square=(x,y,size,cls)=>'<rect x="'+(x-size/2)+'" y="'+(y-size/2)+'" width="'+size+'" height="'+size+'" rx="2" class="'+cls+'"/>';
+    const chipSize=state.stage==='signal'?step*2.6:step*3.4;
+    pieces.push('<rect x="'+(centerX-chipSize/2)+'" y="'+(centerY-chipSize/2)+'" width="'+chipSize+'" height="'+chipSize+'" rx="15" fill="var(--cq-chip)" stroke="var(--cq-line)"/>');
+    for(let j=0;j<8;j++) {
+      const pos=(j+.5)/8*chipSize;
+      pieces.push(line(centerX-chipSize/2+pos,centerY-chipSize/2-13,centerX-chipSize/2+pos,centerY-chipSize/2,'cq-trace'));
+      pieces.push(line(centerX-chipSize/2+pos,centerY+chipSize/2,centerX-chipSize/2+pos,centerY+chipSize/2+13,'cq-trace'));
+      pieces.push(line(centerX-chipSize/2-13,centerY-chipSize/2+pos,centerX-chipSize/2,centerY-chipSize/2+pos,'cq-trace'));
+      pieces.push(line(centerX+chipSize/2,centerY-chipSize/2+pos,centerX+chipSize/2+13,centerY-chipSize/2+pos,'cq-trace'));
+    }
+    if(state.stage==='signal') {
+      pieces.push('<path d="M '+(centerX-chipSize/2)+' '+(centerY-step/2)+' H '+(centerX-step/2)+' V '+(centerY+step/2)+' H '+centerX+' V '+centerY+'" class="cq-coupler"/>');
+      pieces.push('<path d="M '+centerX+' '+centerY+' H '+(centerX+step/2)+' V '+(centerY-step/2)+' H '+(centerX+chipSize/2)+'" class="cq-coupler"/>');
+      pieces.push(circle(centerX,centerY,25,'cq-data'),circle(centerX,centerY,8,'cq-data-inner'));
+      pieces.push('<text x="'+centerX+'" y="'+(centerY+48)+'" text-anchor="middle">Q01</text>');
+    } else {
+      for(let row=0;row<3;row++)for(let col=0;col<3;col++) {
+        const x=startX+col*step,y=startY+row*step;
+        if(col<2)pieces.push(line(x,y,x+step,y,'cq-coupler'));
+        if(row<2)pieces.push(line(x,y,x,y+step,'cq-coupler'));
+      }
+      if(isLogical) {
+        const ancillas=[];
+        for(let row=0;row<2;row++)for(let col=0;col<2;col++) {
+          const x=startX+(col+.5)*step,y=startY+(row+.5)*step;
+          pieces.push('<rect x="'+(x-step/2)+'" y="'+(y-step/2)+'" width="'+step+'" height="'+step+'" class="cq-cell"/>');
+          ancillas.push([x,y]);
+          for(const dx of [-.5,.5])for(const dy of [-.5,.5])pieces.push(line(x,y,x+dx*step,y+dy*step,'cq-trace'));
+        }
+        ancillas.push([startX+step/2,startY-step/2],[startX+2.5*step,startY+step/2],[startX+1.5*step,startY+2.5*step],[startX-step/2,startY+1.5*step]);
+        ancillas.forEach(([x,y],i)=>pieces.push(square(x,y,12,'cq-syndrome'),done&&i===2?circle(x,y,3,'cq-active'):''));
+      } else {
+        for(let row=0;row<3;row++) {
+          const y=startY+row*step;
+          pieces.push(line(centerX-chipSize/2,y,startX,y,'cq-trace'),square(centerX-chipSize/2+7,y,7,'cq-syndrome'));
+        }
+      }
+      for(let row=0;row<3;row++)for(let col=0;col<3;col++) {
+        const x=startX+col*step,y=startY+row*step;
+        pieces.push(circle(x,y,13,'cq-data'),circle(x,y,done?5:3.5,'cq-data-inner'));
+      }
+    }
+    svg.innerHTML=pieces.join('');
+    svg.setAttribute('aria-label',state.stage==='logical'?'Illustrative distance-3 memory patch with 9 data qubits and 8 syndrome qubits; '+(done?'one sample detection event highlighted':'ready for a sample trial'):state.stage==='signal'?'Illustrative single superconducting qubit and control traces':'Illustrative superconducting chip with 9 coupled physical qubits');
+  }
+  function render() {
+    const stage=stages[state.stage],done=state.completed.includes(state.stage);
+    const values={'chapter':stage.chapter,'qubits':stage.qubits,'instrument':stage.instrument,'device':stage.device,'metric-one-label':stage.oneLabel,'metric-one':done?stage.oneAfter:stage.one,'metric-one-note':state.stage==='logical'?'memory only':'sample','metric-two-label':stage.twoLabel,'metric-two':done?stage.twoAfter:stage.two,'metric-two-note':stage.twoNote,'instrument-note':stage.note,'action-copy':stage.copy,'resource-label':stage.resource,'resource-value':stage.budget,'action-label':done?'Sample complete':stage.action,'paper-meta':stage.paperMeta,'journal-line':stage.journal,'result':done?stage.result:'Ready when you are.','data-key':state.stage==='logical'?'Data qubit':'Physical qubit','syndrome-key':state.stage==='logical'?'Syndrome qubit':'Control port'};
+    Object.entries(values).forEach(([name,value])=>field(name).textContent=value);
+    field('headline').innerHTML=stage.headline;field('action-title').innerHTML=stage.title;field('paper-name').innerHTML=stage.paperName;
+    root.querySelector('[data-action="experiment"]').disabled=done;
+    root.querySelectorAll('[data-stage]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.stage===state.stage)));
+    root.querySelectorAll('[data-view]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.view===state.view)));
+    root.querySelectorAll('[data-panel]').forEach(panel=>panel.hidden=panel.dataset.panel!==state.view);
+    root.querySelector('.cq-drawer').hidden=!state.paper;if(state.paper)showPaper(state.paper);
+    if(design.finish==='teal')root.style.setProperty('--cq-copper','var(--cq-teal)');else root.style.removeProperty('--cq-copper');
+    root.style.setProperty('--cq-desktop-height',design.instrumentHeight+'px');
+    if(state.view==='lab')drawChip();
+  }
+  root.addEventListener('click',event=>{
+    const button=event.target.closest('button');if(!button||!root.contains(button))return;
+    if(button.dataset.stage){state.stage=button.dataset.stage;state.view='lab';state.paper=null;}
+    else if(button.dataset.view){state.view=button.dataset.view;state.paper=null;}
+    else if(button.dataset.paper)state.paper=button.dataset.paper;
+    else if(button.dataset.action==='experiment'){if(!state.completed.includes(state.stage))state.completed.push(state.stage);}
+    else if(button.dataset.action==='paper')state.paper=stages[state.stage].paper;
+    else if(button.dataset.action==='close')state.paper=null;
+    render();remember();
+  });
+  restore(window.openai?.widgetState);render();
+  new ResizeObserver(()=>{if(state.view==='lab')drawChip();}).observe(root.querySelector('.cq-instrument'));
+  window.addEventListener('openai:set_globals',event=>{if(event.detail?.globals?.widgetState){restore(event.detail.globals.widgetState);render();}});
+  if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:render});tweak.addSelect(design,'finish',{label:'Instrument finish',options:[{label:'Copper & teal',value:'copper'},{label:'Quiet teal',value:'teal'}]});tweak.addSlider(design,'instrumentHeight',{label:'Instrument height',min:260,max:380,step:10,unit:'px'});}
+})();
+</script>

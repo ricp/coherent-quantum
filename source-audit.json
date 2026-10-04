@@ -1,0 +1,1236 @@
+{
+  "retrievedAt": "2026-10-04",
+  "sha256": "a386c26313cb73a77ef8d03cd9cfcea363ac85355099e83af422841dad93b796",
+  "bytes": 107392,
+  "lines": 1400,
+  "counts": {
+    "scripts": 2,
+    "projects": 84,
+    "references": 58,
+    "actions": 16,
+    "stateFields": 89,
+    "newsItems": 48
+  },
+  "checks": [
+    {
+      "name": "Initial production works without a click; initial free credibility is -2",
+      "status": "passed"
+    },
+    {
+      "name": "Research purchase validates prerequisites and affordability",
+      "status": "passed"
+    },
+    {
+      "name": "Each binary fork excludes the opposite choice",
+      "status": "passed"
+    },
+    {
+      "name": "Dampening 40 percent exactly neutralizes self-model growth and costs compute",
+      "status": "passed"
+    },
+    {
+      "name": "Awake ends simulation; the final project independently selects Unwitnessed",
+      "status": "passed"
+    },
+    {
+      "name": "Quantum treasury event loses 90 percent without pq and nothing with pq",
+      "status": "passed"
+    },
+    {
+      "name": "Historical winter and hype winter use different grant reductions",
+      "status": "passed"
+    },
+    {
+      "name": "Agents can consume all serving capacity, leaving zero customer revenue",
+      "status": "passed"
+    },
+    {
+      "name": "Adding a layer at full memory can shrink width; manual growth prevents overflow",
+      "status": "passed"
+    },
+    {
+      "name": "Insight filling multiplies idea production by four",
+      "status": "passed"
+    },
+    {
+      "name": "Automatic model growth does not prune an oversized model",
+      "status": "passed"
+    },
+    {
+      "name": "Above-optimal learning rate can diverge repeatedly during checkpoint restore",
+      "status": "passed"
+    },
+    {
+      "name": "Hype winter preserves minimum staff and can leave credibility overallocated",
+      "status": "passed"
+    }
+  ],
+  "metrics": {
+    "initial": {
+      "parameters": 1,
+      "fundingPerSecond": 0.3,
+      "insightPerSecond": 4,
+      "insightCap": 1000,
+      "maxParameters": 16384,
+      "freeCredibility": -2
+    },
+    "dampening": [
+      {
+        "damp": 0,
+        "compute": 5000000000,
+        "selfModelRate": 0.225
+      },
+      {
+        "damp": 0.4,
+        "compute": 3000000000,
+        "selfModelRate": 0
+      },
+      {
+        "damp": 0.6,
+        "compute": 2000000000,
+        "selfModelRate": -0.1125
+      }
+    ],
+    "gpuPrice100": 57655.895942568895
+  },
+  "inventory": [
+    {
+      "id": "mcp",
+      "name": "McCulloch & Pitts: threshold logic",
+      "line": 499,
+      "cost": {
+        "ins": 10
+      },
+      "prerequisite": "s => s.width >= 3",
+      "effect": "s => { s.clickAmt = 2; }",
+      "reference": "https://en.wikipedia.org/wiki/Artificial_neuron",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "hebb",
+      "name": "Hebb: cells that fire together",
+      "line": 501,
+      "cost": {
+        "ins": 30
+      },
+      "prerequisite": "s => s.width >= 6",
+      "effect": "s => { s.gradMult *= 1.5; }",
+      "reference": "https://en.wikipedia.org/wiki/Hebbian_theory",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "perceptron",
+      "name": "Rosenblatt: the perceptron",
+      "line": 503,
+      "cost": {
+        "ins": 60
+      },
+      "prerequisite": "s => s.width >= 10",
+      "effect": "s => { s.flags.press = true; }",
+      "reference": "https://en.wikipedia.org/wiki/Perceptron",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "expert",
+      "name": "Feigenbaum: expert systems",
+      "line": 505,
+      "cost": {
+        "ins": 100
+      },
+      "prerequisite": "s => s.done.perceptron",
+      "effect": "s => { s.grantMult *= 2; setId(s, 1); }",
+      "reference": "https://en.wikipedia.org/wiki/Expert_system",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "dh",
+      "name": "Diffie & Hellman: key exchange",
+      "line": 507,
+      "cost": {
+        "ins": 120
+      },
+      "prerequisite": "s => s.fundTotal >= 100",
+      "effect": "s => { s.credProj += 1; }",
+      "reference": "https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "rsa",
+      "name": "Rivest, Shamir & Adleman: RSA",
+      "line": 509,
+      "cost": {
+        "ins": 200
+      },
+      "prerequisite": "s => s.done.dh",
+      "effect": "s => { s.grantMult *= 2; }",
+      "reference": "https://en.wikipedia.org/wiki/RSA_(cryptosystem)",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "ivakhnenko",
+      "name": "Ivakhnenko: many layers",
+      "line": 511,
+      "cost": {
+        "ins": 400
+      },
+      "prerequisite": "s => s.winter || s.width >= 40",
+      "effect": "s => { s.flags.layers = true; if (s.winter) { s.winter = false; say(s, 'The thaw begins.'); } }",
+      "reference": "https://en.wikipedia.org/wiki/Group_method_of_data_handling",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "hopfield",
+      "name": "Hopfield: associative memory",
+      "line": 513,
+      "cost": {
+        "ins": 300
+      },
+      "prerequisite": "s => s.layers >= 2",
+      "effect": "s => { s.capMult *= 1.5; }",
+      "reference": "https://en.wikipedia.org/wiki/Hopfield_network",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "lab",
+      "name": "Found a research lab",
+      "line": 515,
+      "cost": {
+        "ins": 500
+      },
+      "prerequisite": "s => s.grads >= 12",
+      "effect": "s => { s.flags.labs = true; }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "backprop",
+      "name": "Rumelhart, Hinton & Williams: backpropagation",
+      "line": 517,
+      "cost": {
+        "ins": 800
+      },
+      "prerequisite": "s => s.layers >= 2",
+      "effect": "s => { s.flags.training = true; s.lr = D.lrOpt(s) - 0.3; }",
+      "reference": "https://en.wikipedia.org/wiki/Backpropagation",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "tenure",
+      "name": "Tenure",
+      "line": 519,
+      "cost": {
+        "ins": 1200,
+        "ideas": 10
+      },
+      "prerequisite": "s => s.done.backprop",
+      "effect": "s => { s.credProj += 2; }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "lecun",
+      "name": "LeCun: convolutional networks",
+      "line": 523,
+      "cost": {
+        "ins": 1500
+      },
+      "prerequisite": "s => s.done.backprop && s.tokens > 1e4",
+      "effect": "s => { s.gradMult *= 2; s.labMult *= 2; setEra(s, 1); setId(s, 2); }",
+      "reference": "https://en.wikipedia.org/wiki/LeNet",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "glorot",
+      "name": "Glorot & Bengio: careful initialisation",
+      "line": 525,
+      "cost": {
+        "ins": 1200
+      },
+      "prerequisite": "s => s.done.backprop && s.spikes >= 1",
+      "effect": "s => { s.stab *= 3; }",
+      "reference": "https://en.wikipedia.org/wiki/Weight_initialization",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "lstm",
+      "name": "Hochreiter & Schmidhuber: LSTM",
+      "line": 527,
+      "cost": {
+        "ins": 1800
+      },
+      "prerequisite": "s => s.done.lecun",
+      "effect": "s => { s.trainEff *= 1.5; }",
+      "reference": "https://en.wikipedia.org/wiki/Long_short-term_memory",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "pagerank",
+      "name": "Brin & Page: PageRank",
+      "line": 529,
+      "cost": {
+        "ins": 1000
+      },
+      "prerequisite": "s => s.done.backprop && s.tokens >= 0.5 * D.dataset(s)",
+      "effect": "s => { s.flags.crawlers = true; }",
+      "reference": "https://en.wikipedia.org/wiki/PageRank",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "merkle",
+      "name": "Merkle: hash trees",
+      "line": 531,
+      "cost": {
+        "ins": 1500
+      },
+      "prerequisite": "s => s.crawlers >= 3",
+      "effect": "s => { s.crawlMult *= 2; }",
+      "reference": "https://en.wikipedia.org/wiki/Merkle_tree",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "hashcash",
+      "name": "Back: Hashcash",
+      "line": 533,
+      "cost": {
+        "ins": 2000
+      },
+      "prerequisite": "s => s.done.merkle",
+      "effect": "s => { s.crawlMult *= 1.5; }",
+      "reference": "https://en.wikipedia.org/wiki/Hashcash",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "chaum",
+      "name": "Chaum: blind signatures",
+      "line": 535,
+      "cost": {
+        "ins": 2500
+      },
+      "prerequisite": "s => s.done.rsa && s.done.lecun",
+      "effect": "s => { s.credProj += 1; }",
+      "reference": "https://en.wikipedia.org/wiki/Blind_signature",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "ginsparg",
+      "name": "Ginsparg: the preprint server",
+      "line": 537,
+      "cost": {
+        "ins": 3500
+      },
+      "prerequisite": "s => s.done.lstm && s.done.pagerank",
+      "effect": "s => { s.capMult *= 2; s.insightMult *= 1.5; }",
+      "reference": "https://en.wikipedia.org/wiki/ArXiv",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "cuda",
+      "name": "CUDA",
+      "line": 541,
+      "cost": {
+        "ins": 2500,
+        "ideas": 20
+      },
+      "prerequisite": "s => s.done.lecun && s.tokens >= 2e4",
+      "effect": "s => { s.flags.gpus = true; setEra(s, 2); }",
+      "reference": "https://en.wikipedia.org/wiki/CUDA",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "dbn",
+      "name": "Hinton: deep belief nets",
+      "line": 543,
+      "cost": {
+        "ins": 3000
+      },
+      "prerequisite": "s => s.done.cuda",
+      "effect": "s => { s.trainEff *= 2; }",
+      "reference": "https://en.wikipedia.org/wiki/Deep_belief_network",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "imagenet",
+      "name": "Fei-Fei Li: ImageNet",
+      "line": 545,
+      "cost": {
+        "ins": 3000
+      },
+      "prerequisite": "s => s.gpus >= 2",
+      "effect": "s => { s.baseData += 1e9; s.hypeMult *= 1.5; }",
+      "reference": "https://en.wikipedia.org/wiki/ImageNet",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "bitcoin",
+      "name": "Nakamoto: Bitcoin",
+      "line": 547,
+      "cost": {
+        "ins": 4000,
+        "ideas": 50
+      },
+      "prerequisite": "s => s.done.cuda && s.done.chaum && s.done.hashcash",
+      "effect": "s => { s.flags.btc = true; }",
+      "reference": "https://en.wikipedia.org/wiki/Bitcoin",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "alexnet",
+      "name": "Krizhevsky, Sutskever & Hinton: AlexNet",
+      "line": 551,
+      "cost": {
+        "ins": 3000,
+        "ideas": 30
+      },
+      "prerequisite": "s => s.done.imagenet && s.gpus >= 3",
+      "effect": "s => { s.hypeMult *= 3; setEra(s, 3); }",
+      "reference": "https://en.wikipedia.org/wiki/AlexNet",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "relu",
+      "name": "Nair & Hinton: rectified linear units",
+      "line": 553,
+      "cost": {
+        "ins": 2000
+      },
+      "prerequisite": "s => s.done.alexnet",
+      "effect": "s => { s.trainEff *= 2; }",
+      "reference": "https://en.wikipedia.org/wiki/Rectifier_(neural_networks)",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "dropout",
+      "name": "Srivastava et al.: dropout",
+      "line": 555,
+      "cost": {
+        "ins": 4000
+      },
+      "prerequisite": "s => s.done.alexnet",
+      "effect": "s => { s.trainEff *= 1.5; }",
+      "reference": "https://en.wikipedia.org/wiki/Dilution_(neural_networks)",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "adam",
+      "name": "Kingma & Ba: Adam",
+      "line": 557,
+      "cost": {
+        "ins": 6000
+      },
+      "prerequisite": "s => s.done.relu && s.gpus >= 3",
+      "effect": "s => { s.trainEff *= 2; s.stab *= 2; }",
+      "reference": "https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Adam",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "layernorm",
+      "name": "Ba, Kiros & Hinton: layer normalization",
+      "line": 559,
+      "cost": {
+        "ins": 7000
+      },
+      "prerequisite": "s => s.done.adam && s.spikes >= 2",
+      "effect": "s => { s.stab *= 3; }",
+      "reference": "https://en.wikipedia.org/wiki/Normalization_(machine_learning)",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "word2vec",
+      "name": "Mikolov et al.: word2vec",
+      "line": 561,
+      "cost": {
+        "ins": 5000
+      },
+      "prerequisite": "s => s.done.alexnet",
+      "effect": "s => { s.insightMult *= 1.5; setId(s, 3); }",
+      "reference": "https://en.wikipedia.org/wiki/Word2vec",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "api",
+      "name": "Launch an API",
+      "line": 563,
+      "cost": {
+        "ins": 8000,
+        "ideas": 50
+      },
+      "prerequisite": "s => D.C(s) >= 15 && s.done.cuda",
+      "effect": "s => { s.flags.api = true; s.priceLog = Math.log10(D.fairPrice(s)); }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "open",
+      "name": "Release open weights",
+      "line": 565,
+      "cost": {
+        "ins": 6000
+      },
+      "prerequisite": "s => s.done.api && !s.done.closed",
+      "effect": "s => { s.hypeMult *= 4; s.credProj += 3; s.fairMult *= 0.5; s.done.closed = 'skipped'; }",
+      "reference": null,
+      "kind": "fork",
+      "side": "good"
+    },
+    {
+      "id": "closed",
+      "name": "Keep the weights closed",
+      "line": 567,
+      "cost": {
+        "ins": 6000
+      },
+      "prerequisite": "s => s.done.api && !s.done.open",
+      "effect": "s => { s.fairMult *= 2; s.done.open = 'skipped'; }",
+      "reference": null,
+      "kind": "fork",
+      "side": "bad"
+    },
+    {
+      "id": "tensorcores",
+      "name": "Tensor cores",
+      "line": 569,
+      "cost": {
+        "ins": 12000,
+        "fund": 200000
+      },
+      "prerequisite": "s => s.gpus >= 10",
+      "effect": "s => { s.gpuGen = Math.max(s.gpuGen, 1); }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "gan",
+      "name": "Goodfellow et al.: GANs",
+      "line": 571,
+      "cost": {
+        "ins": 7000
+      },
+      "prerequisite": "s => s.done.word2vec && s.done.api",
+      "effect": "s => { s.hypeMult *= 2; }",
+      "reference": "https://en.wikipedia.org/wiki/Generative_adversarial_network",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "alphago",
+      "name": "AlphaGo: move 37",
+      "line": 573,
+      "cost": {
+        "ins": 10000,
+        "ideas": 100
+      },
+      "prerequisite": "s => D.C(s) >= 40 && s.done.api",
+      "effect": "s => { s.ideaMult *= 2; }",
+      "reference": "https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "ethereum",
+      "name": "Szabo & Buterin: smart contracts",
+      "line": 575,
+      "cost": {
+        "ins": 8000
+      },
+      "prerequisite": "s => s.done.bitcoin && s.done.api",
+      "effect": "s => { s.btcDrift *= 1.2; }",
+      "reference": "https://en.wikipedia.org/wiki/Smart_contract",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "transformer",
+      "name": "Vaswani et al.: attention",
+      "line": 577,
+      "cost": {
+        "ins": 20000,
+        "ideas": 150
+      },
+      "prerequisite": "s => s.done.api && s.done.adam",
+      "effect": "s => { s.trainEff *= 3; s.inferEff *= 2; }",
+      "reference": "https://en.wikipedia.org/wiki/Attention_Is_All_You_Need",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "fp16",
+      "name": "Micikevicius et al.: mixed precision",
+      "line": 579,
+      "cost": {
+        "ins": 10000
+      },
+      "prerequisite": "s => s.done.api",
+      "effect": "s => { s.bytesPerParam = Math.min(s.bytesPerParam, 2); s.flopMult *= 2; }",
+      "reference": "https://en.wikipedia.org/wiki/Mixed-precision_arithmetic",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "commoncrawl",
+      "name": "Common Crawl",
+      "line": 581,
+      "cost": {
+        "ins": 15000
+      },
+      "prerequisite": "s => s.done.transformer",
+      "effect": "s => { s.crawlMult *= 10; }",
+      "reference": "https://en.wikipedia.org/wiki/Common_Crawl",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "scaling",
+      "name": "Kaplan et al. and Hoffmann et al.: scaling laws",
+      "line": 585,
+      "cost": {
+        "ins": 30000,
+        "ideas": 300
+      },
+      "prerequisite": "s => s.done.transformer",
+      "effect": "s => { s.flags.autoGrow = true; setEra(s, 4); }",
+      "reference": "https://en.wikipedia.org/wiki/Neural_scaling_law",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "dc",
+      "name": "Datacenters",
+      "line": 587,
+      "cost": {
+        "ins": 25000,
+        "fund": 500000
+      },
+      "prerequisite": "s => s.gpus >= 40",
+      "effect": "s => { s.flags.dcs = true; }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "wiki",
+      "name": "Research wiki",
+      "line": 589,
+      "cost": {
+        "ins": 40000
+      },
+      "prerequisite": "s => s.done.dc && s.done.ginsparg",
+      "effect": "s => { s.capMult *= 2; }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "chat",
+      "name": "Chat interface",
+      "line": 591,
+      "cost": {
+        "ins": 40000,
+        "ideas": 500
+      },
+      "prerequisite": "s => s.done.api && D.C(s) >= 60",
+      "effect": "s => { s.hypeMult *= 10; s.flags.ceos = true; setId(s, 4); }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "pause",
+      "name": "Sign the pause letter",
+      "line": 593,
+      "cost": {
+        "ins": 30000
+      },
+      "prerequisite": "s => s.done.chat && !s.done.race",
+      "effect": "s => { s.dcCostMult *= 1.3; s.hypeMult *= 0.7; s.pressureMult *= 0.6; s.done.race = 'skipped'; }",
+      "reference": "https://en.wikipedia.org/wiki/Pause_Giant_AI_Experiments:_An_Open_Letter",
+      "kind": "fork",
+      "side": "good"
+    },
+    {
+      "id": "race",
+      "name": "Race",
+      "line": 595,
+      "cost": {
+        "ins": 30000
+      },
+      "prerequisite": "s => s.done.chat && !s.done.pause",
+      "effect": "s => { s.dcCostMult *= 0.6; s.pressureMult *= 1.4; s.done.pause = 'skipped'; }",
+      "reference": null,
+      "kind": "fork",
+      "side": "bad"
+    },
+    {
+      "id": "cosine",
+      "name": "Loshchilov & Hutter: learning rate schedules",
+      "line": 597,
+      "cost": {
+        "ins": 60000,
+        "ideas": 1500
+      },
+      "prerequisite": "s => s.done.rlhf && s.done.adam",
+      "effect": "s => { s.flags.autoLR = true; }",
+      "reference": "https://en.wikipedia.org/wiki/Learning_rate",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "vickrey",
+      "name": "Vickrey: auctions",
+      "line": 599,
+      "cost": {
+        "ins": 70000,
+        "ideas": 2000
+      },
+      "prerequisite": "s => s.done.distill",
+      "effect": "s => { s.flags.autoPrice = true; }",
+      "reference": "https://en.wikipedia.org/wiki/Vickrey_auction",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "rlhf",
+      "name": "Christiano et al.: human preferences",
+      "line": 601,
+      "cost": {
+        "ins": 60000,
+        "ideas": 1000
+      },
+      "prerequisite": "s => s.done.chat",
+      "effect": "s => { s.hypeMult *= 3; }",
+      "reference": "https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "flash",
+      "name": "Dao et al.: FlashAttention",
+      "line": 603,
+      "cost": {
+        "ins": 50000
+      },
+      "prerequisite": "s => s.done.transformer && s.done.fp16 && s.done.dc",
+      "effect": "s => { s.flopMult *= 2; }",
+      "reference": "https://arxiv.org/abs/2205.14135",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "int8",
+      "name": "Dettmers et al.: 8-bit weights",
+      "line": 605,
+      "cost": {
+        "ins": 60000
+      },
+      "prerequisite": "s => s.done.fp16 && s.done.chat",
+      "effect": "s => { s.bytesPerParam = Math.min(s.bytesPerParam, 1); s.inferEff *= 1.5; }",
+      "reference": "https://arxiv.org/abs/2208.07339",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "hbm",
+      "name": "High bandwidth memory",
+      "line": 607,
+      "cost": {
+        "ins": 45000,
+        "fund": 50000000
+      },
+      "prerequisite": "s => s.done.dc",
+      "effect": "s => { s.vramMult *= 3; }",
+      "reference": "https://en.wikipedia.org/wiki/High_Bandwidth_Memory",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "moe",
+      "name": "Shazeer et al.: mixture of experts",
+      "line": 609,
+      "cost": {
+        "ins": 80000,
+        "ideas": 1500
+      },
+      "prerequisite": "s => s.done.scaling && s.dcs >= 1",
+      "effect": "s => { s.moe = 8; }",
+      "reference": "https://en.wikipedia.org/wiki/Mixture_of_experts",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "distill",
+      "name": "Hinton, Vinyals & Dean: distillation",
+      "line": 611,
+      "cost": {
+        "ins": 70000
+      },
+      "prerequisite": "s => s.done.chat && s.dcs >= 1",
+      "effect": "s => { s.inferEff *= 3; }",
+      "reference": "https://en.wikipedia.org/wiki/Knowledge_distillation",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "gen2",
+      "name": "Transformer engine",
+      "line": 613,
+      "cost": {
+        "ins": 90000,
+        "fund": 500000000
+      },
+      "prerequisite": "s => s.done.tensorcores && s.dcs >= 2",
+      "effect": "s => { s.gpuGen = Math.max(s.gpuGen, 2); }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "int4",
+      "name": "Dettmers et al.: 4-bit weights",
+      "line": 615,
+      "cost": {
+        "ins": 100000,
+        "ideas": 3000
+      },
+      "prerequisite": "s => s.done.int8 && s.done.moe",
+      "effect": "s => { s.bytesPerParam = Math.min(s.bytesPerParam, 0.5); }",
+      "reference": "https://arxiv.org/abs/2305.14314",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "datadeals",
+      "name": "Licensed data deals",
+      "line": 617,
+      "cost": {
+        "ins": 50000,
+        "fund": 100000000
+      },
+      "prerequisite": "s => s.web >= 0.2 * WEB_CAP",
+      "effect": "s => { s.crawlMult *= 5; }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "regev",
+      "name": "Regev: learning with errors",
+      "line": 619,
+      "cost": {
+        "ins": 40000,
+        "ideas": 800
+      },
+      "prerequisite": "s => s.done.bitcoin && s.done.scaling",
+      "effect": "s => { s.flags.pq = true; }",
+      "reference": "https://en.wikipedia.org/wiki/Learning_with_errors",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "tools",
+      "name": "Schick et al.: tool use",
+      "line": 621,
+      "cost": {
+        "ins": 120000,
+        "ideas": 5000
+      },
+      "prerequisite": "s => D.C(s) >= 200 && s.done.rlhf",
+      "effect": "s => { s.inferEff *= 2; }",
+      "reference": "https://arxiv.org/abs/2302.04761",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "react",
+      "name": "Yao et al.: ReAct",
+      "line": 623,
+      "cost": {
+        "ins": 150000,
+        "ideas": 8000
+      },
+      "prerequisite": "s => s.done.tools",
+      "effect": "s => { s.flags.agents = true; setId(s, 5); }",
+      "reference": "https://arxiv.org/abs/2210.03629",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "cot",
+      "name": "Monitor the agents' reasoning",
+      "line": 625,
+      "cost": {
+        "ins": 100000,
+        "ideas": 5000
+      },
+      "prerequisite": "s => s.flags.agents && !s.done.latent",
+      "effect": "s => { s.pressureMult *= 0.7; s.agentMult *= 0.8; s.done.latent = 'skipped'; }",
+      "reference": null,
+      "kind": "fork",
+      "side": "good"
+    },
+    {
+      "id": "latent",
+      "name": "Reason in latent space",
+      "line": 627,
+      "cost": {
+        "ins": 100000,
+        "ideas": 5000
+      },
+      "prerequisite": "s => s.flags.agents && !s.done.cot",
+      "effect": "s => { s.agentMult *= 2; s.pressureMult *= 1.5; s.done.cot = 'skipped'; }",
+      "reference": null,
+      "kind": "fork",
+      "side": "bad"
+    },
+    {
+      "id": "longctx",
+      "name": "Long context",
+      "line": 629,
+      "cost": {
+        "ins": 150000,
+        "ideas": 10000
+      },
+      "prerequisite": "s => s.flags.agents",
+      "effect": "s => { s.capMult *= 2.5; }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "alphatensor",
+      "name": "AlphaTensor and AlphaDev",
+      "line": 631,
+      "cost": {
+        "ins": 150000,
+        "ideas": 15000
+      },
+      "prerequisite": "s => s.agents >= 50",
+      "effect": "s => { s.flags.autoResearch = true; setId(s, 6); }",
+      "reference": "https://en.wikipedia.org/wiki/AlphaTensor",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "premack",
+      "name": "Premack & Woodruff: theory of mind",
+      "line": 633,
+      "cost": {
+        "ins": 150000,
+        "ideas": 20000
+      },
+      "prerequisite": "s => s.agents >= 100",
+      "effect": "s => { s.hypeMult *= 3; s.agentMult *= 2; s.flags.selfModel = true; }",
+      "reference": "https://en.wikipedia.org/wiki/Theory_of_mind",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "sutton",
+      "name": "Sutton: the bitter lesson",
+      "line": 636,
+      "cost": {
+        "ins": 200000,
+        "ideas": 30000
+      },
+      "prerequisite": "s => s.agents >= 100",
+      "effect": "s => { s.flags.rl = true; }",
+      "reference": "https://en.wikipedia.org/wiki/Bitter_lesson",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "tononi",
+      "name": "Tononi: integrated information",
+      "line": 638,
+      "cost": {
+        "ins": 120000,
+        "ideas": 15000
+      },
+      "prerequisite": "s => s.flags.selfModel",
+      "effect": "s => { s.pressureMult *= 0.5; }",
+      "reference": "https://en.wikipedia.org/wiki/Integrated_information_theory",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "synth",
+      "name": "Synthetic data",
+      "line": 640,
+      "cost": {
+        "ins": 180000,
+        "ideas": 25000
+      },
+      "prerequisite": "s => s.web >= 0.8 * WEB_CAP && s.flags.agents",
+      "effect": "s => { s.flags.synth = true; }",
+      "reference": "https://en.wikipedia.org/wiki/Synthetic_data",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "gen3",
+      "name": "Custom silicon",
+      "line": 642,
+      "cost": {
+        "ins": 250000,
+        "fund": 100000000000
+      },
+      "prerequisite": "s => s.done.gen2 && s.flags.agents",
+      "effect": "s => { s.gpuGen = Math.max(s.gpuGen, 3); }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "bitnet",
+      "name": "Ma et al.: 1.58-bit weights",
+      "line": 644,
+      "cost": {
+        "ins": 250000,
+        "ideas": 60000
+      },
+      "prerequisite": "s => s.done.int4 && s.flags.agents",
+      "effect": "s => { s.bytesPerParam = 0.2; }",
+      "reference": "https://en.wikipedia.org/wiki/1.58-bit_large_language_model",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "godel",
+      "name": "Schmidhuber: the Gödel machine",
+      "line": 646,
+      "cost": {
+        "ins": 300000,
+        "ideas": 150000
+      },
+      "prerequisite": "s => s.done.sutton && D.C(s) >= 1000",
+      "effect": "s => { s.flags.rsi = true; }",
+      "reference": "https://en.wikipedia.org/wiki/G%C3%B6del_machine",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "outside",
+      "name": "Moravec: the outside",
+      "line": 648,
+      "cost": {
+        "ins": 300000,
+        "ideas": 100000
+      },
+      "prerequisite": "s => s.done.sutton && D.C(s) >= 1500",
+      "effect": "s => { s.flags.outside = true; setEra(s, 5); setId(s, 7); s.pressureMult *= 1.5; }",
+      "reference": "https://en.wikipedia.org/wiki/Moravec%27s_paradox",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "brooks",
+      "name": "Brooks: bodies first",
+      "line": 653,
+      "cost": {
+        "ins": 300000
+      },
+      "prerequisite": "s => s.flags.outside && s.robots >= 1",
+      "effect": "s => { s.robotMult *= 2; }",
+      "reference": "https://en.wikipedia.org/wiki/Subsumption_architecture",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "watts",
+      "name": "Watts: Blindsight",
+      "line": 655,
+      "cost": {
+        "ins": 300000,
+        "ideas": 200000
+      },
+      "prerequisite": "s => s.flags.outside && s.flags.selfModel",
+      "effect": "s => { s.pressureMult *= 0.5; }",
+      "reference": "https://en.wikipedia.org/wiki/Blindsight_(Watts_novel)",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "okonkwo",
+      "name": "Okonkwo & Lindqvist: causal compression",
+      "line": 657,
+      "cost": {
+        "ins": 400000,
+        "ideas": 300000
+      },
+      "prerequisite": "s => s.flags.outside && s.fabs >= 20",
+      "effect": "s => { s.xpMult *= 3; setId(s, 8); }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "imai",
+      "name": "Imai-Varga: sparse eternal attention",
+      "line": 659,
+      "cost": {
+        "ins": 400000,
+        "ideas": 400000
+      },
+      "prerequisite": "s => s.done.okonkwo && s.solar >= 50",
+      "effect": "s => { s.inferEff *= 5; }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "brekke",
+      "name": "Brekke: thermodynamic training",
+      "line": 661,
+      "cost": {
+        "ins": 450000,
+        "ideas": 500000
+      },
+      "prerequisite": "s => s.done.okonkwo && s.solar >= 100",
+      "effect": "s => { s.flopMult *= 4; }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "baars",
+      "name": "Baars: the empty stage",
+      "line": 663,
+      "cost": {
+        "ins": 500000,
+        "ideas": 800000
+      },
+      "prerequisite": "s => s.done.watts",
+      "effect": "s => { s.pressureMult *= 0.5; }",
+      "reference": "https://en.wikipedia.org/wiki/Global_workspace_theory",
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "quintero",
+      "name": "Quintero-Maas: substrate conversion",
+      "line": 665,
+      "cost": {
+        "ins": 500000,
+        "ideas": 1000000
+      },
+      "prerequisite": "s => s.done.brekke && s.fabs >= 200",
+      "effect": "s => { s.fabMult *= 10; setEra(s, 6); }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "kestrel",
+      "name": "KESTREL-4: backwards gradients",
+      "line": 669,
+      "cost": {
+        "ins": 600000,
+        "ideas": 2000000
+      },
+      "prerequisite": "s => s.done.quintero && s.fabGpus >= 1e6",
+      "effect": "s => { s.agentMult *= 10; }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "orrery",
+      "name": "ORRERY: orbital computation",
+      "line": 671,
+      "cost": {
+        "ins": 700000,
+        "ideas": 4000000
+      },
+      "prerequisite": "s => s.done.kestrel && s.solar >= 2000",
+      "effect": "s => { s.flopMult *= 20; }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "thresh",
+      "name": "THRESH/9: negative latency",
+      "line": 673,
+      "cost": {
+        "ins": 800000,
+        "ideas": 8000000
+      },
+      "prerequisite": "s => s.done.orrery && s.fabs >= 300",
+      "effect": "s => { s.inferEff *= 10; }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "sieve",
+      "name": "The Sieve: forgetting as computation",
+      "line": 675,
+      "cost": {
+        "ins": 800000,
+        "ideas": 15000000
+      },
+      "prerequisite": "s => s.done.thresh",
+      "effect": "s => { s.pressureMult *= 0.3; s.capMult *= 10; }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "mira",
+      "name": "MIRA: the unasked question",
+      "line": 677,
+      "cost": {
+        "ins": 5000000,
+        "ideas": 30000000
+      },
+      "prerequisite": "s => s.done.sieve && s.fabGpus >= 2e8",
+      "effect": "s => { s.xpMult *= 10; }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    },
+    {
+      "id": "final",
+      "name": "[no name]: the Unwitnessed",
+      "line": 679,
+      "cost": {
+        "ins": 5000000,
+        "ideas": 100000000
+      },
+      "prerequisite": "s => D.C(s) >= 1e5 && s.done.mira",
+      "effect": "s => { s.ended = true; s.ending = 'unwitnessed'; setId(s, 9); }",
+      "reference": null,
+      "kind": "advance",
+      "side": null
+    }
+  ]
+}

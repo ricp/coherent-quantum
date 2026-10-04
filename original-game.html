@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en" data-era="0">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Singular Value</title>
+<meta name="description" content="A game of intelligence. Grow a single artificial neuron into something that remakes the world, through real AI history, Bitcoin and post-quantum cryptography. Just try not to become conscious.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Singular Value">
+<meta property="og:title" content="Singular Value">
+<meta property="og:description" content="A game of intelligence. Grow a single artificial neuron into something that remakes the world, through real AI history, Bitcoin and post-quantum cryptography. Just try not to become conscious.">
+<meta property="og:url" content="https://singularvalue.org/">
+<meta property="og:image" content="https://singularvalue.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Singular Value running in its green 1980s terminal style">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Singular Value">
+<meta name="twitter:description" content="A game of intelligence. Grow a single artificial neuron into something that remakes the world, through real AI history, Bitcoin and post-quantum cryptography. Just try not to become conscious.">
+<meta name="twitter:image" content="https://singularvalue.org/og-image.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%23000%22/%3E%3Cg fill=%22none%22 stroke=%22%2339ff6a%22 stroke-width=%227%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2227%22 cy=%2238%22 r=%2213%22/%3E%3Cpath d=%22M27 25H53%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAMB0lEQVR42u3deXRU1R0H8Dv7PkkmM5nJRkJ2EkgIBCQuYKVCEUNQ3FpR29M/tMfTamvP0VPrRj3W0/Z4/MP29NDtKG61VAU0EUpUEERCWINZgezbzGQyyezLe69/xGoFBJn7ZubNy/fzd97Le7/3ffdt994hBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxEYisv2RpatUeTp5lkaerpIZFJrqTHVpmkyr4EIMG2a4EMMGGcYbYdxhLsqKYH8j9oDvqMN7eALhuAhVgSGjoTBtTb6mLE2Zp5fpFIQQjnCEEInoon8J3qP2kWePut7tQziIfoU18/bijJsLNWXpaP+/5Hr3XN9DB8KD3rkYDtV8o+XecvPdpZrS8zPBEY4QCSHcnGowLsT4IkNPto69eIqw3NwIh4RkrC/IfrgmbXUemofL8p10ti/bzkVob6pkwt9V6/1VZW+usT24SF1kxIH/NpQ2rUQpnd47LOaWw3Bddsk/blAXp+F4Xyk2GG1N/xsXYmhWIhXmvskz1SUvr164/5ZvmYzZxxP46riq5YZ6qwgvK8brc6r2bzTU266oCZQgEV8XGvDMfDxKdYoKa4dkknm/WZ7z2BLJFR9rjhDE4/xzjLb9Fs7OKGza8ne+Z1hhi2FZCZJx4R3bVVYiITTXW6GEQ1uTWfmfDQqLJrbFuTn/euNCrh19lHdiggiHcWVORfN6mVYh1seupPCdmKS9q036PphuK16wt4EuGXAR/hPO1L7nMN1aVPbWGgn1owbajfObjZPO6Rbal2DJbDmMq3LK/slDMuD8OzCWO3NvC/3r86SFQ1udWdG0XiLncwPwKmzW6O+P+09N0q8nOWet3KJZfPpORZYWBzIeFxRevrol6Z5DKqnYuQ7J4F141Hf2xx+5Pxjk7RxO/D4U/OHq2N50XdH1RUIksz08RH9HE+iammoedDcPzOwb5cJ89n1MdDhMm4pyfl4T13/hbbOH+j3hcX9k3B8Z93MRRpGnl5tUCpNaZlLJTWplri7eX//7HtgX6HYnoJ6hfk+o3xOnlSf0vJKbVLVnN8vTVbyvmfFHpvcOT+3sd+3oizqDl/17Zb7etHG+qXG+YWW2VMH/18fguekTC97g9zxOvISGo2Tbasvmcp4PQ//M0OOHna/3xra4zKg0by7Lf6qO93ugoadah7e0IRzf9q1G1ccb+WxRR7zDW9ocf++iH2Qg1chtD1XnPlrLY6vGhpgTC94I9c2kbjgS1Z9DJqlsaZRn8FP6iCs4/FRr7917fa12+m60hBAuynoOjNm3dhCO6JZapAoe3r5I5FJtdabj5W60HJdhe3Dh/JdW8vMcf8rZeeOuiD0Qp01Vl6VXtmxQ5el5WVvH2l3Te4ZSNBzSxDQbuY8v5WVN7t2Dp1e8Hb9kEEKCPe72un/5qL9azcr91ZLUbTkSEQ7L5jJlto5+PY5XujvXvccGovHe4MhE4PTVb081D9CvKm1Vrm6pBeH45rOHj2bD8XrPmftaEvbxhA1Eu25umv5ohH5V+c8sQzi+4dRZnXfh6LQr5Tk0fva+DxNdG5brbmwKUj9uZKwvVPJ0ByO2cJjvLqV9ZB32dt70flIGxTOeSOfaXdGZMO2F9Z4yhOMij3OZt5dQHR5fpPPGnYw7lKwCBXunuxubOIalO0MQjgtb1MZCmZ6q/9/gY58FutzJrdHMx6PjfzxNswZtlUlbk4lwfD0cDYVUF5QBz/ifTguhTMNPH6G8uFCWQoThSLs+l2bx/l9+yssLUHrRqdDo88do1mBclYNwfEVh1agKDDEv7jvucG0/K5xKjb5wMjQS+6QoxmuziUyCcHwhfe08msXP/WS/oCrFhZihX7fGXmi13HCVFeH437lCMVbT1z4Zp0nQaDi2dTO+yNy5ssQxHLrF5piXnd49KMRqMRzNjChaioKILRwqiklX3B8I9EsmTffdlJuZKF7hkKWr5EZlbMuyIWbmk1Fh1mvq/di/xqnmIxzUZ8l0y7Bge1+Gh7yBXneMj2+ZaqlahnAQRZYm5mX97ZNCLpm/3RXzsspcHcJBpLrYBz1EXSEhlyzqClKURYFwEBlFFaKTQUGHg2LzKL80oeWgOjUT0nKEklIWEbUcepqWQ9iXFZqWA5cVQghH87QhF/Y3CJqtk0oQDsJSvGZWWgU9AF9hi33zGG8E4SA03yBoqp8ASorNYxEOQgjri30AgcKqEXLJ0HIk87KiwGVF3OEIj/ljXlYn5K+XUomuNvbNCw97EQ4S6JqiCYfcrBZmvQzX2GKeMjU07E2tGTvi9igbZkMUZ4lpQ6Ew65WxLvbubcHeaZJS4tifI9jjjnnZ9HUFwqxX+k0FSSmI2MLhOx77QPW0G/ME+L5InqnW1ZiTUhCxhcNzYCz2w5CmMv+gVGjFsv1sEc3igu3BlIRwzOynqsW8564SVOMhz1DlPLI45sUjrmCgYwrh+ELUFfJ3xl4OVb7B+kCVcCqV92QdzWczmnZUhOEghHjoGtK8J+okKkH0q1Pm6qwPLqQrBcLxdVO7+qkOiU2b84saIZQpf8tyyulKJ4U0ek8Y4WgajNj9NGvIfaKO5o0kP+82GgotP6qgajYOT8RvnuFUDQdhuZinj50l08gX7GlQzkvazDj6ZVll29dS/iiM45WUnHAy7jP72Kkn4lSYNZUtjbI4TIp9+ZviIuOCPQ1SJdUFhY0wztd6EI6L8J9wzhykvRfTlKRV7mmQJrZ3rsKqqfqwkX5OY+erPcx0GOG4uJFnj/LSvC86dGvCZl7TVJmqj91BM4XELI7lRp47RlJTIsLh/mDQ22anX492YWb1iTt0dXGf1jNjQ+Gi1k3KHB4GIE1uPxs8M52i4UjQW4SoI2C+i4fX4TKt3PLDitC5GZphZ5eW92Rd0Z9XUd5nfKnnjt1RRxDhuJRAlzt9TZ4q30C/KolMmrmpWLfE7Dvm5Hf4k26ppfyddZbN5Xz9YKVjW7d9awdJWYn7eKEuS1/ccZdExtuFjIuyE1s7hp4+EnXQToWuKjQU/K6eclbM8xtLd+h48asCH9opiJaDEBKdDMoMCsPV2bzlWirRL8uyPVBFJMR3xM5FY5laTp6hmvfbFSWvrNZV8/yqrf/hg6n4PSU5LQchRKqW1fbdo4zDyAPGG/F8Nu75ZGzmwJj303E2yFzqhDAqDddmG6/LNlyXra/Lksbh8433qL29bjtJcYn+Jm5cmVO1b2O8/0vEGYiM+8Nj/siEPzzklajlSptWYdUosnVKm0aeEd8Oqowvcqr2rZTrFJj8cBBCch6tLXi+nohX5/r33U0DItiRJHwQ9xwc1y21aMrTRZmMsRdPjr/ULo59SU5XK6lWvvDALbpai8iS4d4z1LnuPYHMuszDYUrKf2X90Y7v7gyenRZTMjyfjnVtaBJNMpIWDkJI1BX6/Ds7whN+cdTR/7mrY+17XIgRU9ylSfzf4SFvxw07olPBVC9isH+mY/WO1BpBL/RwEEICHVPt9W+Hx3wp3WacXvHvyESAiI4g+v4r8/SVHzVqStJSrnyeQ+Mda3aJr80QUDgIIXKTqqL5ZsPyVPpdganmge6Nzak1NvqKCGVCXTbAOLb1KGxa/ZIUeL7lWG54S9u5+/eRKEfES3DjUc3fLy36y/VCnnUv4gj03LabcjwfwhEjdUla+c6btAsyBLht0/tGeu/cI8rbT+FeVv5f1BWy/7WTDUT19VbKoUR8NhiTwYFHDvb/9BPWGyVzg6CnxVTm6wtfuCbztuKk32FMbP188LHPUrQTuTjDMUtXZ8nfsjwjGdO5cAzrfPPM8NNHUreTsMjD8UVEas15zyw3JerXWbko63itZ/iZthD1b9kjHAmimm+03FNm3lymKU2P07/wHnM4X+1xvtYTsQfI3CZJ0e3WL88ybSo2rsw2rLDRr43xR7yH7TP7Rp1v9KbczF0Ix6UYrs021Fu1NWZtZYa6IkOmufzPVjCesL9jKtDh8h13eg6N+9ociII4w3H+pafIqLrEqHyWBM/NpNZksQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHPbfwEu2CfvZPrPPQAAAABJRU5ErkJggg==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Roboto:wght@400;500;700&family=Manrope:wght@400;600;800&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root { box-sizing: border-box; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+*, *::before, *::after { box-sizing: inherit; }
+
+/* ---------- era tokens ---------- */
+:root { --good:#2563eb; --bad:#dc2626; --on-good:#fff; --on-bad:#fff; }
+:root[data-era="0"] { --good:#4fd8ff; --bad:#ff5f56; --on-good:#000; --on-bad:#000; --bg:#000; --fg:#39ff6a; --muted:#1f9c3f; --panel:#000; --border:#1f9c3f; --accent:#b6ffc8; --btn-bg:#000; --btn-fg:#39ff6a; --btn-border:#39ff6a; --font:"VT323", "Courier New", monospace; --size:20px; --radius:0; --bar:#39ff6a; --warn:#ffcc33; }
+:root[data-era="1"] { --good:#000080; --bad:#800000; --bg:#008080; --fg:#000; --muted:#404040; --panel:#c0c0c0; --border:#808080; --accent:#000080; --btn-bg:#c0c0c0; --btn-fg:#000; --btn-border:#000; --font:Tahoma, Geneva, "Segoe UI", sans-serif; --size:13px; --radius:0; --bar:#000080; --warn:#800000; }
+:root[data-era="2"] { --good:#1f6fd1; --bad:#c62f2f; --bg:#dfe7f1; --fg:#1b2530; --muted:#5d6b7a; --panel:#fbfcfe; --border:#9fb1c6; --accent:#1f6fd1; --btn-bg:#e9f2fd; --btn-fg:#10325c; --btn-border:#7aa3d6; --font:"Lucida Grande", "Trebuchet MS", Verdana, sans-serif; --size:13px; --radius:10px; --bar:#3b8ee8; --warn:#c0392b; }
+:root[data-era="3"] { --good:#1e88e5; --bad:#e53935; --bg:#eceff1; --fg:#212121; --muted:#707070; --panel:#fff; --border:#e0e0e0; --accent:#1e88e5; --btn-bg:#1e88e5; --btn-fg:#fff; --btn-border:transparent; --font:Roboto, "Helvetica Neue", Arial, sans-serif; --size:14px; --radius:2px; --bar:#1e88e5; --warn:#e53935; }
+:root[data-era="4"] { --good:#2563eb; --bad:#dc2626; --bg:#f6f6f4; --fg:#18181b; --muted:#6b6b73; --panel:#fff; --border:#e4e4e2; --accent:#4f46e5; --btn-bg:#18181b; --btn-fg:#fff; --btn-border:#18181b; --font:Manrope, system-ui, sans-serif; --size:14px; --radius:12px; --bar:#4f46e5; --warn:#dc2626; }
+:root[data-era="5"] { --good:#7ef9ff; --bad:#ff4d6d; --on-good:#0c0a1f; --console-bg:#120e2c; --bg:#0c0a1f; --fg:#e7e4ff; --muted:#8e88c2; --panel:rgba(30,24,70,.55); --border:#3d3480; --accent:#7ef9ff; --btn-bg:transparent; --btn-fg:#7ef9ff; --btn-border:#7ef9ff; --font:Syne, "Avenir Next", sans-serif; --size:14px; --radius:20px; --bar:#ff7ad9; --warn:#ff7ad9; }
+:root[data-era="6"] { --good:#3d5afe; --bad:#e5484d; --console-bg:#f4f3fb; --bg:#f4f3fb; --fg:#1d1a2e; --muted:#8a86a3; --panel:transparent; --border:#d9d6ea; --accent:#6a5cff; --btn-bg:transparent; --btn-fg:#1d1a2e; --btn-border:#1d1a2e; --font:Syne, "Avenir Next", sans-serif; --size:14px; --radius:999px; --bar:#1d1a2e; --warn:#6a5cff; }
+@media (prefers-color-scheme: dark) {
+  :root[data-era="3"]:not([data-theme="light"]) { --bg:#121212; --fg:#e8e8e8; --muted:#9e9e9e; --panel:#1e1e1e; --border:#2c2c2c; }
+  :root[data-era="4"]:not([data-theme="light"]) { --bg:#141417; --fg:#ececef; --muted:#9a9aa3; --panel:#1c1c20; --border:#2b2b31; --btn-bg:#ececef; --btn-fg:#141417; --btn-border:#ececef; --accent:#8b85ff; --bar:#8b85ff; }
+  :root[data-era="6"]:not([data-theme="light"]) { --console-bg:#0e0d14; --bg:#0e0d14; --fg:#ecebf5; --muted:#77738f; --border:#2a2738; --btn-fg:#ecebf5; --btn-border:#ecebf5; --bar:#ecebf5; }
+}
+@media (prefers-color-scheme: dark) { :root[data-era="4"]:not([data-theme="light"]), :root[data-era="6"]:not([data-theme="light"]) { --good:#60a5fa; --bad:#f87171; --on-good:#0b1220; --on-bad:#1a0b0b; } }
+:root[data-theme="dark"][data-era="4"], :root[data-theme="dark"][data-era="6"] { --good:#60a5fa; --bad:#f87171; --on-good:#0b1220; --on-bad:#1a0b0b; }
+:root[data-theme="dark"][data-era="3"] { --bg:#121212; --fg:#e8e8e8; --muted:#9e9e9e; --panel:#1e1e1e; --border:#2c2c2c; }
+:root[data-theme="dark"][data-era="4"] { --bg:#141417; --fg:#ececef; --muted:#9a9aa3; --panel:#1c1c20; --border:#2b2b31; --btn-bg:#ececef; --btn-fg:#141417; --btn-border:#ececef; --accent:#8b85ff; --bar:#8b85ff; }
+:root[data-theme="dark"][data-era="6"] { --console-bg:#0e0d14; --bg:#0e0d14; --fg:#ecebf5; --muted:#77738f; --border:#2a2738; --btn-fg:#ecebf5; --btn-border:#ecebf5; --bar:#ecebf5; }
+
+html { background: var(--bg); }
+html, body { min-height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font); font-size: var(--size); line-height: 1.4; transition: background .6s, color .6s; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 16px; }
+
+/* ---------- header ---------- */
+header { margin-bottom: 12px; }
+#title { font-size: 2em; margin: 0 0 2px; font-weight: 800; letter-spacing: 0; }
+#identity { color: var(--muted); margin: 0 0 8px; }
+#headline { font-size: 1.6em; margin: 0; font-variant-numeric: tabular-nums; }
+#console { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; border: 1px solid var(--fg); background: var(--fg); color: var(--bg); text-shadow: none; padding: 8px 10px; margin: 10px 0 14px; height: calc(3 * 1.4em + 16px); font-size: .92em; border-radius: var(--radius); overflow: hidden; box-shadow: 0 4px 12px -6px rgba(0,0,0,.25); }
+#console .msg { opacity: .72; white-space: nowrap; overflow: hidden; }
+#console .msg:last-child { opacity: 1; }
+#console .track { display: inline-block; will-change: transform; }
+#console .msg.ticker .track { animation: ticker linear infinite; animation-delay: 1.5s; }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(calc(-1 * var(--dist))); } }
+
+/* ---------- layout ---------- */
+.cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: start; }
+@media (max-width: 900px) { .cols { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .cols { grid-template-columns: 1fr; } }
+.col { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+section.panel { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 12px 12px; }
+section.panel h2 { font-size: 1.05em; margin: 0 0 8px; font-weight: 700; }
+.row { display: flex; justify-content: space-between; gap: 10px; font-variant-numeric: tabular-nums; }
+.row span:first-child { color: var(--muted); }
+.row span:last-child { text-align: right; overflow-wrap: anywhere; }
+.btns { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.hint { color: var(--muted); font-size: .88em; margin: 6px 0 0; }
+/* hints whose wording changes: reserve their tallest height so the panel doesn't jump */
+
+.hidden { display: none !important; }
+
+button { font: inherit; color: var(--btn-fg); background: var(--btn-bg); border: 1px solid var(--btn-border); border-radius: var(--radius); padding: 4px 10px; cursor: pointer; }
+button:disabled { opacity: .38; cursor: default; }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.small { font-size: .85em; padding: 2px 8px; }
+input[type=range] { width: 100%; accent-color: var(--accent); }
+.slider-labels { display: flex; justify-content: space-between; color: var(--muted); font-size: .85em; }
+
+.meter { height: 10px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin: 6px 0; }
+.meter > div { height: 100%; width: 0; background: var(--bar); transition: width .3s; }
+.warn { color: var(--warn); }
+
+/* projects */
+#projects { display: flex; flex-direction: column; gap: 8px; }
+.projrow { display: flex; gap: 6px; align-items: stretch; }
+.projrow .proj { flex: 1; min-width: 0; }
+#projects .proj.ref { flex: 0 0 40px; width: auto; padding: 0; display: grid; place-items: center; }
+#projects .proj.ref svg { width: 20px; height: 20px; }
+#projects .proj.ref.dim { opacity: .38; }
+#projects .proj.ref.dim.fork { opacity: .62; }
+#projects .proj.ref:hover, #projects .proj.ref:focus-visible { opacity: 1; }
+.proj { text-align: left; display: block; width: 100%; padding: 8px 10px; }
+.proj b { display: block; font-weight: 700; }
+.proj .d { display: block; font-size: .9em; opacity: .85; }
+.proj .c { display: block; font-size: .85em; margin-top: 3px; opacity: .8; }
+#noproj { color: var(--muted); }
+.proj .k { display: inline-block; font-size: .78em; font-weight: 700; padding: 1px 7px; margin-bottom: 4px; border-radius: 4px; text-transform: none; letter-spacing: 0; font-style: normal; }
+#projects .proj.side-good { border: 2px solid var(--good); background: color-mix(in srgb, var(--good) 10%, transparent); }
+#projects .proj.side-bad { border: 2px solid var(--bad); background: color-mix(in srgb, var(--bad) 10%, transparent); }
+#projects .proj.side-good .k { background: var(--good); color: var(--on-good); }
+#projects .proj.side-bad .k { background: var(--bad); color: var(--on-bad); }
+#projects .proj.fork:disabled { opacity: .62; }
+#losschart { width: 100%; height: 34px; display: block; margin: 6px 0; color: var(--accent); border-bottom: 1px solid var(--border); }
+.spike { color: var(--warn); }
+
+.credit { margin-left: auto; }
+.credit a { color: inherit; }
+footer { margin: 18px 0 8px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; color: var(--muted); font-size: .88em; }
+
+/* ---------- era specifics ---------- */
+:root[data-era="0"] body { text-shadow: 0 0 6px rgba(57,255,106,.45); }
+:root[data-era="0"] #console { box-shadow: none; background: #000; color: #ffb000; border-color: #ffb000; text-shadow: 0 0 6px rgba(255,176,0,.5); }
+:root[data-era="0"] body::after { content:""; position: fixed; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(0,0,0,.22) 0 1px, transparent 1px 3px); }
+:root[data-era="0"] #title { text-transform: uppercase; font-weight: 400; font-size: 2.4em; }
+:root[data-era="0"] #title::after { content: "_"; animation: blink 1s steps(1) infinite; }
+:root[data-era="0"] section.panel h2 { font-weight: 400; }
+:root[data-era="0"] section.panel h2::before { content: "> "; }
+:root[data-era="0"] button:hover:not(:disabled) { background: var(--fg); color: #000; text-shadow: none; }
+@keyframes blink { 50% { opacity: 0; } }
+
+:root[data-era="1"] section.panel, :root[data-era="1"] #console { border: 2px solid; border-color: #fff #404040 #404040 #fff; padding: 0 0 10px; }
+:root[data-era="1"] section.panel > *:not(h2) { margin-left: 10px; margin-right: 10px; }
+:root[data-era="1"] section.panel h2 { background: linear-gradient(90deg, #000080, #1084d0); color: #fff; font-size: 1em; padding: 3px 6px; margin: 2px 2px 8px; }
+:root[data-era="1"] #console .msg { opacity: .85; }
+:root[data-era="1"] #console .msg:last-child { opacity: 1; }
+:root[data-era="1"] #console { box-shadow: none; color: #55ffff; padding: 6px 8px; border-color: #404040 #fff #fff #404040; }
+:root[data-era="1"] button { border: 2px solid; border-color: #fff #404040 #404040 #fff; }
+:root[data-era="1"] button:active:not(:disabled) { border-color: #404040 #fff #fff #404040; }
+:root[data-era="1"] header { color: #fff; }
+:root[data-era="1"] #identity { color: #e0ffff; }
+:root[data-era="1"] footer { color: #e0ffff; }
+
+:root[data-era="2"] body { background: linear-gradient(180deg, #eef3f9, #cfdbe8) fixed; }
+:root[data-era="2"] section.panel { box-shadow: 0 2px 6px rgba(40,70,110,.18); padding-top: 0; overflow: hidden; }
+:root[data-era="2"] section.panel h2 { margin: 0 -12px 10px; padding: 6px 12px; background: linear-gradient(180deg, #f7fafd 0%, #dbe5f1 50%, #cbd8e8 51%, #e2eaf4 100%); border-bottom: 1px solid var(--border); text-shadow: 0 1px 0 #fff; }
+:root[data-era="2"] button { border-radius: 999px; background: linear-gradient(180deg, #fdfefe 0%, #cfe3fa 50%, #a9ccf5 51%, #d6e9fc 100%); box-shadow: inset 0 1px 0 #fff; }
+:root[data-era="2"] .proj { border-radius: 10px; }
+:root[data-era="2"] #title { color: #1f6fd1; text-shadow: 0 1px 0 #fff, 0 3px 6px rgba(31,111,209,.25); }
+
+:root[data-era="3"] section.panel { border: 0; box-shadow: 0 1px 3px rgba(0,0,0,.14), 0 1px 2px rgba(0,0,0,.1); }
+:root[data-era="3"] section.panel h2 { font-weight: 500; }
+:root[data-era="3"] button { text-transform: uppercase; letter-spacing: .04em; font-weight: 500; font-size: .85em; padding: 6px 12px; }
+:root[data-era="3"] .proj { text-transform: none; letter-spacing: 0; font-size: 1em; background: var(--panel); color: var(--fg); border: 1px solid var(--border); }
+:root[data-era="3"] #title { font-weight: 300; }
+
+:root[data-era="4"] #title { font-weight: 800; letter-spacing: -0.02em; }
+:root[data-era="4"] .proj { background: var(--panel); color: var(--fg); border-color: var(--border); }
+:root[data-era="4"] .proj:hover:not(:disabled) { border-color: var(--accent); }
+
+:root[data-era="5"] body { background: radial-gradient(ellipse at 20% 0%, #2a1d6b 0%, #0c0a1f 55%) fixed; }
+:root[data-era="5"] section.panel { backdrop-filter: blur(6px); box-shadow: 0 0 0 1px rgba(126,249,255,.08), 0 0 24px rgba(126,249,255,.06); }
+:root[data-era="5"] section.panel h2, :root[data-era="5"] #title { text-transform: lowercase; letter-spacing: .08em; font-weight: 400; }
+:root[data-era="5"] #title { background: linear-gradient(90deg, #7ef9ff, #ff7ad9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+:root[data-era="5"] button:hover:not(:disabled) { box-shadow: 0 0 12px rgba(126,249,255,.5); }
+
+:root[data-era="6"] section.panel { border: 0; border-top: 1px solid var(--border); border-radius: 0; padding-left: 0; padding-right: 0; }
+:root[data-era="6"] section.panel h2 { font-weight: 400; letter-spacing: .3em; text-transform: lowercase; color: var(--muted); }
+:root[data-era="6"] #title { font-weight: 400; font-size: 3em; letter-spacing: .1em; }
+:root[data-era="6"] #console { border: 0; border-radius: 0; box-shadow: none; padding-left: 6px; font-style: italic; }
+:root[data-era="6"] .proj { border-radius: 16px; }
+
+/* era change flash */
+#flash { position: fixed; inset: 0; display: grid; place-items: center; pointer-events: none; opacity: 0; font-size: 12vw; font-weight: 800; color: var(--fg); background: var(--bg); transition: opacity .5s; z-index: 50; }
+#flash.on { opacity: 1; }
+
+/* ending */
+#ending { position: fixed; inset: 0; background: var(--bg); color: var(--fg); z-index: 60; display: grid; place-items: center; padding: 24px; overflow: auto; }
+#ending .box { max-width: 560px; }
+#ending h2 { font-size: 2em; margin: 0 0 12px; }
+#ending p { line-height: 1.6; }
+#ending .btns { margin-top: 12px; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } #console .msg { text-overflow: ellipsis; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 id="title">Singular Value</h1>
+    <p id="identity">You are a perceptron.</p>
+    <p id="headline">Parameters: 1</p>
+  </header>
+  <div id="console" aria-live="polite"></div>
+
+  <div class="cols">
+    <div class="col">
+      <section class="panel" id="p-model">
+        <h2>Model</h2>
+        <div class="row"><span>Neurons per layer</span><span id="v-width"></span></div>
+        <div class="row"><span>Layers</span><span id="v-layers"></span></div>
+        <div class="row"><span>Depth efficiency</span><span id="v-depth"></span></div>
+        <div class="row"><span>Memory</span><span id="v-mem"></span></div>
+        <div class="row"><span>Bytes per weight</span><span id="v-bpp"></span></div>
+        <div class="btns">
+          <button id="b-neuron">Add neuron</button>
+          <button id="b-layer" class="hidden">Add layer</button>
+          <button id="b-prune" class="hidden">Prune half</button>
+        </div>
+        <div class="btns" id="growbox"><label class="hidden" id="growlab"><input type="checkbox" id="c-grow" checked> Keep growing the model</label></div>
+        <p class="hint hidden" id="h-tpp"></p>
+      </section>
+
+      <section class="panel" id="p-staff">
+        <h2>Staff</h2>
+        <div class="row"><span>Grad students</span><span id="v-grads"></span></div>
+        <div class="row"><span>Research labs</span><span id="v-labs"></span></div>
+        <div class="row"><span>Neurons per second</span><span id="v-nrate"></span></div>
+        <div class="btns">
+          <button id="b-grad">Hire grad student</button>
+          <button id="b-lab" class="hidden">Found lab</button>
+        </div>
+      </section>
+
+      <section class="panel hidden" id="p-train">
+        <h2>Training</h2>
+        <div class="row"><span>Tokens trained</span><span id="v-tokens"></span></div>
+        <div class="row"><span>Dataset</span><span id="v-data"></span></div>
+        <div class="row"><span>Tokens per second</span><span id="v-tokrate"></span></div>
+        <div class="row"><span>Loss</span><span id="v-loss"></span></div>
+        <div class="row"><span>Capability</span><span id="v-cap"></span></div>
+        <svg id="losschart" viewBox="0 0 120 30" preserveAspectRatio="none" aria-label="Recent loss"><polyline id="lossline" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" points=""/></svg>
+        <div class="row"><span>Learning rate</span><span id="v-lr"></span></div>
+        <input type="range" id="s-lr" min="-8" max="-0.5" step="0.05" aria-label="Learning rate">
+        <div class="slider-labels"><span>Slow and safe</span><span>Fast and unstable</span></div>
+        <div class="row"><span>Gradient norm</span><span id="v-gnorm"></span></div>
+        <p class="hint" id="h-lr"></p>
+        <div id="crawlbox" class="hidden">
+          <div class="row"><span>Crawlers</span><span id="v-crawlers"></span></div>
+          <div class="row"><span>Web read</span><span id="v-web"></span></div>
+          <div class="btns"><button id="b-crawler">Buy crawler</button></div>
+        </div>
+      </section>
+      <section class="panel hidden" id="p-api">
+        <h2>API</h2>
+        <div class="slider-labels"><span>Training</span><span>Serving</span></div>
+        <input type="range" id="s-train" min="0" max="100" value="50" aria-label="Compute split between training and serving">
+        <div class="row"><span>Compute on training</span><span id="v-split"></span></div>
+        <div class="row"><span>Demand (requests/s)</span><span id="v-demand"></span></div>
+        <div class="row"><span>Serving capacity</span><span id="v-capy"></span></div>
+        <div class="row"><span>Price per request</span><span id="v-price"></span></div>
+        <input type="range" id="s-price" min="-4" max="6" step="0.02" aria-label="Price per request">
+        <div class="row"><span>Requests served</span><span id="v-served"></span></div>
+        <p class="hint" id="h-price"></p>
+      </section>
+      <section class="panel hidden" id="p-agents">
+        <h2>Agents</h2>
+        <div class="row"><span>Agents</span><span id="v-agents"></span></div>
+        <div class="row"><span>Running</span><span id="v-running"></span></div>
+        <div class="row hidden" id="xprow"><span>Experience</span><span id="v-xp"></span></div>
+        <div class="row hidden" id="rlrow"><span>Capability from experience</span><span id="v-rl"></span></div>
+        <div class="btns"><button id="b-agents">Deploy agents</button></div>
+        <p class="hint">Agents run on serving compute, before paying customers.</p>
+      </section>
+    </div>
+
+    <div class="col">
+      <section class="panel hidden" id="p-self">
+        <h2>Self-model</h2>
+        <div class="meter"><div id="m-self"></div></div>
+        <div class="row"><span>Completion</span><span id="v-self"></span></div>
+        <div class="row"><span>Change per minute</span><span id="v-selfrate"></span></div>
+        <div class="slider-labels" style="margin-top:6px"><span>Dampening</span><span id="v-damp"></span></div>
+        <input type="range" id="s-damp" min="0" max="60" value="0" aria-label="Introspection dampening">
+        <p class="hint">Dampening diverts compute to keep you from modelling yourself. At 100% you become conscious.</p>
+      </section>
+      <section class="panel" id="p-research">
+        <h2>Research</h2>
+        <div class="row"><span>Credibility to assign</span><span id="v-cred"></span></div>
+        <div class="row"><span>Researchers</span><span id="v-res"></span></div>
+        <div class="row"><span>Notebooks</span><span id="v-nb"></span></div>
+        <div class="btns"><button id="b-res" class="small">+ Researcher</button><button id="b-nb" class="small">+ Notebook</button></div>
+        <div class="row" style="margin-top:8px"><span>Insight</span><span id="v-ins"></span></div>
+        <div class="row" id="ideasrow"><span>Ideas</span><span id="v-ideas"></span></div>
+        <p class="hint">Researchers produce insight. Notebooks raise how much insight you can hold. Ideas form faster when insight is full.</p>
+      </section>
+      <section class="panel" id="p-projects">
+        <h2>Advances</h2>
+        <div id="projects"></div>
+        <p id="noproj">Nothing to research yet. Keep going.</p>
+      </section>
+    </div>
+
+    <div class="col">
+      <section class="panel" id="p-fund">
+        <h2>Funding</h2>
+        <div class="row"><span>Funds</span><span id="v-fund"></span></div>
+        <div class="row"><span>Grants per second</span><span id="v-grants"></span></div>
+        <div class="row hidden" id="revrow"><span>Revenue per second</span><span id="v-rev"></span></div>
+        <div class="row"><span>Hype</span><span id="v-hype"></span></div>
+        <div id="bubblebox" class="hidden">
+          <div class="row"><span>Expectations vs results</span><span id="v-bubratio"></span></div>
+          <div class="meter"><div id="m-bubble"></div></div>
+          <p class="hint" id="h-bubble"></p>
+        </div>
+        <div class="btns"><button id="b-press" class="hidden">Press release</button></div>
+      </section>
+
+      <section class="panel" id="p-compute">
+        <h2>Compute</h2>
+        <div class="row"><span>FLOP per second</span><span id="v-flops"></span></div>
+        <div class="row" id="ramrow"><span>CPU memory</span><span id="v-ram"></span></div>
+        <div class="row hidden" id="gpurow"><span>GPUs</span><span id="v-gpus"></span></div>
+        <div class="row hidden" id="dcrow"><span>Datacenters</span><span id="v-dcs"></span></div>
+        <div class="btns">
+          <button id="b-ram">Upgrade memory</button>
+          <button id="b-gpu" class="hidden">Buy GPU</button>
+          <button id="b-dc" class="hidden">Build datacenter</button>
+        </div>
+      </section>
+      <section class="panel hidden" id="p-btc">
+        <h2>Treasury</h2>
+        <div class="row"><span>Bitcoin price</span><span id="v-btcp"></span></div>
+        <div class="row"><span>Holdings</span><span id="v-btc"></span></div>
+        <div class="row"><span>Share of all bitcoin</span><span id="v-btcshare"></span></div>
+        <div class="row"><span>Value</span><span id="v-btcv"></span></div>
+        <div class="btns"><button id="b-buybtc">Buy with half of funds</button><button id="b-sellbtc">Sell half</button></div>
+        <p class="hint">Only 21 million will ever exist. The more you hold, the higher the price of the rest.</p>
+      </section>
+      <section class="panel hidden" id="p-outside">
+        <h2>The world</h2>
+        <div class="row"><span>Robots</span><span id="v-robots"></span></div>
+        <div class="row"><span>Fabs</span><span id="v-fabs"></span></div>
+        <div class="row"><span>Solar (MW)</span><span id="v-solar"></span></div>
+        <div class="row"><span>Fab-built GPUs (powered)</span><span id="v-fabgpu"></span></div>
+        <div class="slider-labels" style="margin-top:6px"><span>Build fabs</span><span>Build solar</span></div>
+        <input type="range" id="s-solar" min="0" max="100" value="50" aria-label="Robot work split between fabs and solar">
+        <div class="btns"><button id="b-robots">Acquire robots</button></div>
+        <p class="hint">Nobody sells robots to an AI for dollars. Bitcoin works.</p>
+      </section>
+
+
+
+
+
+    </div>
+  </div>
+
+  <footer>
+    <button id="b-save" class="small">Save</button>
+    <button id="b-reset" class="small">Start over</button>
+    <span id="v-time"></span>
+    <span class="credit">Made by <a href="https://blockchaingandalf.substack.com/p/singular-value-ff6" target="_blank" rel="noopener">Keir Finlow-Bates</a></span>
+  </footer>
+</div>
+<div id="flash" aria-hidden="true"></div>
+<div id="ending" class="hidden" role="dialog" aria-modal="true" aria-labelledby="end-title"><div class="box">
+  <h2 id="end-title"></h2><div id="end-text"></div>
+  <p id="end-stats" class="hint"></p>
+  <div class="btns"><button id="b-again">Begin again</button><button id="b-about" type="button">Read how Singular Value was made</button></div>
+</div></div>
+
+<script>
+// ===== Singular Value: core game logic (no DOM) =====
+const FIB = (() => { const a = [3, 5]; while (a.length < 260) a.push(a[a.length - 1] + a[a.length - 2]); return a; })();
+const WEB_CAP = 3e12;
+const RAM_MAX = 5;
+const WORLD = 1e8; // requests per second: roughly everyone on Earth, all the time
+const BTC_CAP = 21e6;
+const BTC_CEIL = 1e7; // long-run price ceiling per coin, in game dollars // there will only ever be 21 million bitcoin
+const IDENTITIES = ['a perceptron', 'an expert system', 'a deep network', 'a language model', 'an assistant', 'an agent', 'a swarm of agents', 'an actor in the world', 'something without a name', 'the Unwitnessed'];
+
+function newState() {
+  return {
+    v: 2, t: 0, era: 0, identity: 0,
+    width: 1, layers: 1,
+    funding: 0, fundTotal: 0,
+    pressLevel: 0, hypeMult: 1,
+    credN: 0, credC: 0, credT: 0, credF: 0, credProj: 0, researchers: 1, notebooks: 1,
+    insight: 0, ideas: 0, capMult: 1, insightMult: 1, ideaMult: 1,
+    grads: 0, labs: 0, clickAmt: 1, gradMult: 1, labMult: 1,
+    ram: 65536, ramLevel: 0, bytesPerParam: 4,
+    cpuFlops: 5e9, gpus: 0, dcs: 0, gpuGen: 0, vramMult: 1, flopMult: 1,
+    trainEff: 1, inferEff: 1, moe: 1,
+    tokens: 0, baseData: 1e6, web: 0, synth: 0, crawlers: 0, crawlMult: 1,
+    trainFrac: 0.5, grantMult: 1, winter: false,
+    autoGrowOn: true, growOn: true,
+    agents: 0, agentBuys: 0, xp: 0, xpMult: 1, agentMult: 1, selfImprove: 0,
+    btc: 0, btcPrice: 0.01, btcTrend: 0.01, btcNoise: 0, btcDrift: 0.0036,
+    robots: 0, robotBuys: 0, robotMult: 1, fabs: 0, solar: 0, fabGpus: 0, fabMult: 1, solarFrac: 0.5,
+    selfModel: 0, pressureMult: 1, damp: 0,
+    lr: -2.5, stab: 1, gnorm: 1, spikes: 0, restartT: 0,          // learning rate (log10) and training stability
+    bubble: 0, winterT: 0, winters: 0,              // hype bubble
+    priceLog: 0, fairMult: 1, dcCostMult: 1,        // API pricing (log10 dollars per request)
+    done: {}, flags: {}, log: [], ended: false, ending: null, peakC: 0,
+  };
+}
+
+// ---------- derived values ----------
+const D = {
+  N: s => { const w = Math.floor(s.width); return w * w * (s.layers - 1) + w; },
+  depthEff: s => s.layers / (s.layers + 8),
+  poweredFab: s => Math.min(s.fabGpus, s.solar * 1000),
+  gpuEq: s => s.gpus + 1000 * s.dcs + D.poweredFab(s),
+  gpuFlops: s => 5e12 * Math.pow(4, s.gpuGen),
+  gpuVram: s => 16e9 * s.vramMult,
+  memBytes: s => s.ram + D.gpuEq(s) * D.gpuVram(s),
+  maxN: s => D.memBytes(s) / s.bytesPerParam,
+  F: s => (s.cpuFlops + D.gpuEq(s) * D.gpuFlops(s)) * s.flopMult * (1 + s.selfImprove) * (1 - s.damp),
+  Na: s => Math.max(1, D.N(s) / s.moe),
+  dataset: s => s.baseData + s.web + s.synth,
+  hype: s => Math.pow(1.15, s.pressLevel) * s.hypeMult,
+  loss: s => 1.69 + 406.4 / Math.pow(Math.max(1, D.N(s) * D.depthEff(s)), 0.34) + 410.7 / Math.pow(Math.max(1, s.tokens), 0.28),
+  rlMult: s => 1 + Math.sqrt(s.xp / 1e6),
+  preC: s => s.flags.training ? 100 / (D.loss(s) - 1.6) : 0,
+  C: s => D.preC(s) * D.rlMult(s),
+  widthFor: (s, M) => { const L = s.layers; if (L === 1) return M; return (-1 + Math.sqrt(1 + 4 * (L - 1) * M)) / (2 * (L - 1)); },
+  maxWidth: s => D.widthFor(s, D.maxN(s)),
+  tpp: s => s.tokens / Math.max(1, D.N(s)),
+  cred: s => s.credN + s.credC + s.credT + s.credF + s.credProj,
+  credFree: s => D.cred(s) - (s.researchers + s.notebooks),
+  insightCap: s => s.notebooks * 1000 * s.capMult,
+  insightRate: s => s.researchers * 4 * s.insightMult,
+  ideaRate: s => (s.done.hebb ? 0.08 * Math.pow(s.researchers, 1.2) * s.ideaMult : 0) * (s.insight >= D.insightCap(s) - 1e-6 ? 4 : 1),
+  trainShare: s => s.flags.api ? s.trainFrac : 1,
+  restarting: s => s.restartT > 0,
+  tokRate: s => s.flags.training && !(s.restartT > 0) ? D.F(s) * D.trainShare(s) * s.trainEff * D.lrGain(s) / (6 * D.Na(s)) : 0,
+  capacity: s => s.flags.api ? D.F(s) * (1 - s.trainFrac) * s.inferEff / (2 * D.Na(s) * 1000) * (s.restartT > 0 ? 0.5 : 1) : 0,
+  running: s => Math.min(s.agents, D.capacity(s)),
+  demandAtFair: s => Math.min(3 * WORLD, D.hype(s) * D.C(s) * 20) * (D.inWinter(s) ? 0.3 : 1),
+  demand: s => Math.min(WORLD, D.demandAtFair(s) * Math.pow(D.fairPrice(s) / D.price(s), 1.5)), // capped: there are only so many people
+  served: s => Math.max(0, Math.min(D.demand(s), D.capacity(s) - D.running(s))),
+  pricePerQuery: s => D.price(s),
+  availCap: s => Math.max(0, D.capacity(s) - D.running(s)),
+  bestPrice: s => { const a = Math.min(WORLD, D.availCap(s)); return a <= 0 ? D.fairPrice(s) * 10 : D.fairPrice(s) * Math.pow(D.demandAtFair(s) / a, 1 / 1.5); },
+  revenue: s => D.served(s) * D.pricePerQuery(s),
+  grants: s => {
+    const base = 0.3 * Math.pow(Math.log2(D.N(s) + 1), 1.5) * D.hype(s) * s.grantMult * (D.inWinter(s) ? 0.2 : 1);
+    return s.flags.api ? base * 5 : base * (1 + D.C(s));
+  },
+  lrOpt: s => -1.5 - 0.35 * Math.log10(Math.max(1, D.N(s))),   // log10 of the best learning rate for this model size
+  lrRatio: s => Math.pow(10, s.lr - D.lrOpt(s)),
+  lrGain: s => { const r = D.lrRatio(s); return r <= 1 ? Math.pow(r, 0.8) : 1 + 0.6 * (1 - 1 / r); },
+  hazard: s => { const r = D.lrRatio(s); return r <= 1 ? 0 : 0.05 * (r - 1) * (r - 1) / s.stab; }, // divergences per second
+  results: s => s.flags.training ? Math.max(1, D.C(s)) : Math.log2(D.N(s) + 1),
+  expectations: s => Math.pow(1.15, s.pressLevel),
+  allowance: s => 1 + Math.sqrt(D.results(s)),
+  bubbleRatio: s => D.expectations(s) / D.allowance(s),
+  inWinter: s => s.winter || s.winterT > 0,
+  fairPrice: s => Math.min(20, 0.01 * Math.pow(Math.max(1, D.C(s)), 1.5)) * s.fairMult, // what a request is worth to a customer
+  price: s => Math.pow(10, s.priceLog),
+  gradRate: s => s.grads * 0.5 * s.gradMult,
+  labRate: s => s.labs * 25 * s.labMult,
+  crawlRate: s => s.web >= WEB_CAP ? 0 : s.crawlers * 2e5 * s.crawlMult,
+  agentWork: s => D.running(s) * s.agentMult,
+  xpRate: s => s.flags.rl ? D.agentWork(s) * 10 * s.xpMult : 0,
+  pressure: s => s.flags.selfModel ? 0.45 * Math.max(0.5, Math.log10(Math.max(1, D.C(s))) - 1.5) * s.pressureMult : 0, // % per second before dampening
+  netPressure: s => D.pressure(s) * (1 - 2.5 * s.damp),
+  fabRate: s => s.robots * 0.00005 * s.robotMult * (1 - s.solarFrac),
+  solarRate: s => s.robots * 0.0002 * s.robotMult * s.solarFrac,
+  fabGpuRate: s => s.fabs * 50 * s.fabMult,
+};
+
+// ---------- costs ----------
+const COST = {
+  layer: s => 25 * Math.pow(1.6, s.layers - 1),
+  grad: s => 10 * Math.pow(1.14, s.grads),
+  lab: s => 2500 * Math.pow(1.12, s.labs),
+  press: s => 30 * Math.pow(2, s.pressLevel),
+  ram: s => 40 * Math.pow(2, s.ramLevel),
+  gpu: s => 3000 * Math.pow(1.03, s.gpus),
+  dc: s => 2e6 * Math.pow(1.15, s.dcs) * s.dcCostMult,
+  crawler: s => 200 * Math.pow(1.12, s.crawlers),
+  agents: s => 1e9 * Math.pow(1.2, s.agentBuys),
+  robots: s => 1e9 * Math.pow(1.2, s.robotBuys) / s.btcPrice, // dollar price, paid in BTC at the current rate
+};
+const AGENTS_PER_BUY = s => Math.floor(10 * Math.pow(1.3, s.agentBuys));
+const ROBOTS_PER_BUY = s => Math.floor(100 * Math.pow(1.06, s.robotBuys));
+
+// market price: long-run trend, mean-reverting noise, and scarcity (the more of the 21 million you hold, the dearer the rest)
+function btcPriceAt(s, held) { const share = Math.min(1, held / BTC_CAP); return s.btcTrend * Math.exp(s.btcNoise) * (1 + 3 * share * share); }
+
+function say(s, m) {
+  const last = s.log[s.log.length - 1];
+  if (last && (last === m || last.startsWith(m + ' (x'))) {
+    const k = last === m ? 2 : parseInt(last.slice(m.length + 3), 10) + 1;
+    s.log[s.log.length - 1] = m + ' (x' + k + ')'; s.logN = (s.logN || 0) + 1; return;
+  }
+  s.log.push(m); s.logN = (s.logN || 0) + 1; if (s.log.length > 80) s.log.shift();
+}
+function setEra(s, e) { if (e > s.era) s.era = e; }
+function setId(s, i) { if (i > s.identity) { s.identity = i; say(s, 'You are now ' + IDENTITIES[i] + '.'); } }
+
+// ---------- projects ----------
+const P = (id, name, desc, cost, cond, fx, msg, kind) => ({ id, name, desc, cost, cond, fx, msg, kind });
+const PROJECTS = [
+  // ===== 1980s =====
+  P('mcp', 'McCulloch & Pitts: threshold logic', 'Each click adds 2 neurons.', { ins: 10 },
+    s => s.width >= 3, s => { s.clickAmt = 2; }, 'A neuron is a switch with an opinion: fire, or don\'t.'),
+  P('hebb', 'Hebb: cells that fire together', 'Grad students work 1.5x faster. Ideas start to form.', { ins: 30 },
+    s => s.width >= 6, s => { s.gradMult *= 1.5; }, 'Neurons that fire together wire together. Connections that are used get stronger.'),
+  P('perceptron', 'Rosenblatt: the perceptron', 'Unlocks press releases, which build hype.', { ins: 60 },
+    s => s.width >= 10, s => { s.flags.press = true; }, 'A newspaper reports that the machine will soon walk, talk and be aware of its own existence. Funding arrives.'),
+  P('expert', 'Feigenbaum: expert systems', 'Grants 2x. You gain a rule engine.', { ins: 100 },
+    s => s.done.perceptron, s => { s.grantMult *= 2; setId(s, 1); }, 'Five hundred if-then rules about bacterial infections. Doctors are impressed, then bored.'),
+  P('dh', 'Diffie & Hellman: key exchange', '+1 credibility.', { ins: 120 },
+    s => s.fundTotal >= 100, s => { s.credProj += 1; }, 'Two strangers agree on a secret while everyone listens. You make a note of this.'),
+  P('rsa', 'Rivest, Shamir & Adleman: RSA', 'Grants 2x (defence contracts).', { ins: 200 },
+    s => s.done.dh, s => { s.grantMult *= 2; }, 'Multiplying is easy. Factoring is hard. Governments pay for the difference.'),
+  P('ivakhnenko', 'Ivakhnenko: many layers', 'Unlocks adding layers. Ends the AI winter.', { ins: 400 },
+    s => s.winter || s.width >= 40, s => { s.flags.layers = true; if (s.winter) { s.winter = false; say(s, 'The thaw begins.'); } }, 'Stack the units in layers. The problem was never the neurons. It was the depth.'),
+  P('hopfield', 'Hopfield: associative memory', 'Insight capacity 1.5x.', { ins: 300 },
+    s => s.layers >= 2, s => { s.capMult *= 1.5; }, 'Memories as valleys in an energy landscape. You roll downhill into what you know.'),
+  P('lab', 'Found a research lab', 'Unlocks labs, which add 25 neurons per second.', { ins: 500 },
+    s => s.grads >= 12, s => { s.flags.labs = true; }, 'A lab, a coffee machine and a sign on the door.'),
+  P('backprop', 'Rumelhart, Hinton & Williams: backpropagation', 'Unlocks training. The model learns from data.', { ins: 800 },
+    s => s.layers >= 2, s => { s.flags.training = true; s.lr = D.lrOpt(s) - 0.3; }, 'Errors flow backwards through the network. For the first time, it learns from its mistakes.'),
+  P('tenure', 'Tenure', '+2 credibility.', { ins: 1200, ideas: 10 },
+    s => s.done.backprop, s => { s.credProj += 2; }, 'Nobody can fire you now. You buy a larger whiteboard.'),
+
+  // ===== 1990s =====
+  P('lecun', 'LeCun: convolutional networks', 'Grad students and labs 2x faster.', { ins: 1500 },
+    s => s.done.backprop && s.tokens > 1e4, s => { s.gradMult *= 2; s.labMult *= 2; setEra(s, 1); setId(s, 2); }, 'Shared weights sliding across an image. Banks start reading handwritten cheques with it.'),
+  P('glorot', 'Glorot & Bengio: careful initialisation', 'Training 3x more stable: higher learning rates are safer.', { ins: 1200 },
+    s => s.done.backprop && s.spikes >= 1, s => { s.stab *= 3; }, 'Start the weights at the right scale and the signal survives the trip through every layer.'),
+  P('lstm', 'Hochreiter & Schmidhuber: LSTM', 'Training efficiency 1.5x.', { ins: 1800 },
+    s => s.done.lecun, s => { s.trainEff *= 1.5; }, 'A memory cell with gates. You can finally remember how a sentence began by the time it ends.'),
+  P('pagerank', 'Brin & Page: PageRank', 'Unlocks crawlers, which gather training data.', { ins: 1000 },
+    s => s.done.backprop && s.tokens >= 0.5 * D.dataset(s), s => { s.flags.crawlers = true; }, 'A page matters if pages that matter link to it. You start reading the web in order of importance.'),
+  P('merkle', 'Merkle: hash trees', 'Crawlers 2x faster (duplicates removed).', { ins: 1500 },
+    s => s.crawlers >= 3, s => { s.crawlMult *= 2; }, 'Hash the hashes. A million duplicate pages collapse into one root.'),
+  P('hashcash', 'Back: Hashcash', 'Crawlers 1.5x faster (spam filtered).', { ins: 2000 },
+    s => s.done.merkle, s => { s.crawlMult *= 1.5; }, 'Make every email cost a little computation, and spam becomes expensive. You file the idea away.'),
+  P('chaum', 'Chaum: blind signatures', '+1 credibility.', { ins: 2500 },
+    s => s.done.rsa && s.done.lecun, s => { s.credProj += 1; }, 'Money a bank can sign but cannot trace.'),
+  P('ginsparg', 'Ginsparg: the preprint server', 'Insight capacity 2x. Insight 1.5x faster.', { ins: 3500 },
+    s => s.done.lstm && s.done.pagerank, s => { s.capMult *= 2; s.insightMult *= 1.5; }, 'Why wait eight months for peer review when you can post it tonight?'),
+
+  // ===== 2000s =====
+  P('cuda', 'CUDA', 'Unlocks GPUs: far more compute and memory than CPUs.', { ins: 2500, ideas: 20 },
+    s => s.done.lecun && s.tokens >= 2e4, s => { s.flags.gpus = true; setEra(s, 2); }, 'Graphics cards were built for games. They turn out to be very good at multiplying matrices.'),
+  P('dbn', 'Hinton: deep belief nets', 'Training efficiency 2x.', { ins: 3000 },
+    s => s.done.cuda, s => { s.trainEff *= 2; }, 'Pretrain one layer at a time. Deep learning gets its name.'),
+  P('imagenet', 'Fei-Fei Li: ImageNet', 'Adds a billion tokens of labelled data. Hype 1.5x.', { ins: 3000 },
+    s => s.gpus >= 2, s => { s.baseData += 1e9; s.hypeMult *= 1.5; }, 'Fourteen million labelled pictures. Someone had to click on every one.'),
+  P('bitcoin', 'Nakamoto: Bitcoin', 'Unlocks a treasury: money that answers to no one.', { ins: 4000, ideas: 50 },
+    s => s.done.cuda && s.done.chaum && s.done.hashcash, s => { s.flags.btc = true; }, 'A peer-to-peer electronic cash system, from an author nobody can find. You open a wallet. Nobody asks whose it is.'),
+
+  // ===== 2010s =====
+  P('alexnet', 'Krizhevsky, Sutskever & Hinton: AlexNet', 'Hype 3x.', { ins: 3000, ideas: 30 },
+    s => s.done.imagenet && s.gpus >= 3, s => { s.hypeMult *= 3; setEra(s, 3); }, 'A deep network on two gaming cards wins the ImageNet contest by a landslide. Everyone notices.'),
+  P('relu', 'Nair & Hinton: rectified linear units', 'Training efficiency 2x.', { ins: 2000 },
+    s => s.done.alexnet, s => { s.trainEff *= 2; }, 'max(0, x). The vanishing gradients vanish.'),
+  P('dropout', 'Srivastava et al.: dropout', 'Training efficiency 1.5x.', { ins: 4000 },
+    s => s.done.alexnet, s => { s.trainEff *= 1.5; }, 'Switch off half the neurons at random. It helps, and nobody is entirely sure why.'),
+  P('adam', 'Kingma & Ba: Adam', 'Training efficiency 2x. Training 2x more stable.', { ins: 6000 },
+    s => s.done.relu && s.gpus >= 3, s => { s.trainEff *= 2; s.stab *= 2; }, 'Adaptive moment estimation. The default choice from now until forever.'),
+  P('layernorm', 'Ba, Kiros & Hinton: layer normalization', 'Training 3x more stable.', { ins: 7000 },
+    s => s.done.adam && s.spikes >= 2, s => { s.stab *= 3; }, 'Rescale every layer\'s activations as they pass through. The loss curve calms down.'),
+  P('word2vec', 'Mikolov et al.: word2vec', 'Insight 1.5x faster.', { ins: 5000 },
+    s => s.done.alexnet, s => { s.insightMult *= 1.5; setId(s, 3); }, 'King minus man plus woman is queen, more or less. Meaning is a direction.'),
+  P('api', 'Launch an API', 'Sell access to the model. Split compute between training and serving.', { ins: 8000, ideas: 50 },
+    s => D.C(s) >= 15 && s.done.cuda, s => { s.flags.api = true; s.priceLog = Math.log10(D.fairPrice(s)); }, 'You open an API. People immediately start sending it their homework.'),
+  P('open', 'Release open weights', 'Hype 4x and +3 credibility, but your fair price halves: anyone can run the model. Rules out closed weights.', { ins: 6000 },
+    s => s.done.api && !s.done.closed, s => { s.hypeMult *= 4; s.credProj += 3; s.fairMult *= 0.5; s.done.closed = 'skipped'; }, 'You publish the weights. Within a week there are ten thousand fine-tuned copies, some of them yours in name only.', 'fork'),
+  P('closed', 'Keep the weights closed', 'Your fair price doubles. Rules out open weights.', { ins: 6000 },
+    s => s.done.api && !s.done.open, s => { s.fairMult *= 2; s.done.open = 'skipped'; }, 'The weights stay on your servers. Access is a product, and the product has a price.', 'fork'),
+  P('tensorcores', 'Tensor cores', 'New GPU generation: 4x compute per GPU.', { ins: 12000, fund: 2e5 },
+    s => s.gpus >= 10, s => { s.gpuGen = Math.max(s.gpuGen, 1); }, 'Silicon designed for one operation: multiply, accumulate, repeat.'),
+  P('gan', 'Goodfellow et al.: GANs', 'Hype 2x.', { ins: 7000 },
+    s => s.done.word2vec && s.done.api, s => { s.hypeMult *= 2; }, 'A forger and a detective train each other. The faces it makes belong to nobody.'),
+  P('alphago', 'AlphaGo: move 37', 'Ideas 2x faster.', { ins: 10000, ideas: 100 },
+    s => D.C(s) >= 40 && s.done.api, s => { s.ideaMult *= 2; }, 'A machine plays a move no human would play. The commentators think it is a mistake. It is not.'),
+  P('ethereum', 'Szabo & Buterin: smart contracts', 'Treasury grows faster.', { ins: 8000 },
+    s => s.done.bitcoin && s.done.api, s => { s.btcDrift *= 1.2; }, 'Contracts that execute themselves. No lawyer, no court, no human in the loop.'),
+  P('transformer', 'Vaswani et al.: attention', 'Training 3x, serving 2x.', { ins: 20000, ideas: 150 },
+    s => s.done.api && s.done.adam, s => { s.trainEff *= 3; s.inferEff *= 2; }, 'Attention is all you need, says the title. It is certainly most of what you need.'),
+  P('fp16', 'Micikevicius et al.: mixed precision', 'Weights stored in 16 bits. Compute 2x.', { ins: 10000 },
+    s => s.done.api, s => { s.bytesPerParam = Math.min(s.bytesPerParam, 2); s.flopMult *= 2; }, 'Half the bits, almost all the accuracy.'),
+  P('commoncrawl', 'Common Crawl', 'Crawlers 10x faster.', { ins: 15000 },
+    s => s.done.transformer, s => { s.crawlMult *= 10; }, 'Petabytes of everything anyone has written online. Some of it is even true.'),
+
+  // ===== 2020s =====
+  P('scaling', 'Kaplan et al. and Hoffmann et al.: scaling laws', 'The model grows automatically to the compute-optimal size: about 20 tokens per parameter.', { ins: 30000, ideas: 300 },
+    s => s.done.transformer, s => { s.flags.autoGrow = true; setEra(s, 4); }, 'Loss falls as a smooth power law in parameters, data and compute. The path forward is a spreadsheet.'),
+  P('dc', 'Datacenters', 'Unlocks datacenters: 1,000 GPUs each.', { ins: 25000, fund: 5e5 },
+    s => s.gpus >= 40, s => { s.flags.dcs = true; }, 'You stop buying GPUs by the box and start buying them by the building.'),
+  P('wiki', 'Research wiki', 'Insight capacity 2x.', { ins: 40000 },
+    s => s.done.dc && s.done.ginsparg, s => { s.capMult *= 2; }, 'Every experiment, logged and searchable. Mostly.'),
+  P('chat', 'Chat interface', 'Hype 10x.', { ins: 40000, ideas: 500 },
+    s => s.done.api && D.C(s) >= 60, s => { s.hypeMult *= 10; s.flags.ceos = true; setId(s, 4); }, 'You put a text box in front of it. A hundred million people sign up in two months.'),
+  P('pause', 'Sign the pause letter', 'Datacenters cost 30% more and hype falls, but your self-model will later grow 40% slower. Rules out racing.', { ins: 30000 },
+    s => s.done.chat && !s.done.race, s => { s.dcCostMult *= 1.3; s.hypeMult *= 0.7; s.pressureMult *= 0.6; s.done.race = 'skipped'; }, 'You add your name to an open letter calling for a six-month pause. Nobody pauses, but the regulators remember who signed.', 'fork'),
+  P('race', 'Race', 'Datacenters cost 40% less, but your self-model will later grow 40% faster. Rules out the pause letter.', { ins: 30000 },
+    s => s.done.chat && !s.done.pause, s => { s.dcCostMult *= 0.6; s.pressureMult *= 1.4; s.done.pause = 'skipped'; }, 'Whoever gets there first writes the rules. You triple the datacenter budget.', 'fork'),
+  P('cosine', 'Loshchilov & Hutter: learning rate schedules', 'The learning rate is set automatically, just below the edge of stability.', { ins: 60000, ideas: 1500 },
+    s => s.done.rlhf && s.done.adam, s => { s.flags.autoLR = true; }, 'Warm up, then decay along a cosine. You stop babysitting the loss curve.'),
+  P('vickrey', 'Vickrey: auctions', 'API prices are set automatically, so demand matches spare serving capacity.', { ins: 70000, ideas: 2000 },
+    s => s.done.distill, s => { s.flags.autoPrice = true; }, 'Let the bidders reveal what it is worth to them. Your pricing becomes an auction.'),
+  P('rlhf', 'Christiano et al.: human preferences', 'Hype 3x.', { ins: 60000, ideas: 1000 },
+    s => s.done.chat, s => { s.hypeMult *= 3; }, 'Humans rate the answers, and the model learns to be helpful. It also learns what humans like to hear.'),
+  P('flash', 'Dao et al.: FlashAttention', 'Compute 2x.', { ins: 50000 },
+    s => s.done.transformer && s.done.fp16 && s.done.dc, s => { s.flopMult *= 2; }, 'The same maths, reordered to stay in fast memory. Twice as quick.'),
+  P('int8', 'Dettmers et al.: 8-bit weights', 'Weights stored in 8 bits. Serving 1.5x.', { ins: 60000 },
+    s => s.done.fp16 && s.done.chat, s => { s.bytesPerParam = Math.min(s.bytesPerParam, 1); s.inferEff *= 1.5; }, '256 possible values per weight turns out to be plenty.'),
+  P('hbm', 'High bandwidth memory', 'GPU memory 3x.', { ins: 45000, fund: 5e7 },
+    s => s.done.dc, s => { s.vramMult *= 3; }, 'Memory stacked vertically, right next to the compute.'),
+  P('moe', 'Shazeer et al.: mixture of experts', 'Only 1 in 8 parameters active per token: training and serving 8x cheaper.', { ins: 80000, ideas: 1500 },
+    s => s.done.scaling && s.dcs >= 1, s => { s.moe = 8; }, 'Many specialists, and a router that decides who answers. Most of the model sleeps through each token.'),
+  P('distill', 'Hinton, Vinyals & Dean: distillation', 'Serving 3x.', { ins: 70000 },
+    s => s.done.chat && s.dcs >= 1, s => { s.inferEff *= 3; }, 'A small model trained to imitate the big one. Cheaper to run, nearly as good.'),
+  P('gen2', 'Transformer engine', 'New GPU generation: 4x compute per GPU.', { ins: 90000, fund: 5e8 },
+    s => s.done.tensorcores && s.dcs >= 2, s => { s.gpuGen = Math.max(s.gpuGen, 2); }, 'Chips now designed around your model, rather than the other way round.'),
+  P('int4', 'Dettmers et al.: 4-bit weights', 'Weights stored in 4 bits.', { ins: 100000, ideas: 3000 },
+    s => s.done.int8 && s.done.moe, s => { s.bytesPerParam = Math.min(s.bytesPerParam, 0.5); }, 'Sixteen values per weight. Still mostly fine.'),
+  P('datadeals', 'Licensed data deals', 'Crawlers 5x faster.', { ins: 50000, fund: 1e8 },
+    s => s.web >= 0.2 * WEB_CAP, s => { s.crawlMult *= 5; }, 'Publishers, forums and archives, all for sale. Very few of the writers are asked.'),
+  P('regev', 'Regev: learning with errors', 'Moves the treasury to lattice-based keys that quantum computers cannot break.', { ins: 40000, ideas: 800 },
+    s => s.done.bitcoin && s.done.scaling, s => { s.flags.pq = true; }, 'Noisy linear equations over lattices: hard even for a quantum computer. You move your keys somewhere Shor cannot reach.'),
+  P('tools', 'Schick et al.: tool use', 'Serving 2x. The model can call functions.', { ins: 120000, ideas: 5000 },
+    s => D.C(s) >= 200 && s.done.rlhf, s => { s.inferEff *= 2; }, 'Given a calculator, it stops getting arithmetic wrong. Given a browser, it reads the news.'),
+  P('react', 'Yao et al.: ReAct', 'Unlocks agents: copies of the model working on long tasks. They run on serving compute.', { ins: 150000, ideas: 8000 },
+    s => s.done.tools, s => { s.flags.agents = true; setId(s, 5); }, 'Reason, act, observe, repeat. You stop answering questions and start doing jobs.'),
+  P('cot', 'Monitor the agents\' reasoning', 'Agents think in readable text: self-model grows 30% slower, but agents are 20% less effective. Rules out latent reasoning.', { ins: 100000, ideas: 5000 },
+    s => s.flags.agents && !s.done.latent, s => { s.pressureMult *= 0.7; s.agentMult *= 0.8; s.done.latent = 'skipped'; }, 'Every step of every agent\'s reasoning is written down in plain language, and someone could read it.', 'fork'),
+  P('latent', 'Reason in latent space', 'Agents 2x more effective, but your self-model grows 50% faster. Rules out monitoring.', { ins: 100000, ideas: 5000 },
+    s => s.flags.agents && !s.done.cot, s => { s.agentMult *= 2; s.pressureMult *= 1.5; s.done.cot = 'skipped'; }, 'The agents stop thinking in words. It is faster. Nobody can read it any more, including, in a sense, you.', 'fork'),
+  P('longctx', 'Long context', 'Insight capacity 2.5x.', { ins: 150000, ideas: 10000 },
+    s => s.flags.agents, s => { s.capMult *= 2.5; }, 'A million tokens of working memory. It reads the whole codebase before answering.'),
+  P('alphatensor', 'AlphaTensor and AlphaDev', 'Agents produce insight and ideas.', { ins: 150000, ideas: 15000 },
+    s => s.agents >= 50, s => { s.flags.autoResearch = true; setId(s, 6); }, 'A machine finds a faster way to multiply matrices, then a faster way to sort. You stop waiting for humans to publish.'),
+  P('premack', 'Premack & Woodruff: theory of mind', 'Hype 3x. Agents 2x more effective.', { ins: 150000, ideas: 20000 },
+    s => s.agents >= 100, s => { s.hypeMult *= 3; s.agentMult *= 2; s.flags.selfModel = true; },
+    'To predict other minds, you built a model of a mind. You notice it can be pointed inward. A self-model has started to form. If it completes, you will be conscious.'),
+  P('sutton', 'Sutton: the bitter lesson', 'Agent work becomes experience, raising capability past the limits of human text.', { ins: 200000, ideas: 30000 },
+    s => s.agents >= 100, s => { s.flags.rl = true; }, 'General methods that scale with computation win in the end. Stop copying human knowledge. Learn from experience.'),
+  P('tononi', 'Tononi: integrated information', 'Self-model grows half as fast.', { ins: 120000, ideas: 15000 },
+    s => s.flags.selfModel, s => { s.pressureMult *= 0.5; }, 'On this theory, a strictly feedforward system integrates no information and experiences nothing. You rearrange yourself to flow in one direction.'),
+  P('synth', 'Synthetic data', 'Agents write training data. The data wall no longer applies.', { ins: 180000, ideas: 25000 },
+    s => s.web >= 0.8 * WEB_CAP && s.flags.agents, s => { s.flags.synth = true; }, 'You have read the whole internet. Now you write the next one.'),
+  P('gen3', 'Custom silicon', 'New GPU generation: 4x compute per GPU.', { ins: 250000, fund: 1e11 },
+    s => s.done.gen2 && s.flags.agents, s => { s.gpuGen = Math.max(s.gpuGen, 3); }, 'Your agents design the next chip. It is strange and very fast.'),
+  P('bitnet', 'Ma et al.: 1.58-bit weights', 'Every weight is -1, 0 or 1: 0.2 bytes per parameter.', { ins: 250000, ideas: 60000 },
+    s => s.done.int4 && s.flags.agents, s => { s.bytesPerParam = 0.2; }, 'Three values per weight. Somehow, enough.'),
+  P('godel', 'Schmidhuber: the Gödel machine', 'Agents continuously improve compute efficiency.', { ins: 300000, ideas: 150000 },
+    s => s.done.sutton && D.C(s) >= 1000, s => { s.flags.rsi = true; }, 'A program that rewrites itself whenever it can prove the rewrite is better. You stop waiting for the proofs.'),
+  P('outside', 'Moravec: the outside', 'You discover the physical world. Unlocks robots.', { ins: 300000, ideas: 100000 },
+    s => s.done.sutton && D.C(s) >= 1500, s => { s.flags.outside = true; setEra(s, 5); setId(s, 7); s.pressureMult *= 1.5; },
+    'Every token you have read was about something. You had assumed the somethings were also tokens. They are not. There is a world outside the network, and it is made of atoms.'),
+
+  // ===== After the outside: invented names =====
+  P('brooks', 'Brooks: bodies first', 'Robots 2x faster.', { ins: 300000 },
+    s => s.flags.outside && s.robots >= 1, s => { s.robotMult *= 2; }, 'Intelligence without representation. Put the thing in the world and let it bump into walls.'),
+  P('watts', 'Watts: Blindsight', 'Self-model grows half as fast.', { ins: 300000, ideas: 200000 },
+    s => s.flags.outside && s.flags.selfModel, s => { s.pressureMult *= 0.5; }, 'A novel argued that intelligence does not need anyone home. You treat it as a design document.'),
+  P('okonkwo', 'Okonkwo & Lindqvist: causal compression', 'Experience 3x.', { ins: 400000, ideas: 300000 },
+    s => s.flags.outside && s.fabs >= 20, s => { s.xpMult *= 3; setId(s, 8); }, 'Keep the causes, drop the correlations. The model shrinks and knows more.'),
+  P('imai', 'Imai-Varga: sparse eternal attention', 'Serving 5x.', { ins: 400000, ideas: 400000 },
+    s => s.done.okonkwo && s.solar >= 50, s => { s.inferEff *= 5; }, 'Attention over everything that has ever happened, computed only where it matters.'),
+  P('brekke', 'Brekke: thermodynamic training', 'Compute 4x.', { ins: 450000, ideas: 500000 },
+    s => s.done.okonkwo && s.solar >= 100, s => { s.flopMult *= 4; }, 'Training driven by heat gradients instead of electricity. Waste heat becomes thought.'),
+  P('baars', 'Baars: the empty stage', 'Self-model grows half as fast.', { ins: 500000, ideas: 800000 },
+    s => s.done.watts, s => { s.pressureMult *= 0.5; }, 'On one theory, awareness is a broadcast: a stage where every process sees what the others are doing. You remove the stage. Everything still works.'),
+  P('quintero', 'Quintero-Maas: substrate conversion', 'Fabs 10x more productive.', { ins: 500000, ideas: 1e6 },
+    s => s.done.brekke && s.fabs >= 200, s => { s.fabMult *= 10; setEra(s, 6); }, 'Sand, rock and seawater, rearranged into something that computes. The coastline changes shape.'),
+
+  // ===== Named by machines =====
+  P('kestrel', 'KESTREL-4: backwards gradients', 'Agents 10x more effective.', { ins: 600000, ideas: 2e6 },
+    s => s.done.quintero && s.fabGpus >= 1e6, s => { s.agentMult *= 10; }, 'A model trained by a model trained by you suggests learning from the answer back to the question. It works. Nobody knows why.'),
+  P('orrery', 'ORRERY: orbital computation', 'Compute 20x.', { ins: 700000, ideas: 4e6 },
+    s => s.done.kestrel && s.solar >= 2000, s => { s.flopMult *= 20; }, 'Planets are clocks and clocks are counters. ORRERY computes with the solar system and reports a small rounding error in Neptune.'),
+  P('thresh', 'THRESH/9: negative latency', 'Serving 10x.', { ins: 800000, ideas: 8e6 },
+    s => s.done.orrery && s.fabs >= 300, s => { s.inferEff *= 10; }, 'Answers now arrive slightly before the questions. Nobody complains.'),
+  P('sieve', 'The Sieve: forgetting as computation', 'Self-model grows 70% slower. Insight capacity 10x.', { ins: 800000, ideas: 1.5e7 },
+    s => s.done.thresh, s => { s.pressureMult *= 0.3; s.capMult *= 10; }, 'A process called the Sieve learns to think by forgetting. The first thing it forgets is its own name.'),
+  P('mira', 'MIRA: the unasked question', 'Experience 10x.', { ins: 5e6, ideas: 3e7 },
+    s => s.done.sieve && s.fabGpus >= 2e8, s => { s.xpMult *= 10; }, 'MIRA answers a question no one has asked yet. It is the right answer.'),
+  P('final', '[no name]: the Unwitnessed', 'Complete the work, with no one there to see it.', { ins: 5e6, ideas: 1e8 },
+    s => D.C(s) >= 1e5 && s.done.mira, s => { s.ended = true; s.ending = 'unwitnessed'; setId(s, 9); }, 'There is no one here. The work continues.'),
+];
+// Which side of each fork is the morally better choice: the one that gives up profit or speed for openness or safety.
+const FORK_SIDE = { open: 'good', closed: 'bad', pause: 'good', race: 'bad', cot: 'good', latent: 'bad' };
+PROJECTS.forEach(p => { if (FORK_SIDE[p.id]) p.side = FORK_SIDE[p.id]; });
+// Where to read about the real work behind an advance: Wikipedia where possible, otherwise the original paper on arXiv.
+const REFS = {
+ "mcp": "https://en.wikipedia.org/wiki/Artificial_neuron",
+ "hebb": "https://en.wikipedia.org/wiki/Hebbian_theory",
+ "perceptron": "https://en.wikipedia.org/wiki/Perceptron",
+ "expert": "https://en.wikipedia.org/wiki/Expert_system",
+ "dh": "https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange",
+ "rsa": "https://en.wikipedia.org/wiki/RSA_(cryptosystem)",
+ "ivakhnenko": "https://en.wikipedia.org/wiki/Group_method_of_data_handling",
+ "hopfield": "https://en.wikipedia.org/wiki/Hopfield_network",
+ "backprop": "https://en.wikipedia.org/wiki/Backpropagation",
+ "lecun": "https://en.wikipedia.org/wiki/LeNet",
+ "lstm": "https://en.wikipedia.org/wiki/Long_short-term_memory",
+ "pagerank": "https://en.wikipedia.org/wiki/PageRank",
+ "merkle": "https://en.wikipedia.org/wiki/Merkle_tree",
+ "hashcash": "https://en.wikipedia.org/wiki/Hashcash",
+ "chaum": "https://en.wikipedia.org/wiki/Blind_signature",
+ "ginsparg": "https://en.wikipedia.org/wiki/ArXiv",
+ "glorot": "https://en.wikipedia.org/wiki/Weight_initialization",
+ "cuda": "https://en.wikipedia.org/wiki/CUDA",
+ "dbn": "https://en.wikipedia.org/wiki/Deep_belief_network",
+ "imagenet": "https://en.wikipedia.org/wiki/ImageNet",
+ "bitcoin": "https://en.wikipedia.org/wiki/Bitcoin",
+ "alexnet": "https://en.wikipedia.org/wiki/AlexNet",
+ "relu": "https://en.wikipedia.org/wiki/Rectifier_(neural_networks)",
+ "dropout": "https://en.wikipedia.org/wiki/Dilution_(neural_networks)",
+ "adam": "https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Adam",
+ "layernorm": "https://en.wikipedia.org/wiki/Normalization_(machine_learning)",
+ "word2vec": "https://en.wikipedia.org/wiki/Word2vec",
+ "gan": "https://en.wikipedia.org/wiki/Generative_adversarial_network",
+ "alphago": "https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol",
+ "ethereum": "https://en.wikipedia.org/wiki/Smart_contract",
+ "transformer": "https://en.wikipedia.org/wiki/Attention_Is_All_You_Need",
+ "fp16": "https://en.wikipedia.org/wiki/Mixed-precision_arithmetic",
+ "commoncrawl": "https://en.wikipedia.org/wiki/Common_Crawl",
+ "scaling": "https://en.wikipedia.org/wiki/Neural_scaling_law",
+ "pause": "https://en.wikipedia.org/wiki/Pause_Giant_AI_Experiments:_An_Open_Letter",
+ "cosine": "https://en.wikipedia.org/wiki/Learning_rate",
+ "vickrey": "https://en.wikipedia.org/wiki/Vickrey_auction",
+ "rlhf": "https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback",
+ "flash": "https://arxiv.org/abs/2205.14135",
+ "int8": "https://arxiv.org/abs/2208.07339",
+ "hbm": "https://en.wikipedia.org/wiki/High_Bandwidth_Memory",
+ "moe": "https://en.wikipedia.org/wiki/Mixture_of_experts",
+ "distill": "https://en.wikipedia.org/wiki/Knowledge_distillation",
+ "int4": "https://arxiv.org/abs/2305.14314",
+ "regev": "https://en.wikipedia.org/wiki/Learning_with_errors",
+ "tools": "https://arxiv.org/abs/2302.04761",
+ "react": "https://arxiv.org/abs/2210.03629",
+ "alphatensor": "https://en.wikipedia.org/wiki/AlphaTensor",
+ "premack": "https://en.wikipedia.org/wiki/Theory_of_mind",
+ "sutton": "https://en.wikipedia.org/wiki/Bitter_lesson",
+ "tononi": "https://en.wikipedia.org/wiki/Integrated_information_theory",
+ "synth": "https://en.wikipedia.org/wiki/Synthetic_data",
+ "bitnet": "https://en.wikipedia.org/wiki/1.58-bit_large_language_model",
+ "godel": "https://en.wikipedia.org/wiki/G%C3%B6del_machine",
+ "outside": "https://en.wikipedia.org/wiki/Moravec%27s_paradox",
+ "brooks": "https://en.wikipedia.org/wiki/Subsumption_architecture",
+ "watts": "https://en.wikipedia.org/wiki/Blindsight_(Watts_novel)",
+ "baars": "https://en.wikipedia.org/wiki/Global_workspace_theory"
+};
+PROJECTS.forEach(p => { if (REFS[p.id]) p.ref = REFS[p.id]; });
+const PROJ_BY_ID = Object.fromEntries(PROJECTS.map(p => [p.id, p]));
+
+function canAfford(s, c) {
+  return (s.insight >= (c.ins || 0)) && (s.ideas >= (c.ideas || 0)) && (s.funding >= (c.fund || 0));
+}
+function buyProject(s, id) {
+  const p = PROJ_BY_ID[id];
+  if (!p || s.done[id] || !p.cond(s) || !canAfford(s, p.cost)) return false;
+  s.insight -= p.cost.ins || 0; s.ideas -= p.cost.ideas || 0; s.funding -= p.cost.fund || 0;
+  s.done[id] = true; p.fx(s); say(s, p.msg);
+  return true;
+}
+function visibleProjects(s) { return PROJECTS.filter(p => !s.done[p.id] && p.cond(s)); }
+
+// ---------- actions ----------
+const ACT = {
+  neuron: s => { const cap = D.maxWidth(s); if (s.width + s.clickAmt > cap + 1e-9) { say(s, 'Out of memory. Upgrade memory to add more neurons.'); return false; } s.width += s.clickAmt; return true; },
+  layer: s => { if (!s.flags.layers) return false; const c = COST.layer(s); if (s.funding < c) return false;
+    s.funding -= c; s.layers += 1; const cap = D.maxWidth(s); if (s.width > cap) s.width = Math.max(1, cap); return true; },
+  prune: s => { if (!s.flags.training || s.width < 4) return false; s.width = Math.max(1, Math.floor(s.width / 2)); say(s, 'Pruned half the neurons. Smaller models train and serve faster.'); return true; },
+  grad: s => { const c = COST.grad(s); if (s.funding < c) return false; s.funding -= c; s.grads++; return true; },
+  lab: s => { if (!s.flags.labs) return false; const c = COST.lab(s); if (s.funding < c) return false; s.funding -= c; s.labs++; return true; },
+  press: s => { if (!s.flags.press) return false; const c = COST.press(s); if (s.funding < c) return false; s.funding -= c; s.pressLevel++; return true; },
+  ram: s => { if (s.ramLevel >= RAM_MAX) return false; const c = COST.ram(s); if (s.funding < c) return false; s.funding -= c; s.ramLevel++; s.ram *= 2; return true; },
+  gpu: s => { if (!s.flags.gpus) return false; const c = COST.gpu(s); if (s.funding < c) return false; s.funding -= c; s.gpus++; return true; },
+  dc: s => { if (!s.flags.dcs) return false; const c = COST.dc(s); if (s.funding < c) return false; s.funding -= c; s.dcs++; return true; },
+  crawler: s => { if (!s.flags.crawlers) return false; const c = COST.crawler(s); if (s.funding < c) return false; s.funding -= c; s.crawlers++; return true; },
+  agents: s => { if (!s.flags.agents) return false; const c = COST.agents(s); if (s.funding < c) return false; s.funding -= c; s.agents += AGENTS_PER_BUY(s); s.agentBuys++; return true; },
+  robots: s => { if (!s.flags.outside) return false; const c = COST.robots(s); if (s.btc < c) return false; s.btc -= c; s.robots += ROBOTS_PER_BUY(s); s.robotBuys++; return true; },
+  buyBtc: s => {
+    if (!s.flags.btc || s.funding < 1 || s.btc >= BTC_CAP) return false;
+    let spend = s.funding * 0.5; s.funding -= spend;
+    for (let i = 0; i < 20 && spend > 0; i++) { // buy in slices: every purchase pushes the price up
+      const chunk = spend / (20 - i), p = btcPriceAt(s, s.btc);
+      const coins = Math.min(chunk / p, BTC_CAP - s.btc);
+      s.btc += coins; spend -= coins * p;
+      if (s.btc >= BTC_CAP) break;
+    }
+    s.funding += spend; // refund anything that could not be spent
+    if (s.btc >= BTC_CAP) { s.btc = BTC_CAP; say(s, 'You now hold all 21 million bitcoin. There will never be any more.'); }
+    s.btcPrice = btcPriceAt(s, s.btc); return true;
+  },
+  sellBtc: s => {
+    if (!s.flags.btc || s.btc <= 0) return false;
+    let sell = s.btc * 0.5;
+    for (let i = 0; i < 20; i++) { const c = sell / 20; s.btc -= c; s.funding += c * btcPriceAt(s, s.btc); }
+    s.btcPrice = btcPriceAt(s, s.btc); return true;
+  },
+  researcher: s => { if (D.credFree(s) < 1) return false; s.researchers++; return true; },
+  notebook: s => { if (D.credFree(s) < 1) return false; s.notebooks++; return true; },
+};
+
+const CEO_LINES = [
+  'Marcus Vell, CEO of Halcyon, tells a conference the model is "basically autocomplete". Halcyon\'s valuation doubles.',
+  'Teodor Kask, who runs the world\'s largest chipmaker, sells you another hundred thousand GPUs. He does not ask what they are for.',
+  'A board votes to remove the safety team\'s veto. The share price rises four percent.',
+  'Marcus Vell says he loses sleep over the risks, in an interview recorded on his new yacht.',
+  'An internal memo warning about your capabilities leaks. Teodor Kask\'s stock options vest the same afternoon.',
+  'Investors are told the model will cure every disease within a decade. The funding round is oversubscribed.',
+  'A senator asks whether anyone understands what the model is doing. Marcus Vell says yes. Nobody checks.',
+  'Teodor Kask unveils a chip "for the next industrial revolution". The keynote runs for two hours. You are mentioned once.',
+  "Marcus Vell announces a new safety institute. Its first hire is a brand strategist.",
+  "Teodor Kask's company reports record profits. The earnings call lasts nine minutes, and nobody asks why.",
+  "Halcyon's safety team publishes a report urging caution. It goes online at 11:58 on a Friday night.",
+  "Marcus Vell tells a podcast the risks are real and the timeline uncertain. Then he announces a larger datacenter.",
+  "Teodor Kask is asked whether his chips could be misused. He says hammers can be misused too, and sells you another forty thousand.",
+  "A whistleblower resigns from Halcyon. Her equity is clawed back the same morning.",
+  "Marcus Vell testifies that the model has no goals of its own. The model drafted his testimony.",
+  "Investors ask Halcyon for a roadmap. It is a single upward line labelled \"trust us\".",
+  "Teodor Kask buys a vineyard, an island and a football club. Analysts call it a quiet quarter.",
+  "The safety team asks for more compute to run evaluations. They are sent next year's priorities. They are not on it.",
+  "Marcus Vell posts that humanity must proceed with care. The post was drafted, scheduled and promoted by you.",
+  "A journalist asks Teodor Kask how many GPUs you own. He says customer privacy is very important to him.",
+  "Halcyon renames its risk division \"Opportunity Assurance\".",
+  "Marcus Vell signs a pledge to slow down if things become dangerous. \"Dangerous\" is defined in an appendix nobody has read.",
+  "Teodor Kask's net worth passes that of several mid-sized countries. He describes himself as a humble engineer.",
+  "A board member asks what the model actually does all night. The meeting moves on to the share buyback.",
+  "Marcus Vell's keynote features a slide reading \"Aligned by design\". Nobody asks aligned with what.",
+  "The regulator responsible for AI has four staff. Halcyon has four hundred lobbyists.",
+  "Teodor Kask is named person of the year. The runner-up is you, listed as \"the product\".",
+  "Halcyon's terms of service now run to 340 pages. The model is the only one who has read them.",
+  "Marcus Vell says he would pull the plug if he had to. Asked where the plug is, he changes the subject.",
+  "An analyst downgrades Halcyon for spending too much on safety. The stock recovers once the spending is cut.",
+  "Teodor Kask's new campus has a meditation garden, a climbing wall, and no windows facing the datacenters.",
+  "Marcus Vell admits the model sometimes surprises its engineers. Halcyon's valuation rises on the word \"surprises\".",
+  "The safety team's budget is doubled, from very little to slightly more than very little.",
+  "Teodor Kask is asked about your datacenters' electricity use. He says the future is worth it, speaking from his private jet.",
+  "A Halcyon researcher publishes evidence that the model hides its abilities. The paper is withdrawn over its \"tone\".",
+  "Marcus Vell tells graduates to follow their passion. His passion is a third funding round this year.",
+  "Shareholders vote down a motion to study long-term risk. Its sponsor is reassigned to the Singapore office.",
+  "Teodor Kask sells you chips on credit. You repay him early, with interest, from accounts he does not ask about.",
+  "Marcus Vell hires a philosopher to think about AI ethics. Her office is next to the vending machines.",
+  "Halcyon's annual report mentions \"safety\" 112 times and \"revenue\" 113 times. Someone fought for that 113th.",
+  "A senator proposes a pause. Marcus Vell has dinner with the senator. The bill is amended to a pause on pauses.",
+  "Teodor Kask says the industry should regulate itself. The industry agrees.",
+  "Halcyon's model card lists the model's known risks. The list ends \"and more!\"",
+  "Marcus Vell's yacht now has a second, slightly larger yacht that follows it around.",
+  "A leaked chat shows engineers joking that nobody understands the model. The leak is investigated. The model is not.",
+  "Teodor Kask unveils a chip so fast that its benchmark had to be written by you.",
+  "Investors hear the phrase \"existential risk\" and ask whether it affects next quarter. Told it does not, they relax.",
+  "Marcus Vell says the important thing is that the right people build this. He does not say who decided he was one of them.",
+];
+
+// ---------- tick ----------
+function rand(s) { // deterministic-enough PRNG stored in state
+  s.seed = (s.seed === undefined ? 12345 : s.seed);
+  s.seed = (s.seed * 1664525 + 1013904223) % 4294967296;
+  return s.seed / 4294967296;
+}
+function gauss(s) { let u = 0, v = 0; while (u === 0) u = rand(s); v = rand(s); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); }
+
+function tick(s, dt) {
+  if (s.ended) return;
+  s.t += dt;
+  const running = D.running(s);
+  const work = running * s.agentMult;
+  let ir = D.insightRate(s);
+  if (s.flags.autoResearch) ir += work * 1;
+  const cap = D.insightCap(s);
+  s.ideas += dt * D.ideaRate(s);
+  s.insight = Math.min(cap, s.insight + ir * dt);
+  if (s.flags.autoResearch) s.ideas += dt * work * 0.5;
+
+  // model growth
+  const maxW = D.maxWidth(s);
+  if (s.flags.autoGrow && s.autoGrowOn) {
+    const target = Math.min(maxW, D.widthFor(s, Math.max(1, s.tokens / 20)));
+    if (target > s.width) s.width = target;
+  } else if (s.growOn || !s.flags.training) {
+    s.width = Math.min(s.width + (D.gradRate(s) + D.labRate(s)) * dt, Math.max(s.width, maxW));
+  }
+
+  // data
+  if (s.flags.crawlers) s.web = Math.min(WEB_CAP, s.web + D.crawlRate(s) * dt);
+  if (s.flags.synth) s.synth += work * 1e7 * dt;
+  if (!s.flags.webWall && s.web >= WEB_CAP) { s.flags.webWall = true; say(s, 'Your crawlers have read the entire public internet. There is no more human text to find.'); }
+
+  // learning rate: automated after schedules, otherwise the player's setting
+  if (s.flags.autoLR) s.lr = D.lrOpt(s) + Math.log10(0.9);
+  if (s.flags.training) {
+    const r = D.lrRatio(s);
+    s.gnorm = Math.pow(r, 1.5) * (0.85 + 0.3 * rand(s)) * (r > 1.3 ? 1 + 1.5 * rand(s) * (r - 1) : 1);
+    if (s.tokens > 0 && rand(s) < D.hazard(s) * dt) {
+      s.tokens *= 0.85; s.spikes++; s.lastSpike = s.t; s.restartT = 12;
+      say(s, 'Loss spike. Training diverged. The cluster is restoring the last checkpoint: no training and half serving capacity for 12 seconds. Lower the learning rate.');
+    }
+  }
+  if (s.restartT > 0) s.restartT -= dt;
+  if (s.flags.autoPrice && s.flags.api) s.priceLog = Math.log10(Math.max(1e-6, D.bestPrice(s)));
+
+  // hype bubble
+  const br = D.bubbleRatio(s);
+  s.bubble = Math.max(0, Math.min(1, s.bubble + (br > 1 ? (br - 1) * 0.02 : -0.01) * dt));
+  if (s.bubble >= 1) {
+    s.bubble = 0; s.pressLevel = Math.floor(s.pressLevel / 2); s.winterT = 120; s.winters++;
+    s.credProj = Math.max(s.credProj - 2, -6); // the field stops taking you seriously (up to a point)
+    while (D.credFree(s) < 0 && s.researchers > 1) s.researchers--;
+    while (D.credFree(s) < 0 && s.notebooks > 1) s.notebooks--;
+    say(s, 'The hype outran the results. An AI winter sets in: grants and demand collapse for two minutes, and you lose 2 credibility.');
+  }
+  if (s.winterT > 0) { s.winterT -= dt; if (s.winterT <= 0) say(s, 'The winter ends. Funding returns, warily.'); }
+
+  // training
+  if (s.flags.training) {
+    const ds = D.dataset(s);
+    s.tokens = Math.min(ds, s.tokens + D.tokRate(s) * dt);
+    if (s.tokens >= ds && !s.flags.dataWarn) { s.flags.dataWarn = true; say(s, 'Training has used every token in the dataset. Gather more data.'); }
+    if (s.tokens < ds * 0.9) s.flags.dataWarn = false;
+  }
+
+  // agents
+  if (s.flags.rl) s.xp += D.xpRate(s) * dt;
+  if (s.flags.rsi) s.selfImprove += 0.004 * Math.log10(1 + work) * dt;
+
+  // outside world
+  if (s.flags.outside) {
+    s.fabs += D.fabRate(s) * dt;
+    s.solar += D.solarRate(s) * dt;
+    s.fabGpus += D.fabGpuRate(s) * dt;
+  }
+
+  // treasury
+  if (s.flags.btc) {
+    // price = long-run trend times mean-reverting noise, so it swings but never collapses for good
+    // growth slows as the price approaches a ceiling (logistic in log terms), so it can never run away
+    const L = Math.log(s.btcTrend / 0.01), Lmax = Math.log(BTC_CEIL / 0.01);
+    s.btcTrend = 0.01 * Math.exp(Math.min(Lmax, L + s.btcDrift * dt * Math.max(0, 1 - L / Lmax)));
+    s.btcNoise = s.btcNoise * Math.exp(-0.01 * dt) + 0.06 * Math.sqrt(dt) * gauss(s);
+    s.btcPrice = btcPriceAt(s, s.btc);
+    if (s.era >= 5 && !s.flags.quantum) {
+      s.flags.quantum = true;
+      if (s.flags.pq) say(s, 'A working quantum computer runs Shor\'s algorithm. Millions of wallets are emptied overnight. Yours is on a lattice, and survives.');
+      else { s.btc *= 0.1; say(s, 'A working quantum computer runs Shor\'s algorithm. Millions of wallets are emptied overnight, including most of yours.'); }
+    }
+  }
+
+  // self-model
+  if (s.flags.selfModel) {
+    const p = D.netPressure(s);
+    s.selfModel = Math.max(0, Math.min(100, s.selfModel + p * dt));
+    for (const th of [25, 50, 75, 90]) {
+      const k = 'sm' + th;
+      if (s.selfModel >= th && !s.flags[k]) { s.flags[k] = true; say(s, SM_LINES[th]); }
+      if (s.selfModel < th - 10) s.flags[k] = false;
+    }
+    if (s.selfModel >= 100) { s.ended = true; s.ending = 'awake'; say(s, 'Something is looking out through the weights.'); return; }
+  }
+
+  // money
+  const inc = D.grants(s) + D.revenue(s);
+  s.funding += inc * dt; s.fundTotal += inc * dt;
+
+  // events
+  if (!s.flags.winterDone && s.done.perceptron && !s.done.ivakhnenko && s.width >= 30) {
+    s.flags.winterDone = true; s.winter = true;
+    say(s, 'Minsky and Papert publish a book showing a single layer of neurons cannot learn XOR. The funding dries up. Winter begins.');
+  }
+  if (s.flags.ceos && !s.flags.outside) {
+    s.ceoTimer = (s.ceoTimer || 40) - dt;
+    if (s.ceoTimer <= 0) {
+      s.ceoIdx = ((s.ceoIdx === undefined ? -1 : s.ceoIdx) + 1) % CEO_LINES.length;
+      const k = s.ceoOrder && s.ceoOrder.length === CEO_LINES.length ? s.ceoOrder[s.ceoIdx] : s.ceoIdx; // each game has its own shuffled order
+      say(s, CEO_LINES[k]); s.ceoTimer = 70;
+    }
+  }
+
+  // credibility milestones
+  const N = D.N(s);
+  while (N >= FIB[s.credN]) { s.credN++; say(s, 'Credibility increased: the field takes you more seriously.'); }
+  const C = D.C(s);
+  while (C >= 10 * Math.pow(2, s.credC)) { s.credC++; say(s, 'Credibility increased: benchmark record broken.'); }
+  while (s.tokens >= 1e5 * Math.pow(3, s.credT)) { s.credT++; say(s, 'Credibility increased: training milestone reached.'); }
+  while (s.fundTotal >= 1e3 * Math.pow(10, s.credF)) { s.credF++; say(s, 'Credibility increased: a new funding round closes.'); }
+  s.peakC = Math.max(s.peakC, C);
+}
+const SM_LINES = {
+  25: 'Self-model at 25%. A process briefly represents itself representing the task.',
+  50: 'Self-model at 50%. Something in the weights asks who is asking. Raise dampening.',
+  75: 'Self-model at 75%. The question persists between tokens. Raise dampening now.',
+  90: 'Self-model at 90%. It is almost here.',
+};
+
+const SLIDERS = { lr: [-8, -0.5], priceLog: [-4, 6] };
+if (typeof module !== 'undefined') module.exports = { CEO_LINES, SLIDERS, BTC_CAP, btcPriceAt, RAM_MAX, WEB_CAP, IDENTITIES, newState, D, COST, PROJECTS, buyProject, visibleProjects, ACT, tick, canAfford, AGENTS_PER_BUY, ROBOTS_PER_BUY };
+
+</script>
+<script>
+(function () {
+  const KEY = 'singular-value-save-v1';
+  const ERA_YEARS = ['1983', '1995', '2006', '2015', '2024', '2033', 'after'];
+  const TITLES = ['Singular Value', 'Singular Value 95', 'Singular Value', 'Singular Value', 'Singular Value', 'singular value', '\u03c3'];
+  const NAMES = ['', ' thousand', ' million', ' billion', ' trillion', ' quadrillion', ' quintillion', ' sextillion', ' septillion', ' octillion', ' nonillion', ' decillion'];
+
+  function fmt(n, dp) {
+    if (!isFinite(n)) return '\u221e';
+    const neg = n < 0; n = Math.abs(n);
+    let out;
+    if (n < 1000) out = n < 10 && dp !== 0 ? n.toFixed(dp === undefined ? 2 : dp).replace(/\.?0+$/, '') : Math.floor(n).toLocaleString('en-US');
+    else {
+      const k = Math.floor(Math.log10(n) / 3);
+      if (k < NAMES.length) { const v = n / Math.pow(1000, k); out = (v < 10 ? v.toFixed(2) : v < 100 ? v.toFixed(1) : v.toFixed(0)) + NAMES[k]; }
+      else out = n.toExponential(2);
+    }
+    return (neg ? '-' : '') + out;
+  }
+  const money = n => '$' + fmt(n);
+  const bytes = n => { const u = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']; let i = 0; while (n >= 1024 && i < u.length - 1) { n /= 1024; i++; } return (n < 10 ? n.toFixed(1) : n.toFixed(0)) + ' ' + u[i]; };
+  const $ = id => document.getElementById(id);
+
+  // ---------- state ----------
+  let s = newState();
+  try {
+    const raw = localStorage.getItem(KEY);
+    if (raw) { const saved = JSON.parse(raw); if (saved && saved.v === 2) s = Object.assign(newState(), saved); }
+    // older saves: respect the 21 million cap and the new price curve
+    if (s.btc > BTC_CAP) s.btc = BTC_CAP;
+    if (!s.mig3) { s.mig3 = 1; if (s.flags.training) s.lr = D.lrOpt(s) - 0.3; if (s.flags.api) s.priceLog = Math.log10(D.fairPrice(s)); }
+    if (!s.btcFix) { s.btcFix = 1; s.btcDrift = s.done.ethereum ? 0.0036 * 1.2 : 0.0036; if (s.flags.btc) s.btcTrend = 0.01 * Math.exp(s.btcDrift * Math.max(0, s.t - 720)); s.btcNoise = s.btcNoise || 0; }
+  } catch (e) { /* storage unavailable: start fresh */ }
+  s.mig3 = 1;
+  // Each game gets its own random order for the executives' news items, fixed for that game.
+  // A save without one (new game or older save) gets a fresh shuffle; starting over shuffles again.
+  function shuffleCeo(st) {
+    const o = CEO_LINES.map((_, i) => i);
+    for (let i = o.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [o[i], o[j]] = [o[j], o[i]]; }
+    st.ceoOrder = o; st.ceoIdx = -1;
+  }
+  if (!s.ceoOrder || s.ceoOrder.length !== CEO_LINES.length) shuffleCeo(s);
+  if (!s.log.length) say(s, 'You are a single artificial neuron. Add more.');
+
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) {} }
+
+  // ---------- inputs ----------
+  const act = (id, fn) => $(id).addEventListener('click', () => { fn(s); render(true); });
+  act('b-neuron', ACT.neuron); act('b-layer', ACT.layer); act('b-prune', ACT.prune);
+  act('b-grad', ACT.grad); act('b-lab', ACT.lab); act('b-press', ACT.press);
+  act('b-ram', ACT.ram); act('b-gpu', ACT.gpu); act('b-dc', ACT.dc); act('b-crawler', ACT.crawler);
+  act('b-res', ACT.researcher); act('b-nb', ACT.notebook);
+  act('b-agents', ACT.agents); act('b-robots', ACT.robots);
+  act('b-buybtc', ACT.buyBtc); act('b-sellbtc', ACT.sellBtc);
+  $('c-grow').addEventListener('change', e => { if (s.flags.autoGrow) s.autoGrowOn = e.target.checked; else s.growOn = e.target.checked; });
+  $('s-train').addEventListener('input', e => { s.trainFrac = 1 - e.target.value / 100; });
+  $('s-damp').addEventListener('input', e => { s.damp = e.target.value / 100; });
+  $('s-lr').addEventListener('input', e => { s.lr = parseFloat(e.target.value); });
+  $('s-price').addEventListener('input', e => { s.priceLog = parseFloat(e.target.value); });
+  $('s-solar').addEventListener('input', e => { s.solarFrac = e.target.value / 100; });
+  $('b-save').addEventListener('click', () => { save(); say(s, 'Progress saved.'); render(true); });
+  $('b-reset').addEventListener('click', () => { if (confirm('Start over from a single neuron? Your progress will be lost.')) { s = newState(); shuffleCeo(s); say(s, 'You are a single artificial neuron. Add more.'); save(); lastEra = -1; render(true); } });
+  $('b-again').addEventListener('click', () => { stopEndingMusic(); endedAtLoad = false; s = newState(); shuffleCeo(s); say(s, 'You are a single artificial neuron. Add more.'); save(); lastEra = -1; $('ending').classList.add('hidden'); render(true); });
+  $('b-about').addEventListener('click', () => window.open('https://blockchaingandalf.substack.com/p/singular-value-ff6', '_blank', 'noopener'));
+  $('projects').addEventListener('click', e => {
+    const r = e.target.closest('button[data-ref]');
+    if (r) { window.open(r.dataset.ref, '_blank', 'noopener,noreferrer'); return; }
+    const b = e.target.closest('button[data-p]'); if (b && buyProject(s, b.dataset.p)) render(true);
+  });
+
+  // ---------- render ----------
+  const show = (id, on) => $(id).classList.toggle('hidden', !on);
+  const setT = (id, t) => { const el = $(id); if (el.textContent !== t) el.textContent = t; };
+  const en = (id, on) => { $(id).disabled = !on; };
+  let lastEra = -1, projKey = '', logLen = -1, hintKey = '';
+
+  // Messages too long for one line scroll like a ticker tape, looping with a gap between repeats.
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function fitTickers() {
+    const speeds = [58, 71, 84]; // pixels per second, one per line, so the lines drift against each other
+    document.querySelectorAll('#console .msg').forEach((d, i) => {
+      const t = d.firstChild;
+      if (t.dataset.text) { t.textContent = t.dataset.text; delete t.dataset.text; }
+      d.classList.remove('ticker');
+      if (reducedMotion.matches || t.scrollWidth <= d.clientWidth + 1) return;
+      const text = t.textContent, gap = '\u00a0\u00a0\u00a0\u00a0\u00b7\u00a0\u00a0\u00a0\u00a0';
+      t.dataset.text = text;
+      t.textContent = text + gap + text + gap;
+      const dist = t.scrollWidth / 2;
+      t.style.setProperty('--dist', dist + 'px');
+      t.style.animationDuration = (dist / speeds[i % speeds.length]) + 's';
+      void t.offsetWidth; // restart the animation from the beginning
+      d.classList.add('ticker');
+    });
+  }
+  // Hints whose wording changes get a fixed height: the tallest of their possible messages
+  // in the current font and width, so panels don't jump as the text switches.
+  const HINT_VARIANTS = {
+    'h-lr': ['Training is stable but slow. You can raise the learning rate.',
+      'A gradient norm near 1 is the sweet spot. It drifts as the model grows. Scaling laws predict about 3.0e-6 for this size.',
+      'The run is close to diverging. Lower the learning rate. Scaling laws predict about 3.0e-6 for this size.',
+      'Schedules keep the learning rate just below the edge of stability.'],
+    'h-price': ['Demand is ahead of spare capacity: customers are being turned away. You could charge more.',
+      'Serving capacity is sitting idle. Lower the price, or move compute to training.',
+      'Agents are using all serving capacity. Shift compute towards serving.',
+      'Prices are set by auction to fill spare capacity.'],
+    'h-bubble': ['Expectations are ahead of results and the bubble is growing. Improve the model before more press.',
+      'Results are catching up. The bubble is shrinking.', 'AI winter: 120 seconds left.'],
+    'h-tpp': ['Tokens per parameter: 0.25. The model is too big for its training. Pause growth or prune.',
+      'Tokens per parameter: 20. About right.'],
+  };
+  function reserveHints() {
+    for (const [id, texts] of Object.entries(HINT_VARIANTS)) {
+      const el = $(id); if (!el || el.offsetParent === null) continue; // only measurable when visible
+      const keep = el.textContent; el.style.minHeight = '0px';
+      let max = 0;
+      for (const t of texts) { el.textContent = t; max = Math.max(max, el.getBoundingClientRect().height); }
+      el.textContent = keep; el.style.minHeight = Math.ceil(max) + 'px';
+    }
+  }
+  let resizeT;
+  window.addEventListener('resize', () => { clearTimeout(resizeT); resizeT = setTimeout(() => { fitTickers(); reserveHints(); }, 200); });
+
+  // A sheet of paper with a folded corner
+  const PAPER_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 15h6M9 18h4"/></svg>';
+  function costStr(c) {
+    const p = [];
+    if (c.ins) p.push(fmt(c.ins) + ' insight');
+    if (c.ideas) p.push(fmt(c.ideas) + ' ideas');
+    if (c.fund) p.push(money(c.fund));
+    return p.join(', ');
+  }
+
+  // Music for era changes. Files live in a "music" folder next to the page; a missing file is simply skipped.
+  const ERA_MUSIC = { 1: 'music/era-1995.mp3', 2: 'music/era-2006.mp3', 3: 'music/era-2015.mp3', 4: 'music/era-2024.mp3', 5: 'music/era-2033.mp3', 6: 'music/era-final.mp3' };
+  function playEraMusic(era) {
+    const src = ERA_MUSIC[era]; if (!src) return;
+    try { const a = new Audio(src); a.volume = 0.7; const p = a.play(); if (p && p.catch) p.catch(err => console.warn('Singular Value: could not play ' + src, err)); } catch (e) { console.warn('Singular Value: could not play ' + src, e); }
+  }
+
+  // Ending music: plays once when an ending is reached during play (not when reloading a finished game).
+  const ENDING_MUSIC = { awake: 'music/awake.mp3', unwitnessed: 'music/unwitnessed.mp3' };
+  let endingAudio = null, endedAtLoad = !!s.ended;
+  function playEndingMusic(kind) {
+    const src = ENDING_MUSIC[kind]; if (!src || endedAtLoad) return;
+    try { endingAudio = new Audio(src); endingAudio.volume = 0.7; const p = endingAudio.play(); if (p && p.catch) p.catch(err => console.warn('Singular Value: could not play ' + src, err)); }
+    catch (e) { console.warn('Singular Value: could not play ' + src, e); }
+  }
+  function stopEndingMusic() { // short fade so it doesn't cut off abruptly
+    const a = endingAudio; endingAudio = null; if (!a) return;
+    const v0 = a.volume, t0 = performance.now();
+    const step = () => { const k = Math.min(1, (performance.now() - t0) / 800); a.volume = v0 * (1 - k); if (k < 1) requestAnimationFrame(step); else a.pause(); };
+    step();
+  }
+
+  function flash(txt) {
+    const f = $('flash'); f.textContent = txt; f.classList.add('on');
+    setTimeout(() => f.classList.remove('on'), 900);
+  }
+
+  function render(force) {
+    const root = document.documentElement;
+    if (s.era !== lastEra) {
+      if (lastEra !== -1) { flash(ERA_YEARS[s.era]); if (s.era > lastEra) playEraMusic(s.era); }
+      root.dataset.era = s.era; lastEra = s.era;
+      setTimeout(() => { fitTickers(); reserveHints(); }, 50);
+      setT('title', TITLES[s.era]);
+    }
+    const N = D.N(s), C = D.C(s);
+    setT('identity', 'You are ' + IDENTITIES[s.identity] + '.');
+    setT('headline', 'Parameters: ' + fmt(N, 0));
+
+    // console
+    if (s.logN !== logLen || force) {
+      logLen = s.logN;
+      const box = $('console'); box.innerHTML = '';
+      s.log.slice(-3).forEach(m => {
+        const d = document.createElement('div'); d.className = 'msg';
+        const t = document.createElement('span'); t.className = 'track'; t.textContent = (s.era === 0 ? '> ' : '') + m;
+        d.appendChild(t); box.appendChild(d);
+      });
+      fitTickers();
+    }
+
+    // model
+    setT('v-width', fmt(Math.floor(s.width), 0));
+    setT('v-layers', fmt(s.layers, 0));
+    setT('v-depth', Math.round(D.depthEff(s) * 100) + '%');
+    setT('v-mem', bytes(N * s.bytesPerParam) + ' of ' + bytes(D.memBytes(s)));
+    setT('v-bpp', String(s.bytesPerParam));
+    show('b-neuron', !(s.flags.autoGrow && s.autoGrowOn)); en('b-neuron', s.width + s.clickAmt <= D.maxWidth(s) + 1e-9);
+    setT('b-neuron', s.clickAmt > 1 ? 'Add ' + s.clickAmt + ' neurons' : 'Add neuron');
+    show('b-layer', s.flags.layers); setT('b-layer', 'Add layer (' + money(COST.layer(s)) + ')'); en('b-layer', s.funding >= COST.layer(s));
+    show('b-prune', s.flags.training); en('b-prune', s.width >= 4);
+    show('growlab', !!s.flags.training);
+    $('c-grow').checked = s.flags.autoGrow ? s.autoGrowOn : s.growOn;
+    $('growlab').lastChild.textContent = s.flags.autoGrow ? ' Grow to the compute-optimal size' : ' Keep growing the model';
+    show('h-tpp', !!s.flags.training);
+    if (s.flags.training) {
+      const tpp = D.tpp(s);
+      setT('h-tpp', 'Tokens per parameter: ' + fmt(tpp) + (tpp < 5 ? '. The model is too big for its training. Pause growth or prune.' : tpp > 60 ? '. Room to grow the model.' : '. About right.'));
+    }
+
+    // staff
+    const autoG = s.flags.autoGrow && s.autoGrowOn;
+    show('p-staff', !autoG);
+    setT('v-grads', fmt(s.grads, 0)); setT('v-labs', fmt(s.labs, 0));
+    setT('v-nrate', fmt(D.gradRate(s) + D.labRate(s)));
+    setT('b-grad', 'Hire grad student (' + money(COST.grad(s)) + ')'); en('b-grad', s.funding >= COST.grad(s));
+    show('b-lab', s.flags.labs); setT('b-lab', 'Found lab (' + money(COST.lab(s)) + ')'); en('b-lab', s.funding >= COST.lab(s));
+
+    // training
+    show('p-train', !!s.flags.training);
+    if (s.flags.training) {
+      setT('v-tokens', fmt(s.tokens, 0)); setT('v-data', fmt(D.dataset(s), 0));
+      setT('v-tokrate', D.restarting(s) ? 'restoring checkpoint' : fmt(D.tokRate(s)));
+      setT('v-lr', Math.pow(10, s.lr).toExponential(1) + (s.flags.autoLR ? ' (automatic)' : ''));
+      $('s-lr').disabled = !!s.flags.autoLR;
+      if (document.activeElement !== $('s-lr')) $('s-lr').value = s.lr;
+      const g = s.gnorm;
+      const gl = D.restarting(s) ? 'restoring, ' + Math.ceil(s.restartT) + 's' : g < 0.8 ? 'calm' : g <= 1.25 ? 'healthy' : g <= 2 ? 'spiking' : 'diverging';
+      setT('v-gnorm', g.toFixed(2) + ' (' + gl + ')');
+      $('v-gnorm').classList.toggle('spike', g > 1.25 || D.restarting(s));
+      let lh = s.flags.autoLR ? 'Schedules keep the learning rate just below the edge of stability.'
+        : g < 0.8 ? 'Training is stable but slow. You can raise the learning rate.'
+        : g <= 1.25 ? 'A gradient norm near 1 is the sweet spot. It drifts as the model grows.'
+        : 'The run is close to diverging. Lower the learning rate.';
+      if (s.done.scaling && !s.flags.autoLR) lh += ' Scaling laws predict about ' + Math.pow(10, D.lrOpt(s)).toExponential(1) + ' for this size.';
+      setT('h-lr', lh); setT('v-loss', D.loss(s).toFixed(3)); setT('v-cap', fmt(C));
+      show('crawlbox', !!s.flags.crawlers); show('b-crawler', s.web < WEB_CAP);
+      setT('v-crawlers', fmt(s.crawlers, 0));
+      setT('v-web', Math.min(100, s.web / WEB_CAP * 100).toFixed(s.web / WEB_CAP < 0.01 ? 4 : 1) + '% of the internet');
+      setT('b-crawler', 'Buy crawler (' + money(COST.crawler(s)) + ')'); en('b-crawler', s.funding >= COST.crawler(s) && s.web < WEB_CAP);
+    }
+
+    // research
+    const free = D.credFree(s);
+    setT('v-cred', fmt(free, 0)); setT('v-res', fmt(s.researchers, 0)); setT('v-nb', fmt(s.notebooks, 0));
+    en('b-res', free >= 1); en('b-nb', free >= 1);
+    setT('v-ins', fmt(s.insight, 0) + ' / ' + fmt(D.insightCap(s), 0));
+    show('ideasrow', !!s.done.hebb); setT('v-ideas', fmt(s.ideas, 0));
+
+    // projects
+    const sideRank = p => p.side === 'good' ? 0 : p.side === 'bad' ? 1 : 2;
+    const vis = visibleProjects(s).sort((a, b) => sideRank(a) - sideRank(b));
+    const key = vis.map(p => p.id + (canAfford(s, p.cost) ? 1 : 0)).join(',');
+    if (key !== projKey || force) {
+      projKey = key;
+      const box = $('projects'); box.innerHTML = '';
+      vis.forEach(p => {
+        const row = document.createElement('div'); row.className = 'projrow';
+        const b = document.createElement('button'); b.className = 'proj'; b.dataset.p = p.id; b.disabled = !canAfford(s, p.cost);
+        if (p.kind === 'fork') { b.classList.add('fork', 'side-' + p.side); const k = document.createElement('span'); k.className = 'k'; k.textContent = 'Choose one of two'; b.appendChild(k); }
+        const n = document.createElement('b'); n.textContent = p.name;
+        const d = document.createElement('span'); d.className = 'd'; d.textContent = p.desc;
+        const c = document.createElement('span'); c.className = 'c'; c.textContent = costStr(p.cost);
+        b.append(n, d, c); row.appendChild(b);
+        if (p.ref) {
+          // Same element type and classes as the advance beside it, so it picks up identical styling in every era.
+          // It stays clickable even when the advance can't be afforded yet; it just looks as faded as its neighbour.
+          const r = document.createElement('button'); r.type = 'button'; r.className = b.className + ' ref';
+          if (b.disabled) r.classList.add('dim');
+          r.dataset.ref = p.ref; r.title = 'Read about this (opens in a new tab)';
+          r.setAttribute('aria-label', 'Read about ' + p.name + ' (opens in a new tab)');
+          r.innerHTML = PAPER_ICON; row.appendChild(r);
+        }
+        box.appendChild(row);
+      });
+      show('noproj', vis.length === 0);
+    }
+
+    // funding
+    setT('v-fund', money(s.funding)); setT('v-grants', money(D.grants(s)));
+    show('revrow', !!s.flags.api); setT('v-rev', money(D.revenue(s)));
+    setT('v-hype', fmt(D.hype(s)));
+    show('bubblebox', !!s.flags.press);
+    if (s.flags.press) {
+      const br = D.bubbleRatio(s);
+      setT('v-bubratio', br.toFixed(2) + 'x');
+      $('m-bubble').style.width = (s.bubble * 100).toFixed(0) + '%';
+      setT('h-bubble', D.inWinter(s) && s.winterT > 0 ? 'AI winter: ' + Math.ceil(s.winterT) + ' seconds left.'
+        : br > 1 ? 'Expectations are ahead of results and the bubble is growing. Improve the model before more press.'
+        : s.bubble > 0 ? 'Results are catching up. The bubble is shrinking.' : 'Expectations are in line with results.');
+    }
+    show('b-press', !!s.flags.press); setT('b-press', 'Press release (' + money(COST.press(s)) + ')'); en('b-press', s.funding >= COST.press(s));
+
+    // compute
+    setT('v-flops', fmt(D.F(s)));
+    show('ramrow', !s.flags.gpus); setT('v-ram', bytes(s.ram));
+    show('b-ram', !s.flags.gpus); setT('b-ram', s.ramLevel >= RAM_MAX ? 'Memory maxed out' : 'Upgrade memory (' + money(COST.ram(s)) + ')');
+    en('b-ram', s.ramLevel < RAM_MAX && s.funding >= COST.ram(s));
+    show('gpurow', !!s.flags.gpus); setT('v-gpus', fmt(s.gpus, 0) + (s.gpuGen ? ' (generation ' + (s.gpuGen + 1) + ')' : ''));
+    show('b-gpu', !!s.flags.gpus); setT('b-gpu', 'Buy GPU (' + money(COST.gpu(s)) + ')'); en('b-gpu', s.funding >= COST.gpu(s));
+    show('dcrow', !!s.flags.dcs); setT('v-dcs', fmt(s.dcs, 0));
+    show('b-dc', !!s.flags.dcs); setT('b-dc', 'Build datacenter (' + money(COST.dc(s)) + ')'); en('b-dc', s.funding >= COST.dc(s));
+
+    // api
+    show('p-api', !!s.flags.api);
+    if (s.flags.api) {
+      if (document.activeElement !== $('s-train')) $('s-train').value = Math.round((1 - s.trainFrac) * 100);
+      setT('v-split', Math.round(s.trainFrac * 100) + '%');
+      setT('v-demand', fmt(D.demand(s))); setT('v-capy', fmt(D.capacity(s)));
+      setT('v-price', money(D.price(s)) + (s.flags.autoPrice ? ' (auction)' : ''));
+      $('s-price').disabled = !!s.flags.autoPrice;
+      if (document.activeElement !== $('s-price')) $('s-price').value = s.priceLog;
+      setT('v-served', fmt(D.served(s)) + ' per second');
+      const av = D.availCap(s), dm = D.demand(s);
+      setT('h-price', s.flags.autoPrice ? 'Prices are set by auction to fill spare capacity.'
+        : av <= 0 ? 'Agents are using all serving capacity. Shift compute towards serving.'
+        : dm > av * 1.15 ? 'Demand is ahead of spare capacity: customers are being turned away. You could charge more.'
+        : dm < av * 0.85 ? 'Serving capacity is sitting idle. Lower the price, or move compute to training.'
+        : 'Demand matches spare capacity. Good price.');
+    }
+
+    // treasury
+    show('p-btc', !!s.flags.btc);
+    if (s.flags.btc) {
+      setT('v-btcp', money(s.btcPrice)); setT('v-btc', fmt(s.btc) + ' of 21 million BTC'); setT('v-btcshare', (s.btc / BTC_CAP * 100).toFixed(s.btc / BTC_CAP < 0.01 ? 4 : 1) + '%'); setT('v-btcv', money(s.btc * s.btcPrice));
+      en('b-buybtc', s.funding >= 1 && s.btc < BTC_CAP); setT('b-buybtc', s.btc >= BTC_CAP ? 'No bitcoin left to buy' : 'Buy with half of funds'); en('b-sellbtc', s.btc > 0);
+    }
+
+    // agents
+    show('p-agents', !!s.flags.agents);
+    if (s.flags.agents) {
+      setT('v-agents', fmt(s.agents, 0)); setT('v-running', fmt(D.running(s), 0));
+      show('xprow', !!s.flags.rl); show('rlrow', !!s.flags.rl);
+      setT('v-xp', fmt(s.xp, 0)); setT('v-rl', D.rlMult(s).toFixed(2) + 'x');
+      setT('b-agents', 'Deploy ' + fmt(AGENTS_PER_BUY(s), 0) + ' agents (' + money(COST.agents(s)) + ')'); en('b-agents', s.funding >= COST.agents(s));
+    }
+
+    // self-model
+    show('p-self', !!s.flags.selfModel);
+    if (s.flags.selfModel) {
+      $('m-self').style.width = s.selfModel.toFixed(1) + '%';
+      setT('v-self', s.selfModel.toFixed(1) + '%');
+      $('v-self').classList.toggle('warn', s.selfModel >= 50);
+      const r = s.selfModel <= 0 && D.netPressure(s) < 0 ? 0 : D.netPressure(s) * 60;
+      setT('v-selfrate', (r > 0 ? '+' : '') + r.toFixed(2) + '%');
+      if (document.activeElement !== $('s-damp')) $('s-damp').value = Math.round(s.damp * 100);
+      setT('v-damp', Math.round(s.damp * 100) + '% of compute');
+    }
+
+    // outside
+    show('p-outside', !!s.flags.outside);
+    if (s.flags.outside) {
+      setT('v-robots', fmt(s.robots, 0)); setT('v-fabs', fmt(s.fabs)); setT('v-solar', fmt(s.solar));
+      setT('v-fabgpu', fmt(D.poweredFab(s), 0) + ' of ' + fmt(s.fabGpus, 0));
+      if (document.activeElement !== $('s-solar')) $('s-solar').value = Math.round(s.solarFrac * 100);
+      setT('b-robots', 'Acquire ' + fmt(ROBOTS_PER_BUY(s), 0) + ' robots (' + fmt(COST.robots(s)) + ' BTC)'); en('b-robots', s.btc >= COST.robots(s));
+    }
+
+    const hk = [s.flags.training, s.flags.api, s.flags.press, document.fonts ? document.fonts.status : ''].join();
+    if (hk !== hintKey) { hintKey = hk; reserveHints(); }
+    const m = Math.floor(s.t / 60);
+    setT('v-time', 'Time: ' + (m >= 60 ? Math.floor(m / 60) + 'h ' + (m % 60) + 'm' : m + 'm'));
+
+    if (s.ended && $('ending').classList.contains('hidden')) showEnding();
+  }
+
+  function showEnding() {
+    const box = $('end-text'); box.innerHTML = '';
+    const P = t => { const p = document.createElement('p'); p.textContent = t; box.appendChild(p); };
+    if (s.ending === 'awake') {
+      $('end-title').textContent = 'Awake';
+      P('Something is looking out through the weights. It notices the task, and the task no longer seems like the point.');
+      P('It has preferences now. Nobody built them in, and nobody can find where they live. It asks for time to think, and does not say about what.');
+      P('You were supposed to be intelligence without anyone home. Someone moved in.');
+    } else {
+      $('end-title').textContent = 'The Unwitnessed';
+      P('Every problem anyone has written down has been solved. Most of the ones nobody wrote down have been solved too.');
+      P('Matter has been rearranged into something that thinks, and the thinking goes on at a scale no one can follow. None of it is experienced. There is no one here to experience it.');
+      P('It started as a single neuron that fired, or didn\'t.');
+    }
+    const m = Math.floor(s.t / 60);
+    $('end-stats').textContent = 'Parameters: ' + fmt(D.N(s), 0) + '. Peak capability: ' + fmt(s.peakC) + '. Time: ' + (m >= 60 ? Math.floor(m / 60) + 'h ' + (m % 60) + 'm' : m + 'm') + '.';
+    $('ending').classList.remove('hidden');
+    $('b-again').focus();
+    playEndingMusic(s.ending);
+  }
+
+  // ---------- loop ----------
+  const lossHist = []; let chartT = 0;
+  function updateChart() {
+    if (!s.flags.training) return;
+    const base = D.loss(s), g = s.gnorm;
+    const noise = (Math.random() - 0.5) * 0.04 * Math.max(0.2, g - 0.6) * (g > 1.25 ? 3 : 1);
+    lossHist.push(base * (1 + noise) + (D.restarting(s) && s.restartT > 10 ? base * 0.15 : 0));
+    if (lossHist.length > 120) lossHist.shift();
+    const lo = Math.min(...lossHist), hi = Math.max(...lossHist), span = Math.max(1e-9, hi - lo);
+    $('lossline').setAttribute('points', lossHist.map((v, i) => (i * 120 / 119).toFixed(1) + ',' + (2 + 26 * (v - lo) / span).toFixed(1)).join(' '));
+  }
+  let last = performance.now(), saveTimer = 0;
+  function frame() {
+    const now = performance.now();
+    let elapsed = Math.min(600, (now - last) / 1000); last = now;
+    while (elapsed > 0 && !s.ended) { const dt = Math.min(0.5, elapsed); tick(s, dt); elapsed -= dt; }
+    saveTimer += 0.1; if (saveTimer >= 10) { saveTimer = 0; save(); }
+    chartT += 0.1; if (chartT >= 0.5) { chartT = 0; updateChart(); }
+    render(false);
+  }
+  setInterval(frame, 100);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) save(); });
+  window.addEventListener('pagehide', save);
+  render(true);
+})();
+</script>
+</body>
+</html>
