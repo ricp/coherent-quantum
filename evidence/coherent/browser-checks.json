@@ -1,0 +1,162 @@
+{
+  "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/150.0.0.0 Safari/537.36",
+  "checks": [
+    {
+      "check": "paused resources and job freeze",
+      "pass": true
+    },
+    {
+      "check": "invalid import preserves current game",
+      "message": "Import failed: This is not a supported Coherent save. Your current laboratory is unchanged.",
+      "pass": true
+    },
+    {
+      "check": "save failure is visible and truthful",
+      "feedback": "Local save failed. Export JSON to preserve the current laboratory.",
+      "pass": true
+    },
+    {
+      "check": "save recovery clears storage warning",
+      "pass": true
+    },
+    {
+      "check": "paused job resumes to a real result",
+      "pass": true
+    },
+    {
+      "check": "keyboard research purchase preserves useful focus",
+      "focused": "Research discovery→",
+      "pass": true
+    },
+    {
+      "check": "save export reports download request",
+      "pass": true
+    },
+    {
+      "check": "reset cancellation preserves game",
+      "pass": true
+    },
+    {
+      "check": "confirmed reset saves a new laboratory",
+      "pass": true
+    },
+    {
+      "check": "saved sound preference still requires user activation",
+      "pass": true
+    },
+    {
+      "check": "sound enable starts one running audio context",
+      "pass": true,
+      "tones": 2
+    },
+    {
+      "check": "zero volume remains silent",
+      "pass": true
+    },
+    {
+      "check": "persistent mute suspends audio",
+      "pass": true
+    },
+    {
+      "check": "new mitigation does not alter a recorded trial caption",
+      "pass": true
+    },
+    {
+      "check": "paused chapter closes by keyboard with enabled focus",
+      "focused": "pause-toggle",
+      "pass": true
+    },
+    {
+      "check": "reduced motion retains static instrument during active experiment",
+      "pass": true
+    },
+    {
+      "check": "memory notebook retains detection-event caption",
+      "pass": true,
+      "title": "Detection-event rehearsal"
+    },
+    {
+      "check": "allocation warning explains a reversible recovery",
+      "notebook": "Experiment notebook",
+      "pass": true,
+      "warning": "No application patch fits this allocation. Reduce distance, free factory footprint, or expand chip and rack."
+    },
+    {
+      "check": "narrow useful-work layout has no horizontal overflow",
+      "pass": true,
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "check": "all primary sources are available without purchase",
+      "count": 36,
+      "pass": true
+    },
+    {
+      "check": "primary-paper dialog preserves full DOI and finding",
+      "links": [
+        "https://arxiv.org/abs/quant-ph/0002077",
+        "https://doi.org/10.1002/1521-3978%28200009%2948:9/11%3C771::AID-PROP771%3E3.0.CO;2-E"
+      ],
+      "pass": true
+    },
+    {
+      "check": "paper dialog returns keyboard focus to source",
+      "focused": "Q03",
+      "pass": true
+    },
+    {
+      "after": {
+        "clock": "LAB 00:01",
+        "meter": 0.25
+      },
+      "before": {
+        "clock": "LAB 00:01",
+        "meter": 0.25
+      },
+      "check": "actual hidden tab freezes clock and running job",
+      "pass": true
+    },
+    {
+      "awaySeconds": 2.414,
+      "check": "unpaused laboratory reopens without closed-tab catch-up",
+      "elapsedAdded": 0.10099999999999998,
+      "jobProgressAdded": 0.10099999999999998,
+      "pass": true
+    },
+    {
+      "check": "standalone archive exposes 36 sources before first discovery",
+      "discoveries": "0",
+      "papers": 36,
+      "pass": true
+    },
+    {
+      "check": "standalone file plays offline with bundled font and truthful save",
+      "elapsed": 5.0994000000003705,
+      "errors": [],
+      "fontLoaded": true,
+      "pass": true,
+      "qualified": [
+        "signal"
+      ],
+      "save": "Saved locally · 10:19 PM"
+    },
+    {
+      "check": "actual UI scientific workload reaches ending and exports postcard",
+      "pass": true,
+      "fixture": "compact-ready.json",
+      "completed": [
+        "dynamics"
+      ],
+      "elapsed": 1077.0005999999858,
+      "postcard": {
+        "width": 1200,
+        "height": 720,
+        "bytes": 95730
+      },
+      "method": "Ordinary Run the full schedule and Save the run postcard controls; actual interface execution."
+    }
+  ],
+  "errors": [],
+  "scope": "Actual HTTP interface; normal controls and file imports. Storage quota failure was deliberately simulated. Engine playthrough proof is separate."
+}

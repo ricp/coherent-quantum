@@ -1,0 +1,441 @@
+{
+  "game": "coherent",
+  "version": 2,
+  "state": {
+    "version": 2,
+    "notebooks": 1,
+    "designs": 22115.50078118392,
+    "engineering": [
+      "workflow",
+      "storage1",
+      "open",
+      "storage2",
+      "pricing",
+      "autoCalibration",
+      "automation",
+      "storage3",
+      "rapid",
+      "workshop",
+      "scheduler",
+      "synthesis"
+    ],
+    "price": 9.577155067379046,
+    "autoPrice": true,
+    "autoCalibration": true,
+    "automation": 4,
+    "analysisShare": 0.2,
+    "workshops": 2,
+    "fabrication": 0.5,
+    "fabricated": 4397.674662591356,
+    "integrated": 4341.226662591355,
+    "started": true,
+    "paused": false,
+    "elapsed": 4868,
+    "funds": 639.2214085929807,
+    "effort": 7680,
+    "done": [
+      "feynman",
+      "deutsch",
+      "divincenzo",
+      "nakamura",
+      "ramsey",
+      "echo",
+      "readout",
+      "rb",
+      "coupled",
+      "nisq",
+      "vqe",
+      "ansatz",
+      "mitigation",
+      "classical",
+      "shor",
+      "stabilizer",
+      "surface",
+      "decoder",
+      "threshold",
+      "surgery",
+      "gates",
+      "ancilla",
+      "factories",
+      "accounting",
+      "lloyd",
+      "hamiltonian",
+      "audit"
+    ],
+    "qualified": [
+      "signal",
+      "ramsey",
+      "echo",
+      "readout",
+      "benchmark",
+      "circuit",
+      "vqe",
+      "memory",
+      "gates",
+      "factory"
+    ],
+    "module": 2,
+    "rack": 3,
+    "staff": 31,
+    "pulse": 8,
+    "decoder": 3,
+    "drift": 0.005,
+    "distance": 3,
+    "factories": 2,
+    "calibration": 0.45,
+    "service": 0.55,
+    "theta": 65,
+    "shots": 2,
+    "mitigate": true,
+    "credits": 2000,
+    "reputation": 10,
+    "seed": 872611157,
+    "job": null,
+    "result": {
+      "id": "factory",
+      "shots": 100,
+      "bins": [],
+      "message": "Factory schedule rehearsed. Credits represent planning; no quantum states are stored."
+    },
+    "tutorial": {
+      "theta": 65,
+      "energy": -1.5497314453125,
+      "exact": -1.5620409414293128,
+      "reference": -1.5620499351813308,
+      "statistical": 0.05318408942119493,
+      "se": 0.007403397570523343,
+      "bias": 0.0044,
+      "ansatzError": 0.00000899375201801611,
+      "shots": 49152,
+      "modeledShots": 196608,
+      "groups": [
+        {
+          "label": "ZZ",
+          "plus": 2981,
+          "minus": 13403,
+          "estimate": -0.6361083984375
+        },
+        {
+          "label": "X₀",
+          "plus": 1963,
+          "minus": 14421,
+          "estimate": -0.7603759765625
+        },
+        {
+          "label": "X₁",
+          "plus": 1947,
+          "minus": 14437,
+          "estimate": -0.7623291015625
+        }
+      ],
+      "qualified": true
+    },
+    "completed": [],
+    "ended": false,
+    "volume": 0.2,
+    "sound": false,
+    "theme": "dark",
+    "log": [
+      {
+        "time": 1198,
+        "message": "Protected memory. The information survives; the funding remains exposed.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 1198,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1198,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1316,
+        "message": "Add an analysis station. One controller-batch slot before customers; contributes classical research/design work.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1380,
+        "message": "Below the threshold. Qualify the current memory regime; enter logical engineering.",
+        "kind": "discovery"
+      },
+      {
+        "time": 1380,
+        "message": "Protection becomes orchestration.",
+        "kind": "chapter"
+      },
+      {
+        "time": 1381,
+        "message": "Released one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1381,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1394,
+        "message": "Upgrade classical decoding. More streaming throughput and shorter feedback latency.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1414,
+        "message": "Upgrade classical decoding. More streaming throughput and shorter feedback latency.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1483,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1581,
+        "message": "A library with a floor plan. Multiply notebook capacity by four again. Larger discoveries need space as well as staff.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1582,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1582,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1582,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1582,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1582,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1582,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1732,
+        "message": "Build ahead of the queue. Choose rapid rollout: workshop output rises 40%, and maintenance need rises 20%. Excludes verified rollout; coefficients are game assumptions.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1857,
+        "message": "Make room to operate. Reserve routing and spare footprint for logical operations.",
+        "kind": "discovery"
+      },
+      {
+        "time": 1858,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2002,
+        "message": "Build the laboratory around it. Unlock fabrication and integration station purchases. These build game hardware, not magic states.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2104,
+        "message": "Add a construction team. Split hypothetical fabrication and control/cooling integration.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2166,
+        "message": "A memory learns to act. Routing takes its share of the chip.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 2166,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2166,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2199,
+        "message": "A memory learns to act. Qualify a separate logical-operation model.",
+        "kind": "discovery"
+      },
+      {
+        "time": 2376,
+        "message": "Add a construction team. Split hypothetical fabrication and control/cooling integration.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2489,
+        "message": "A careful kind of resource. Enable the selected distillation-output scenario.",
+        "kind": "discovery"
+      },
+      {
+        "time": 2509,
+        "message": "The board requests more qubits. The decoder requests a chair.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 2509,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2509,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2666,
+        "message": "Every station has a schedule. Double staff and automation research output and increase design output by 50% through classical scheduling. These are game coefficients.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2780,
+        "message": "A factory needs a floor plan. Allocate factories and produce scheduling rehearsal credits.",
+        "kind": "discovery"
+      },
+      {
+        "time": 2781,
+        "message": "Released one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2781,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2983,
+        "message": "Count everything that matters. Open full resource previews and the useful-work chapter.",
+        "kind": "discovery"
+      },
+      {
+        "time": 2983,
+        "message": "At last, a question worth asking.",
+        "kind": "chapter"
+      },
+      {
+        "time": 2984,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3007,
+        "message": "Upgrade classical decoding. More streaming throughput and shorter feedback latency.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3089,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3223,
+        "message": "Let the spins evolve. Open the named Ising-dynamics resource scenario.",
+        "kind": "discovery"
+      },
+      {
+        "time": 3224,
+        "message": "Released one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3224,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3411,
+        "message": "Add an analysis station. One controller-batch slot before customers; contributes classical research/design work.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3628,
+        "message": "A better simulation recipe. Qualify the selected dynamics precision recipe.",
+        "kind": "discovery"
+      },
+      {
+        "time": 3629,
+        "message": "Released one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3629,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3865,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4110,
+        "message": "Useful, with the caveats intact. Audit the interpretation. Completing a scientific scenario unlocks the ending.",
+        "kind": "discovery"
+      },
+      {
+        "time": 4111,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4111,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4111,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4111,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4111,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4111,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4407,
+        "message": "Ideas that can leave the notebook. Double classical design generation. Designs are engineering plans, not quantum states or scientific evidence.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4408,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4408,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4853,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      }
+    ]
+  }
+}

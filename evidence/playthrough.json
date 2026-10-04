@@ -1,0 +1,658 @@
+{
+  "policy": "legal resource-constrained automated audit policy; no claim of optimality",
+  "ended": true,
+  "ending": "unwitnessed",
+  "simulatedSeconds": 13034,
+  "completedProjects": 78,
+  "final": {
+    "era": 6,
+    "parameters": 195799111129270,
+    "capability": 100613.96110314314,
+    "insight": 14636,
+    "insightCap": 8100000,
+    "ideas": 34162583.0888789,
+    "researchers": 68,
+    "notebooks": 54,
+    "funding": 32709022841.58213,
+    "agents": 3706,
+    "robots": 27274,
+    "fabs": 3244.3901300001685,
+    "solar": 51910.242080002696,
+    "web": 3000000000000
+  },
+  "visible": [
+    {
+      "id": "gen3",
+      "cost": {
+        "ins": 250000,
+        "fund": 100000000000
+      }
+    }
+  ],
+  "events": [
+    {
+      "seconds": 3,
+      "id": "mcp",
+      "era": 0,
+      "parameters": 41,
+      "capability": 0,
+      "funding": 8.215575602131457
+    },
+    {
+      "seconds": 7,
+      "id": "hebb",
+      "era": 0,
+      "parameters": 101,
+      "capability": 0,
+      "funding": 26.310459796693234
+    },
+    {
+      "seconds": 11,
+      "id": "perceptron",
+      "era": 0,
+      "parameters": 101,
+      "capability": 0,
+      "funding": 36.9931406595703
+    },
+    {
+      "seconds": 17,
+      "id": "expert",
+      "era": 0,
+      "parameters": 106,
+      "capability": 0,
+      "funding": 45.326236105908656
+    },
+    {
+      "seconds": 38,
+      "id": "dh",
+      "era": 0,
+      "parameters": 148,
+      "capability": 0,
+      "funding": 52.39375092886229
+    },
+    {
+      "seconds": 38,
+      "id": "rsa",
+      "era": 0,
+      "parameters": 148,
+      "capability": 0,
+      "funding": 52.39375092886229
+    },
+    {
+      "seconds": 54,
+      "id": "ivakhnenko",
+      "era": 0,
+      "parameters": 211,
+      "capability": 0,
+      "funding": 72.72793076642051
+    },
+    {
+      "seconds": 63,
+      "id": "hopfield",
+      "era": 0,
+      "parameters": 32552,
+      "capability": 0,
+      "funding": 204.59175389431425
+    },
+    {
+      "seconds": 71,
+      "id": "lab",
+      "era": 0,
+      "parameters": 54873,
+      "capability": 0,
+      "funding": 314.41987591971343
+    },
+    {
+      "seconds": 81,
+      "id": "backprop",
+      "era": 0,
+      "parameters": 65094,
+      "capability": 0.23623578455305755,
+      "funding": 695.8145008310487
+    },
+    {
+      "seconds": 96,
+      "id": "tenure",
+      "era": 0,
+      "parameters": 522970,
+      "capability": 4.413871243319702,
+      "funding": 4631.711878239611
+    },
+    {
+      "seconds": 110,
+      "id": "lecun",
+      "era": 1,
+      "parameters": 522982,
+      "capability": 4.640708256580013,
+      "funding": 14350.564700575767
+    },
+    {
+      "seconds": 127,
+      "id": "lstm",
+      "era": 1,
+      "parameters": 522982,
+      "capability": 4.841515555446157,
+      "funding": 19015.331547322094
+    },
+    {
+      "seconds": 149,
+      "id": "chaum",
+      "era": 1,
+      "parameters": 522982,
+      "capability": 5.152334706332222,
+      "funding": 32737.149051903845
+    },
+    {
+      "seconds": 171,
+      "id": "cuda",
+      "era": 2,
+      "parameters": 522982,
+      "capability": 5.397406865435781,
+      "funding": 57565.09354228629
+    },
+    {
+      "seconds": 179,
+      "id": "pagerank",
+      "era": 2,
+      "parameters": 230543502,
+      "capability": 10.67892443845607,
+      "funding": 65487.00728625567
+    },
+    {
+      "seconds": 188,
+      "id": "merkle",
+      "era": 2,
+      "parameters": 989209662,
+      "capability": 11.673044516604701,
+      "funding": 80830.60460112843
+    },
+    {
+      "seconds": 200,
+      "id": "hashcash",
+      "era": 2,
+      "parameters": 2824117842,
+      "capability": 12.288499465841024,
+      "funding": 109559.09642628528
+    },
+    {
+      "seconds": 217,
+      "id": "dbn",
+      "era": 2,
+      "parameters": 7034337672,
+      "capability": 12.759992488505107,
+      "funding": 95920.21585782265
+    },
+    {
+      "seconds": 234,
+      "id": "imagenet",
+      "era": 2,
+      "parameters": 13133042452,
+      "capability": 13.226955120205156,
+      "funding": 144114.15870560057
+    },
+    {
+      "seconds": 250,
+      "id": "alexnet",
+      "era": 3,
+      "parameters": 20598121092,
+      "capability": 13.525223023793474,
+      "funding": 203148.84807334899
+    },
+    {
+      "seconds": 261,
+      "id": "relu",
+      "era": 3,
+      "parameters": 26700743332,
+      "capability": 13.690445817370364,
+      "funding": 415110.6724207534
+    },
+    {
+      "seconds": 281,
+      "id": "ginsparg",
+      "era": 3,
+      "parameters": 39822130632,
+      "capability": 14.152237042146085,
+      "funding": 614005.5676193963
+    },
+    {
+      "seconds": 296,
+      "id": "bitcoin",
+      "era": 3,
+      "parameters": 51378490482,
+      "capability": 14.434233434984067,
+      "funding": 762103.6971460407
+    },
+    {
+      "seconds": 311,
+      "id": "dropout",
+      "era": 3,
+      "parameters": 64405124082,
+      "capability": 14.666772770095891,
+      "funding": 925564.9476630858
+    },
+    {
+      "seconds": 329,
+      "id": "word2vec",
+      "era": 3,
+      "parameters": 81977845752,
+      "capability": 14.997886310823255,
+      "funding": 1108513.958760191
+    },
+    {
+      "seconds": 344,
+      "id": "adam",
+      "era": 3,
+      "parameters": 98239081602,
+      "capability": 15.224114439773286,
+      "funding": 1266668.8517419049
+    },
+    {
+      "seconds": 364,
+      "id": "api",
+      "era": 3,
+      "parameters": 122207821902,
+      "capability": 15.698965096298773,
+      "funding": 1507645.984740571
+    },
+    {
+      "seconds": 379,
+      "id": "open",
+      "era": 3,
+      "parameters": 141899696502,
+      "capability": 15.89076423395859,
+      "funding": 1507598.9166621582
+    },
+    {
+      "seconds": 395,
+      "id": "gan",
+      "era": 3,
+      "parameters": 164524931142,
+      "capability": 16.066870673445006,
+      "funding": 1821256.060127536
+    },
+    {
+      "seconds": 413,
+      "id": "ethereum",
+      "era": 3,
+      "parameters": 191977892412,
+      "capability": 16.241555945771392,
+      "funding": 2558383.9451045305
+    },
+    {
+      "seconds": 435,
+      "id": "fp16",
+      "era": 3,
+      "parameters": 228406713742,
+      "capability": 16.429107419650993,
+      "funding": 3319501.0786724202
+    },
+    {
+      "seconds": 461,
+      "id": "tensorcores",
+      "era": 3,
+      "parameters": 275536516332,
+      "capability": 16.79408223374097,
+      "funding": 3940737.150993941
+    },
+    {
+      "seconds": 504,
+      "id": "transformer",
+      "era": 3,
+      "parameters": 363175964002,
+      "capability": 18.48950654227089,
+      "funding": 5838947.611665667
+    },
+    {
+      "seconds": 536,
+      "id": "commoncrawl",
+      "era": 3,
+      "parameters": 436237478082,
+      "capability": 20.84474422104865,
+      "funding": 6679580.783200316
+    },
+    {
+      "seconds": 588,
+      "id": "dc",
+      "era": 3,
+      "parameters": 569233895662,
+      "capability": 23.208917190487384,
+      "funding": 8161937.737578688
+    },
+    {
+      "seconds": 649,
+      "id": "scaling",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 24.964040095879728,
+      "funding": 11522611.944148153
+    },
+    {
+      "seconds": 732,
+      "id": "wiki",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 26.74440114112495,
+      "funding": 15524257.618750155
+    },
+    {
+      "seconds": 812,
+      "id": "regev",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 34.15130725489774,
+      "funding": 17884401.82847151
+    },
+    {
+      "seconds": 873,
+      "id": "alphago",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 40.071553846247,
+      "funding": 20904458.61802153
+    },
+    {
+      "seconds": 929,
+      "id": "flash",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 45.20037300950415,
+      "funding": 23044837.14845844
+    },
+    {
+      "seconds": 1043,
+      "id": "chat",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 60.070367448996905,
+      "funding": 30362585.88723013
+    },
+    {
+      "seconds": 1061,
+      "id": "pause",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 62.220356438387554,
+      "funding": 43306148.456223965
+    },
+    {
+      "seconds": 1145,
+      "id": "hbm",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 72.19423733375854,
+      "funding": 31080706.32809174
+    },
+    {
+      "seconds": 1255,
+      "id": "rlhf",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 83.72523313754265,
+      "funding": 127697226.57119323
+    },
+    {
+      "seconds": 1362,
+      "id": "cosine",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 94.29287799611089,
+      "funding": 316695146.6602028
+    },
+    {
+      "seconds": 1468,
+      "id": "int8",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 103.68825964757161,
+      "funding": 508132268.22461027
+    },
+    {
+      "seconds": 1591,
+      "id": "distill",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 112.9300498591652,
+      "funding": 755298392.4986163
+    },
+    {
+      "seconds": 1678,
+      "id": "datadeals",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 118.63382071584145,
+      "funding": 907576425.1988498
+    },
+    {
+      "seconds": 1799,
+      "id": "vickrey",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 125.67413635807172,
+      "funding": 1284578311.22769
+    },
+    {
+      "seconds": 1937,
+      "id": "moe",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 132.75363794179606,
+      "funding": 1678341700.3140686
+    },
+    {
+      "seconds": 2089,
+      "id": "gen2",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 169.70646624747727,
+      "funding": 2189508410.3696356
+    },
+    {
+      "seconds": 2252,
+      "id": "int4",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 227.39334800241957,
+      "funding": 4368767810.212361
+    },
+    {
+      "seconds": 2448,
+      "id": "tools",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 259.3295593330697,
+      "funding": 7382639460.756668
+    },
+    {
+      "seconds": 3672,
+      "id": "react",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 337.71992247574195,
+      "funding": 39579588333.535126
+    },
+    {
+      "seconds": 3836,
+      "id": "cot",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 339.98407435833485,
+      "funding": 24774965920.66049
+    },
+    {
+      "seconds": 4081,
+      "id": "longctx",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 343.18074551592053,
+      "funding": 43000210601.46429
+    },
+    {
+      "seconds": 4327,
+      "id": "alphatensor",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 346.25783302507915,
+      "funding": 48755891704.54232
+    },
+    {
+      "seconds": 4391,
+      "id": "premack",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 347.04054642941963,
+      "funding": 50346994979.394
+    },
+    {
+      "seconds": 4420,
+      "id": "tononi",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 347.25476879555856,
+      "funding": 37676170382.62372
+    },
+    {
+      "seconds": 4455,
+      "id": "synth",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 347.50924586372247,
+      "funding": 51319413904.22234
+    },
+    {
+      "seconds": 4494,
+      "id": "sutton",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 347.7913733245249,
+      "funding": 54993738934.89372
+    },
+    {
+      "seconds": 4542,
+      "id": "bitnet",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 862.3879987245698,
+      "funding": 58368761169.75297
+    },
+    {
+      "seconds": 4597,
+      "id": "godel",
+      "era": 4,
+      "parameters": 747770250552,
+      "capability": 1115.9676170498115,
+      "funding": 50547533313.36153
+    },
+    {
+      "seconds": 4698,
+      "id": "outside",
+      "era": 5,
+      "parameters": 747770250552,
+      "capability": 1501.4298651778945,
+      "funding": 73456101287.93132
+    },
+    {
+      "seconds": 4733,
+      "id": "brooks",
+      "era": 5,
+      "parameters": 747770250552,
+      "capability": 1610.0760906002881,
+      "funding": 16304875909.91625
+    },
+    {
+      "seconds": 4779,
+      "id": "watts",
+      "era": 5,
+      "parameters": 747770250552,
+      "capability": 1742.4310331939573,
+      "funding": 14923776558.9729
+    },
+    {
+      "seconds": 4949,
+      "id": "okonkwo",
+      "era": 5,
+      "parameters": 747770250552,
+      "capability": 2195.2360854808294,
+      "funding": 21783631891.150906
+    },
+    {
+      "seconds": 5010,
+      "id": "imai",
+      "era": 5,
+      "parameters": 747770250552,
+      "capability": 2600.7746726039604,
+      "funding": 27364837925.653744
+    },
+    {
+      "seconds": 5148,
+      "id": "brekke",
+      "era": 5,
+      "parameters": 747770250552,
+      "capability": 3485.0693864859854,
+      "funding": 40079802701.335106
+    },
+    {
+      "seconds": 5376,
+      "id": "baars",
+      "era": 5,
+      "parameters": 1559639599840,
+      "capability": 5744.082048375965,
+      "funding": 36469164850.97156
+    },
+    {
+      "seconds": 5881,
+      "id": "quintero",
+      "era": 6,
+      "parameters": 4286404511322,
+      "capability": 8935.54054709361,
+      "funding": 25222444013.44269
+    },
+    {
+      "seconds": 6651,
+      "id": "kestrel",
+      "era": 6,
+      "parameters": 6569300002132,
+      "capability": 12185.258554552696,
+      "funding": 25274633779.641685
+    },
+    {
+      "seconds": 8824,
+      "id": "orrery",
+      "era": 6,
+      "parameters": 44972703248142,
+      "capability": 51489.584349994766,
+      "funding": 32470483946.627815
+    },
+    {
+      "seconds": 12853,
+      "id": "thresh",
+      "era": 6,
+      "parameters": 190432813378902,
+      "capability": 93907.02712879324,
+      "funding": 30368434381.92161
+    },
+    {
+      "seconds": 12867,
+      "id": "sieve",
+      "era": 6,
+      "parameters": 190847885522410,
+      "capability": 94021.95055475678,
+      "funding": 39712995333.46519
+    },
+    {
+      "seconds": 12951,
+      "id": "mira",
+      "era": 6,
+      "parameters": 193338307319610,
+      "capability": 94709.06001960604,
+      "funding": 25698309112.35769
+    },
+    {
+      "seconds": 13034,
+      "id": "final",
+      "era": 6,
+      "parameters": 195799111129270,
+      "capability": 100613.96110314314,
+      "funding": 32709022841.58213
+    }
+  ]
+}

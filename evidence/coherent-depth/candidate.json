@@ -1,0 +1,34 @@
+{
+  "status": "reviewed",
+  "stateVersion": 2,
+  "sourceHashes": {
+    "game.js": "0a30b83cbd36390bd68d8f5d5bc5709246fe6cef334db0c26540b292c4e2a891",
+    "content.js": "0bd72d8ecca580c6d4baf0b1d50e6fcea7fa071712227f0df635fec668ddffbe",
+    "app.js": "4f3f0faf5556058f33880a40aaab755df24c91466e232daade80ccd150d74e24",
+    "index.html": "a8e6c256388d58f178191a6c5fcce8e52b2ccf5639ecc49e7acc0f50028fad6d",
+    "style.css": "141264e0e427cc4b684796712cf47e89259b7699ea835f9cc0d66d7266d370ea",
+    "instrument.js": "b40ffd6ad1eeb66552b60591b7cf3c8166660a403337bb3c39d508b05b13d8cf",
+    "tests/playthrough.cjs": "ac8ad2cc15f2e8ff66c2a5a209c555309941f22244fa3b2b78819468aa55856a",
+    "tests/economy.test.cjs": "d893199379f56308ea72d98e0941cd274ade7b14de0ba2f150ca5ca87834a373",
+    "tests/depth-save.test.cjs": "3aea76360b6fda8118aa3ca3e6159c4ed7ea3d1c46af5613e91406444f3fdb6a"
+  },
+  "notes": "Independent AI game-design, quantum, and source reviews accepted this implemented revision within the recorded evidence scope. Human first-play duration and enjoyment remain unverified.",
+  "verification": {
+    "engineTests": 43,
+    "failed": 0,
+    "skipped": 0,
+    "matrixFinishes": 20,
+    "matrixSavedStateChecks": 320,
+    "matchedComparisons": 18,
+    "browserChecks": 23,
+    "browserJavaScriptErrors": 0,
+    "textContrastPairs": 50,
+    "minimumContrast": 4.58
+  },
+  "limits": [
+    "Fastest recorded expert policy 62:10; reference policies 69:31–82:05. These are automated main-ending routes, not human playtimes.",
+    "Longest reference gap between recorded meaningful actions is 7:25.",
+    "Explicit experiment/schedule jobs occupy only 149–163 seconds in reference runs; no continuous quantum-training frontier.",
+    "Baseline recordings and unchanged-control checks are retained evidence, not a continuous depth-campaign browser playthrough."
+  ]
+}

@@ -1,0 +1,443 @@
+{
+  "game": "coherent",
+  "version": 2,
+  "state": {
+    "version": 2,
+    "notebooks": 1,
+    "designs": 9704.726100283408,
+    "engineering": [
+      "workflow",
+      "storage1",
+      "proprietary",
+      "storage2",
+      "pricing",
+      "autoCalibration",
+      "automation",
+      "verified",
+      "storage3",
+      "workshop",
+      "scheduler",
+      "synthesis"
+    ],
+    "price": 9.836285925877112,
+    "autoPrice": true,
+    "autoCalibration": true,
+    "automation": 2,
+    "analysisShare": 1,
+    "workshops": 2,
+    "fabrication": 0.5,
+    "fabricated": 1830.5280000000375,
+    "integrated": 1654.2720000000304,
+    "started": true,
+    "paused": false,
+    "elapsed": 4365,
+    "funds": 64972.08249390227,
+    "effort": 7680,
+    "done": [
+      "feynman",
+      "deutsch",
+      "divincenzo",
+      "nakamura",
+      "ramsey",
+      "echo",
+      "readout",
+      "rb",
+      "coupled",
+      "nisq",
+      "vqe",
+      "ansatz",
+      "mitigation",
+      "classical",
+      "shor",
+      "stabilizer",
+      "surface",
+      "decoder",
+      "threshold",
+      "surgery",
+      "gates",
+      "ancilla",
+      "factories",
+      "accounting",
+      "lloyd",
+      "hamiltonian",
+      "audit"
+    ],
+    "qualified": [
+      "signal",
+      "ramsey",
+      "echo",
+      "readout",
+      "benchmark",
+      "circuit",
+      "vqe",
+      "memory",
+      "gates",
+      "factory"
+    ],
+    "module": 3,
+    "rack": 4,
+    "staff": 27,
+    "pulse": 7,
+    "decoder": 3,
+    "drift": 0.005,
+    "distance": 5,
+    "factories": 1,
+    "calibration": 0.3,
+    "service": 0.55,
+    "theta": 65,
+    "shots": 2,
+    "mitigate": true,
+    "credits": 1883.1999999999957,
+    "reputation": 12,
+    "seed": 872611157,
+    "job": null,
+    "result": {
+      "id": "dynamics",
+      "shots": 0,
+      "bins": [],
+      "message": "Modeled scenario completion. No large-system magnetization is computed in this browser."
+    },
+    "tutorial": {
+      "theta": 65,
+      "energy": -1.55009765625,
+      "exact": -1.5620409414293128,
+      "reference": -1.5620499351813308,
+      "statistical": 0.05318408942119493,
+      "se": 0.007413004409958331,
+      "bias": 0.0176,
+      "ansatzError": 0.00000899375201801611,
+      "shots": 49152,
+      "modeledShots": 49152,
+      "groups": [
+        {
+          "label": "ZZ",
+          "plus": 3044,
+          "minus": 13340,
+          "estimate": -0.62841796875
+        },
+        {
+          "label": "X₀",
+          "plus": 1904,
+          "minus": 14480,
+          "estimate": -0.767578125
+        },
+        {
+          "label": "X₁",
+          "plus": 1896,
+          "minus": 14488,
+          "estimate": -0.7685546875
+        }
+      ],
+      "qualified": true
+    },
+    "completed": [
+      "dynamics"
+    ],
+    "ended": true,
+    "volume": 0.2,
+    "sound": false,
+    "theme": "dark",
+    "log": [
+      {
+        "time": 1459,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1459,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1615,
+        "message": "Below the threshold. Qualify the current memory regime; enter logical engineering.",
+        "kind": "discovery"
+      },
+      {
+        "time": 1615,
+        "message": "Protection becomes orchestration.",
+        "kind": "chapter"
+      },
+      {
+        "time": 1616,
+        "message": "Released one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1616,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1626,
+        "message": "Upgrade classical decoding. More streaming throughput and shorter feedback latency.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1653,
+        "message": "Upgrade classical decoding. More streaming throughput and shorter feedback latency.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1705,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1825,
+        "message": "Commission before expansion. Choose verified rollout: workshop output falls 20%, and maintenance need falls 20%. Excludes rapid rollout; coefficients are game assumptions.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1954,
+        "message": "A library with a floor plan. Multiply notebook capacity by four again. Larger discoveries need space as well as staff.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1955,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1955,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1955,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1955,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1955,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 1955,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2157,
+        "message": "Make room to operate. Reserve routing and spare footprint for logical operations.",
+        "kind": "discovery"
+      },
+      {
+        "time": 2158,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2338,
+        "message": "Build the laboratory around it. Unlock fabrication and integration station purchases. These build game hardware, not magic states.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2442,
+        "message": "Add a construction team. Split hypothetical fabrication and control/cooling integration.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2502,
+        "message": "Add a construction team. Split hypothetical fabrication and control/cooling integration.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2594,
+        "message": "A memory learns to act. Routing takes its share of the chip.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 2594,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2594,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2599,
+        "message": "A memory learns to act. Qualify a separate logical-operation model.",
+        "kind": "discovery"
+      },
+      {
+        "time": 2809,
+        "message": "Every station has a schedule. Double staff and automation research output and increase design output by 50% through classical scheduling. These are game coefficients.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2914,
+        "message": "A careful kind of resource. Enable the selected distillation-output scenario.",
+        "kind": "discovery"
+      },
+      {
+        "time": 2931,
+        "message": "The board requests more qubits. The decoder requests a chair.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 2931,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 2931,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3056,
+        "message": "A factory needs a floor plan. Allocate factories and produce scheduling rehearsal credits.",
+        "kind": "discovery"
+      },
+      {
+        "time": 3057,
+        "message": "Released one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3057,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3271,
+        "message": "Ideas that can leave the notebook. Double classical design generation. Designs are engineering plans, not quantum states or scientific evidence.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3378,
+        "message": "Count everything that matters. Open full resource previews and the useful-work chapter.",
+        "kind": "discovery"
+      },
+      {
+        "time": 3378,
+        "message": "At last, a question worth asking.",
+        "kind": "chapter"
+      },
+      {
+        "time": 3379,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3388,
+        "message": "Upgrade classical decoding. More streaming throughput and shorter feedback latency.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3410,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3450,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3499,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3562,
+        "message": "Let the spins evolve. Open the named Ising-dynamics resource scenario.",
+        "kind": "discovery"
+      },
+      {
+        "time": 3563,
+        "message": "Released one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3563,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3795,
+        "message": "A better simulation recipe. Qualify the selected dynamics precision recipe.",
+        "kind": "discovery"
+      },
+      {
+        "time": 3796,
+        "message": "Released one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 3796,
+        "message": "Assigned one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4098,
+        "message": "Useful, with the caveats intact. Audit the interpretation. Completing a scientific scenario unlocks the ending.",
+        "kind": "discovery"
+      },
+      {
+        "time": 4099,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4099,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4099,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4099,
+        "message": "Released one notebook assignment.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4099,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4099,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4099,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4099,
+        "message": "Assigned one research colleague.",
+        "kind": "engineering"
+      },
+      {
+        "time": 4318,
+        "message": "Scheduled: Thirty-two spins. One question.. Full modeled time 7860 μs.",
+        "kind": "workload"
+      },
+      {
+        "time": 4365,
+        "message": "Thirty-two spins. One question.. Modeled scenario completion. No large-system magnetization is computed in this browser.",
+        "kind": "workload"
+      },
+      {
+        "time": 4365,
+        "message": "Useful at last. A modeled scientific scenario is complete. For Keir, one qubit in return.",
+        "kind": "ending"
+      }
+    ]
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "method": "Opening captures use a pure new-game save and remain unstarted. Other screenshots use the normal import field for legal deterministic playthrough fixtures, followed by the native Pause control. Captures are observed browser states after brief visible play. This is browser layout evidence, not a human playtest.",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "name": "mobile",
+      "width": 375,
+      "height": 812
+    },
+    {
+      "name": "mobile-320",
+      "width": 320,
+      "height": 812
+    }
+  ],
+  "observations": [
+    {
+      "name": "control",
+      "viewport": "desktop",
+      "machineWidth": 834,
+      "notice": "",
+      "scene": "Chapter II / Control room",
+      "scrollWidth": 1280,
+      "width": 1280
+    },
+    {
+      "name": "noisy",
+      "viewport": "desktop",
+      "machineWidth": 834,
+      "notice": "",
+      "scene": "Chapter III / Noisy circuits",
+      "scrollWidth": 1280,
+      "width": 1280
+    },
+    {
+      "name": "correction",
+      "viewport": "desktop",
+      "machineHeight": 410,
+      "machineWidth": 834,
+      "notice": "",
+      "scrollWidth": 1280,
+      "width": 1280
+    },
+    {
+      "name": "factory",
+      "viewport": "desktop",
+      "fixture": "compact-factory.json",
+      "factoryAllocation": "1",
+      "machineWidth": 834,
+      "notice": "",
+      "scene": "Chapter V / Logical machine",
+      "scrollWidth": 1280,
+      "width": 1280
+    },
+    {
+      "name": "useful",
+      "viewport": "desktop",
+      "machineWidth": 834,
+      "notice": "",
+      "scene": "Chapter VI / Useful work",
+      "scrollWidth": 1280,
+      "width": 1280
+    },
+    {
+      "name": "opening",
+      "viewport": "mobile",
+      "machineHeight": 310,
+      "machineWidth": 337,
+      "notice": "",
+      "scrollWidth": 375,
+      "width": 375,
+      "fixture": "qa-new.json"
+    },
+    {
+      "name": "control",
+      "viewport": "mobile",
+      "machineHeight": 310,
+      "machineWidth": 337,
+      "notice": "",
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "name": "noisy",
+      "viewport": "mobile",
+      "machineHeight": 310,
+      "machineWidth": 337,
+      "notice": "",
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "name": "correction",
+      "viewport": "mobile",
+      "machineHeight": 310,
+      "machineWidth": 337,
+      "notice": "",
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "name": "factory",
+      "viewport": "mobile",
+      "machineHeight": 310,
+      "machineWidth": 337,
+      "notice": "",
+      "scrollWidth": 375,
+      "width": 375,
+      "fixture": "compact-factory.json"
+    },
+    {
+      "name": "useful",
+      "viewport": "mobile",
+      "machineHeight": 310,
+      "machineWidth": 337,
+      "notice": "",
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "name": "noisy-tutorial",
+      "viewport": "mobile",
+      "machineHeight": 310,
+      "machineWidth": 337,
+      "notice": "",
+      "scrollWidth": 375,
+      "width": 375,
+      "fixture": "compact-tutorial.json"
+    },
+    {
+      "name": "noisy-tutorial",
+      "viewport": "desktop",
+      "machineWidth": 834,
+      "notice": "",
+      "scene": "Chapter III / Noisy circuits",
+      "scrollWidth": 1280,
+      "width": 1280
+    },
+    {
+      "name": "factory",
+      "viewport": "mobile-320",
+      "fixture": "compact-factory.json",
+      "factoryAllocation": "1",
+      "machineWidth": 282,
+      "notice": "",
+      "scene": "Chapter V / Logical machine",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "name": "opening",
+      "viewport": "mobile-320",
+      "machineHeight": 310,
+      "machineWidth": 282,
+      "notice": "",
+      "scrollWidth": 320,
+      "width": 320,
+      "fixture": "qa-new.json"
+    },
+    {
+      "name": "opening",
+      "viewport": "desktop",
+      "machineHeight": 410,
+      "machineWidth": 834,
+      "notice": "",
+      "scrollWidth": 1280,
+      "width": 1280,
+      "fixture": "qa-new.json"
+    }
+  ],
+  "consoleErrors": "",
+  "graphicsChecks": [
+    "node --check instrument.js passed",
+    "Actual source-generated rotated-patch geometry checked at d=3/5/7/9: d² data, d²−1 checks, opposite-type checks commute",
+    "310px-wide isolated drawing: no clipped text in any of six scenes",
+    "Opening action/footer captions separated by at least27px on310/340px-tall canvases",
+    "At282×310, memory diagram ends above legendtop244 for all supported distances; maximum bottom239.68",
+    "Dark/light integrated factory scenes inspected at desktop/mobile widths",
+    "Fresh375×812 opening viewport inspected: no overlapping captions and primary action is visible"
+  ],
+  "limitations": [
+    "These checks establish layout/rendering, not a human judgment of fun or a human scientific review.",
+    "Motion is gated in source by active jobs/factory production, pause, ending, credit cap, and prefers-reduced-motion. Independent interaction/motion checks are recorded separately."
+  ],
+  "captureLimitations": [
+    "Earlier secondary capture attempts failed in the browser CLI. The parent subsequently refreshed the full opening/control/noisy/tutorial/correction/factory/useful/ending matrix in one healthy session. Warning captures were also refreshed after the notebook-caption correction.",
+    "Final correction captures now use compact-memory.json, with actual recorded illustrative detection-event counts. The 0/1 axis was inspected without duplicate half-scale labels."
+  ],
+  "finalRefresh": {
+    "date": "2026-10-04",
+    "viewports": [
+      [
+        1280,
+        900
+      ],
+      [
+        375,
+        812
+      ]
+    ],
+    "scenes": [
+      "opening",
+      "control",
+      "noisy",
+      "noisy-tutorial",
+      "correction",
+      "factory",
+      "useful",
+      "warning",
+      "ending"
+    ],
+    "method": "Normal save imports; Pause for started non-ended scenes. No injected funds, research, or qualifications.",
+    "motionEvidence": "instrument-tour.webm: native canvas recording of actual interface instrument updates, four-times playback speed; interaction.webm: opening interface recording."
+  }
+}
