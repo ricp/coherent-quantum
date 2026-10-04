@@ -59,3 +59,20 @@ The accepted scientific rules are:
 There are no remaining scientific objections to this **proposal** from the independent reviewer. The complete original-game analysis, project inventory, source checks, legal winning simulation, bibliography, and design brief are saved locally.
 
 Implementation still needs hardware scenario tables, workload instances, gate/decoder/factory resource data, prices, pacing, save behavior, complete strategy testing, final art, and desktop/mobile visual QA. Those are explicitly unbuilt parts of the new game. Consensus is not a substitute for those checks, and the surprise gift has not been published or sent.
+
+## Implemented model and interface review — 4 October 2026
+
+The preceding sections describe the proposal review. The implementation is now separately reviewed. The same independent AI quantum reviewer inspected `MODEL.md`, `game.js`, `content.js`, `app.js`, `index.html`, and `instrument.js`, and reran the implemented model tests. No human specialist or Keir was contacted.
+
+| Review | Required correction | Resolution |
+| --- | --- | --- |
+| Numerical scenario preparation | Account for factory waiting in memory exposure, repetitions in total costs, and credits without fictional stored-state inventory; specify complete Hamiltonian tasks | Idle exposure includes waiting; total risk/time/resources count repetitions; credits are rehearsal currency; Ising and Hubbard recipes state their models, initial/target conditions, and interpretation |
+| Implemented model, first pass | Separate the IID circuit proxy from the RB estimate; make shot precision consume resources; distinguish actual samples from mitigation overhead; repair the full DiVincenzo DOI | A distinct declared circuit channel drives the proxy; funding scales with acquisition; actual `3M` samples and modeled `12M` mitigated acquisition are separate; the complete encoded DOI is preserved |
+| Implemented model, second pass | No remaining required model correction; two minor labels remained | **ACCEPT**. Ramsey wording now says selected scenario; memory counts are illustrative detection-event trials |
+| UI, first pass | Current mitigation settings appeared beside an old sampled estimate; memory/gate rates lacked explicit units | Recorded estimates now use their recorded bias bound; memory and gate errors are labeled per qubit-cycle and per operation; archive years are extracted from full date metadata |
+| Graphics and UI pass | After ansatz research, VQE captions incorrectly replaced later experiment captions | The notebook selects VQE text only for an actual VQE result. Memory, gates, and factories retain their matching result messages |
+| Final scientific implementation pass | Verify all required corrections and scientific graphic relationships | **ACCEPT — final scientific consensus reached** |
+
+The reviewer independently checked the depicted rotated-patch construction at distances 3, 5, 7, and 9: `d²` data qubits, `d²−1` ancillas, totals 17/49/97/161, commuting opposite checks, and independent check counts. The graphics use selected coherence scenarios, actual classically simulated sample groups, an exact classical two-spin curve/reference, conditional allocation budgets, and one-execution schedule lanes followed by the repeated total.
+
+This consensus accepts the **declared educational model, citation identities and mappings, small classical tutorial/certificates, scientific interface wording, and source-level graphics geometry**. It does not establish experimental hardware reliability, universal resource estimates, reproduction of every cited study, numerical quantum performance prediction, or demonstrated advantage. Browser visual inspection, accessibility, artistic judgment, and complete gameplay verification remain distinct evidence; scientific acceptance alone does not prove them.

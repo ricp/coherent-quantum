@@ -77,8 +77,8 @@
     line(a,px,py,px+pw,py,a.p.line);
     wave(a,px,py,pw,11,t=>Math.exp(-(((t-.5)/.15)**2))*Math.sin(t*42-(s.job?phase:0)),a.p.teal);
     if(s.job&&phase)cursor(a,px,py-20,40,pw*Math.min(1,s.job.progress/s.job.duration));
-    text(a,'Prepare → pulse → measure',cx,py+37,a.p.ink,narrow?12:14,'center',sans);
-    text(a,s.job?'REPEATED KNOWN PREPARATIONS':'ONE QUBIT · ONE ENTIRE REFRIGERATOR',cx,a.h-28,a.p.muted,narrow?9:10,'center');
+    text(a,'Prepare → pulse → measure',cx,Math.min(py+37,a.h-47),a.p.ink,narrow?12:14,'center',sans);
+    text(a,s.job?'REPEATED KNOWN PREPARATIONS':'ONE QUBIT · ONE ENTIRE REFRIGERATOR',cx,a.h-20,a.p.muted,narrow?9:10,'center');
     document.getElementById('machine').setAttribute('aria-label','Illustrative superconducting circuit: one capacitor and Josephson junction connected to control and readout lines.');
   }
   function control(a,s,m,phase) {
@@ -122,7 +122,7 @@
     document.getElementById('machine').setAttribute('aria-label',num(m.active)+' active physical qubits; '+count+' sites in the illustrative chip schematic.'+(show?' The lower plot shows the exact classically computed two-spin variational energy as a function of the ansatz angle, with the classical ground-state reference.':''));
   }
   function surface(a,s,m,phase) {
-    grid(a);const d=s.distance,cell=Math.min(49,(a.w-58)/(d+1),(a.h-106)/(d+1)),cx=a.w/2,cy=a.h*.49,ox=cx-(d-1)*cell/2,oy=cy-(d-1)*cell/2;
+    grid(a);const d=s.distance,cell=Math.min(49,(a.w-58)/(d+1),(a.h-120)/(d+1)),cx=a.w/2,cy=a.h*.49,ox=cx-(d-1)*cell/2,oy=cy-(d-1)*cell/2;
     text(a,'04 / ROTATED MEMORY PATCH',20,24,a.p.copper,10);
     const checks=[];
     for(let r=0;r<d-1;r++)for(let c=0;c<d-1;c++)checks.push({c:c+.5,r:r+.5,type:(r+c)%2?'X':'Z',data:[[c,r],[c+1,r],[c,r+1],[c+1,r+1]]});
@@ -144,15 +144,17 @@
   function logical(a,s,m,phase) {
     grid(a);text(a,'05 / ALLOCATION, THEN OPERATION',20,24,a.p.copper,10);
     const colors={application:a.p.teal,routing:a.p.copper,factory:a.p.warning,spare:a.p.muted},total=m.totalPatches;
-    const cols=Math.max(1,Math.ceil(Math.sqrt(Math.max(total,1)*(a.w-48)/(a.h-136)))),rows=Math.ceil(Math.max(total,1)/cols),cell=Math.min(39,(a.w-45)/cols,(a.h-133)/rows),side=cell*.7,ox=(a.w-cols*cell)/2,oy=69;
+    const cols=Math.max(1,Math.min(total,Math.ceil(Math.sqrt(Math.max(total,1)*(a.w-48)/(a.h-136))))),rows=Math.ceil(Math.max(total,1)/cols),cell=Math.min(total<=4?86:39,(a.w-45)/cols,(a.h-133)/rows),side=cell*.7,ox=(a.w-cols*cell)/2,oy=total<=4?a.h*.46-rows*cell/2:69;
+    if(total&&total<=4)box(a,ox-10,oy-10,cols*cell+20,rows*cell+20,a.p.panel,a.p.line,7);
     const cells=[];
     for(let i=0;i<total;i++){
       const kind=i<m.routing?'routing':i<m.routing+m.spares?'spare':i<m.reserved?'factory':'application',x=ox+(i%cols)*cell,y=oy+Math.floor(i/cols)*cell;
       box(a,x+(cell-side)/2,y+(cell-side)/2,side,side,a.p.chip,colors[kind],Math.min(3,side*.12));
-      if(side>24){const label={application:'L',routing:'R',factory:'F',spare:'S'}[kind];text(a,label,x+cell/2,y+cell/2,colors[kind],10,'center');}
+      if(side>24){const label={application:'L',routing:'R',factory:'F',spare:'S'}[kind];text(a,label,x+cell/2,y+cell/2,colors[kind],side>40?17:10,'center');}
       cells.push({x:x+cell/2,y:y+cell/2,kind});
     }
     if(!total)text(a,'No complete patch fits the supported footprint.',a.w/2,a.h*.44,a.p.warning,11,'center',sans);
+    if(total&&total<=4&&!m.routing)text(a,'Routing has not yet been reserved.',a.w/2,oy+rows*cell+31,a.p.muted,10,'center');
     const fy=a.h-65,items=[['application',m.slots+' application'],['routing',m.routing+' routing'],['factory',m.factoryUnits+' factory'],['spare',m.spares+' spare']];
     items.forEach(([kind,label],i)=>{const x=18+(i%2)*(a.w/2),y=fy+Math.floor(i/2)*20;box(a,x,y-3,6,6,colors[kind],null,1);text(a,label,x+12,y,a.p.muted,10);});
     text(a,(a.w<430?'FICTIONAL UNITS · ':'FICTIONAL PATCH-SIZED UNITS · ')+total+' AVAILABLE',a.w/2,a.h-15,a.p.muted,a.w<430?9:10,'center');
@@ -193,7 +195,7 @@
     const bins=result?.bins||[];
     if(bins.length){
       const isMemory=result.id==='memory',max=Math.max(1,...bins),left=38,top=17,bottom=a.h-32,pw=a.w-left-17,step=pw/bins.length,bw=Math.min(80,step*.55);
-      for(let i=0;i<=2;i++){const y=bottom-(bottom-top)*i/2;line(a,left,y,a.w-16,y,a.p.line,1,[2,4]);text(a,num(max*i/2),left-7,y,a.p.muted,9,'right');}
+      for(const value of max<=1?[0,1]:[0,max/2,max]){const y=bottom-(bottom-top)*value/max;line(a,left,y,a.w-16,y,a.p.line,1,[2,4]);text(a,num(value,1),left-7,y,a.p.muted,9,'right');}
       bins.forEach((value,i)=>{const x=left+step*i+(step-bw)/2,h=(bottom-top-9)*value/max;box(a,x,bottom-h,bw,h||1,i%2?a.p.copper:a.p.teal,null,2);text(a,num(value),x+bw/2,bottom-h-9,a.p.ink,10,'center');text(a,isMemory?'D'+(i+1):bins.length===2?String(i):i.toString(2).padStart(2,'0'),x+bw/2,bottom+17,a.p.muted,10,'center');});
       document.getElementById('measurement').setAttribute('aria-label',(isMemory?'Illustrative detection-event counts, 100 Bernoulli trials for each detector: ':'Actual sample counts from repeated known preparations: ')+bins.join(', ')+'.');return;
     }
@@ -228,7 +230,7 @@
     const e=fit('ending-art',p);if(e)evolution(e,s);
   }
   function postcard(s) {
-    const canvas=document.createElement('canvas');canvas.width=1200;canvas.height=720;const p={bg:'#f5f3ec',panel:'#eeeee5',ink:'#203633',muted:'#586c64',line:'#cdd4ca',copper:'#945936',teal:'#236b59',soft:'#dce7dc',chip:'#e0e5da',warning:'#925b29'},a={x:canvas.getContext('2d'),w:1200,h:720,p},m=G.metrics(s);
+    const canvas=document.createElement('canvas');canvas.width=1200;canvas.height=720;const p={bg:'#f5f3ec',panel:'#eeeee5',ink:'#203633',muted:'#556961',line:'#cdd4ca',copper:'#905532',teal:'#236b59',soft:'#dce7dc',chip:'#e0e5da',warning:'#8e5725'},a={x:canvas.getContext('2d'),w:1200,h:720,p},m=G.metrics(s);
     a.x.fillStyle=p.bg;a.x.fillRect(0,0,1200,720);box(a,24,24,1152,672,null,p.line,9);
     text(a,'COHERENT.',64,69,p.ink,21,'left',sans);text(a,'ONE QUBIT IN RETURN',1136,69,p.copper,12,'right');
     text(a,'The machine has a purpose.',600,150,p.ink,63,'center',serif);

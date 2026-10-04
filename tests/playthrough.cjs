@@ -2,7 +2,7 @@
 const fs=require('node:fs');
 const path=require('node:path');
 const G=require('../game.js');
-function play(strategy='compact') {
+function play(strategy='compact',workload='dynamics') {
   const s=G.newGame(),snapshots={},events=[];
   G.startExperiment(s,'signal');
   let previous=-1;
@@ -24,12 +24,20 @@ function play(strategy='compact') {
     if(s.pulse<pulseTarget)G.buyUpgrade(s,'pulse');
     if(s.decoder<decoderTarget)G.buyUpgrade(s,'decoder');
     if(s.staff<6&&!(chapter>=5&&s.pulse<pulseTarget))G.buyUpgrade(s,'staff');
-    for(const p of G.content.projects)G.buyProject(s,p.id);
+    for(const p of G.content.projects){
+      if(p.id==='classical'&&G.projectStatus(s,p.id).ready&&!snapshots.tutorial)snapshots.tutorial=JSON.parse(JSON.stringify(s));
+      if(p.id==='threshold'&&G.projectStatus(s,p.id).ready&&!snapshots.memory)snapshots.memory=JSON.parse(JSON.stringify(s));
+      if(p.id==='accounting'&&G.projectStatus(s,p.id).ready&&!snapshots.factory)snapshots.factory=JSON.parse(JSON.stringify(s));
+      G.buyProject(s,p.id);
+    }
     if(!s.job){
       const needed=G.content.projects.filter(p=>G.projectStatus(s,p.id).available&&p.qualification&&!G.qualificationNow(s,p.qualification));
       const target=needed.find(p=>G.content.experiments.some(e=>e.id===p.qualification));
       if(target)G.startExperiment(s,target.qualification);
-      else if(chapter>=5&&s.done.length===30)G.startWorkload(s,'dynamics');
+      else if(chapter>=5&&s.done.length===30){
+        if(G.workloadStatus(s,workload).ready&&!snapshots.ready)snapshots.ready=JSON.parse(JSON.stringify(s));
+        G.startWorkload(s,workload);
+      }
       if(!s.job&&m.drift>.06&&chapter>=1)G.calibrate(s);
     }
     G.tick(s,1);
@@ -38,7 +46,7 @@ function play(strategy='compact') {
   return {strategy,state:s,snapshots,events};
 }
 if(require.main===module){
-  const results=['compact','wide'].map(play);
+  const results=['compact','wide'].map(strategy=>play(strategy));
   const summaries=results.map(({strategy,state,events})=>({strategy,ended:state.ended,seconds:state.elapsed,discoveries:state.done.length,physical:G.metrics(state).active,distance:state.distance,factories:state.factories,completed:state.completed,chapters:events}));
   console.log(JSON.stringify(summaries,null,2));
   if(results.some(r=>!r.state.ended)){

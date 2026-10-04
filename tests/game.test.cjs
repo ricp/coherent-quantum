@@ -103,3 +103,9 @@ for(const strategy of ['compact','wide'])test('A '+strategy+' legal strategy fin
   const run=play(strategy);assert.equal(run.state.ended,true);assert.equal(run.state.done.length,30);assert.equal(run.events.length,6);assert.ok(run.state.elapsed<3600);assert.ok(run.state.completed.includes('dynamics'));assert.deepEqual(G.parseSave(G.serialize(run.state)).done,run.state.done);
   for(const [chapter,s] of Object.entries(run.snapshots))assert.deepEqual(G.parseSave(G.serialize(s)),s,'Legal '+strategy+' chapter '+chapter+' must remain restorable');
 });
+test('The electronic workload offers an alternate legal ending without inventing an energy result',()=>{
+  const run=play('compact','molecule');
+  assert.equal(run.state.ended,true);assert.equal(run.state.done.length,30);assert.ok(run.state.completed.includes('molecule'));
+  assert.equal(run.state.result.energy,undefined);assert.match(run.state.result.message,/No electronic energy/);
+  assert.deepEqual(G.parseSave(G.serialize(run.state)),run.state);
+});

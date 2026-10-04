@@ -95,17 +95,29 @@
       'Protection consumes footprint. Operations consume time. Factories must supply fresh resources.',
       'One complete budget: memory, gates, preparation, fresh states, feedback, repetitions, and time.'
     ][phase]);
+    if(phase===4)write('instrument-note','Protection consumes footprint. Operations consume time. Current memory model: '+(m.pL===null?'unqualified':m.pL.toExponential(2)+' per qubit-cycle')+'. Factories require ≤1e−4, qualified operations, and fresh-state capacity.');
   }
   function discoveryCard(p){
     const q=papers.find(q=>q.id===p.papers[0]),status=G.projectStatus(s,p.id);
-    return '<article class="discovery"><div class="paper-year">'+esc(q.date)+' / '+esc(q.authors.split(';')[0])+'</div><h3>'+esc(p.title)+'</h3><p>'+esc(p.effect)+'</p><div class="discovery-cost">'+num(p.cost.funds)+' funding · '+num(p.cost.effort)+' effort</div><button type="button" data-project="'+p.id+'" '+(!status.ready?'disabled':'')+'><span>Research discovery</span><span aria-hidden="true">→</span></button><div class="limiter">'+esc(status.reasons.join(' · '))+'</div><button type="button" class="paper-notes" data-paper="'+p.id+'">Read the primary '+(p.papers.length>1?'papers':'paper')+' ↗</button></article>';
+    return '<article class="discovery"><div class="discovery-top"><div class="paper-year">'+esc(q.date)+' / '+esc(q.authors.split(';')[0])+'</div>'+diagram(p.chapter)+'</div><h3>'+esc(p.title)+'</h3><p>'+esc(p.effect)+'</p><div class="discovery-cost">'+num(p.cost.funds)+' funding · '+num(p.cost.effort)+' effort</div><button type="button" data-project="'+p.id+'" '+(!status.ready?'disabled':'')+'><span>Research discovery</span><span aria-hidden="true">→</span></button><div class="limiter">'+esc(status.reasons.join(' · '))+'</div><button type="button" class="paper-notes" data-paper="'+p.id+'">Read the primary '+(p.papers.length>1?'papers':'paper')+' ↗</button></article>';
+  }
+  function diagram(chapter){
+    const drawings=[
+      '<path d="M3 20h18m0-8v16m5-16v16m0-8h9m0-8v16m5-16v16m0-8h17"/>',
+      '<path d="M2 20h9l3-10 5 20 5-20 5 20 5-20 5 20 5-20 3 10h11"/>',
+      '<path d="M15 11h30M15 29h30M15 11v18M45 11v18"/><circle cx="15" cy="11" r="4"/><circle cx="45" cy="11" r="4"/><circle cx="15" cy="29" r="4"/><circle cx="45" cy="29" r="4"/>',
+      '<path d="M15 10h30M15 20h30M15 30h30M15 10v20M30 10v20M45 10v20"/><path class="copper-stroke" d="M20 12h5v5h-5zM35 12h5v5h-5zM20 22h5v5h-5zM35 22h5v5h-5z"/>',
+      '<path d="M9 7h10v10H9zM25 7h10v10H25zM9 23h10v10H9zM25 23h10v10H25z"/><path class="copper-stroke" d="M41 7h10v10H41zM41 23h10v10H41z"/>',
+      '<path d="M4 9h44M4 20h25M4 31h38"/><path class="copper-stroke" d="M32 20h23"/>'
+    ];
+    return '<svg class="discovery-diagram" viewBox="0 0 60 40" aria-hidden="true" fill="none">'+drawings[chapter]+'</svg>';
   }
   function renderResearch(){
     const query=$('paper-search').value.trim().toLowerCase();
     const items=archive==='papers'?papers:C.projects;
     html('archive-list',items.filter(p=>JSON.stringify(p).toLowerCase().includes(query)).map(p=>{
       const q=archive==='papers'?p:papers.find(q=>q.id===p.papers[0]);
-      return '<article class="archive-row"><span class="year">'+esc(q.date.match(/\d{4}/)?.[0]||'—')+'</span><div><h3>'+esc(p.title)+'</h3><p>'+esc(archive==='papers'?q.authors+' · '+q.type:p.effect)+'</p><span class="archive-status">'+(archive==='papers'?esc(q.id+' / primary source'):has(p.id)?'Discovered':'Available to read before discovery')+'</span></div><button type="button" data-paper="'+p.id+'">Read '+(archive==='papers'?'source':'papers')+' ↗</button></article>';
+      return '<article class="archive-row"><span class="year">'+esc(q.date.match(/\d{4}/)?.[0]||'—')+'</span><div>'+(archive==='discoveries'?'<span class="archive-mark">'+diagram(p.chapter)+'</span>':'')+'<h3>'+esc(p.title)+'</h3><p>'+esc(archive==='papers'?q.authors+' · '+q.type:p.effect)+'</p><span class="archive-status">'+(archive==='papers'?esc(q.id+' / primary source'):has(p.id)?'Discovered':'Available to read before discovery')+'</span></div><button type="button" data-paper="'+p.id+'">Read '+(archive==='papers'?'source':'papers')+' ↗</button></article>';
     }).join('')||'<p class="quiet-message">No matching source. Try a title, author, or topic.</p>');
     document.querySelectorAll('[data-archive]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.archive===archive)));
   }
@@ -123,7 +135,7 @@
     if(r?.id==='signal'||r?.id==='circuit'){title='Repeated known preparations';context=num(r.shots)+' sampled shots';caption+=' Counts do not reveal an arbitrary unknown state.';}
     if(r?.id==='vqe'&&t){
       title='The two-spin energy';context='Exact classical reference: −1.5620';
-      caption=t?'Estimate '+num(t.energy,4)+' · 95% simultaneous sampling bound ±'+num(t.statistical,4)+' · residual bias ≤'+num(t.bias,4)+' · ansatz error '+num(t.ansatzError,4)+'. '+num(t.shots)+' actual samples; '+num(t.modeledShots)+' modeled acquisitions. '+(t.qualified?'Qualified.':'Tune θ, shots, or mitigation to meet the 0.12 total criterion.'):'H = ZZ + 0.6X₀ + 0.6X₁. The exact variational curve is computed classically; sampling and bias remain separate.';
+      caption=t?'Estimate '+num(t.energy,4)+' · 95% simultaneous sampling bound ±'+num(t.statistical,4)+' · standard error '+num(t.se,4)+' · residual bias ≤'+num(t.bias,4)+' · ansatz error '+num(t.ansatzError,4)+'. '+num(t.shots)+' actual samples; '+num(t.modeledShots)+' modeled acquisitions. '+(t.qualified?'Qualified.':'Tune θ, shots, or mitigation to meet the 0.12 total criterion.'):'H = ZZ + 0.6X₀ + 0.6X₁. The exact variational curve is computed classically; sampling and bias remain separate.';
     }
     if(r?.id==='memory'){title='Detection-event rehearsal';context='100 illustrative trials / check';}
     write('measurement-title',title);write('measurement-context',context);write('measurement-caption',caption);
@@ -139,7 +151,7 @@
     write('experiment-cost-label',e?'Experiment budget':'Next action');
     write('experiment-cost',e?num(e.cost)+' funding · '+num(e.modeledShots)+' acquisitions · '+e.seconds+' apparatus s':'Inspect the workload budget');
     const researchNext=!experimentChosen&&next&&(!next.qualification||G.qualificationNow(s,next.qualification));
-    write('run-label',!s.started?'Begin with one qubit':s.job?'Apparatus occupied':phase===5?'Inspect useful work':researchNext?'Continue research':e?e.name:'Continue research');
+    write('run-label',!s.started?'Begin with one qubit':s.job?(s.paused?'Paused · ':'Running · ')+pct(s.job.progress/s.job.duration,0):s.paused?'Paused · resume in the header':phase===5?'Inspect useful work':researchNext?'Continue research':e?e.name:'Continue research');
     $('run-experiment').disabled=!!s.job||s.paused||s.ended||!researchNext&&!!e&&!status.ready;
     const needs=status?.reasons.filter(reason=>reason!=='The apparatus is occupied').join(' · ');
     if(!s.job&&needs&&!s.ended)write('experiment-feedback',needs);
@@ -178,6 +190,10 @@
     const discoveries=C.projects.filter(p=>!has(p.id)&&G.projectStatus(s,p.id).available);
     html('discovery-list',discoveries.map(discoveryCard).join('')||'<p class="quiet-message">'+(s.ended?'Every discovery is in the archive. The machine has a purpose.':'The desk is clear. The next experiment will open another question.')+'</p>');
     const upgrades=['hardware','rack','staff','pulse','decoder'].map(id=>({id,...G.upgradeInfo(s,id)})).filter(u=>u.available);
+    for(const u of upgrades)if(!u.max){
+      if(u.id==='pulse')u.detail='Effective noise '+pct(m.pEff,3)+' → '+pct(G.metrics({...s,pulse:s.pulse+1}).pEff,3)+'; selected scenario';
+      if(u.id==='decoder')u.detail='Stream '+num(m.decoderRate)+' → '+num(m.decoderRate*4)+' / μs; feedback '+m.feedback+' → '+m.feedback/2+' μs';
+    }
     show('engineering-section',upgrades.length>0);
     html('upgrade-list',upgrades.map(u=>'<article class="upgrade"><div><h3>'+esc(u.label)+'</h3><p>'+esc(u.detail)+'</p></div><button type="button" data-upgrade="'+u.id+'" aria-label="'+esc(u.label)+(u.max?', maximum reached':', '+num(u.cost)+' funding')+'" '+(u.max||s.funds<u.cost||s.ended||s.job?.workload&&u.id!=='staff'?'disabled':'')+'>'+(u.max?'At capacity':num(u.cost)+' ↗')+'</button></article>').join(''));
     write('journal-line',s.log.at(-1)?.message||'One qubit. An entire room to keep it cold.');
@@ -191,8 +207,9 @@
     draw();
   }
   function draw(time=performance.now()){if(window.CoherentArt)CoherentArt.draw(s,{workload,view,time});}
-  function animate(time){animation=0;if(document.hidden)return;draw(time);if(!s.paused&&!s.ended&&(s.job||G.metrics(s).creditRate>0)&&!matchMedia('(prefers-reduced-motion: reduce)').matches)animation=requestAnimationFrame(animate);}
-  function ensureAnimation(){if(!animation&&!document.hidden&&!s.paused&&!s.ended&&(s.job||G.metrics(s).creditRate>0)&&!matchMedia('(prefers-reduced-motion: reduce)').matches)animation=requestAnimationFrame(animate);}
+  function motionActive(){return view==='lab'&&!document.hidden&&!s.paused&&!s.ended&&(s.job||G.metrics(s).creditRate>0&&s.credits<2000)&&!matchMedia('(prefers-reduced-motion: reduce)').matches;}
+  function animate(time){animation=0;if(!motionActive())return;draw(time);animation=requestAnimationFrame(animate);}
+  function ensureAnimation(){if(!animation&&motionActive())animation=requestAnimationFrame(animate);}
   document.addEventListener('click',event=>{
     const b=event.target.closest('button');if(!b||b.disabled)return;
     if(b.dataset.view)setView(b.dataset.view);
@@ -254,5 +271,6 @@
   document.addEventListener('visibilitychange',()=>{previous=performance.now();if(document.hidden){if(s.started)save();if(animation)cancelAnimationFrame(animation);animation=0;}else{render();ensureAnimation();}});
   window.addEventListener('pagehide',()=>{if(s.started)save();});
   window.addEventListener('resize',()=>draw());matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',()=>{draw();ensureAnimation();});
+  $('chapter-dialog').addEventListener('close',()=>{$('run-experiment').focus({preventScroll:true});});
   render();ensureAnimation();
 })();
