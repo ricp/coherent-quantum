@@ -207,7 +207,7 @@
     write('next-copy',hint);
     show('experiment-picker',s.started&&available.length>1);
     write('experiment-cost-label',e?'Experiment budget':'Next action');
-    write('experiment-cost',e?num(e.cost)+' funding · '+num(e.modeledShots)+' acquisitions · '+e.seconds+' apparatus s':'Inspect the workload budget');
+    write('experiment-cost',e?num(e.cost)+' funding · '+num(e.modeledShots)+' acquisitions · '+e.seconds+' apparatus s':workNext?'Inspect the workload budget':'Review the requirements below');
     const researchNext=!experimentChosen&&next&&!qualificationNeeded&&!workNext;
     write('run-label',!s.started?'Begin with one qubit':s.job?(s.paused?'Paused · ':'Running · ')+pct(s.job.progress/s.job.duration,0):s.paused?'Paused · resume in the header':workNext?'Inspect useful work':researchNext?blocker==='capacity'?'Expand research storage':blocker==='designs'?'Plan engineering designs':blocker==='funding'&&has('nisq')?'Balance the service desk':blocker==='effort'?'Allocate research trust':'Continue research':e?e.name:'Continue research');
     $('run-experiment').disabled=!!s.job||s.paused||s.ended||!researchNext&&!!e&&!status.ready;

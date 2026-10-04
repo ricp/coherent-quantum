@@ -160,7 +160,7 @@
     const status=projectStatus(s,id);if(!status.ready)return false;
     const project=C.projects.find(p=>p.id===id),before=stage(s);
     s.funds-=project.cost.funds;s.effort-=project.cost.effort;s.designs-=project.cost.designs||0;s.done.push(id);
-    note(s,project.title+'. '+project.effect,'discovery');
+    note(s,project.title+(/[.!?]$/.test(project.title)?' ':'. ')+project.effect,'discovery');
     if(id==='rb')s.calibration=.25;
     if(stage(s)>before)note(s,C.chapters[stage(s)].transition,'chapter');
     checkEnding(s);return true;
