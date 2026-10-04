@@ -11,6 +11,15 @@
   host.innerHTML='<div id="three-toolbar" role="group" aria-label="Explore your laboratory"><div id="three-stations" role="group" aria-label="Laboratory camera stations">'+cameras.map(([id,name])=>'<button type="button" data-camera="'+id+'" aria-pressed="'+(id==='overview')+'">'+name+'</button>').join('')+'<button type="button" data-camera="reset">Reset</button></div><button type="button" id="three-follow" aria-pressed="true">Follow experiment</button><button type="button" id="three-expand">Expand lab</button><button type="button" id="three-pause" disabled>Pause lab</button><button type="button" id="three-toggle" aria-pressed="true">2D view</button></div><div id="three-focus-heading"><span id="three-focus-title">Your quantum laboratory</span><span id="three-growth-readout"></span></div><p id="three-event-caption" role="status" aria-live="polite"></p><canvas id="three-canvas" role="img" aria-label="An evolving cutaway superconducting laboratory">The full laboratory remains available in two dimensions and as text.</canvas><dl id="three-key" hidden></dl><p id="three-description"></p><p id="three-status" class="caption" role="status"></p>';
   figure.insertBefore(host,machine);
   const $=id=>document.getElementById(id),canvas=$('three-canvas'),description=$('three-description'),status=$('three-status'),toggle=$('three-toggle'),legend=$('three-key'),cameraButtons=[...host.querySelectorAll('[data-camera]')];
+  const cue=document.createElement('aside');cue.id='three-expansion';cue.hidden=true;
+  cue.innerHTML='<p id="three-expansion-message" role="status" aria-live="polite"></p><button type="button" id="three-inspect-expansion">Inspect your expansion ↗</button><button type="button" id="three-dismiss-expansion" aria-label="Dismiss laboratory change">×</button>';
+  $('main').appendChild(cue);
+  let inViewport=true,pendingFocus=null,pendingInspect=false,pendingReveal=false,expansionCamera='overview';
+  const observer=new IntersectionObserver(entries=>{
+    inViewport=entries.at(-1).isIntersecting;
+    if(!inViewport){if(revealAt){pendingReveal=true;revealAt=0;canvas.classList.remove('three-reveal');}stop();}
+    else if(state){if(pendingReveal){pendingReveal=false;if(operating())reveal();}draw(state,options);}
+  });observer.observe(canvas);
   const fmt=(n,d=0)=>Number.isFinite(n)?n.toLocaleString('en-US',{maximumFractionDigits:d}):'unqualified';
   let enabled=true,available=!!kit,T,renderer,scene,camera,controls,assembly,environment,keyLight,palette,geometryPool,batches;
   let state,options={},metrics,signature='',cameraMode='overview',theme='',width=0,height=0,dirty=true,frames=0,driver=0,lastFrame=0,lastGPU=0,lastScreen=0,model={},cameraMove=null,viewEnding=false;
@@ -18,7 +27,7 @@
   const pooledGeometries=[],pooledMaterials=[],targets={},movables={};
   let position,scale,quaternion,matrix;
   function text(element,value){if(element.textContent!==value)element.textContent=value;}
-  function visible(){return !document.hidden&&(!options.view||['lab','ending'].includes(options.view))&&!$('chapter-dialog')?.open;}
+  function visible(){return inViewport&&!document.hidden&&(!options.view||['lab','ending'].includes(options.view))&&!$('chapter-dialog')?.open;}
   function operating(){return !!state?.started&&!state.paused&&!state.ended&&visible()&&!reduced.matches;}
   function display(){
     const on=available&&enabled;figure.classList.toggle('three-enabled',on);figure.classList.toggle('three-fallback',!on);
@@ -52,10 +61,10 @@
       controls.addEventListener('start',()=>{follow=false;autoFocused=false;$('three-follow').setAttribute('aria-pressed','false');$('three-follow').textContent='Manual inspection';});
       controls.addEventListener('change',()=>{dirty=true;ensureDriver();});
       canvas.addEventListener('webglcontextlost',event=>{event.preventDefault();fallback('The 3D graphics context was lost. Reload to reinitialize the laboratory.');});
-      window.addEventListener('pagehide',event=>{stop();if(event.persisted)return;controls.dispose();clear();pooledGeometries.forEach(g=>g.dispose());pooledMaterials.forEach(m=>m.dispose());Object.values(screens).forEach(s=>{s.texture.dispose();s.material.dispose();});environment.dispose();renderer.dispose();});
+      window.addEventListener('pagehide',event=>{stop();if(event.persisted)return;observer.disconnect();controls.dispose();clear();pooledGeometries.forEach(g=>g.dispose());pooledMaterials.forEach(m=>m.dispose());Object.values(screens).forEach(s=>{s.texture.dispose();s.material.dispose();});environment.dispose();renderer.dispose();});
       window.addEventListener('pageshow',event=>{if(event.persisted){dirty=true;ensureDriver();}});
       document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else{dirty=true;ensureDriver();}});
-      document.addEventListener('fullscreenchange',()=>{text($('three-expand'),document.fullscreenElement===(host.closest('.lab-presentation')||host)?'Exit expanded lab':'Expand lab');dirty=true;ensureDriver();});
+      document.addEventListener('fullscreenchange',()=>{text($('three-expand'),document.fullscreenElement===(host.closest('main')||host)?'Exit expanded lab':'Expand lab');dirty=true;ensureDriver();});
       text(status,'A cutaway superconducting laboratory. Choose a wing to inspect; drag to orbit on desktop.');return true;
     }catch(error){fallback('WebGL 2 is unavailable in this browser.');return false;}
   }
@@ -133,7 +142,7 @@
     const count=1+s.rack;platform(-7.35,-1.22,5.9,5.5);for(let i=0;i<count;i++)rack(-9.65+(i%4)*1.45,-2.4-Math.floor(i/4)*1.53,i);
     box(-6.45,.87,1.23,3.25,1.65,1.26,'graphite',true);box(-6.45,1.73,1.25,3.33,.12,1.36,'silver',true);screen('control',-6.46,2.43,.93,2.42,1.17);
     for(let i=0;i<8+s.pulse;i++){const x=-7.8+i*.16;box(x,1.83,1.54,.095,.035,.13,i%3?'edge':'gold');}plaque('CONTROL / PREPARE / READOUT',-6.4,.44,1.76,4.1);
-    if(G.stage(s)>=3){partition(-7.2,-4.73,5.75);for(let i=0;i<1+s.decoder;i++)rack(3.5+(i%3)*1.17,-7.3-Math.floor(i/3)*1.5,i,'decoder');platform(4.72,-7.4,3.8,3.8);plaque('SYNDROME DECODING / CLASSICAL',4.7,.43,-5.66,3.4);}
+    if(G.stage(s)>=3){partition(-7.2,-4.73,5.75);for(let i=0;i<1+s.decoder;i++)rack(2.8+(i%2)*1.35,-6.4-Math.floor(i/2)*1.45,i,'decoder');platform(3.475,-7.9,3.05,4.8);plaque('SYNDROME DECODING / CLASSICAL',3.475,.43,-5.65,2.9);}
     targets.control={at:[-7,1.55,-.55],eye:[2.5,7.3,12.3],title:'Control, readout and classical decoding',radius:6};model.controlRacks=count;model.decoderRacks=G.stage(s)>=3?1+s.decoder:0;
   }
   function researchWing(s,m){
@@ -199,10 +208,11 @@
   }
   function flush(){for(const b of batches.values()){const mesh=new T.InstancedMesh(b.g,b.mat,b.transforms.length);b.transforms.forEach((m,i)=>mesh.setMatrixAt(i,m));mesh.instanceMatrix.needsUpdate=true;mesh.castShadow=b.shadow;mesh.receiveShadow=true;assembly.add(mesh);}}
   function structural(s,m,id){const w=G.content.workloads.find(w=>w.id===id)||G.content.workloads[0],b=G.stage(s)>=5?G.workloadStatus(s,w.id):null;return JSON.stringify([G.stage(s),s.module,s.rack,s.staff,s.notebooks,s.pulse,s.decoder,s.automation,s.workshops,s.distance,m.totalPatches,m.routing,m.spares,m.factoryUnits,Math.floor(Math.log2(1+s.fabricated)/3),Math.floor(Math.log2(1+s.integrated)/3),Math.min(36,m.active),b?[w.id,b.gateTime,Number.isFinite(b.factoryTime)?b.factoryTime:'unqualified',b.feedbackTime,b.runtime]:null]);}
+  function reveal(){revealAt=performance.now();canvas.classList.remove('three-reveal');void canvas.offsetWidth;canvas.classList.add('three-reveal');}
   function build(s,m,id){
     const old=model;clear();batches=new Map();model={chapter:G.stage(s)};for(const key of Object.keys(targets))delete targets[key];room(s,m);cryostat(s,m);controlsWing(s,m);researchWing(s,m);processorWing(s,m);memoryWing(s,m);automationWing(s,m);manufacturingWing(s,m);planningWing(s,m,id);flush();indicators();renderer.shadowMap.needsUpdate=true;dirty=true;
     const major=old.chapter!==model.chapter||old.controlRacks!==model.controlRacks||old.modulePackages!==model.modulePackages||old.researchSeats!==model.researchSeats||old.notebooks!==model.notebooks||old.coax!==model.coax||old.decoderRacks!==model.decoderRacks||old.analysisStations!==model.analysisStations||old.workshops!==model.workshops||old.chipCommissioningGroups!==model.chipCommissioningGroups||old.supportCommissioningGroups!==model.supportCommissioningGroups||old.patch?.distance!==model.patch?.distance;
-    if(major&&s.started&&!s.paused&&!s.ended&&!reduced.matches){revealAt=performance.now();canvas.classList.remove('three-reveal');void canvas.offsetWidth;canvas.classList.add('three-reveal');}
+    if(major&&s.started&&!s.paused&&!s.ended&&!reduced.matches){reveal();}
     if(!targets[cameraMode])setCamera('overview',true);else if(frames===0)setCamera(cameraMode,true);display();
   }
   function size(){
@@ -241,7 +251,7 @@
   }
   function annotate(){
     const m=metrics,s=state,phase=G.stage(s),held=s.paused||s.ended||!s.started;text($('three-growth-readout'),fmt(m.installed)+' installed · '+fmt(m.capacity)+' supported · '+s.staff+' researcher'+(s.staff===1?'':'s')+' · '+(1+s.rack)+' control rack'+(s.rack===0?'':'s'));
-    let copy=cameraMode==='cryostat'?'A schematic dilution refrigerator: copper stages, suspended coax and a known-preparation circuit. Geometry and temperature behavior are illustrative.':cameraMode==='research'?'Every assigned researcher adds a visible seat and terminal; later hires share larger desk groups. Staff work, notebook space and engineering output are classical game abstractions.':cameraMode==='memory'&&model.patch?'Ideal d = '+s.distance+' rotated patch: '+model.patch.data+' data + '+model.patch.ancilla+' check ancillas = '+m.patch+' physical qubits. Teal X / copper Z checks. Detection highlights never reveal an unknown data state.':cameraMode==='processor'?'Installed '+fmt(m.installed)+' physical qubits, '+fmt(m.capacity)+' supported; '+fmt(m.active)+' active. '+model.processorSites+' processor sites drawn as a schematic subset. Expansion is not a universal power multiplier.':cameraMode==='fabrication'?'Construction teams commission chips and control/cooling support separately. Motion follows current funding-limited rates; equipment cells are schematic groups.':cameraMode==='planning'&&model.schedule?'Parallel operations, fresh states and feedback overlap. The six lanes use one-execution modeled durations; '+(model.schedule.qualified?model.schedule.repetitions+' repetition'+(model.schedule.repetitions===1?' gives ':'s give ')+fmt(model.schedule.runtime)+' μs full modeled time.':'Full modeled time remains unqualified because fresh-state timing is missing.')+' Laboratory seconds use a separate pacing clock; the cursor follows that clock, not the lane μs scale.':cameraMode==='planning'?'Patch-sized allocation units are fictional layout budgets. Factories, routing and spares consume real game footprint; rehearsal markers are classical planning, never stored quantum states.':'Your laboratory grows with staff, control racks, processor modules, pulse tools, decoder capacity and commissioning. Visible apparatus is schematic; exact measurements and scientific assumptions remain inspectable.';
+    let copy=cameraMode==='cryostat'?'A schematic dilution refrigerator: copper stages, suspended coax and a known-preparation circuit. Geometry and temperature behavior are illustrative.':cameraMode==='research'?'Every assigned researcher adds a visible seat and terminal; later hires share larger desk groups. Staff work, notebook space and engineering output are classical game abstractions.':cameraMode==='memory'&&model.patch?'Ideal d = '+s.distance+' rotated patch: '+model.patch.data+' data + '+model.patch.ancilla+' check ancillas = '+m.patch+' physical qubits. Teal X / copper Z checks. Detection highlights never reveal an unknown data state.':cameraMode==='processor'?'Installed '+fmt(m.installed)+' physical qubits, '+fmt(m.capacity)+' supported; '+fmt(m.active)+' active. '+model.processorSites+' processor sites drawn as a schematic subset. Expansion is not a universal power multiplier.':cameraMode==='fabrication'?'Construction teams commission chips and control/cooling support separately. Motion follows current funding-limited rates; equipment cells are schematic groups.':cameraMode==='planning'&&model.schedule?'Parallel operations, fresh states and feedback overlap. The six lanes use one-execution modeled durations; '+(model.schedule.qualified?model.schedule.repetitions+' repetition'+(model.schedule.repetitions===1?' gives ':'s give ')+fmt(model.schedule.runtime)+' μs full modeled time.':'Full modeled time remains unqualified because fresh-state timing is missing. Downstream bar positions show a lower bound; the schedule has no qualified finish.')+' Laboratory seconds use a separate pacing clock; the cursor follows that clock, not the lane μs scale.':cameraMode==='planning'?'Patch-sized allocation units are fictional layout budgets. Factories, routing and spares consume real game footprint; rehearsal markers are classical planning, never stored quantum states.':'Your laboratory grows with staff, control racks, processor modules, pulse tools, decoder capacity and commissioning. Visible apparatus is schematic; exact measurements and scientific assumptions remain inspectable.';
     if(viewEnding)copy='The complete laboratory, from one known signal to a named useful resource scenario. Modeled completion: no large fault-tolerant quantum computation or large quantum answer was produced.';
     if(cameraMode==='planning'&&model.allocation?.shortage)copy+=' Requested reservations exceed the footprint by '+model.allocation.shortage+' units; only '+model.allocation.total+' units are drawn.';
     text(description,copy);canvas.setAttribute('aria-label',copy);
@@ -264,7 +274,7 @@
     if(s.job&&s.job!==followJob&&!s.paused){
       followJob=s.job;const id=s.job.workload?'planning':s.job.id==='memory'?'memory':['gates','factory'].includes(s.job.id)?'planning':'cryostat';
       text($('three-event-caption'),s.job.workload?'The complete resource recipe · cursor follows laboratory pacing':s.job.id==='memory'?'Memory qualification · only check ancillas are highlighted':s.job.id==='calibrate'?'Calibration reserve · customers and commissioning pause':'Known preparation → control → readout · schematic workflow');
-      if(follow&&cameraMode==='overview'&&!reduced.matches&&targets[id]){autoFocused=true;setCamera(id);}
+      if(follow&&cameraMode==='overview'){autoFocused=true;if(targets[id]&&inViewport)setCamera(id);else pendingFocus=id;host.scrollIntoView({block:'start'});}
     }else if(!s.job&&followJob){
       followJob=null;text($('three-event-caption'),s.result?'Workflow complete · '+s.result.message:'The apparatus is available again.');
       if(!s.paused&&!s.ended&&!reduced.matches)completionAt=performance.now();
@@ -273,16 +283,32 @@
     }
   }
   function draw(s,opts={}){
-    state=s;options=opts;metrics=G.metrics(s);viewEnding=opts.view==='ending';const destination=viewEnding?$('ending-view'):figure;if(host.parentElement!==destination)destination.insertBefore(host,viewEnding?$('ending-art'):machine);host.classList.toggle('three-ending',viewEnding);
-    if(!renderer&&available&&visible())initialize();display();original.draw(s,opts);if(!renderer||!available||!enabled||!visible()){stop();return;}
-    size();const next=structural(s,metrics,opts.workload);if(next!==signature){build(s,metrics,opts.workload);signature=next;}
+    if(state&&state!==s){cue.hidden=true;pendingFocus=null;}state=s;options=opts;metrics=G.metrics(s);if(s.ended||opts.view&&opts.view!=='lab')cue.hidden=true;viewEnding=opts.view==='ending';const destination=viewEnding?$('ending-view'):figure;if(host.parentElement!==destination)destination.insertBefore(host,viewEnding?$('ending-art'):machine);host.classList.toggle('three-ending',viewEnding);
+    if(!renderer&&available&&visible())initialize();display();original.draw(s,opts);if(renderer&&available&&enabled)followExperiment(s);if(!renderer||!available||!enabled||!visible()){stop();return;}
+    size();const next=structural(s,metrics,opts.workload);if(next!==signature){build(s,metrics,opts.workload);signature=next;}if(pendingFocus){const id=pendingFocus;pendingFocus=null;setCamera(id);if(pendingInspect){host.querySelector('[data-camera='+id+']')?.focus({preventScroll:true});pendingInspect=false;}}
     const nextTheme=document.documentElement.dataset.theme||'dark';if(theme!==nextTheme){theme=nextTheme;scene.background=new T.Color(theme==='light'?0xc9d5d2:0x06141d);dirty=true;}
-    const before=JSON.stringify(activity);activity=activityFor(s,metrics);if(before!==JSON.stringify(activity))dirty=true;if(s.paused||s.ended||reduced.matches){revealAt=0;completionAt=0;if(cameraMove)setCamera(cameraMode,true);}followExperiment(s);annotate();ensureDriver();
+    const before=JSON.stringify(activity);activity=activityFor(s,metrics);if(before!==JSON.stringify(activity))dirty=true;if(s.paused||s.ended||reduced.matches){revealAt=0;completionAt=0;if(cameraMove)setCamera(cameraMode,true);}annotate();ensureDriver();
   }
+  // Keep routine purchase controls in place and offer an explicit return to the changed apparatus.
+  document.addEventListener('click',event=>{
+    const b=event.target.closest('button');if(!b||b.disabled||!available||!enabled||!state||!(b.dataset.upgrade||b.dataset.assign||b.dataset.project||b.dataset.engineering))return;
+    const before=structural(state,G.metrics(state),options.workload),id=b.dataset.upgrade;
+    // Native input can checkpoint microtasks between listeners; wait for the app's bubbling action.
+    setTimeout(()=>{
+      if(before===structural(state,G.metrics(state),options.workload))return;
+      const words={hardware:'A chip module was installed.',rack:'Your control bay expanded.',pulse:'Your pulse tooling improved.',decoder:'Your decoder bay expanded.',automation:'An analysis station was installed.',workshop:'A construction team joined the laboratory.'};
+      expansionCamera=b.dataset.assign?'research':id==='hardware'?(G.stage(state)>=2?'processor':'cryostat'):id==='workshop'?'fabrication':['rack','pulse','decoder'].includes(id)?'control':'overview';
+      text($('three-expansion-message'),words[id]||(b.dataset.assign?'Your research desk changed.':'Your laboratory changed.'));cue.hidden=false;
+    },0);
+  },true);
+  cue.addEventListener('click',event=>{
+    const b=event.target.closest('button');if(!b)return;cue.hidden=true;
+    if(b.id==='three-inspect-expansion'){follow=false;autoFocused=false;$('three-follow').setAttribute('aria-pressed','false');$('three-follow').textContent='Manual inspection';pendingFocus=expansionCamera;pendingInspect=true;host.scrollIntoView({block:'start'});if(inViewport)draw(state,options);}
+  });
   host.addEventListener('click',async event=>{
     const button=event.target.closest('button');if(!button)return;
     if(button===toggle){enabled=!enabled;dirty=true;display();if(enabled&&state)draw(state,options);else stop();}
-    else if(button.id==='three-expand'){try{const presentation=host.closest('.lab-presentation')||host;if(document.fullscreenElement===presentation)await document.exitFullscreen();else await presentation.requestFullscreen();}catch{ text(status,'Expanded view is unavailable. The wide laboratory remains available here.');}}
+    else if(button.id==='three-expand'){try{const presentation=host.closest('main')||host;if(document.fullscreenElement===presentation)await document.exitFullscreen();else await presentation.requestFullscreen();}catch{ text(status,'Expanded view is unavailable. The wide laboratory remains available here.');}}
     else if(button.id==='three-follow'){follow=!follow;button.setAttribute('aria-pressed',String(follow));button.textContent=follow?'Follow experiment':'Manual inspection';autoFocused=false;}
     else if(button.id==='three-pause')$('pause-toggle').click();
     else if(button.dataset.camera){follow=false;autoFocused=false;$('three-follow').setAttribute('aria-pressed','false');$('three-follow').textContent='Manual inspection';setCamera(button.dataset.camera);if(state)annotate();}
@@ -290,6 +316,6 @@
   reduced.addEventListener('change',()=>{cameraMove=null;revealAt=0;assembly&&(assembly.position.y=0);dirty=true;stop();if(state)draw(state,options);});fine.addEventListener('change',()=>{dirty=true;if(state)draw(state,options);});
   window.addEventListener('resize',()=>{dirty=true;if(state)draw(state,options);});
   window.CoherentArt={draw,postcard:original.postcard};
-  window.Coherent3D=Object.freeze({get diagnostics(){return Object.freeze({available,enabled,scene:viewEnding?'ending':'laboratory',chapter:state?G.stage(state):null,camera:cameraMode,frames,calls:renderer?.info.render.calls||0,triangles:renderer?.info.render.triangles||0,geometries:renderer?.info.memory.geometries||0,textures:renderer?.info.memory.textures||0,width,height,pixelRatio:renderer?.getPixelRatio()||0,followExperiment:follow,cadence:motionActive()?(fine.matches&&width>=660?30:20):0,driverActive:!!driver,activity:{...activity},model:JSON.parse(JSON.stringify(model)),visible:visible()});}});
+  window.Coherent3D=Object.freeze({get diagnostics(){return Object.freeze({available,enabled,scene:viewEnding?'ending':'laboratory',chapter:state?G.stage(state):null,camera:cameraMode,frames,calls:renderer?.info.render.calls||0,triangles:renderer?.info.render.triangles||0,geometries:renderer?.info.memory.geometries||0,textures:renderer?.info.memory.textures||0,width,height,pixelRatio:renderer?.getPixelRatio()||0,followExperiment:follow,cadence:motionActive()?(fine.matches&&width>=660?30:20):0,driverActive:!!driver,activity:{...activity},model:JSON.parse(JSON.stringify(model)),visible:visible(),inViewport});}});
   if(!available)fallback('The local 3D toolkit could not load.');
 })();
