@@ -81,3 +81,4 @@
 .history-study:focus-visible{outline:2px solid var(--teal);outline-offset:4px}.history-study>button{margin:4px 8px 4px 0}.history-evidence{color:var(--teal)!important}.history-programme progress{display:block;width:100%;margin:12px 0}
 
 @media(max-width:660px){.history-row{grid-template-columns:36px minmax(0,1fr);gap:12px}.history-actions{grid-column:2;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:400px){.instrument-readouts .readout:nth-child(2) .readout-value{font-size:clamp(11px,3.2vw,14px);letter-spacing:-.7px;white-space:nowrap}}
