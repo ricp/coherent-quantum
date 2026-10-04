@@ -213,7 +213,7 @@
     $('run-experiment').disabled=!!s.job||s.paused||s.ended||!researchNext&&!!e&&!status.ready;
     const needs=!researchNext&&!workNext?status?.reasons.filter(reason=>reason!=='The apparatus is occupied').join(' · '):'';
     if(!s.job&&needs&&!s.ended)write('experiment-feedback',needs);
-    else if(!s.result&&!s.job)write('experiment-feedback','');
+    else if(!s.job&&(!s.result||s.result.id!==e?.id))write('experiment-feedback','');
     show('job-progress',!!s.job);
     if(s.job){const recipe=s.job.workload?C.workloads.find(w=>w.id===s.job.id):C.experiments.find(e=>e.id===s.job.id);write('job-label',s.job.id==='calibrate'?'Calibrating':recipe?.name||'Experiment');write('job-percent',pct(s.job.progress/s.job.duration,0));$('job-meter').value=s.job.progress/s.job.duration;write('cancel-job',s.job.workload?'Cancel schedule · costs stay spent':'Cancel experiment · costs stay spent');}
     show('calibrate-button',phase>=1);$('calibrate-button').disabled=!!s.job||s.paused||s.ended||s.funds<8;
