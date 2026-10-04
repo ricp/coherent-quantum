@@ -271,6 +271,6 @@
   document.addEventListener('visibilitychange',()=>{previous=performance.now();if(document.hidden){if(s.started)save();if(animation)cancelAnimationFrame(animation);animation=0;}else{render();ensureAnimation();}});
   window.addEventListener('pagehide',()=>{if(s.started)save();});
   window.addEventListener('resize',()=>draw());matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',()=>{draw();ensureAnimation();});
-  $('chapter-dialog').addEventListener('close',()=>{$('run-experiment').focus({preventScroll:true});});
+  $('chapter-dialog').addEventListener('close',()=>{($('run-experiment').disabled?$('pause-toggle'):$('run-experiment')).focus({preventScroll:true});});
   render();ensureAnimation();
 })();

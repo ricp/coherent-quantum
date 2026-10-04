@@ -1,0 +1,419 @@
+{
+  "game": "coherent",
+  "version": 1,
+  "state": {
+    "version": 1,
+    "started": true,
+    "paused": false,
+    "elapsed": 1027,
+    "funds": 95939.5,
+    "effort": 8.399999999996453,
+    "done": [
+      "feynman",
+      "deutsch",
+      "divincenzo",
+      "nakamura",
+      "ramsey",
+      "echo",
+      "readout",
+      "rb",
+      "coupled",
+      "nisq",
+      "vqe",
+      "ansatz",
+      "mitigation",
+      "classical",
+      "shor",
+      "stabilizer",
+      "surface",
+      "decoder",
+      "threshold",
+      "surgery",
+      "gates",
+      "ancilla",
+      "factories",
+      "accounting",
+      "factoring",
+      "grover",
+      "lloyd",
+      "hamiltonian",
+      "chemistry",
+      "audit"
+    ],
+    "qualified": [
+      "signal",
+      "ramsey",
+      "echo",
+      "readout",
+      "benchmark",
+      "circuit",
+      "vqe",
+      "memory",
+      "gates",
+      "factory"
+    ],
+    "module": 6,
+    "rack": 6,
+    "staff": 6,
+    "pulse": 7,
+    "decoder": 2,
+    "drift": 0.005,
+    "distance": 5,
+    "factories": 1,
+    "calibration": 0.3,
+    "service": 0,
+    "theta": 65,
+    "shots": 2,
+    "mitigate": true,
+    "credits": 921.6000000000088,
+    "reputation": 10,
+    "seed": 3186356815,
+    "job": null,
+    "result": {
+      "id": "factory",
+      "shots": 100,
+      "bins": [],
+      "message": "Factory schedule rehearsed. Credits represent planning; no quantum states are stored."
+    },
+    "tutorial": {
+      "theta": 65,
+      "energy": -1.5501708984375,
+      "exact": -1.5620409414293128,
+      "reference": -1.5620499351813308,
+      "statistical": 0.05318408942119493,
+      "se": 0.007412726653850832,
+      "bias": 0.0176,
+      "ansatzError": 0.00000899375201801611,
+      "shots": 49152,
+      "modeledShots": 49152,
+      "groups": [
+        {
+          "label": "ZZ",
+          "plus": 3044,
+          "minus": 13340,
+          "estimate": -0.62841796875
+        },
+        {
+          "label": "X₀",
+          "plus": 1903,
+          "minus": 14481,
+          "estimate": -0.7677001953125
+        },
+        {
+          "label": "X₁",
+          "plus": 1896,
+          "minus": 14488,
+          "estimate": -0.7685546875
+        }
+      ],
+      "qualified": true
+    },
+    "completed": [],
+    "ended": false,
+    "volume": 0.2,
+    "sound": false,
+    "theme": "dark",
+    "log": [
+      {
+        "time": 42,
+        "message": "Add a research colleague. More abstract research effort; allocation remains reversible.",
+        "kind": "engineering"
+      },
+      {
+        "time": 44,
+        "message": "An echo, not a miracle. Separate echo T₂ from Ramsey T₂*.",
+        "kind": "discovery"
+      },
+      {
+        "time": 48,
+        "message": "A measurement is now a little less opinionated.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 48,
+        "message": "Read the result carefully. Reduce the scenario’s residual readout bias.",
+        "kind": "discovery"
+      },
+      {
+        "time": 57,
+        "message": "The control pulses have acquired error bars.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 58,
+        "message": "Add a research colleague. More abstract research effort; allocation remains reversible.",
+        "kind": "engineering"
+      },
+      {
+        "time": 61,
+        "message": "Characterize the gates. Unlock pulse engineering and automatic calibration.",
+        "kind": "discovery"
+      },
+      {
+        "time": 63,
+        "message": "Control & cooling rack. Support 9 active physical qubits.",
+        "kind": "engineering"
+      },
+      {
+        "time": 66,
+        "message": "Install a larger chip. Installed capacity 9 physical qubits.",
+        "kind": "engineering"
+      },
+      {
+        "time": 70,
+        "message": "The second conversation. Connect calibrated qubits. Enter the noisy era.",
+        "kind": "discovery"
+      },
+      {
+        "time": 70,
+        "message": "One qubit becomes a machine.",
+        "kind": "chapter"
+      },
+      {
+        "time": 82,
+        "message": "The second qubit has something to say to the first.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 85,
+        "message": "The noisy intermediate era. Open explicitly qualified laboratory service contracts.",
+        "kind": "discovery"
+      },
+      {
+        "time": 91,
+        "message": "Add a research colleague. More abstract research effort; allocation remains reversible.",
+        "kind": "engineering"
+      },
+      {
+        "time": 102,
+        "message": "A hybrid conversation. Optimize a classically reproducible two-spin tutorial.",
+        "kind": "discovery"
+      },
+      {
+        "time": 119,
+        "message": "Choose the question well. Reveal the tutorial’s exact variational energy landscape.",
+        "kind": "discovery"
+      },
+      {
+        "time": 138,
+        "message": "More shots. Less bias.. Enable a costly measurement-mitigation scenario.",
+        "kind": "discovery"
+      },
+      {
+        "time": 153,
+        "message": "A two-spin energy, reproduced against an exact classical reference.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 160,
+        "message": "The classical challenger. Validate the tutorial; open the path to correction.",
+        "kind": "discovery"
+      },
+      {
+        "time": 160,
+        "message": "The information survives.",
+        "kind": "chapter"
+      },
+      {
+        "time": 161,
+        "message": "Install a larger chip. Installed capacity 25 physical qubits.",
+        "kind": "engineering"
+      },
+      {
+        "time": 161,
+        "message": "Control & cooling rack. Support 25 active physical qubits.",
+        "kind": "engineering"
+      },
+      {
+        "time": 161,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 162,
+        "message": "Install a larger chip. Installed capacity 81 physical qubits.",
+        "kind": "engineering"
+      },
+      {
+        "time": 162,
+        "message": "Control & cooling rack. Support 81 active physical qubits.",
+        "kind": "engineering"
+      },
+      {
+        "time": 162,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 163,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 187,
+        "message": "Information worth protecting. Introduce encoded-memory experiments.",
+        "kind": "discovery"
+      },
+      {
+        "time": 217,
+        "message": "Read errors, not secrets. Reveal syndrome detection events.",
+        "kind": "discovery"
+      },
+      {
+        "time": 248,
+        "message": "A patch of protection. Allocate ideal rotated memory patches.",
+        "kind": "discovery"
+      },
+      {
+        "time": 283,
+        "message": "A classical companion. Unlock streaming decoder upgrades.",
+        "kind": "discovery"
+      },
+      {
+        "time": 298,
+        "message": "Protected memory. The information survives; the funding remains exposed.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 321,
+        "message": "Below the threshold. Qualify the current memory regime; enter logical engineering.",
+        "kind": "discovery"
+      },
+      {
+        "time": 321,
+        "message": "Protection becomes orchestration.",
+        "kind": "chapter"
+      },
+      {
+        "time": 322,
+        "message": "Install a larger chip. Installed capacity 257 physical qubits.",
+        "kind": "engineering"
+      },
+      {
+        "time": 322,
+        "message": "Control & cooling rack. Support 257 active physical qubits.",
+        "kind": "engineering"
+      },
+      {
+        "time": 322,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 322,
+        "message": "Upgrade classical decoding. More streaming throughput and shorter feedback latency.",
+        "kind": "engineering"
+      },
+      {
+        "time": 323,
+        "message": "Install a larger chip. Installed capacity 769 physical qubits.",
+        "kind": "engineering"
+      },
+      {
+        "time": 323,
+        "message": "Control & cooling rack. Support 769 active physical qubits.",
+        "kind": "engineering"
+      },
+      {
+        "time": 323,
+        "message": "Upgrade classical decoding. More streaming throughput and shorter feedback latency.",
+        "kind": "engineering"
+      },
+      {
+        "time": 365,
+        "message": "Make room to operate. Reserve routing and spare footprint for logical operations.",
+        "kind": "discovery"
+      },
+      {
+        "time": 383,
+        "message": "A memory learns to act. Routing takes its share of the chip.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 413,
+        "message": "A memory learns to act. Qualify a separate logical-operation model.",
+        "kind": "discovery"
+      },
+      {
+        "time": 465,
+        "message": "A careful kind of resource. Enable the selected distillation-output scenario.",
+        "kind": "discovery"
+      },
+      {
+        "time": 484,
+        "message": "The board requests more qubits. The decoder requests a chair.",
+        "kind": "breakthrough"
+      },
+      {
+        "time": 522,
+        "message": "A factory needs a floor plan. Allocate factories and produce scheduling rehearsal credits.",
+        "kind": "discovery"
+      },
+      {
+        "time": 587,
+        "message": "Count everything that matters. Open full resource previews and the useful-work chapter.",
+        "kind": "discovery"
+      },
+      {
+        "time": 587,
+        "message": "At last, a question worth asking.",
+        "kind": "chapter"
+      },
+      {
+        "time": 588,
+        "message": "Install a larger chip. Installed capacity 2049 physical qubits.",
+        "kind": "engineering"
+      },
+      {
+        "time": 588,
+        "message": "Control & cooling rack. Support 2049 active physical qubits.",
+        "kind": "engineering"
+      },
+      {
+        "time": 588,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 589,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 599,
+        "message": "Refine the control pulses. Lower the selected stochastic error scenario.",
+        "kind": "engineering"
+      },
+      {
+        "time": 647,
+        "message": "Fifteen, without the theatre. Open a toy factor certificate and its logical resource recipe.",
+        "kind": "discovery"
+      },
+      {
+        "time": 707,
+        "message": "A search with an honest oracle. Count the toy oracle, its access, and repetition costs.",
+        "kind": "discovery"
+      },
+      {
+        "time": 779,
+        "message": "Let the spins evolve. Open the named Ising-dynamics resource scenario.",
+        "kind": "discovery"
+      },
+      {
+        "time": 857,
+        "message": "A better simulation recipe. Qualify the selected dynamics precision recipe.",
+        "kind": "discovery"
+      },
+      {
+        "time": 939,
+        "message": "An energy, not a miracle cure. Open a named electronic-model resource scenario.",
+        "kind": "discovery"
+      },
+      {
+        "time": 1027,
+        "message": "Useful, with the caveats intact. Audit the interpretation. Completing a scientific scenario unlocks the ending.",
+        "kind": "discovery"
+      }
+    ]
+  }
+}

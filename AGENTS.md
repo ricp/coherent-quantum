@@ -6,7 +6,9 @@ These instructions apply to every task in this repository. Follow the user's lat
 
 Build **Coherent** (working title), a quantum computing incremental game inspired by Keir's [Singular Value](https://singularvalue.org/). This is a private surprise gift. Preserve the original's changing bottlenecks, research, automation, humor, and dramatic progression while creating an original, outstanding interface.
 
-The original-game analysis and independent AI quantum design review are complete. The UI preview demonstrates the proposed appearance and sample interactions. The full playable campaign, economy, balancing, persistence, and release are not complete. Do not describe a mockup, reviewed proposal, or simulated resource scenario as a finished game.
+The original-game analysis and independent AI quantum design review are complete. The first playable campaign implements six chapters, 30 discoveries, 36 sources, evolving instruments, persistence, and a private gift ending. `VERIFICATION.md` records the baseline engine, browser, graphics, and independent AI reviews. `prototypes/coherent-preview.html` remains a concept preview, separate from the game in `index.html`.
+
+The user's first playtest reached the ending in **15:33 laboratory time, with 769 qubits and 27/30 discoveries**. They took 1h33 to finish Singular Value and found Coherent much too short and simple. The active task is to improve campaign depth and pacing, provisionally targeting about 90 minutes of active first play, and iterate with an independent AI game-design specialist until actual consensus. Do not describe the short baseline as adequately balanced or confuse longer waiting with strategic depth.
 
 Read the relevant files before implementing:
 

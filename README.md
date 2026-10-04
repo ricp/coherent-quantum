@@ -35,11 +35,14 @@ Read [MODEL.md](MODEL.md) for equations and assumptions, [PAPERS.md](PAPERS.md) 
 ```sh
 node --test tests/game.test.cjs
 node tests/playthrough.cjs --write-evidence
+node tests/contrast.cjs
 ```
 
 The deterministic engine tests cover intent: real costs and prerequisites, scientific distinctions, footprint/decoder tradeoffs, degraded-workload recovery, malformed imports, and legal complete campaigns. Automated compact and wide strategies each complete all six chapters and all 30 discoveries in 1,078 simulated laboratory seconds. A separate test completes the electronic workload ending. These are legal engine playthroughs, not human fun ratings or browser recordings.
 
 `evidence/coherent/` contains exported legal chapter states, pacing records, rendered scene captures, and browser interaction evidence. Later-scene visual QA uses those states through the ordinary save import control; it does not establish a second human playthrough.
+
+See [VERIFICATION.md](VERIFICATION.md) for the baseline acceptance evidence and its limits. The user's first run finished in 15:33 laboratory time with 27/30 discoveries; they found this much shorter and simpler than Singular Value. Campaign depth and pacing are being revised from that baseline.
 
 ## Small by design
 
