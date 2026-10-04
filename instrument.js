@@ -165,8 +165,8 @@
     }
     document.getElementById('machine').setAttribute('aria-label','Fictional logical allocation budget: '+total+' complete patch-sized units, '+m.slots+' application slots, '+m.routing+' routing units, '+m.spares+' spare unit, '+m.factoryUnits+' factory units. Factory motion represents scheduling rehearsals; no quantum states are stored.');
   }
-  function schedule(a,s,m,id) {
-    grid(a);const w=C.workloads.find(w=>w.id===id)||C.workloads[0],b=G.workloadStatus(s,w.id),parallel=Math.max(b.gateTime,b.factoryTime,b.feedbackTime),known=Number.isFinite(parallel),effective=known?parallel:Math.max(b.gateTime,b.feedbackTime),finish=w.preparation+effective+w.readout+w.classical;
+  function schedule(a,s,m,id,recipe) {
+    grid(a);const running=s.job?.workload&&s.job.id===id,w=G.workloadRecipe?G.workloadRecipe(s,id,running?s.job.recipe:recipe):C.workloads.find(w=>w.id===id)||C.workloads[0],b=running?G.liveWorkloadStatus(s,w.id):G.workloadStatus(s,w.id),parallel=Math.max(b.gateTime,b.factoryTime,b.feedbackTime),known=Number.isFinite(parallel),effective=known?parallel:Math.max(b.gateTime,b.feedbackTime),finish=w.preparation+effective+w.readout+w.classical;
     text(a,'06 / THE COMPLETE SCHEDULE',20,24,a.p.copper,10);text(a,'Selected recipe · one execution · μs',20,45,a.p.muted,a.w<430?9:10);
     const left=a.w<430?104:139,right=24,pw=a.w-left-right,top=83,gap=(a.h-169)/6;
     const items=[['Preparation',0,w.preparation,a.p.muted],['Operations',w.preparation,b.gateTime,a.p.teal],['Fresh states',w.preparation,b.factoryTime,a.p.copper],['Feedback',w.preparation,b.feedbackTime,a.p.warning],['Readout',w.preparation+effective,w.readout,a.p.muted],['Classical',w.preparation+effective+w.readout,w.classical,a.p.muted]];
@@ -178,7 +178,7 @@
       else{box(a,bx,y-5,bw,10,a.p.panel,a.p.warning,1);text(a,'factory unqualified',a.w-14,y+15,a.p.warning,9,'right');}
     });
     const axis=top+gap*5+29;text(a,'0',left,axis,a.p.muted,9);text(a,known?num(finish)+' μs':'time not qualified',a.w-24,axis,a.p.muted,9,'right');
-    const running=s.job?.workload&&s.job.id===w.id;line(a,20,a.h-60,a.w-20,a.h-60,a.p.line);if(running)line(a,20,a.h-60,20+(a.w-40)*Math.min(1,s.job.progress/s.job.duration),a.h-60,a.p.teal,2);
+    line(a,20,a.h-60,a.w-20,a.h-60,a.p.line);if(running)line(a,20,a.h-60,20+(a.w-40)*Math.min(1,s.job.progress/s.job.duration),a.h-60,a.p.teal,2);
     text(a,w.repetitions+' repetition'+(w.repetitions===1?'':'s')+' · '+num(b.runtime)+' μs full modeled task',a.w/2,a.h-43,a.p.ink,a.w<430?10:11,'center',sans);
     text(a,running?'Lab progress ≠ modeled wall time.':a.w<430?'Parallel stages overlap; overhead follows.':'Overlapping work takes the maximum, then sequential overhead.',a.w/2,a.h-20,a.p.muted,10,'center');
     document.getElementById('machine').setAttribute('aria-label','Selected educational workload schedule. Preparation '+w.preparation+' microseconds, operations '+num(b.gateTime)+', fresh-state production '+num(b.factoryTime)+', feedback '+num(b.feedbackTime)+', readout '+w.readout+', classical processing '+w.classical+'. '+w.repetitions+' repetitions. Full modeled runtime '+num(b.runtime)+' microseconds. Laboratory progress is a separate pacing clock.');
@@ -189,8 +189,9 @@
       const t=s.tutorial,left=38,pw=a.w-64;const cols=[a.p.teal,a.p.copper];
       text(a,'+1 counts',left,13,cols[0],10);text(a,'−1 counts',a.w-25,13,cols[1],10,'right');
       t.groups.forEach((g,i)=>{const y=42+i*37,sum=g.plus+g.minus; text(a,g.label,8,y,a.p.ink,11);box(a,left,y-7,pw*g.plus/sum,14,cols[0],null,1);box(a,left+pw*g.plus/sum,y-7,pw*g.minus/sum,14,cols[1],null,1);text(a,num(g.plus)+' / '+num(g.minus),left+pw/2,y+16,a.p.muted,9,'center');});
-      text(a,'Classical reference: −√2.44',a.w/2,151,a.p.muted,10,'center');
-      document.getElementById('measurement').setAttribute('aria-label','Actual classically simulated Pauli sample groups: '+t.groups.map(g=>g.label+', '+g.plus+' plus-one and '+g.minus+' minus-one counts').join('; ')+'. Classical ground-state reference is negative square root of 2.44.');return;
+      const named=result.task&&result.task.angle!==null,reference=named?'E('+t.theta+'°) = '+num(result.task.reference,4):'−√2.44';
+      text(a,'Classical reference: '+reference,a.w/2,151,a.p.muted,10,'center');
+      document.getElementById('measurement').setAttribute('aria-label','Actual classically simulated Pauli sample groups: '+t.groups.map(g=>g.label+', '+g.plus+' plus-one and '+g.minus+' minus-one counts').join('; ')+(named?'. Exact classical reference at the recorded '+t.theta+' degree angle is '+num(result.task.reference,4)+'.':'. Classical ground-state reference is negative square root of 2.44.'));return;
     }
     const bins=result?.bins||[];
     if(bins.length){
@@ -225,7 +226,7 @@
   }
   function draw(s,opts={}) {
     const p=palette(),m=G.metrics(s),a=fit('machine',p),phase=!reduced.matches&&!s.paused&&!s.ended&&(s.job||(m.factoryOK&&s.credits<2000))?(opts.time??performance.now())/1000:0;
-    if(a)[opening,control,noisy,surface,logical,(a,s,m)=>schedule(a,s,m,opts.workload)][G.stage(s)](a,s,m,phase);
+    if(a)[opening,control,noisy,surface,logical,(a,s,m)=>schedule(a,s,m,opts.workload,opts.recipe)][G.stage(s)](a,s,m,phase);
     const b=fit('measurement',p);if(b)measurement(b,s,m);
     const e=fit('ending-art',p);if(e)evolution(e,s);
   }
@@ -237,8 +238,8 @@
     text(a,'For Keir, who turned one neuron into a world.',600,219,p.ink,29,'center',serif);
     text(a,'Here is one qubit in return.',600,256,p.copper,31,'center',serif);
     a.x.save();a.x.translate(110,290);evolution({x:a.x,w:980,h:210,p},s);a.x.restore();
-    const seconds=Math.floor(s.elapsed),clock=Math.floor(seconds/60)+'m '+seconds%60+'s';
-    const stats=[[clock,'visible laboratory time'],[s.done.length+' / 30','research discoveries'],[num(m.active),'active physical qubits'],[String(s.completed.length),'named recipes completed']];
+    const record=s.endingRecord,seconds=Math.floor(record?.elapsed??s.elapsed),clock=Math.floor(seconds/60)+'m '+seconds%60+'s';
+    const stats=[[clock,'visible laboratory time'],[(record?.discoveries??s.done.length)+' / '+C.projects.length,'research discoveries'],[num(record?.active??m.active),'active physical qubits'],record?[String(record.distance),'code distance at milestone']:[String(s.completed.length),'named recipes completed']];
     stats.forEach(([value,label],i)=>{const x=168+i*288;text(a,value,x,550,p.ink,28,'center',mono);text(a,label,x,583,p.muted,12,'center',sans);});
     line(a,64,622,1136,622,p.line);text(a,'Modeled scenario completion · no large quantum result is computed.',64,656,p.muted,11,'left',sans);text(a,'Inspired by Singular Value · singularvalue.org',1136,656,p.copper,11,'right',sans);
     return canvas;

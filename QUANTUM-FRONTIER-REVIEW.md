@@ -153,3 +153,85 @@ An optional continuation after the gift ending is scientifically safe if the gif
 **Accept the proposed direction, conditionally.** It is consistent with the existing scientific model if the contracts above remain true. The minimum effective release is a visible expanded facility tied to real commissioned resources, recurring finite measurement objectives, procurement commitments, and one task-specific logical tradeoff. Two service classes add value only if qualification, acquisitions and payment remain distinct. Modern papers should motivate new frontier questions rather than validate fictional performance multipliers.
 
 This document does not constitute final consensus on unimplemented code. The parent and gameplay specialist must confirm their concrete choices; the quantum reviewer must then review the actual diff and numerical/intent tests, resolve disagreements, and record the final scope. Complete legal campaigns, actual desktop/mobile/reduced-motion/browser interactions and a human enjoyment assessment remain separate evidence requirements. Longer waiting, more meshes or more numbers are not proof of deeper or outstanding gameplay.
+
+## Concrete modern-discovery agreement
+
+The lead and independent AI gameplay builder agreed the following optional campus-only discoveries before their implementation. This is design consensus; final source/test/UI acceptance remains separate.
+
+- `controller2026`, after the existing decoder discovery, cites Q37/Q41. Cost: 250 funding,600 effort,60 designs. It enables three reversible classical controller presets: balanced `(stream×1, feedback×1)`, streaming `(stream×2, feedback×1.5)`, response `(stream×0.75, feedback×0.5)`. These are selected game scenarios, not measured performance extracted from either paper. No preset changes physical noise, logical memory error, operation error, accepted-state error or actual patch counts. Profile changes are refused during every atomic schedule.
+- `adaptive2026`, after threshold and current qualified memory evidence, cites Q38. Cost:1,400 funding,4,200 effort,400 designs. It reduces the selected maintenance requirement by 10%, retaining real calibration duty, the drift floor and the same physical-noise law. The effect is a management scenario; it is not the experiment's 3.5-fold stability result.
+- `state-readiness`, after accounting, cites Q39/Q40/Q43. Cost:1,800 funding,6,000 effort,600 designs. It unlocks the declared compact/parallel Dynamics alternatives, keeping balanced available. No retroactive purification, stored magic states, free factory accuracy or universal runtime multiplier occurs.
+
+A numerical reason for the controller study's revised lower cost: the initially proposed900 funding / 2,600 effort / 240 designs entry was a poor fast-finish investment because decoder 2→3 alone costs720 funding / 120 designs and provides stronger throughput with the same useful latency as response at level 2. The final 250 / 600 / 60 entry creates a cash-versus-research/design tradeoff instead of charging more for a dominated capability. This conclusion is from the game's deterministic coefficients, not a paper.
+
+Two declared numerical test mixes make the presets consequential. These are constructed model cases, not earned browser campaigns:
+
+1. With 3,000 active physical qubits, distance 5, pulse 8, decoder 2 and three factories, complete-patch syndrome load is 1,464 per selected microsecond. Streaming supplies 2,048 with 30-microsecond feedback; balanced 1,024 and response 768 cannot keep up. Streaming can qualify the named Dynamics task if all other current conditions hold.
+2. With 769 active physical qubits, distance 3, pulse 8, decoder 2 and two factories, syndrome load is 360 and 34 application slots remain. Response gives 768 throughput and 10-microsecond feedback; the gate lane is 2,400 microseconds. At drift .005 the current point-estimate risk is approximately .0389, within the .04 ceiling. Balanced 20-microsecond feedback and streaming 30 add waiting-memory exposure, exceeding the same risk ceiling. No error coefficient is improved by selecting response.
+
+Actual engine probes must verify these calculations and legal policies must establish that the states are attainable. Visible station links should connect cryostat→Q38, control/decoder→Q37/Q41, factory/planning→Q39/Q40/Q43 and topology comparison→Q42. Angle-reference request success must remain distinct from ordinary ground-state tutorial qualification.
+
+## Independent AI quantum review of the implemented campus
+
+Reviewed 5 October 2026 on `feature/quantum-research-campus`. The independent AI quantum reviewer accepts the implemented scientific and resource contracts after reviewing `game.js`, `content.js`, the task captions in `app.js`/`instrument.js`, and the new intent tests, and after resolving the concrete findings below with the lead and gameplay builder. This conclusion concerns the declared educational model and tested implementation; it does not certify a physical quantum computer or establish that the game is outstanding to a human player.
+
+The reviewer independently ran the integrated suite after the final compact-plan correction: **68 passed, zero failed, zero skipped**. Both campus policies also completed through public engine actions, with strict restoration of earned intermediate snapshots. These simulations use an accelerated development clock and are separate from the lead's normal-player Chrome campaign.
+
+### Findings resolved before acceptance
+
+1. A successful named-angle precision request could be described as an unsuccessful ground-energy experiment. Its result message, caption and measurement figure now use its captured task criterion and exact reference at the recorded preparation angle. Ordinary ground-reference qualification remains distinct. The separate energy landscape retains its explicitly labeled ground reference.
+2. The first compact plan was dominated by the unchanged balanced plan. Compact now uses 128 fresh states, rather than 192, in exchange for depth 320. Its 32 data registers and 4,800 modeled operations remain explicit. Baseline-aware tests prove that different factory budgets favor different plans. These counts are authored scenarios for the same named task, not a compiled algorithm or a result extracted from a paper.
+3. Saved ending metadata could invent a parallel molecular recipe or contradict the actually completed Dynamics recipe. Validation now requires the first-ending recipe to agree with captured completion history; non-Dynamics workloads retain the balanced recipe. An actual execution test completes compact Dynamics, changes the idle planner, runs another experiment and buys the final audit, proving the historical record retains compact.
+4. A successful current measurement could survive removal of its earned receipt. Validation now requires matching task ID, unique trial identity, captured acquisition/bias/mitigation settings and raw sample counts. Failure/cancellation cannot pay, and successful goals and requests cannot pay twice.
+5. The live in-progress rollout briefly saved a complete campus block before `completedRecipes` existed. The only accepted transition is campus revision one with every other campus field present, that field alone absent, no completed workload, null first-ending record and false epilogue. It supplies an empty map and runs all other validators, preserving every earned resource, captured job, receipt, seed and clock value. Other partial or historical blocks remain rejected. The lead separately observed the user's earned Chrome laboratory return unchanged after reloading.
+
+### Scientific contracts checked
+
+The two-spin Hamiltonian remains `H = ZZ + 0.6 X₀ + 0.6 X₁`, with exact classical ground reference `−√2.44`. Ground goals require an admissible exact ansatz error as well as the measured interval criterion. Named-angle checks use the exact energy at the captured angle and require the stated preparation. Sampling, residual bias and ansatz error are separate. The displayed 95% simultaneous sampling bound concerns the three groups in that single trial; it is not campaign-wide coverage or a guarantee under repeated adaptive stopping.
+
+Actual samples are three groups of `M` Bernoulli trials. Mitigation remains a declared residual-bias scenario with fourfold modeled acquisition overhead; it does not create four times as many raw samples. Campus VQE pacing is `8 + modeled acquisitions / 12,288` apparatus seconds, separate from physical circuit microseconds. Six finite objectives and six finite requests each require fresh captured evidence; the unchanged continuous service concerns known preparations. Trust, cash and designs are classical management rewards, with no universal multiplier from physical qubit count, Hilbert-space size or entanglement.
+
+Procurement spends the final quote immediately. Delivery creates uncommissioned stock; workshop allocation and assembly funding still produce installed chip units and supported control/cooling units through a shared stream. Paid stock and pending orders reserve the eventual 8,193-unit ceiling, including subsequent preset upgrades. Atomic apparatus jobs stop commissioning while external deliveries advance with visible laboratory time. An independent deterministic probe of **2,000 constructed fractional commissioning cases** conserved stock plus commissioned output to a maximum error of `4.5 × 10⁻¹³`, respected the ceiling and restored through the strict parser. These fixtures are accounting evidence, not earned playthroughs.
+
+The original superconducting surface-code architecture remains in force: ideal patch footprint, reserved routing/spares/factories, all-patch syndrome throughput, feedback latency, logical memory and operation error, accepted fresh-state error, repetitions and complete workload waiting/preparation/readout costs remain distinct. Workspace consumes the actual application footprint and idle exposure. Rehearsal credits are classical scheduling resources, not stored quantum states. No 32-spin quantum calculation is performed by the browser.
+
+### Numerical decisions verified in the actual engine
+
+Constructed fixtures used pulse level eight, drift `0.005`, declared prerequisites and sufficient entry resources. They isolate mechanics; their arbitrary resources are not player-run evidence.
+
+| Declared mix | Profile | Decoder capacity / syndrome load per μs | Feedback μs | Dynamics result |
+| --- | --- | --- | --- | --- |
+| 3,000 active, d=5, decoder 2, three factories | Streaming | 2,048 / 1,464 | 30 | Qualifies; 6,180 μs, 0.25752% risk |
+| Same mix | Balanced | 1,024 / 1,464 | 20 | Fails streaming capacity |
+| Same mix | Response | 768 / 1,464 | 10 | Fails streaming capacity |
+| 769 active, d=3, decoder 2, two factories | Response | 768 / 360 | 10 | Qualifies; 2,580 μs, 3.8924233% risk |
+| Same mix | Balanced | 1,024 / 360 | 20 | 4,180 μs, 10.542207% risk; fails 4% budget |
+| Same mix | Streaming | 2,048 / 360 | 30 | 6,180 μs, 18.854437% risk; fails 4% budget |
+
+The profile switch changes neither current physical nor logical error parameters. The authored adaptive-control study reduces selected maintenance by 10%, keeps actual calibration duty and the drift floor, and does not import the cited experiment's stability factor as a universal fidelity gain.
+
+For the same 32-data-register task at d=5 with decoder level three:
+
+| Plan | Application registers | Fresh states | One factory: time / risk | Three factories: time / risk |
+| --- | --- | --- | --- | --- |
+| Balanced | 32 | 192 | 7,860 μs / 0.31128% | 4,180 μs / 0.19352% |
+| Compact | 32 | 128 | 6,580 μs / 0.26968% | 6,580 μs / 0.26968% |
+| Parallel | 32 data + 8 workspace | 256 | 10,420 μs / 0.44696% | 3,593.333 μs / 0.173893% |
+
+At d=9 with three factories and the 8,193-unit physical cap, only 35 application slots remain: parallel's 40-register footprint is refused. Balanced and compact remain feasible, and compact can enter with 128 rehearsal credits when balanced requires 192. Thus compact is useful when state supply is scarce, parallel when its extra supply and workspace fit, and balanced preserves a useful baseline.
+
+The independently rerun legal campus policies finished in **85:32** (local delivery) and **75:18** (bulk delivery), each earning all six objectives, all six finite requests and all three modern studies. Local used 24 orders, 408 laboratory seconds of frontier-task apparatus work and a longest action gap of 7:15. Bulk used eight orders, 728 task seconds and a longest gap of 3:43. These are two mixed policies: local uses the frontier investment strategy and distance three; bulk uses the infrastructure strategy and distance five. The elapsed difference does not isolate delivery size or prove a causal bulk discount in campaign time. They are not exhaustive optimality, human pacing or enjoyment estimates.
+
+### Modern papers and game hooks
+
+The new Q37–Q43 metadata accurately distinguishes experimental results, simulations/resource studies and preprints. Sources were checked through **5 October 2026**. The optional controller decision links [Caune et al., journal 2026](https://doi.org/10.1038/s41467-026-73331-6) and [Bausch et al., 2024](https://doi.org/10.1038/s41586-024-08148-8); adaptive maintenance links [Sivak et al., journal 2026](https://doi.org/10.1038/s41586-026-10759-2); state-readiness planning links [Gidney, Shutty and Jones, 2024](https://arxiv.org/abs/2409.17595), [Rosenfeld et al., experimental preprint 2025](https://arxiv.org/abs/2512.13908), and [Xu et al., runtime preprint 24 September 2026](https://arxiv.org/abs/2609.29267). [Vezvaee et al., journal 2026](https://doi.org/10.1038/s41467-026-76090-6) remains an inspectable alternative-connectivity comparison; it does not silently replace the reviewed native patch model. The publisher's 2026 correction to existing Q09 is recorded separately from a new scientific result.
+
+The papers motivate actual optional decisions while their measured or estimated numerical results remain separate from game coefficients. Visible station readings connect control to Q37/Q41, cooling to Q38, logical planning to Q40/Q43 and memory topology to Q42. The historical introductory VQE citation is from 2014 because of the teaching sequence; the prior bibliography already reached 2025 and the archive now visibly reaches 2026.
+
+### Acceptance boundary and remaining verification
+
+The lead, gameplay builder and independent AI quantum reviewer reached consensus on the tested engine/resource contracts and corrections above. The retained first ending and explicit continuation preserve historical results without repeating scientific workload rewards. There is no unresolved scientific implementation blocker in this reviewed scope.
+
+The lead's full normal-player Chrome ending, final desktop/mobile camera and interaction evidence, broad physical-device performance, a first-human 90-minute target and human enjoyment remain separate requirements. The remaining multi-minute action gaps are real limitations, not evidence of strategic depth. No claim of outstanding graphics or gameplay follows merely from these unit tests, mesh counts or simulated completions.
+
+Reviewed source SHA-256: `game.js` = `66bd3bbb40fca08b1f90194312f485a4868b8377c1fa02932803c17ff994f6dc`; `content.js` = `26181066d2a55682ec8c42fa649aa0daa954e96d868de293192c2e295a34b66f`; `instrument.js` = `20e3b9578f1cec5210f693ce60e9eb172aac800f8ac4568e60c5b20a847d14f1`.

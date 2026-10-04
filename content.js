@@ -630,6 +630,129 @@
     ]
   }
 };
+  Object.assign(papers,{
+  "Q37": {
+    "id": "Q37",
+    "authors": "Laura Caune, Luka Skoric, Nick S. Blunt, Archibald Ruban et al.",
+    "title": "Demonstrating real-time and low-latency quantum error correction with superconducting qubits",
+    "date": "preprint 2024; journal 2026",
+    "type": "Real-time decoding experiment",
+    "finding": "A small superconducting experiment integrates FPGA decoding and feedback. Streaming throughput and full response latency are separate; its measured timings do not certify a large universal logical processor.",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2410.05202"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1038/s41467-026-73331-6"
+      }
+    ],
+    "game": "Unlocks authored controller profiles separating throughput and response; their numerical coefficients are game presets, not measured device timings."
+  },
+  "Q38": {
+    "id": "Q38",
+    "authors": "Volodymyr Sivak, Alexis Morvan, Michael Broughton et al.",
+    "title": "Reinforcement learning control of quantum error correction",
+    "date": "preprint 2025; journal 2026",
+    "type": "Adaptive control experiment",
+    "finding": "A classical learning controller uses error-detection information to steer superconducting control parameters against drift. The studied improvement is conditional; syndrome events do not reveal an unknown logical state.",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2511.08493"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1038/s41586-026-10759-2"
+      }
+    ],
+    "game": "Unlocks a bounded 10% maintenance reduction in the selected drift-management scenario. The paper does not validate this game coefficient."
+  },
+  "Q39": {
+    "id": "Q39",
+    "authors": "Craig Gidney, Noah Shutty, Cody Jones",
+    "title": "Magic state cultivation: growing T states as cheap as CNOT gates",
+    "date": "preprint 2024",
+    "type": "Preparation protocol and resource study",
+    "finding": "Cultivation grows and checks an encoded resource state. Estimated reliability and resources depend on the protocol and noise assumptions; this study does not experimentally certify every future factory.",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2409.17595"
+      }
+    ],
+    "game": "Resource-preparation reading for optional compact and parallel authored schedules. No cultivation protocol is simulated and the factory-error model is unchanged."
+  },
+  "Q40": {
+    "id": "Q40",
+    "authors": "Emma Rosenfeld et al.",
+    "title": "Magic state cultivation on a superconducting quantum processor",
+    "date": "preprint 2025",
+    "type": "Experimental preprint",
+    "finding": "A superconducting cultivation study includes switching into a surface code and a fidelity-bounding protocol. Its retained-output fidelity and acceptance yield are distinct; rejected attempts still consume resources.",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2512.13908"
+      }
+    ],
+    "game": "Resource-readiness reading distinguishes accepted-state fidelity from yield. No free states, acceptance multiplier or factory upgrade is granted."
+  },
+  "Q41": {
+    "id": "Q41",
+    "authors": "Johannes Bausch, Andrew W. Senior, Francisco J. H. Heras et al.",
+    "title": "Learning high-accuracy error decoding for quantum processors",
+    "date": "journal 2024",
+    "type": "Decoder method and experimental-data analysis",
+    "finding": "A learned surface-code decoder improves accuracy on studied memory datasets and simulated codes. The presented throughput remains slower than the one-microsecond target; accuracy, throughput and latency stay distinct.",
+    "links": [
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1038/s41586-024-08148-8"
+      }
+    ],
+    "game": "Pairs with the controller-profile decision. Profile throughput and feedback costs do not change the selected noise or decoding-accuracy model."
+  },
+  "Q42": {
+    "id": "Q42",
+    "authors": "Arian Vezvaee, Cesar Benito, Mario Morford-Oberst, Alejandro Bermudez, Daniel A. Lidar",
+    "title": "Surface code scaling on heavy-hex superconducting quantum processors",
+    "date": "preprint 2025; journal 2026",
+    "type": "Alternative layout experiment",
+    "finding": "Connectivity-aware embedding and dynamical decoupling produce directional improvements on heavy-hex layouts. This is distinct from global state-independent subthreshold scaling and from our native rotated-patch accounting.",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2510.18847"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1038/s41467-026-76090-6"
+      }
+    ],
+    "game": "An inspectable alternative-layout comparison. It does not change our native rotated-patch resource model."
+  },
+  "Q43": {
+    "id": "Q43",
+    "authors": "Jubo Xu, Abbas B. Ziad, Prakash Murali, Hongxiang Fan",
+    "title": "MagiCFirm: A Runtime for Magic-State Cultivation with Algorithm-Hardware Co-Design",
+    "date": "preprint 24 September 2026",
+    "type": "Architecture and runtime study",
+    "finding": "A protocol-aware runtime study evaluates FPGA resources and modeled preparation latency including retries. Conditional state-supply improvements help application runtime only while that lane limits the named workload.",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2609.29267"
+      },
+      {
+        "label": "Full study",
+        "url": "https://arxiv.org/html/2609.29267v1"
+      }
+    ],
+    "game": "Runtime reading makes optional schedule bottlenecks explicit. The authored task recipes do not reproduce its benchmark or implement its cultivation runtime."
+  }
+});
   const chapters = [
     {name:'First signal',title:'One qubit.',accent:'A world of possibility.',subtitle:'A room. A refrigerator. A very fragile beginning.',instrument:'The first apparatus',goal:'Find a signal. Balance researchers, notes storage, and engineering designs.',transition:'A signal worth listening to.',story:'You have persuaded a superconducting circuit to behave coherently. The room is still larger than the computer.'},
     {name:'Control room',title:'Listen closely.',accent:'The noise has a shape.',subtitle:'Preparation, control, and measurement. In that order.',instrument:'The control room',goal:'Characterize the device. Reserve calibration time before expanding.',transition:'The laboratory learns to listen.',story:'Every good result begins with a calibration. Every calibration ends with another question.'},
@@ -672,6 +795,11 @@
     ['chemistry',5,'An energy, not a miracle cure','Open a named electronic-model resource scenario.',['Q19'],['hamiltonian'],6900,24000,2800],
     ['audit',5,'Useful, with the caveats intact','Audit the interpretation. Completing a scientific scenario unlocks the ending.',['Q22','Q23'],['hamiltonian'],10000,34000,4000]
   ].map(([id,chapter,title,effect,papers,requires,funds,effort,designs,qualification]) => ({id,chapter,title,effect,papers,requires,cost:{funds,effort,designs},qualification}));
+  projects.push(
+    {id:'controller2026',chapter:3,optional:true,title:'The controller has two clocks · 2026',effect:'Choose authored streaming or response profiles. Throughput and latency trade off; physical and logical error parameters stay separate.',papers:['Q37','Q41'],requires:['decoder'],cost:{funds:250,effort:600,designs:60}},
+    {id:'adaptive2026',chapter:4,optional:true,title:'Control that listens · 2026',effect:'Reduce selected maintenance need by 10% through classical drift management. Calibration duty still consumes time; no universal device fidelity boost.',papers:['Q38'],requires:['threshold'],qualification:'memory',cost:{funds:1400,effort:4200,designs:400}},
+    {id:'state-readiness',chapter:5,optional:true,title:'Ready when the algorithm is · 2026',effect:'Compare compact and parallel schedules for the same 32-spin task, with footprint, factory waiting and workspace fully counted. Factory quality stays unchanged.',papers:['Q39','Q40','Q43'],requires:['accounting'],cost:{funds:1800,effort:6000,designs:600}}
+  );
   // Classical laboratory engineering. Every numerical effect below is a game rule.
   const engineering = [
     {id:'workflow',title:'A laboratory that takes notes',effect:'Double staff research output and improve classical design organization by 25%. Game coefficients; no quantum speedup is claimed.',requires:['deutsch'],engineeringRequires:[],cost:{funds:160,effort:90,designs:12},group:null},
@@ -707,5 +835,31 @@
     {id:'search',name:'A search with all the costs',tag:'Classical tutorial + modeled execution',requires:['grover'],width:3,gates:60,depth:24,magic:12,repetitions:2,preparation:20,readout:10,classical:15,preparationRisk:.0005,otherRisk:.0002,maxRisk:.06,maxTime:12000,precision:0,target:0,fee:150,payout:700,seconds:18,description:'Eight known entries; the marked entry is cobalt. The recipe includes reversible-oracle and data-access operations.',validation:'The browser checks the returned index against the known oracle. No quantum search advantage is claimed.'},
     {id:'molecule',name:'An electronic energy, carefully',tag:'Future scenario',requires:['chemistry'],width:12,gates:2200,depth:190,magic:96,repetitions:2,preparation:60,readout:30,classical:90,preparationRisk:.001,otherRisk:.0005,maxRisk:.04,maxTime:30000,precision:.01,target:.01,fee:450,payout:2500,seconds:28,description:'Six-site periodic Hubbard ring: nearest-neighbor hopping t=1, on-site U=4, six electrons, balanced spins, 12 spin orbitals. Target ground-state energy per site within 0.01. A selected recipe, not a compiled chemistry calculation.',validation:'Modeled Hubbard resource-study completion. No electronic energy, catalyst, or industrial process is computed.'}
   ];
-  return {papers,chapters,projects,engineering,experiments,workloads};
+  // Finite classical tutorials and management scenarios; numbers are authored game rules.
+  const objectives = [
+    ['landscape','Map the energy valley',['vqe'],null,.40,200,25,null],
+    ['precision','Resolve the ground estimate',['ansatz','mitigation'],null,.12,450,60,null],
+    ['reference30','Check a second preparation',['classical'],30,.12,700,90,null],
+    ['bias-floor','Cross the bias floor',['classical'],null,.04,1000,140,.006],
+    ['reference60','A demanding cross-check',['surface'],60,.06,1400,200,null],
+    ['final-check','The final calibration witness',['accounting'],45,.06,1800,300,null]
+  ].map(([id,name,requires,angle,tolerance,funds,designs,maxBias])=>({id,name,title:name,requires,angle,tolerance,maxBias,reference:angle===null?'Ground energy':'Exact recorded preparation',reward:{funds,designs,trust:1},papers:['Q16','Q18'],description:'Classically sampled two-spin tutorial. One trial interval; rewards are laboratory management rules.'}));
+  const precisionRequests = [
+    ['desk30','Service desk · 30°',['classical'],30,.16,800,null],
+    ['desk45','Service desk · 45°',['classical'],45,.12,1100,null],
+    ['desk60','Precision desk · 60°',['surface'],60,.10,1500,null],
+    ['desk65','Precision desk · 65°',['threshold'],65,.08,2000,null],
+    ['audit30','Independent check · 30°',['gates'],30,.06,2700,null],
+    ['audit45','Independent check · 45°',['accounting'],45,.04,3500,.006]
+  ].map(([id,name,requires,angle,tolerance,payout,maxBias])=>({id,name,title:name,requires,angle,tolerance,payout,maxBias,reference:'Exact recorded preparation',papers:['Q16','Q18'],description:'A finite request for a fresh known-preparation tutorial measurement, paid only after its declared interval qualifies.'}));
+  const procurementOffers = [
+    {id:'local',name:'Local instrument supplier',title:'Local instrument supplier',requires:['classical'],units:64,cost:220,designs:12,seconds:20},
+    {id:'bulk',name:'Scheduled bulk delivery',title:'Scheduled bulk delivery',requires:['classical'],units:512,cost:1200,designs:64,seconds:90}
+  ];
+  const dynamicsRecipes = [
+    {id:'balanced',name:'Balanced schedule',dataWidth:32,workspace:0,width:32,depth:200,gates:4800,magic:192},
+    {id:'compact',name:'Compact floor plan',dataWidth:32,workspace:0,width:32,depth:320,gates:4800,magic:128},
+    {id:'parallel',name:'Parallel workspace',dataWidth:32,workspace:8,width:40,depth:160,gates:6400,magic:256}
+  ];
+  return {papers,chapters,projects,engineering,experiments,workloads,objectives,precisionRequests,procurementOffers,dynamicsRecipes};
 });

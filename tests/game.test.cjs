@@ -35,9 +35,9 @@ test('Historical memory discoveries do not qualify degraded memory or an unquali
 test('The variational tutorial computes a real classical reference and keeps uncertainty separate',()=>{
   const angle=(Math.PI-Math.atan(1.2))/2*180/Math.PI;
   assert.ok(Math.abs(G.tutorialEnergy(angle)+Math.sqrt(2.44))<1e-12);
-  const s=late();s.theta=65;s.shots=2;s.mitigate=true;assert.equal(G.startExperiment(s,'vqe'),true);G.tick(s,20);
+  const s=late();s.theta=65;s.shots=2;s.mitigate=true;assert.equal(G.startExperiment(s,'vqe'),true);G.tick(s,G.experimentRecipe(s,'vqe').seconds);
   assert.equal(s.tutorial.qualified,true);assert.ok(s.tutorial.statistical>0);assert.ok(s.tutorial.bias>0);assert.ok(s.tutorial.se>0);assert.equal(s.tutorial.shots,3*16384);assert.equal(s.tutorial.modeledShots,3*16384*4);
-  const t=late();t.theta=0;t.shots=3;t.mitigate=true;G.startExperiment(t,'vqe');G.tick(t,20);assert.equal(t.tutorial.qualified,false,'More shots cannot repair an unsuitable ansatz parameter');
+  const t=late();t.theta=0;t.shots=3;t.mitigate=true;G.startExperiment(t,'vqe');G.tick(t,G.experimentRecipe(t,'vqe').seconds);assert.equal(t.tutorial.qualified,false,'More shots cannot repair an unsuitable ansatz parameter');
 });
 test('Factory waits increase idle exposure, risk, and runtime; repetition costs are complete',()=>{
   const s=late();s.distance=3;s.module=5;s.rack=5;s.factories=1;s.decoder=4;
@@ -60,7 +60,7 @@ test('Malformed saves are rejected; unavailable upgrades and incomplete endings 
   }
 });
 test('Malformed tutorial groups and inconsistent shot accounting cannot replace a valid laboratory',()=>{
-  const s=late();s.theta=65;s.shots=2;s.mitigate=true;G.startExperiment(s,'vqe');G.tick(s,20);
+  const s=late();s.theta=65;s.shots=2;s.mitigate=true;G.startExperiment(s,'vqe');G.tick(s,G.experimentRecipe(s,'vqe').seconds);
   const before=G.serialize(s);assert.equal(G.parseSave(before).tutorial.modeledShots,196608);
   for(const mutate of [x=>x.tutorial.groups[0]=null,x=>x.tutorial.groups[1].plus='12',x=>x.tutorial.groups[2].minus=-1,x=>x.tutorial.groups[0].plus++,x=>x.tutorial.groups[0].estimate=0,x=>x.tutorial.groups[0].label='unknown',x=>x.tutorial.shots=1,x=>x.tutorial.shots=String(x.tutorial.shots),x=>delete x.tutorial.modeledShots,x=>x.tutorial.modeledShots=String(x.tutorial.modeledShots),x=>x.tutorial.modeledShots*=2,x=>x.tutorial.theta=91,x=>x.tutorial.statistical=-1,x=>x.tutorial=null,x=>x.result.shots=1024]){
     const copy=JSON.parse(before).state;mutate(copy);assert.throws(()=>G.parseSave(G.serialize(copy)));assert.equal(G.serialize(s),before,'A rejected import must not mutate the running laboratory');
@@ -69,7 +69,7 @@ test('Malformed tutorial groups and inconsistent shot accounting cannot replace 
 test('A restored job retains captured settings, while impossible jobs are rejected before they can run',()=>{
   const s=late();s.theta=65;s.shots=2;s.mitigate=true;G.startExperiment(s,'vqe');G.tick(s,2);
   G.configure(s,'theta',12);G.configure(s,'shots',0);G.configure(s,'mitigate',false);
-  const restored=G.parseSave(G.serialize(s));assert.equal(restored.job.theta,65);assert.equal(restored.job.shots,16384);assert.equal(restored.job.mitigate,true);G.tick(restored,20);assert.equal(restored.tutorial.theta,65);assert.equal(restored.tutorial.shots,49152);
+  const restored=G.parseSave(G.serialize(s));assert.equal(restored.job.theta,65);assert.equal(restored.job.shots,16384);assert.equal(restored.job.mitigate,true);G.tick(restored,restored.job.duration);assert.equal(restored.tutorial.theta,65);assert.equal(restored.tutorial.shots,49152);
   for(const mutate of [x=>x.job.shots=0,x=>x.job.shots=12,x=>x.job.bias=1,x=>x.job.progress=x.job.duration,x=>x.job.duration=1,x=>x.started=false,x=>{x.ended=true;x.completed=['dynamics'];}]){
     const copy=JSON.parse(G.serialize(s)).state;mutate(copy);assert.throws(()=>G.parseSave(G.serialize(copy)));
   }
@@ -85,8 +85,8 @@ test('Measurement results, certificates, and unavailable configuration are valid
   }
   const factors=late();G.startWorkload(factors,'factors');G.tick(factors,40);assert.equal(G.parseSave(G.serialize(factors)).result.certificate.valid,true);factors.result.certificate.b=6;assert.throws(()=>G.parseSave(G.serialize(factors)),/certificate/);
 });
-test('All thirty discoveries have reviewed primary citations available without buying them',()=>{
-  assert.equal(G.content.projects.length,30);assert.equal(Object.keys(G.content.papers).length,36);
+test('All discoveries and the current research frontier expose primary citations without buying them',()=>{
+  assert.equal(G.content.projects.length,33);assert.equal(Object.keys(G.content.papers).length,43);
   for(const p of G.content.projects)for(const id of p.papers){const paper=G.content.papers[id];assert.ok(paper);assert.ok(paper.links.some(link=>/^https:\/\//.test(link.url)));}
   assert.ok(G.content.papers.Q03.links.some(link=>decodeURIComponent(link.url).includes('(200009)48:9/11<771::AID-PROP771>3.0.CO;2-E')));
 });

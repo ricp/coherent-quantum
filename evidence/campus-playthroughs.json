@@ -1,0 +1,4135 @@
+[
+  {
+    "evidenceKind": "legal public-action automated campus fixture; not human enjoyment or browser evidence",
+    "policy": "local",
+    "seed": 424242,
+    "strategy": "frontier",
+    "ended": true,
+    "seconds": 5132,
+    "discoveries": 30,
+    "engineering": [
+      "workflow",
+      "storage1",
+      "open",
+      "storage2",
+      "pricing",
+      "autoCalibration",
+      "automation",
+      "storage3",
+      "rapid",
+      "workshop",
+      "scheduler",
+      "synthesis"
+    ],
+    "physical": 4876,
+    "module": 2,
+    "rack": 3,
+    "pulse": 8,
+    "decoder": 3,
+    "distance": 3,
+    "factories": 2,
+    "staff": 32,
+    "notebooks": 1,
+    "automation": 4,
+    "analysisShare": 0.2,
+    "workshops": 2,
+    "funds": 3525,
+    "designs": 28996,
+    "completed": [
+      "dynamics"
+    ],
+    "chapters": [
+      {
+        "chapter": 0,
+        "at": 0
+      },
+      {
+        "chapter": 1,
+        "at": 57
+      },
+      {
+        "chapter": 2,
+        "at": 166
+      },
+      {
+        "chapter": 3,
+        "at": 473
+      },
+      {
+        "chapter": 4,
+        "at": 1145
+      },
+      {
+        "chapter": 5,
+        "at": 2810
+      }
+    ],
+    "measurements": {
+      "policy": "frontier",
+      "seed": 424242,
+      "allDiscoveries": false,
+      "limit": 14400,
+      "busy": 541,
+      "idle": 4591,
+      "calibrationDuty": 1438.3348568007252,
+      "serviceDuty": 1723.0259545292374,
+      "experimentDuty": 415.79068041883204,
+      "fullStore": 2410,
+      "designsWhileFull": 50935.536944065694,
+      "designsWhileNotFull": 9123.619332992017,
+      "grants": 10517.120000000457,
+      "revenue": 166009.3682884845,
+      "upkeep": 18754.508739717898,
+      "delivered": 11853.438231267728,
+      "automationWork": 4337.800000000168,
+      "fabricated": 4851.862626922624,
+      "integrated": 4797.473297726225,
+      "longestNoAction": 435,
+      "blocked": {
+        "funding": 3764,
+        "effort": 1967,
+        "designs": 2885,
+        "capacity": 11,
+        "qualification": 612
+      },
+      "actions": {
+        "assignment": 65,
+        "engineering": 12,
+        "equipment": 22,
+        "experiment": 9,
+        "calibration": 0,
+        "workload": 1
+      },
+      "investments": [
+        {
+          "at": 79,
+          "kind": "engineering",
+          "id": "workflow",
+          "funds": 160,
+          "effort": 90,
+          "designs": 12
+        },
+        {
+          "at": 134,
+          "kind": "engineering",
+          "id": "storage1",
+          "funds": 90,
+          "effort": 80,
+          "designs": 18
+        },
+        {
+          "at": 156,
+          "kind": "equipment",
+          "id": "hardware",
+          "funds": 120,
+          "effort": 0,
+          "designs": 16
+        },
+        {
+          "at": 159,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 90,
+          "effort": 0,
+          "designs": 12
+        },
+        {
+          "at": 212,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 140,
+          "effort": 0,
+          "designs": 20
+        },
+        {
+          "at": 235,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 350,
+          "effort": 0,
+          "designs": 27
+        },
+        {
+          "at": 243,
+          "kind": "equipment",
+          "id": "hardware",
+          "funds": 450,
+          "effort": 0,
+          "designs": 36
+        },
+        {
+          "at": 252,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 280,
+          "effort": 0,
+          "designs": 36
+        },
+        {
+          "at": 266,
+          "kind": "engineering",
+          "id": "open",
+          "funds": 300,
+          "effort": 250,
+          "designs": 60
+        },
+        {
+          "at": 323,
+          "kind": "engineering",
+          "id": "storage2",
+          "funds": 600,
+          "effort": 700,
+          "designs": 150
+        },
+        {
+          "at": 396,
+          "kind": "engineering",
+          "id": "pricing",
+          "funds": 900,
+          "effort": 900,
+          "designs": 180
+        },
+        {
+          "at": 488,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 560,
+          "effort": 0,
+          "designs": 65
+        },
+        {
+          "at": 591,
+          "kind": "engineering",
+          "id": "autoCalibration",
+          "funds": 1800,
+          "effort": 1800,
+          "designs": 350
+        },
+        {
+          "at": 607,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 1120,
+          "effort": 0,
+          "designs": 117
+        },
+        {
+          "at": 848,
+          "kind": "engineering",
+          "id": "automation",
+          "funds": 2400,
+          "effort": 2400,
+          "designs": 450
+        },
+        {
+          "at": 896,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 1800,
+          "effort": 0,
+          "designs": 180
+        },
+        {
+          "at": 1063,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 3060,
+          "effort": 0,
+          "designs": 288
+        },
+        {
+          "at": 1178,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 180,
+          "effort": 0,
+          "designs": 30
+        },
+        {
+          "at": 1179,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 360,
+          "effort": 0,
+          "designs": 60
+        },
+        {
+          "at": 1221,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 2240,
+          "effort": 0,
+          "designs": 210
+        },
+        {
+          "at": 1391,
+          "kind": "engineering",
+          "id": "storage3",
+          "funds": 4000,
+          "effort": 4200,
+          "designs": 650
+        },
+        {
+          "at": 1528,
+          "kind": "engineering",
+          "id": "rapid",
+          "funds": 4000,
+          "effort": 4000,
+          "designs": 600
+        },
+        {
+          "at": 1760,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 1400,
+          "effort": 0,
+          "designs": 59
+        },
+        {
+          "at": 1803,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 5202,
+          "effort": 0,
+          "designs": 461
+        },
+        {
+          "at": 1968,
+          "kind": "engineering",
+          "id": "workshop",
+          "funds": 6000,
+          "effort": 5500,
+          "designs": 900
+        },
+        {
+          "at": 2078,
+          "kind": "equipment",
+          "id": "workshop",
+          "funds": 4000,
+          "effort": 0,
+          "designs": 400
+        },
+        {
+          "at": 2682,
+          "kind": "equipment",
+          "id": "workshop",
+          "funds": 6600,
+          "effort": 0,
+          "designs": 640
+        },
+        {
+          "at": 2847,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 720,
+          "effort": 0,
+          "designs": 120
+        },
+        {
+          "at": 3038,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 4480,
+          "effort": 0,
+          "designs": 378
+        },
+        {
+          "at": 3440,
+          "kind": "engineering",
+          "id": "scheduler",
+          "funds": 7000,
+          "effort": 6500,
+          "designs": 1200
+        },
+        {
+          "at": 3874,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 8844,
+          "effort": 0,
+          "designs": 738
+        },
+        {
+          "at": 4093,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 8960,
+          "effort": 0,
+          "designs": 681
+        },
+        {
+          "at": 4627,
+          "kind": "engineering",
+          "id": "synthesis",
+          "funds": 12000,
+          "effort": 10000,
+          "designs": 1800
+        },
+        {
+          "at": 5063,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 17920,
+          "effort": 0,
+          "designs": 1225
+        }
+      ],
+      "milestones": [
+        {
+          "at": 5,
+          "id": "signal",
+          "kind": "qualification",
+          "chapter": 0
+        },
+        {
+          "at": 5,
+          "id": "feynman",
+          "chapter": 0
+        },
+        {
+          "at": 11,
+          "id": "deutsch",
+          "chapter": 0
+        },
+        {
+          "at": 28,
+          "id": "divincenzo",
+          "chapter": 0
+        },
+        {
+          "at": 56,
+          "id": "nakamura",
+          "chapter": 1
+        },
+        {
+          "at": 63,
+          "id": "ramsey",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 89,
+          "id": "ramsey",
+          "chapter": 1
+        },
+        {
+          "at": 96,
+          "id": "echo",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 102,
+          "id": "readout",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 103,
+          "id": "echo",
+          "chapter": 1
+        },
+        {
+          "at": 115,
+          "id": "readout",
+          "chapter": 1
+        },
+        {
+          "at": 124,
+          "id": "benchmark",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 144,
+          "id": "rb",
+          "chapter": 1
+        },
+        {
+          "at": 165,
+          "id": "coupled",
+          "chapter": 2
+        },
+        {
+          "at": 176,
+          "id": "circuit",
+          "kind": "qualification",
+          "chapter": 2
+        },
+        {
+          "at": 197,
+          "id": "nisq",
+          "chapter": 2
+        },
+        {
+          "at": 294,
+          "id": "vqe",
+          "chapter": 2
+        },
+        {
+          "at": 353,
+          "id": "ansatz",
+          "chapter": 2
+        },
+        {
+          "at": 435,
+          "id": "mitigation",
+          "chapter": 2
+        },
+        {
+          "at": 453,
+          "id": "vqe",
+          "kind": "qualification",
+          "chapter": 2
+        },
+        {
+          "at": 472,
+          "id": "classical",
+          "chapter": 3
+        },
+        {
+          "at": 667,
+          "id": "shor",
+          "chapter": 3
+        },
+        {
+          "at": 731,
+          "id": "stabilizer",
+          "chapter": 3
+        },
+        {
+          "at": 803,
+          "id": "surface",
+          "chapter": 3
+        },
+        {
+          "at": 978,
+          "id": "decoder",
+          "chapter": 3
+        },
+        {
+          "at": 992,
+          "id": "memory",
+          "kind": "qualification",
+          "chapter": 3
+        },
+        {
+          "at": 1144,
+          "id": "threshold",
+          "chapter": 4
+        },
+        {
+          "at": 1632,
+          "id": "surgery",
+          "chapter": 4
+        },
+        {
+          "at": 2139,
+          "id": "gates",
+          "kind": "qualification",
+          "chapter": 4
+        },
+        {
+          "at": 2184,
+          "id": "gates",
+          "chapter": 4
+        },
+        {
+          "at": 2275,
+          "id": "ancilla",
+          "chapter": 4
+        },
+        {
+          "at": 2294,
+          "id": "factory",
+          "kind": "qualification",
+          "chapter": 4
+        },
+        {
+          "at": 2418,
+          "id": "factories",
+          "chapter": 4
+        },
+        {
+          "at": 2809,
+          "id": "accounting",
+          "chapter": 5
+        },
+        {
+          "at": 3181,
+          "id": "lloyd",
+          "chapter": 5
+        },
+        {
+          "at": 3644,
+          "id": "hamiltonian",
+          "chapter": 5
+        },
+        {
+          "at": 4335,
+          "id": "audit",
+          "chapter": 5
+        }
+      ],
+      "assignments": [
+        {
+          "at": 6,
+          "id": "staff+1",
+          "staff": 2,
+          "notebooks": 1
+        },
+        {
+          "at": 6,
+          "id": "staff+1",
+          "staff": 3,
+          "notebooks": 1
+        },
+        {
+          "at": 57,
+          "id": "notebooks+1",
+          "staff": 3,
+          "notebooks": 2
+        },
+        {
+          "at": 63,
+          "id": "staff+1",
+          "staff": 4,
+          "notebooks": 2
+        },
+        {
+          "at": 63,
+          "id": "staff+1",
+          "staff": 5,
+          "notebooks": 2
+        },
+        {
+          "at": 96,
+          "id": "staff+1",
+          "staff": 6,
+          "notebooks": 2
+        },
+        {
+          "at": 96,
+          "id": "staff+1",
+          "staff": 7,
+          "notebooks": 2
+        },
+        {
+          "at": 102,
+          "id": "staff+1",
+          "staff": 8,
+          "notebooks": 2
+        },
+        {
+          "at": 102,
+          "id": "staff+1",
+          "staff": 9,
+          "notebooks": 2
+        },
+        {
+          "at": 116,
+          "id": "staff−1",
+          "staff": 8,
+          "notebooks": 2
+        },
+        {
+          "at": 116,
+          "id": "notebooks+1",
+          "staff": 8,
+          "notebooks": 3
+        },
+        {
+          "at": 124,
+          "id": "staff+1",
+          "staff": 9,
+          "notebooks": 3
+        },
+        {
+          "at": 124,
+          "id": "staff+1",
+          "staff": 10,
+          "notebooks": 3
+        },
+        {
+          "at": 135,
+          "id": "notebooks−1",
+          "staff": 10,
+          "notebooks": 2
+        },
+        {
+          "at": 135,
+          "id": "notebooks−1",
+          "staff": 10,
+          "notebooks": 1
+        },
+        {
+          "at": 135,
+          "id": "staff+1",
+          "staff": 11,
+          "notebooks": 1
+        },
+        {
+          "at": 135,
+          "id": "staff+1",
+          "staff": 12,
+          "notebooks": 1
+        },
+        {
+          "at": 145,
+          "id": "staff+1",
+          "staff": 13,
+          "notebooks": 1
+        },
+        {
+          "at": 166,
+          "id": "staff−1",
+          "staff": 12,
+          "notebooks": 1
+        },
+        {
+          "at": 166,
+          "id": "notebooks+1",
+          "staff": 12,
+          "notebooks": 2
+        },
+        {
+          "at": 176,
+          "id": "staff+1",
+          "staff": 13,
+          "notebooks": 2
+        },
+        {
+          "at": 176,
+          "id": "staff+1",
+          "staff": 14,
+          "notebooks": 2
+        },
+        {
+          "at": 198,
+          "id": "staff−1",
+          "staff": 13,
+          "notebooks": 2
+        },
+        {
+          "at": 198,
+          "id": "notebooks+1",
+          "staff": 13,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 14,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 15,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 16,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 17,
+          "notebooks": 3
+        },
+        {
+          "at": 308,
+          "id": "staff+1",
+          "staff": 18,
+          "notebooks": 3
+        },
+        {
+          "at": 324,
+          "id": "notebooks−1",
+          "staff": 18,
+          "notebooks": 2
+        },
+        {
+          "at": 324,
+          "id": "notebooks−1",
+          "staff": 18,
+          "notebooks": 1
+        },
+        {
+          "at": 324,
+          "id": "staff+1",
+          "staff": 19,
+          "notebooks": 1
+        },
+        {
+          "at": 324,
+          "id": "staff+1",
+          "staff": 20,
+          "notebooks": 1
+        },
+        {
+          "at": 354,
+          "id": "staff+1",
+          "staff": 21,
+          "notebooks": 1
+        },
+        {
+          "at": 436,
+          "id": "staff−1",
+          "staff": 20,
+          "notebooks": 1
+        },
+        {
+          "at": 436,
+          "id": "notebooks+1",
+          "staff": 20,
+          "notebooks": 2
+        },
+        {
+          "at": 453,
+          "id": "staff+1",
+          "staff": 21,
+          "notebooks": 2
+        },
+        {
+          "at": 453,
+          "id": "staff+1",
+          "staff": 22,
+          "notebooks": 2
+        },
+        {
+          "at": 453,
+          "id": "staff+1",
+          "staff": 23,
+          "notebooks": 2
+        },
+        {
+          "at": 488,
+          "id": "staff+1",
+          "staff": 24,
+          "notebooks": 2
+        },
+        {
+          "at": 579,
+          "id": "staff+1",
+          "staff": 25,
+          "notebooks": 2
+        },
+        {
+          "at": 668,
+          "id": "staff−1",
+          "staff": 24,
+          "notebooks": 2
+        },
+        {
+          "at": 668,
+          "id": "notebooks+1",
+          "staff": 24,
+          "notebooks": 3
+        },
+        {
+          "at": 732,
+          "id": "staff+1",
+          "staff": 25,
+          "notebooks": 3
+        },
+        {
+          "at": 848,
+          "id": "staff+1",
+          "staff": 26,
+          "notebooks": 3
+        },
+        {
+          "at": 979,
+          "id": "staff−1",
+          "staff": 25,
+          "notebooks": 3
+        },
+        {
+          "at": 979,
+          "id": "notebooks+1",
+          "staff": 25,
+          "notebooks": 4
+        },
+        {
+          "at": 992,
+          "id": "staff+1",
+          "staff": 26,
+          "notebooks": 4
+        },
+        {
+          "at": 992,
+          "id": "staff+1",
+          "staff": 27,
+          "notebooks": 4
+        },
+        {
+          "at": 1145,
+          "id": "notebooks+1",
+          "staff": 27,
+          "notebooks": 5
+        },
+        {
+          "at": 1392,
+          "id": "notebooks−1",
+          "staff": 27,
+          "notebooks": 4
+        },
+        {
+          "at": 1392,
+          "id": "notebooks−1",
+          "staff": 27,
+          "notebooks": 3
+        },
+        {
+          "at": 1392,
+          "id": "notebooks−1",
+          "staff": 27,
+          "notebooks": 2
+        },
+        {
+          "at": 1392,
+          "id": "staff+1",
+          "staff": 28,
+          "notebooks": 2
+        },
+        {
+          "at": 1392,
+          "id": "staff+1",
+          "staff": 29,
+          "notebooks": 2
+        },
+        {
+          "at": 1392,
+          "id": "staff+1",
+          "staff": 30,
+          "notebooks": 2
+        },
+        {
+          "at": 2139,
+          "id": "staff+1",
+          "staff": 31,
+          "notebooks": 2
+        },
+        {
+          "at": 2139,
+          "id": "staff+1",
+          "staff": 32,
+          "notebooks": 2
+        },
+        {
+          "at": 2419,
+          "id": "notebooks+1",
+          "staff": 32,
+          "notebooks": 3
+        },
+        {
+          "at": 3182,
+          "id": "notebooks+1",
+          "staff": 32,
+          "notebooks": 4
+        },
+        {
+          "at": 3645,
+          "id": "notebooks+1",
+          "staff": 32,
+          "notebooks": 5
+        },
+        {
+          "at": 4336,
+          "id": "notebooks−1",
+          "staff": 32,
+          "notebooks": 4
+        },
+        {
+          "at": 4336,
+          "id": "notebooks−1",
+          "staff": 32,
+          "notebooks": 3
+        },
+        {
+          "at": 4336,
+          "id": "notebooks−1",
+          "staff": 32,
+          "notebooks": 2
+        },
+        {
+          "at": 4628,
+          "id": "notebooks−1",
+          "staff": 32,
+          "notebooks": 1
+        }
+      ],
+      "aborts": 0,
+      "inputs": {
+        "distance": 3,
+        "service": 0.55,
+        "automation": 4,
+        "workshops": 2,
+        "dissemination": "open",
+        "rollout": "rapid"
+      },
+      "initialElapsed": 0,
+      "resumed": false,
+      "longestNoActionWindow": {
+        "from": 4628,
+        "to": 5063,
+        "previous": "assignment/notebooks−1",
+        "next": "equipment/pulse"
+      },
+      "priceChecks": 7,
+      "priceAdjustments": 3,
+      "analysisAdjustments": 30
+    },
+    "campusCounts": {
+      "busy": 553,
+      "idle": 4579,
+      "taskBusy": 408,
+      "longestNoAction": 435
+    },
+    "frontier": [
+      "landscape",
+      "precision",
+      "reference30",
+      "bias-floor",
+      "reference60",
+      "final-check"
+    ],
+    "precision": [
+      "desk30",
+      "desk45",
+      "desk60",
+      "desk65",
+      "audit30",
+      "audit45"
+    ],
+    "modern": [
+      "controller2026",
+      "adaptive2026",
+      "state-readiness"
+    ],
+    "orders": [
+      {
+        "at": 2139,
+        "offer": "local",
+        "kind": "chip",
+        "units": 64
+      },
+      {
+        "at": 2140,
+        "offer": "local",
+        "kind": "chip",
+        "units": 64
+      },
+      {
+        "at": 2160,
+        "offer": "local",
+        "kind": "support",
+        "units": 64
+      },
+      {
+        "at": 2161,
+        "offer": "local",
+        "kind": "support",
+        "units": 64
+      },
+      {
+        "at": 2220,
+        "offer": "local",
+        "kind": "chip",
+        "units": 64
+      },
+      {
+        "at": 2221,
+        "offer": "local",
+        "kind": "chip",
+        "units": 64
+      },
+      {
+        "at": 2242,
+        "offer": "local",
+        "kind": "support",
+        "units": 64
+      },
+      {
+        "at": 2312,
+        "offer": "local",
+        "kind": "chip",
+        "units": 64
+      },
+      {
+        "at": 2316,
+        "offer": "local",
+        "kind": "chip",
+        "units": 64
+      },
+      {
+        "at": 2332,
+        "offer": "local",
+        "kind": "support",
+        "units": 64
+      },
+      {
+        "at": 2337,
+        "offer": "local",
+        "kind": "support",
+        "units": 64
+      },
+      {
+        "at": 2353,
+        "offer": "local",
+        "kind": "support",
+        "units": 64
+      },
+      {
+        "at": 2397,
+        "offer": "local",
+        "kind": "chip",
+        "units": 64
+      },
+      {
+        "at": 2398,
+        "offer": "local",
+        "kind": "chip",
+        "units": 64
+      },
+      {
+        "at": 2462,
+        "offer": "local",
+        "kind": "support",
+        "units": 64
+      },
+      {
+        "at": 2469,
+        "offer": "local",
+        "kind": "support",
+        "units": 64
+      },
+      {
+        "at": 2483,
+        "offer": "local",
+        "kind": "chip",
+        "units": 64
+      },
+      {
+        "at": 2489,
+        "offer": "local",
+        "kind": "chip",
+        "units": 64
+      },
+      {
+        "at": 2521,
+        "offer": "local",
+        "kind": "support",
+        "units": 64
+      },
+      {
+        "at": 2524,
+        "offer": "local",
+        "kind": "support",
+        "units": 64
+      },
+      {
+        "at": 2556,
+        "offer": "local",
+        "kind": "chip",
+        "units": 64
+      },
+      {
+        "at": 2558,
+        "offer": "local",
+        "kind": "chip",
+        "units": 64
+      },
+      {
+        "at": 2599,
+        "offer": "local",
+        "kind": "support",
+        "units": 64
+      },
+      {
+        "at": 2601,
+        "offer": "local",
+        "kind": "support",
+        "units": 64
+      }
+    ],
+    "actions": [
+      {
+        "at": 0,
+        "kind": "startExperiment",
+        "id": "signal"
+      },
+      {
+        "at": 5,
+        "kind": "experiment-completion",
+        "id": "signal"
+      },
+      {
+        "at": 5,
+        "kind": "buyProject",
+        "id": "feynman"
+      },
+      {
+        "at": 6,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 6,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 11,
+        "kind": "buyProject",
+        "id": "deutsch"
+      },
+      {
+        "at": 28,
+        "kind": "buyProject",
+        "id": "divincenzo"
+      },
+      {
+        "at": 56,
+        "kind": "buyProject",
+        "id": "nakamura"
+      },
+      {
+        "at": 56,
+        "kind": "startExperiment",
+        "id": "ramsey"
+      },
+      {
+        "at": 57,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 63,
+        "kind": "experiment-completion",
+        "id": "ramsey"
+      },
+      {
+        "at": 63,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 63,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 79,
+        "kind": "buyEngineering",
+        "id": "workflow"
+      },
+      {
+        "at": 89,
+        "kind": "buyProject",
+        "id": "ramsey"
+      },
+      {
+        "at": 89,
+        "kind": "startExperiment",
+        "id": "echo"
+      },
+      {
+        "at": 96,
+        "kind": "experiment-completion",
+        "id": "echo"
+      },
+      {
+        "at": 96,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 96,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 96,
+        "kind": "startExperiment",
+        "id": "readout"
+      },
+      {
+        "at": 102,
+        "kind": "experiment-completion",
+        "id": "readout"
+      },
+      {
+        "at": 102,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 102,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 103,
+        "kind": "buyProject",
+        "id": "echo"
+      },
+      {
+        "at": 115,
+        "kind": "buyProject",
+        "id": "readout"
+      },
+      {
+        "at": 115,
+        "kind": "startExperiment",
+        "id": "benchmark"
+      },
+      {
+        "at": 116,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 116,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 124,
+        "kind": "experiment-completion",
+        "id": "benchmark"
+      },
+      {
+        "at": 124,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 124,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 134,
+        "kind": "buyEngineering",
+        "id": "storage1"
+      },
+      {
+        "at": 135,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 135,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 135,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 135,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 144,
+        "kind": "buyProject",
+        "id": "rb"
+      },
+      {
+        "at": 145,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 156,
+        "kind": "buyUpgrade",
+        "id": "hardware"
+      },
+      {
+        "at": 159,
+        "kind": "buyUpgrade",
+        "id": "rack"
+      },
+      {
+        "at": 165,
+        "kind": "buyProject",
+        "id": "coupled"
+      },
+      {
+        "at": 165,
+        "kind": "startExperiment",
+        "id": "circuit"
+      },
+      {
+        "at": 166,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 166,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 176,
+        "kind": "experiment-completion",
+        "id": "circuit"
+      },
+      {
+        "at": 176,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 176,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 197,
+        "kind": "buyProject",
+        "id": "nisq"
+      },
+      {
+        "at": 198,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 198,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 212,
+        "kind": "buyUpgrade",
+        "id": "pulse"
+      },
+      {
+        "at": 235,
+        "kind": "buyUpgrade",
+        "id": "rack"
+      },
+      {
+        "at": 243,
+        "kind": "buyUpgrade",
+        "id": "hardware"
+      },
+      {
+        "at": 252,
+        "kind": "buyUpgrade",
+        "id": "pulse"
+      },
+      {
+        "at": 266,
+        "kind": "buyEngineering",
+        "id": "open"
+      },
+      {
+        "at": 267,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 267,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 267,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 267,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 294,
+        "kind": "buyProject",
+        "id": "vqe"
+      },
+      {
+        "at": 296,
+        "kind": "objective",
+        "id": "landscape"
+      },
+      {
+        "at": 308,
+        "kind": "measurement-completion",
+        "id": "landscape"
+      },
+      {
+        "at": 308,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 323,
+        "kind": "buyEngineering",
+        "id": "storage2"
+      },
+      {
+        "at": 324,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 324,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 324,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 324,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 353,
+        "kind": "buyProject",
+        "id": "ansatz"
+      },
+      {
+        "at": 354,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 396,
+        "kind": "buyEngineering",
+        "id": "pricing"
+      },
+      {
+        "at": 435,
+        "kind": "buyProject",
+        "id": "mitigation"
+      },
+      {
+        "at": 436,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 436,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 437,
+        "kind": "objective",
+        "id": "precision"
+      },
+      {
+        "at": 453,
+        "kind": "measurement-completion",
+        "id": "precision"
+      },
+      {
+        "at": 453,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 453,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 453,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 472,
+        "kind": "buyProject",
+        "id": "classical"
+      },
+      {
+        "at": 472,
+        "kind": "objective",
+        "id": "reference30"
+      },
+      {
+        "at": 488,
+        "kind": "measurement-completion",
+        "id": "reference30"
+      },
+      {
+        "at": 488,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 488,
+        "kind": "buyUpgrade",
+        "id": "pulse"
+      },
+      {
+        "at": 488,
+        "kind": "objective",
+        "id": "bias-floor"
+      },
+      {
+        "at": 579,
+        "kind": "measurement-completion",
+        "id": "bias-floor"
+      },
+      {
+        "at": 579,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 579,
+        "kind": "precision",
+        "id": "desk30"
+      },
+      {
+        "at": 591,
+        "kind": "measurement-completion",
+        "id": "desk30"
+      },
+      {
+        "at": 591,
+        "kind": "buyEngineering",
+        "id": "autoCalibration"
+      },
+      {
+        "at": 591,
+        "kind": "precision",
+        "id": "desk45"
+      },
+      {
+        "at": 606,
+        "kind": "measurement-completion",
+        "id": "desk45"
+      },
+      {
+        "at": 607,
+        "kind": "buyUpgrade",
+        "id": "pulse"
+      },
+      {
+        "at": 667,
+        "kind": "buyProject",
+        "id": "shor"
+      },
+      {
+        "at": 668,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 668,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 731,
+        "kind": "buyProject",
+        "id": "stabilizer"
+      },
+      {
+        "at": 732,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 803,
+        "kind": "buyProject",
+        "id": "surface"
+      },
+      {
+        "at": 803,
+        "kind": "precision",
+        "id": "desk60"
+      },
+      {
+        "at": 818,
+        "kind": "measurement-completion",
+        "id": "desk60"
+      },
+      {
+        "at": 818,
+        "kind": "objective",
+        "id": "reference60"
+      },
+      {
+        "at": 848,
+        "kind": "measurement-completion",
+        "id": "reference60"
+      },
+      {
+        "at": 848,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 848,
+        "kind": "buyEngineering",
+        "id": "automation"
+      },
+      {
+        "at": 896,
+        "kind": "buyUpgrade",
+        "id": "automation"
+      },
+      {
+        "at": 978,
+        "kind": "buyProject",
+        "id": "decoder"
+      },
+      {
+        "at": 979,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 979,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 979,
+        "kind": "startExperiment",
+        "id": "memory"
+      },
+      {
+        "at": 992,
+        "kind": "experiment-completion",
+        "id": "memory"
+      },
+      {
+        "at": 992,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 992,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 992,
+        "kind": "buyProject",
+        "id": "controller2026"
+      },
+      {
+        "at": 992,
+        "kind": "modern-discovery",
+        "id": "controller2026"
+      },
+      {
+        "at": 1063,
+        "kind": "buyUpgrade",
+        "id": "automation"
+      },
+      {
+        "at": 1144,
+        "kind": "buyProject",
+        "id": "threshold"
+      },
+      {
+        "at": 1145,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 1148,
+        "kind": "precision",
+        "id": "desk65"
+      },
+      {
+        "at": 1178,
+        "kind": "measurement-completion",
+        "id": "desk65"
+      },
+      {
+        "at": 1178,
+        "kind": "buyUpgrade",
+        "id": "decoder"
+      },
+      {
+        "at": 1179,
+        "kind": "buyUpgrade",
+        "id": "decoder"
+      },
+      {
+        "at": 1221,
+        "kind": "buyUpgrade",
+        "id": "pulse"
+      },
+      {
+        "at": 1289,
+        "kind": "buyProject",
+        "id": "adaptive2026"
+      },
+      {
+        "at": 1289,
+        "kind": "modern-discovery",
+        "id": "adaptive2026"
+      },
+      {
+        "at": 1391,
+        "kind": "buyEngineering",
+        "id": "storage3"
+      },
+      {
+        "at": 1392,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 1392,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 1392,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 1392,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 1392,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 1392,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 1528,
+        "kind": "buyEngineering",
+        "id": "rapid"
+      },
+      {
+        "at": 1632,
+        "kind": "buyProject",
+        "id": "surgery"
+      },
+      {
+        "at": 1760,
+        "kind": "buyUpgrade",
+        "id": "rack"
+      },
+      {
+        "at": 1803,
+        "kind": "buyUpgrade",
+        "id": "automation"
+      },
+      {
+        "at": 1968,
+        "kind": "buyEngineering",
+        "id": "workshop"
+      },
+      {
+        "at": 2078,
+        "kind": "buyUpgrade",
+        "id": "workshop"
+      },
+      {
+        "at": 2123,
+        "kind": "startExperiment",
+        "id": "gates"
+      },
+      {
+        "at": 2139,
+        "kind": "experiment-completion",
+        "id": "gates"
+      },
+      {
+        "at": 2139,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 2139,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 2139,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2140,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2160,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 2161,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 2184,
+        "kind": "buyProject",
+        "id": "gates"
+      },
+      {
+        "at": 2188,
+        "kind": "precision",
+        "id": "audit30"
+      },
+      {
+        "at": 2220,
+        "kind": "measurement-completion",
+        "id": "audit30"
+      },
+      {
+        "at": 2220,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2221,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2242,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 2275,
+        "kind": "buyProject",
+        "id": "ancilla"
+      },
+      {
+        "at": 2277,
+        "kind": "startExperiment",
+        "id": "factory"
+      },
+      {
+        "at": 2294,
+        "kind": "experiment-completion",
+        "id": "factory"
+      },
+      {
+        "at": 2312,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2316,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2332,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 2337,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 2353,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 2397,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2398,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2418,
+        "kind": "buyProject",
+        "id": "factories"
+      },
+      {
+        "at": 2419,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 2462,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 2469,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 2483,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2489,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2521,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 2524,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 2556,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2558,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2599,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 2601,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 2682,
+        "kind": "buyUpgrade",
+        "id": "workshop"
+      },
+      {
+        "at": 2809,
+        "kind": "buyProject",
+        "id": "accounting"
+      },
+      {
+        "at": 2812,
+        "kind": "objective",
+        "id": "final-check"
+      },
+      {
+        "at": 2847,
+        "kind": "measurement-completion",
+        "id": "final-check"
+      },
+      {
+        "at": 2847,
+        "kind": "buyUpgrade",
+        "id": "decoder"
+      },
+      {
+        "at": 2847,
+        "kind": "precision",
+        "id": "audit45"
+      },
+      {
+        "at": 2951,
+        "kind": "measurement-completion",
+        "id": "audit45"
+      },
+      {
+        "at": 2951,
+        "kind": "buyProject",
+        "id": "state-readiness"
+      },
+      {
+        "at": 2951,
+        "kind": "modern-discovery",
+        "id": "state-readiness"
+      },
+      {
+        "at": 3038,
+        "kind": "buyUpgrade",
+        "id": "pulse"
+      },
+      {
+        "at": 3181,
+        "kind": "buyProject",
+        "id": "lloyd"
+      },
+      {
+        "at": 3182,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 3440,
+        "kind": "buyEngineering",
+        "id": "scheduler"
+      },
+      {
+        "at": 3644,
+        "kind": "buyProject",
+        "id": "hamiltonian"
+      },
+      {
+        "at": 3645,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 3874,
+        "kind": "buyUpgrade",
+        "id": "automation"
+      },
+      {
+        "at": 4093,
+        "kind": "buyUpgrade",
+        "id": "pulse"
+      },
+      {
+        "at": 4335,
+        "kind": "buyProject",
+        "id": "audit"
+      },
+      {
+        "at": 4336,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 4336,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 4336,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 4627,
+        "kind": "buyEngineering",
+        "id": "synthesis"
+      },
+      {
+        "at": 4628,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 5063,
+        "kind": "buyUpgrade",
+        "id": "pulse"
+      },
+      {
+        "at": 5078,
+        "kind": "startWorkload",
+        "id": "dynamics"
+      },
+      {
+        "at": 5132,
+        "kind": "workload-completion",
+        "id": "dynamics"
+      }
+    ],
+    "failures": {}
+  },
+  {
+    "evidenceKind": "legal public-action automated campus fixture; not human enjoyment or browser evidence",
+    "policy": "bulk",
+    "seed": 424242,
+    "strategy": "infrastructure",
+    "ended": true,
+    "seconds": 4518,
+    "discoveries": 30,
+    "engineering": [
+      "workflow",
+      "storage1",
+      "open",
+      "storage2",
+      "pricing",
+      "autoCalibration",
+      "automation",
+      "storage3",
+      "rapid",
+      "workshop",
+      "scheduler"
+    ],
+    "physical": 3732,
+    "module": 3,
+    "rack": 3,
+    "pulse": 7,
+    "decoder": 3,
+    "distance": 5,
+    "factories": 1,
+    "staff": 32,
+    "notebooks": 2,
+    "automation": 4,
+    "analysisShare": 0.2,
+    "workshops": 2,
+    "funds": 3500,
+    "designs": 6184,
+    "completed": [
+      "dynamics"
+    ],
+    "chapters": [
+      {
+        "chapter": 0,
+        "at": 0
+      },
+      {
+        "chapter": 1,
+        "at": 57
+      },
+      {
+        "chapter": 2,
+        "at": 166
+      },
+      {
+        "chapter": 3,
+        "at": 494
+      },
+      {
+        "chapter": 4,
+        "at": 1296
+      },
+      {
+        "chapter": 5,
+        "at": 2757
+      }
+    ],
+    "measurements": {
+      "policy": "infrastructure",
+      "seed": 424242,
+      "allDiscoveries": false,
+      "limit": 14400,
+      "busy": 892,
+      "idle": 3626,
+      "calibrationDuty": 1253.1852804252833,
+      "serviceDuty": 1706.6700976495188,
+      "experimentDuty": 681.6145800754067,
+      "fullStore": 1751,
+      "designsWhileFull": 25595.513242022414,
+      "designsWhileNotFull": 8930.310605143251,
+      "grants": 9097.800000000007,
+      "revenue": 141057.16477693393,
+      "upkeep": 14681.920750615665,
+      "delivered": 13827.426387979789,
+      "automationWork": 3484.8000000000334,
+      "fabricated": 3653.8289261301047,
+      "integrated": 3653.377012139023,
+      "longestNoAction": 279,
+      "blocked": {
+        "funding": 4004,
+        "effort": 2092,
+        "designs": 2147,
+        "capacity": 11,
+        "qualification": 984
+      },
+      "actions": {
+        "assignment": 64,
+        "engineering": 11,
+        "equipment": 22,
+        "experiment": 10,
+        "calibration": 0,
+        "workload": 1
+      },
+      "investments": [
+        {
+          "at": 79,
+          "kind": "engineering",
+          "id": "workflow",
+          "funds": 160,
+          "effort": 90,
+          "designs": 12
+        },
+        {
+          "at": 134,
+          "kind": "engineering",
+          "id": "storage1",
+          "funds": 90,
+          "effort": 80,
+          "designs": 18
+        },
+        {
+          "at": 156,
+          "kind": "equipment",
+          "id": "hardware",
+          "funds": 120,
+          "effort": 0,
+          "designs": 16
+        },
+        {
+          "at": 159,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 90,
+          "effort": 0,
+          "designs": 12
+        },
+        {
+          "at": 212,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 140,
+          "effort": 0,
+          "designs": 20
+        },
+        {
+          "at": 235,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 350,
+          "effort": 0,
+          "designs": 27
+        },
+        {
+          "at": 243,
+          "kind": "equipment",
+          "id": "hardware",
+          "funds": 450,
+          "effort": 0,
+          "designs": 36
+        },
+        {
+          "at": 252,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 280,
+          "effort": 0,
+          "designs": 36
+        },
+        {
+          "at": 266,
+          "kind": "engineering",
+          "id": "open",
+          "funds": 300,
+          "effort": 250,
+          "designs": 60
+        },
+        {
+          "at": 322,
+          "kind": "engineering",
+          "id": "storage2",
+          "funds": 600,
+          "effort": 700,
+          "designs": 150
+        },
+        {
+          "at": 456,
+          "kind": "engineering",
+          "id": "pricing",
+          "funds": 900,
+          "effort": 900,
+          "designs": 180
+        },
+        {
+          "at": 511,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 560,
+          "effort": 0,
+          "designs": 65
+        },
+        {
+          "at": 571,
+          "kind": "equipment",
+          "id": "rack",
+          "funds": 1400,
+          "effort": 0,
+          "designs": 59
+        },
+        {
+          "at": 686,
+          "kind": "engineering",
+          "id": "autoCalibration",
+          "funds": 1800,
+          "effort": 1800,
+          "designs": 350
+        },
+        {
+          "at": 737,
+          "kind": "equipment",
+          "id": "hardware",
+          "funds": 1800,
+          "effort": 0,
+          "designs": 78
+        },
+        {
+          "at": 914,
+          "kind": "engineering",
+          "id": "automation",
+          "funds": 2400,
+          "effort": 2400,
+          "designs": 450
+        },
+        {
+          "at": 966,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 1800,
+          "effort": 0,
+          "designs": 180
+        },
+        {
+          "at": 1226,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 3060,
+          "effort": 0,
+          "designs": 288
+        },
+        {
+          "at": 1299,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 180,
+          "effort": 0,
+          "designs": 30
+        },
+        {
+          "at": 1309,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 360,
+          "effort": 0,
+          "designs": 60
+        },
+        {
+          "at": 1411,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 1120,
+          "effort": 0,
+          "designs": 117
+        },
+        {
+          "at": 1616,
+          "kind": "engineering",
+          "id": "storage3",
+          "funds": 4000,
+          "effort": 4200,
+          "designs": 650
+        },
+        {
+          "at": 1717,
+          "kind": "engineering",
+          "id": "rapid",
+          "funds": 4000,
+          "effort": 4000,
+          "designs": 600
+        },
+        {
+          "at": 1850,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 5202,
+          "effort": 0,
+          "designs": 461
+        },
+        {
+          "at": 2005,
+          "kind": "engineering",
+          "id": "workshop",
+          "funds": 6000,
+          "effort": 5500,
+          "designs": 900
+        },
+        {
+          "at": 2108,
+          "kind": "equipment",
+          "id": "workshop",
+          "funds": 4000,
+          "effort": 0,
+          "designs": 400
+        },
+        {
+          "at": 2868,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 2240,
+          "effort": 0,
+          "designs": 210
+        },
+        {
+          "at": 2868,
+          "kind": "equipment",
+          "id": "decoder",
+          "funds": 720,
+          "effort": 0,
+          "designs": 120
+        },
+        {
+          "at": 3147,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 4480,
+          "effort": 0,
+          "designs": 378
+        },
+        {
+          "at": 3449,
+          "kind": "equipment",
+          "id": "workshop",
+          "funds": 6600,
+          "effort": 0,
+          "designs": 640
+        },
+        {
+          "at": 3632,
+          "kind": "engineering",
+          "id": "scheduler",
+          "funds": 7000,
+          "effort": 6500,
+          "designs": 1200
+        },
+        {
+          "at": 4030,
+          "kind": "equipment",
+          "id": "automation",
+          "funds": 8844,
+          "effort": 0,
+          "designs": 738
+        },
+        {
+          "at": 4229,
+          "kind": "equipment",
+          "id": "pulse",
+          "funds": 8960,
+          "effort": 0,
+          "designs": 681
+        }
+      ],
+      "milestones": [
+        {
+          "at": 5,
+          "id": "signal",
+          "kind": "qualification",
+          "chapter": 0
+        },
+        {
+          "at": 5,
+          "id": "feynman",
+          "chapter": 0
+        },
+        {
+          "at": 11,
+          "id": "deutsch",
+          "chapter": 0
+        },
+        {
+          "at": 28,
+          "id": "divincenzo",
+          "chapter": 0
+        },
+        {
+          "at": 56,
+          "id": "nakamura",
+          "chapter": 1
+        },
+        {
+          "at": 63,
+          "id": "ramsey",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 89,
+          "id": "ramsey",
+          "chapter": 1
+        },
+        {
+          "at": 96,
+          "id": "echo",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 102,
+          "id": "readout",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 103,
+          "id": "echo",
+          "chapter": 1
+        },
+        {
+          "at": 115,
+          "id": "readout",
+          "chapter": 1
+        },
+        {
+          "at": 124,
+          "id": "benchmark",
+          "kind": "qualification",
+          "chapter": 1
+        },
+        {
+          "at": 144,
+          "id": "rb",
+          "chapter": 1
+        },
+        {
+          "at": 165,
+          "id": "coupled",
+          "chapter": 2
+        },
+        {
+          "at": 176,
+          "id": "circuit",
+          "kind": "qualification",
+          "chapter": 2
+        },
+        {
+          "at": 197,
+          "id": "nisq",
+          "chapter": 2
+        },
+        {
+          "at": 292,
+          "id": "vqe",
+          "chapter": 2
+        },
+        {
+          "at": 353,
+          "id": "ansatz",
+          "chapter": 2
+        },
+        {
+          "at": 390,
+          "id": "mitigation",
+          "chapter": 2
+        },
+        {
+          "at": 426,
+          "id": "vqe",
+          "kind": "qualification",
+          "chapter": 2
+        },
+        {
+          "at": 493,
+          "id": "classical",
+          "chapter": 3
+        },
+        {
+          "at": 789,
+          "id": "shor",
+          "chapter": 3
+        },
+        {
+          "at": 846,
+          "id": "stabilizer",
+          "chapter": 3
+        },
+        {
+          "at": 1027,
+          "id": "surface",
+          "chapter": 3
+        },
+        {
+          "at": 1154,
+          "id": "decoder",
+          "chapter": 3
+        },
+        {
+          "at": 1167,
+          "id": "memory",
+          "kind": "qualification",
+          "chapter": 3
+        },
+        {
+          "at": 1295,
+          "id": "threshold",
+          "chapter": 4
+        },
+        {
+          "at": 1509,
+          "id": "surgery",
+          "chapter": 4
+        },
+        {
+          "at": 2315,
+          "id": "gates",
+          "kind": "qualification",
+          "chapter": 4
+        },
+        {
+          "at": 2322,
+          "id": "gates",
+          "chapter": 4
+        },
+        {
+          "at": 2466,
+          "id": "ancilla",
+          "chapter": 4
+        },
+        {
+          "at": 2541,
+          "id": "factory",
+          "kind": "qualification",
+          "chapter": 4
+        },
+        {
+          "at": 2581,
+          "id": "factories",
+          "chapter": 4
+        },
+        {
+          "at": 2756,
+          "id": "accounting",
+          "chapter": 5
+        },
+        {
+          "at": 3273,
+          "id": "lloyd",
+          "chapter": 5
+        },
+        {
+          "at": 3827,
+          "id": "hamiltonian",
+          "chapter": 5
+        },
+        {
+          "at": 4452,
+          "id": "audit",
+          "chapter": 5
+        }
+      ],
+      "assignments": [
+        {
+          "at": 6,
+          "id": "staff+1",
+          "staff": 2,
+          "notebooks": 1
+        },
+        {
+          "at": 6,
+          "id": "staff+1",
+          "staff": 3,
+          "notebooks": 1
+        },
+        {
+          "at": 57,
+          "id": "notebooks+1",
+          "staff": 3,
+          "notebooks": 2
+        },
+        {
+          "at": 63,
+          "id": "staff+1",
+          "staff": 4,
+          "notebooks": 2
+        },
+        {
+          "at": 63,
+          "id": "staff+1",
+          "staff": 5,
+          "notebooks": 2
+        },
+        {
+          "at": 96,
+          "id": "staff+1",
+          "staff": 6,
+          "notebooks": 2
+        },
+        {
+          "at": 96,
+          "id": "staff+1",
+          "staff": 7,
+          "notebooks": 2
+        },
+        {
+          "at": 102,
+          "id": "staff+1",
+          "staff": 8,
+          "notebooks": 2
+        },
+        {
+          "at": 102,
+          "id": "staff+1",
+          "staff": 9,
+          "notebooks": 2
+        },
+        {
+          "at": 116,
+          "id": "staff−1",
+          "staff": 8,
+          "notebooks": 2
+        },
+        {
+          "at": 116,
+          "id": "notebooks+1",
+          "staff": 8,
+          "notebooks": 3
+        },
+        {
+          "at": 124,
+          "id": "staff+1",
+          "staff": 9,
+          "notebooks": 3
+        },
+        {
+          "at": 124,
+          "id": "staff+1",
+          "staff": 10,
+          "notebooks": 3
+        },
+        {
+          "at": 135,
+          "id": "notebooks−1",
+          "staff": 10,
+          "notebooks": 2
+        },
+        {
+          "at": 135,
+          "id": "notebooks−1",
+          "staff": 10,
+          "notebooks": 1
+        },
+        {
+          "at": 135,
+          "id": "staff+1",
+          "staff": 11,
+          "notebooks": 1
+        },
+        {
+          "at": 135,
+          "id": "staff+1",
+          "staff": 12,
+          "notebooks": 1
+        },
+        {
+          "at": 145,
+          "id": "staff+1",
+          "staff": 13,
+          "notebooks": 1
+        },
+        {
+          "at": 166,
+          "id": "staff−1",
+          "staff": 12,
+          "notebooks": 1
+        },
+        {
+          "at": 166,
+          "id": "notebooks+1",
+          "staff": 12,
+          "notebooks": 2
+        },
+        {
+          "at": 176,
+          "id": "staff+1",
+          "staff": 13,
+          "notebooks": 2
+        },
+        {
+          "at": 176,
+          "id": "staff+1",
+          "staff": 14,
+          "notebooks": 2
+        },
+        {
+          "at": 198,
+          "id": "staff−1",
+          "staff": 13,
+          "notebooks": 2
+        },
+        {
+          "at": 198,
+          "id": "notebooks+1",
+          "staff": 13,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 14,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 15,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 16,
+          "notebooks": 3
+        },
+        {
+          "at": 267,
+          "id": "staff+1",
+          "staff": 17,
+          "notebooks": 3
+        },
+        {
+          "at": 305,
+          "id": "staff+1",
+          "staff": 18,
+          "notebooks": 3
+        },
+        {
+          "at": 323,
+          "id": "notebooks−1",
+          "staff": 18,
+          "notebooks": 2
+        },
+        {
+          "at": 323,
+          "id": "notebooks−1",
+          "staff": 18,
+          "notebooks": 1
+        },
+        {
+          "at": 323,
+          "id": "staff+1",
+          "staff": 19,
+          "notebooks": 1
+        },
+        {
+          "at": 323,
+          "id": "staff+1",
+          "staff": 20,
+          "notebooks": 1
+        },
+        {
+          "at": 354,
+          "id": "staff+1",
+          "staff": 21,
+          "notebooks": 1
+        },
+        {
+          "at": 391,
+          "id": "staff−1",
+          "staff": 20,
+          "notebooks": 1
+        },
+        {
+          "at": 391,
+          "id": "notebooks+1",
+          "staff": 20,
+          "notebooks": 2
+        },
+        {
+          "at": 426,
+          "id": "staff+1",
+          "staff": 21,
+          "notebooks": 2
+        },
+        {
+          "at": 426,
+          "id": "staff+1",
+          "staff": 22,
+          "notebooks": 2
+        },
+        {
+          "at": 456,
+          "id": "staff+1",
+          "staff": 23,
+          "notebooks": 2
+        },
+        {
+          "at": 571,
+          "id": "staff+1",
+          "staff": 24,
+          "notebooks": 2
+        },
+        {
+          "at": 663,
+          "id": "staff+1",
+          "staff": 25,
+          "notebooks": 2
+        },
+        {
+          "at": 790,
+          "id": "staff−1",
+          "staff": 24,
+          "notebooks": 2
+        },
+        {
+          "at": 790,
+          "id": "notebooks+1",
+          "staff": 24,
+          "notebooks": 3
+        },
+        {
+          "at": 847,
+          "id": "staff+1",
+          "staff": 25,
+          "notebooks": 3
+        },
+        {
+          "at": 1154,
+          "id": "staff+1",
+          "staff": 26,
+          "notebooks": 3
+        },
+        {
+          "at": 1155,
+          "id": "staff−1",
+          "staff": 25,
+          "notebooks": 3
+        },
+        {
+          "at": 1155,
+          "id": "notebooks+1",
+          "staff": 25,
+          "notebooks": 4
+        },
+        {
+          "at": 1167,
+          "id": "staff+1",
+          "staff": 26,
+          "notebooks": 4
+        },
+        {
+          "at": 1167,
+          "id": "staff+1",
+          "staff": 27,
+          "notebooks": 4
+        },
+        {
+          "at": 1296,
+          "id": "notebooks+1",
+          "staff": 27,
+          "notebooks": 5
+        },
+        {
+          "at": 1617,
+          "id": "notebooks−1",
+          "staff": 27,
+          "notebooks": 4
+        },
+        {
+          "at": 1617,
+          "id": "notebooks−1",
+          "staff": 27,
+          "notebooks": 3
+        },
+        {
+          "at": 1617,
+          "id": "notebooks−1",
+          "staff": 27,
+          "notebooks": 2
+        },
+        {
+          "at": 1617,
+          "id": "staff+1",
+          "staff": 28,
+          "notebooks": 2
+        },
+        {
+          "at": 1617,
+          "id": "staff+1",
+          "staff": 29,
+          "notebooks": 2
+        },
+        {
+          "at": 1617,
+          "id": "staff+1",
+          "staff": 30,
+          "notebooks": 2
+        },
+        {
+          "at": 2315,
+          "id": "staff+1",
+          "staff": 31,
+          "notebooks": 2
+        },
+        {
+          "at": 2315,
+          "id": "staff+1",
+          "staff": 32,
+          "notebooks": 2
+        },
+        {
+          "at": 2582,
+          "id": "notebooks+1",
+          "staff": 32,
+          "notebooks": 3
+        },
+        {
+          "at": 3274,
+          "id": "notebooks+1",
+          "staff": 32,
+          "notebooks": 4
+        },
+        {
+          "at": 3828,
+          "id": "notebooks+1",
+          "staff": 32,
+          "notebooks": 5
+        },
+        {
+          "at": 4453,
+          "id": "notebooks−1",
+          "staff": 32,
+          "notebooks": 4
+        },
+        {
+          "at": 4453,
+          "id": "notebooks−1",
+          "staff": 32,
+          "notebooks": 3
+        },
+        {
+          "at": 4453,
+          "id": "notebooks−1",
+          "staff": 32,
+          "notebooks": 2
+        }
+      ],
+      "aborts": 0,
+      "inputs": {
+        "distance": 5,
+        "service": 0.7,
+        "automation": 4,
+        "workshops": 4,
+        "dissemination": "open",
+        "rollout": "rapid"
+      },
+      "initialElapsed": 0,
+      "resumed": false,
+      "longestNoActionWindow": {
+        "from": 2868,
+        "to": 3147,
+        "previous": "equipment/decoder",
+        "next": "equipment/pulse"
+      },
+      "priceChecks": 9,
+      "priceAdjustments": 4,
+      "analysisAdjustments": 22
+    },
+    "campusCounts": {
+      "busy": 904,
+      "idle": 3614,
+      "taskBusy": 728,
+      "longestNoAction": 223
+    },
+    "frontier": [
+      "landscape",
+      "precision",
+      "reference30",
+      "bias-floor",
+      "reference60",
+      "final-check"
+    ],
+    "precision": [
+      "desk30",
+      "desk45",
+      "desk60",
+      "desk65",
+      "audit30",
+      "audit45"
+    ],
+    "modern": [
+      "controller2026",
+      "adaptive2026",
+      "state-readiness"
+    ],
+    "orders": [
+      {
+        "at": 2189,
+        "offer": "bulk",
+        "kind": "chip",
+        "units": 512
+      },
+      {
+        "at": 2222,
+        "offer": "bulk",
+        "kind": "chip",
+        "units": 512
+      },
+      {
+        "at": 2280,
+        "offer": "bulk",
+        "kind": "support",
+        "units": 512
+      },
+      {
+        "at": 2312,
+        "offer": "bulk",
+        "kind": "support",
+        "units": 512
+      },
+      {
+        "at": 2716,
+        "offer": "bulk",
+        "kind": "chip",
+        "units": 512
+      },
+      {
+        "at": 2718,
+        "offer": "bulk",
+        "kind": "chip",
+        "units": 512
+      },
+      {
+        "at": 3054,
+        "offer": "bulk",
+        "kind": "support",
+        "units": 512
+      },
+      {
+        "at": 3085,
+        "offer": "bulk",
+        "kind": "support",
+        "units": 512
+      }
+    ],
+    "actions": [
+      {
+        "at": 0,
+        "kind": "startExperiment",
+        "id": "signal"
+      },
+      {
+        "at": 5,
+        "kind": "experiment-completion",
+        "id": "signal"
+      },
+      {
+        "at": 5,
+        "kind": "buyProject",
+        "id": "feynman"
+      },
+      {
+        "at": 6,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 6,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 11,
+        "kind": "buyProject",
+        "id": "deutsch"
+      },
+      {
+        "at": 28,
+        "kind": "buyProject",
+        "id": "divincenzo"
+      },
+      {
+        "at": 56,
+        "kind": "buyProject",
+        "id": "nakamura"
+      },
+      {
+        "at": 56,
+        "kind": "startExperiment",
+        "id": "ramsey"
+      },
+      {
+        "at": 57,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 63,
+        "kind": "experiment-completion",
+        "id": "ramsey"
+      },
+      {
+        "at": 63,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 63,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 79,
+        "kind": "buyEngineering",
+        "id": "workflow"
+      },
+      {
+        "at": 89,
+        "kind": "buyProject",
+        "id": "ramsey"
+      },
+      {
+        "at": 89,
+        "kind": "startExperiment",
+        "id": "echo"
+      },
+      {
+        "at": 96,
+        "kind": "experiment-completion",
+        "id": "echo"
+      },
+      {
+        "at": 96,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 96,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 96,
+        "kind": "startExperiment",
+        "id": "readout"
+      },
+      {
+        "at": 102,
+        "kind": "experiment-completion",
+        "id": "readout"
+      },
+      {
+        "at": 102,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 102,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 103,
+        "kind": "buyProject",
+        "id": "echo"
+      },
+      {
+        "at": 115,
+        "kind": "buyProject",
+        "id": "readout"
+      },
+      {
+        "at": 115,
+        "kind": "startExperiment",
+        "id": "benchmark"
+      },
+      {
+        "at": 116,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 116,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 124,
+        "kind": "experiment-completion",
+        "id": "benchmark"
+      },
+      {
+        "at": 124,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 124,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 134,
+        "kind": "buyEngineering",
+        "id": "storage1"
+      },
+      {
+        "at": 135,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 135,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 135,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 135,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 144,
+        "kind": "buyProject",
+        "id": "rb"
+      },
+      {
+        "at": 145,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 156,
+        "kind": "buyUpgrade",
+        "id": "hardware"
+      },
+      {
+        "at": 159,
+        "kind": "buyUpgrade",
+        "id": "rack"
+      },
+      {
+        "at": 165,
+        "kind": "buyProject",
+        "id": "coupled"
+      },
+      {
+        "at": 165,
+        "kind": "startExperiment",
+        "id": "circuit"
+      },
+      {
+        "at": 166,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 166,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 176,
+        "kind": "experiment-completion",
+        "id": "circuit"
+      },
+      {
+        "at": 176,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 176,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 197,
+        "kind": "buyProject",
+        "id": "nisq"
+      },
+      {
+        "at": 198,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 198,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 212,
+        "kind": "buyUpgrade",
+        "id": "pulse"
+      },
+      {
+        "at": 235,
+        "kind": "buyUpgrade",
+        "id": "rack"
+      },
+      {
+        "at": 243,
+        "kind": "buyUpgrade",
+        "id": "hardware"
+      },
+      {
+        "at": 252,
+        "kind": "buyUpgrade",
+        "id": "pulse"
+      },
+      {
+        "at": 266,
+        "kind": "buyEngineering",
+        "id": "open"
+      },
+      {
+        "at": 267,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 267,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 267,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 267,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 292,
+        "kind": "buyProject",
+        "id": "vqe"
+      },
+      {
+        "at": 293,
+        "kind": "objective",
+        "id": "landscape"
+      },
+      {
+        "at": 305,
+        "kind": "measurement-completion",
+        "id": "landscape"
+      },
+      {
+        "at": 305,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 322,
+        "kind": "buyEngineering",
+        "id": "storage2"
+      },
+      {
+        "at": 323,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 323,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 323,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 323,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 353,
+        "kind": "buyProject",
+        "id": "ansatz"
+      },
+      {
+        "at": 354,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 390,
+        "kind": "buyProject",
+        "id": "mitigation"
+      },
+      {
+        "at": 391,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 391,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 395,
+        "kind": "startExperiment",
+        "id": "vqe"
+      },
+      {
+        "at": 426,
+        "kind": "experiment-completion",
+        "id": "vqe"
+      },
+      {
+        "at": 426,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 426,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 426,
+        "kind": "objective",
+        "id": "precision"
+      },
+      {
+        "at": 456,
+        "kind": "measurement-completion",
+        "id": "precision"
+      },
+      {
+        "at": 456,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 456,
+        "kind": "buyEngineering",
+        "id": "pricing"
+      },
+      {
+        "at": 493,
+        "kind": "buyProject",
+        "id": "classical"
+      },
+      {
+        "at": 495,
+        "kind": "precision",
+        "id": "desk30"
+      },
+      {
+        "at": 511,
+        "kind": "measurement-completion",
+        "id": "desk30"
+      },
+      {
+        "at": 511,
+        "kind": "buyUpgrade",
+        "id": "pulse"
+      },
+      {
+        "at": 511,
+        "kind": "precision",
+        "id": "desk45"
+      },
+      {
+        "at": 541,
+        "kind": "measurement-completion",
+        "id": "desk45"
+      },
+      {
+        "at": 541,
+        "kind": "objective",
+        "id": "reference30"
+      },
+      {
+        "at": 571,
+        "kind": "measurement-completion",
+        "id": "reference30"
+      },
+      {
+        "at": 571,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 571,
+        "kind": "buyUpgrade",
+        "id": "rack"
+      },
+      {
+        "at": 572,
+        "kind": "objective",
+        "id": "bias-floor"
+      },
+      {
+        "at": 663,
+        "kind": "measurement-completion",
+        "id": "bias-floor"
+      },
+      {
+        "at": 663,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 686,
+        "kind": "buyEngineering",
+        "id": "autoCalibration"
+      },
+      {
+        "at": 737,
+        "kind": "buyUpgrade",
+        "id": "hardware"
+      },
+      {
+        "at": 789,
+        "kind": "buyProject",
+        "id": "shor"
+      },
+      {
+        "at": 790,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 790,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 846,
+        "kind": "buyProject",
+        "id": "stabilizer"
+      },
+      {
+        "at": 847,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 914,
+        "kind": "buyEngineering",
+        "id": "automation"
+      },
+      {
+        "at": 966,
+        "kind": "buyUpgrade",
+        "id": "automation"
+      },
+      {
+        "at": 1027,
+        "kind": "buyProject",
+        "id": "surface"
+      },
+      {
+        "at": 1031,
+        "kind": "precision",
+        "id": "desk60"
+      },
+      {
+        "at": 1062,
+        "kind": "measurement-completion",
+        "id": "desk60"
+      },
+      {
+        "at": 1062,
+        "kind": "objective",
+        "id": "reference60"
+      },
+      {
+        "at": 1154,
+        "kind": "measurement-completion",
+        "id": "reference60"
+      },
+      {
+        "at": 1154,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 1154,
+        "kind": "buyProject",
+        "id": "decoder"
+      },
+      {
+        "at": 1154,
+        "kind": "startExperiment",
+        "id": "memory"
+      },
+      {
+        "at": 1155,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 1155,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 1167,
+        "kind": "experiment-completion",
+        "id": "memory"
+      },
+      {
+        "at": 1167,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 1167,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 1167,
+        "kind": "buyProject",
+        "id": "controller2026"
+      },
+      {
+        "at": 1167,
+        "kind": "modern-discovery",
+        "id": "controller2026"
+      },
+      {
+        "at": 1226,
+        "kind": "buyUpgrade",
+        "id": "automation"
+      },
+      {
+        "at": 1295,
+        "kind": "buyProject",
+        "id": "threshold"
+      },
+      {
+        "at": 1296,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 1299,
+        "kind": "buyUpgrade",
+        "id": "decoder"
+      },
+      {
+        "at": 1309,
+        "kind": "buyUpgrade",
+        "id": "decoder"
+      },
+      {
+        "at": 1319,
+        "kind": "precision",
+        "id": "desk65"
+      },
+      {
+        "at": 1411,
+        "kind": "measurement-completion",
+        "id": "desk65"
+      },
+      {
+        "at": 1411,
+        "kind": "buyUpgrade",
+        "id": "pulse"
+      },
+      {
+        "at": 1426,
+        "kind": "buyProject",
+        "id": "adaptive2026"
+      },
+      {
+        "at": 1426,
+        "kind": "modern-discovery",
+        "id": "adaptive2026"
+      },
+      {
+        "at": 1509,
+        "kind": "buyProject",
+        "id": "surgery"
+      },
+      {
+        "at": 1616,
+        "kind": "buyEngineering",
+        "id": "storage3"
+      },
+      {
+        "at": 1617,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 1617,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 1617,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 1617,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 1617,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 1617,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 1717,
+        "kind": "buyEngineering",
+        "id": "rapid"
+      },
+      {
+        "at": 1850,
+        "kind": "buyUpgrade",
+        "id": "automation"
+      },
+      {
+        "at": 2005,
+        "kind": "buyEngineering",
+        "id": "workshop"
+      },
+      {
+        "at": 2108,
+        "kind": "buyUpgrade",
+        "id": "workshop"
+      },
+      {
+        "at": 2189,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2222,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2280,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 2298,
+        "kind": "startExperiment",
+        "id": "gates"
+      },
+      {
+        "at": 2312,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 2315,
+        "kind": "experiment-completion",
+        "id": "gates"
+      },
+      {
+        "at": 2315,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 2315,
+        "kind": "assign",
+        "id": "staff"
+      },
+      {
+        "at": 2322,
+        "kind": "buyProject",
+        "id": "gates"
+      },
+      {
+        "at": 2332,
+        "kind": "precision",
+        "id": "audit30"
+      },
+      {
+        "at": 2430,
+        "kind": "measurement-completion",
+        "id": "audit30"
+      },
+      {
+        "at": 2466,
+        "kind": "buyProject",
+        "id": "ancilla"
+      },
+      {
+        "at": 2524,
+        "kind": "startExperiment",
+        "id": "factory"
+      },
+      {
+        "at": 2541,
+        "kind": "experiment-completion",
+        "id": "factory"
+      },
+      {
+        "at": 2581,
+        "kind": "buyProject",
+        "id": "factories"
+      },
+      {
+        "at": 2582,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 2716,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2718,
+        "kind": "procurement",
+        "id": "chip"
+      },
+      {
+        "at": 2756,
+        "kind": "buyProject",
+        "id": "accounting"
+      },
+      {
+        "at": 2765,
+        "kind": "precision",
+        "id": "audit45"
+      },
+      {
+        "at": 2868,
+        "kind": "measurement-completion",
+        "id": "audit45"
+      },
+      {
+        "at": 2868,
+        "kind": "buyUpgrade",
+        "id": "pulse"
+      },
+      {
+        "at": 2868,
+        "kind": "buyUpgrade",
+        "id": "decoder"
+      },
+      {
+        "at": 2868,
+        "kind": "objective",
+        "id": "final-check"
+      },
+      {
+        "at": 2971,
+        "kind": "measurement-completion",
+        "id": "final-check"
+      },
+      {
+        "at": 2971,
+        "kind": "buyProject",
+        "id": "state-readiness"
+      },
+      {
+        "at": 2971,
+        "kind": "modern-discovery",
+        "id": "state-readiness"
+      },
+      {
+        "at": 3054,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 3085,
+        "kind": "procurement",
+        "id": "support"
+      },
+      {
+        "at": 3147,
+        "kind": "buyUpgrade",
+        "id": "pulse"
+      },
+      {
+        "at": 3273,
+        "kind": "buyProject",
+        "id": "lloyd"
+      },
+      {
+        "at": 3274,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 3449,
+        "kind": "buyUpgrade",
+        "id": "workshop"
+      },
+      {
+        "at": 3632,
+        "kind": "buyEngineering",
+        "id": "scheduler"
+      },
+      {
+        "at": 3827,
+        "kind": "buyProject",
+        "id": "hamiltonian"
+      },
+      {
+        "at": 3828,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 4030,
+        "kind": "buyUpgrade",
+        "id": "automation"
+      },
+      {
+        "at": 4229,
+        "kind": "buyUpgrade",
+        "id": "pulse"
+      },
+      {
+        "at": 4452,
+        "kind": "buyProject",
+        "id": "audit"
+      },
+      {
+        "at": 4453,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 4453,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 4453,
+        "kind": "assign",
+        "id": "notebooks"
+      },
+      {
+        "at": 4465,
+        "kind": "startWorkload",
+        "id": "dynamics"
+      },
+      {
+        "at": 4518,
+        "kind": "workload-completion",
+        "id": "dynamics"
+      }
+    ],
+    "failures": {}
+  }
+]

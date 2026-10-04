@@ -13,7 +13,7 @@
   const html=(id,value)=>{
     if(rendered.get(id)===value)return;
     const container=$(id),focused=container.contains(document.activeElement)?document.activeElement:null;
-    const key=focused&&Object.entries(focused.dataset).find(([key])=>['project','engineering','upgrade','paper','workload','runWorkload','stationTarget'].includes(key));
+    const key=focused&&Object.entries(focused.dataset).find(([key])=>['project','engineering','upgrade','paper','workload','runWorkload','stationTarget','objective','precisionRequest','orderEquipment','recipe'].includes(key));
     container.innerHTML=value;rendered.set(id,value);
     if(key){const [name,identity]=key,attribute=name.replace(/[A-Z]/g,c=>'-'+c.toLowerCase()),replacement=container.querySelector('[data-'+attribute+'="'+identity+'"]');(replacement&&!replacement.disabled?replacement:container.querySelector('button:not(:disabled)'))?.focus({preventScroll:true});}
   };
@@ -36,7 +36,7 @@
   function paperNotes(id) {
     const p=C.projects.find(item=>item.id===id),sources=p?p.papers.map(key=>papers.find(item=>item.id===key)):papers.filter(item=>item.id===id);
     write('paper-title',p?p.title:sources[0]?.title||'Primary source');
-    html('paper-body',(p?'<p class="caption">In the game: '+esc(p.effect)+' Prices, timing, and numerical bonuses are educational abstractions. The sources support the concepts; they do not certify this laboratory.</p>':'')+sources.map(q=>'<article class="paper-entry"><h3>'+esc(q.title)+'</h3><p class="paper-meta">'+esc(q.authors)+'<br>'+esc(q.date)+' · '+esc(q.type)+'</p><div class="paper-section-label">What the source supports</div><p>'+esc(q.finding)+'</p><div class="paper-links">'+q.links.map(link=>'<a href="'+esc(link.url)+'" target="_blank" rel="noopener noreferrer">'+esc(link.label)+' ↗</a>').join('')+'</div></article>').join(''));
+    html('paper-body',(p?'<p class="caption">In the game: '+esc(p.effect)+' Prices, timing, and numerical bonuses are educational abstractions. The sources support the concepts; they do not certify this laboratory.</p>':'')+sources.map(q=>'<article class="paper-entry"><h3>'+esc(q.title)+'</h3><p class="paper-meta">'+esc(q.authors)+'<br>'+esc(q.date)+' · '+esc(q.type)+'</p><div class="paper-section-label">What the source supports</div><p>'+esc(q.finding)+'</p>'+(q.game?'<div class="paper-section-label">What this game abstracts</div><p>'+esc(q.game)+'</p>':'')+'<div class="paper-links">'+q.links.map(link=>'<a href="'+esc(link.url)+'" target="_blank" rel="noopener noreferrer">'+esc(link.label)+' ↗</a>').join('')+'</div></article>').join(''));
     $('paper-dialog').showModal();
   }
   function tone(kind='click') {
@@ -65,7 +65,8 @@
     if(s.ended&&!lastEnding){lastEnding=true;view='ending';tone('chapter');$('main').scrollIntoView({block:'start'});}
   }
   const optionalDiscoveries=['factoring','grover','chemistry'];
-  function nextDiscovery(){const available=C.projects.filter(p=>!has(p.id)&&G.projectStatus(s,p.id).available);return available.find(p=>!optionalDiscoveries.includes(p.id))||available[0];}
+  const isOptional=p=>p.optional||optionalDiscoveries.includes(p.id);
+  function nextDiscovery(){const available=C.projects.filter(p=>!has(p.id)&&G.projectStatus(s,p.id).available);return available.find(p=>!isOptional(p))||available[0];}
   function researchBlocker(p,m){return p.cost.effort>m.effortCap?'capacity':s.designs<(p.cost.designs||0)?'designs':s.funds<p.cost.funds?'funding':s.effort<p.cost.effort?'effort':'';}
   function chooseExperiment(phase){
     const available=C.experiments.filter(e=>e.requires.every(has)&&e.chapter<=phase&&(e.chapter===phase||e.id==='memory'&&phase===4));
@@ -115,7 +116,45 @@
     else if(camera==='service'){title='A gallery with two kinds of customer';detail=has('nisq')?num(m.delivered,2)+' known-preparation batches / lab s · '+num(m.revenue,2)+' funding / lab s. Customer work competes with analysis and explicit experiments.':'Known-preparation services open with the noisy processor. Precision work later needs fresh trial evidence.';target=has('nisq')?'service-control':'discoveries-section';label=has('nisq')?'Balance customer and analysis duty':'Visit the next research';}
     if($(target)?.hidden){target='run-experiment';label='Return to the next experiment';}
     const u=upgrade&&G.upgradeInfo(s,upgrade),purchase=u?.available&&!u.max?'<button type="button" data-upgrade="'+upgrade+'" '+(!u.ready?'disabled':'')+'>'+esc(u.label)+' · '+num(u.cost)+' funding · '+num(u.designs)+' designs ↗</button>':'';
-    html('campus-station','<div><span class="eyebrow">Inside the inspected facility</span><h3>'+esc(title)+'</h3><p>'+esc(detail)+'</p></div><div class="station-actions">'+purchase+'<button type="button" data-station-target="'+target+'">'+esc(label)+' →</button></div>');
+    const readings=camera==='control'?[['Q37','2026 · feedback'],['Q41','Accuracy and throughput']]:camera==='cryostat'?[['Q38','2026 · adaptive control']]:camera==='planning'?[['Q40','Cultivation evidence'],['Q43','2026 · state readiness']]:camera==='memory'?[['Q42','2026 · connectivity']]:[];
+    html('campus-station','<div><span class="eyebrow">Inside the inspected facility</span><h3>'+esc(title)+'</h3><p>'+esc(detail)+'</p><div class="station-reading">'+readings.filter(([id])=>C.papers[id]).map(([id,label])=>'<button type="button" data-paper="'+id+'">'+esc(label)+' ↗</button>').join('')+'</div></div><div class="station-actions">'+purchase+'<button type="button" data-station-target="'+target+'">'+esc(label)+' →</button></div>');
+  }
+  function frontierCard(item,status,request){
+    const p=status.prediction,r=status.recipe,receipt=status.receipt,key=request?'precision-request':'objective';
+    const title=item.title||item.name,ground=item.angle===null,reference=ground?'ground-state reference':'exact reference at the recorded angle';
+    const prediction=p?'This trial: sampling ±'+num(p.bound,4)+' · residual bias ≤'+num(p.bias,4)+(ground?' · exact ansatz error '+num(p.ansatz,4):'')+'.':'';
+    const reward=request?num(item.payout)+' funding':costLabel(item.reward)+' · +1 trust';
+    return '<article class="frontier-card '+(status.complete?'frontier-complete':'')+'"><div class="frontier-card-top"><span class="eyebrow">'+(request?'Fresh customer request':'Classical two-spin tutorial')+'</span><span class="mono">'+(status.complete?'Recorded':ground?'Tune θ':item.angle+'° ±1°')+'</span></div><h4>'+esc(title)+'</h4><p>'+esc(item.description||('Compare with the '+reference+'.'))+'</p><div class="frontier-target">Total criterion '+num(item.tolerance,3)+' · '+esc(reference)+(item.maxBias?' · bias ≤'+num(item.maxBias,3):'')+'</div><p class="caption">'+esc(prediction)+'</p><div class="frontier-quote">'+(r?num(r.cost)+' funding · '+num(r.seconds,1)+' apparatus s<br>'+num(r.actualAcquisitions)+' actual samples · '+num(r.modeledAcquisitions)+' modeled acquisitions':'')+'</div><div class="frontier-reward">'+(request?'Qualified delivery pays ':'First success earns ')+esc(reward)+'</div><div class="frontier-actions"><button type="button" data-'+key+'="'+item.id+'" '+(!status.ready?'disabled':'')+'>'+(status.complete?'Completed':s.job?.[request?'request':'objective']===item.id?'Trial running':'Run a fresh trial')+' →</button><button type="button" class="text-button" data-station-target="noisy-controls">Tune angle & acquisitions ↗</button></div><p class="limiter">'+esc(status.reasons.join(' · '))+'</p>'+(receipt?'<p class="caption">Accepted at '+clock(receipt.time)+' laboratory time.</p>':'')+'</article>';
+  }
+  function renderCampus(m){
+    if(!G.campusStatus)return;
+    const campus=G.campusStatus(s),enabled=campus.enabled;
+    show('campus-notice',!enabled&&['lab','ending'].includes(view));$('enter-campus').disabled=!campus.ready;write('campus-entry-reason',campus.reasons.join(' · '));
+    show('frontier-section',enabled&&has('vqe'));
+    if(enabled&&has('vqe')){
+      const goals=C.objectives.map(item=>({item,status:G.objectiveStatus(s,item.id)})),requests=C.precisionRequests.map(item=>({item,status:G.precisionStatus(s,item.id)}));
+      write('frontier-count',s.objectiveResults.length+' / '+C.objectives.length+' goals · '+s.precisionResults.length+' / '+C.precisionRequests.length+' requests');
+      html('objective-list',goals.filter(x=>x.status.available&&!x.status.complete).map(x=>frontierCard(x.item,x.status,false)).join('')||'<p class="quiet-message">The current frontier is recorded. New research opens the next question.</p>');
+      show('precision-desk',has('classical'));
+      $('frontier-section').classList.toggle('has-precision',has('classical'));
+      html('precision-list',requests.filter(x=>x.status.available&&!x.status.complete).map(x=>frontierCard(x.item,x.status,true)).join('')||'<p class="quiet-message">Every available request is delivered. The known-preparation service desk can keep earning funding.</p>');
+      const receipts=[...goals,...requests].filter(x=>x.status.complete);
+      html('frontier-receipts',receipts.map(({item,status})=>{const r=status.receipt,t=r.result;return '<article class="frontier-receipt"><strong>'+esc(item.title||item.name)+'</strong><span>'+clock(r.time)+' · θ '+t.theta+'° · '+num(t.shots)+' samples</span><p>Estimate '+num(t.energy,4)+' · per-trial bound ±'+num(t.statistical,4)+' · bias ≤'+num(t.bias,4)+'. Reward recorded once.</p></article>';}).join('')||'<p class="quiet-message">Fresh successful trials will leave a receipt here.</p>');
+    }
+    show('procurement-section',enabled&&has('classical'));
+    if(enabled&&has('classical')){
+      write('procurement-summary',s.orders.length+' / 2 scheduled deliveries');
+      html('procurement-stock',[['chip',s.chipStock,'Chip assemblies'],['support',s.supportStock,'Control & cooling assemblies']].map(([kind,stock,title])=>'<div><span class="eyebrow">Received · awaiting commissioning</span><strong>'+num(stock,1)+'</strong><p>'+title+'</p></div>').join('')+'<p class="caption">'+(G.hasEngineering(s,'workshop')?'Workshop allocation commissions received assemblies at the disclosed prefab rate; in-house construction continues when stock runs out.':'Implement workshop engineering and assign a construction team to commission received equipment.')+'</p>');
+      html('procurement-offers',C.procurementOffers.map(offer=>'<article class="procurement-offer"><span class="eyebrow">'+esc(offer.title||offer.name)+'</span><h3>'+num(offer.units)+' unit equivalents</h3><p>'+num(offer.seconds)+' lab s lead · '+num(offer.cost)+' funding · '+num(offer.designs)+' designs</p><div>'+['chip','support'].map(kind=>{const status=G.procurementStatus(s,offer.id,kind);return '<button type="button" data-order-equipment="'+offer.id+'-'+kind+'" data-offer="'+offer.id+'" data-kind="'+kind+'" '+(!status.ready?'disabled':'')+'>Order '+(kind==='chip'?'chip':'support')+' assemblies →</button><p class="limiter">'+esc(status.reasons.join(' · '))+'</p>';}).join('')+'</div><small>Final quote · no cancellation · capacity after commissioning</small></article>').join(''));
+      html('procurement-orders',s.orders.map(order=>{const offer=C.procurementOffers.find(o=>o.id===order.offer);return '<article class="procurement-order"><div><strong>'+esc(offer.title||offer.name)+' / '+(order.kind==='chip'?'chip':'support')+'</strong><span class="mono">'+num(order.remaining,1)+' lab s to receipt</span></div><progress max="'+offer.seconds+'" value="'+(offer.seconds-order.remaining)+'" aria-label="'+esc((offer.title||offer.name)+' '+order.kind+' delivery progress')+'"></progress><p class="caption">'+num(offer.units)+' uncommissioned units arrive at the dock.'+(s.paused?' Delivery clock is paused.':'')+'</p></article>';}).join('')||'<p class="quiet-message">No delivery commitments. Keep cash flexible or reserve a quote above.</p>');
+    }
+    show('continue-lab',enabled&&s.ended);$('continue-lab').disabled=!s.ended;
+    show('controller-profile-control',enabled&&has('controller2026'));
+    if(enabled&&has('controller2026')){
+      $('controller-profile').value=s.controllerProfile;$('controller-profile').disabled=m.atomic||s.ended;
+      write('controller-profile-summary','Selected '+s.controllerProfile+' scenario: '+num(m.decoderRate)+' / μs throughput; '+num(m.feedback)+' μs feedback. These authored presets do not change physical noise or decoding accuracy.');
+      html('controller-profile-comparison','<dl class="controller-comparison">'+['balanced','streaming','response'].map(profile=>{const preview=G.metrics({...s,controllerProfile:profile});return '<div><dt>'+esc(profile)+'</dt><dd>'+num(preview.decoderRate)+' / μs · '+num(preview.feedback)+' μs</dd></div>';}).join('')+'</dl>');
+    }
   }
   function discoveryCard(p){
     const q=papers.find(q=>q.id===p.papers[0]),status=G.projectStatus(s,p.id);
@@ -154,10 +193,11 @@
   function budgetStat(label,value,note){return '<div class="budget-stat"><span>'+esc(label)+'</span><strong>'+esc(value)+'</strong><small>'+esc(note)+'</small></div>';}
   const riskTerm=value=>Number.isFinite(value)?value>0&&value<.001?value.toExponential(1):num(value,3):'—';
   function renderWorkload(){
-    const w=C.workloads.find(w=>w.id===workload),b=s.job?.workload&&s.job.id===w.id?G.liveWorkloadStatus(s,w.id):G.workloadStatus(s,w.id),m=G.metrics(s);
+    const active=s.job?.workload&&s.job.id===workload,w=G.workloadRecipe?G.workloadRecipe(s,workload,active?s.job.recipe:s.logicalRecipe):C.workloads.find(w=>w.id===workload),b=active?G.liveWorkloadStatus(s,w.id):G.workloadStatus(s,w.id),m=G.metrics(s);
+    html('recipe-controls',workload==='dynamics'&&s.campusRevision===1?'<div><span class="eyebrow">The same 32-site Ising task</span><h3>Choose the space–time plan.</h3><p>Authored resource scenarios. Extra workspace and fresh states count toward the complete budget.</p></div><div class="recipe-options">'+(has('state-readiness')?C.dynamicsRecipes.map(recipe=>'<button type="button" data-recipe="'+recipe.id+'" aria-pressed="'+(recipe.id===w.recipe)+'" '+(s.ended||s.job?.workload?'disabled':'')+'><strong>'+esc(recipe.title||recipe.name)+'</strong><span>'+recipe.width+' application registers · depth '+recipe.depth+' · '+recipe.magic+' fresh states</span></button>').join(''):'<button type="button" data-paper="state-readiness">2026 research: state readiness opens alternative plans ↗</button>')+'</div>':'');
     html('workload-list',C.workloads.map(w=>{const ready=G.workloadStatus(s,w.id).ready;return '<button type="button" class="workload-option" data-workload="'+w.id+'" aria-pressed="'+(w.id===workload)+'"><span><span class="eyebrow">'+esc(w.tag)+'</span><strong>'+esc(w.name)+'</strong></span><span class="workload-state">'+(s.completed.includes(w.id)?'Complete':ready?'Qualified':'Inspect budget')+'</span></button>';}).join(''));
     const colors=['var(--teal)','var(--copper)','var(--warning)','var(--muted)','var(--ink)'],entries=Object.entries(b.parts),total=entries.reduce((a,[,v])=>a+(Number.isFinite(v)?v:1),0);
-    html('budget-panel','<div class="budget-top"><div><span class="eyebrow">'+esc(w.tag)+'</span><h3>'+esc(w.name)+'</h3><p>'+esc(w.description)+'</p></div></div><div class="budget-stats">'+budgetStat('Required / available application slots',w.width+' / '+m.slots,num(m.totalPatches)+' complete patches · '+num(m.reserved)+' reserved for routing, spare & factories')+budgetStat('Total conditional risk',pct(b.risk),'Recipe ceiling '+pct(w.maxRisk,0))+budgetStat('Full modeled time',num(b.runtime)+' μs',w.repetitions+' execution(s); ceiling '+num(w.maxTime)+' μs')+budgetStat('Fresh states / rehearsal credits',num(b.credits),num(w.fee)+' funding · '+w.seconds+' apparatus s')+'</div><div class="budget-bar" aria-hidden="true">'+entries.map(([,v],i)=>'<span style="width:'+((Number.isFinite(v)?v:1)/Math.max(total,.00001)*100)+'%;background:'+colors[i]+'"></span>').join('')+'</div><div class="budget-legend">'+entries.map(([key,v],i)=>'<span><i style="background:'+colors[i]+'"></i>'+esc(key)+' '+riskTerm(v)+'</span>').join('')+'</div><p class="budget-caption">Uncapped additive risk terms cover all repetitions; 1.00 corresponds to 100%. Total risk is capped at 100%.</p><p class="budget-caption">Assumed recipe precision: '+w.precision+'; target '+w.target+'. Gate schedule '+num(b.gateTime)+' μs; fresh-state supply '+num(b.factoryTime)+' μs; feedback '+num(b.feedbackTime)+' μs. Parallel lanes overlap; waiting increases memory exposure.</p><p class="budget-reasons">'+esc(s.completed.includes(w.id)?'This workload is complete. Rewards are awarded once.':s.job?.workload&&s.job.id===w.id?'Schedule running. Engineering conditions remain checked.':b.reasons.join(' · ')||'Every declared condition qualifies under the selected model.')+'</p><div class="budget-actions"><button type="button" class="primary-button" data-run-workload="'+w.id+'" '+(!b.ready||s.job||s.paused||s.ended?'disabled':'')+'><span>'+(s.completed.includes(w.id)?'Scenario completed':'Run the full schedule')+'</span><span aria-hidden="true">→</span></button></div><p class="budget-caption">'+esc(w.validation)+'</p>');
+    html('budget-panel','<div class="budget-top"><div><span class="eyebrow">'+esc(w.tag)+'</span><h3>'+esc(w.name)+'</h3><p>'+esc(w.description)+'</p></div></div><div class="budget-stats">'+budgetStat('Required / available application slots',w.width+' / '+m.slots,(w.dataWidth||w.width)+' data + '+(w.workspace||0)+' workspace · '+num(m.totalPatches)+' patches · '+num(m.reserved)+' reserved')+budgetStat('Total conditional risk',pct(b.risk),'Recipe ceiling '+pct(w.maxRisk,0))+budgetStat('Full modeled time',num(b.runtime)+' μs',w.repetitions+' execution(s); ceiling '+num(w.maxTime)+' μs')+budgetStat('Fresh states / rehearsal credits',num(b.credits),num(w.fee)+' funding · '+w.seconds+' apparatus s')+'</div><div class="budget-bar" aria-hidden="true">'+entries.map(([,v],i)=>'<span style="width:'+((Number.isFinite(v)?v:1)/Math.max(total,.00001)*100)+'%;background:'+colors[i]+'"></span>').join('')+'</div><div class="budget-legend">'+entries.map(([key,v],i)=>'<span><i style="background:'+colors[i]+'"></i>'+esc(key)+' '+riskTerm(v)+'</span>').join('')+'</div><p class="budget-caption">Uncapped additive risk terms cover all repetitions; 1.00 corresponds to 100%. Total risk is capped at 100%.</p><p class="budget-caption">Assumed recipe precision: '+w.precision+'; target '+w.target+'. Gate schedule '+num(b.gateTime)+' μs; fresh-state supply '+num(b.factoryTime)+' μs; feedback '+num(b.feedbackTime)+' μs. Parallel lanes overlap; waiting increases memory exposure.</p><p class="budget-reasons">'+esc(s.completed.includes(w.id)?'This workload is complete. Rewards are awarded once.':s.job?.workload&&s.job.id===w.id?'Schedule running. Engineering conditions remain checked.':b.reasons.join(' · ')||'Every declared condition qualifies under the selected model.')+'</p><div class="budget-actions"><button type="button" class="primary-button" data-run-workload="'+w.id+'" '+(!b.ready||s.job||s.paused||s.ended?'disabled':'')+'><span>'+(s.completed.includes(w.id)?'Scenario completed':'Run the full schedule')+'</span><span aria-hidden="true">→</span></button></div><p class="budget-caption">'+esc(w.validation)+'</p>');
   }
   function renderMeasurement(){
     const r=s.result,t=s.tutorial;
@@ -165,8 +205,9 @@
     let title='Experiment notebook',context='Educational scenario',caption=r?.message||'Tune the angle, inspect the exact landscape, then test the estimate.';
     if(r?.id==='signal'||r?.id==='circuit'){title='Repeated known preparations';context=num(r.shots)+' sampled shots';caption+=' Counts do not reveal an arbitrary unknown state.';}
     if(r?.id==='vqe'&&t){
-      title='The two-spin energy';context='Exact classical reference: −1.5620';
-      caption=t?'Estimate '+num(t.energy,4)+' · 95% simultaneous sampling bound ±'+num(t.statistical,4)+' · standard error '+num(t.se,4)+' · residual bias ≤'+num(t.bias,4)+' · ansatz error '+num(t.ansatzError,4)+'. '+num(t.shots)+' actual samples; '+num(t.modeledShots)+' modeled acquisitions. '+(t.qualified?'Qualified.':'Tune θ, shots, or mitigation to meet the 0.12 total criterion.'):'H = ZZ + 0.6X₀ + 0.6X₁. The exact variational curve is computed classically; sampling and bias remain separate.';
+      const task=r.task,item=task&&(task.precision?C.precisionRequests:C.objectives).find(item=>item.id===task.id);
+      title=item?.name||'The two-spin energy';context='Exact classical reference: '+num(task?.reference??t.reference,4);
+      caption='Estimate '+num(t.energy,4)+' · this trial’s 95% simultaneous sampling bound ±'+num(t.statistical,4)+' · standard error '+num(t.se,4)+' · residual bias ≤'+num(t.bias,4)+(task?.angle!==null&&task?' · recorded known angle '+t.theta+'°':' · exact ansatz error '+num(t.ansatzError,4))+'. '+num(t.shots)+' actual samples; '+num(t.modeledShots)+' modeled acquisitions. '+(task?(task.passed?'This trial qualifies; its reward is recorded once.':'This trial fails the declared '+num(task.tolerance,3)+' total criterion. Acquisition costs remain spent.'):(t.qualified?'Ground-reference tutorial qualified.':'Tune θ, shots, or mitigation to meet the 0.12 ground-reference criterion.'));
     }
     if(r?.id==='memory'){title='Detection-event rehearsal';context='100 illustrative trials / check';}
     write('measurement-title',title);write('measurement-context',context);write('measurement-caption',caption);
@@ -211,7 +252,7 @@
   }
   function renderRail(m,phase){
     const available=chooseExperiment(phase),e=G.experimentRecipe(s,experiment),status=e?G.experimentStatus(s,e.id):null;
-    const next=nextDiscovery(),mainPending=next&&!optionalDiscoveries.includes(next.id),workNext=phase===5&&!mainPending,qualificationNeeded=next?.qualification&&!G.qualificationNow(s,next.qualification),blocker=next?researchBlocker(next,m):'';
+    const next=nextDiscovery(),mainPending=next&&!isOptional(next),workNext=phase===5&&!mainPending,qualificationNeeded=next?.qualification&&!G.qualificationNow(s,next.qualification),blocker=next?researchBlocker(next,m):'';
     write('next-label',!s.started?'Your first experiment':s.ended?'The laboratory is complete':'Your next step');
     write('next-title',!s.started?'Start with one fragile thing.':workNext?'Give the machine a question.':qualificationNeeded?'Evidence before expansion.':blocker==='capacity'?'Make room for the next idea.':blocker==='designs'?'Let the notebook become a plan.':blocker==='funding'?(has('nisq')?'Keep the service desk working.':'Budget the next experiment.'):blocker==='effort'?'Put trust where it helps.':next?'A discovery on the desk.':'The next apparatus.');
     let hint=!s.started?'Prepare a known state. Apply a pulse. Measure. Repeat. A signal begins with five seconds of patience.':workNext?'Inspect a named workload below. Trade code distance, pulses, decoder capacity, and factory footprint until the complete budget qualifies.':qualificationNeeded?G.projectStatus(s,next.id).reasons.filter(reason=>!reason.startsWith('Need ')&&!reason.startsWith('Expand notebook')).join(' · ')+(next.qualification==='coupled'?' Expand both the chip and its control rack.':' '+(e?.description||'')):next?'Next: “'+next.title+'”. ':C.chapters[phase].goal;
@@ -233,7 +274,7 @@
     if(!s.job&&needs&&!s.ended)write('experiment-feedback',needs);
     else if(!s.job&&(!s.result||s.result.id!==e?.id))write('experiment-feedback','');
     show('job-progress',!!s.job);
-    if(s.job){const recipe=s.job.workload?C.workloads.find(w=>w.id===s.job.id):C.experiments.find(e=>e.id===s.job.id);write('job-label',s.job.id==='calibrate'?'Calibrating':recipe?.name||'Experiment');write('job-percent',pct(s.job.progress/s.job.duration,0));$('job-meter').value=s.job.progress/s.job.duration;write('cancel-job',s.job.workload?'Cancel schedule · costs stay spent':'Cancel experiment · costs stay spent');}
+    if(s.job){const task=s.job.objective?C.objectives.find(item=>item.id===s.job.objective):s.job.request?C.precisionRequests.find(item=>item.id===s.job.request):null,recipe=s.job.workload?C.workloads.find(w=>w.id===s.job.id):C.experiments.find(e=>e.id===s.job.id);write('job-label',s.job.id==='calibrate'?'Calibrating':task?.name||recipe?.name||'Experiment');write('job-percent',pct(s.job.progress/s.job.duration,0));$('job-meter').value=s.job.progress/s.job.duration;write('cancel-job',s.job.workload?'Cancel schedule · costs stay spent':'Cancel experiment · costs stay spent');}
     show('calibrate-button',phase>=1);$('calibrate-button').disabled=!!s.job||s.paused||s.ended||s.funds<8;
     show('noisy-controls',has('vqe'));show('mitigate-control',has('mitigation'));
     $('theta').value=s.theta;write('theta-value',s.theta+'°');$('shot-count').value=s.shots;$('mitigate').checked=s.mitigate;
@@ -278,16 +319,17 @@
     html('engineering-list',advances.map(e=>engineeringCard(e)).join(''));
     html('upgrade-list',upgrades.map(u=>'<article class="upgrade"><div><h3>'+esc(u.label)+'</h3><p>'+esc(u.detail)+'</p><p class="upgrade-reasons">'+esc(u.reasons.join(' · '))+'</p></div><button type="button" data-upgrade="'+u.id+'" aria-label="'+esc(u.label)+(u.max?', maximum reached':', '+num(u.cost)+' funding and '+num(u.designs)+' designs')+'" '+(!u.ready?'disabled':'')+'>'+(u.max?'At capacity':'<span>'+num(u.cost)+' funding</span><small>'+num(u.designs)+' designs ↗</small>')+'</button></article>').join(''));
     write('journal-line',s.log.at(-1)?.message||'One qubit. An entire room to keep it cold.');
-    renderReadouts(m,phase);renderRail(m,phase);renderEconomy(m);renderMeasurement();show('workload-section',phase===5);if(phase===5)renderWorkload();
+    renderReadouts(m,phase);renderRail(m,phase);renderEconomy(m);renderMeasurement();renderCampus(m);show('workload-section',phase===5);if(phase===5)renderWorkload();
     if(view==='research')renderResearch();
     if(view==='journal')html('journal-list',s.log.slice().reverse().map(entry=>'<article class="log-row '+esc(entry.kind)+'"><span class="mono">'+clock(entry.time)+'</span><div><p>'+esc(entry.message)+'</p><span class="log-kind">'+esc(entry.kind)+'</span></div></article>').join('')||'<p class="quiet-message">The notebook begins with your first experiment.</p>');
     if(view==='ending'){
       write('ending-result',C.workloads.find(w=>s.completed.includes(w.id)&&['dynamics','molecule'].includes(w.id))?.validation||'A scientific resource scenario is complete.');
-      html('ending-stats','<span><strong>'+clock(s.elapsed)+'</strong>visible laboratory time</span><span><strong>'+s.done.length+'</strong>discoveries</span><span><strong>'+num(m.active)+'</strong>physical qubits supported</span><span><strong>'+s.distance+'</strong>code distance</span>');
+      const record=s.endingRecord;
+      html('ending-stats','<span><strong>'+clock(record?.elapsed??s.elapsed)+'</strong>visible laboratory time</span><span><strong>'+(record?.discoveries??s.done.length)+'</strong>discoveries</span><span><strong>'+num(record?.active??m.active)+'</strong>physical qubits supported</span><span><strong>'+(record?.distance??s.distance)+'</strong>code distance</span>');
     }
     draw();renderStation(m,phase);
   }
-  function draw(time=performance.now()){if(window.CoherentArt)CoherentArt.draw(s,{workload,view,time});}
+  function draw(time=performance.now()){if(window.CoherentArt)CoherentArt.draw(s,{workload,recipe:s.job?.workload?s.job.recipe:s.logicalRecipe,view,time});}
   function motionActive(){return view==='lab'&&!document.hidden&&!s.paused&&!s.ended&&(s.job||G.metrics(s).creditRate>0&&s.credits<2000)&&!matchMedia('(prefers-reduced-motion: reduce)').matches;}
   function animate(time){animation=0;if(!motionActive())return;draw(time);animation=requestAnimationFrame(animate);}
   function ensureAnimation(){if(!animation&&motionActive())animation=requestAnimationFrame(animate);}
@@ -304,6 +346,10 @@
     else if(b.dataset.assign)act(()=>G.assign(s,b.dataset.assign,Number(b.dataset.delta)));
     else if(b.dataset.upgrade)act(()=>G.buyUpgrade(s,b.dataset.upgrade));
     else if(b.dataset.stationTarget){const target=$(b.dataset.stationTarget);target.scrollIntoView({block:'center'});(target.matches('button,input,select')?target:target.querySelector('button:not(:disabled),input:not(:disabled),select:not(:disabled)'))?.focus({preventScroll:true});}
+    else if(b.dataset.objective)act(()=>G.startObjective(s,b.dataset.objective));
+    else if(b.dataset.precisionRequest)act(()=>G.startPrecisionRequest(s,b.dataset.precisionRequest));
+    else if(b.dataset.orderEquipment)act(()=>G.orderEquipment(s,b.dataset.offer,b.dataset.kind));
+    else if(b.dataset.recipe)act(()=>G.configure(s,'logicalRecipe',b.dataset.recipe));
     else if(b.dataset.distance)act(()=>G.configure(s,'distance',Number(b.dataset.distance)));
     else if(b.dataset.workload){workload=b.dataset.workload;render();}
     else if(b.dataset.runWorkload)act(()=>G.startWorkload(s,b.dataset.runWorkload));
@@ -312,7 +358,7 @@
     else if(b.dataset.action==='save')save(true);
     else if(b.id==='run-experiment'){
       const next=nextDiscovery(),m=G.metrics(s),blocker=next?researchBlocker(next,m):'';
-      if(G.stage(s)===5&&(!next||optionalDiscoveries.includes(next.id)))$('workload-section').scrollIntoView({block:'start'});
+      if(G.stage(s)===5&&(!next||isOptional(next)))$('workload-section').scrollIntoView({block:'start'});
       else if(!experimentChosen&&next&&(!next.qualification||G.qualificationNow(s,next.qualification))){
         if(blocker==='capacity'||blocker==='designs'||blocker==='effort'||blocker==='funding'&&has('nisq')){const target=blocker==='funding'?$('service-control'):$('economy-section');target.scrollIntoView({block:'start'});target.querySelector('button:not(:disabled),input:not(:disabled)')?.focus({preventScroll:true});}
         else{$('discoveries-section').scrollIntoView({block:'start'});$('discovery-list').querySelector('[data-project="'+next.id+'"]:not(:disabled)')?.focus({preventScroll:true});}
@@ -331,6 +377,8 @@
       const preferences={theme:s.theme,volume:s.volume,sound:s.sound};s=Object.assign(G.newGame(),preferences);protectedSave=false;savedAt='';lastEnding=false;lastResult='';experiment='signal';experimentChosen=false;view='lab';notice('');document.querySelectorAll('dialog[open]').forEach(d=>d.close());write('experiment-feedback','');write('settings-feedback','New laboratory started.');save();render();$('main').scrollIntoView({block:'start'});
     }
     else if(b.id==='ending-lab')setView('lab');
+    else if(b.id==='enter-campus')act(()=>G.enterCampus(s));
+    else if(b.id==='continue-lab')act(()=>{if(!G.continueLaboratory(s))return false;view='lab';return true;});
     else if(b.id==='postcard-button'&&window.CoherentArt)CoherentArt.postcard(s).toBlob(blob=>{if(blob)download(blob,'coherent-for-keir.png');else notice('The postcard could not be exported. Your game save is intact.');},'image/png');
     ensureAnimation();
   });
@@ -341,6 +389,7 @@
     else if(target.id==='mitigate')act(()=>G.configure(s,'mitigate',target.checked));
   });
   $('contract-price').addEventListener('change',event=>{if(!G.configure(s,'price',Number(event.target.value)))event.target.value=s.price;render();save();});
+  $('controller-profile').addEventListener('change',event=>{if(!G.configure(s,'controllerProfile',event.target.value))event.target.value=s.controllerProfile;render();save();});
   $('experiment-select').addEventListener('change',event=>{experiment=event.target.value;experimentChosen=true;write('experiment-feedback','');render();});
   $('import-file').addEventListener('change',async event=>{
     const file=event.target.files[0];if(!file)return;
