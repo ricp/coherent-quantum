@@ -1,0 +1,253 @@
+[
+  {
+    "fixture": "frontier-0.json",
+    "canvasVisible": true,
+    "description": "One illustrative transmon package: capacitor pads, Josephson junction, control line and folded readout resonator. Refrigerator hardware is schematic.",
+    "diagnostics": {
+      "available": true,
+      "calls": 31,
+      "camera": "oblique",
+      "chapter": 0,
+      "enabled": true,
+      "frames": 4,
+      "geometries": 10,
+      "height": 420,
+      "model": {
+        "ancilla": 0,
+        "chapter": 0,
+        "data": 1,
+        "subset": 1
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 8,
+      "triangles": 14228,
+      "width": 834
+    },
+    "overflow": false,
+    "traceVisible": false,
+    "visibleAlerts": []
+  },
+  {
+    "fixture": "frontier-1.json",
+    "canvasVisible": true,
+    "description": "Control bench and known-preparation circuit. The exact selected pulse, Ramsey T\u2082* (18.4 \u03bcs) and echo T\u2082 (42 \u03bcs) scenario traces remain below; they are not fitted hardware data.",
+    "diagnostics": {
+      "available": true,
+      "calls": 33,
+      "camera": "oblique",
+      "chapter": 1,
+      "enabled": true,
+      "frames": 5,
+      "geometries": 10,
+      "height": 420,
+      "model": {
+        "ancilla": 0,
+        "chapter": 1,
+        "data": 1,
+        "subset": 1
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 8,
+      "triangles": 23300,
+      "width": 834
+    },
+    "overflow": false,
+    "traceVisible": true,
+    "visibleAlerts": []
+  },
+  {
+    "fixture": "frontier-2.json",
+    "canvasVisible": true,
+    "description": "9 active physical qubits. 9 sites in this illustrative planar subset. Coupling and entanglement do not imply a universal speedup.",
+    "diagnostics": {
+      "available": true,
+      "calls": 23,
+      "camera": "oblique",
+      "chapter": 2,
+      "enabled": true,
+      "frames": 6,
+      "geometries": 6,
+      "height": 420,
+      "model": {
+        "ancilla": 0,
+        "chapter": 2,
+        "data": 9,
+        "subset": 9
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 6,
+      "triangles": 23344,
+      "width": 834
+    },
+    "overflow": false,
+    "traceVisible": false,
+    "visibleAlerts": []
+  },
+  {
+    "fixture": "frontier-3.json",
+    "canvasVisible": true,
+    "description": "Ideal rotated d = 3 patch: 9 data + 8 check ancillas = 17 physical qubits. Teal squares mark X checks, copper squares Z checks, and circular pads data. Connections are schematic; detection highlights never reveal the unknown data state.",
+    "diagnostics": {
+      "available": true,
+      "calls": 26,
+      "camera": "oblique",
+      "chapter": 3,
+      "enabled": true,
+      "frames": 7,
+      "geometries": 6,
+      "height": 420,
+      "model": {
+        "ancilla": 8,
+        "chapter": 3,
+        "data": 9,
+        "distance": 3,
+        "physical": 17
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 6,
+      "triangles": 15636,
+      "width": 834
+    },
+    "overflow": false,
+    "traceVisible": false,
+    "visibleAlerts": []
+  },
+  {
+    "fixture": "frontier-4.json",
+    "canvasVisible": true,
+    "description": "1 complete patch-sized units. 1 application, 0 routing, 0 factory and 0 spare units. 8 physical qubits remain outside complete patches. These are fictional allocation units, not a real factory tile layout.",
+    "diagnostics": {
+      "available": true,
+      "calls": 14,
+      "camera": "oblique",
+      "chapter": 4,
+      "enabled": true,
+      "frames": 8,
+      "geometries": 7,
+      "height": 420,
+      "model": {
+        "chapter": 4,
+        "kinds": {
+          "application": 1,
+          "factory": 0,
+          "routing": 0,
+          "spare": 0
+        },
+        "physical": 17,
+        "remaining": 8,
+        "requested": {
+          "application": 1,
+          "factory": 0,
+          "routing": 0,
+          "spare": 0
+        },
+        "shortage": 0,
+        "total": 1
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 7,
+      "triangles": 5430,
+      "width": 834
+    },
+    "overflow": false,
+    "traceVisible": false,
+    "visibleAlerts": []
+  },
+  {
+    "fixture": "frontier-5.json",
+    "canvasVisible": true,
+    "description": "One-execution stages use proportional modeled durations. Gates, fresh states and feedback overlap; preparation, readout and classical overhead follow. 1 repetition \u00b7 4,788 \u03bcs for the full task. Laboratory progress uses a separate pacing clock.",
+    "diagnostics": {
+      "available": true,
+      "calls": 26,
+      "camera": "oblique",
+      "chapter": 5,
+      "enabled": true,
+      "frames": 9,
+      "geometries": 12,
+      "height": 420,
+      "model": {
+        "chapter": 5,
+        "finish": 4788,
+        "lanes": [
+          {
+            "duration": 80,
+            "name": "PREPARE",
+            "start": 0
+          },
+          {
+            "duration": 2400,
+            "name": "OPERATE",
+            "start": 80
+          },
+          {
+            "duration": 4608,
+            "name": "FRESH STATES",
+            "start": 80
+          },
+          {
+            "duration": 4000,
+            "name": "FEEDBACK",
+            "start": 80
+          },
+          {
+            "duration": 40,
+            "name": "READOUT",
+            "start": 4688
+          },
+          {
+            "duration": 60,
+            "name": "CLASSICAL",
+            "start": 4728
+          }
+        ],
+        "qualified": true,
+        "repetitions": 1,
+        "runtime": 4788,
+        "workload": "dynamics"
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 12,
+      "triangles": 10408,
+      "width": 834
+    },
+    "overflow": false,
+    "traceVisible": false,
+    "visibleAlerts": []
+  },
+  {
+    "fixture": "frontier-ending.json",
+    "canvasVisible": true,
+    "description": "Six schematic milestones: known signal, careful control, coupled circuit, protected memory, logical allocation and a named useful schedule. Your selected 4,422-qubit footprint remains an educational resource scenario. The browser did not execute a large fault-tolerant quantum computation or calculate a large quantum result.",
+    "diagnostics": {
+      "available": true,
+      "calls": 41,
+      "camera": "oblique",
+      "chapter": 5,
+      "enabled": true,
+      "frames": 10,
+      "geometries": 11,
+      "height": 390,
+      "model": {
+        "active": 4422,
+        "chapter": 6,
+        "ending": true,
+        "schematic": true
+      },
+      "pixelRatio": 1,
+      "scene": "ending",
+      "textures": 11,
+      "triangles": 32714,
+      "width": 938
+    },
+    "overflow": false,
+    "traceVisible": false,
+    "visibleAlerts": []
+  }
+]

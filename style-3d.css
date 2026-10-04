@@ -16,3 +16,22 @@
 .three-fallback #three-description{display:none}
 @media(max-width:660px){#three-canvas{height:320px!important}#three-toolbar{padding:10px;justify-content:flex-start;gap:5px}#three-toolbar::before{width:100%;margin-bottom:3px}#three-toolbar button{min-height:40px;padding:8px 9px}#three-description{padding:12px 13px;font-size:10px}#three-status{padding:8px 13px 12px}.three-enabled.three-trace>#machine{height:280px!important}}
 @media(prefers-reduced-motion:reduce){#three-lab *{transition:none!important;animation:none!important}}
+
+.three-render-label{display:none}
+
+#three-lab.three-ending{margin:24px auto 20px;max-width:940px;border:1px solid var(--line);border-radius:8px;overflow:hidden;text-align:left;box-shadow:0 18px 50px rgba(38,43,42,.08)}
+#three-lab.three-ending #three-canvas{height:390px!important}
+#three-canvas.three-reveal{animation:three-assembly .55s ease-out both}
+@keyframes three-assembly{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:660px){#three-lab.three-ending #three-canvas{height:320px!important}}
+@media(prefers-reduced-motion:reduce){#three-canvas.three-reveal{animation:none!important}}
+
+#three-key{display:flex;flex-wrap:wrap;gap:8px 18px;padding:12px 18px;margin:0;border-top:1px solid var(--line);font:9px/1.6 var(--mono);color:var(--muted)}
+#three-key:empty,#three-canvas[hidden],#three-description[hidden],#three-key[hidden]{display:none}
+#three-key>div{display:flex;align-items:center;gap:6px}
+#three-key>div::before{content:"";width:7px;height:7px;border-radius:2px;background:#667f7a;flex-shrink:0}
+#three-key dt,#three-key dd{margin:0}#three-key dd{color:var(--ink)}
+#three-key>div[data-kind=application]::before,#three-key>div[data-kind=operations]::before{background:#54b4a0}
+#three-key>div[data-kind=routing]::before,#three-key>div[data-kind=states]::before{background:#bf8659}
+#three-key>div[data-kind=factory]::before,#three-key>div[data-kind=feedback]::before{background:#d4a752}
+@media(max-width:660px){#three-key{padding:10px 13px;gap:8px 12px}}

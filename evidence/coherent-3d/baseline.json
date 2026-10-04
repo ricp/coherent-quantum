@@ -1,0 +1,17 @@
+{
+  "baselineCommit": "62cf6c255d1fa053a8670d27d3c1d84b53c5d1dd",
+  "unchangedFiles": {
+    "index.html": "a8e6c256388d58f178191a6c5fcce8e52b2ccf5639ecc49e7acc0f50028fad6d",
+    "style.css": "141264e0e427cc4b684796712cf47e89259b7699ea835f9cc0d66d7266d370ea",
+    "app.js": "9c353db2c51088783196d4db0d0991cb2c93fb80d16a4a5ebb342b9946ac95a2",
+    "instrument.js": "b40ffd6ad1eeb66552b60591b7cf3c8166660a403337bb3c39d508b05b13d8cf",
+    "game.js": "8c82dbef4b72c2d38e565b5ab12344538b1096a075e09a3e760d21d158e84847",
+    "content.js": "0bd72d8ecca580c6d4baf0b1d50e6fcea7fa071712227f0df635fec668ddffbe"
+  },
+  "existingRegressionTests": {
+    "passed": 43,
+    "failed": 0,
+    "skipped": 0
+  },
+  "scope": "Preservation check before visual implementation; not final 3D acceptance."
+}

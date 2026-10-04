@@ -1,0 +1,435 @@
+[
+  {
+    "fixture": "frontier-0.json",
+    "cameraButtons": [
+      {
+        "height": 40,
+        "name": "Oblique",
+        "width": 62
+      },
+      {
+        "height": 40,
+        "name": "Top",
+        "width": 38
+      },
+      {
+        "height": 40,
+        "name": "Reset",
+        "width": 50
+      },
+      {
+        "height": 40,
+        "name": "2D view",
+        "width": 62
+      }
+    ],
+    "diagnostics": {
+      "available": true,
+      "calls": 31,
+      "camera": "oblique",
+      "chapter": 0,
+      "enabled": true,
+      "frames": 13,
+      "geometries": 10,
+      "height": 320,
+      "model": {
+        "ancilla": 0,
+        "chapter": 0,
+        "data": 1,
+        "subset": 1
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 8,
+      "triangles": 14228,
+      "width": 282
+    },
+    "legend": [],
+    "overflow": false,
+    "visibleAlerts": []
+  },
+  {
+    "fixture": "frontier-1.json",
+    "cameraButtons": [
+      {
+        "height": 40,
+        "name": "Oblique",
+        "width": 62
+      },
+      {
+        "height": 40,
+        "name": "Top",
+        "width": 38
+      },
+      {
+        "height": 40,
+        "name": "Reset",
+        "width": 50
+      },
+      {
+        "height": 40,
+        "name": "2D view",
+        "width": 62
+      }
+    ],
+    "diagnostics": {
+      "available": true,
+      "calls": 33,
+      "camera": "oblique",
+      "chapter": 1,
+      "enabled": true,
+      "frames": 14,
+      "geometries": 10,
+      "height": 320,
+      "model": {
+        "ancilla": 0,
+        "chapter": 1,
+        "data": 1,
+        "subset": 1
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 8,
+      "triangles": 23300,
+      "width": 282
+    },
+    "legend": [],
+    "overflow": false,
+    "visibleAlerts": []
+  },
+  {
+    "fixture": "frontier-2.json",
+    "cameraButtons": [
+      {
+        "height": 40,
+        "name": "Oblique",
+        "width": 62
+      },
+      {
+        "height": 40,
+        "name": "Top",
+        "width": 38
+      },
+      {
+        "height": 40,
+        "name": "Reset",
+        "width": 50
+      },
+      {
+        "height": 40,
+        "name": "2D view",
+        "width": 62
+      }
+    ],
+    "diagnostics": {
+      "available": true,
+      "calls": 23,
+      "camera": "oblique",
+      "chapter": 2,
+      "enabled": true,
+      "frames": 15,
+      "geometries": 6,
+      "height": 320,
+      "model": {
+        "ancilla": 0,
+        "chapter": 2,
+        "data": 9,
+        "subset": 9
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 6,
+      "triangles": 23344,
+      "width": 282
+    },
+    "legend": [],
+    "overflow": false,
+    "visibleAlerts": []
+  },
+  {
+    "fixture": "frontier-3.json",
+    "cameraButtons": [
+      {
+        "height": 40,
+        "name": "Oblique",
+        "width": 62
+      },
+      {
+        "height": 40,
+        "name": "Top",
+        "width": 38
+      },
+      {
+        "height": 40,
+        "name": "Reset",
+        "width": 50
+      },
+      {
+        "height": 40,
+        "name": "2D view",
+        "width": 62
+      }
+    ],
+    "diagnostics": {
+      "available": true,
+      "calls": 26,
+      "camera": "oblique",
+      "chapter": 3,
+      "enabled": true,
+      "frames": 16,
+      "geometries": 6,
+      "height": 320,
+      "model": {
+        "ancilla": 8,
+        "chapter": 3,
+        "data": 9,
+        "distance": 3,
+        "physical": 17
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 6,
+      "triangles": 15636,
+      "width": 282
+    },
+    "legend": [],
+    "overflow": false,
+    "visibleAlerts": []
+  },
+  {
+    "fixture": "frontier-4.json",
+    "cameraButtons": [
+      {
+        "height": 40,
+        "name": "Oblique",
+        "width": 62
+      },
+      {
+        "height": 40,
+        "name": "Top",
+        "width": 38
+      },
+      {
+        "height": 40,
+        "name": "Reset",
+        "width": 50
+      },
+      {
+        "height": 40,
+        "name": "2D view",
+        "width": 62
+      }
+    ],
+    "diagnostics": {
+      "available": true,
+      "calls": 14,
+      "camera": "oblique",
+      "chapter": 4,
+      "enabled": true,
+      "frames": 17,
+      "geometries": 7,
+      "height": 320,
+      "model": {
+        "chapter": 4,
+        "kinds": {
+          "application": 1,
+          "factory": 0,
+          "routing": 0,
+          "spare": 0
+        },
+        "physical": 17,
+        "remaining": 8,
+        "requested": {
+          "application": 1,
+          "factory": 0,
+          "routing": 0,
+          "spare": 0
+        },
+        "shortage": 0,
+        "total": 1
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 7,
+      "triangles": 5430,
+      "width": 282
+    },
+    "legend": [
+      {
+        "kind": "application",
+        "text": "Application1"
+      },
+      {
+        "kind": "routing",
+        "text": "Routing0"
+      },
+      {
+        "kind": "factory",
+        "text": "Factories0"
+      },
+      {
+        "kind": "spare",
+        "text": "Spare0"
+      }
+    ],
+    "overflow": false,
+    "visibleAlerts": []
+  },
+  {
+    "fixture": "frontier-5.json",
+    "cameraButtons": [
+      {
+        "height": 40,
+        "name": "Oblique",
+        "width": 62
+      },
+      {
+        "height": 40,
+        "name": "Top",
+        "width": 38
+      },
+      {
+        "height": 40,
+        "name": "Reset",
+        "width": 50
+      },
+      {
+        "height": 40,
+        "name": "2D view",
+        "width": 62
+      }
+    ],
+    "diagnostics": {
+      "available": true,
+      "calls": 26,
+      "camera": "oblique",
+      "chapter": 5,
+      "enabled": true,
+      "frames": 18,
+      "geometries": 12,
+      "height": 320,
+      "model": {
+        "chapter": 5,
+        "finish": 4788,
+        "lanes": [
+          {
+            "duration": 80,
+            "name": "PREPARE",
+            "start": 0
+          },
+          {
+            "duration": 2400,
+            "name": "OPERATE",
+            "start": 80
+          },
+          {
+            "duration": 4608,
+            "name": "FRESH STATES",
+            "start": 80
+          },
+          {
+            "duration": 4000,
+            "name": "FEEDBACK",
+            "start": 80
+          },
+          {
+            "duration": 40,
+            "name": "READOUT",
+            "start": 4688
+          },
+          {
+            "duration": 60,
+            "name": "CLASSICAL",
+            "start": 4728
+          }
+        ],
+        "qualified": true,
+        "repetitions": 1,
+        "runtime": 4788,
+        "workload": "dynamics"
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 12,
+      "triangles": 10408,
+      "width": 282
+    },
+    "legend": [
+      {
+        "kind": "preparation",
+        "text": "Preparation80 \u03bcs"
+      },
+      {
+        "kind": "operations",
+        "text": "Operations2,400 \u03bcs"
+      },
+      {
+        "kind": "states",
+        "text": "Fresh states4,608 \u03bcs"
+      },
+      {
+        "kind": "feedback",
+        "text": "Feedback4,000 \u03bcs"
+      },
+      {
+        "kind": "readout",
+        "text": "Readout40 \u03bcs"
+      },
+      {
+        "kind": "classical",
+        "text": "Classical60 \u03bcs"
+      }
+    ],
+    "overflow": false,
+    "visibleAlerts": []
+  },
+  {
+    "fixture": "frontier-ending.json",
+    "cameraButtons": [
+      {
+        "height": 40,
+        "name": "Oblique",
+        "width": 62
+      },
+      {
+        "height": 40,
+        "name": "Top",
+        "width": 38
+      },
+      {
+        "height": 40,
+        "name": "Reset",
+        "width": 50
+      },
+      {
+        "height": 40,
+        "name": "2D view",
+        "width": 62
+      }
+    ],
+    "diagnostics": {
+      "available": true,
+      "calls": 41,
+      "camera": "oblique",
+      "chapter": 5,
+      "enabled": true,
+      "frames": 19,
+      "geometries": 11,
+      "height": 320,
+      "model": {
+        "active": 4422,
+        "chapter": 6,
+        "ending": true,
+        "schematic": true
+      },
+      "pixelRatio": 1,
+      "scene": "ending",
+      "textures": 11,
+      "triangles": 32714,
+      "width": 282
+    },
+    "legend": [],
+    "overflow": false,
+    "visibleAlerts": []
+  }
+]
