@@ -55,7 +55,7 @@
       },
       {
         "label": "DOI",
-        "url": "https://doi.org/10.1002/1521-3978(200009"
+        "url": "https://doi.org/10.1002/1521-3978%28200009%2948:9/11%3C771::AID-PROP771%3E3.0.CO;2-E"
       }
     ]
   },
@@ -668,18 +668,18 @@
     ['hamiltonian',5,'A better simulation recipe','Qualify the selected dynamics precision recipe.',['Q15'],['lloyd'],2200,840],
     ['factoring',5,'Fifteen, without the theatre','Open a toy factor certificate and its logical resource recipe.',['Q12'],['accounting'],1700,650],
     ['grover',5,'A search with an honest oracle','Count the toy oracle, its access, and repetition costs.',['Q13'],['accounting'],1700,650],
-    ['chemistry',5,'An energy, not a miracle cure','Open a named molecular-model resource scenario.',['Q19'],['hamiltonian'],2300,880],
+    ['chemistry',5,'An energy, not a miracle cure','Open a named electronic-model resource scenario.',['Q19'],['hamiltonian'],2300,880],
     ['audit',5,'Useful, with the caveats intact','Audit the interpretation. Completing a scientific scenario unlocks the ending.',['Q22','Q23'],['hamiltonian'],2500,950]
   ].map(([id,chapter,title,effect,papers,requires,funds,effort,qualification]) => ({id,chapter,title,effect,papers,requires,cost:{funds,effort},qualification}));
   const experiments = [
     {id:'signal',name:'Prepare & measure',chapter:0,requires:[],seconds:5,cost:0,shots:128,description:'Prepare a known state, apply a pulse, and collect repeated measurements.'},
-    {id:'ramsey',name:'Run a Ramsey scan',chapter:1,requires:['nakamura'],seconds:7,cost:6,shots:512,description:'A fitted T₂* scenario, with drift and inhomogeneous dephasing.'},
+    {id:'ramsey',name:'Run a Ramsey scan',chapter:1,requires:['nakamura'],seconds:7,cost:6,shots:512,description:'A selected T₂* scenario, with drift and inhomogeneous dephasing.'},
     {id:'echo',name:'Run echo & relaxation',chapter:1,requires:['ramsey'],seconds:7,cost:10,shots:1024,description:'Separate relaxation T₁ and echo coherence T₂.'},
     {id:'readout',name:'Characterize readout',chapter:1,requires:['ramsey'],seconds:6,cost:12,shots:2048,description:'Repeated known preparations reveal a selected measurement-bias scenario.'},
     {id:'benchmark',name:'Benchmark the gates',chapter:1,requires:['readout','echo'],seconds:9,cost:18,shots:4096,description:'An illustrative RB estimate. This is not the threshold-model error parameter.'},
     {id:'circuit',name:'Run a coupled circuit',chapter:2,requires:['coupled'],seconds:8,cost:25,shots:2048,description:'Repeated preparations of a known Bell state; the histogram is sample counts.'},
     {id:'vqe',name:'Measure the trial energy',chapter:2,requires:['vqe'],seconds:10,cost:35,description:'The browser classically simulates the chosen two-spin ansatz and samples three Pauli groups.'},
-    {id:'memory',name:'Rehearse protected memory',chapter:3,requires:['surface','decoder'],seconds:10,cost:40,shots:100,description:'Sample 100 syndrome rounds under the current educational model.'},
+    {id:'memory',name:'Rehearse protected memory',chapter:3,requires:['surface','decoder'],seconds:10,cost:40,shots:100,description:'Sample 100 illustrative detection-event trials under the current educational model.'},
     {id:'gates',name:'Qualify a logical schedule',chapter:4,requires:['surgery'],seconds:12,cost:65,shots:100,description:'A separate operation scenario, with routing and classical feedback.'},
     {id:'factory',name:'Rehearse the factory',chapter:4,requires:['ancilla'],seconds:12,cost:80,shots:100,description:'Qualify the current fictional factory scenario. Credits are schedules, not stored states.'}
   ];

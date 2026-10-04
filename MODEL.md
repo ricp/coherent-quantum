@@ -14,7 +14,7 @@ Opening experiments sample explicitly prepared states and educational measuremen
 
 The two-spin tutorial uses `H = Z0 Z1 + 0.6 X0 + 0.6 X1`, and the normalized known ansatz `cos(theta)|Phi+> - sin(theta)|Psi+>`. Its exact expectation is `cos(2theta) - 1.2 sin(2theta)`; the classical ground-state reference is `-sqrt(2.44)`. Each Pauli term is sampled separately. The browser really computes these four-dimensional expectations, sample counts, and the classical reference. This is a classically simulated tutorial, not a quantum hardware experiment or advantage demonstration.
 
-For three independent measurement groups of `M` shots each, a simultaneous 95% Hoeffding energy bound is `2.2 sqrt(2 ln(6/0.05)/M)`. Ordinary standard error is also reported separately. Residual measurement bias is budgeted separately from statistical uncertainty and ansatz error. Mitigation consumes four times the shots in the selected game scenario and reduces its declared residual bias; no universal free-precision bonus is claimed.
+For three independent measurement groups of `M` shots each, a simultaneous 95% Hoeffding energy bound is `2.2 sqrt(2 ln(6/0.05)/M)`. Ordinary standard error is also reported separately. Residual measurement bias is budgeted separately from statistical uncertainty and ansatz error. Mitigation models four times the raw-shot overhead and reduces the declared residual bias. The browser actually samples 3M Bernoulli trials; modeled acquisition is 12M with mitigation and is labeled separately. Funding costs `35 + ceil(modeledRawShots/2048)`, so both greater precision and mitigation consume a real game resource. This is a selected estimator/overhead scenario; no universal free-precision bonus is claimed.
 
 ## Hardware and noise
 
@@ -22,7 +22,7 @@ Installed pools and control/cooling rack capacities are `[1, 9, 25, 81, 257, 769
 
 The selected independent stochastic threshold parameter is `pEff = 0.012 * 0.5^pulseLevel * readoutFactor * echoFactor * (1 + drift)`, where pulse levels run from 0 to 8, readoutFactor is 0.85 after its discovery, and echoFactor is 0.9 after its discovery. Factors are explicitly game scenario choices. A separate RB estimate uses a separate formula. Calibration duty competes for apparatus runtime while reducing drift. Calibration does not create additional physical qubits.
 
-The no-fault proxy uses independent stochastic gate events only; it is not algorithm correctness. Coherence is not charged again to the same gate-error term.
+The no-fault proxy uses 12 independent stochastic gate events with separately declared probability `pCircuit = 0.01 * 0.55^pulseLevel * readoutFactor * (1+0.5 drift)`; here readoutFactor is 0.8 after readout research. This is an educational IID fault channel, independent of the RB display and threshold scenario. The proxy is not algorithm correctness. Coherence is not charged again to the same gate-error term. Ramsey values are selected scenarios; memory-bin counts are illustrative Bernoulli detection events, not a decoded circuit-level surface-code simulation.
 
 ## Memory, gates, and allocation
 

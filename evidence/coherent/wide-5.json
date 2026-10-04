@@ -6,7 +6,7 @@
     "started": true,
     "paused": false,
     "elapsed": 588,
-    "funds": 40976.5,
+    "funds": 40952.5,
     "effort": 17.200000000001456,
     "done": [
       "feynman",
@@ -61,7 +61,7 @@
     "mitigate": true,
     "credits": 219.19999999999948,
     "reputation": 10,
-    "seed": 684292919,
+    "seed": 3186356815,
     "job": null,
     "result": {
       "id": "factory",
@@ -71,32 +71,33 @@
     },
     "tutorial": {
       "theta": 65,
-      "energy": -1.5506103515625,
+      "energy": -1.5501708984375,
       "exact": -1.5620409414293128,
       "reference": -1.5620499351813308,
       "statistical": 0.05318408942119493,
-      "se": 0.007410551903478281,
+      "se": 0.007412726653850832,
       "bias": 0.0176,
       "ansatzError": 0.00000899375201801611,
       "shots": 49152,
+      "modeledShots": 49152,
       "groups": [
         {
           "label": "ZZ",
-          "plus": 3041,
-          "minus": 13343,
-          "estimate": -0.6287841796875
+          "plus": 3044,
+          "minus": 13340,
+          "estimate": -0.62841796875
         },
         {
           "label": "X₀",
-          "plus": 1905,
-          "minus": 14479,
-          "estimate": -0.7674560546875
+          "plus": 1903,
+          "minus": 14481,
+          "estimate": -0.7677001953125
         },
         {
           "label": "X₁",
-          "plus": 1893,
-          "minus": 14491,
-          "estimate": -0.7689208984375
+          "plus": 1896,
+          "minus": 14488,
+          "estimate": -0.7685546875
         }
       ],
       "qualified": true

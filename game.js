@@ -38,6 +38,7 @@
     const chapter=stage(s),installed=POOLS[s.module],capacity=POOLS[s.rack],active=Math.min(installed,capacity);
     const pEff=.012*2**(-s.pulse)*(has(s,'readout')?.85:1)*(has(s,'echo')?.9:1)*(1+s.drift);
     const rbError=.018*.62**s.pulse*(has(s,'readout')?.8:1)*(1+.4*s.drift);
+    const circuitFault=.01*.55**s.pulse*(has(s,'readout')?.8:1)*(1+.5*s.drift);
     const below=pEff<.01,pL=below?Math.max(1e-8,.1*(100*pEff)**((s.distance+1)/2)):null;
     const patch=patchSize(s.distance),totalPatches=has(s,'surface')?Math.floor(active/patch):0;
     const routing=has(s,'surgery')?2:0,spares=has(s,'surgery')?1:0;
@@ -53,7 +54,7 @@
     const services=has(s,'nisq')&&s.qualified.includes('circuit')?s.service*80*(1+.15*s.staff):0;
     const upkeep=.5*s.staff+2*s.module+3*s.rack;
     const effortRate=1.8*s.staff*(1-s.service);
-    return {chapter,installed,capacity,active,pEff,rbError,noFault:(1-rbError)**12,below,pL,gateError:pL===null?null:2*pL,patch,totalPatches,routing,spares,factoryUnits,reserved,slots,syndromeRate,decoderRate,feedback,decoderOK,memoryOK,gatesOK,factoryOK,pT:has(s,'ancilla')?1e-7:1e-3,modelFactoryRate:factoryOK?s.factories/(8*s.distance):0,creditRate:factoryOK?s.factories*8/s.distance:0,grants,services,upkeep,netFunding:grants+services-upkeep,effortRate,bias:has(s,'mitigation')&&s.mitigate?.002:has(s,'readout')?.008:.04};
+    return {chapter,installed,capacity,active,pEff,rbError,circuitFault,noFault:(1-circuitFault)**12,below,pL,gateError:pL===null?null:2*pL,patch,totalPatches,routing,spares,factoryUnits,reserved,slots,syndromeRate,decoderRate,feedback,decoderOK,memoryOK,gatesOK,factoryOK,pT:has(s,'ancilla')?1e-7:1e-3,modelFactoryRate:factoryOK?s.factories/(8*s.distance):0,creditRate:factoryOK?s.factories*8/s.distance:0,grants,services,upkeep,netFunding:grants+services-upkeep,effortRate,bias:has(s,'mitigation')&&s.mitigate?.002:has(s,'readout')?.008:.04};
   }
   function upgradeInfo(s,id) {
     const entries={
@@ -119,12 +120,19 @@
     else return false;
     return true;
   }
+  function experimentRecipe(s,id) {
+    const e=C.experiments.find(experiment=>experiment.id===id);
+    if(!e)return null;
+    const shots=id==='vqe'?1024*4**s.shots:e.shots;
+    const sampledShots=id==='vqe'?3*shots:shots,modeledShots=sampledShots*(id==='vqe'&&s.mitigate?4:1);
+    return {...e,shots,sampledShots,modeledShots,cost:e.cost+(id==='vqe'?Math.ceil(modeledShots/2048):0)};
+  }
   function experimentStatus(s,id) {
     const experiment=C.experiments.find(e=>e.id===id),m=metrics(s),reasons=[];
     if(!experiment)return {ready:false,reasons:['Unknown experiment']};
     if(!experiment.requires.every(key=>has(s,key)))reasons.push('Research its prerequisites');
     if(s.job)reasons.push('The apparatus is occupied');
-    if(s.funds<experiment.cost)reasons.push('Need experiment funding');
+    if(s.funds<experimentRecipe(s,id).cost)reasons.push('Need experiment funding');
     if(id==='circuit'&&m.active<2)reasons.push('Support two active qubits');
     if(id==='memory'&&!m.memoryOK){
       if(!m.below)reasons.push('Reduce effective noise below the selected threshold');
@@ -138,9 +146,9 @@
   }
   function startExperiment(s,id) {
     if(!experimentStatus(s,id).ready||s.paused)return false;
-    const e=C.experiments.find(v=>v.id===id);
+    const e=experimentRecipe(s,id);
     s.started=true;s.funds-=e.cost;
-    const samples=id==='vqe'?1024*4**s.shots:e.shots;
+    const samples=e.shots;
     s.job={id,workload:false,progress:0,duration:e.seconds,shots:samples,theta:s.theta,mitigate:s.mitigate,bias:metrics(s).bias};
     return true;
   }
@@ -164,14 +172,14 @@
     const multiplier=job.mitigate?4:1;
     const statistical=2.2*Math.sqrt(2*Math.log(6/.05)/job.shots);
     const reference=-Math.sqrt(2.44),exact=tutorialEnergy(job.theta),bias=2.2*job.bias;
-    return {theta:job.theta,energy,exact,reference,statistical,se:Math.sqrt(Math.max(0,variance)/job.shots),bias,ansatzError:Math.max(0,exact-reference),shots:3*job.shots*multiplier,groups,qualified:Math.abs(energy-reference)+statistical+bias<=.12};
+    return {theta:job.theta,energy,exact,reference,statistical,se:Math.sqrt(Math.max(0,variance)/job.shots),bias,ansatzError:Math.max(0,exact-reference),shots:3*job.shots,modeledShots:3*job.shots*multiplier,groups,qualified:Math.abs(energy-reference)+statistical+bias<=.12};
   }
   function finishExperiment(s,job) {
     const m=metrics(s);
     s.result={id:job.id,shots:job.shots,bins:[],message:''};
     if(job.id==='calibrate'){s.drift=.005;s.result.message='Calibration complete. Drift is reduced; it is not eliminated forever.';note(s,'The histogram is prettier. The error bars remain unconvinced.','calibration');return;}
     if(job.id==='signal'){const one=binomial(s,job.shots,.48);s.result.bins=[job.shots-one,one];s.result.message='A signal from repeated known preparations.';qualify(s,'signal','First signal. One qubit. An entire room to keep it cold.');}
-    if(job.id==='ramsey'){s.drift=.03;s.result.message='Ramsey T₂* scenario fitted: 18.4 μs. An echo will ask a different question.';qualify(s,'ramsey','A fringe emerges from the noise.');}
+    if(job.id==='ramsey'){s.drift=.03;s.result.message='Selected Ramsey scenario: T₂* = 18.4 μs. An echo will ask a different question.';qualify(s,'ramsey','A fringe emerges from the noise.');}
     if(job.id==='echo'){s.result.message='Selected scenario: T₁ = 54 μs; echo T₂ = 42 μs; Ramsey T₂* = 18.4 μs.';qualify(s,'echo','The echo is clearer. It is still not a way to undo every error.');}
     if(job.id==='readout'){s.result.message='Known preparations characterize measurement bias. This does not reveal an arbitrary unknown state.';qualify(s,'readout','A measurement is now a little less opinionated.');}
     if(job.id==='benchmark'){s.result.message='Illustrative RB estimate: '+(m.rbError*100).toFixed(2)+'%. Its assumptions differ from the threshold scenario.';qualify(s,'benchmark','The control pulses have acquired error bars.');}
@@ -183,7 +191,7 @@
     }
     if(job.id==='memory'){
       s.result.bins=Array.from({length:8},()=>binomial(s,100,clamp(m.pEff,0,1)));
-      s.result.message=m.memoryOK?'100 educational syndrome rounds sampled. The displayed logical error remains a model fit.':'Memory qualification lost: inspect current noise, footprint, and decoding.';
+      s.result.message=m.memoryOK?'100 illustrative detection-event trials sampled; this is not a decoded surface-code simulation. Logical error remains a model fit.':'Memory qualification lost: inspect current noise, footprint, and decoding.';
       if(m.memoryOK)qualify(s,'memory','Protected memory. The information survives; the funding remains exposed.');
     }
     if(job.id==='gates'){
@@ -290,22 +298,46 @@
     if(![3,5,7,9].includes(s.distance)||!['dark','light'].includes(s.theme))throw new Error('Invalid laboratory configuration.');
     const validateIds=(value,allowed,label)=>{if(!Array.isArray(value)||value.length>allowed.length||new Set(value).size!==value.length||value.some(id=>!allowed.includes(id)))throw new Error('Invalid '+label+' in save.');};
     validateIds(s.done,C.projects.map(p=>p.id),'discoveries');validateIds(s.qualified,C.experiments.map(e=>e.id),'qualifications');validateIds(s.completed,C.workloads.map(w=>w.id),'completed workloads');
-    for(const p of C.projects)if(has(s,p.id)&&p.requires.some(id=>!has(s,id)))throw new Error('Discovery prerequisites are missing.');
-    if(s.factories&&!has(s,'ancilla')||s.distance!==3&&!has(s,'surface')||s.module&&!has(s,'rb')||s.rack&&!has(s,'divincenzo')||s.pulse&&!has(s,'rb')||s.decoder&&!has(s,'decoder')||s.service&&!has(s,'nisq')||s.calibration&&!has(s,'rb')||s.mitigate&&!has(s,'mitigation'))throw new Error('Configuration has an unavailable upgrade.');
-    if(!Array.isArray(s.log)||s.log.length>60||s.log.some(entry=>!entry||typeof entry.message!=='string'||entry.message.length>500||!Number.isFinite(entry.time)||entry.time<0||!['event','engineering','discovery','chapter','breakthrough','warning','calibration','workload','ending'].includes(entry.kind)))throw new Error('Invalid journal in save.');
+    for(const p of C.projects)if(has(s,p.id)&&(p.requires.some(id=>!has(s,id))||p.qualification&&p.qualification!=='coupled'&&!s.qualified.includes(p.qualification)))throw new Error('Discovery prerequisites or historical qualifications are missing.');
+    for(const e of C.experiments)if(s.qualified.includes(e.id)&&e.requires.some(id=>!has(s,id)))throw new Error('Qualification prerequisites are missing.');
+    for(const w of C.workloads)if(s.completed.includes(w.id)&&w.requires.some(id=>!has(s,id)))throw new Error('Completed workload prerequisites are missing.');
+    if(s.factories&&!has(s,'ancilla')||s.distance!==3&&!has(s,'surface')||s.module&&!has(s,'rb')||s.rack&&!has(s,'divincenzo')||s.staff>1&&!has(s,'feynman')||s.pulse&&!has(s,'rb')||s.decoder&&!has(s,'decoder')||s.service&&!has(s,'nisq')||s.calibration&&!has(s,'rb')||s.mitigate&&!has(s,'mitigation')||(s.theta!==20||s.shots!==1)&&!has(s,'vqe')||s.credits&&!has(s,'ancilla'))throw new Error('Configuration has an unavailable upgrade.');
+    if(!Array.isArray(s.log)||s.log.length>60||s.log.some(entry=>!entry||Array.isArray(entry)||typeof entry.message!=='string'||entry.message.length>500||!Number.isFinite(entry.time)||entry.time<0||entry.time>s.elapsed||!['event','engineering','discovery','chapter','breakthrough','warning','calibration','workload','ending'].includes(entry.kind)))throw new Error('Invalid journal in save.');
     function finiteTree(value,depth=0){if(depth>8)throw new Error('Invalid result structure.');if(typeof value==='number'&&!Number.isFinite(value))throw new Error('Invalid result number.');if(typeof value==='string'&&value.length>1000)throw new Error('Result text is too long.');if(value&&typeof value==='object'){if(Array.isArray(value)&&value.length>100)throw new Error('Result is too large.');for(const v of Object.values(value))finiteTree(v,depth+1);}}
     finiteTree(s.result);finiteTree(s.tutorial);
-    if(s.result!==null&&(!s.result||typeof s.result.message!=='string'||!Array.isArray(s.result.bins)||s.result.bins.some(n=>!Number.isFinite(n)||n<0)))throw new Error('Invalid experiment result.');
-    if(s.tutorial!==null){const t=s.tutorial;if(!t||['theta','energy','exact','reference','statistical','se','bias','ansatzError','shots'].some(key=>!Number.isFinite(t[key]))||typeof t.qualified!=='boolean'||!Array.isArray(t.groups)||t.groups.length!==3)throw new Error('Invalid tutorial result.');}
+    const number=(n,min,max,integer=false)=>typeof n==='number'&&Number.isFinite(n)&&n>=min&&n<=max&&(!integer||Number.isInteger(n));
+    const sampleCounts=[1024,4096,16384,65536];
+    if(s.result!==null){
+      const r=s.result,e=C.experiments.find(e=>e.id===r?.id),w=C.workloads.find(w=>w.id===r?.id);
+      const expectedShots=e?.shots??(r?.id==='calibrate'?512:0),binCount={signal:2,circuit:4,memory:8}[r?.id]||0;
+      if(!r||(!e&&!w&&r.id!=='calibrate')||typeof r.message!=='string'||!Array.isArray(r.bins)||r.bins.length!==binCount||r.bins.some(n=>!number(n,0,expectedShots,true))||!(r.id==='vqe'?sampleCounts.includes(r.shots):r.shots===expectedShots)||(e||w)?.requires.some(id=>!has(s,id))||r.id==='calibrate'&&stage(s)<1)throw new Error('Invalid experiment result.');
+      if(['signal','circuit'].includes(r.id)&&r.bins.reduce((a,b)=>a+b,0)!==r.shots)throw new Error('Measurement counts do not match the result shots.');
+      if(r.certificate!==undefined){
+        const c=r.certificate,valid=c&&c.valid===true&&(r.id==='factors'?c.n===15&&c.a===3&&c.b===5:r.id==='search'&&c.index===4&&c.target==='cobalt');
+        if(!valid)throw new Error('Invalid classical certificate.');
+      }
+      if(r.id==='vqe'&&s.tutorial===null)throw new Error('The trial energy is missing its measurement data.');
+    }
+    if(s.tutorial!==null){
+      const t=s.tutorial,M=t?.shots/3;
+      if(!t||!has(s,'vqe')||!number(t.shots,3072,196608,true)||!number(t.modeledShots,3072,786432,true)||!sampleCounts.includes(M)||!number(t.theta,0,90)||['energy','exact','reference'].some(key=>!number(t[key],-2.2,2.2))||['statistical','se','bias','ansatzError'].some(key=>!number(t[key],0,5))||typeof t.qualified!=='boolean'||![t.shots,t.shots*4].includes(t.modeledShots)||t.modeledShots!==t.shots&&!has(s,'mitigation')||!Array.isArray(t.groups)||t.groups.length!==3)throw new Error('Invalid tutorial result or shot accounting.');
+      if(t.groups.some((g,i)=>!g||g.label!==['ZZ','X₀','X₁'][i]||!number(g.plus,0,M,true)||!number(g.minus,0,M,true)||g.plus+g.minus!==M||!number(g.estimate,-1,1)||Math.abs(g.estimate-(2*g.plus/M-1))>1e-12))throw new Error('Invalid tutorial measurement groups.');
+      if(s.result?.id==='vqe'&&s.result.shots!==M)throw new Error('Tutorial and result shot counts disagree.');
+    }
     if(s.job!==null){
       const j=s.job,known=j?.workload?C.workloads.map(w=>w.id):[...C.experiments.map(e=>e.id),'calibrate'];
       if(!j||typeof j.workload!=='boolean'||!known.includes(j.id)||!Number.isFinite(j.duration)||j.duration<=0||j.duration>100||!Number.isFinite(j.progress)||j.progress<0||j.progress>=j.duration||!Number.isInteger(j.shots)||j.shots<0||j.shots>65536||!Number.isFinite(j.theta)||j.theta<0||j.theta>90||!Number.isFinite(j.bias)||j.bias<0||j.bias>1||typeof j.mitigate!=='boolean')throw new Error('Invalid active experiment.');
       const recipe=j.workload?C.workloads.find(w=>w.id===j.id):C.experiments.find(e=>e.id===j.id);
       if(recipe&&(recipe.requires.some(id=>!has(s,id))||recipe.seconds!==j.duration))throw new Error('Active experiment prerequisites or duration are invalid.');
       if(j.id==='calibrate'&&(stage(s)<1||j.duration!==4))throw new Error('Calibration is unavailable in this save.');
+      if(j.id==='vqe'?!sampleCounts.includes(j.shots):j.shots!==(j.workload?0:j.id==='calibrate'?512:recipe.shots))throw new Error('Active experiment sample count is invalid.');
+      if(j.mitigate&&!has(s,'mitigation')||![.04,.008,.002].includes(j.bias))throw new Error('Active experiment bias configuration is invalid.');
+      if(j.workload&&s.completed.includes(j.id))throw new Error('A completed workload cannot still be running.');
     }
+    if(!s.started&&(s.paused||s.elapsed||s.done.length||s.qualified.length||s.completed.length||s.job||s.result||s.tutorial))throw new Error('An unstarted laboratory cannot contain progress.');
+    if(s.ended&&s.job)throw new Error('A completed campaign cannot contain an active job.');
     if(s.ended&&(!has(s,'audit')||!s.completed.some(id=>['dynamics','molecule'].includes(id))))throw new Error('Ending requirements are missing.');
     return JSON.parse(JSON.stringify(s));
   }
-  return {content:C,POOLS,newGame,stage,has,metrics,patchSize,upgradeInfo,buyUpgrade,qualificationNow,projectStatus,buyProject,configure,experimentStatus,startExperiment,calibrate,tutorialEnergy,workloadStatus,startWorkload,liveWorkloadStatus,tick,pause,cancel,serialize,parseSave};
+  return {content:C,POOLS,newGame,stage,has,metrics,patchSize,upgradeInfo,buyUpgrade,qualificationNow,projectStatus,buyProject,configure,experimentRecipe,experimentStatus,startExperiment,calibrate,tutorialEnergy,workloadStatus,startWorkload,liveWorkloadStatus,tick,pause,cancel,serialize,parseSave};
 });
