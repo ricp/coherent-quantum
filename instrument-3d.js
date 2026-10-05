@@ -64,7 +64,7 @@
       const shape=new T.Shape(),r=.065;shape.moveTo(-.5+r,-.5);shape.lineTo(.5-r,-.5);shape.quadraticCurveTo(.5,-.5,.5,-.5+r);shape.lineTo(.5,.5-r);shape.quadraticCurveTo(.5,.5,.5-r,.5);shape.lineTo(-.5+r,.5);shape.quadraticCurveTo(-.5,.5,-.5,.5-r);shape.lineTo(-.5,-.5+r);shape.quadraticCurveTo(-.5,-.5,-.5+r,-.5);
       geometryPool={box:geo(new T.BoxGeometry(1,1,1)),bevel:geo(new T.ExtrudeGeometry(shape,{depth:1,bevelEnabled:true,bevelSegments:2,steps:1,bevelSize:.025,bevelThickness:.025,curveSegments:3}).translate(0,0,-.5).rotateX(-Math.PI/2)),cylinder:geo(new T.CylinderGeometry(1,1,1,24)),line:geo(new T.CylinderGeometry(1,1,1,8)),sphere:geo(new T.SphereGeometry(1,12,8)),ring:geo(new T.TorusGeometry(1,.035,5,40).rotateX(Math.PI/2)),shell:geo(new T.CylinderGeometry(1,1,1,48,1,true,Math.PI*.44,Math.PI*1.16)),plane:geo(new T.PlaneGeometry(1,1))};
       assembly=new T.Group();scene.add(assembly);camera=new T.PerspectiveCamera(37,1,.1,500);
-      controls=new kit.OrbitControls(camera,canvas);controls.enableDamping=false;controls.enableZoom=fine.matches;controls.enablePan=false;controls.minPolarAngle=.08;controls.maxPolarAngle=Math.PI*.47;controls.minAzimuthAngle=-Math.PI*.45;controls.maxAzimuthAngle=Math.PI*.45;canvas.style.touchAction='pan-y';
+      controls=new kit.OrbitControls(camera,canvas);controls.enableDamping=false;controls.enableZoom=true;controls.enablePan=false;controls.minPolarAngle=.08;controls.maxPolarAngle=Math.PI*.47;controls.minAzimuthAngle=-Math.PI*.45;controls.maxAzimuthAngle=Math.PI*.45;canvas.style.touchAction='none';
       controls.addEventListener('start',manualInspection);
       controls.addEventListener('change',()=>{dirty=true;ensureDriver();});
       canvas.tabIndex=0;canvas.title='Click equipment to open its instrument inspector. Facility buttons navigate; Instrument bench provides the keyboard equivalent. Drag to orbit; mouse wheel or focused + / − keys to zoom.';
@@ -78,7 +78,7 @@
       window.addEventListener('pageshow',event=>{if(event.persisted){dirty=true;ensureDriver();}});
       document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else{dirty=true;ensureDriver();}});
       document.addEventListener('fullscreenchange',()=>{text($('three-expand'),document.fullscreenElement===(host.closest('main')||host)?'Exit expanded lab':'Expand lab');dirty=true;ensureDriver();});
-      text(status,'A cutaway superconducting laboratory. Drag to orbit; use the mouse wheel or focused + / − keys to zoom.');return true;
+      text(status,'A cutaway superconducting laboratory. Drag or touch-drag to orbit; pinch, use the mouse wheel, or press + / − to zoom.');return true;
     }catch(error){fallback('WebGL 2 is unavailable in this browser.');return false;}
   }
   function clear(){
@@ -369,7 +369,7 @@
     if(!targets[cameraMode])setCamera('overview',true);else if(frames===0)setCamera(cameraMode,true);else if(cameraMode==='overview'&&!cameraOrbited&&old.chapter!==model.chapter)setCamera('overview');display();
   }
   function size(){
-    if(!renderer||!enabled||!available||!visible())return false;const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return false;const dpr=Math.min(fine.matches&&w>=660?1.5:1.25,devicePixelRatio||1);controls.enableRotate=fine.matches&&w>=500;controls.enableZoom=fine.matches;
+    if(!renderer||!enabled||!available||!visible())return false;const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return false;const dpr=Math.min(fine.matches&&w>=660?1.5:1.25,devicePixelRatio||1);controls.enableRotate=true;controls.enableZoom=true;
     if(w!==width||h!==height||renderer.getPixelRatio()!==dpr){width=w;height=h;renderer.setPixelRatio(dpr);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();dirty=true;if(!cameraMove&&!cameraOrbited)setCamera(cameraMode,true);}return true;
   }
   function cameraDestination(id){const selected=components.find(c=>c.id===inspected);if(selected&&!inspectionTour){const at=new T.Vector3(...selected.center),r=selected.type==='cryostat-stack'?selected.size[1]/2:Math.hypot(...selected.size)/2,aspect=width&&height?width/height:1.3,d=r/(Math.sin(camera.fov*Math.PI/360)*Math.min(1,aspect))*1.12,eye=at.clone().add(new T.Vector3(1,.65,selected.type==='factory-bay'?.15:selected.type==='commissioning-cell'?-1.65:1.65).normalize().multiplyScalar(d));return {at,eye,target:{title:selected.name+' / open instrument',radius:r}};}const target=targets[id]||targets.overview,at=new T.Vector3(...target.at),eye=new T.Vector3(...target.eye),ratio=width&&height?width/height:1.7,mobile=['campus','operations','warehouse'].includes(id)?Math.max(1,1.95/ratio):ratio<1.05?Math.min(1.75,1.05/ratio):1;eye.sub(at).multiplyScalar(mobile).add(at);if(ratio<1.05&&!['overview','campus','top','research','operations','warehouse'].includes(id))eye.y=target.eye[1];if(ratio<1.05&&id==='memory'){eye.set(...target.eye);eye.y+=4*(mobile-1);}if(id==='overview'&&model.chapter<=1)eye.y=9.3;return {at,eye,target};}
