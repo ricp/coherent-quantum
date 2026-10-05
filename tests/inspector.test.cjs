@@ -1,7 +1,7 @@
 const test=require('node:test');
 const assert=require('node:assert/strict');
 const G=require('../game.js'),I=require('../inspector.js');
-const types=['cryostat-stack','control-rack','decoder-rack','processor-package','memory-patch','factory-bay','planning-console','research-desk','commissioning-crane','chip-bay','support-bay','operations-console','service-terminal'];
+const types=['cryostat-stack','control-rack','decoder-rack','processor-package','memory-patch','factory-bay','planning-console','research-desk','commissioning-crane','commissioning-cell','chip-bay','support-bay','operations-console','service-terminal'];
 const late=()=>{const s=G.newGame();s.started=true;s.done=G.content.projects.filter(p=>!p.historyYear).map(p=>p.id);s.engineering=['workshop','automation'];s.module=5;s.rack=5;s.pulse=6;s.decoder=2;s.factories=1;s.distance=5;s.workshops=2;s.funds=1e6;s.designs=1e6;s.credits=2000;s.drift=.005;return s;};
 test('Inspecting every component and previewing investments spends nothing and does not alter a captured save',()=>{
   const s=late();s.chipStock=64;s.supportStock=32;
