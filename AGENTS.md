@@ -30,6 +30,7 @@ Read the relevant files before implementing:
 ## Git: always save work locally
 
 - This is a **local Git repository. Commit only; do not push**. Do not publish, create remote pull requests, or add a remote unless the user explicitly requests it.
+- On 5 October 2026 the user explicitly authorized adding `origin` at `git@github.com:ricp/coherent-quantum.git`, renaming the current branch to `main`, and pushing it. That requested upload overrides the local-only rule for this task; do not infer deployment or permission to contact Keir.
 - Create a descriptive `feature/<short-topic>` branch before starting new work. Never implement new work directly on `main`, `master`, or `develop`. Continue on an existing feature branch only when continuing that same piece of work.
 - Inspect the current branch, status, and relevant diff before changing files. Preserve unrelated user changes and concurrent work. Never discard, overwrite, or stage unrelated changes merely to obtain a clean tree.
 - Always save authorized project work in this repository. Copy useful previews or deliverables created outside it into an appropriate project directory so Git can preserve them.
