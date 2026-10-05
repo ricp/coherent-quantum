@@ -126,6 +126,34 @@
     const readings=camera==='control'?[['Q37','2026 · feedback'],['Q41','Accuracy and throughput']]:camera==='cryostat'?[['Q38','2026 · adaptive control']]:camera==='planning'?[['Q40','Cultivation evidence'],['Q43','2026 · state readiness']]:camera==='memory'?[['Q42','2026 · connectivity']]:[];
     html('campus-station','<div><span class="eyebrow">Selected facility</span><h3>'+esc(title)+'</h3><p>'+esc(detail)+'</p><div class="station-reading">'+readings.filter(([id])=>C.papers[id]).map(([id,label])=>'<button type="button" data-paper="'+id+'">'+esc(label)+' ↗</button>').join('')+'</div></div><div class="station-actions">'+purchase+'<button type="button" data-station-target="'+target+'">'+esc(label)+' →</button></div>');
   }
+  function renderInspector(){
+    const host=$('three-lab'),panel=$('three-inspector');
+    if(!panel||!window.CoherentInspector)return;
+    const component=host?.dataset.component,type=component?.split(':')[0],data=component&&CoherentInspector.describe(s,type);
+    if(!data||view!=='lab'){panel.hidden=true;return;}
+    panel.hidden=false;
+    write('three-inspector-title',host.dataset.componentName||data.title);
+    write('three-inspector-kind',data.title);
+    const requested=$(data.target),target=requested&&!requested.closest('[hidden]')?data.target:'next-title';
+    const q=data.quote;
+    html('three-inspector-body','<p id="inspector-purpose"></p><p class="caption" id="inspector-cohort"></p><dl class="inspector-readouts">'+data.readouts.map((_,i)=>'<div><dt id="inspector-label-'+i+'"></dt><dd id="inspector-value-'+i+'"></dd><small id="inspector-note-'+i+'"></small></div>').join('')+'</dl><div class="inspector-constraint"><span class="eyebrow">Current constraint</span><p id="inspector-constraint"></p></div><div class="inspector-captured"><span class="eyebrow">Captured apparatus job</span><p id="inspector-job"></p></div>'+(q?'<details class="inspector-preview"><summary data-focus-key="inspector-preview">Preview this investment</summary><p id="inspector-preview-detail"></p><dl>'+q.comparisons.map((_,i)=>'<div><dt id="inspector-preview-label-'+i+'"></dt><dd id="inspector-preview-value-'+i+'"></dd></div>').join('')+'</dl><p class="caption">The available purchase preview includes its quoted funding and design costs under the current allocation and job. Previewing spends nothing; purchasing uses the ordinary engine rules.</p></details><p class="limiter" id="inspector-quote-reasons"></p><button type="button" class="inspector-buy" data-upgrade="'+q.id+'" id="inspector-buy"></button>':'')+'<button type="button" class="inspector-controls" data-station-target="'+target+'">'+esc(target===data.target?data.action:'Review the next action and prerequisites')+' →</button><div class="inspector-papers">'+data.papers.filter(id=>C.papers[id]).map(id=>'<button type="button" class="paper-notes" data-paper="'+id+'">'+esc(C.papers[id].title)+' ↗</button>').join('')+'</div>');
+    write('inspector-purpose',data.purpose);write('inspector-cohort',data.cohort);
+    data.readouts.forEach((r,i)=>{write('inspector-label-'+i,r.label);write('inspector-value-'+i,r.value);write('inspector-note-'+i,r.note);});
+    write('inspector-constraint',type==='operations-console'?$('next-copy').textContent:data.constraint);
+    const j=data.job;
+    write('inspector-job',j?data.workflow.label+(j.workload?' · captured '+j.recipe+' recipe':j.id==='calibrate'?' · maintenance reservation':' · '+num(j.shots)+' captured shots'+(j.id==='vqe'?' / group · θ '+num(j.theta)+'°'+(j.mitigate?' · mitigation enabled':''):''))+(j.study?' · paid dated study':''):'No active apparatus job. Choose a measured question using the ordinary controls.');
+    if(q){
+      write('inspector-preview-detail',q.detail);
+      q.comparisons.forEach((r,i)=>{write('inspector-preview-label-'+i,r.label);write('inspector-preview-value-'+i,r.before+(r.after===null?' · purchase unavailable': ' → '+r.after));});
+      write('inspector-quote-reasons',q.reasons.join(' · ')+(s.ended?' · Continue the laboratory before purchasing.':''));
+      write('inspector-buy',q.max?'At capacity':q.label+' · '+num(q.cost)+' funding · '+num(q.designs)+' designs');
+      $('inspector-buy').disabled=!q.ready;
+    }
+    const w=data.workflow;
+    html('three-inspector-workflow','<div class="inspector-flow-heading"><span class="eyebrow">Follow the experiment</span><span id="inspector-flow-label"></span></div><progress id="inspector-flow-progress" max="1" aria-label="Overall apparatus job progress"></progress><ol class="inspector-flow-list">'+w.stages.map((step,i)=>'<li id="inspector-flow-'+i+'"><span>'+esc(step.label)+'</span></li>').join('')+'</ol><p class="caption" id="inspector-flow-note"></p>');
+    write('inspector-flow-label',w.label);write('inspector-flow-note',w.note);$('inspector-flow-progress').value=w.progress;
+    w.stages.forEach((_,i)=>{$('inspector-flow-'+i).dataset.current=String(i===w.index);$('inspector-flow-'+i).setAttribute('aria-current',i===w.index?'step':'false');});
+  }
   function frontierCard(item,status,request){
     const p=status.prediction,r=status.recipe,receipt=status.receipt,key=request?'precision-request':'objective';
     const title=item.title||item.name,ground=item.angle===null,reference=ground?'ground-state reference':'exact reference at the recorded angle';
@@ -369,12 +397,13 @@
       write('ending-result',C.workloads.find(w=>record?w.id===record.workload:s.completed.includes(w.id)&&['dynamics','molecule'].includes(w.id))?.validation||'A scientific resource scenario is complete.');
       html('ending-stats','<span><strong>'+clock(record?.elapsed??s.elapsed)+'</strong>visible laboratory time</span><span><strong>'+(record?.discoveries??s.done.length)+'</strong>discoveries</span><span><strong>'+num(record?.active??m.active)+'</strong>physical qubits supported</span><span><strong>'+(record?.distance??s.distance)+'</strong>code distance</span>');
     }
-    draw();renderStation(m,phase);
+    draw();renderStation(m,phase);renderInspector();
   }
   function draw(time=performance.now()){const record=view==='ending'?s.endingRecord:null;if(window.CoherentArt)CoherentArt.draw(s,{workload:record?.workload||workload,recipe:record?.recipe||(s.job?.workload?s.job.recipe:s.logicalRecipe),bottleneck:view==='ending'?'Recorded milestone. Continue the laboratory for another question.':$('next-copy').textContent,nextAction:$('next-title').textContent,view,time});}
   function motionActive(){return view==='lab'&&!document.hidden&&!s.paused&&!s.ended&&(s.job||G.metrics(s).creditRate>0&&s.credits<2000)&&!matchMedia('(prefers-reduced-motion: reduce)').matches;}
   function animate(time){animation=0;if(!motionActive())return;draw(time);animation=requestAnimationFrame(animate);}
   function ensureAnimation(){if(!animation&&motionActive())animation=requestAnimationFrame(animate);}
+  document.addEventListener('coherent-inspect',renderInspector);
   document.addEventListener('click',event=>{
     const b=event.target.closest('button');if(!b||b.disabled)return;
     if(b.dataset.view)setView(b.dataset.view);
