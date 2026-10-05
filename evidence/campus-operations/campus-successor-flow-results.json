@@ -1,0 +1,5512 @@
+{
+  "stocked-paused": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 2,
+      "calls": 106,
+      "triangles": 92742,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 512,
+            "support": 512
+          },
+          "chipCrates": 2,
+          "supportCrates": 2
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3548,
+        "supported": 3548,
+        "active": 3548,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 72,
+          "kinds": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 20
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "PAUSED 68:03",
+    "state": {
+      "elapsed": 4083,
+      "paused": true,
+      "ended": false,
+      "chipStock": 512,
+      "supportStock": 512,
+      "job": null
+    }
+  },
+  "stocked-running-a": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 11,
+      "calls": 114,
+      "triangles": 93742,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 30,
+      "driverActive": true,
+      "activity": {
+        "research": true,
+        "deliveries": false,
+        "services": true,
+        "calibration": true,
+        "construction": true,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": true,
+        "automation": true
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 510.65700799998996,
+            "support": 510.65700799998996
+          },
+          "chipCrates": 2,
+          "supportCrates": 2
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3548,
+        "supported": 3548,
+        "active": 3548,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 72,
+          "kinds": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 20
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "LAB 68:03",
+    "state": {
+      "elapsed": 4083,
+      "paused": false,
+      "ended": false,
+      "chipStock": 512,
+      "supportStock": 512,
+      "job": null
+    }
+  },
+  "stocked-running-b": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 29,
+      "calls": 114,
+      "triangles": 93742,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 30,
+      "driverActive": true,
+      "activity": {
+        "research": true,
+        "deliveries": false,
+        "services": true,
+        "calibration": true,
+        "construction": true,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": true,
+        "automation": true
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 507.97135999999995,
+            "support": 507.97135999999995
+          },
+          "chipCrates": 2,
+          "supportCrates": 2
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3548,
+        "supported": 3548,
+        "active": 3548,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 72,
+          "kinds": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 20
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "LAB 68:04",
+    "state": {
+      "elapsed": 4083,
+      "paused": false,
+      "ended": false,
+      "chipStock": 512,
+      "supportStock": 512,
+      "job": null
+    }
+  },
+  "stocked-stopped": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 33,
+      "calls": 106,
+      "triangles": 92742,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 507.634016000005,
+            "support": 507.634016000005
+          },
+          "chipCrates": 2,
+          "supportCrates": 2
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3548,
+        "supported": 3548,
+        "active": 3548,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 72,
+          "kinds": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 20
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "PAUSED 68:04",
+    "state": {
+      "elapsed": 4084.299399999998,
+      "paused": true,
+      "ended": false,
+      "chipStock": 507.634016000005,
+      "supportStock": 507.634016000005,
+      "job": null
+    }
+  },
+  "nostock-paused": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 35,
+      "calls": 133,
+      "triangles": 137406,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3313,
+        "supported": 3313,
+        "active": 3313,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 67,
+          "kinds": {
+            "application": 56,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 56,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 30
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "PAUSED 65:43",
+    "state": {
+      "elapsed": 3943,
+      "paused": true,
+      "ended": false,
+      "chipStock": 0,
+      "supportStock": 0,
+      "job": null
+    }
+  },
+  "nostock-running-a": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 44,
+      "calls": 112,
+      "triangles": 93454,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 30,
+      "driverActive": true,
+      "activity": {
+        "research": true,
+        "deliveries": false,
+        "services": true,
+        "calibration": true,
+        "construction": true,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": true,
+        "automation": true
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3313,
+        "supported": 3313,
+        "active": 3313,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 67,
+          "kinds": {
+            "application": 56,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 56,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 30
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "LAB 65:43",
+    "state": {
+      "elapsed": 3943,
+      "paused": false,
+      "ended": false,
+      "chipStock": 0,
+      "supportStock": 0,
+      "job": null
+    }
+  },
+  "nostock-running-b": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 62,
+      "calls": 112,
+      "triangles": 93454,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 30,
+      "driverActive": true,
+      "activity": {
+        "research": true,
+        "deliveries": false,
+        "services": true,
+        "calibration": true,
+        "construction": true,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": true,
+        "automation": true
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3313,
+        "supported": 3313,
+        "active": 3313,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 67,
+          "kinds": {
+            "application": 56,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 56,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 30
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "LAB 65:44",
+    "state": {
+      "elapsed": 3943,
+      "paused": false,
+      "ended": false,
+      "chipStock": 0,
+      "supportStock": 0,
+      "job": null
+    }
+  },
+  "nostock-stopped": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 66,
+      "calls": 106,
+      "triangles": 92526,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3313,
+        "supported": 3313,
+        "active": 3313,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 67,
+          "kinds": {
+            "application": 56,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 56,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 30
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "PAUSED 65:44",
+    "state": {
+      "elapsed": 3944.301400000006,
+      "paused": true,
+      "ended": false,
+      "chipStock": 0,
+      "supportStock": 0,
+      "job": null
+    }
+  },
+  "support-only-paused": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 68,
+      "calls": 133,
+      "triangles": 137778,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 512,
+            "support": 512
+          },
+          "chipCrates": 2,
+          "supportCrates": 2
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3548,
+        "supported": 3548,
+        "active": 3548,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 72,
+          "kinds": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 20
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "PAUSED 68:03",
+    "state": {
+      "elapsed": 4083,
+      "paused": true,
+      "ended": false,
+      "chipStock": 512,
+      "supportStock": 512,
+      "job": null
+    }
+  },
+  "support-only-running-a": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 77,
+      "calls": 113,
+      "triangles": 93706,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 30,
+      "driverActive": true,
+      "activity": {
+        "research": true,
+        "deliveries": false,
+        "services": true,
+        "calibration": true,
+        "construction": true,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": true,
+        "automation": true
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 512,
+            "support": 510.0008
+          },
+          "chipCrates": 2,
+          "supportCrates": 2
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3548,
+        "supported": 3548,
+        "active": 3548,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 72,
+          "kinds": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 20
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "LAB 68:03",
+    "state": {
+      "elapsed": 4083,
+      "paused": false,
+      "ended": false,
+      "chipStock": 512,
+      "supportStock": 512,
+      "job": null
+    }
+  },
+  "support-only-running-b": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 96,
+      "calls": 113,
+      "triangles": 93706,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 30,
+      "driverActive": true,
+      "activity": {
+        "research": true,
+        "deliveries": false,
+        "services": true,
+        "calibration": true,
+        "construction": true,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": true,
+        "automation": true
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 512,
+            "support": 504.6261440000201
+          },
+          "chipCrates": 2,
+          "supportCrates": 2
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3548,
+        "supported": 3548,
+        "active": 3548,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 72,
+          "kinds": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 20
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "LAB 68:04",
+    "state": {
+      "elapsed": 4083,
+      "paused": false,
+      "ended": false,
+      "chipStock": 512,
+      "supportStock": 512,
+      "job": null
+    }
+  },
+  "support-only-stopped": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 100,
+      "calls": 106,
+      "triangles": 92742,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 512,
+            "support": 503.95414400002005
+          },
+          "chipCrates": 2,
+          "supportCrates": 2
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3548,
+        "supported": 3548,
+        "active": 3548,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 72,
+          "kinds": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 20
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "PAUSED 68:04",
+    "state": {
+      "elapsed": 4084.1972999999966,
+      "paused": true,
+      "ended": false,
+      "chipStock": 512,
+      "supportStock": 503.95414400002005,
+      "job": null
+    }
+  },
+  "atomic-paused": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 101,
+      "calls": 106,
+      "triangles": 92742,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 512,
+            "support": 512
+          },
+          "chipCrates": 2,
+          "supportCrates": 2
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3548,
+        "supported": 3548,
+        "active": 3548,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 72,
+          "kinds": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 20
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "PAUSED 68:03",
+    "state": {
+      "elapsed": 4083,
+      "paused": true,
+      "ended": false,
+      "chipStock": 512,
+      "supportStock": 512,
+      "job": {
+        "id": "memory",
+        "workload": false,
+        "progress": 0,
+        "duration": 10,
+        "shots": 100,
+        "theta": 65,
+        "mitigate": true,
+        "bias": 0.002
+      }
+    }
+  },
+  "atomic-running-a": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 110,
+      "calls": 109,
+      "triangles": 93322,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 30,
+      "driverActive": true,
+      "activity": {
+        "research": true,
+        "deliveries": false,
+        "services": false,
+        "calibration": true,
+        "construction": false,
+        "experiment": true,
+        "memory": true,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 512,
+            "support": 512
+          },
+          "chipCrates": 2,
+          "supportCrates": 2
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3548,
+        "supported": 3548,
+        "active": 3548,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 72,
+          "kinds": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 20
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "LAB 68:03",
+    "state": {
+      "elapsed": 4083,
+      "paused": false,
+      "ended": false,
+      "chipStock": 512,
+      "supportStock": 512,
+      "job": {
+        "id": "memory",
+        "workload": false,
+        "progress": 0,
+        "duration": 10,
+        "shots": 100,
+        "theta": 65,
+        "mitigate": true,
+        "bias": 0.002
+      }
+    }
+  },
+  "atomic-running-b": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 129,
+      "calls": 109,
+      "triangles": 93322,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 30,
+      "driverActive": true,
+      "activity": {
+        "research": true,
+        "deliveries": false,
+        "services": false,
+        "calibration": true,
+        "construction": false,
+        "experiment": true,
+        "memory": true,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 512,
+            "support": 512
+          },
+          "chipCrates": 2,
+          "supportCrates": 2
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3548,
+        "supported": 3548,
+        "active": 3548,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 72,
+          "kinds": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 20
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "LAB 68:04",
+    "state": {
+      "elapsed": 4083,
+      "paused": false,
+      "ended": false,
+      "chipStock": 512,
+      "supportStock": 512,
+      "job": {
+        "id": "memory",
+        "workload": false,
+        "progress": 0,
+        "duration": 10,
+        "shots": 100,
+        "theta": 65,
+        "mitigate": true,
+        "bias": 0.002
+      }
+    }
+  },
+  "atomic-stopped": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 133,
+      "calls": 106,
+      "triangles": 92742,
+      "geometries": 43,
+      "textures": 43,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "hasWarehouse": true,
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 512,
+            "support": 512
+          },
+          "chipCrates": 2,
+          "supportCrates": 2
+        },
+        "factoryBays": 2,
+        "modulePackages": 4,
+        "installed": 3548,
+        "supported": 3548,
+        "active": 3548,
+        "coax": 28,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 3,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 3,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 72,
+          "kinds": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 61,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 20
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 6400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2560
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 3200
+            },
+            {
+              "name": "Readout",
+              "start": 6480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 6520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 6580,
+          "runtime": 6580,
+          "repetitions": 1
+        },
+        "activityMarkerCount": 17,
+        "supportFanCount": 10,
+        "facilities": [
+          {
+            "id": "operations",
+            "center": [
+              -3,
+              2.9,
+              -21
+            ],
+            "size": [
+              16,
+              5.8,
+              12
+            ],
+            "pickPoint": [
+              -3,
+              5.75,
+              -21
+            ]
+          },
+          {
+            "id": "warehouse",
+            "center": [
+              0,
+              2.3,
+              -34
+            ],
+            "size": [
+              18,
+              4.6,
+              10
+            ],
+            "pickPoint": [
+              0,
+              4.55,
+              -34
+            ]
+          },
+          {
+            "id": "cryostat",
+            "center": [
+              -8,
+              3.4,
+              10.6
+            ],
+            "size": [
+              6.4,
+              6.8,
+              6.4
+            ],
+            "pickPoint": [
+              -8,
+              6.75,
+              10.6
+            ]
+          },
+          {
+            "id": "control",
+            "center": [
+              29,
+              2.9,
+              -19
+            ],
+            "size": [
+              32,
+              5.8,
+              38
+            ],
+            "pickPoint": [
+              29,
+              5.75,
+              -19
+            ]
+          },
+          {
+            "id": "research",
+            "center": [
+              -32,
+              7.3,
+              -21
+            ],
+            "size": [
+              25,
+              14.6,
+              22
+            ],
+            "pickPoint": [
+              -32,
+              14.549999999999999,
+              -21
+            ]
+          },
+          {
+            "id": "processor",
+            "center": [
+              5,
+              1.4,
+              9
+            ],
+            "size": [
+              6.6,
+              2.8,
+              4.75
+            ],
+            "pickPoint": [
+              5,
+              2.75,
+              9
+            ]
+          },
+          {
+            "id": "memory",
+            "center": [
+              -32,
+              2.25,
+              17
+            ],
+            "size": [
+              16,
+              4.5,
+              15
+            ],
+            "pickPoint": [
+              -32,
+              4.45,
+              17
+            ]
+          },
+          {
+            "id": "planning",
+            "center": [
+              30,
+              3.4,
+              15
+            ],
+            "size": [
+              17,
+              6.8,
+              18
+            ],
+            "pickPoint": [
+              30,
+              6.75,
+              15
+            ]
+          },
+          {
+            "id": "fabrication",
+            "center": [
+              -31,
+              3.1,
+              30
+            ],
+            "size": [
+              17,
+              6.2,
+              9
+            ],
+            "pickPoint": [
+              -31,
+              6.15,
+              30
+            ]
+          },
+          {
+            "id": "service",
+            "center": [
+              15,
+              1.8,
+              31
+            ],
+            "size": [
+              16,
+              3.6,
+              6
+            ],
+            "pickPoint": [
+              15,
+              3.5500000000000003,
+              31
+            ]
+          }
+        ]
+      },
+      "hoveredFacility": "",
+      "facilityCount": 10,
+      "visible": true,
+      "inViewport": true
+    },
+    "clock": "PAUSED 68:04",
+    "state": {
+      "elapsed": 4084.2980000000007,
+      "paused": true,
+      "ended": false,
+      "chipStock": 512,
+      "supportStock": 512,
+      "job": {
+        "id": "memory",
+        "workload": false,
+        "progress": 0.8623136484716921,
+        "duration": 10,
+        "shots": 100,
+        "theta": 65,
+        "mitigate": true,
+        "bias": 0.002
+      }
+    }
+  },
+  "errors": "",
+  "console": ""
+}

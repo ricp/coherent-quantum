@@ -1,0 +1,17 @@
+{
+  "json": {
+    "path": "/Users/ricp/Downloads/coherent-93-05.json",
+    "bytes": 51393,
+    "observedModification": "2026-10-05 14:21",
+    "nativeControl": "Export the save",
+    "contentsVerified": false
+  },
+  "png": {
+    "path": "/Users/ricp/Downloads/coherent-run.png",
+    "bytes": 97692,
+    "observedModification": "2026-10-05 14:26",
+    "nativeControl": "Save the run postcard",
+    "contentsVerified": false
+  },
+  "limitation": "macOS EPERM prevents Downloads content reads; exact-file metadata verified. Normal game Save/Reload accepts earned serialization."
+}

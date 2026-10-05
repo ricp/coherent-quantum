@@ -124,7 +124,7 @@
     if($(target)?.hidden){target='run-experiment';label='Return to the next experiment';}
     const u=upgrade&&G.upgradeInfo(s,upgrade),purchase=u?.available&&!u.max?'<button type="button" data-upgrade="'+upgrade+'" '+(!u.ready?'disabled':'')+'>'+esc(u.label)+' · '+num(u.cost)+' funding · '+num(u.designs)+' designs ↗</button>':'';
     const readings=camera==='control'?[['Q37','2026 · feedback'],['Q41','Accuracy and throughput']]:camera==='cryostat'?[['Q38','2026 · adaptive control']]:camera==='planning'?[['Q40','Cultivation evidence'],['Q43','2026 · state readiness']]:camera==='memory'?[['Q42','2026 · connectivity']]:[];
-    html('campus-station','<div><span class="eyebrow">Inside the inspected facility</span><h3>'+esc(title)+'</h3><p>'+esc(detail)+'</p><div class="station-reading">'+readings.filter(([id])=>C.papers[id]).map(([id,label])=>'<button type="button" data-paper="'+id+'">'+esc(label)+' ↗</button>').join('')+'</div></div><div class="station-actions">'+purchase+'<button type="button" data-station-target="'+target+'">'+esc(label)+' →</button></div>');
+    html('campus-station','<div><span class="eyebrow">Selected facility</span><h3>'+esc(title)+'</h3><p>'+esc(detail)+'</p><div class="station-reading">'+readings.filter(([id])=>C.papers[id]).map(([id,label])=>'<button type="button" data-paper="'+id+'">'+esc(label)+' ↗</button>').join('')+'</div></div><div class="station-actions">'+purchase+'<button type="button" data-station-target="'+target+'">'+esc(label)+' →</button></div>');
   }
   function frontierCard(item,status,request){
     const p=status.prediction,r=status.recipe,receipt=status.receipt,key=request?'precision-request':'objective';
@@ -206,7 +206,7 @@
     show('research-programme',archive==='history');
     write('research-programme-copy',research.enabled?research.purchased+' / '+research.total+' dated discoveries purchased · '+research.completed+' fresh studies qualified. New campaigns require all eleven before the gift ending.':'This save preserves its original campaign and earned ending. Join the dated research programme while the apparatus is idle; a completed laboratory must first Continue from its gift ending.');
     show('enter-research',!research.enabled&&!s.ended);$('enter-research').disabled=!research.ready;
-    show('research-return-ending',!research.enabled&&s.ended);
+    show('research-return-ending',!!s.endingRecord);write('research-return-ending',s.ended?'Return to the recorded ending to continue':'View recorded completion');
     write('research-programme-reasons',research.enabled?'Study targets and costs are authored game choices; the papers do not certify this laboratory.':research.reasons.join(' · '));
     html('archive-list',items.filter(p=>JSON.stringify(p).toLowerCase().includes(query)).map(p=>{
       if(archive==='engineering')return engineeringCard(p,true);
@@ -302,7 +302,7 @@
       else if(blocker==='effort')hint+='Assign more earned trust to researchers, or classical analysis once available. Effort fills the notebook bank; reserving more notebook space reduces the trust left for research.';
       else hint+='The declared evidence and resource costs are ready. Review the discovery below.';
     }
-    if(studyNeeded){hint='Next: “'+next.title+'”. '+next.study.criterion+' '+G.studyStatus(s,next.id).reasons.join(' · ')+'. Qualify this fresh study before its research purchase.';}
+    if(studyNeeded){const reasons=G.studyStatus(s,next.id).reasons.join(' · ');hint='Next: “'+next.title+'”. '+next.study.criterion+(reasons?' '+reasons+'.':'')+' Qualify this fresh study before its research purchase.';}
     write('next-copy',hint);
     show('experiment-picker',s.started&&available.length>1);
     write('experiment-cost-label',workNext?'Workload budget':e?'Experiment budget':'Next action');
@@ -388,7 +388,7 @@
     else if(b.id==='research-cancel-study')act(()=>G.cancel(s));
     else if(b.dataset.study)act(()=>G.startStudy(s,b.dataset.study));
     else if(b.id==='enter-research')act(()=>G.enterResearchProgramme(s));
-    else if(b.id==='research-return-ending'){setView('ending');$('continue-lab').scrollIntoView({block:'center'});$('continue-lab').focus({preventScroll:true});}
+    else if(b.id==='research-return-ending'){setView('ending');const target=$(s.ended?'continue-lab':'postcard-button');target.scrollIntoView({block:'center'});target.focus({preventScroll:true});}
     else if(b.dataset.project)act(()=>{const bought=G.buyProject(s,b.dataset.project);if(bought){experiment='';experimentChosen=false;}return bought;});
     else if(b.dataset.engineering)act(()=>G.buyEngineering(s,b.dataset.engineering));
     else if(b.dataset.assign)act(()=>G.assign(s,b.dataset.assign,Number(b.dataset.delta)));

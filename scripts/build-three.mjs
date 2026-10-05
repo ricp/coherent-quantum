@@ -9,7 +9,7 @@ const action = page.match(/<button class="primary-button" type="button" id="run-
 const next = page.match(/<div class="eyebrow" id="next-label">[\s\S]*?<\/h2>/);
 const workbench = '<div class="workbench" id="workbench">';
 if (!instrument || !action || !next || !page.includes(workbench)) throw new Error('Original laboratory markup could not be located.');
-const theater = '<div class="lab-presentation"><div class="lab-command-bar"><div>' + next[0] + '</div>' + action[0] + '</div>\n' + instrument[0].replace('class="instrument"', 'class="instrument lab-theater"') + '<section class="campus-station" id="campus-station" aria-label="Inspected facility controls"></section></div>';
+const theater = '<div class="lab-presentation"><div class="lab-command-bar"><div>' + next[0] + '</div>' + action[0] + '</div>\n' + instrument[0].replace('class="instrument"', 'class="instrument lab-theater"') + '<section class="campus-station" id="campus-station" aria-label="Selected facility controls"></section></div>';
 page = page.replace(instrument[0], '').replace(action[0], '').replace(next[0], '').replace(workbench, theater + '\n' + workbench);
 // Keep the result compact above peer control cards instead of a tall sidebar.
 const summary = page.match(/            <p class="rail-copy" id="next-copy">[\s\S]*?(?=            <section class="bench-controls")/);

@@ -1,6 +1,6 @@
 # Full research history and laboratory controls
 
-Branch: `feature/research-history-2015-2026`. Private local development, 5 October 2026. The source checkpoint is `1ebba66`; final browser fixes and accepted reviews follow in a separate local commit. No push or publication.
+Branch: `feature/research-history-2015-2026`. Private local development, 5 October 2026. The source checkpoint is `1ebba66`; final browser fixes and accepted reviews follow in a separate local commit. This checkpoint was local. The user subsequently authorized the GitHub upload on 5 October 2026; later campus/UI work and actual completion have separately recorded evidence.
 
 ## Implemented scope
 
@@ -56,4 +56,6 @@ Renderer SHA256: `87ff707b1088b6fb5f3ef3d8d2440f5492b0490f13c4efcd04b3a7407aba98
 
 The earlier broad native matrices retain their own hashes; the maintenance-focus and pointer/cable corrections receive focused final-source rechecks. JavaScript syntax, regenerated 3D entry/bundle reproducibility and Git whitespace checks pass. All 50 contrast pairs pass, minimum 4.58. No raw generated/imported save is committed as player evidence.
 
-**A fresh full normal-Chrome campaign of this 44-discovery edition is still outstanding.** The earned 78:19, 33-discovery campaign in [CHROME-PLAYTEST.md](CHROME-PLAYTEST.md) belongs to the prior edition. Simulated complete routes and isolated native studies do not replace the user's requested fresh ordinary-play completion. Human enjoyment, blind first-human pacing and physical-device performance also remain unverified. The feature implementation and bounded AI reviews can be accepted without claiming the entire gift is finally verified on those remaining requirements.
+**The fresh full ordinary-Chrome campaign is now complete at 93:05:** all 44 discoveries, all eleven annual fresh study receipts and purchases, all four workloads, six finite objectives and six precision requests. [The actual playtest report](RESEARCH-HISTORY-CHROME-PLAYTEST.md) records ordinary controls, earned resources, milestones, source scope, save/reload and continued-play checks. No save imports, injected resources, internal engine actions or accelerated time were used. The 78:19/33-discovery record remains historical. The AI player knew the implementation; blind human enjoyment and physical-device performance remain unverified.
+
+The new operations/warehouse and interaction work is separately accepted in [the campus review](CAMPUS-OPERATIONS-LOGISTICS-VISUAL-REVIEW.md). Its hashes do not replace this programme checkpoint's hashes. Later ready-hint punctuation and recorded-ending navigation fixes are covered by the actual playtest's bounded rechecks.
