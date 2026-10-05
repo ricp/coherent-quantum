@@ -143,7 +143,7 @@
     write('three-inspector-kind',data.title);
     const requested=$(data.target),target=requested&&!requested.closest('[hidden]')?data.target:'next-title';
     const q=data.quote;
-    html('three-inspector-body','<p id="inspector-purpose"></p><p class="caption" id="inspector-cohort"></p><dl class="inspector-readouts">'+data.readouts.map((_,i)=>'<div><dt id="inspector-label-'+i+'"></dt><dd id="inspector-value-'+i+'"></dd><small id="inspector-note-'+i+'"></small></div>').join('')+'</dl><div class="inspector-constraint"><span class="eyebrow">Current constraint</span><p id="inspector-constraint"></p></div><div class="inspector-captured"><span class="eyebrow">Captured apparatus job</span><p id="inspector-job"></p></div>'+(q?'<details class="inspector-preview"><summary data-focus-key="inspector-preview">Preview this investment</summary><p id="inspector-preview-detail"></p><dl>'+q.comparisons.map((_,i)=>'<div><dt id="inspector-preview-label-'+i+'"></dt><dd id="inspector-preview-value-'+i+'"></dd></div>').join('')+'</dl><p class="caption">The available purchase preview includes its quoted funding and design costs under the current allocation and job. Previewing spends nothing; purchasing uses the ordinary engine rules.</p></details><p class="limiter" id="inspector-quote-reasons"></p><button type="button" class="inspector-buy" data-upgrade="'+q.id+'" id="inspector-buy"></button>':'')+'<button type="button" class="inspector-controls" data-station-target="'+target+'">'+esc(target===data.target?data.action:'Review the next action and prerequisites')+' →</button><div class="inspector-papers">'+data.papers.filter(id=>C.papers[id]).map(id=>'<button type="button" class="paper-notes" data-paper="'+id+'">'+esc(C.papers[id].title)+' ↗</button>').join('')+'</div>');
+    html('three-inspector-body','<p id="inspector-purpose"></p><p class="caption" id="inspector-cohort"></p><dl class="inspector-readouts">'+data.readouts.map((_,i)=>'<div><dt id="inspector-label-'+i+'"></dt><dd id="inspector-value-'+i+'"></dd><small id="inspector-note-'+i+'"></small></div>').join('')+'</dl><div class="inspector-constraint"><span class="eyebrow">Current constraint</span><p id="inspector-constraint"></p></div><div class="inspector-captured"><span class="eyebrow">Captured apparatus job</span><p id="inspector-job"></p></div>'+(q?'<details class="inspector-preview"><summary data-focus-key="inspector-preview">Preview this investment</summary><p id="inspector-preview-detail"></p><dl>'+q.comparisons.map((_,i)=>'<div><dt id="inspector-preview-label-'+i+'"></dt><dd id="inspector-preview-value-'+i+'"></dd></div>').join('')+'</dl><p class="caption">The available purchase preview includes its quoted funding and design costs under the current allocation and job. Previewing spends nothing; purchasing uses the ordinary engine rules.</p></details><p class="limiter" id="inspector-quote-reasons"></p><button type="button" class="inspector-buy" data-upgrade="'+q.id+'" id="inspector-buy"></button>':'')+'<button type="button" data-help-open="instrument" class="inspector-controls">Help with this instrument →</button><button type="button" class="inspector-controls" data-station-target="'+target+'">'+esc(target===data.target?data.action:'Review the next action and prerequisites')+' →</button><div class="inspector-papers">'+data.papers.filter(id=>C.papers[id]).map(id=>'<button type="button" class="paper-notes" data-paper="'+id+'">'+esc(C.papers[id].title)+' ↗</button>').join('')+'</div>');
     write('inspector-purpose',data.purpose);write('inspector-cohort',data.cohort);
     data.readouts.forEach((r,i)=>{write('inspector-label-'+i,r.label);write('inspector-value-'+i,r.value);write('inspector-note-'+i,r.note);});
     write('inspector-constraint',type==='operations-console'?$('next-copy').textContent:data.constraint);
@@ -352,7 +352,7 @@
     else if(!s.job&&(!s.result||s.result.id!==e?.id))write('experiment-feedback','');
     show('job-progress',!!s.job);
     if(s.job){const task=s.job.objective?C.objectives.find(item=>item.id===s.job.objective):s.job.request?C.precisionRequests.find(item=>item.id===s.job.request):null,recipe=s.job.workload?C.workloads.find(w=>w.id===s.job.id):C.experiments.find(e=>e.id===s.job.id);write('job-label',s.job.id==='calibrate'?'Calibrating':task?.name||recipe?.name||'Experiment');write('job-percent',pct(s.job.progress/s.job.duration,0));$('job-meter').value=s.job.progress/s.job.duration;write('cancel-job',s.job.workload?'Cancel schedule · costs stay spent':'Cancel experiment · costs stay spent');}
-    show('calibrate-button',phase>=1);$('calibrate-button').disabled=!!s.job||s.paused||s.ended||s.funds<8;
+    show('calibrate-button',phase>=1);$('calibrate-button').disabled=!G.calibrationStatus(s).ready;
     show('noisy-controls',has('vqe'));show('mitigate-control',has('mitigation'));
     $('theta').value=s.theta;write('theta-value',s.theta+'°');$('shot-count').value=s.shots;$('mitigate').checked=s.mitigate;
     const vqe=G.experimentRecipe(s,'vqe');write('precision-plan',num(vqe.sampledShots)+' actual samples; '+num(vqe.modeledShots)+' modeled acquisitions · '+vqe.cost+' funding. Bias and statistical precision are distinct.');
@@ -365,6 +365,7 @@
     show('auto-calibration',G.hasEngineering(s,'autoCalibration'));write('auto-calibration',s.autoCalibration?'Automatic calibration on · use manual':'Keep calibration on target');$('auto-calibration').setAttribute('aria-pressed',String(s.autoCalibration));$('auto-calibration').disabled=s.ended||!!s.job?.workload;
     ['theta','shot-count','mitigate'].forEach(id=>$(id).disabled=!!s.job||s.ended);
     $('factory-count').disabled=!!s.job?.workload||s.ended;$('calibration').disabled=!!s.job?.workload||s.job?.id==='calibrate'||s.ended||s.autoCalibration;
+    railHelp={title:$('next-title').textContent,hint:$('next-copy').textContent,action:s.job?{type:'job',navigation:true}:studyNeeded?{type:'study',id:next.id,navigation:true}:opportunity?{type:'workload',id:opportunity.id,navigation:true}:workNext?{type:'workload',id:workload,navigation:true}:researchNext?{type:'project',id:next.id,navigation:true}:e?{type:'experiment',id:e.id}:null,target:s.job?'cancel-job':studyNeeded?'[data-study-details="'+next.id+'"]':researchNext&&['capacity','designs','effort'].includes(blocker)?'economy-section':researchNext&&blocker==='funding'&&has('nisq')?'service-control':researchNext?'[data-project="'+next.id+'"]':workNext?'workload-section':'run-experiment'};
   }
   function render(){
     const phase=G.stage(s),chapter=C.chapters[phase],m=G.metrics(s);
@@ -404,17 +405,84 @@
       write('ending-result',C.workloads.find(w=>record?w.id===record.workload:s.completed.includes(w.id)&&['dynamics','molecule'].includes(w.id))?.validation||'A scientific resource scenario is complete.');
       html('ending-stats','<span><strong>'+clock(record?.elapsed??s.elapsed)+'</strong>visible laboratory time</span><span><strong>'+(record?.discoveries??s.done.length)+'</strong>discoveries</span><span><strong>'+num(record?.active??m.active)+'</strong>physical qubits supported</span><span><strong>'+(record?.distance??s.distance)+'</strong>code distance</span>');
     }
-    draw();renderStation(m,phase);renderInspector();
+    draw();renderStation(m,phase);renderInspector();renderExplainButtons();renderCompanion();
   }
+  let helpOpen=false,helpTab='next',helpContext=null,helpTrigger=null,helpTarget=null,railHelp={};
+  const helpAttributes={project:'project',engineering:'engineering',upgrade:'upgrade',study:'study',runWorkload:'workload',objective:'objective',precisionRequest:'precision',orderEquipment:'procurement'};
+  function clearHelpTarget(){if(helpTarget){helpTarget.node.classList.remove('help-target');if(helpTarget.tabindex===null)helpTarget.node.removeAttribute('tabindex');else helpTarget.node.setAttribute('tabindex',helpTarget.tabindex);helpTarget=null;}}
+  function helpAction(button){
+    for(const [key,type]of Object.entries(helpAttributes))if(button.dataset[key])return {type,id:button.dataset[key],kind:button.dataset.kind};
+    return button.id==='run-experiment'?railHelp.action:button.id==='calibrate-button'?{type:'calibrate'}:button.id==='enter-campus'?{type:'campus'}:button.id==='enter-research'?{type:'research'}:null;
+  }
+  function renderExplainButtons(){
+    const selector=Object.keys(helpAttributes).map(key=>'[data-'+key.replace(/[A-Z]/g,c=>'-'+c.toLowerCase())+']').join(',')+',#run-experiment,#calibrate-button,#enter-campus,#enter-research';
+    for(const button of document.querySelectorAll(selector)){
+      if(button.tagName!=='BUTTON')continue;let explain=button.nextElementSibling;
+      if(!explain?.matches('[data-help-explain]')){explain=document.createElement('button');explain.type='button';explain.className='help-explain';explain.dataset.helpExplain='';button.after(explain);}
+      explain.textContent='Explain';explain.setAttribute('aria-label','Explain '+button.textContent.trim().replace(/\s+/g,' '));
+    }
+  }
+  function openCompanion(context=null,tab='next',trigger=$('help-toggle')){
+    clearHelpTarget();helpContext=context;helpTab=tab;if(!helpOpen)helpTrigger=trigger;helpOpen=true;$('lab-companion').hidden=false;$('help-toggle').setAttribute('aria-expanded','true');renderCompanion();$('companion-title').focus({preventScroll:true});
+    if(tab==='opening'){$('companion-opening').open=true;helpTab='next';$('companion-opening').scrollIntoView({block:'nearest'});}
+  }
+  function closeCompanion(restore=true){helpOpen=false;$('lab-companion').hidden=true;$('help-toggle').setAttribute('aria-expanded','false');if(restore){const target=helpTrigger?.isConnected?helpTrigger:$('help-toggle');target.scrollIntoView({block:'nearest'});target.focus({preventScroll:true});}}
+  function showHelpControl(selector){
+    closeCompanion(false);setView('lab');let target=null;try{target=document.querySelector(selector.startsWith('#')||selector.startsWith('[')?selector:'#'+selector);}catch{}
+    const fallback=!target||!!target.closest('[hidden]');if(fallback)target=$('next-title');
+    if(target.disabled)target=target.closest('article,section,[data-study-details]')||target.parentElement;
+    clearHelpTarget();helpTarget={node:target,tabindex:target.getAttribute('tabindex')};if(!target.matches('button,a,input,select,[tabindex]'))target.tabIndex=-1;target.classList.add('help-target');target.scrollIntoView({block:'center'});target.focus({preventScroll:true});write('help-navigation-note',fallback?'That control is not unlocked or present. Here is the current next step.':'Highlighted the real control. You decide whether to change or use it.');$('help-navigation-note').hidden=false;
+  }
+  function helpRows(id,rows){
+    html(id,rows.map((row,i)=>'<div><dt>'+esc(row.label)+'</dt><dd id="'+id+'-value-'+i+'"></dd><small id="'+id+'-note-'+i+'"></small></div>').join(''));
+    rows.forEach((row,i)=>{write(id+'-value-'+i,row.value);write(id+'-note-'+i,row.note||'');});
+  }
+  function renderCompanion(){
+    if(!helpOpen||!window.CoherentCompanion)return;
+    const host=$('three-lab'),instrument=helpContext?.instrument&&host?.dataset.component&&window.CoherentInspector?CoherentInspector.describe(s,host.dataset.component.split(':')[0]):null;
+    const context=helpContext?.action?{...helpContext}:{...railHelp},source=helpContext?.source;
+    context.shellReasons=[];
+    if(source?.isConnected&&source.disabled)context.shellReasons.push('The current control is disabled. Its requirements, current pause and apparatus reservation apply.');
+    if(source?.isConnected&&source.closest('[hidden]'))context.shellReasons.push('This control is currently locked or outside the displayed page. Show me will use the visible next-step fallback.');
+    if(instrument){context.instrument=instrument;context.title=host.dataset.componentName;context.hint=instrument.purpose;context.target=instrument.target;}
+    const data=CoherentCompanion.describe(s,context);
+    write('companion-context',helpContext?'Selected control':'Current next action');write('companion-action-title',data.title);write('companion-explanation',data.explanation);
+    write('companion-block-title',data.reasons.length?'What is holding this up?':'This action has no reported blocker');
+    html('companion-reasons',data.reasons.map(reason=>'<li>'+esc(reason)+'</li>').join('')||'<li>Review the real control and its quoted costs. Help does not perform the action.</li>');
+    helpRows('companion-budget',data.budget);$('companion-budget').hidden=!data.budget.length;
+    write('companion-result-title',data.result.title);write('companion-result-text',data.result.text);helpRows('companion-result-details',data.result.details);
+    document.querySelectorAll('[data-help-tab]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.helpTab===helpTab)));
+    ['next','blocked','result'].forEach(tab=>$('companion-'+tab).hidden=tab!==helpTab);
+    html('companion-links',data.links.map(link=>'<button type="button" data-help-show="'+esc(link.target)+'">'+esc(link.label)+' →</button>').join('')+data.papers.map(id=>'<button type="button" class="paper-notes" data-paper="'+id+'">'+esc(C.papers[id].title)+' ↗</button>').join(''));
+    html('companion-opening-steps',data.opening.map((step,i)=>'<li><span id="companion-step-state-'+i+'"></span><h4>'+esc(step.title)+'</h4><p>'+esc(step.explanation)+'</p><button type="button" data-help-show="'+step.target+'">Show me →</button></li>').join(''));
+    data.opening.forEach((step,i)=>{write('companion-step-state-'+i,step.done?'Earned':'To do');$('companion-step-state-'+i).parentElement.classList.toggle('is-earned',step.done);});write('companion-opening-count',data.opening.filter(step=>step.done).length+' / '+data.opening.length+' earned');
+    html('companion-topics',data.topics.map(topic=>'<details><summary>'+esc(topic.title)+'</summary><p id="companion-topic-'+topic.id+'"></p><button type="button" data-help-show="'+topic.target+'">Show the relevant controls →</button>'+topic.papers.map(id=>'<button type="button" class="paper-notes" data-paper="'+id+'">'+esc(C.papers[id].title)+' ↗</button>').join('')+'</details>').join(''));
+    data.topics.forEach(topic=>write('companion-topic-'+topic.id,topic.body));
+    html('companion-glossary',data.glossary.map((entry,i)=>'<div data-help-word="'+esc(entry.term.toLowerCase())+'"><dt>'+esc(entry.term)+'</dt><dd id="companion-meaning-'+i+'"></dd></div>').join(''));
+    data.glossary.forEach((entry,i)=>write('companion-meaning-'+i,entry.meaning));filterHelpGlossary();
+    const h=data.diagrams.hardware,b=data.diagrams.bank,d=data.diagrams.duty,max=Math.max(1,...h.map(x=>x.value));
+    h.forEach((row,i)=>{write('help-hardware-label-'+i,row.label);write('help-hardware-value-'+i,num(row.value));$('help-hardware-meter-'+i).max=max;$('help-hardware-meter-'+i).value=row.value;});
+    write('help-bank-value',num(b[0].value)+' / '+num(b[1].value));$('help-bank-meter').max=b[1].value;$('help-bank-meter').value=b[0].value;write('help-bank-bonus',b[2].value+' free trust · '+b[3].value+'× full-bank design multiplier');
+    d.forEach((row,i)=>{write('help-duty-value-'+i,row.label+' '+pct(row.value,0));$('help-duty-part-'+i).style.width=pct(row.value,3);});
+  }
+  function filterHelpGlossary(){const query=$('companion-search').value.trim().toLowerCase();let count=0;for(const row of $('companion-glossary').children){row.hidden=query&&!row.textContent.toLowerCase().includes(query);if(!row.hidden)count++;}write('companion-search-status',count+' terms shown');}
+
   function draw(time=performance.now()){const record=view==='ending'?s.endingRecord:null;if(window.CoherentArt)CoherentArt.draw(s,{workload:record?.workload||workload,recipe:record?.recipe||(s.job?.workload?s.job.recipe:s.logicalRecipe),bottleneck:view==='ending'?'Recorded milestone. Continue the laboratory for another question.':$('next-copy').textContent,nextAction:$('next-title').textContent,view,time});}
   function motionActive(){return view==='lab'&&!document.hidden&&!s.paused&&!s.ended&&(s.job||G.metrics(s).creditRate>0&&s.credits<2000)&&!matchMedia('(prefers-reduced-motion: reduce)').matches;}
   function animate(time){animation=0;if(!motionActive())return;draw(time);animation=requestAnimationFrame(animate);}
   function ensureAnimation(){if(!animation&&motionActive())animation=requestAnimationFrame(animate);}
-  document.addEventListener('coherent-inspect',event=>{renderInspector();if(event.detail?.type)tone(event.detail.type);});
+  document.addEventListener('coherent-inspect',event=>{renderInspector();if(event.detail?.type)tone(event.detail.type);if(helpOpen)renderCompanion();});
   document.addEventListener('coherent-focus',event=>{if(event.detail?.type)tone(event.detail.type);});
   document.addEventListener('click',event=>{
     const b=event.target.closest('button');if(!b||b.disabled)return;
-    if(b.dataset.view)setView(b.dataset.view);
+    if(b.id==='help-toggle'){if(helpOpen)closeCompanion();else openCompanion(null,'next',b);}
+    else if(b.id==='companion-close')closeCompanion();
+    else if(b.dataset.helpOpen)openCompanion(b.dataset.helpOpen==='instrument'?{instrument:true}:null,b.dataset.helpOpen==='opening'?'opening':'next',b);
+    else if(b.hasAttribute('data-help-explain')){const source=b.previousElementSibling;openCompanion({action:helpAction(source),title:source.textContent.trim().replace(/\s+/g,' '),source,target:source.id?'#'+source.id:undefined},'blocked',b);}
+    else if(b.dataset.helpTab){helpTab=b.dataset.helpTab;renderCompanion();}
+    else if(b.id==='companion-current'){helpContext=null;renderCompanion();}
+    else if(b.dataset.helpShow)showHelpControl(b.dataset.helpShow);
+    else if(b.dataset.view)setView(b.dataset.view);
     else if(b.dataset.camera)renderStation(G.metrics(s),G.stage(s));
     else if(b.dataset.archive){archive=b.dataset.archive;renderResearch();}
     else if(b.id==='review-engineering'){archive='engineering';setView('research');}
@@ -471,7 +539,7 @@
   });
   const controls={theta:['theta',1], 'shot-count':['shots',1], 'factory-count':['factories',1],calibration:['calibration',.01],service:['service',.01],'analysis-share':['analysisShare',.01],fabrication:['fabrication',.01],volume:['volume',.01]};
   document.addEventListener('input',event=>{
-    const target=event.target;if(target.id==='paper-search'){renderResearch();return;}
+    const target=event.target;if(target.id==='paper-search'){renderResearch();return;}if(target.id==='companion-search'){filterHelpGlossary();return;}
     if(controls[target.id]){const [key,scale]=controls[target.id];if(G.configure(s,key,Number(target.value)*scale)){if(key==='volume'){soundKit?.setVolume(s.volume);if(s.volume===0)pendingSound=null;}clearTaskFeedback();render();save();}}
     else if(target.id==='mitigate')act(()=>G.configure(s,'mitigate',target.checked));
   });
@@ -499,6 +567,7 @@
   document.addEventListener('visibilitychange',()=>{previous=performance.now();if(document.hidden){cancelSounds();if(s.started)save();if(animation)cancelAnimationFrame(animation);animation=0;}else{render();ensureAnimation();}});
   window.addEventListener('pagehide',()=>{cancelSounds();if(s.started)save();});
   window.addEventListener('resize',()=>draw());matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',()=>{draw();ensureAnimation();});
+  document.addEventListener('keydown',event=>{if(event.defaultPrevented||document.querySelector('dialog[open]'))return;if(event.key==='Escape'&&helpOpen){event.preventDefault();closeCompanion();}else if(event.key==='?'&&!event.ctrlKey&&!event.metaKey&&!event.altKey&&!event.target.closest('input,textarea,select,[contenteditable=true]')){event.preventDefault();if(helpOpen)closeCompanion();else openCompanion(null,'next',document.activeElement);}});
   $('chapter-dialog').addEventListener('close',()=>{($('run-experiment').disabled?$('pause-toggle'):$('run-experiment')).focus({preventScroll:true});});
   render();ensureAnimation();
 })();

@@ -382,9 +382,12 @@
     s.funds-=quote.cost;s.designs-=quote.designs;s.orders.push({id:++s.orderSerial,offer:offerId,kind,placedAt:s.elapsed,remaining:quote.seconds});
     note(s,quote.offer.name+': '+quote.units+' '+kind+' prefab units ordered. Final order; delivery then funded workshop commissioning.','engineering');return true;
   }
+  function calibrationStatus(s){
+    const cost=8,seconds=4,reasons=[];if(stage(s)<1)reasons.push('Research coherent control first');if(s.job)reasons.push('The apparatus is occupied');if(s.paused)reasons.push('The laboratory is paused');if(s.ended)reasons.push('Continue the laboratory before new work');if(s.funds<cost)reasons.push('Need calibration funding');return {ready:!reasons.length,reasons,cost,seconds};
+  }
   function calibrate(s) {
-    if(stage(s)<1||s.job||s.paused||s.ended||s.funds<8)return false;
-    s.funds-=8;s.job={id:'calibrate',workload:false,progress:0,duration:4,shots:512,theta:s.theta,mitigate:s.mitigate,bias:metrics(s).bias};return true;
+    const quote=calibrationStatus(s);if(!quote.ready)return false;
+    s.funds-=quote.cost;s.job={id:'calibrate',workload:false,progress:0,duration:quote.seconds,shots:512,theta:s.theta,mitigate:s.mitigate,bias:metrics(s).bias};return true;
   }
   function tutorialEnergy(degrees) {
     const theta=degrees*Math.PI/180;
@@ -680,5 +683,5 @@
     if(s.ended&&(!has(s,'audit')||!s.completed.some(id=>['dynamics','molecule'].includes(id))))throw new Error('Ending requirements are missing.');
     return JSON.parse(JSON.stringify(Object.fromEntries(Object.keys(base).map(key=>[key,s[key]]))));
   }
-  return {content:C,POOLS,MAX_STAFF,newGame,stage,has,hasEngineering,assign,engineeringStatus,buyEngineering,metrics,patchSize,upgradeInfo,buyUpgrade,qualificationNow,projectStatus,buyProject,configure,campusStatus,enterCampus,continueLaboratory,objectiveStatus,precisionStatus,startObjective,startPrecisionRequest,procurementStatus,orderEquipment,experimentRecipe,experimentStatus,startExperiment,calibrate,tutorialEnergy,workloadRecipe,workloadStatus,startWorkload,liveWorkloadStatus,researchStatus,enterResearchProgramme,studyStatus,startStudy,tick,pause,cancel,serialize,parseSave};
+  return {content:C,POOLS,MAX_STAFF,newGame,stage,has,hasEngineering,assign,engineeringStatus,buyEngineering,metrics,patchSize,upgradeInfo,buyUpgrade,qualificationNow,projectStatus,buyProject,configure,campusStatus,enterCampus,continueLaboratory,objectiveStatus,precisionStatus,startObjective,startPrecisionRequest,procurementStatus,orderEquipment,experimentRecipe,experimentStatus,startExperiment,calibrate,calibrationStatus,tutorialEnergy,workloadRecipe,workloadStatus,startWorkload,liveWorkloadStatus,researchStatus,enterResearchProgramme,studyStatus,startStudy,tick,pause,cancel,serialize,parseSave};
 });
