@@ -376,6 +376,7 @@
   document.addEventListener('click',event=>{
     const b=event.target.closest('button');if(!b||b.disabled)return;
     if(b.dataset.view)setView(b.dataset.view);
+    else if(b.dataset.camera)renderStation(G.metrics(s),G.stage(s));
     else if(b.dataset.archive){archive=b.dataset.archive;renderResearch();}
     else if(b.id==='review-engineering'){archive='engineering';setView('research');}
     else if(b.dataset.paper)paperNotes(b.dataset.paper);
@@ -426,7 +427,7 @@
     else if(b.id==='ending-lab')setView('lab');
     else if(b.id==='enter-campus')act(()=>G.enterCampus(s));
     else if(b.id==='continue-lab')act(()=>{if(!G.continueLaboratory(s))return false;view='lab';return true;});
-    else if(b.id==='postcard-button'&&window.CoherentArt)CoherentArt.postcard(s).toBlob(blob=>{if(blob)download(blob,'coherent-for-keir.png');else notice('The postcard could not be exported. Your game save is intact.');},'image/png');
+    else if(b.id==='postcard-button'&&window.CoherentArt)CoherentArt.postcard(s).toBlob(blob=>{if(blob)download(blob,'coherent-run.png');else notice('The postcard could not be exported. Your game save is intact.');},'image/png');
     ensureAnimation();
   });
   const controls={theta:['theta',1], 'shot-count':['shots',1], 'factory-count':['factories',1],calibration:['calibration',.01],service:['service',.01],'analysis-share':['analysisShare',.01],fabrication:['fabrication',.01],volume:['volume',.01]};

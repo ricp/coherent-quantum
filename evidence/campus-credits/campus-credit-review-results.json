@@ -1,0 +1,365 @@
+{
+  "2d-1600": {
+    "url": "file:///Users/ricp/code/AI/singular/index.html",
+    "viewport": [
+      1600,
+      1000
+    ],
+    "overflow": false,
+    "footer": {
+      "x": 181,
+      "y": 900.78125,
+      "width": 1238,
+      "height": 70,
+      "top": 900.78125,
+      "right": 1419,
+      "bottom": 970.78125,
+      "left": 181
+    },
+    "text": "One qubit in return.\nModel & assumptions\nInspired by Paperclips \u2197 and Singular Value \u2197",
+    "anchors": [
+      {
+        "text": "Paperclips \u2197",
+        "href": "https://www.decisionproblem.com/paperclips/index2.html",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "rects": [
+          {
+            "x": 1218.875,
+            "y": 929.78125,
+            "width": 60.953125,
+            "height": 12,
+            "top": 929.78125,
+            "right": 1279.828125,
+            "bottom": 941.78125,
+            "left": 1218.875
+          }
+        ]
+      },
+      {
+        "text": "Singular Value \u2197",
+        "href": "https://singularvalue.org/",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "rects": [
+          {
+            "x": 1303.546875,
+            "y": 929.78125,
+            "width": 79.453125,
+            "height": 12,
+            "top": 929.78125,
+            "right": 1383,
+            "bottom": 941.78125,
+            "left": 1303.546875
+          }
+        ]
+      }
+    ],
+    "dedication": "From one qubit to a useful instrument.Here is one qubit in return.",
+    "visibleForKeir": false,
+    "fonts": "loaded"
+  },
+  "2d-375": {
+    "url": "file:///Users/ricp/code/AI/singular/index.html",
+    "viewport": [
+      375,
+      900
+    ],
+    "overflow": false,
+    "footer": {
+      "x": 1,
+      "y": 729.546875,
+      "width": 373,
+      "height": 170,
+      "top": 729.546875,
+      "right": 374,
+      "bottom": 899.546875,
+      "left": 1
+    },
+    "text": "One qubit in return.\nModel & assumptions\nInspired by Paperclips \u2197 and Singular Value \u2197",
+    "anchors": [
+      {
+        "text": "Paperclips \u2197",
+        "href": "https://www.decisionproblem.com/paperclips/index2.html",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "rects": [
+          {
+            "x": 192.875,
+            "y": 790.546875,
+            "width": 60.953125,
+            "height": 12,
+            "top": 790.546875,
+            "right": 253.828125,
+            "bottom": 802.546875,
+            "left": 192.875
+          }
+        ]
+      },
+      {
+        "text": "Singular Value \u2197",
+        "href": "https://singularvalue.org/",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "rects": [
+          {
+            "x": 277.546875,
+            "y": 790.546875,
+            "width": 79.453125,
+            "height": 12,
+            "top": 790.546875,
+            "right": 357,
+            "bottom": 802.546875,
+            "left": 277.546875
+          }
+        ]
+      }
+    ],
+    "dedication": "From one qubit to a useful instrument.Here is one qubit in return.",
+    "visibleForKeir": false,
+    "fonts": "loaded"
+  },
+  "2d-320": {
+    "url": "file:///Users/ricp/code/AI/singular/index.html",
+    "viewport": [
+      320,
+      900
+    ],
+    "overflow": false,
+    "footer": {
+      "x": 1,
+      "y": 703.046875,
+      "width": 318,
+      "height": 197,
+      "top": 703.046875,
+      "right": 319,
+      "bottom": 900.046875,
+      "left": 1
+    },
+    "text": "One qubit in return.\nModel & assumptions\nInspired by Paperclips \u2197 and Singular Value \u2197",
+    "anchors": [
+      {
+        "text": "Paperclips \u2197",
+        "href": "https://www.decisionproblem.com/paperclips/index2.html",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "rects": [
+          {
+            "x": 74.25,
+            "y": 798.046875,
+            "width": 60.953125,
+            "height": 12,
+            "top": 798.046875,
+            "right": 135.203125,
+            "bottom": 810.046875,
+            "left": 74.25
+          }
+        ]
+      },
+      {
+        "text": "Singular Value \u2197",
+        "href": "https://singularvalue.org/",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "rects": [
+          {
+            "x": 158.921875,
+            "y": 798.046875,
+            "width": 79.453125,
+            "height": 12,
+            "top": 798.046875,
+            "right": 238.375,
+            "bottom": 810.046875,
+            "left": 158.921875
+          }
+        ]
+      }
+    ],
+    "dedication": "From one qubit to a useful instrument.Here is one qubit in return.",
+    "visibleForKeir": false,
+    "fonts": "loaded"
+  },
+  "2d-download": "\u2713 Download saved to /private/tmp/campus-credit-postcard-2d.png",
+  "3d-1600": {
+    "url": "file:///Users/ricp/code/AI/singular/index-3d.html",
+    "viewport": [
+      1600,
+      1000
+    ],
+    "overflow": false,
+    "footer": {
+      "x": 1,
+      "y": 901.40625,
+      "width": 1598,
+      "height": 70,
+      "top": 901.40625,
+      "right": 1599,
+      "bottom": 971.40625,
+      "left": 1
+    },
+    "text": "One qubit in return.\nModel & assumptions\nInspired by Paperclips \u2197 and Singular Value \u2197",
+    "anchors": [
+      {
+        "text": "Paperclips \u2197",
+        "href": "https://www.decisionproblem.com/paperclips/index2.html",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "rects": [
+          {
+            "x": 1398.875,
+            "y": 930.40625,
+            "width": 60.953125,
+            "height": 12,
+            "top": 930.40625,
+            "right": 1459.828125,
+            "bottom": 942.40625,
+            "left": 1398.875
+          }
+        ]
+      },
+      {
+        "text": "Singular Value \u2197",
+        "href": "https://singularvalue.org/",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "rects": [
+          {
+            "x": 1483.546875,
+            "y": 930.40625,
+            "width": 79.453125,
+            "height": 12,
+            "top": 930.40625,
+            "right": 1563,
+            "bottom": 942.40625,
+            "left": 1483.546875
+          }
+        ]
+      }
+    ],
+    "dedication": "From one qubit to a useful instrument.Here is one qubit in return.",
+    "visibleForKeir": false,
+    "fonts": "loaded"
+  },
+  "3d-375": {
+    "url": "file:///Users/ricp/code/AI/singular/index-3d.html",
+    "viewport": [
+      375,
+      900
+    ],
+    "overflow": false,
+    "footer": {
+      "x": 1,
+      "y": 730.125,
+      "width": 373,
+      "height": 170,
+      "top": 730.125,
+      "right": 374,
+      "bottom": 900.125,
+      "left": 1
+    },
+    "text": "One qubit in return.\nModel & assumptions\nInspired by Paperclips \u2197 and Singular Value \u2197",
+    "anchors": [
+      {
+        "text": "Paperclips \u2197",
+        "href": "https://www.decisionproblem.com/paperclips/index2.html",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "rects": [
+          {
+            "x": 192.875,
+            "y": 791.125,
+            "width": 60.953125,
+            "height": 12,
+            "top": 791.125,
+            "right": 253.828125,
+            "bottom": 803.125,
+            "left": 192.875
+          }
+        ]
+      },
+      {
+        "text": "Singular Value \u2197",
+        "href": "https://singularvalue.org/",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "rects": [
+          {
+            "x": 277.546875,
+            "y": 791.125,
+            "width": 79.453125,
+            "height": 12,
+            "top": 791.125,
+            "right": 357,
+            "bottom": 803.125,
+            "left": 277.546875
+          }
+        ]
+      }
+    ],
+    "dedication": "From one qubit to a useful instrument.Here is one qubit in return.",
+    "visibleForKeir": false,
+    "fonts": "loaded"
+  },
+  "3d-320": {
+    "url": "file:///Users/ricp/code/AI/singular/index-3d.html",
+    "viewport": [
+      320,
+      900
+    ],
+    "overflow": false,
+    "footer": {
+      "x": 1,
+      "y": 703.046875,
+      "width": 318,
+      "height": 197,
+      "top": 703.046875,
+      "right": 319,
+      "bottom": 900.046875,
+      "left": 1
+    },
+    "text": "One qubit in return.\nModel & assumptions\nInspired by Paperclips \u2197 and Singular Value \u2197",
+    "anchors": [
+      {
+        "text": "Paperclips \u2197",
+        "href": "https://www.decisionproblem.com/paperclips/index2.html",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "rects": [
+          {
+            "x": 74.25,
+            "y": 798.046875,
+            "width": 60.953125,
+            "height": 12,
+            "top": 798.046875,
+            "right": 135.203125,
+            "bottom": 810.046875,
+            "left": 74.25
+          }
+        ]
+      },
+      {
+        "text": "Singular Value \u2197",
+        "href": "https://singularvalue.org/",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "rects": [
+          {
+            "x": 158.921875,
+            "y": 798.046875,
+            "width": 79.453125,
+            "height": 12,
+            "top": 798.046875,
+            "right": 238.375,
+            "bottom": 810.046875,
+            "left": 158.921875
+          }
+        ]
+      }
+    ],
+    "dedication": "From one qubit to a useful instrument.Here is one qubit in return.",
+    "visibleForKeir": false,
+    "fonts": "loaded"
+  },
+  "3d-download": "\u2713 Download saved to /private/tmp/campus-credit-postcard-3d.png",
+  "errors": ""
+}
