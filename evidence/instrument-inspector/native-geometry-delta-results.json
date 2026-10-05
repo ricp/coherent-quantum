@@ -1,0 +1,557 @@
+[
+  {
+    "camera": "planning",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 85.09375
+    },
+    "constraint": "The factory model is qualified. A full workload may still be limited by footprint, fresh-state waiting, risk or runtime.",
+    "driver": false,
+    "eye": [
+      42.02133674599797,
+      6.514882043635709,
+      12.65958582294235
+    ],
+    "focus": "three-inspector-title",
+    "frames": 3,
+    "heading": "Fresh-state factory bay 1",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 85.09375
+    },
+    "panelHidden": false,
+    "purpose": "An allocated factory supplies fresh accepted ancillary states under the selected logical model. Rehearsal credits are classical planning records, never quantum states stored for later.",
+    "readouts": "Allocated factories2Four patch-sized units eachAccepted-state scenario0.05 / \u03bcsScientific model rateRehearsal credits1,171.2 / 2,000Classical bookkeepingOutput error assumption1.0e-7Distinct from memory and gate errors",
+    "selection": "factory-bay:0",
+    "target": [
+      34.7,
+      1.75,
+      11.5
+    ],
+    "width": 1440,
+    "zoom": 8.811964135130772
+  },
+  {
+    "camera": "planning",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 85.09375
+    },
+    "constraint": "The factory model is qualified. A full workload may still be limited by footprint, fresh-state waiting, risk or runtime.",
+    "driver": false,
+    "eye": [
+      42.02133674599797,
+      6.514882043635709,
+      15.35958582294235
+    ],
+    "focus": "three-inspector-title",
+    "frames": 6,
+    "heading": "Fresh-state factory bay 2",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 85.09375
+    },
+    "panelHidden": false,
+    "purpose": "An allocated factory supplies fresh accepted ancillary states under the selected logical model. Rehearsal credits are classical planning records, never quantum states stored for later.",
+    "readouts": "Allocated factories2Four patch-sized units eachAccepted-state scenario0.05 / \u03bcsScientific model rateRehearsal credits1,171.2 / 2,000Classical bookkeepingOutput error assumption1.0e-7Distinct from memory and gate errors",
+    "selection": "factory-bay:1",
+    "target": [
+      34.7,
+      1.75,
+      14.2
+    ],
+    "width": 1440,
+    "zoom": 8.811964135130772
+  },
+  {
+    "camera": "fabrication",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 85.09375
+    },
+    "constraint": "Both chip and support commissioning matter. Their smaller footprint limits active capacity.",
+    "driver": false,
+    "eye": [
+      -27.605935732225262,
+      3.089891414799473,
+      29.554335850126076
+    ],
+    "focus": "three-inspector-title",
+    "frames": 9,
+    "heading": "Commissioning cell 1",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 85.09375
+    },
+    "panelHidden": false,
+    "purpose": "Funded construction teams commission chip and support capacity. Delivered equipment is stock until workshop time and funding convert it into usable capacity.",
+    "readouts": "Construction teams2Campus-wide team allocationChip commissioning1.68 / lab sPlanned funded rateSupport commissioning1.68 / lab sPlanned funded rateChip share50%The remainder commissions support",
+    "selection": "commissioning-cell:0",
+    "target": [
+      -33,
+      1.25,
+      28.699999999999996
+    ],
+    "width": 1440,
+    "zoom": 5.762900267048501
+  },
+  {
+    "camera": "fabrication",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 85.09375
+    },
+    "constraint": "Both chip and support commissioning matter. Their smaller footprint limits active capacity.",
+    "driver": false,
+    "eye": [
+      -26.225935732225263,
+      3.089891414799473,
+      29.554335850126076
+    ],
+    "focus": "three-inspector-title",
+    "frames": 12,
+    "heading": "Commissioning cell 2",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 85.09375
+    },
+    "panelHidden": false,
+    "purpose": "Funded construction teams commission chip and support capacity. Delivered equipment is stock until workshop time and funding convert it into usable capacity.",
+    "readouts": "Construction teams2Campus-wide team allocationChip commissioning1.68 / lab sPlanned funded rateSupport commissioning1.68 / lab sPlanned funded rateChip share50%The remainder commissions support",
+    "selection": "commissioning-cell:1",
+    "target": [
+      -31.62,
+      1.25,
+      28.699999999999996
+    ],
+    "width": 1440,
+    "zoom": 5.762900267048501
+  },
+  {
+    "camera": "fabrication",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 85.09375
+    },
+    "constraint": "Both chip and support commissioning matter. Their smaller footprint limits active capacity.",
+    "driver": false,
+    "eye": [
+      -13.112397196409596,
+      14.926941822333765,
+      62.014544625924174
+    ],
+    "focus": "three-inspector-title",
+    "frames": 15,
+    "heading": "Commissioning dock / overhead crane",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 85.09375
+    },
+    "panelHidden": false,
+    "purpose": "Funded construction teams commission chip and support capacity. Delivered equipment is stock until workshop time and funding convert it into usable capacity.",
+    "readouts": "Construction teams2Campus-wide team allocationChip commissioning1.68 / lab sPlanned funded rateSupport commissioning1.68 / lab sPlanned funded rateChip share50%The remainder commissions support",
+    "selection": "commissioning-crane:0",
+    "target": [
+      -31.000000000000004,
+      3.3,
+      32.5
+    ],
+    "width": 1440,
+    "zoom": 36.41785900728678
+  },
+  {
+    "camera": "planning",
+    "canvas": {
+      "height": 280,
+      "width": 339,
+      "x": 18,
+      "y": 84.640625
+    },
+    "constraint": "The factory model is qualified. A full workload may still be limited by footprint, fresh-state waiting, risk or runtime.",
+    "driver": false,
+    "eye": [
+      42.02133674599797,
+      6.514882043635709,
+      12.65958582294235
+    ],
+    "focus": "three-inspector-title",
+    "frames": 18,
+    "heading": "Fresh-state factory bay 1",
+    "overflow": false,
+    "panel": {
+      "height": 1148.859375,
+      "width": 339,
+      "x": 18,
+      "y": 364.640625
+    },
+    "panelHidden": false,
+    "purpose": "An allocated factory supplies fresh accepted ancillary states under the selected logical model. Rehearsal credits are classical planning records, never quantum states stored for later.",
+    "readouts": "Allocated factories2Four patch-sized units eachAccepted-state scenario0.05 / \u03bcsScientific model rateRehearsal credits1,171.2 / 2,000Classical bookkeepingOutput error assumption1.0e-7Distinct from memory and gate errors",
+    "selection": "factory-bay:0",
+    "target": [
+      34.7,
+      1.75,
+      11.5
+    ],
+    "width": 375,
+    "zoom": 8.811964135130772
+  },
+  {
+    "camera": "planning",
+    "canvas": {
+      "height": 280,
+      "width": 339,
+      "x": 18,
+      "y": 84.640625
+    },
+    "constraint": "The factory model is qualified. A full workload may still be limited by footprint, fresh-state waiting, risk or runtime.",
+    "driver": false,
+    "eye": [
+      42.02133674599797,
+      6.514882043635709,
+      15.35958582294235
+    ],
+    "focus": "three-inspector-title",
+    "frames": 21,
+    "heading": "Fresh-state factory bay 2",
+    "overflow": false,
+    "panel": {
+      "height": 1148.859375,
+      "width": 339,
+      "x": 18,
+      "y": 364.640625
+    },
+    "panelHidden": false,
+    "purpose": "An allocated factory supplies fresh accepted ancillary states under the selected logical model. Rehearsal credits are classical planning records, never quantum states stored for later.",
+    "readouts": "Allocated factories2Four patch-sized units eachAccepted-state scenario0.05 / \u03bcsScientific model rateRehearsal credits1,171.2 / 2,000Classical bookkeepingOutput error assumption1.0e-7Distinct from memory and gate errors",
+    "selection": "factory-bay:1",
+    "target": [
+      34.7,
+      1.75,
+      14.2
+    ],
+    "width": 375,
+    "zoom": 8.811964135130772
+  },
+  {
+    "camera": "fabrication",
+    "canvas": {
+      "height": 280,
+      "width": 339,
+      "x": 18,
+      "y": 84.640625
+    },
+    "constraint": "Both chip and support commissioning matter. Their smaller footprint limits active capacity.",
+    "driver": false,
+    "eye": [
+      -27.605935732225262,
+      3.089891414799473,
+      29.554335850126076
+    ],
+    "focus": "three-inspector-title",
+    "frames": 24,
+    "heading": "Commissioning cell 1",
+    "overflow": false,
+    "panel": {
+      "height": 1202.109375,
+      "width": 339,
+      "x": 18,
+      "y": 364.640625
+    },
+    "panelHidden": false,
+    "purpose": "Funded construction teams commission chip and support capacity. Delivered equipment is stock until workshop time and funding convert it into usable capacity.",
+    "readouts": "Construction teams2Campus-wide team allocationChip commissioning1.68 / lab sPlanned funded rateSupport commissioning1.68 / lab sPlanned funded rateChip share50%The remainder commissions support",
+    "selection": "commissioning-cell:0",
+    "target": [
+      -33,
+      1.25,
+      28.699999999999996
+    ],
+    "width": 375,
+    "zoom": 5.762900267048501
+  },
+  {
+    "camera": "fabrication",
+    "canvas": {
+      "height": 280,
+      "width": 339,
+      "x": 18,
+      "y": 84.640625
+    },
+    "constraint": "Both chip and support commissioning matter. Their smaller footprint limits active capacity.",
+    "driver": false,
+    "eye": [
+      -26.225935732225263,
+      3.089891414799473,
+      29.554335850126076
+    ],
+    "focus": "three-inspector-title",
+    "frames": 26,
+    "heading": "Commissioning cell 2",
+    "overflow": false,
+    "panel": {
+      "height": 1202.109375,
+      "width": 339,
+      "x": 18,
+      "y": 364.640625
+    },
+    "panelHidden": false,
+    "purpose": "Funded construction teams commission chip and support capacity. Delivered equipment is stock until workshop time and funding convert it into usable capacity.",
+    "readouts": "Construction teams2Campus-wide team allocationChip commissioning1.68 / lab sPlanned funded rateSupport commissioning1.68 / lab sPlanned funded rateChip share50%The remainder commissions support",
+    "selection": "commissioning-cell:1",
+    "target": [
+      -31.62,
+      1.25,
+      28.699999999999996
+    ],
+    "width": 375,
+    "zoom": 5.762900267048501
+  },
+  {
+    "camera": "fabrication",
+    "canvas": {
+      "height": 280,
+      "width": 339,
+      "x": 18,
+      "y": 109.828125
+    },
+    "constraint": "Both chip and support commissioning matter. Their smaller footprint limits active capacity.",
+    "driver": false,
+    "eye": [
+      -13.112397196409596,
+      14.926941822333765,
+      62.014544625924174
+    ],
+    "focus": "three-inspector-title",
+    "frames": 29,
+    "heading": "Commissioning dock / overhead crane",
+    "overflow": false,
+    "panel": {
+      "height": 1234.5,
+      "width": 339,
+      "x": 18,
+      "y": 389.828125
+    },
+    "panelHidden": false,
+    "purpose": "Funded construction teams commission chip and support capacity. Delivered equipment is stock until workshop time and funding convert it into usable capacity.",
+    "readouts": "Construction teams2Campus-wide team allocationChip commissioning1.68 / lab sPlanned funded rateSupport commissioning1.68 / lab sPlanned funded rateChip share50%The remainder commissions support",
+    "selection": "commissioning-crane:0",
+    "target": [
+      -31.000000000000004,
+      3.3,
+      32.5
+    ],
+    "width": 375,
+    "zoom": 36.41785900728678
+  },
+  {
+    "camera": "planning",
+    "canvas": {
+      "height": 280,
+      "width": 284,
+      "x": 18,
+      "y": 109.890625
+    },
+    "constraint": "The factory model is qualified. A full workload may still be limited by footprint, fresh-state waiting, risk or runtime.",
+    "driver": false,
+    "eye": [
+      42.02133674599797,
+      6.514882043635709,
+      12.65958582294235
+    ],
+    "focus": "three-inspector-title",
+    "frames": 32,
+    "heading": "Fresh-state factory bay 1",
+    "overflow": false,
+    "panel": {
+      "height": 1273.90625,
+      "width": 284,
+      "x": 18,
+      "y": 389.890625
+    },
+    "panelHidden": false,
+    "purpose": "An allocated factory supplies fresh accepted ancillary states under the selected logical model. Rehearsal credits are classical planning records, never quantum states stored for later.",
+    "readouts": "Allocated factories2Four patch-sized units eachAccepted-state scenario0.05 / \u03bcsScientific model rateRehearsal credits1,171.2 / 2,000Classical bookkeepingOutput error assumption1.0e-7Distinct from memory and gate errors",
+    "selection": "factory-bay:0",
+    "target": [
+      34.7,
+      1.75,
+      11.5
+    ],
+    "width": 320,
+    "zoom": 8.811964135130772
+  },
+  {
+    "camera": "planning",
+    "canvas": {
+      "height": 280,
+      "width": 284,
+      "x": 18,
+      "y": 109.890625
+    },
+    "constraint": "The factory model is qualified. A full workload may still be limited by footprint, fresh-state waiting, risk or runtime.",
+    "driver": false,
+    "eye": [
+      42.02133674599797,
+      6.514882043635709,
+      15.35958582294235
+    ],
+    "focus": "three-inspector-title",
+    "frames": 35,
+    "heading": "Fresh-state factory bay 2",
+    "overflow": false,
+    "panel": {
+      "height": 1273.90625,
+      "width": 284,
+      "x": 18,
+      "y": 389.890625
+    },
+    "panelHidden": false,
+    "purpose": "An allocated factory supplies fresh accepted ancillary states under the selected logical model. Rehearsal credits are classical planning records, never quantum states stored for later.",
+    "readouts": "Allocated factories2Four patch-sized units eachAccepted-state scenario0.05 / \u03bcsScientific model rateRehearsal credits1,171.2 / 2,000Classical bookkeepingOutput error assumption1.0e-7Distinct from memory and gate errors",
+    "selection": "factory-bay:1",
+    "target": [
+      34.7,
+      1.75,
+      14.2
+    ],
+    "width": 320,
+    "zoom": 8.811964135130772
+  },
+  {
+    "camera": "fabrication",
+    "canvas": {
+      "height": 280,
+      "width": 284,
+      "x": 18,
+      "y": 84.890625
+    },
+    "constraint": "Both chip and support commissioning matter. Their smaller footprint limits active capacity.",
+    "driver": false,
+    "eye": [
+      -27.605935732225262,
+      3.089891414799473,
+      29.554335850126076
+    ],
+    "focus": "three-inspector-title",
+    "frames": 38,
+    "heading": "Commissioning cell 1",
+    "overflow": false,
+    "panel": {
+      "height": 1315.078125,
+      "width": 284,
+      "x": 18,
+      "y": 364.890625
+    },
+    "panelHidden": false,
+    "purpose": "Funded construction teams commission chip and support capacity. Delivered equipment is stock until workshop time and funding convert it into usable capacity.",
+    "readouts": "Construction teams2Campus-wide team allocationChip commissioning1.68 / lab sPlanned funded rateSupport commissioning1.68 / lab sPlanned funded rateChip share50%The remainder commissions support",
+    "selection": "commissioning-cell:0",
+    "target": [
+      -33,
+      1.25,
+      28.699999999999996
+    ],
+    "width": 320,
+    "zoom": 5.762900267048501
+  },
+  {
+    "camera": "fabrication",
+    "canvas": {
+      "height": 280,
+      "width": 284,
+      "x": 18,
+      "y": 84.890625
+    },
+    "constraint": "Both chip and support commissioning matter. Their smaller footprint limits active capacity.",
+    "driver": false,
+    "eye": [
+      -26.225935732225263,
+      3.089891414799473,
+      29.554335850126076
+    ],
+    "focus": "three-inspector-title",
+    "frames": 41,
+    "heading": "Commissioning cell 2",
+    "overflow": false,
+    "panel": {
+      "height": 1315.078125,
+      "width": 284,
+      "x": 18,
+      "y": 364.890625
+    },
+    "panelHidden": false,
+    "purpose": "Funded construction teams commission chip and support capacity. Delivered equipment is stock until workshop time and funding convert it into usable capacity.",
+    "readouts": "Construction teams2Campus-wide team allocationChip commissioning1.68 / lab sPlanned funded rateSupport commissioning1.68 / lab sPlanned funded rateChip share50%The remainder commissions support",
+    "selection": "commissioning-cell:1",
+    "target": [
+      -31.62,
+      1.25,
+      28.699999999999996
+    ],
+    "width": 320,
+    "zoom": 5.762900267048501
+  },
+  {
+    "camera": "fabrication",
+    "canvas": {
+      "height": 280,
+      "width": 284,
+      "x": 18,
+      "y": 84.890625
+    },
+    "constraint": "Both chip and support commissioning matter. Their smaller footprint limits active capacity.",
+    "driver": false,
+    "eye": [
+      -13.112397196409596,
+      14.926941822333765,
+      62.014544625924174
+    ],
+    "focus": "three-inspector-title",
+    "frames": 43,
+    "heading": "Commissioning dock / overhead crane",
+    "overflow": false,
+    "panel": {
+      "height": 1347.46875,
+      "width": 284,
+      "x": 18,
+      "y": 364.890625
+    },
+    "panelHidden": false,
+    "purpose": "Funded construction teams commission chip and support capacity. Delivered equipment is stock until workshop time and funding convert it into usable capacity.",
+    "readouts": "Construction teams2Campus-wide team allocationChip commissioning1.68 / lab sPlanned funded rateSupport commissioning1.68 / lab sPlanned funded rateChip share50%The remainder commissions support",
+    "selection": "commissioning-crane:0",
+    "target": [
+      -31.000000000000004,
+      3.3,
+      32.5
+    ],
+    "width": 320,
+    "zoom": 36.41785900728678
+  }
+]
