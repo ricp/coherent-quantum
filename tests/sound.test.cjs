@@ -31,3 +31,5 @@ test('Rapid selections replace and release the previous sound, with bounded grap
 test('Milestones replace routine clicks, then release priority; enabling sound never blocks the next instrument selection',()=>{
   const c=new Context(),sound=S.create(c);sound.setVolume(.2);assert.ok(sound.play('enable'));assert.ok(sound.play('cryostat-stack'));assert.equal(sound.play('click'),false);sound.stop();assert.ok(sound.play('click'));assert.ok(sound.play('chapter'));assert.equal(sound.play('click'),false);assert.equal(sound.play('result'),false);c.advance(2);assert.ok(sound.play('processor-package'));assert.ok(sound.play('result'));assert.equal(sound.play('memory-patch'),false);c.advance(3);assert.ok(sound.play('memory-patch'));
 });
+
+test('Sound defaults on in new games, while a saved explicit mute choice survives loading',()=>{const G=require('../game.js'),s=G.newGame();assert.equal(s.sound,true);assert.ok(G.configure(s,'sound',false));assert.equal(G.parseSave(G.serialize(s)).sound,false);});
