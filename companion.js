@@ -60,7 +60,7 @@
     if(!r)return {title:'No result recorded yet',text:'Run the actual first known-preparation experiment. Help neither runs trials nor grants evidence.',details};
     let text=r.message;
     if(r.id==='vqe'&&t){
-      details.push(detail('Captured preparation',num(t.theta)+'°'),detail('Actual samples',num(t.shots),'Across three Pauli groups'),detail('Modeled acquisitions',num(t.modeledShots),'Includes the captured mitigation overhead'),detail('Sampled energy',num(t.energy,4)),detail('Classical reference',num(t.reference,4)),detail('Sampling bound','±'+num(t.statistical,4)),detail('Residual bias bound','≤'+num(t.bias,4)),detail('Ansatz mismatch',num(t.ansatzError,4)));
+      details.push(detail('Captured preparation',num(t.theta)+'°'),detail('Actual samples',num(t.shots),'Across three Pauli groups'),detail('Modeled acquisitions',num(t.modeledShots),'Includes the captured mitigation overhead'),detail('Sampled energy',num(t.energy,4)),detail('Classical ground reference',num(t.reference,4)),detail('Sampling bound','±'+num(t.statistical,4)),detail('Residual bias bound','≤'+num(t.bias,4)),detail('Ansatz mismatch',num(t.ansatzError,4)));
       text+=' More shots address sampling uncertainty; they do not remove residual bias or repair a mismatched preparation.';
       if(r.task){details.push(detail('Captured task reference',num(r.task.reference,4),'Distinct from the tutorial ground reference'),detail('Captured task tolerance',num(r.task.tolerance,4)));text+=' This finite task used its captured '+r.task.tolerance+' tolerance against '+(r.task.angle===null?'the ground reference':r.task.angle+'° known preparation')+'.';}
     }
@@ -69,8 +69,8 @@
   }
   function describe(s,context={}){
     const m=G.metrics(s),a=context.action,{item,status,target}=actionData(s,a),navigation=a?.navigation===true;
-    const reasons=[...(status?.reasons||[]),...(context.shellReasons||[])];
-    if(s.paused)reasons.push('Laboratory time is paused. Help and navigation remain available; resume before starting another paid trial.');
+    const reasons=[...(status?.reasons||[]),...(context.shellReasons||[])],pauseBlocked=s.paused&&(navigation||['experiment','study','workload','objective','precision','calibrate'].includes(a?.type));
+    if(pauseBlocked)reasons.push('Laboratory time is paused. Help and navigation remain available; resume before starting another paid trial.');
     if(s.ended)reasons.push('The earned ending is preserved. Continue the laboratory before new campaign actions; Help remains available.');
     if(s.job&&navigation)reasons.push('The current rail control is occupied by a captured job; you can still inspect its target from Help.');
     const title=context.title||item?.title||item?.name||item?.label||'Your laboratory, explained';
@@ -96,7 +96,7 @@
     if(a?.type==='calibrate'&&status)budget.push(detail('Funding',num(status.cost)),detail('Apparatus seconds',num(status.seconds)));
     if(a?.type==='workload'&&item&&status)budget.push(detail('Funding',num(item.fee)),detail('Rehearsal credits',num(status.credits)),detail('Modeled runtime',num(status.runtime)+' μs'),detail('Apparatus seconds',num(item.seconds)));
     if(a?.type==='procurement'&&status?.offer)budget.push(detail('Funding',num(status.cost)),detail('Engineering designs',num(status.designs)),detail('Delivered stock units',num(status.units)),detail('Delivery laboratory seconds',num(status.seconds)));
-    return {title,explanation,budget,reasons:[...new Set(reasons)],ready:!!status?.ready&&!s.paused&&!s.ended&&!context.shellReasons?.length,links,papers:[...new Set([...(item?.papers||[]),...(instrument?.papers||[])])].filter(id=>C.papers[id]),opening,result:result(s),diagrams:{
+    return {title,explanation,budget,reasons:[...new Set(reasons)],ready:!!status?.ready&&!pauseBlocked&&!s.ended&&!context.shellReasons?.length,links,papers:[...new Set([...(item?.papers||[]),...(instrument?.papers||[])])].filter(id=>C.papers[id]),opening,result:result(s),diagrams:{
       hardware:[{label:'Installed',value:m.installed},{label:'Supported',value:m.capacity},{label:'Active · smaller footprint',value:m.active}],
       bank:[{label:'Stored effort',value:s.effort},{label:'Notebook capacity',value:m.effortCap},{label:'Free trust',value:m.freeTrust},{label:'Full-bank design multiplier',value:m.designBonus}],
       duty:[{label:'Calibration',value:m.calibrationDuty},{label:'Services',value:m.effectiveServiceDuty},{label:'Experiments',value:m.experimentDuty}]
