@@ -1,0 +1,298 @@
+[
+  {
+    "camera": "control",
+    "canvas": {
+      "height": 280,
+      "width": 339,
+      "x": 18,
+      "y": 84.640625
+    },
+    "constraint": "Streaming and feedback fit their current budgets. This does not certify a complete workload.",
+    "driver": false,
+    "eye": [
+      39.64166999783756,
+      4.447085498594417,
+      -14.51124450356803
+    ],
+    "focus": "three-inspector-title",
+    "frames": 43,
+    "heading": "Decoder rack 1",
+    "overflow": false,
+    "panel": {
+      "height": 1221.8125,
+      "width": 339,
+      "x": 18,
+      "y": 364.640625
+    },
+    "panelHidden": false,
+    "purpose": "Check ancilla evidence enters a classical decoder. Syndrome events report error evidence; they do not reveal the unknown data state.",
+    "readouts": "Syndrome demand1,608 / \u03bcsAll allocated ideal patchesStreaming capacity4,096 / \u03bcsSeparate from decoding accuracyFeedback latency10 \u03bcsSeparate from streaming throughputController profilebalancedAuthored game tradeoff",
+    "selection": "decoder-rack:0",
+    "target": [
+      35.8,
+      1.95,
+      -20.850000000000005
+    ],
+    "width": 375,
+    "zoom": 7.821360853657269
+  },
+  {
+    "camera": "cryostat",
+    "canvas": {
+      "height": 280,
+      "width": 339,
+      "x": 18,
+      "y": 84.640625
+    },
+    "constraint": "Support covers the installed footprint. More hardware still needs matching support.",
+    "driver": false,
+    "eye": [
+      -2.2787193802812338,
+      7.018832402817196,
+      20.04011302253596
+    ],
+    "focus": "three-inspector-title",
+    "frames": 45,
+    "heading": "Cryostat / copper stages",
+    "overflow": false,
+    "panel": {
+      "height": 1220.421875,
+      "width": 339,
+      "x": 18,
+      "y": 364.640625
+    },
+    "panelHidden": false,
+    "purpose": "Staged cooling is shown as a schematic cutaway. The game combines control and cooling support into one commissioned footprint; it does not simulate temperatures.",
+    "readouts": "Installed3,313Physical qubits after commissioningSupport capacity3,313Control and cooling footprintActive3,313The smaller installed/support footprintCalibration duty36%Competes for apparatus time",
+    "selection": "cryostat-stack:0",
+    "target": [
+      -7.999999999999999,
+      3.2999999999999994,
+      10.6
+    ],
+    "width": 375,
+    "zoom": 11.648111445554845
+  },
+  {
+    "camera": "warehouse",
+    "canvas": {
+      "height": 280,
+      "width": 339,
+      "x": 18,
+      "y": 84.828125
+    },
+    "constraint": "The bay has no received stock. Compare procurement offers and delivery times.",
+    "driver": false,
+    "eye": [
+      5.4262779596327455,
+      7.789580673761286,
+      -18.034141366605976
+    ],
+    "focus": "three-inspector-title",
+    "frames": 47,
+    "heading": "Receiving bay / chip assemblies",
+    "overflow": false,
+    "panel": {
+      "height": 988.328125,
+      "width": 339,
+      "x": 18,
+      "y": 364.828125
+    },
+    "panelHidden": false,
+    "purpose": "This bay receives chip assemblies. Crates represent stock cohorts, not individual qubits; receipt is not installed or active capacity.",
+    "readouts": "Received stock0Awaiting funded commissioningIncoming units00 outstanding ordersPrefab commissioning0 / lab sPlanned funded stock flowInstalled physical qubits3,313Commissioned footprint; separate from stock",
+    "selection": "chip-bay:0",
+    "target": [
+      -4.25,
+      1.5,
+      -34
+    ],
+    "width": 375,
+    "zoom": 19.70019852959225
+  },
+  {
+    "camera": "planning",
+    "canvas": {
+      "height": 280,
+      "width": 339,
+      "x": 18,
+      "y": 109.828125
+    },
+    "constraint": "Protected memory fits this conditional model; logical gates need their own qualification.",
+    "driver": false,
+    "eye": [
+      40.65286803598849,
+      9.62436422339252,
+      31.47723225938101
+    ],
+    "focus": "three-inspector-title",
+    "frames": 49,
+    "heading": "Logical scheduling / allocation console",
+    "overflow": false,
+    "panel": {
+      "height": 1135.21875,
+      "width": 339,
+      "x": 18,
+      "y": 389.828125
+    },
+    "panelHidden": false,
+    "purpose": "Application, routing, spare and factory footprint compete on the same machine. A complete schedule includes memory, gates, fresh states, preparation, readout, feedback and repetitions.",
+    "readouts": "Ideal patches67Not a full-machine cost estimateReserved patches11Routing, spare and factory footprintApplication slots56Available to a workloadSchedule recipecompactThe active job keeps its captured recipe",
+    "selection": "planning-console:0",
+    "target": [
+      30,
+      2.6999999999999997,
+      13.9
+    ],
+    "width": 375,
+    "zoom": 21.68846493393685
+  },
+  {
+    "camera": "control",
+    "canvas": {
+      "height": 280,
+      "width": 284,
+      "x": 18,
+      "y": 59.703125
+    },
+    "constraint": "Streaming and feedback fit their current budgets. This does not certify a complete workload.",
+    "driver": false,
+    "eye": [
+      39.64166999783756,
+      4.447085498594417,
+      -14.51124450356803
+    ],
+    "focus": "three-inspector-title",
+    "frames": 51,
+    "heading": "Decoder rack 1",
+    "overflow": false,
+    "panel": {
+      "height": 1310.609375,
+      "width": 284,
+      "x": 18,
+      "y": 339.703125
+    },
+    "panelHidden": false,
+    "purpose": "Check ancilla evidence enters a classical decoder. Syndrome events report error evidence; they do not reveal the unknown data state.",
+    "readouts": "Syndrome demand1,608 / \u03bcsAll allocated ideal patchesStreaming capacity4,096 / \u03bcsSeparate from decoding accuracyFeedback latency10 \u03bcsSeparate from streaming throughputController profilebalancedAuthored game tradeoff",
+    "selection": "decoder-rack:0",
+    "target": [
+      35.8,
+      1.95,
+      -20.850000000000005
+    ],
+    "width": 320,
+    "zoom": 7.821360853657269
+  },
+  {
+    "camera": "cryostat",
+    "canvas": {
+      "height": 280,
+      "width": 284,
+      "x": 18,
+      "y": 109.890625
+    },
+    "constraint": "Support covers the installed footprint. More hardware still needs matching support.",
+    "driver": false,
+    "eye": [
+      -2.2787193802812338,
+      7.018832402817196,
+      20.04011302253596
+    ],
+    "focus": "three-inspector-title",
+    "frames": 53,
+    "heading": "Cryostat / copper stages",
+    "overflow": false,
+    "panel": {
+      "height": 1316.609375,
+      "width": 284,
+      "x": 18,
+      "y": 389.890625
+    },
+    "panelHidden": false,
+    "purpose": "Staged cooling is shown as a schematic cutaway. The game combines control and cooling support into one commissioned footprint; it does not simulate temperatures.",
+    "readouts": "Installed3,313Physical qubits after commissioningSupport capacity3,313Control and cooling footprintActive3,313The smaller installed/support footprintCalibration duty36%Competes for apparatus time",
+    "selection": "cryostat-stack:0",
+    "target": [
+      -7.999999999999999,
+      3.2999999999999994,
+      10.6
+    ],
+    "width": 320,
+    "zoom": 11.648111445554845
+  },
+  {
+    "camera": "warehouse",
+    "canvas": {
+      "height": 280,
+      "width": 284,
+      "x": 18,
+      "y": 84.890625
+    },
+    "constraint": "The bay has no received stock. Compare procurement offers and delivery times.",
+    "driver": false,
+    "eye": [
+      5.4262779596327455,
+      7.789580673761286,
+      -18.034141366605976
+    ],
+    "focus": "three-inspector-title",
+    "frames": 55,
+    "heading": "Receiving bay / chip assemblies",
+    "overflow": false,
+    "panel": {
+      "height": 1165.40625,
+      "width": 284,
+      "x": 18,
+      "y": 364.890625
+    },
+    "panelHidden": false,
+    "purpose": "This bay receives chip assemblies. Crates represent stock cohorts, not individual qubits; receipt is not installed or active capacity.",
+    "readouts": "Received stock0Awaiting funded commissioningIncoming units00 outstanding ordersPrefab commissioning0 / lab sPlanned funded stock flowInstalled physical qubits3,313Commissioned footprint; separate from stock",
+    "selection": "chip-bay:0",
+    "target": [
+      -4.25,
+      1.5,
+      -34
+    ],
+    "width": 320,
+    "zoom": 19.70019852959225
+  },
+  {
+    "camera": "planning",
+    "canvas": {
+      "height": 280,
+      "width": 284,
+      "x": 18,
+      "y": 109.890625
+    },
+    "constraint": "Protected memory fits this conditional model; logical gates need their own qualification.",
+    "driver": false,
+    "eye": [
+      40.65286803598849,
+      9.62436422339252,
+      31.47723225938101
+    ],
+    "focus": "three-inspector-title",
+    "frames": 57,
+    "heading": "Logical scheduling / allocation console",
+    "overflow": false,
+    "panel": {
+      "height": 1265.40625,
+      "width": 284,
+      "x": 18,
+      "y": 389.890625
+    },
+    "panelHidden": false,
+    "purpose": "Application, routing, spare and factory footprint compete on the same machine. A complete schedule includes memory, gates, fresh states, preparation, readout, feedback and repetitions.",
+    "readouts": "Ideal patches67Not a full-machine cost estimateReserved patches11Routing, spare and factory footprintApplication slots56Available to a workloadSchedule recipecompactThe active job keeps its captured recipe",
+    "selection": "planning-console:0",
+    "target": [
+      30,
+      2.6999999999999997,
+      13.9
+    ],
+    "width": 320,
+    "zoom": 21.68846493393685
+  }
+]

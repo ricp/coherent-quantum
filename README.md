@@ -66,3 +66,5 @@ Instrument Serif is bundled under its [SIL Open Font License](assets/OFL.txt). T
 
 
 The final completion polish is recorded in [visual](CAMPUS-COMPLETION-VISUAL-AUDIT.md), [gameplay](CAMPUS-COMPLETION-GAMEPLAY-AUDIT.md) and [science](CAMPUS-COMPLETION-SCIENCE-AUDIT.md) audits. It improves whole-campus framing, removes stale imported milestone captions, surfaces qualified workload grants, fixes offscreen research focus, and clarifies source dates. Reproducible targeted audit tools live under `analysis-tools/`; generated QA imports stay outside Git.
+
+Both editions credit **Made by Richard Piacentini and GPT-X**, with Richard’s name and LinkedIn mark linking to [his profile](https://www.linkedin.com/in/richardpiacentini/). The [desktop/mobile footer mockup](prototypes/creator-footer-preview.html) precedes the implementation; native desktop, 375/320 and light-appearance evidence is saved in `evidence/creator-footer/`. The [independent AI instrument review](CAMPUS-INSTRUMENT-INSPECTION-REVIEW.md) records the completed inspector and its precise revision scopes.

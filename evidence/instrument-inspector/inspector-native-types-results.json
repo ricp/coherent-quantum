@@ -1,0 +1,534 @@
+[
+  {
+    "type": "planning-console",
+    "camera": "planning",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 215.09375
+    },
+    "constraint": "Protected memory fits this conditional model; logical gates need their own qualification.",
+    "driver": false,
+    "eye": [
+      40.65286803598849,
+      9.62436422339252,
+      31.47723225938101
+    ],
+    "focus": "three-inspector-title",
+    "frames": 5,
+    "heading": "Logical scheduling / allocation console",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 215.09375
+    },
+    "panelHidden": false,
+    "purpose": "Application, routing, spare and factory footprint compete on the same machine. A complete schedule includes memory, gates, fresh states, preparation, readout, feedback and repetitions.",
+    "readouts": "Ideal patches67Not a full-machine cost estimateReserved patches11Routing, spare and factory footprintApplication slots56Available to a workloadSchedule recipecompactThe active job keeps its captured recipe",
+    "selection": "planning-console:0",
+    "target": [
+      30,
+      2.6999999999999997,
+      13.9
+    ],
+    "width": 1440,
+    "zoom": 21.68846493393685
+  },
+  {
+    "type": "commissioning-cell",
+    "camera": "fabrication",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 215.09375
+    },
+    "constraint": "Both chip and support commissioning matter. Their smaller footprint limits active capacity.",
+    "driver": false,
+    "eye": [
+      -30.169397823385424,
+      3.089891414799474,
+      33.370493591414046
+    ],
+    "focus": "three-inspector-title",
+    "frames": 8,
+    "heading": "Commissioning cell 1",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 215.09375
+    },
+    "panelHidden": false,
+    "purpose": "Funded construction teams commission chip and support capacity. Delivered equipment is stock until workshop time and funding convert it into usable capacity.",
+    "readouts": "Construction teams2Campus-wide team allocationChip commissioning1.68 / lab sPlanned funded rateSupport commissioning1.68 / lab sPlanned funded rateChip share50%The remainder commissions support",
+    "selection": "commissioning-cell:0",
+    "target": [
+      -33,
+      1.25,
+      28.699999999999996
+    ],
+    "width": 1440,
+    "zoom": 5.762900267048503
+  },
+  {
+    "type": "memory-patch",
+    "camera": "memory",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 215.09375
+    },
+    "constraint": "Protected memory fits this conditional model; logical gates need their own qualification.",
+    "driver": false,
+    "eye": [
+      -24.03419161353778,
+      6.877775451200443,
+      31.143583837662664
+    ],
+    "focus": "three-inspector-title",
+    "frames": 11,
+    "heading": "Protected memory / rotated patch",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 215.09375
+    },
+    "panelHidden": false,
+    "purpose": "A representative rotated surface-code patch uses data and check qubits. This is a conditional protected memory, not automatically a universal logical processor.",
+    "readouts": "Code distance5More protection consumes more footprintPhysical footprint49 / ideal patchFull-machine costs are largerApplication slots56After routing, spare and factory allocationsMemory error / cycle2.40e-6Conditional selected model",
+    "selection": "memory-patch:0",
+    "target": [
+      -32,
+      1.7,
+      18
+    ],
+    "width": 1440,
+    "zoom": 16.217806817524774
+  },
+  {
+    "type": "processor-package",
+    "camera": "processor",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 215.09375
+    },
+    "constraint": "Installed hardware limits the active footprint; qualified experiments still require their own budgets.",
+    "driver": false,
+    "eye": [
+      12.483799756213916,
+      6.314469841539045,
+      21.34826959775296
+    ],
+    "focus": "three-inspector-title",
+    "frames": 14,
+    "heading": "Processor package / schematic subset",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 215.09375
+    },
+    "panelHidden": false,
+    "purpose": "The package contains physical qubits driven and measured by classical equipment. Installed qubits and Hilbert-space size are not universal computational power.",
+    "readouts": "Installed3,313Physical qubits after commissioningSupport capacity3,313Control and cooling footprintActive3,313The smaller installed/support footprintSelected trial preparation65\u00b0Selected tutorial control; other job kinds do not capture this preparation",
+    "selection": "processor-package:0",
+    "target": [
+      5,
+      1.45,
+      9
+    ],
+    "width": 1440,
+    "zoom": 15.236472284920168
+  },
+  {
+    "type": "research-desk",
+    "camera": "research",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 215.09375
+    },
+    "constraint": "Researchers are building the evidence bank; notebook space sets its capacity.",
+    "driver": false,
+    "eye": [
+      -34.823910743013855,
+      3.7494580170409937,
+      -11.57445272597286
+    ],
+    "focus": "three-inspector-title",
+    "frames": 17,
+    "heading": "Research desk 1",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 215.09375
+    },
+    "panelHidden": false,
+    "purpose": "People and classical analysis turn qualified evidence into research effort and engineering designs. Notebook capacity consumes the same trust assignments as researchers.",
+    "readouts": "Researchers32Campus-wide allocationNotebook capacity23,040Abstract research-effort storageFree trust6Assignments availableDesign generation6.487 / lab sA full research bank increases this rate",
+    "selection": "research-desk:0",
+    "target": [
+      -38.9,
+      1.1,
+      -18.3
+    ],
+    "width": 1440,
+    "zoom": 8.298621424679798
+  },
+  {
+    "type": "decoder-rack",
+    "camera": "control",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 215.09375
+    },
+    "constraint": "Streaming and feedback fit their current budgets. This does not certify a complete workload.",
+    "driver": false,
+    "eye": [
+      39.64166999783756,
+      4.447085498594417,
+      -14.51124450356803
+    ],
+    "focus": "three-inspector-title",
+    "frames": 20,
+    "heading": "Decoder rack 1",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 215.09375
+    },
+    "panelHidden": false,
+    "purpose": "Check ancilla evidence enters a classical decoder. Syndrome events report error evidence; they do not reveal the unknown data state.",
+    "readouts": "Syndrome demand1,608 / \u03bcsAll allocated ideal patchesStreaming capacity4,096 / \u03bcsSeparate from decoding accuracyFeedback latency10 \u03bcsSeparate from streaming throughputController profilebalancedAuthored game tradeoff",
+    "selection": "decoder-rack:0",
+    "target": [
+      35.8,
+      1.95,
+      -20.850000000000005
+    ],
+    "width": 1440,
+    "zoom": 7.821360853657269
+  },
+  {
+    "type": "control-rack",
+    "camera": "control",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 215.09375
+    },
+    "constraint": "Noise is below the selected threshold; footprint, decoder and gate requirements still apply.",
+    "driver": false,
+    "eye": [
+      27.191669997837565,
+      4.447085498594416,
+      -10.51124450356802
+    ],
+    "focus": "three-inspector-title",
+    "frames": 23,
+    "heading": "Control rack 1",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 215.09375
+    },
+    "panelHidden": false,
+    "purpose": "Classical control prepares known states and applies the chosen pulse sequence. Refinement changes the game\u2019s declared noise scenario, rather than revealing a quantum state.",
+    "readouts": "Effective noise0.029%Selected stochastic scenarioRB estimate0.132%A distinct characterization modelDrift0.005Maintenance changes this game parameterExperiment duty19%Fraction available to the apparatus",
+    "selection": "control-rack:0",
+    "target": [
+      23.35,
+      1.9499999999999995,
+      -16.849999999999994
+    ],
+    "width": 1440,
+    "zoom": 7.821360853657269
+  },
+  {
+    "type": "cryostat-stack",
+    "camera": "cryostat",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 215.09375
+    },
+    "constraint": "Support covers the installed footprint. More hardware still needs matching support.",
+    "driver": false,
+    "eye": [
+      -2.2787193802812338,
+      7.018832402817196,
+      20.04011302253596
+    ],
+    "focus": "three-inspector-title",
+    "frames": 26,
+    "heading": "Cryostat / copper stages",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 215.09375
+    },
+    "panelHidden": false,
+    "purpose": "Staged cooling is shown as a schematic cutaway. The game combines control and cooling support into one commissioned footprint; it does not simulate temperatures.",
+    "readouts": "Installed3,313Physical qubits after commissioningSupport capacity3,313Control and cooling footprintActive3,313The smaller installed/support footprintCalibration duty36%Competes for apparatus time",
+    "selection": "cryostat-stack:0",
+    "target": [
+      -7.999999999999999,
+      3.2999999999999994,
+      10.6
+    ],
+    "width": 1440,
+    "zoom": 11.648111445554845
+  },
+  {
+    "type": "service-terminal",
+    "camera": "service",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 215.09375
+    },
+    "constraint": "Service funding competes with analysis and experiments. Tune allocation and price to the visible demand.",
+    "driver": false,
+    "eye": [
+      18.19799939169907,
+      3.828699604604398,
+      34.27669899630347
+    ],
+    "focus": "three-inspector-title",
+    "frames": 28,
+    "heading": "Service / known-preparation terminal",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 215.09375
+    },
+    "panelHidden": false,
+    "purpose": "Known-preparation customer batches share apparatus duty with classical analysis and explicit experiments. Finite precision requests require fresh trial evidence.",
+    "readouts": "Customer batches3.01 / lab sPlanned qualified delivery rateService funding44.71 / lab sSeparate from grants and upkeepAnalysis stations running3Uses shared controller capacityCustomer duty45%Calibration and atomic jobs reserve time",
+    "selection": "service-terminal:0",
+    "target": [
+      15,
+      1.75,
+      29
+    ],
+    "width": 1440,
+    "zoom": 6.51089428980998
+  },
+  {
+    "type": "commissioning-crane",
+    "camera": "fabrication",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 215.09375
+    },
+    "constraint": "Both chip and support commissioning matter. Their smaller footprint limits active capacity.",
+    "driver": false,
+    "eye": [
+      -13.112397196409596,
+      14.926941822333765,
+      62.014544625924174
+    ],
+    "focus": "three-inspector-title",
+    "frames": 31,
+    "heading": "Commissioning dock / overhead crane",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 215.09375
+    },
+    "panelHidden": false,
+    "purpose": "Funded construction teams commission chip and support capacity. Delivered equipment is stock until workshop time and funding convert it into usable capacity.",
+    "readouts": "Construction teams2Campus-wide team allocationChip commissioning1.68 / lab sPlanned funded rateSupport commissioning1.68 / lab sPlanned funded rateChip share50%The remainder commissions support",
+    "selection": "commissioning-crane:0",
+    "target": [
+      -31.000000000000004,
+      3.3,
+      32.5
+    ],
+    "width": 1440,
+    "zoom": 36.41785900728678
+  },
+  {
+    "type": "factory-bay",
+    "camera": "planning",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 215.09375
+    },
+    "constraint": "The factory model is qualified. A full workload may still be limited by footprint, fresh-state waiting, risk or runtime.",
+    "driver": false,
+    "eye": [
+      42.94798255524303,
+      4.5633502938532695,
+      12.806352100818708
+    ],
+    "focus": "three-inspector-title",
+    "frames": 34,
+    "heading": "Fresh-state factory bay 1",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 215.09375
+    },
+    "panelHidden": false,
+    "purpose": "An allocated factory supplies fresh accepted ancillary states under the selected logical model. Rehearsal credits are classical planning records, never quantum states stored for later.",
+    "readouts": "Allocated factories2Four patch-sized units eachAccepted-state scenario0.05 / \u03bcsScientific model rateRehearsal credits1,171.2 / 2,000Classical bookkeepingOutput error assumption1.0e-7Distinct from memory and gate errors",
+    "selection": "factory-bay:0",
+    "target": [
+      34.7,
+      1.75,
+      11.5
+    ],
+    "width": 1440,
+    "zoom": 8.811964135130772
+  },
+  {
+    "type": "support-bay",
+    "camera": "warehouse",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 215.09375
+    },
+    "constraint": "The bay has no received stock. Compare procurement offers and delivery times.",
+    "driver": false,
+    "eye": [
+      13.926277959632746,
+      7.789580673761286,
+      -18.034141366605976
+    ],
+    "focus": "three-inspector-title",
+    "frames": 37,
+    "heading": "Receiving bay / control and cooling",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 215.09375
+    },
+    "panelHidden": false,
+    "purpose": "This bay receives control and cooling assemblies. Crates represent stock cohorts, not individual qubits; receipt is not installed or active capacity.",
+    "readouts": "Received stock0Awaiting funded commissioningIncoming units00 outstanding ordersPrefab commissioning0 / lab sPlanned funded stock flowSupported physical qubits3,313Commissioned footprint; separate from stock",
+    "selection": "support-bay:0",
+    "target": [
+      4.25,
+      1.5,
+      -34
+    ],
+    "width": 1440,
+    "zoom": 19.70019852959225
+  },
+  {
+    "type": "chip-bay",
+    "camera": "warehouse",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 215.09375
+    },
+    "constraint": "The bay has no received stock. Compare procurement offers and delivery times.",
+    "driver": false,
+    "eye": [
+      5.4262779596327455,
+      7.789580673761286,
+      -18.034141366605976
+    ],
+    "focus": "three-inspector-title",
+    "frames": 40,
+    "heading": "Receiving bay / chip assemblies",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 215.09375
+    },
+    "panelHidden": false,
+    "purpose": "This bay receives chip assemblies. Crates represent stock cohorts, not individual qubits; receipt is not installed or active capacity.",
+    "readouts": "Received stock0Awaiting funded commissioningIncoming units00 outstanding ordersPrefab commissioning0 / lab sPlanned funded stock flowInstalled physical qubits3,313Commissioned footprint; separate from stock",
+    "selection": "chip-bay:0",
+    "target": [
+      -4.25,
+      1.5,
+      -34
+    ],
+    "width": 1440,
+    "zoom": 19.70019852959225
+  },
+  {
+    "type": "operations-console",
+    "camera": "operations",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 215.09375
+    },
+    "constraint": "Next: \u201cLet the spins evolve\u201d. Need 5,454 more funding. Deliver qualified customer batches: balance price, service duty, calibration, and analysis duty. Revenue requires actual delivery.",
+    "driver": false,
+    "eye": [
+      4.954012742100917,
+      9.490108282365592,
+      1.2541210244665066
+    ],
+    "focus": "three-inspector-title",
+    "frames": 43,
+    "heading": "Operations / live experiment display",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 215.09375
+    },
+    "panelHidden": false,
+    "purpose": "The console connects the current apparatus job, decoder budgets and next campaign constraint. Its counters are the same engine state used by the ordinary controls.",
+    "readouts": "Active physical qubits3,313Installed and support minimumDecoder demand / capacity1,608 / 4,096 per \u03bcsStreaming traffic, not latencyFeedback latency10 \u03bcsIndependent controller constraintApparatus duty19%Shared with calibration and eligible services",
+    "selection": "operations-console:0",
+    "target": [
+      -4.8,
+      3.15,
+      -14.84
+    ],
+    "width": 1440,
+    "zoom": 19.858460895934577
+  }
+]
