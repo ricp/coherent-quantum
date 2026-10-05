@@ -1,0 +1,47 @@
+{
+  "scope": "Lead native private-browser checks, actual audio only; no user browser or campaign save touched",
+  "checks": {
+    "fresh_default": {
+      "label": "Sound on",
+      "context_before_interaction": false
+    },
+    "pending_latest_mouse_intent": {
+      "inputs": [
+        "Cryostat",
+        "Control"
+      ],
+      "resume_delay_ms": 1000,
+      "pending_cues": [],
+      "after_resume": [
+        "control-rack"
+      ],
+      "sources": 3
+    },
+    "first_mute": {
+      "context_created": false,
+      "cues": [],
+      "saved_sound": false,
+      "reload_label": "Sound off"
+    },
+    "hidden_pending": "Native tab hidden and visible events; stale resume released after return; cues[], sources0, groups0",
+    "saved_preferences": "Strict parse preserves saved muted choice",
+    "suite": {
+      "pass": 92,
+      "fail": 0,
+      "skip": 0
+    },
+    "build_and_syntax": "passed"
+  },
+  "hashes": {
+    "audio.js": "442547f8d247d65d7568bcf464c1751eaae123182871bf2ad76269d17df2d23c",
+    "app.js": "386036b5729684730896fd2e833ac8e4903f4a2333f4fb42d3c6b50e179a5440",
+    "game.js": "4c681c24220f95620cab949e80d862f0aeed4b4f8dccd0dbaf17d7417d566753",
+    "instrument-3d.js": "ad65ad4f09f5d2d75218dce83bb52315b5a0b731bafb5be2217d96ee6b27296f",
+    "index.html": "5233a8dfe161f33b4974edc1834545fce24904699d8a3758705db1659e58f7d7",
+    "index-3d.html": "83b8587f222aba2e1b4d0c3ca9db54dcd6c5f5ca0b026900c2dc9432041bb7c2"
+  },
+  "limitations": [
+    "No claim of human listening or physical-device audio quality",
+    "Broader specialist mapping/tour checks precede default preference revision; targeted activation rechecks cover final source"
+  ]
+}

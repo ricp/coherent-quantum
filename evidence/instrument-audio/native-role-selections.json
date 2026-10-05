@@ -1,0 +1,190 @@
+{
+  "allNativeCues": [
+    {
+      "accepted": true,
+      "kind": "operations-console",
+      "time": 164459.40000000596
+    },
+    {
+      "accepted": true,
+      "kind": "operations-console",
+      "time": 188614.60000000897
+    },
+    {
+      "accepted": true,
+      "kind": "chip-bay",
+      "time": 188658.80000001192
+    },
+    {
+      "accepted": true,
+      "kind": "support-bay",
+      "time": 188700
+    },
+    {
+      "accepted": true,
+      "kind": "factory-bay",
+      "time": 188741.70000000295
+    },
+    {
+      "accepted": true,
+      "kind": "commissioning-crane",
+      "time": 188789.30000001192
+    },
+    {
+      "accepted": true,
+      "kind": "service-terminal",
+      "time": 188832
+    },
+    {
+      "accepted": true,
+      "kind": "cryostat-stack",
+      "time": 188872.5
+    },
+    {
+      "accepted": true,
+      "kind": "control-rack",
+      "time": 188921
+    },
+    {
+      "accepted": true,
+      "kind": "decoder-rack",
+      "time": 188967.60000000897
+    },
+    {
+      "accepted": true,
+      "kind": "research-desk",
+      "time": 189011.60000000897
+    },
+    {
+      "accepted": true,
+      "kind": "processor-package",
+      "time": 189055.40000000596
+    },
+    {
+      "accepted": true,
+      "kind": "memory-patch",
+      "time": 189096.80000001192
+    },
+    {
+      "accepted": true,
+      "kind": "commissioning-cell",
+      "time": 189138.40000000596
+    },
+    {
+      "accepted": true,
+      "kind": "planning-console",
+      "time": 189181
+    },
+    {
+      "accepted": true,
+      "kind": "control-rack",
+      "time": 221020.60000000897
+    },
+    {
+      "accepted": true,
+      "kind": "decoder-rack",
+      "time": 221048.5
+    },
+    {
+      "accepted": true,
+      "kind": "click",
+      "time": 246885.20000000295
+    },
+    {
+      "accepted": true,
+      "kind": "click",
+      "time": 266827.10000000894
+    },
+    {
+      "accepted": true,
+      "kind": "control-rack",
+      "time": 266898.3000000119
+    },
+    {
+      "accepted": true,
+      "kind": "result",
+      "time": 284858.40000000596
+    }
+  ],
+  "diagnostics": {
+    "context": "running",
+    "groups": 0,
+    "lastKind": "result",
+    "played": 25,
+    "sources": 0,
+    "volume": 0.2
+  },
+  "method": "Independent private Chromium; native dropdown/inspect/Escape for all14 types. Last14 records are clean corrected matrix; early preliminary operations reopen omitted here.",
+  "roles": [
+    {
+      "accepted": true,
+      "kind": "operations-console",
+      "time": 188614.60000000897
+    },
+    {
+      "accepted": true,
+      "kind": "chip-bay",
+      "time": 188658.80000001192
+    },
+    {
+      "accepted": true,
+      "kind": "support-bay",
+      "time": 188700
+    },
+    {
+      "accepted": true,
+      "kind": "factory-bay",
+      "time": 188741.70000000295
+    },
+    {
+      "accepted": true,
+      "kind": "commissioning-crane",
+      "time": 188789.30000001192
+    },
+    {
+      "accepted": true,
+      "kind": "service-terminal",
+      "time": 188832
+    },
+    {
+      "accepted": true,
+      "kind": "cryostat-stack",
+      "time": 188872.5
+    },
+    {
+      "accepted": true,
+      "kind": "control-rack",
+      "time": 188921
+    },
+    {
+      "accepted": true,
+      "kind": "decoder-rack",
+      "time": 188967.60000000897
+    },
+    {
+      "accepted": true,
+      "kind": "research-desk",
+      "time": 189011.60000000897
+    },
+    {
+      "accepted": true,
+      "kind": "processor-package",
+      "time": 189055.40000000596
+    },
+    {
+      "accepted": true,
+      "kind": "memory-patch",
+      "time": 189096.80000001192
+    },
+    {
+      "accepted": true,
+      "kind": "commissioning-cell",
+      "time": 189138.40000000596
+    },
+    {
+      "accepted": true,
+      "kind": "planning-console",
+      "time": 189181
+    }
+  ]
+}

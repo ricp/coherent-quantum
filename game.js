@@ -17,7 +17,7 @@
   const stage = s => has(s,'accounting') ? 5 : has(s,'threshold') ? 4 : has(s,'classical') ? 3 : has(s,'coupled') ? 2 : has(s,'nakamura') ? 1 : 0;
   const campusDefaults = () => ({campusRevision:1,objectiveResults:[],precisionResults:[],orders:[],orderSerial:0,trialSerial:0,chipStock:0,supportStock:0,logicalRecipe:'balanced',controllerProfile:'balanced',completedRecipes:{},endingRecord:null,epilogue:false});
   function newGame(seed = 424242) {
-    return {...campusDefaults(),researchRevision:1,researchResults:[],version:2,notebooks:1,designs:0,engineering:[],price:8,autoPrice:false,autoCalibration:false,automation:0,analysisShare:1,workshops:0,fabrication:.5,fabricated:0,integrated:0,started:false,paused:false,elapsed:0,funds:60,effort:0,done:[],qualified:[],module:0,rack:0,staff:1,pulse:0,decoder:0,drift:.3,distance:3,factories:0,calibration:0,service:0,theta:20,shots:1,mitigate:false,credits:0,reputation:0,seed:seed>>>0,job:null,result:null,tutorial:null,completed:[],ended:false,volume:.2,sound:false,theme:'dark',log:[]};
+    return {...campusDefaults(),researchRevision:1,researchResults:[],version:2,notebooks:1,designs:0,engineering:[],price:8,autoPrice:false,autoCalibration:false,automation:0,analysisShare:1,workshops:0,fabrication:.5,fabricated:0,integrated:0,started:false,paused:false,elapsed:0,funds:60,effort:0,done:[],qualified:[],module:0,rack:0,staff:1,pulse:0,decoder:0,drift:.3,distance:3,factories:0,calibration:0,service:0,theta:20,shots:1,mitigate:false,credits:0,reputation:0,seed:seed>>>0,job:null,result:null,tutorial:null,completed:[],ended:false,volume:.2,sound:true,theme:'dark',log:[]};
   }
   function random(s) {
     s.seed = (Math.imul(s.seed,1664525)+1013904223)>>>0;
