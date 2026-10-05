@@ -1,0 +1,1163 @@
+{
+  "campus": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.64,
+      "zoomMax": 450,
+      "zoomDistance": 108.41586599755591,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 1,
+      "calls": 122,
+      "triangles": 137794,
+      "geometries": 39,
+      "textures": 37,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": true,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 1,
+        "modulePackages": 4,
+        "installed": 5022,
+        "supported": 5022,
+        "active": 5022,
+        "coax": 32,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 2,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 102,
+          "kinds": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "requested": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 24
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 4000
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 7680
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 2000
+            },
+            {
+              "name": "Readout",
+              "start": 7760,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 7800,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 7860,
+          "runtime": 7860,
+          "repetitions": 1
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 34,
+      "y": 240.359375,
+      "width": 1532,
+      "height": 620,
+      "top": 240.359375,
+      "right": 1566,
+      "bottom": 860.359375,
+      "left": 34
+    },
+    "scroll": [
+      0,
+      342
+    ],
+    "overflow": false,
+    "input": []
+  },
+  "cryostat": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "cryostat",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 1.5,
+      "zoomMax": 450,
+      "zoomDistance": 17.241809649801848,
+      "cameraEye": [
+        2.0000000000000018,
+        7.799999999999998,
+        24
+      ],
+      "cameraTarget": [
+        -8,
+        3,
+        10.799999999999999
+      ],
+      "frames": 2,
+      "calls": 64,
+      "triangles": 91348,
+      "geometries": 39,
+      "textures": 37,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 1,
+        "modulePackages": 4,
+        "installed": 5022,
+        "supported": 5022,
+        "active": 5022,
+        "coax": 32,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 2,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 102,
+          "kinds": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "requested": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 24
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 4000
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 7680
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 2000
+            },
+            {
+              "name": "Readout",
+              "start": 7760,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 7800,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 7860,
+          "runtime": 7860,
+          "repetitions": 1
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 34,
+      "y": 240.359375,
+      "width": 1532,
+      "height": 620,
+      "top": 240.359375,
+      "right": 1566,
+      "bottom": 860.359375,
+      "left": 34
+    },
+    "scroll": [
+      0,
+      342
+    ],
+    "overflow": false,
+    "input": []
+  },
+  "control": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "control",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 1.5,
+      "zoomMax": 450,
+      "zoomDistance": 21.589870309939336,
+      "cameraEye": [
+        42,
+        4.500000000000002,
+        -2
+      ],
+      "cameraTarget": [
+        29,
+        1.65,
+        -19
+      ],
+      "frames": 3,
+      "calls": 54,
+      "triangles": 69330,
+      "geometries": 39,
+      "textures": 37,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 1,
+        "modulePackages": 4,
+        "installed": 5022,
+        "supported": 5022,
+        "active": 5022,
+        "coax": 32,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 2,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 102,
+          "kinds": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "requested": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 24
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 4000
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 7680
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 2000
+            },
+            {
+              "name": "Readout",
+              "start": 7760,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 7800,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 7860,
+          "runtime": 7860,
+          "repetitions": 1
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 34,
+      "y": 240.359375,
+      "width": 1532,
+      "height": 620,
+      "top": 240.359375,
+      "right": 1566,
+      "bottom": 860.359375,
+      "left": 34
+    },
+    "scroll": [
+      0,
+      342
+    ],
+    "overflow": false,
+    "input": []
+  },
+  "top": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "top",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 8.76,
+      "zoomMax": 450,
+      "zoomDistance": 147.00013605435882,
+      "cameraEye": [
+        0,
+        146.52998644570206,
+        11.747470886210834
+      ],
+      "cameraTarget": [
+        0,
+        0,
+        0
+      ],
+      "frames": 4,
+      "calls": 95,
+      "triangles": 93042,
+      "geometries": 39,
+      "textures": 37,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 1,
+        "modulePackages": 4,
+        "installed": 5022,
+        "supported": 5022,
+        "active": 5022,
+        "coax": 32,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 2,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 102,
+          "kinds": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "requested": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 24
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 4000
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 7680
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 2000
+            },
+            {
+              "name": "Readout",
+              "start": 7760,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 7800,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 7860,
+          "runtime": 7860,
+          "repetitions": 1
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 34,
+      "y": 240.359375,
+      "width": 1532,
+      "height": 620,
+      "top": 240.359375,
+      "right": 1566,
+      "bottom": 860.359375,
+      "left": 34
+    },
+    "scroll": [
+      0,
+      342
+    ],
+    "overflow": false,
+    "input": []
+  },
+  "overview": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "overview",
+      "cameraOrbited": false,
+      "zoomEnabled": true,
+      "zoomMin": 7.199999999999999,
+      "zoomMax": 450,
+      "zoomDistance": 125.8133538222394,
+      "cameraEye": [
+        72,
+        60.000000000000014,
+        86
+      ],
+      "cameraTarget": [
+        0,
+        3,
+        0
+      ],
+      "frames": 5,
+      "calls": 95,
+      "triangles": 93042,
+      "geometries": 39,
+      "textures": 37,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 1,
+        "modulePackages": 4,
+        "installed": 5022,
+        "supported": 5022,
+        "active": 5022,
+        "coax": 32,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 2,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 102,
+          "kinds": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "requested": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 24
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 4000
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 7680
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 2000
+            },
+            {
+              "name": "Readout",
+              "start": 7760,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 7800,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 7860,
+          "runtime": 7860,
+          "repetitions": 1
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 34,
+      "y": 240.359375,
+      "width": 1532,
+      "height": 620,
+      "top": 240.359375,
+      "right": 1566,
+      "bottom": 860.359375,
+      "left": 34
+    },
+    "scroll": [
+      0,
+      342
+    ],
+    "overflow": false,
+    "input": []
+  },
+  "wheel-in": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "cryostat",
+      "cameraOrbited": true,
+      "zoomEnabled": true,
+      "zoomMin": 1.5,
+      "zoomMax": 450,
+      "zoomDistance": 15.244721641683656,
+      "cameraEye": [
+        0.8417178656527273,
+        7.244024575513307,
+        22.471067582661597
+      ],
+      "cameraTarget": [
+        -8,
+        3,
+        10.799999999999997
+      ],
+      "frames": 7,
+      "calls": 61,
+      "triangles": 91058,
+      "geometries": 39,
+      "textures": 37,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 1,
+        "modulePackages": 4,
+        "installed": 5022,
+        "supported": 5022,
+        "active": 5022,
+        "coax": 32,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 2,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 102,
+          "kinds": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "requested": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 24
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 4000
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 7680
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 2000
+            },
+            {
+              "name": "Readout",
+              "start": 7760,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 7800,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 7860,
+          "runtime": 7860,
+          "repetitions": 1
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 34,
+      "y": 240.359375,
+      "width": 1532,
+      "height": 620,
+      "top": 240.359375,
+      "right": 1566,
+      "bottom": 860.359375,
+      "left": 34
+    },
+    "scroll": [
+      0,
+      342
+    ],
+    "overflow": false,
+    "input": [
+      {
+        "type": "wheel",
+        "trusted": true,
+        "target": "three-canvas",
+        "x": 800,
+        "y": 550,
+        "delta": -240
+      }
+    ]
+  },
+  "wheel-out": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "cryostat",
+      "cameraOrbited": true,
+      "zoomEnabled": true,
+      "zoomMin": 1.5,
+      "zoomMax": 450,
+      "zoomDistance": 17.241809649801848,
+      "cameraEye": [
+        2.0000000000000018,
+        7.800000000000001,
+        24
+      ],
+      "cameraTarget": [
+        -8,
+        3.0000000000000004,
+        10.799999999999997
+      ],
+      "frames": 8,
+      "calls": 64,
+      "triangles": 91348,
+      "geometries": 39,
+      "textures": 37,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 1,
+        "modulePackages": 4,
+        "installed": 5022,
+        "supported": 5022,
+        "active": 5022,
+        "coax": 32,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 2,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 102,
+          "kinds": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "requested": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 24
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 4000
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 7680
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 2000
+            },
+            {
+              "name": "Readout",
+              "start": 7760,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 7800,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 7860,
+          "runtime": 7860,
+          "repetitions": 1
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 34,
+      "y": 240.359375,
+      "width": 1532,
+      "height": 620,
+      "top": 240.359375,
+      "right": 1566,
+      "bottom": 860.359375,
+      "left": 34
+    },
+    "scroll": [
+      0,
+      342
+    ],
+    "overflow": false,
+    "input": [
+      {
+        "type": "wheel",
+        "trusted": true,
+        "target": "three-canvas",
+        "x": 800,
+        "y": 550,
+        "delta": 240
+      },
+      {
+        "type": "wheel",
+        "trusted": true,
+        "target": "three-canvas",
+        "x": 800,
+        "y": 550,
+        "delta": 240
+      }
+    ]
+  },
+  "errors": ""
+}
