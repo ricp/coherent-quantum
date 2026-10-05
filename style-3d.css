@@ -103,3 +103,8 @@ main{padding:22px 32px 28px}
 .station-reading button{font-size:10px;color:var(--copper);min-height:30px;text-align:left}
 
 #three-canvas:focus-visible{outline:2px solid var(--teal);outline-offset:-3px}
+
+#three-canvas.three-pickable{cursor:pointer}
+#three-hover{position:absolute;z-index:2;pointer-events:none;padding:9px 12px;max-width:min(270px,calc(100% - 24px));box-sizing:border-box;border:1px solid var(--teal);border-radius:4px;background:var(--panel);box-shadow:0 8px 24px #0004;color:var(--ink);font:10px/1.5 var(--mono)}
+#three-hover[hidden]{display:none}
+#three-toolbar button.three-hover-station{color:var(--teal);border-color:var(--teal)}

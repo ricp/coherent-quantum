@@ -8,7 +8,7 @@
   const reduced=matchMedia('(prefers-reduced-motion: reduce)'),fine=matchMedia('(pointer: fine)'),host=document.createElement('div');
   host.id='three-lab';
   const cameras=[['overview','Overview'],['campus','Whole campus'],['cryostat','Cryostat'],['control','Control / decoder'],['research','Research'],['processor','Processor'],['memory','Memory'],['planning','Planning'],['fabrication','Fabrication'],['service','Service gallery'],['top','Top']];
-  host.innerHTML='<div id="three-toolbar" role="group" aria-label="Explore your laboratory"><div id="three-stations" role="group" aria-label="Laboratory camera stations">'+cameras.map(([id,name])=>'<button type="button" data-camera="'+id+'" aria-pressed="'+(id==='overview')+'">'+name+'</button>').join('')+'<button type="button" data-camera="reset">Reset</button></div><button type="button" id="three-follow" aria-pressed="true">Follow experiment</button><button type="button" id="three-expand">Expand lab</button><button type="button" id="three-pause" disabled>Pause lab</button><button type="button" id="three-toggle" aria-pressed="true">2D view</button></div><div id="three-focus-heading"><span id="three-focus-title">Your quantum laboratory</span><span id="three-growth-readout"></span></div><p id="three-event-caption" role="status" aria-live="polite"></p><canvas id="three-canvas" role="img" aria-label="An evolving cutaway superconducting laboratory">The full laboratory remains available in two dimensions and as text.</canvas><dl id="three-key" hidden></dl><p id="three-description"></p><p id="three-status" class="caption" role="status"></p>';
+  host.innerHTML='<div id="three-toolbar" role="group" aria-label="Explore your laboratory"><div id="three-stations" role="group" aria-label="Laboratory camera stations">'+cameras.map(([id,name])=>'<button type="button" data-camera="'+id+'" aria-pressed="'+(id==='overview')+'">'+name+'</button>').join('')+'<button type="button" data-camera="reset">Reset</button></div><button type="button" id="three-follow" aria-pressed="true">Follow experiment</button><button type="button" id="three-expand">Expand lab</button><button type="button" id="three-pause" disabled>Pause lab</button><button type="button" id="three-toggle" aria-pressed="true">2D view</button></div><div id="three-focus-heading"><span id="three-focus-title">Your quantum laboratory</span><span id="three-growth-readout"></span></div><p id="three-event-caption" role="status" aria-live="polite"></p><canvas id="three-canvas" role="img" aria-label="An evolving cutaway superconducting laboratory">The full laboratory remains available in two dimensions and as text.</canvas><span id="three-hover" hidden aria-hidden="true"></span><dl id="three-key" hidden></dl><p id="three-description"></p><p id="three-status" class="caption" role="status"></p>';
   figure.insertBefore(host,machine);
   const $=id=>document.getElementById(id),canvas=$('three-canvas'),description=$('three-description'),status=$('three-status'),toggle=$('three-toggle'),legend=$('three-key'),cameraButtons=[...host.querySelectorAll('[data-camera]')];
   const cue=document.createElement('aside');cue.id='three-expansion';cue.hidden=true;
@@ -25,7 +25,9 @@
   let state,options={},metrics,signature='',cameraMode='overview',cameraOrbited=false,theme='',width=0,height=0,dirty=true,frames=0,driver=0,lastFrame=0,lastGPU=0,lastScreen=0,model={},cameraMove=null,viewEnding=false;
   let transient=[],screens={},activity={},observed={id:'',progress:0,time:0},revealAt=0,legendHTML='',driving=false,follow=true,followJob=null,autoFocused=false,completionAt=0;
   const pooledGeometries=[],pooledMaterials=[],targets={},movables={};
-  let position,scale,quaternion,matrix,origin=[0,0,0];
+  let hitAreas=[],hoveredFacility='',pointerStart=null,raycaster,pointer,facilityOutline;
+  const facilityNames={cryostat:'Cryogenic annex',control:'Control and decoder hall',research:'Research atrium',processor:'Processor island',memory:'Protected memory court',planning:'Logical scheduling hall',fabrication:'Commissioning dock',service:'Service gallery'};
+  let position,scale,quaternion,matrix,verticalAxis,origin=[0,0,0];
   const wings={cryostat:[-8,0,11],control:[33,0,-14.45],research:[-40,0,-18],processor:[4.8,0,3],memory:[-23.73,0,11.8],planning:[20.2,0,9.8],fabrication:[-22.7,0,37.3],automation:[30,0,-10]};
   function text(element,value){if(element.textContent!==value)element.textContent=value;}
   function visible(){return inViewport&&!document.hidden&&(!options.view||['lab','ending'].includes(options.view))&&!document.querySelector('dialog[open]');}
@@ -38,14 +40,14 @@
     cameraButtons.forEach(button=>{button.disabled=!on;const id=button.dataset.camera;button.hidden=!['overview','campus','cryostat','control','research','service','top','reset'].includes(id)&&!targets[id];});
     $('three-expand').disabled=!on;$('three-pause').disabled=!state?.started||state.ended;$('three-pause').textContent=state?.paused?'Resume lab':'Pause lab';
   }
-  function stop(){if(driver)cancelAnimationFrame(driver);driver=0;}
+  function stop(){hideFacilityHover();if(driver)cancelAnimationFrame(driver);driver=0;}
   function fallback(message){available=false;enabled=false;stop();display();text(status,message+' The complete 2D instrument remains available.');}
   function material(name,color,metalness=.45,roughness=.38){const m=new T.MeshStandardMaterial({color,metalness,roughness});palette[name]=m;pooledMaterials.push(m);return m;}
   function geo(g){pooledGeometries.push(g);return g;}
   function initialize(){
     if(!kit){fallback('The local 3D toolkit could not load.');return false;}
     try {
-      T=kit.THREE;position=new T.Vector3();scale=new T.Vector3();quaternion=new T.Quaternion();matrix=new T.Matrix4();
+      T=kit.THREE;verticalAxis=new T.Vector3(0,1,0);raycaster=new T.Raycaster();pointer=new T.Vector2();position=new T.Vector3();scale=new T.Vector3();quaternion=new T.Quaternion();matrix=new T.Matrix4();
       renderer=new T.WebGLRenderer({canvas,antialias:true,powerPreference:'low-power'});renderer.setPixelRatio(Math.min(1.5,devicePixelRatio||1));renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.12;
       renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFShadowMap;renderer.shadowMap.autoUpdate=false;
       scene=new T.Scene();scene.add(new T.HemisphereLight(0xaad4d9,0x27352f,1.55));
@@ -62,7 +64,11 @@
       controls=new kit.OrbitControls(camera,canvas);controls.enableDamping=false;controls.enableZoom=fine.matches;controls.enablePan=false;controls.minPolarAngle=.08;controls.maxPolarAngle=Math.PI*.47;controls.minAzimuthAngle=-Math.PI*.45;controls.maxAzimuthAngle=Math.PI*.45;canvas.style.touchAction='pan-y';
       controls.addEventListener('start',manualInspection);
       controls.addEventListener('change',()=>{dirty=true;ensureDriver();});
-      canvas.tabIndex=0;canvas.title='Drag to orbit; mouse wheel or focused + / − keys to zoom. Re-select a camera to restore its view.';
+      canvas.tabIndex=0;canvas.title='Click a facility to inspect its equipment and controls. Drag to orbit; mouse wheel or focused + / − keys to zoom.';
+      canvas.addEventListener('pointerdown',event=>{if(event.isPrimary===false||event.button!==0){pointerStart=null;hideFacilityHover();return;}pointerStart={id:event.pointerId,x:event.clientX,y:event.clientY,scroll:scrollY,time:performance.now(),moved:false};});
+      canvas.addEventListener('pointermove',event=>{if(pointerStart&&Math.hypot(event.clientX-pointerStart.x,event.clientY-pointerStart.y)>7)pointerStart.moved=true;if(event.pointerType!=='touch'&&!event.buttons)hoverFacility(event);else hideFacilityHover();});
+      canvas.addEventListener('pointerup',event=>{const start=pointerStart;pointerStart=null;if(event.button!==0||!start||start.id!==event.pointerId||start.moved||Math.abs(scrollY-start.scroll)>3||performance.now()-start.time>650)return;const id=pickFacility(event);hideFacilityHover();if(id)cameraButtons.find(button=>button.dataset.camera===id)?.click();});
+      canvas.addEventListener('pointercancel',()=>{pointerStart=null;hideFacilityHover();});canvas.addEventListener('pointerleave',hideFacilityHover);canvas.addEventListener('wheel',()=>{if(pointerStart)pointerStart.moved=true;hideFacilityHover();},{passive:true});
       canvas.addEventListener('keydown',event=>{if(!['+','=','-'].includes(event.key)||!enabled||!available||!visible()||event.ctrlKey||event.metaKey||event.altKey)return;event.preventDefault();manualInspection();camera.position.sub(controls.target).multiplyScalar(event.key==='-'?1.15:1/1.15).clampLength(controls.minDistance,controls.maxDistance).add(controls.target);controls.update();dirty=true;ensureDriver();});
       canvas.addEventListener('webglcontextlost',event=>{event.preventDefault();fallback('The 3D graphics context was lost. Reload to reinitialize the laboratory.');});
       window.addEventListener('pagehide',event=>{stop();if(event.persisted)return;observer.disconnect();controls.dispose();clear();pooledGeometries.forEach(g=>g.dispose());pooledMaterials.forEach(m=>m.dispose());Object.values(screens).forEach(s=>{s.texture.dispose();s.material.dispose();});environment.dispose();renderer.dispose();});
@@ -73,8 +79,27 @@
     }catch(error){fallback('WebGL 2 is unavailable in this browser.');return false;}
   }
   function clear(){
-    for(const child of [...assembly.children]){assembly.remove(child);if(child.isInstancedMesh)child.dispose();}
-    transient.splice(0).forEach(v=>v.dispose());for(const key of Object.keys(movables))delete movables[key];
+    hideFacilityHover();for(const child of [...assembly.children]){assembly.remove(child);if(child.isInstancedMesh)child.dispose();}
+    transient.splice(0).forEach(v=>v.dispose());for(const key of Object.keys(movables))delete movables[key];hitAreas=[];facilityOutline=null;hoveredFacility='';$('three-hover').hidden=true;
+  }
+  function pickFacility(event){
+    if(!available||!enabled||!visible()||!camera||!hitAreas.length)return '';
+    const rect=canvas.getBoundingClientRect();pointer.set(2*(event.clientX-rect.left)/rect.width-1,1-2*(event.clientY-rect.top)/rect.height);raycaster.setFromCamera(pointer,camera);
+    return raycaster.intersectObjects(hitAreas,false)[0]?.object.userData.station||'';
+  }
+  function hideFacilityHover(){
+    if(!hoveredFacility)return;hoveredFacility='';$('three-hover').hidden=true;canvas.classList.remove('three-pickable');cameraButtons.forEach(button=>button.classList.remove('three-hover-station'));if(facilityOutline)facilityOutline.visible=false;dirty=true;ensureDriver();
+  }
+  function hoverFacility(event){
+    const id=pickFacility(event);if(!id){hideFacilityHover();return;}
+    const area=hitAreas.find(area=>area.userData.station===id),tooltip=$('three-hover'),rect=host.getBoundingClientRect();
+    if(hoveredFacility!==id){hoveredFacility=id;tooltip.textContent=facilityNames[id]+' · click to inspect';tooltip.hidden=false;canvas.classList.add('three-pickable');cameraButtons.forEach(button=>button.classList.toggle('three-hover-station',button.dataset.camera===id));facilityOutline.position.copy(area.position);facilityOutline.scale.copy(area.scale).addScalar(.25);facilityOutline.visible=true;dirty=true;ensureDriver();}
+    tooltip.style.left=Math.max(12,Math.min(rect.width-280,event.clientX-rect.left+14))+'px';tooltip.style.top=(event.clientY-rect.top+18)+'px';
+  }
+  function facilityInteractions(){
+    const areas=[['cryostat',[-8,3.4,10.6],[6.4,6.8,6.4]],['control',[29,2.9,-19],[32,5.8,model.campus.controlHallLength]],['research',[-32,model.campus.researchFloors*1.825,-21],[25,model.campus.researchFloors*3.65,22]],['processor',[5,1.4,9],[6.6,2.8,4.75]],['memory',[-32,2.25,17],[16,4.5,15]],['planning',[30,3.4,15],[17,6.8,18]],['fabrication',[-31,3.1,30],[17,6.2,9]],['service',[15,1.8,31],[16,3.6,6]]].filter(([id])=>targets[id]);
+    hitAreas=areas.map(([id,center,size])=>{const mesh=new T.Mesh(geometryPool.box,palette.graphite);mesh.position.set(...center);mesh.scale.set(...size);mesh.userData.station=id;mesh.updateMatrixWorld();return mesh;});
+    const edges=new T.EdgesGeometry(geometryPool.box),mat=new T.LineBasicMaterial({color:0x92e0c6,transparent:true,opacity:.8});transient.push(edges,mat);facilityOutline=new T.LineSegments(edges,mat);facilityOutline.visible=false;assembly.add(facilityOutline);model.facilities=areas.map(([id,center,size])=>({id,center,size}));
   }
   function add(g,mat,x,y,z,w,h,d,rotation,shadow=false){
     const key=g.uuid+mat.uuid+shadow;let b=batches.get(key);if(!b){b={g,mat,shadow,transforms:[]};batches.set(key,b);}
@@ -123,6 +148,9 @@
     for(const dz of [-d/2,d/2]){box(x,h,z+dz,w+.65,.25,.4,'graphite');box(x,h-.2,z+dz,w-.7,.035,.1,'warmLight',false,false);}
     box(x+w/2,h,z,.4,.25,d,'graphite');box(x-w/2,h,z,.4,.25,d,'graphite');doorway(x+w*.32,z+d/2+.13);plaque(title,x,h-.72,z-d/2+.14,w*.73,true,'#d6e8df');
   }
+  function commissioningCrane(){
+    const trolley=new T.Mesh(geometryPool.box,palette.silver),hook=new T.Mesh(geometryPool.box,palette.copper),suspension=new T.Mesh(geometryPool.line,palette.silver);trolley.scale.set(2,.46,1.25);hook.scale.set(.65,.25,.65);assembly.add(trolley,hook,suspension);movables.dockCrane={trolley,hook,suspension};
+  }
   function procurement(s){
     // Actual engine delivery clock; these vehicles are logistics diagrams, not a traffic or quantum transport simulation.
     return (s.orders||[]).slice(0,2).flatMap(order=>{const offer=G.content.procurementOffers?.find(o=>o.id===order.offer);return offer?[{id:order.id,offer:order.offer,kind:order.kind,units:offer.units,seconds:offer.seconds,remaining:order.remaining,progress:Math.max(0,Math.min(1,1-order.remaining/offer.seconds))}]:[];});
@@ -169,7 +197,7 @@
     for(let i=0;i<2+s.rack;i++){const x=51,z=-30+i*5.1;cylinder(x,2.0,z,1.46,3.7,'silver');cylinder(x,3.98,z,1.24,.28,'edge');line([x,4.16,z],[44,4.16,z],.12,'silver');box(x,.12,z,3.8,.23,4.3,'concrete');}
     if(phase>=3){shellBuilding(-32,17,16,15,4.4,'PROTECTED MEMORY COURT');for(const dx of [-8,8])box(-32+dx,.14,17,.12,.04,15.5,'teal',false,false);box(-32,4.66,11,15.8,.18,3,'glass',false,false);walk([-32,9.3],[-32,-5],2.4);}else reserve(-32,17,16,15,'PROTECTED MEMORY');
     if(phase>=4){shellBuilding(30,15,17,18,6.9,'LOGICAL ALLOCATION / FRESH-STATE SCHEDULING');for(let i=0;i<s.factories;i++){box(34.7,1.7,11.5+i*2.7,2.7,3.15,2.1,'factory');box(34.7,3.35,11.5+i*2.7,2.8,.13,2.2,'graphite');box(34.7,2.1,12.6+i*2.7,1.9,1.1,.03,'silicon');}model.factoryBays=s.factories;}else reserve(30,15,17,18,'LOGICAL SCHEDULING');
-    if(s.workshops){shellBuilding(-31,30,17,9,5.8,'COMMISSIONING / CHIP + SUPPORT');for(const dx of [-8,8])box(-31+dx,3.1,31,.3,6.2,.35,'factory');box(-31,6.25,31,16.8,.5,.54,'factory');box(-31,5.86,31,2.0,.46,1.25,'silver');line([-31,5.6,31],[-31,3.15,31],.045,'silver');box(-31,3.0,31,.65,.25,.65,'copper');for(let i=0;i<4;i++){box(-38+i*4.2,.16,36,3.4,.22,3.2,'path');box(-38+i*4.2,.3,36,3.25,.055,3.05,'silicon');}}else reserve(-31,30,17,9,'COMMISSIONING DOCK');
+    if(s.workshops){shellBuilding(-31,30,17,9,5.8,'COMMISSIONING / CHIP + SUPPORT');for(const dx of [-8,8])box(-31+dx,3.1,31,.3,6.2,.35,'factory');box(-31,6.25,31,16.8,.5,.54,'factory');commissioningCrane();for(let i=0;i<4;i++){box(-38+i*4.2,.16,36,3.4,.22,3.2,'path');box(-38+i*4.2,.3,36,3.25,.055,3.05,'silicon');}}else reserve(-31,30,17,9,'COMMISSIONING DOCK');
     // Entry gallery frames the pedestrian spine, with the service economy shown only when its actual stream runs.
     shellBuilding(15,31,16,6,3.4,'KNOWN-PREPARATION SERVICE');box(15,3.55,31,17,.19,7,'graphite');screen('control',15,1.75,29,3.2,1.1);for(let i=0;i<Math.min(7,1+s.rack);i++){box(9+i*1.7,.85,31,1.2,1.65,.84,'cladding');box(9+i*1.7,1.76,31,1.06,.06,.69,'copper');}doorway(21,34.18);plaque('ENTRY / SINGULAR VALUE INSPIRED',14,.16,38,22);
     targets.service={at:[15,1.5,31],eye:[5,2.75,40],title:'Known-preparation customer service',radius:12};
@@ -206,6 +234,7 @@
     box(-6.45,.87,1.23,3.25,1.65,1.26,'graphite',true);box(-6.45,1.73,1.25,3.33,.12,1.36,'silver',true);screen('control',-6.46,2.43,.93,2.42,1.17);
     for(let i=0;i<8+s.pulse;i++){const x=-7.8+i*.16;box(x,1.83,1.54,.095,.035,.13,i%3?'edge':'gold');}plaque('CONTROL / PREPARE / READOUT',-6.4,.44,1.76,4.1);
     if(G.stage(s)>=3){partition(-7.2,-4.73,5.75);for(let i=0;i<1+s.decoder;i++)rack(2.8+(i%2)*1.35,-6.4-Math.floor(i/2)*1.45,i,'decoder');platform(3.475,-7.9,3.05,4.8);plaque('SYNDROME DECODING / CLASSICAL',3.475,.43,-5.65,2.9);}
+    movables.controlIndicatorPoints=Array.from({length:count},(_,i)=>point(-9.65+(i%4)*1.45,3.35,-2.4-Math.floor(i/4)*1.53+.8));movables.decoderIndicatorPoints=G.stage(s)>=3?Array.from({length:1+s.decoder},(_,i)=>point(2.8+(i%2)*1.35,3.35,-6.4-Math.floor(i/2)*1.45+.8)):[];
     targets.control={at:[-4,1.65,-4.55],eye:[9,4.5,12.45],title:'Control, readout and classical decoding',radius:6};model.controlRacks=count;model.decoderRacks=G.stage(s)>=3?1+s.decoder:0;
   }
   function researchWing(s,m){
@@ -214,7 +243,7 @@
       const floor=Math.floor(i/8),j=i%8,x=1.1+(j%2)*16,z=-.3-Math.floor(j/2)*4.3,y=floor*3.65;
       box(x,y+1.03,z,2.75,.14,1.44,'ceramic');for(const dx of [-1.05,1.05])box(x+dx,y+.55,z,.09,.94,1.0,'silver');
       screen('research',x,y+1.68,z-.31,1.35,.71);box(x,y+1.14,z+.28,.85,.035,.25,'graphite');box(x,y+.64,z+1.1,.7,.15,.65,'chair');box(x,y+1.04,z+1.37,.73,.78,.13,'chair');cylinder(x,y+.34,z+1.1,.045,.53,'silver');
-      if(!i)movables.researchPoint=point(x+.44,y+1.26,z+.28);
+      (movables.researchPoints||(movables.researchPoints=[])).push(point(x+.44,y+1.26,z+.28));if(!i)movables.researchPoint=point(x+.44,y+1.26,z+.28);
     }
     for(let i=0;i<s.notebooks;i++){const x=5.2+(i%8)*.36,y=.61+Math.floor(i/8)*.15;box(x,y,-11.3,.27,.085,.47,'gold',false,false);}
     box(6.4,.4,-11.3,3.7,.68,.95,'graphite');plaque('CLASSICAL RESEARCH / NOTEBOOKS',8.2,.22,7.3,15);targets.research={at:[8.2,model.campus.researchFloors*1.65,-3],eye:[-11,model.campus.researchFloors*3.65+5.2,18],title:'The growing research atrium / '+s.staff+' assigned colleagues',radius:18};model.desks=desks;model.researchSeats=s.staff;model.researchers=s.staff;model.notebooks=s.notebooks;
@@ -267,16 +296,19 @@
   }
   function indicators(){
     if(model.schedule){const cursor=new T.Mesh(geometryPool.box,palette.warmLight);cursor.scale.set(.057,3.07,.035);cursor.position.set(25.85,3.36,10.01);cursor.visible=false;assembly.add(cursor);movables.scheduleCursor=cursor;}
-    const make=(name,r,mat='light')=>{const mesh=new T.Mesh(geometryPool.sphere,palette[mat]);mesh.scale.setScalar(r);mesh.visible=false;assembly.add(mesh);movables[name]=mesh;};make('controlPulse',.13);make('readoutPulse',.115,'warmLight');make('detection',.083);make('rehearsal',.071,'warmLight');
+    const make=(name,r,mat='light')=>{const mesh=new T.Mesh(geometryPool.sphere,palette[mat]);mesh.scale.setScalar(r);mesh.visible=false;assembly.add(mesh);movables[name]=mesh;};make('controlPulse',.24);make('readoutPulse',.22,'warmLight');make('detection',.14);make('rehearsal',.071,'warmLight');
     const research=new T.Mesh(geometryPool.box,palette.light);research.scale.set(.2,.05,.11);research.visible=false;assembly.add(research);movables.research=research;
     const service=new T.Mesh(geometryPool.box,palette.warmLight);service.scale.set(.07,.3,.055);service.visible=false;assembly.add(service);movables.service=service;
+    const markers=[...(movables.researchPoints||[]).filter((_,i)=>i%4===0).map(p=>({point:p,kind:'research'})),...(movables.controlIndicatorPoints||[]).map(p=>({point:p,kind:'control'})),...(movables.decoderIndicatorPoints||[]).map(p=>({point:p,kind:'decoder'}))];
+    const mesh=new T.InstancedMesh(geometryPool.box,palette.light,markers.length);mesh.instanceMatrix.setUsage(T.DynamicDrawUsage);assembly.add(mesh);movables.activityMarkers={mesh,markers};model.activityMarkerCount=markers.length;
+    const fans=[...Array.from({length:Math.max(1,state.rack)},(_,i)=>[17+i*3.1,6.92,-25]),...Array.from({length:2+state.rack},(_,i)=>[51,4.19,-30+i*5.1])];const rotors=new T.InstancedMesh(geometryPool.box,palette.silver,fans.length);rotors.instanceMatrix.setUsage(T.DynamicDrawUsage);assembly.add(rotors);movables.supportFans={mesh:rotors,points:fans};model.supportFanCount=fans.length;
     const calibration=new T.Mesh(geometryPool.ring,palette.light);calibration.position.set(-8,6.55,10.6);calibration.scale.setScalar(1.78);calibration.visible=false;assembly.add(calibration);movables.calibration=calibration;
   }
   function flush(){for(const b of batches.values()){const mesh=new T.InstancedMesh(b.g,b.mat,b.transforms.length);b.transforms.forEach((m,i)=>mesh.setMatrixAt(i,m));mesh.instanceMatrix.needsUpdate=true;mesh.castShadow=b.shadow;mesh.receiveShadow=true;assembly.add(mesh);}}
   function structural(s,m,id){const w=recipeFor(s,id),b=G.stage(s)>=5?G.workloadStatus(s,w.id,w.recipe||options.recipe):null;return JSON.stringify([G.stage(s),s.module,s.rack,s.staff,s.notebooks,s.pulse,s.decoder,s.automation,s.workshops,s.distance,m.totalPatches,m.routing,m.spares,m.factoryUnits,Math.floor(Math.log2(1+s.fabricated)/3),Math.floor(Math.log2(1+s.integrated)/3),Math.min(36,m.active),procurement(s).map(o=>[o.id,o.offer,o.kind]),Math.min(8,Math.ceil((s.chipStock||0)/256)),Math.min(8,Math.ceil((s.supportStock||0)/256)),b?[w.id,w.recipe||options.recipe,b.gateTime,Number.isFinite(b.factoryTime)?b.factoryTime:'unqualified',b.feedbackTime,b.runtime]:null]);}
   function reveal(){revealAt=performance.now();canvas.classList.remove('three-reveal');void canvas.offsetWidth;canvas.classList.add('three-reveal');}
   function build(s,m,id){
-    const old=model;clear();batches=new Map();model={chapter:G.stage(s)};for(const key of Object.keys(targets))delete targets[key];room(s,m);place('cryostat',()=>cryostat(s,m));place('control',()=>controlsWing(s,m));place('research',()=>researchWing(s,m));place('processor',()=>processorWing(s,m));place('memory',()=>memoryWing(s,m));place('automation',()=>automationWing(s,m));place('fabrication',()=>manufacturingWing(s,m));place('planning',()=>planningWing(s,m,id));logistics(s);flush();indicators();renderer.shadowMap.needsUpdate=true;dirty=true;
+    const old=model;clear();batches=new Map();model={chapter:G.stage(s)};for(const key of Object.keys(targets))delete targets[key];room(s,m);place('cryostat',()=>cryostat(s,m));place('control',()=>controlsWing(s,m));place('research',()=>researchWing(s,m));place('processor',()=>processorWing(s,m));place('memory',()=>memoryWing(s,m));place('automation',()=>automationWing(s,m));place('fabrication',()=>manufacturingWing(s,m));place('planning',()=>planningWing(s,m,id));logistics(s);flush();indicators();facilityInteractions();renderer.shadowMap.needsUpdate=true;dirty=true;
     const major=old.chapter!==model.chapter||old.controlRacks!==model.controlRacks||old.modulePackages!==model.modulePackages||old.researchSeats!==model.researchSeats||old.notebooks!==model.notebooks||old.coax!==model.coax||old.decoderRacks!==model.decoderRacks||old.analysisStations!==model.analysisStations||old.workshops!==model.workshops||old.chipCommissioningGroups!==model.chipCommissioningGroups||old.supportCommissioningGroups!==model.supportCommissioningGroups||old.patch?.distance!==model.patch?.distance||old.campus?.researchFloors!==model.campus.researchFloors||old.campus?.cryostatCohorts!==model.campus.cryostatCohorts;
     if(major&&s.started&&!s.paused&&!s.ended&&!reduced.matches){reveal();}
     if(!targets[cameraMode])setCamera('overview',true);else if(frames===0)setCamera(cameraMode,true);else if(cameraMode==='overview'&&!cameraOrbited&&old.chapter!==model.chapter)setCamera('overview');display();
@@ -303,11 +335,15 @@
     for(const name of ['controlPulse','readoutPulse','detection','rehearsal','research','service','calibration'])if(movables[name])movables[name].visible=false;
     if(a.experiment&&state.job.id!=='calibrate'&&!state.job.workload&&state.job.id!=='memory'&&state.job.id!=='gates'&&state.job.id!=='factory'){
       const p=reduced.matches?.25:progress;if(p<.56){movables.controlPulse.visible=true;movables.controlPulse.position.copy(movables.controlPath.getPoint(Math.min(1,p/.56)));}else{movables.readoutPulse.visible=true;movables.readoutPulse.position.copy(movables.readoutPath.getPoint(Math.min(1,(p-.56)/.44)));}}
+    if(a.services&&!a.experiment){const phase=motion?(t/7)%1:.25;movables.controlPulse.visible=true;movables.controlPulse.position.copy(movables.controlPath.getPoint(phase));movables.readoutPulse.visible=true;movables.readoutPulse.position.copy(movables.readoutPath.getPoint(phase));}
     if(a.memory&&movables.checkNodes?.length){const i=reduced.matches?0:Math.min(movables.checkNodes.length-1,Math.floor(progress*movables.checkNodes.length));movables.detection.visible=true;movables.detection.position.copy(movables.checkNodes[i]);}
     if(a.rehearsal&&movables.rehearsalPath){movables.rehearsal.visible=true;movables.rehearsal.position.copy(movables.rehearsalPath.getPoint(motion?(t/6)%1:0));}
     if(a.research&&movables.researchPoint){movables.research.visible=true;movables.research.position.copy(movables.researchPoint);movables.research.position.x+=motion?.28*Math.sin(t*.8):0;}
     if(a.services){movables.service.visible=true;movables.service.position.set(9,1.65+(motion?.15*Math.sin(t*3):0),31.46);}
     if(a.calibration){movables.calibration.visible=true;movables.calibration.scale.setScalar(1.78+(motion?.018*Math.sin(t*1.7):0));}
+    if(movables.dockCrane){const {trolley,hook,suspension}=movables.dockCrane,x=-31+(a.construction&&motion?5*Math.sin(t*.55):0),y=3+(a.construction&&motion?.7*Math.sin(t*.8):0);trolley.position.set(x,5.86,31);hook.position.set(x,y,31);suspension.position.set(x,(5.6+y)/2,31);suspension.scale.set(.045,5.6-y,.045);}
+    if(movables.supportFans){const {mesh,points}=movables.supportFans;points.forEach((p,i)=>{position.set(...p);scale.set(1.75,.06,.22);quaternion.setFromAxisAngle(verticalAxis,motion&&a.calibration?t*(.8+metrics.calibrationDuty*3)+i:0);matrix.compose(position,quaternion,scale);mesh.setMatrixAt(i,matrix);});mesh.instanceMatrix.needsUpdate=true;}
+    if(movables.activityMarkers){const {mesh,markers}=movables.activityMarkers;markers.forEach((marker,i)=>{const active=marker.kind==='research'?a.research:marker.kind==='decoder'?a.memory||a.experiment&&['gates','factory'].includes(state.job?.id)||a.experiment&&state.job?.workload:a.experiment||a.services||a.automation;const lit=active&&(!motion||Math.floor(t*(marker.kind==='research'?1.2:3)+i*.35)%3!==0);position.copy(marker.point);scale.set(lit?.24:.07,lit?.12:.03,.065);quaternion.identity();matrix.compose(position,quaternion,scale);mesh.setMatrixAt(i,matrix);});mesh.instanceMatrix.needsUpdate=true;}
     for(let i=0;i<(model.workshopCells||0);i++){const arm=movables['arm'+i];if(arm){arm.mesh.rotation.y=a.construction&&motion?.38*Math.sin(t*1.7+i*.8):0;arm.mesh.position.y=arm.y+(a.construction&&motion?.055*Math.sin(t*2+i):0);}}
     if(cameraMove){const p=Math.min(1,(time-cameraMove.start)/800),e=p*p*(3-2*p);camera.position.lerpVectors(cameraMove.from,cameraMove.to,e);controls.target.lerpVectors(cameraMove.fromTarget,cameraMove.toTarget,e);camera.lookAt(controls.target);controls.update();if(p>=1)cameraMove=null;dirty=true;}
     if(revealAt&&motion){const p=Math.min(1,(time-revealAt)/650);assembly.position.y=-.16*(1-p);if(p>=1){revealAt=0;assembly.position.y=0;}dirty=true;}else {assembly.position.y=0;revealAt=0;}
@@ -329,7 +365,7 @@
     else if(cameraMode==='planning'&&model.allocation)entries=['application','routing','factory','spare'].map(k=>[k,{application:'Application',routing:'Routing',factory:'Factories',spare:'Spare'}[k],model.allocation.kinds[k]+(model.allocation.shortage?' / '+model.allocation.requested[k]+' requested':'')]);
     else entries=[['application','Active physical',fmt(m.active)],['routing','Calibration duty',fmt(m.calibrationDuty*100)+'%'],['factory',held?'Planned service':'Delivered service',fmt(m.delivered,2)+' / lab s'],['spare',held?'Planned research':'Research',fmt(m.effortRate,1)+' / lab s']];
     const html=entries.map(([kind,name,value])=>'<div data-kind="'+kind+'"><dt>'+name+'</dt><dd>'+value+'</dd></div>').join('');if(html!==legendHTML){legend.innerHTML=html;legendHTML=html;}legend.hidden=!enabled||!available;
-    text(status,s.paused?'Laboratory paused. Camera controls still work; all activity is still.':reduced.matches?'Reduced motion: apparatus activity is shown with static indicators.':!s.started?'Your laboratory awaits its first preparation.':s.ended?'A quiet record of the completed resource scenario.':metrics.atomic?'Protected schedule: customer service and commissioning are reserved.':'Choose a wing to inspect. Moving indicators show schematic activity, never an unknown quantum state.');
+    text(status,s.paused?'Laboratory paused. Camera controls still work; all activity is still.':reduced.matches?'Reduced motion: apparatus activity is shown with static indicators.':!s.started?'Your laboratory awaits its first preparation.':s.ended?'A quiet record of the completed resource scenario.':metrics.atomic?'Protected schedule: customer service and commissioning are reserved.':'Click a built facility to inspect its controls. Support fan motion follows calibration duty; moving indicators are schematic, never unknown quantum states.');
   }
   function render(time){if(!size())return;animate(time);if(time-lastScreen>=100||dirty){paintScreens(time);lastScreen=time;}renderer.render(scene,camera);frames++;dirty=false;lastGPU=time;}
   function motionActive(){return operating()&&Object.values(activity).some(Boolean);}
@@ -387,6 +423,6 @@
   reduced.addEventListener('change',()=>{cameraMove=null;revealAt=0;assembly&&(assembly.position.y=0);dirty=true;stop();if(state)draw(state,options);});fine.addEventListener('change',()=>{dirty=true;if(state)draw(state,options);});
   window.addEventListener('resize',()=>{dirty=true;if(state)draw(state,options);});
   window.CoherentArt={draw,postcard:original.postcard};
-  window.Coherent3D=Object.freeze({get diagnostics(){return Object.freeze({available,enabled,scene:viewEnding?'ending':'laboratory',chapter:state?G.stage(state):null,camera:cameraMode,cameraOrbited,zoomEnabled:!!controls?.enableZoom,zoomMin:controls?.minDistance||null,zoomMax:controls?.maxDistance||null,zoomDistance:camera&&controls?camera.position.distanceTo(controls.target):null,cameraEye:camera?.position.toArray()||null,cameraTarget:controls?.target.toArray()||null,frames,calls:renderer?.info.render.calls||0,triangles:renderer?.info.render.triangles||0,geometries:renderer?.info.memory.geometries||0,textures:renderer?.info.memory.textures||0,width,height,pixelRatio:renderer?.getPixelRatio()||0,followExperiment:follow,cadence:motionActive()?(fine.matches&&width>=660?30:20):0,driverActive:!!driver,activity:{...activity},model:JSON.parse(JSON.stringify(model)),visible:visible(),inViewport});}});
+  window.Coherent3D=Object.freeze({get diagnostics(){return Object.freeze({available,enabled,scene:viewEnding?'ending':'laboratory',chapter:state?G.stage(state):null,camera:cameraMode,cameraOrbited,zoomEnabled:!!controls?.enableZoom,zoomMin:controls?.minDistance||null,zoomMax:controls?.maxDistance||null,zoomDistance:camera&&controls?camera.position.distanceTo(controls.target):null,cameraEye:camera?.position.toArray()||null,cameraTarget:controls?.target.toArray()||null,frames,calls:renderer?.info.render.calls||0,triangles:renderer?.info.render.triangles||0,geometries:renderer?.info.memory.geometries||0,textures:renderer?.info.memory.textures||0,width,height,pixelRatio:renderer?.getPixelRatio()||0,followExperiment:follow,cadence:motionActive()?(fine.matches&&width>=660?30:20):0,driverActive:!!driver,activity:{...activity},model:JSON.parse(JSON.stringify(model)),hoveredFacility,facilityCount:hitAreas.length,visible:visible(),inViewport});}});
   if(!available)fallback('The local 3D toolkit could not load.');
 })();
