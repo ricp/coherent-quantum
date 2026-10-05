@@ -156,6 +156,7 @@
   function locate(mesh,x,y,z){mesh.position.copy(point(x,y,z));}
   function place(id,fn){origin=wings[id];const oldTargets=new Set(Object.keys(targets));fn();for(const key of Object.keys(targets))if(!oldTargets.has(key)){const t=targets[key];t.at=t.at.map((n,i)=>n+origin[i]);t.eye=t.eye.map((n,i)=>n+origin[i]);}origin=[0,0,0];}
   function cable(points,mat='copper',radius=.035,floorRoute=false){const curve=new T.CatmullRomCurve3(points.map(p=>point(...p)),false,floorRoute?'catmullrom':'centripetal',floorRoute?0:.5),g=new T.TubeGeometry(curve,48,radius,6,false);transient.push(g);const mesh=new T.Mesh(g,palette[mat]);ownMesh(mesh);assembly.add(mesh);curve.mesh=mesh;return curve;}
+  function raceway(points){for(let i=1;i<points.length;i++){const [ax,az]=points[i-1],[bx,bz]=points[i],dx=bx-ax,dz=bz-az,length=Math.hypot(dx,dz),across=Math.abs(dx)>Math.abs(dz);walk([ax,az],[bx,bz],.36,'graphite',.205);walk([ax,az],[bx,bz],.24,'silicon',.236);for(let j=1;j<length/3;j++){const p=j/(Math.ceil(length/3));box(ax+dx*p,.278,az+dz*p,across?.05:.34,.045,across?.34:.05,'edge',false,false);}}}
   function plaque(value,x,y,z,w=2,vertical=false,color='#bad8d8'){
     const c=document.createElement('canvas');c.width=512;c.height=64;const ctx=c.getContext('2d');ctx.font='23px monospace';ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(value,256,32);const map=new T.CanvasTexture(c);map.colorSpace=T.SRGBColorSpace;const mat=new T.MeshBasicMaterial({map,transparent:true,depthWrite:false}),g=new T.PlaneGeometry(w,w/8),mesh=new T.Mesh(g,mat);if(!vertical)mesh.rotation.x=-Math.PI/2;locate(mesh,x,y,z);ownMesh(mesh);mesh.userData.plaque=true;assembly.add(mesh);transient.push(map,mat,g);
   }
@@ -267,9 +268,10 @@
     const lid=new T.Mesh(geometryPool.shell,palette.glass);locate(lid,0,2.3,z);lid.scale.set(2.18,2.15,2.18);ownMesh(lid,true);assembly.add(lid);
     box(.1,.92,z+.18,.9,.12,.63,'ceramic',true);box(.1,1.0,z+.18,.72,.045,.49,'silicon');transmon(.1,1.04,z+.18,.87);plaque('MIXING STAGE / SCHEMATIC',0,.56,2.02,3.8);
     for(let j=0;j<2;j++){cylinder(-3.2+j*.76,.94,-1.1,.23,1.12,'graphite');cylinder(-3.2+j*.76,1.58,-1.1,.19,.1,'silver');line([-3.2+j*.76,1.62,-1.1],[-2.75,2.1,-.4],.065,'silver');}
-    // Floor routes use zero tension so their bends cannot dip beneath the floor.
-    movables.controlPath=cable([[34.45,1.65,-24.07],[26,.3,-16],[16,.3,-2],[2.72,.3,1.8],[2.58,4.62,.2],[1.7,6.18,-.4],[.5,3.1,-.25],[.1,1.13,-.22]],'copper',.046,true);
-    movables.readoutPath=cable([[.1,1.14,-.22],[-1.45,4.2,-.2],[-1.6,6.21,-.4],[-2.67,4.4,.4],[-2.85,.34,2.24],[16,.34,-2],[26,.34,-16],[34.35,1.9,-24.03]],'silver',.043,true);
+    // A shared service raceway keeps the campus connections architectural; only terminal risers remain exposed.
+    raceway([[34.45,-24.07],[34.45,-15.5],[15.6,-15.5],[15.6,1.8],[2.72,1.8]]);
+    movables.controlPath=cable([[34.45,1.65,-24.07],[34.45,.29,-24.07],[34.45,.29,-15.62],[15.6,.29,-15.62],[15.6,.29,1.68],[2.72,.29,1.68],[2.58,4.62,.2],[1.7,6.18,-.4],[.5,3.1,-.25],[.1,1.13,-.22]],'copper',.021,true);
+    movables.readoutPath=cable([[.1,1.14,-.22],[-1.45,4.2,-.2],[-1.6,6.21,-.4],[-2.67,4.4,.4],[-2.85,.29,1.92],[15.6,.29,1.92],[15.6,.29,-15.38],[34.45,.29,-15.38],[34.35,.29,-24.03],[34.35,1.9,-24.03]],'silver',.019,true);
     targets.cryostat={at:[0,3,-.2],eye:[10,7.8,13],title:'The copper heart of the laboratory',radius:5};
     for(let i=0;i<1+s.module;i++){const x=-2.03+i*.67;box(x,.74,2.22,.51,.52,.62,'graphite',true);box(x,1.023,2.22,.38,.055,.47,'copper');box(x,.76,2.547,.31,.18,.025,'silicon');for(const side of [-1,1])box(x+side*.205,.79,2.557,.022,.14,.02,'gold',false,false);}
     plaque('INSTALLED CHIP MODULES / SCHEMATIC',0,.52,2.79,4.6);model.modulePackages=1+s.module;model.installed=m.installed;model.supported=m.capacity;model.active=m.active;model.coax=coax;endComponent();
