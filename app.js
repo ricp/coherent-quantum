@@ -405,13 +405,13 @@
       write('ending-result',C.workloads.find(w=>record?w.id===record.workload:s.completed.includes(w.id)&&['dynamics','molecule'].includes(w.id))?.validation||'A scientific resource scenario is complete.');
       html('ending-stats','<span><strong>'+clock(record?.elapsed??s.elapsed)+'</strong>visible laboratory time</span><span><strong>'+(record?.discoveries??s.done.length)+'</strong>discoveries</span><span><strong>'+num(record?.active??m.active)+'</strong>physical qubits supported</span><span><strong>'+(record?.distance??s.distance)+'</strong>code distance</span>');
     }
-    draw();renderStation(m,phase);renderInspector();renderExplainButtons();renderCompanion();
+    draw();renderStation(m,phase);renderInspector();renderExplainButtons();write('help-opening-invite',has('deutsch')?'Revisit the guided opening ↗':'Take the guided first step ↗');renderCompanion();
   }
   let helpOpen=false,helpTab='next',helpContext=null,helpTrigger=null,helpTarget=null,railHelp={};
   const helpAttributes={project:'project',engineering:'engineering',upgrade:'upgrade',study:'study',runWorkload:'workload',objective:'objective',precisionRequest:'precision',orderEquipment:'procurement'};
   function clearHelpTarget(){if(helpTarget){helpTarget.node.classList.remove('help-target');if(helpTarget.tabindex===null)helpTarget.node.removeAttribute('tabindex');else helpTarget.node.setAttribute('tabindex',helpTarget.tabindex);helpTarget=null;}}
   function helpAction(button){
-    for(const [key,type]of Object.entries(helpAttributes))if(button.dataset[key])return {type,id:button.dataset[key],kind:button.dataset.kind};
+    for(const [key,type]of Object.entries(helpAttributes))if(button.dataset[key])return {type,id:type==='procurement'?button.dataset.offer:button.dataset[key],kind:button.dataset.kind};
     return button.id==='run-experiment'?railHelp.action:button.id==='calibrate-button'?{type:'calibrate'}:button.id==='enter-campus'?{type:'campus'}:button.id==='enter-research'?{type:'research'}:null;
   }
   function renderExplainButtons(){
@@ -419,11 +419,13 @@
     for(const button of document.querySelectorAll(selector)){
       if(button.tagName!=='BUTTON')continue;let explain=button.nextElementSibling;
       if(!explain?.matches('[data-help-explain]')){explain=document.createElement('button');explain.type='button';explain.className='help-explain';explain.dataset.helpExplain='';button.after(explain);}
+      explain.hidden=button.hidden;
+      if(button.id==='run-experiment'&&button.parentElement.matches('.lab-command-bar')){const group=document.createElement('div');group.className='lab-action-group';button.before(group);group.append(button,explain);}
       explain.textContent='Explain';explain.setAttribute('aria-label','Explain '+button.textContent.trim().replace(/\s+/g,' '));
     }
   }
   function openCompanion(context=null,tab='next',trigger=$('help-toggle')){
-    clearHelpTarget();helpContext=context;helpTab=tab;if(!helpOpen)helpTrigger=trigger;helpOpen=true;$('lab-companion').hidden=false;$('help-toggle').setAttribute('aria-expanded','true');renderCompanion();$('companion-title').focus({preventScroll:true});
+    clearHelpTarget();helpContext=context;helpTab=tab;if(!helpOpen)helpTrigger=trigger;helpOpen=true;if(document.fullscreenElement)document.fullscreenElement.append($('lab-companion'));$('lab-companion').hidden=false;$('help-toggle').setAttribute('aria-expanded','true');renderCompanion();$('companion-title').focus({preventScroll:true});
     if(tab==='opening'){$('companion-opening').open=true;helpTab='next';$('companion-opening').scrollIntoView({block:'nearest'});}
   }
   function closeCompanion(restore=true){helpOpen=false;$('lab-companion').hidden=true;$('help-toggle').setAttribute('aria-expanded','false');if(restore){const target=helpTrigger?.isConnected?helpTrigger:$('help-toggle');target.scrollIntoView({block:'nearest'});target.focus({preventScroll:true});}}
@@ -446,6 +448,7 @@
     if(source?.isConnected&&source.closest('[hidden]'))context.shellReasons.push('This control is currently locked or outside the displayed page. Show me will use the visible next-step fallback.');
     if(instrument){context.action=instrument.quote?{type:'upgrade',id:instrument.quote.id}:null;context.instrument=instrument;context.title=host.dataset.componentName;context.hint=instrument.purpose;context.target=instrument.target;}
     const data=CoherentCompanion.describe(s,context);
+    write('companion-lab-state',s.ended?'The earned ending is preserved. Help remains available.':s.paused?'Laboratory paused. The diagrams show your plan; Help does not resume it.':!s.started?'Your first experiment awaits. Help explains; you choose every paid action.':'Your laboratory keeps running. Help explains; you choose every paid action.');
     write('companion-context',helpContext?'Selected control':'Current next action');write('companion-action-title',data.title);write('companion-explanation',data.explanation);
     write('companion-block-title',data.reasons.length?'What is holding this up?':'This action has no reported blocker');
     html('companion-reasons',data.reasons.map(reason=>'<li>'+esc(reason)+'</li>').join('')||'<li>Review the real control and its quoted costs. Help does not perform the action.</li>');

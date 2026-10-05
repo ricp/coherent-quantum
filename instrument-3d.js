@@ -481,7 +481,7 @@
     else if(button.id==='three-pause')$('pause-toggle').click();
     else if(button.dataset.camera){if(inspected)closeInspector(false);follow=false;autoFocused=false;$('three-follow').setAttribute('aria-pressed','false');$('three-follow').textContent='Manual inspection';setCamera(button.dataset.camera);if(state)annotate();const type=components.find(c=>c.station===cameraMode)?.type;if(type&&enabled&&available)document.dispatchEvent(new CustomEvent('coherent-focus',{detail:{type}}));}
   });
-  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&inspected&&!document.querySelector('dialog[open]')){event.preventDefault();closeInspector();}});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&inspected&&!document.querySelector('dialog[open]')&&document.getElementById('lab-companion')?.hidden!==false){event.preventDefault();closeInspector();}});
   reduced.addEventListener('change',()=>{cameraMove=null;revealAt=0;assembly&&(assembly.position.y=0);dirty=true;stop();if(state)draw(state,options);});fine.addEventListener('change',()=>{dirty=true;if(state)draw(state,options);});
   window.addEventListener('resize',()=>{dirty=true;if(state)draw(state,options);});
   window.CoherentArt={draw,postcard:original.postcard};

@@ -78,7 +78,7 @@
     if(a?.type==='study')explanation+=' A successful fresh study records evidence; its discovery is purchased separately.';
     if(a?.type==='project'&&item?.historyYear)explanation+=' Its paper date is a publication landmark, not a prerequisite ranking. Study qualification and purchase are separate.';
     if(a?.type==='procurement')explanation+=' Delivery creates stock; funded commissioning converts it into installed or supported capacity.';
-    const instrument=context.instrument;if(instrument)explanation+=' '+instrument.purpose+' '+instrument.constraint;
+    const instrument=context.instrument;if(instrument)explanation=[...new Set([explanation,instrument.purpose,instrument.constraint])].join(' ');
     const opening=[
       {title:'Prepare and measure the first signal',done:s.qualified.includes('signal'),explanation:'Use the real known-preparation experiment. Qualification is earned when it finishes.',target:'run-experiment'},
       {title:'Purchase Feynman’s discovery',done:G.has(s,'feynman'),explanation:'Evidence opens the discovery; purchasing it unlocks trust allocation for people and notebooks.',target:'discoveries-section'},
