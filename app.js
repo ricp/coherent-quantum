@@ -13,11 +13,11 @@
   const html=(id,value)=>{
     if(rendered.get(id)===value)return;
     const container=$(id),focused=container.contains(document.activeElement)?document.activeElement:null;
-    const key=focused&&Object.entries(focused.dataset).find(([key])=>['focusKey','project','engineering','upgrade','paper','workload','runWorkload','stationTarget','objective','precisionRequest','orderEquipment','recipe'].includes(key));
+    const key=focused&&Object.entries(focused.dataset).find(([key])=>['focusKey','project','engineering','upgrade','paper','workload','runWorkload','stationTarget','objective','precisionRequest','orderEquipment','recipe','study','studyInspect','studyDetails'].includes(key));
     container.innerHTML=value;rendered.set(id,value);
     if(key){const [name,identity]=key,attribute=name.replace(/[A-Z]/g,c=>'-'+c.toLowerCase()),replacement=container.querySelector('[data-'+attribute+'="'+identity+'"]');(replacement&&!replacement.disabled?replacement:container.querySelector('button:not(:disabled)'))?.focus({preventScroll:true});}
   };
-  let s=G.newGame(),view='lab',archive='discoveries',experiment='signal',workload='dynamics',experimentChosen=false;
+  let s=G.newGame(),view='lab',archive='history',experiment='signal',workload='dynamics',experimentChosen=false;
   let protectedSave=false,lastSave=0,lastSaveAttempt=0,savedAt='',lastResult='',taskFeedback='',lastEnding=false,audio=null,animation=0,noticeKind='',baselineRaw=null;
   try {const raw=localStorage.getItem(KEY);baselineRaw=localStorage.getItem('coherent.v1');show('baseline-notice',raw===null&&baselineRaw!==null);show('settings-baseline',baselineRaw!==null);if(raw!==null){s=G.parseSave(raw);write('save-status','Loaded local save');}}
   catch(error){protectedSave=true;write('save-status','Stored save unreadable');notice('Your stored save could not be loaded: '+error.message+' It is preserved. Import a valid save or explicitly start a new laboratory to replace it.');}
@@ -67,7 +67,7 @@
   }
   const optionalDiscoveries=['factoring','grover','chemistry'];
   const isOptional=p=>p.optional||optionalDiscoveries.includes(p.id);
-  function nextDiscovery(){const available=C.projects.filter(p=>!has(p.id)&&G.projectStatus(s,p.id).available);return available.find(p=>!isOptional(p))||available[0];}
+  function nextDiscovery(){const available=C.projects.filter(p=>!has(p.id)&&G.projectStatus(s,p.id).available);return available.find(p=>!isOptional(p))||(s.researchRevision===1?available.find(p=>C.projects.some(q=>q.historyYear&&!has(q.id)&&q.requires.includes(p.id))):null)||available[0];}
   function researchBlocker(p,m){return p.cost.effort>m.effortCap?'capacity':s.designs<(p.cost.designs||0)?'designs':s.funds<p.cost.funds?'funding':s.effort<p.cost.effort?'effort':'';}
   function qualifiedWorkOpportunity(next,phase){
     if(phase!==5||next?.id!=='audit'||G.projectStatus(s,next.id).ready||s.funds>=next.cost.funds)return null;
@@ -161,9 +161,17 @@
       html('controller-profile-comparison','<dl class="controller-comparison">'+['balanced','streaming','response'].map(profile=>{const preview=G.metrics({...s,controllerProfile:profile});return '<div><dt>'+esc(profile)+'</dt><dd>'+num(preview.decoderRate)+' / μs · '+num(preview.feedback)+' μs</dd></div>';}).join('')+'</dl>');
     }
   }
+  function studyControls(p){
+    if(!p.study)return '';
+    const status=G.studyStatus(s,p.id),receipt=status.receipt;
+    const recipe=receipt?G.experimentRecipe({...s,...receipt.context,...(receipt.tutorial?{theta:receipt.tutorial.theta,mitigate:receipt.tutorial.mitigate,shots:Math.round(Math.log(receipt.tutorial.shots/(3*1024))/Math.log(4))}:{})},p.study.experiment):status.recipe;
+    const captured=receipt?G.metrics({...s,...receipt.context,job:null}):null;
+    const evidence=receipt?'Fresh study qualified at '+clock(receipt.time)+'. '+(p.study.kind==='memory-latency'?'Captured feedback '+num(captured.feedback,1)+' μs; the authored 20 μs comparison '+(receipt.stricterFeedbackReady?'passes':'fails')+'. Memory qualified with no factories; credits are planning records.':p.study.kind==='ansatz-budget'?'Ansatz error '+num(receipt.tutorial.ansatzError,4)+'; sampling bound '+num(receipt.tutorial.statistical,4)+'. The deliberately poor preparation does not qualify the ground energy.':p.study.kind==='decoder-budget'?'Captured stream '+num(captured.syndromeRate)+' / μs versus '+num(captured.decoderRate)+' / μs capacity; feedback '+num(captured.feedback,1)+' μs. No decoding-accuracy change.':'A dated study receipt is retained. This is an authored educational scenario, not a reproduction of the paper.') : '';
+    return '<div class="history-study" data-study-details="'+p.id+'" tabindex="-1"><span class="eyebrow">Fresh evidence / '+p.historyYear+'</span><p>'+esc(p.study.criterion)+'</p><p class="caption">'+(recipe?(receipt?'Recorded entry: ':'New entry: ')+num(recipe.cost)+' funding · '+num(recipe.modeledShots)+' modeled acquisitions · '+num(recipe.seconds,1)+' apparatus s. ':'')+'Study entry is separate from the research purchase. Cancelled or failed studies keep their spent costs.</p>'+(receipt?'<p class="history-evidence">'+esc(evidence)+'</p>':'<button type="button" data-study-inspect="'+p.id+'" '+(!status.available?'disabled':'')+'>Adjust study controls</button><button type="button" data-study="'+p.id+'" '+(!status.ready||s.paused||s.ended?'disabled':'')+'>Run the dated study</button><p class="limiter">'+esc(status.reasons.join(' · '))+'</p>')+'</div>';
+  }
   function discoveryCard(p){
     const q=papers.find(q=>q.id===p.papers[0]),status=G.projectStatus(s,p.id);
-    return '<article class="discovery"><div class="discovery-top"><div class="paper-year">'+esc(q.date)+' / '+esc(q.authors.split(';')[0])+'</div>'+diagram(p.chapter)+'</div><h3>'+esc(p.title)+'</h3><p>'+esc(p.effect)+'</p><div class="discovery-cost">'+costLabel(p.cost)+'</div><button type="button" data-project="'+p.id+'" '+(!status.ready?'disabled':'')+'><span>Research discovery</span><span aria-hidden="true">→</span></button><div class="limiter">'+esc(status.reasons.join(' · '))+'</div><button type="button" class="paper-notes" data-paper="'+p.id+'">Read the primary '+(p.papers.length>1?'papers':'paper')+' ↗</button></article>';
+    return '<article class="discovery"><div class="discovery-top"><div class="paper-year">'+esc(q.date)+' / '+esc(q.authors.split(';')[0])+'</div>'+diagram(p.chapter)+'</div><h3>'+esc(p.title)+'</h3><p>'+esc(p.effect)+'</p>'+studyControls(p)+'<div class="discovery-cost">'+costLabel(p.cost)+'</div><button type="button" data-project="'+p.id+'" '+(!status.ready?'disabled':'')+'><span>Research discovery</span><span aria-hidden="true">→</span></button><div class="limiter">'+esc(status.reasons.join(' · '))+'</div><button type="button" class="paper-notes" data-paper="'+p.id+'">Read the primary '+(p.papers.length>1?'papers':'paper')+' ↗</button></article>';
   }
   function costLabel(cost){return [['funds','funding'],['effort','effort'],['designs','designs']].filter(([key])=>cost[key]>0).map(([key,label])=>num(cost[key])+' '+label).join(' · ');}
   function engineeringCard(e,archiveOnly=false){
@@ -184,13 +192,27 @@
   }
   function renderResearch(){
     const query=$('paper-search').value.trim().toLowerCase();
+    const activeStudy=s.job?.study?C.projects.find(p=>p.id===s.job.study):null;
+    show('research-study-progress',!!activeStudy);show('research-study-running',!!activeStudy);show('research-cancel-study',!!activeStudy);
+    if(activeStudy){$('research-study-progress').value=s.job.progress/s.job.duration;write('research-study-running',(s.paused?'Paused: ':'Running: ')+activeStudy.title+' · '+pct(s.job.progress/s.job.duration,0));}
     const paperCollection=archive==='papers'||archive==='frontier',year=p=>Math.max(...(p.date.match(/\d{4}/g)||[0]).map(Number));
-    const items=archive==='frontier'?papers.filter(p=>year(p)>=2024).sort((a,b)=>year(b)-year(a)):archive==='papers'?papers:archive==='engineering'?C.engineering:C.projects;
-    write('archive-source-count','The archive / '+papers.length+' primary sources');
+    const timelineYear=p=>p.historyYear||(['controller2026','adaptive2026','state-readiness'].includes(p.id)?2026:Math.min(...(C.papers[p.papers[0]].date.match(/\d{4}/g)||[0]).map(Number)));
+    const items=archive==='history'?[...C.projects].sort((a,b)=>timelineYear(a)-timelineYear(b)):archive==='frontier'?papers.filter(p=>year(p)>=2024).sort((a,b)=>year(b)-year(a)):archive==='papers'?papers:archive==='engineering'?C.engineering:C.projects;
+    write('archive-source-count','The archive / '+papers.length+' academic sources');
+    const research=G.researchStatus(s);
+    show('research-programme',archive==='history');
+    write('research-programme-copy',research.enabled?research.purchased+' / '+research.total+' dated discoveries purchased · '+research.completed+' fresh studies qualified. New campaigns require all eleven before the gift ending.':'This save preserves its original campaign and earned ending. Join the dated research programme while the apparatus is idle; a completed laboratory must first Continue from its gift ending.');
+    show('enter-research',!research.enabled&&!s.ended);$('enter-research').disabled=!research.ready;
+    show('research-return-ending',!research.enabled&&s.ended);
+    write('research-programme-reasons',research.enabled?'Study targets and costs are authored game choices; the papers do not certify this laboratory.':research.reasons.join(' · '));
     html('archive-list',items.filter(p=>JSON.stringify(p).toLowerCase().includes(query)).map(p=>{
       if(archive==='engineering')return engineeringCard(p,true);
       const q=paperCollection?p:papers.find(q=>q.id===p.papers[0]);
-      return '<article class="archive-row"><span class="year">'+esc(paperCollection?year(q):Math.max(...p.papers.map(id=>year(C.papers[id]))))+'</span><div>'+(archive==='discoveries'?'<span class="archive-mark">'+diagram(p.chapter)+'</span>':'')+'<h3>'+esc(p.title)+'</h3><p>'+esc(paperCollection?q.authors+' · '+q.type:p.effect)+'</p>'+(paperCollection?'<p class="archive-date">'+esc(q.date)+'</p>':'')+'<span class="archive-status">'+(paperCollection?esc(q.id+' / primary source'):has(p.id)?'Discovered':'Available to read before discovery')+'</span></div><button type="button" data-paper="'+p.id+'">Read '+(paperCollection?'source':'papers')+' ↗</button></article>';
+      if(archive==='history'){
+        const status=G.projectStatus(s,p.id);
+        return '<article class="archive-row history-row" data-history-year="'+timelineYear(p)+'"><span class="year">'+timelineYear(p)+'</span><div><h3>'+esc(p.title)+'</h3><p>'+esc(p.effect)+'</p><p class="caption">Cited-source year or declared publication landmark; supporting sources can have other dates.</p>'+studyControls(p)+'<div class="discovery-cost">'+costLabel(p.cost)+'</div><span class="archive-status">'+(has(p.id)?'Discovered':status.available?'Prerequisites complete':'Complete the prerequisite discoveries')+'</span><p class="limiter">'+esc(status.reasons.join(' · '))+'</p></div><div class="history-actions"><button type="button" data-paper="'+p.id+'">Read academic sources ↗</button><button type="button" data-project="'+p.id+'" '+(!status.ready?'disabled':'')+'>'+(has(p.id)?'Discovered':'Research discovery')+'</button></div></article>';
+      }
+      return '<article class="archive-row"><span class="year">'+esc(paperCollection?year(q):p.historyYear||Math.max(...p.papers.map(id=>year(C.papers[id]))))+'</span><div>'+(archive==='discoveries'?'<span class="archive-mark">'+diagram(p.chapter)+'</span>':'')+'<h3>'+esc(p.title)+'</h3><p>'+esc(paperCollection?q.authors+' · '+q.type:p.effect)+'</p>'+(paperCollection?'<p class="archive-date">'+esc(q.date)+'</p>':'')+'<span class="archive-status">'+(paperCollection?esc(q.id+' / primary source'):has(p.id)?'Discovered':'Available to read before discovery')+'</span></div><button type="button" data-paper="'+p.id+'">Read '+(paperCollection?'source':'papers')+' ↗</button></article>';
     }).join('')||'<p class="quiet-message">No matching source. Try a title, author, or topic.</p>');
     document.querySelectorAll('[data-archive]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.archive===archive)));
     $('archive-list').classList.toggle('engineering-archive',archive==='engineering');
@@ -216,6 +238,14 @@
       caption='Estimate '+num(t.energy,4)+' · this trial’s 95% simultaneous sampling bound ±'+num(t.statistical,4)+' · standard error '+num(t.se,4)+' · residual bias ≤'+num(t.bias,4)+(task?.angle!==null&&task?' · recorded known angle '+t.theta+'°':' · exact ansatz error '+num(t.ansatzError,4))+'. '+num(t.shots)+' actual samples; '+num(t.modeledShots)+' modeled acquisitions. '+(task?(task.passed?'This trial qualifies; its reward is recorded once.':'This trial fails the declared '+num(task.tolerance,3)+' total criterion. Acquisition costs remain spent.'):(t.qualified?'Ground-reference tutorial qualified.':'Tune θ, shots, or mitigation to meet the 0.12 ground-reference criterion.'));
     }
     if(r?.id==='memory'){title='Detection-event rehearsal';context='100 illustrative trials / check';}
+    if(r?.study){
+      const project=C.projects.find(p=>p.id===r.study.id),receipt=G.studyStatus(s,project.id).receipt;
+      title=(r.study.passed?'Study qualified / ':'Study failed / ')+project.historyYear;
+      context='Authored '+project.study.experiment+' study; historical paper not reproduced';
+      if(r.id==='vqe')caption=r.message+' Estimate '+num(t.energy,4)+'; sampling bound ±'+num(t.statistical,4)+'; residual bias ≤'+num(t.bias,4)+'; ansatz error '+num(t.ansatzError,4)+'. '+(project.study.kind==='ansatz-budget'?'This intentionally poor preparation was measured precisely. Its study can pass while the ground-energy tutorial remains unqualified; no barren-plateau training was simulated.':t.qualified?'The separate ground-reference criterion also passes.':'The separate ground-reference criterion does not pass.');
+      else caption=r.message+' '+project.study.criterion+' The rehearsal uses the game’s conditional model, not the historical hardware or an unknown-state readout.';
+      if(receipt?.stricterFeedbackReady!==undefined){const m=G.metrics({...s,...receipt.context,job:null});caption+=' Captured feedback '+num(m.feedback,1)+' μs: the authored 20 μs comparison '+(receipt.stricterFeedbackReady?'passes':'fails')+'. Memory qualified with zero allocated factories; credits are planning records, not stored states.';}
+    }
     write('measurement-title',title);write('measurement-context',context);write('measurement-caption',caption);
     $('measurement').setAttribute('aria-label',title+'. '+caption);
   }
@@ -258,9 +288,9 @@
   }
   function renderRail(m,phase){
     const available=chooseExperiment(phase),e=G.experimentRecipe(s,experiment),status=e?G.experimentStatus(s,e.id):null;
-    const next=nextDiscovery(),opportunity=qualifiedWorkOpportunity(next,phase),mainPending=next&&!isOptional(next),workNext=phase===5&&(!mainPending||!!opportunity),qualificationNeeded=next?.qualification&&!G.qualificationNow(s,next.qualification),blocker=next?researchBlocker(next,m):'';
+    const next=nextDiscovery(),opportunity=qualifiedWorkOpportunity(next,phase),mainPending=next&&!isOptional(next),workNext=phase===5&&(!mainPending||!!opportunity),qualificationNeeded=next?.qualification&&!G.qualificationNow(s,next.qualification),studyNeeded=next?.study&&!G.studyStatus(s,next.id).complete,blocker=next?researchBlocker(next,m):'';
     write('next-label',!s.started?'Your first experiment':s.ended?'The laboratory is complete':'Your next step');
-    write('next-title',!s.started?'Start with one fragile thing.':workNext?'Give the machine a question.':qualificationNeeded?'Evidence before expansion.':blocker==='capacity'?'Make room for the next idea.':blocker==='designs'?'Let the notebook become a plan.':blocker==='funding'?(has('nisq')?'Keep the service desk working.':'Budget the next experiment.'):blocker==='effort'?'Put trust where it helps.':next?'A discovery on the desk.':'The next apparatus.');
+    write('next-title',!s.started?'Start with one fragile thing.':workNext?'Give the machine a question.':studyNeeded?'A fresh '+next.historyYear+' study.':qualificationNeeded?'Evidence before expansion.':blocker==='capacity'?'Make room for the next idea.':blocker==='designs'?'Let the notebook become a plan.':blocker==='funding'?(has('nisq')?'Keep the service desk working.':'Budget the next experiment.'):blocker==='effort'?'Put trust where it helps.':next?'A discovery on the desk.':'The next apparatus.');
     let hint=!s.started?'Prepare a known state. Apply a pulse. Measure. Repeat. A signal begins with five seconds of patience.':opportunity?'“'+opportunity.name+'” qualifies under your current plan. Completion awards a one-time '+num(opportunity.payout)+' funding grant toward the '+num(Math.ceil(next.cost.funds-s.funds))+' funding still needed for “'+next.title+'”. Inspect the fee, credits, and apparatus reservation below; customer services and commissioning pause during this work.':workNext?'Inspect a named workload below. Trade code distance, pulses, decoder capacity, and factory footprint until the complete budget qualifies.':qualificationNeeded?G.projectStatus(s,next.id).reasons.filter(reason=>!reason.startsWith('Need ')&&!reason.startsWith('Expand notebook')).join(' · ')+(next.qualification==='coupled'?' Expand both the chip and its control rack.':' '+(e?.description||'')):next?'Next: “'+next.title+'”. ':C.chapters[phase].goal;
     if(s.started&&!workNext&&!qualificationNeeded&&next){
       if(blocker==='capacity')hint+=num(next.cost.effort)+' effort needs more than the '+num(m.effortCap)+' bank. Assign trust to notebooks'+(m.freeTrust===0?' by releasing researchers':'')+', or improve indexed storage. A larger bank takes longer to fill for the 4× design bonus.';
@@ -269,12 +299,14 @@
       else if(blocker==='effort')hint+='Assign more earned trust to researchers, or classical analysis once available. Effort fills the notebook bank; reserving more notebook space reduces the trust left for research.';
       else hint+='The declared evidence and resource costs are ready. Review the discovery below.';
     }
+    if(studyNeeded){hint='Next: “'+next.title+'”. '+next.study.criterion+' '+G.studyStatus(s,next.id).reasons.join(' · ')+'. Qualify this fresh study before its research purchase.';}
     write('next-copy',hint);
     show('experiment-picker',s.started&&available.length>1);
     write('experiment-cost-label',workNext?'Workload budget':e?'Experiment budget':'Next action');
     write('experiment-cost',opportunity?num(opportunity.fee)+' funding · '+num(G.workloadStatus(s,opportunity.id).credits)+' rehearsal credits · '+opportunity.seconds+' apparatus s':workNext?'Inspect the workload budget':e?num(e.cost)+' funding · '+num(e.modeledShots)+' acquisitions · '+e.seconds+' apparatus s':'Review the requirements below');
+    if(studyNeeded){const recipe=G.studyStatus(s,next.id).recipe;write('experiment-cost-label','Study entry budget');write('experiment-cost',num(recipe.cost)+' funding · '+num(recipe.modeledShots)+' modeled acquisitions · '+num(recipe.seconds,1)+' apparatus s; research purchase is separate.');}
     const researchNext=!experimentChosen&&next&&!qualificationNeeded&&!workNext;
-    write('run-label',!s.started?'Begin with one qubit':s.job?(s.paused?'Paused · ':'Running · ')+pct(s.job.progress/s.job.duration,0):s.paused?'Paused · resume in the header':opportunity?'Inspect qualified work':workNext?'Inspect useful work':researchNext?blocker==='capacity'?'Expand research storage':blocker==='designs'?'Plan engineering designs':blocker==='funding'&&has('nisq')?'Balance the service desk':blocker==='effort'?'Allocate research trust':'Continue research':e?e.name:'Continue research');
+    write('run-label',!s.started?'Begin with one qubit':s.job?(s.paused?'Paused · ':'Running · ')+pct(s.job.progress/s.job.duration,0):s.paused?'Paused · resume in the header':studyNeeded?'Inspect '+next.historyYear+' study':opportunity?'Inspect qualified work':workNext?'Inspect useful work':researchNext?blocker==='capacity'?'Expand research storage':blocker==='designs'?'Plan engineering designs':blocker==='funding'&&has('nisq')?'Balance the service desk':blocker==='effort'?'Allocate research trust':'Continue research':e?e.name:'Continue research');
     $('run-experiment').disabled=!!s.job||s.paused||s.ended||!researchNext&&!workNext&&!!e&&!status.ready;
     const needs=!researchNext&&!workNext?status?.reasons.filter(reason=>reason!=='The apparatus is occupied').join(' · '):'';
     if(!s.job&&taskFeedback)write('experiment-feedback',taskFeedback);
@@ -348,6 +380,11 @@
     else if(b.dataset.paper)paperNotes(b.dataset.paper);
     else if(b.dataset.dialog)$(b.dataset.dialog).showModal();
     else if(b.dataset.close)$(b.dataset.close).close();
+    else if(b.dataset.studyInspect){const p=C.projects.find(p=>p.id===b.dataset.studyInspect);setView('lab');const id=p.study.experiment==='vqe'?'noisy-controls':p.study.kind==='maintenance-budget'?'calibration':p.study.experiment==='gates'?(has('controller2026')?'controller-profile-control':'upgrade-list'):'memory-controls';const target=$(id);target.scrollIntoView({block:'center'});(target.matches('input')?target:target.querySelector('button:not(:disabled),input:not(:disabled),select:not(:disabled)'))?.focus({preventScroll:true});}
+    else if(b.id==='research-cancel-study')act(()=>G.cancel(s));
+    else if(b.dataset.study)act(()=>G.startStudy(s,b.dataset.study));
+    else if(b.id==='enter-research')act(()=>G.enterResearchProgramme(s));
+    else if(b.id==='research-return-ending'){setView('ending');$('continue-lab').scrollIntoView({block:'center'});$('continue-lab').focus({preventScroll:true});}
     else if(b.dataset.project)act(()=>{const bought=G.buyProject(s,b.dataset.project);if(bought){experiment='';experimentChosen=false;}return bought;});
     else if(b.dataset.engineering)act(()=>G.buyEngineering(s,b.dataset.engineering));
     else if(b.dataset.assign)act(()=>G.assign(s,b.dataset.assign,Number(b.dataset.delta)));
@@ -365,7 +402,8 @@
     else if(b.dataset.action==='save')save(true);
     else if(b.id==='run-experiment'){
       const next=nextDiscovery(),m=G.metrics(s),opportunity=qualifiedWorkOpportunity(next,G.stage(s)),blocker=next?researchBlocker(next,m):'';
-      if(opportunity){workload=opportunity.id;render();const target=$('workload-list').querySelector('[data-workload="'+workload+'"]');target.scrollIntoView({block:'center'});target.focus({preventScroll:true});}
+      if(next?.study&&!G.studyStatus(s,next.id).complete){$('discoveries-section').scrollIntoView({block:'start'});const target=$('discovery-list').querySelector('[data-study-details="'+next.id+'"]');target?.scrollIntoView({block:'center'});target?.focus({preventScroll:true});}
+      else if(opportunity){workload=opportunity.id;render();const target=$('workload-list').querySelector('[data-workload="'+workload+'"]');target.scrollIntoView({block:'center'});target.focus({preventScroll:true});}
       else if(G.stage(s)===5&&(!next||isOptional(next)))$('workload-section').scrollIntoView({block:'start'});
       else if(!experimentChosen&&next&&(!next.qualification||G.qualificationNow(s,next.qualification))){
         if(blocker==='capacity'||blocker==='designs'||blocker==='effort'||blocker==='funding'&&has('nisq')){const target=blocker==='funding'?$('service-control'):$('economy-section');target.scrollIntoView({block:'start'});target.querySelector('button:not(:disabled),input:not(:disabled)')?.focus({preventScroll:true});}

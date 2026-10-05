@@ -2,7 +2,7 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const G=require('../game.js');
 const {play}=require('./playthrough.cjs');
-const late=()=>{const s=G.newGame();s.started=true;s.done=G.content.projects.map(p=>p.id);s.qualified=G.content.experiments.map(e=>e.id);s.module=6;s.rack=6;s.pulse=8;s.decoder=4;s.drift=.005;s.distance=5;s.factories=1;s.funds=1e6;s.engineering=G.content.engineering.filter(e=>!['proprietary','rapid'].includes(e.id)).map(e=>e.id);s.reputation=s.qualified.length;s.notebooks=8;s.effort=G.metrics(s).effortCap;s.credits=2000;return s;};
+const late=()=>{const s=G.newGame();s.started=true;s.researchRevision=0;s.done=G.content.projects.filter(p=>!p.historyYear).map(p=>p.id);s.qualified=G.content.experiments.map(e=>e.id);s.module=6;s.rack=6;s.pulse=8;s.decoder=4;s.drift=.005;s.distance=5;s.factories=1;s.funds=1e6;s.engineering=G.content.engineering.filter(e=>!['proprietary','rapid'].includes(e.id)).map(e=>e.id);s.reputation=s.qualified.length;s.notebooks=8;s.effort=G.metrics(s).effortCap;s.credits=2000;return s;};
 test('The first experiment satisfies the opening within a minute, without fabricated resources',()=>{
   const s=G.newGame();assert.equal(G.buyProject(s,'feynman'),false);assert.equal(G.startExperiment(s,'signal'),true);G.tick(s,5);
   assert.deepEqual(s.qualified,['signal']);assert.ok(s.elapsed<60);assert.equal(G.buyProject(s,'feynman'),true);
@@ -86,7 +86,7 @@ test('Measurement results, certificates, and unavailable configuration are valid
   const factors=late();G.startWorkload(factors,'factors');G.tick(factors,40);assert.equal(G.parseSave(G.serialize(factors)).result.certificate.valid,true);factors.result.certificate.b=6;assert.throws(()=>G.parseSave(G.serialize(factors)),/certificate/);
 });
 test('All discoveries and the current research frontier expose primary citations without buying them',()=>{
-  assert.equal(G.content.projects.length,33);assert.equal(Object.keys(G.content.papers).length,43);
+  assert.equal(G.content.projects.length,44);assert.equal(Object.keys(G.content.papers).length,51);
   for(const p of G.content.projects)for(const id of p.papers){const paper=G.content.papers[id];assert.ok(paper);assert.ok(paper.links.some(link=>/^https:\/\//.test(link.url)));}
   assert.ok(G.content.papers.Q03.links.some(link=>decodeURIComponent(link.url).includes('(200009)48:9/11<771::AID-PROP771>3.0.CO;2-E')));
 });
@@ -100,12 +100,12 @@ test('Toy workload results contain actual classical factor and oracle certificat
   for(const id of ['factors','search']){const s=late();assert.equal(G.startWorkload(s,id),true);G.tick(s,40);assert.equal(s.result.certificate.valid,true);assert.ok(s.completed.includes(id));assert.equal(s.ended,false,'A toy certificate alone is not the scientific campaign ending');assert.equal(G.startWorkload(s,id),false,'Completion grants are unique');}
 });
 for(const strategy of ['compact','wide'])test('A '+strategy+' legal strategy finishes all six chapters with the required scientific discoveries',()=>{
-  const run=play(strategy);assert.equal(run.state.ended,true);assert.ok(run.state.done.length>=27);assert.equal(run.events.length,6);assert.ok(run.state.elapsed<14400);assert.ok(run.state.completed.includes('dynamics'));assert.deepEqual(G.parseSave(G.serialize(run.state)).done,run.state.done);
+  const run=play(strategy);assert.equal(run.state.ended,true);assert.equal(run.state.done.length,44,'An all-discoveries policy must actually earn every old, modern and annual discovery');assert.equal(run.state.researchResults.length,11);assert.equal(run.events.length,6);assert.ok(run.state.elapsed<14400);assert.ok(run.state.completed.includes('dynamics'));assert.deepEqual(G.parseSave(G.serialize(run.state)).done,run.state.done);
   for(const [chapter,s] of Object.entries(run.snapshots))assert.deepEqual(G.parseSave(G.serialize(s)),s,'Legal '+strategy+' chapter '+chapter+' must remain restorable');
 });
 test('The electronic workload offers an alternate legal ending without inventing an energy result',()=>{
   const run=play('compact','molecule');
-  assert.equal(run.state.ended,true);assert.ok(run.state.done.length>=27);assert.ok(run.state.completed.includes('molecule'));
+  assert.equal(run.state.ended,true);assert.equal(run.state.done.length,44,'An all-discoveries policy must actually earn every old, modern and annual discovery');assert.equal(run.state.researchResults.length,11);assert.ok(run.state.completed.includes('molecule'));
   assert.equal(run.state.result.energy,undefined);assert.match(run.state.result.message,/No electronic energy/);
   assert.deepEqual(G.parseSave(G.serialize(run.state)),run.state);
 });

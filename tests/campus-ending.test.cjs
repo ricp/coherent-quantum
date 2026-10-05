@@ -3,7 +3,7 @@ const assert=require('node:assert/strict');
 const G=require('../game.js');
 // Constructed prerequisite history isolates the finishing interaction; not campaign or pacing evidence.
 function fixture(){
-  const s=G.newGame();s.started=true;s.done=G.content.projects.map(p=>p.id).filter(id=>!['audit','factoring'].includes(id));s.qualified=G.content.experiments.map(e=>e.id);s.reputation=s.qualified.length;
+  const s=G.newGame();s.started=true;s.researchRevision=0;s.done=G.content.projects.filter(p=>!p.historyYear).map(p=>p.id).filter(id=>!['audit','factoring'].includes(id));s.qualified=G.content.experiments.map(e=>e.id);s.reputation=s.qualified.length;
   Object.assign(s,{funds:1e6,designs:1e5,module:6,rack:6,fabricated:1000,integrated:1000,distance:5,decoder:3,factories:3,credits:2000,pulse:8,drift:.005,calibration:.3,theta:65,shots:2,mitigate:false,engineering:['workshop','storage1','storage2','storage3'],notebooks:5,effort:34000});
   return s;
 }

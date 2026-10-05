@@ -2,7 +2,7 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const G=require('../game.js');
 // Constructed unit fixtures isolate accounting and resource recipes; these are not legal campaign evidence.
-function fixture(){const s=G.newGame();s.started=true;s.done=G.content.projects.map(p=>p.id);s.qualified=G.content.experiments.map(e=>e.id);s.reputation=s.qualified.length;Object.assign(s,{funds:1e6,designs:1e5,pulse:8,drift:.005,engineering:['workshop'],workshops:1});return s;}
+function fixture(){const s=G.newGame();s.started=true;s.researchRevision=0;s.done=G.content.projects.filter(p=>!p.historyYear).map(p=>p.id);s.qualified=G.content.experiments.map(e=>e.id);s.reputation=s.qualified.length;Object.assign(s,{funds:1e6,designs:1e5,pulse:8,drift:.005,engineering:['workshop'],workshops:1});return s;}
 const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-8,`${a} differs from ${b}`);
 
 test('Quotes trade commitment and lead time; purchase and arrival grant no active physical qubits',()=>{

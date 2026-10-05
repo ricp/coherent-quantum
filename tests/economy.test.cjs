@@ -8,7 +8,7 @@ function research(){
   return s;
 }
 function laboratory(){
-  const s=G.newGame();s.started=true;s.done=G.content.projects.map(p=>p.id);s.qualified=G.content.experiments.map(e=>e.id);s.reputation=s.qualified.length;s.module=2;s.rack=2;s.pulse=4;s.drift=.005;s.service=.5;s.calibration=.2;s.funds=1e5;
+  const s=G.newGame();s.started=true;s.researchRevision=0;s.done=G.content.projects.filter(p=>!p.historyYear).map(p=>p.id);s.qualified=G.content.experiments.map(e=>e.id);s.reputation=s.qualified.length;s.module=2;s.rack=2;s.pulse=4;s.drift=.005;s.service=.5;s.calibration=.2;s.funds=1e5;
   return s;
 }
 const close=(actual,expected)=>assert.ok(Math.abs(actual-expected)<1e-9,actual+' != '+expected);

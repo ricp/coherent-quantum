@@ -755,6 +755,154 @@
       }
     ],
     "game": "Runtime reading makes optional schedule bottlenecks explicit. The authored task recipes do not reproduce its benchmark or implement its cultivation runtime."
+  },
+  "Q44": {
+    "id": "Q44",
+    "authors": "J. Kelly et al.",
+    "title": "State preservation by repetitive error detection in a superconducting quantum circuit",
+    "date": "preprint 2014; Nature online 4 March 2015",
+    "type": "Superconducting repetition-code experiment",
+    "finding": "Repeated parity checks suppress bit-flip failures for classical inputs in a nine-qubit line. This does not establish protection against arbitrary error channels or a universal logical processor.",
+    "links": [
+      {
+        "label": "Publisher DOI",
+        "url": "https://doi.org/10.1038/nature14270"
+      },
+      {
+        "label": "Author manuscript",
+        "url": "https://arxiv.org/abs/1411.7403"
+      }
+    ],
+    "game": "The annual research programme uses authored studies of the existing superconducting surface-code or two-spin tutorial model. It does not reproduce this historical apparatus, algorithm, measured performance or benchmark; prices and targets are game choices."
+  },
+  "Q45": {
+    "id": "Q45",
+    "authors": "Diego Ristè and Leonardo DiCarlo",
+    "title": "Digital Feedback Control",
+    "date": "author manuscript 2015; chapter published 1 March 2016",
+    "type": "Engineering chapter",
+    "finding": "Reviews projective measurement and conditional action, including reset and entanglement feedback from earlier experiments. This chapter is not a newly demonstrated 2016 fault-tolerant gate stack.",
+    "links": [
+      {
+        "label": "Publisher DOI",
+        "url": "https://doi.org/10.1007/978-3-319-24091-6_8"
+      },
+      {
+        "label": "Author manuscript · different title",
+        "url": "https://arxiv.org/abs/1508.01385"
+      }
+    ],
+    "game": "The annual research programme uses authored studies of the existing superconducting surface-code or two-spin tutorial model. It does not reproduce this historical apparatus, algorithm, measured performance or benchmark; prices and targets are game choices."
+  },
+  "Q46": {
+    "id": "Q46",
+    "authors": "Kristan Temme, Sergey Bravyi, Jay M. Gambetta",
+    "title": "Error Mitigation for Short-Depth Quantum Circuits",
+    "date": "preprint 2016; PRL published 3 November 2017",
+    "type": "Mitigation methods and theory",
+    "finding": "Zero-noise extrapolation and quasiprobability resampling estimate expectation values under declared assumptions. Sampling overhead and residual bias remain; mitigation is not universal quantum error correction.",
+    "links": [
+      {
+        "label": "Publisher DOI",
+        "url": "https://doi.org/10.1103/PhysRevLett.119.180509"
+      },
+      {
+        "label": "Author manuscript",
+        "url": "https://arxiv.org/abs/1612.02058"
+      }
+    ],
+    "game": "The annual research programme uses authored studies of the existing superconducting surface-code or two-spin tutorial model. It does not reproduce this historical apparatus, algorithm, measured performance or benchmark; prices and targets are game choices."
+  },
+  "Q47": {
+    "id": "Q47",
+    "authors": "Frank Arute et al.",
+    "title": "Quantum supremacy using a programmable superconducting processor",
+    "date": "Nature online 23 October 2019",
+    "type": "Superconducting random-circuit sampling experiment",
+    "finding": "A specific 53-qubit random-circuit sampling benchmark was compared with then-selected classical methods. The historical comparison is not a current universal speedup or an application-utility result.",
+    "links": [
+      {
+        "label": "Publisher DOI",
+        "url": "https://doi.org/10.1038/s41586-019-1666-5"
+      }
+    ],
+    "game": "The annual research programme uses authored studies of the existing superconducting surface-code or two-spin tutorial model. It does not reproduce this historical apparatus, algorithm, measured performance or benchmark; prices and targets are game choices."
+  },
+  "Q48": {
+    "id": "Q48",
+    "authors": "Christian Kraglund Andersen et al.",
+    "title": "Repeated quantum error detection in a surface code",
+    "date": "preprint 2019; Nature Physics online 8 June 2020",
+    "type": "Superconducting error-detection experiment",
+    "finding": "A seven-qubit distance-two code repeatedly detects errors. Enhanced lifetime and coherence are conditioned on no detected errors; selected surviving runs do not establish unconditional correction or logical gates.",
+    "links": [
+      {
+        "label": "Publisher DOI",
+        "url": "https://doi.org/10.1038/s41567-020-0920-y"
+      },
+      {
+        "label": "Author manuscript",
+        "url": "https://arxiv.org/abs/1912.09410"
+      }
+    ],
+    "game": "The annual research programme uses authored studies of the existing superconducting surface-code or two-spin tutorial model. It does not reproduce this historical apparatus, algorithm, measured performance or benchmark; prices and targets are game choices."
+  },
+  "Q49": {
+    "id": "Q49",
+    "authors": "Google Quantum AI; Zijun Chen et al. on the author manuscript",
+    "title": "Exponential suppression of bit or phase errors with cyclic error correction",
+    "date": "preprint 2021; Nature online 14 July 2021",
+    "type": "Superconducting repetition-code experiment",
+    "finding": "One-dimensional repetition codes suppress bit OR phase errors with repeated rounds. They do not simultaneously protect both error types. The separate small surface-code detection experiment is not full threshold scaling.",
+    "links": [
+      {
+        "label": "Publisher DOI",
+        "url": "https://doi.org/10.1038/s41586-021-03588-y"
+      },
+      {
+        "label": "Author manuscript · different title",
+        "url": "https://arxiv.org/abs/2102.06132"
+      }
+    ],
+    "game": "The annual research programme uses authored studies of the existing superconducting surface-code or two-spin tutorial model. It does not reproduce this historical apparatus, algorithm, measured performance or benchmark; prices and targets are game choices."
+  },
+  "Q50": {
+    "id": "Q50",
+    "authors": "Sebastian Krinner et al.",
+    "title": "Realizing repeated quantum error correction in a distance-three surface code",
+    "date": "preprint 2021; Nature online 25 May 2022",
+    "type": "Superconducting surface-code memory experiment",
+    "finding": "Seventeen superconducting qubits repeatedly measure both syndrome types, with decoding and corrections in postprocessing. Reported per-cycle performance excludes leakage-detected runs; it is not real-time universal gate qualification.",
+    "links": [
+      {
+        "label": "Publisher DOI",
+        "url": "https://doi.org/10.1038/s41586-022-04566-8"
+      },
+      {
+        "label": "Author manuscript",
+        "url": "https://arxiv.org/abs/2112.03708"
+      }
+    ],
+    "game": "The annual research programme uses authored studies of the existing superconducting surface-code or two-spin tutorial model. It does not reproduce this historical apparatus, algorithm, measured performance or benchmark; prices and targets are game choices."
+  },
+  "Q51": {
+    "id": "Q51",
+    "authors": "Google Quantum AI; Rajeev Acharya et al. on the author manuscript",
+    "title": "Suppressing quantum errors by scaling a surface code logical qubit",
+    "date": "preprint 2022; Nature online 22 February 2023",
+    "type": "Superconducting surface-code scaling experiment",
+    "finding": "Distance five modestly outperforms the average of distance-three subsets in the specified memory experiment. Adding physical qubits also introduces errors; this limited improvement is distinct from the later below-threshold result.",
+    "links": [
+      {
+        "label": "Publisher DOI",
+        "url": "https://doi.org/10.1038/s41586-022-05434-1"
+      },
+      {
+        "label": "Author manuscript",
+        "url": "https://arxiv.org/abs/2207.06431"
+      }
+    ],
+    "game": "The annual research programme uses authored studies of the existing superconducting surface-code or two-spin tutorial model. It does not reproduce this historical apparatus, algorithm, measured performance or benchmark; prices and targets are game choices."
   }
 });
   const chapters = [
@@ -803,6 +951,20 @@
     {id:'controller2026',chapter:3,optional:true,title:'The controller has two clocks · 2026',effect:'Choose authored streaming or response profiles. Throughput and latency trade off; physical and logical error parameters stay separate.',papers:['Q37','Q41'],requires:['decoder'],cost:{funds:250,effort:600,designs:60}},
     {id:'adaptive2026',chapter:4,optional:true,title:'Control that listens · 2026',effect:'Reduce selected maintenance need by 10% through classical drift management. Calibration duty still consumes time; no universal device fidelity boost.',papers:['Q38'],requires:['threshold'],qualification:'memory',cost:{funds:1400,effort:4200,designs:400}},
     {id:'state-readiness',chapter:5,optional:true,title:'Ready when the algorithm is · 2026',effect:'Compare compact and parallel schedules for the same 32-spin task, with footprint, factory waiting and workspace fully counted. Factory quality stays unchanged.',papers:['Q39','Q40','Q43'],requires:['accounting'],cost:{funds:1800,effort:6000,designs:600}}
+  );
+  // Publication history inspires these authored studies; it does not dictate the laboratory calendar.
+  projects.push(
+    {"id": "history2015", "chapter": 3, "historyYear": 2015, "title": "Read the checks. Keep the secret. · 2015", "effect": "Repeated checks provide error evidence. Our surface-code scenario does not reproduce Kelly’s bit-flip repetition experiment. Qualify fresh study evidence, then research the discovery to open the next annual study.", "papers": ["Q44"], "requires": ["decoder"], "cost": {"funds": 450, "effort": 900, "designs": 120}, "study": {"kind": "parity-checks", "experiment": "memory", "criterion": "Distance 3 with currently qualified surface-code memory."}},
+    {"id": "history2016", "chapter": 4, "historyYear": 2016, "title": "Measure. Decide. Respond. · 2016", "effect": "Meet a named feedback budget through controller planning. The 20 μs target is authored; the chapter reviews earlier feedback work. Qualify fresh study evidence, then research the discovery to open the next annual study.", "papers": ["Q45"], "requires": ["surgery", "history2015"], "cost": {"funds": 650, "effort": 1200, "designs": 150}, "study": {"kind": "feedback-budget", "experiment": "gates", "criterion": "Qualified operations with modeled feedback ≤20 μs."}},
+    {"id": "history2017", "chapter": 2, "historyYear": 2017, "title": "Bias has a bill. · 2017", "effect": "Purchase precision with acquisition time, then validate the measured interval. Our mitigation model is not zero-noise extrapolation. Qualify fresh study evidence, then research the discovery to open the next annual study.", "papers": ["Q46", "Q18"], "requires": ["mitigation", "history2016"], "cost": {"funds": 850, "effort": 1500, "designs": 200}, "study": {"kind": "mitigation-budget", "experiment": "vqe", "criterion": "θ=65° ±1°, mitigation on, at least 16,384 shots per group; actual ground criterion must pass."}},
+    {"id": "history2018", "chapter": 2, "historyYear": 2018, "title": "A precise answer to the wrong question. · 2018", "effect": "Precisely measure an intentionally poor preparation. This two-spin study separates ansatz and sampling errors; it does not simulate barren-plateau training. Qualify fresh study evidence, then research the discovery to open the next annual study.", "papers": ["Q06", "Q17"], "requires": ["ansatz", "history2017"], "cost": {"funds": 950, "effort": 1700, "designs": 220}, "study": {"kind": "ansatz-budget", "experiment": "vqe", "criterion": "θ=20° ±1°, at least 16,384 shots per group; ansatz error >0.5 and sampling bound ≤0.12."}},
+    {"id": "history2019", "chapter": 4, "historyYear": 2019, "title": "A factory takes a floor. · 2019", "effect": "Inspect the footprint left by one factory. Tile studies and sampling benchmarks are distinct; this is an authored distillation-layout study, not the Arute experiment. Qualify fresh study evidence, then research the discovery to open the next annual study.", "papers": ["Q10", "Q47"], "requires": ["factories", "history2018"], "cost": {"funds": 1200, "effort": 2200, "designs": 300}, "study": {"kind": "factory-footprint", "experiment": "factory", "criterion": "One qualified factory and at least two application slots."}},
+    {"id": "history2020", "chapter": 3, "historyYear": 2020, "title": "An uninterrupted promise. · 2020", "effect": "Reserve maintenance time while checking memory. This full-memory scenario does not reproduce Andersen’s detection-conditioned, postselected lifetime. Qualify fresh study evidence, then research the discovery to open the next annual study.", "papers": ["Q48"], "requires": ["surface", "history2019"], "cost": {"funds": 1350, "effort": 2500, "designs": 320}, "study": {"kind": "maintenance-budget", "experiment": "memory", "criterion": "Qualified memory; calibration duty ≥maintenance target and planned service ≤50%."}},
+    {"id": "history2021", "chapter": 4, "historyYear": 2021, "title": "Which errors does the code protect? · 2021", "effect": "Record the distinction between a repetition code and this game’s full surface-code scenario. Chen’s bit-or-phase result is not used as a universal gate guarantee. Qualify fresh study evidence, then research the discovery to open the next annual study.", "papers": ["Q49"], "requires": ["threshold", "history2020"], "cost": {"funds": 1500, "effort": 2800, "designs": 380}, "study": {"kind": "model-boundary", "experiment": "gates", "criterion": "Distance 3 with the current logical operation stack qualified."}},
+    {"id": "history2022", "chapter": 3, "historyYear": 2022, "title": "Memory can wait. Feedback cannot. · 2022", "effect": "Qualify memory with no fresh-state factories, then compare actual feedback with an authored 20 μs target. Planning credits are not stored states; Krinner’s postprocessed result is not a real-time gate demonstration. Qualify fresh study evidence, then research the discovery to open the next annual study.", "papers": ["Q50"], "requires": ["surgery", "history2021"], "cost": {"funds": 1700, "effort": 3100, "designs": 450}, "study": {"kind": "memory-latency", "experiment": "memory", "criterion": "Qualified memory, no factories allocated, and feedback ≤40 μs."}},
+    {"id": "history2023", "chapter": 3, "historyYear": 2023, "title": "A larger patch. A smaller floor. · 2023", "effect": "Trade code protection against usable footprint. Twelve slots and the selected error fit are game-study criteria, not the paper’s observed performance. Qualify fresh study evidence, then research the discovery to open the next annual study.", "papers": ["Q51", "Q09"], "requires": ["threshold", "history2022"], "cost": {"funds": 2100, "effort": 3600, "designs": 550}, "study": {"kind": "scaled-memory", "experiment": "memory", "criterion": "Distance 5, qualified memory, and at least twelve application slots."}},
+    {"id": "history2024", "chapter": 4, "historyYear": 2024, "title": "Accurate is not automatically fast. · 2024", "effect": "Reserve authored throughput headroom while meeting latency. The study does not implement a learned decoder or improve its decoding accuracy. Qualify fresh study evidence, then research the discovery to open the next annual study.", "papers": ["Q41"], "requires": ["controller2026", "history2023"], "cost": {"funds": 2400, "effort": 4300, "designs": 650}, "study": {"kind": "decoder-budget", "experiment": "gates", "criterion": "Qualified operations; syndrome stream ≤80% of decoder capacity and feedback ≤20 μs."}},
+    {"id": "history2025", "chapter": 5, "historyYear": 2025, "title": "Ready states, counted honestly. · 2025", "effect": "Choose preparation throughput against footprint for the same task. This partial lane study is not full workload qualification or a cultivation-yield simulation. Qualify fresh study evidence, then research the discovery to open the next annual study.", "papers": ["Q40", "Q21"], "requires": ["state-readiness", "history2024"], "cost": {"funds": 2800, "effort": 5000, "designs": 750}, "study": {"kind": "supply-budget", "experiment": "factory", "criterion": "Qualified factory; the selected Dynamics plan fits its slots and its factory lane ≤gate lane."}}
   );
   // Classical laboratory engineering. Every numerical effect below is a game rule.
   const engineering = [

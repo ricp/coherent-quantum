@@ -3,7 +3,7 @@ const assert=require('node:assert/strict');
 const G=require('../game.js');
 // Constructed unit fixtures provide prerequisite history to isolate contracts; not campaign/pacing evidence.
 function fixture(seed=424242){
-  const s=G.newGame(seed);s.started=true;s.done=G.content.projects.map(p=>p.id);s.qualified=G.content.experiments.map(e=>e.id);s.reputation=s.qualified.length;
+  const s=G.newGame(seed);s.started=true;s.researchRevision=0;s.done=G.content.projects.filter(p=>!p.historyYear).map(p=>p.id);s.qualified=G.content.experiments.map(e=>e.id);s.reputation=s.qualified.length;
   Object.assign(s,{funds:1e6,designs:1e5,pulse:8,drift:.005,calibration:.2,theta:65,shots:3,mitigate:true});return s;
 }
 function drain(s){for(let i=0;i<1000&&s.job;i++)G.tick(s,1);assert.equal(s.job,null,'Captured experiment must finish within its declared duty budget');}

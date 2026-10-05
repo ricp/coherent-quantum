@@ -10,10 +10,11 @@ const policies={
   cautious:{distance:5,service:.55,automation:2,workshops:2,dissemination:'proprietary',rollout:'verified'}
 };
 const copy=s=>JSON.parse(JSON.stringify(s));
-function requiredProjects(workload,allDiscoveries){
-  if(allDiscoveries)return new Set(G.content.projects.map(p=>p.id));
+function requiredProjects(workload,allDiscoveries,historical=true){
+  if(allDiscoveries)return new Set(G.content.projects.filter(p=>historical||!p.historyYear).map(p=>p.id));
   const required=new Set();
   function add(id){if(required.has(id))return;required.add(id);for(const prerequisite of G.content.projects.find(p=>p.id===id).requires)add(prerequisite);}
+  if(historical)add('history2025');
   add('audit');for(const id of G.content.workloads.find(w=>w.id===workload).requires)add(id);
   return required;
 }
@@ -21,7 +22,7 @@ function play(strategy='compact',workload='dynamics',options={}) {
   const policyName={compact:'frontier',wide:'cautious'}[strategy]||strategy;
   if(!policies[policyName])throw new Error('Unknown policy '+strategy);
   const policy={...policies[policyName],...(options.policy||{})},allDiscoveries=options.allDiscoveries??['compact','wide'].includes(strategy);
-  const required=requiredProjects(workload,allDiscoveries),s=options.resumeSave?G.parseSave(options.resumeSave):G.newGame(options.seed??424242),snapshots={},events=[];
+  const s=options.resumeSave?G.parseSave(options.resumeSave):G.newGame(options.seed??424242),required=requiredProjects(workload,allDiscoveries,s.researchRevision===1),snapshots={},events=[];
   const measurements={policy:policyName,seed:options.seed??424242,allDiscoveries,limit:options.limit??14400,busy:0,idle:0,calibrationDuty:0,serviceDuty:0,experimentDuty:0,fullStore:0,designsWhileFull:0,designsWhileNotFull:0,grants:0,revenue:0,upkeep:0,delivered:0,automationWork:0,fabricated:0,integrated:0,longestNoAction:0,blocked:{funding:0,effort:0,designs:0,capacity:0,qualification:0},actions:{assignment:0,engineering:0,equipment:0,experiment:0,calibration:0,workload:0},investments:[],milestones:[],assignments:[],aborts:0};
   measurements.inputs=policy;measurements.initialElapsed=s.elapsed;measurements.resumed=!!options.resumeSave;measurements.longestNoActionWindow=null;measurements.priceChecks=0;measurements.priceAdjustments=0;measurements.analysisAdjustments=0;
   let previous=-1,lastAction=s.elapsed,lastActionId=options.resumeSave?'loaded laboratory':'opening',lastPrice=-Infinity;
@@ -48,6 +49,7 @@ function play(strategy='compact',workload='dynamics',options={}) {
     if(chapter!==previous){snapshots[chapter]=copy(s);events.push({chapter,at:s.elapsed});previous=chapter;}
     if(G.has(s,'vqe')){G.configure(s,'theta',65);G.configure(s,'shots',2);}
     if(G.has(s,'mitigation'))G.configure(s,'mitigate',true);
+    if(G.has(s,'accounting'))G.configure(s,'logicalRecipe','balanced');
     if(G.has(s,'surface'))G.configure(s,'distance',policy.distance);
     if(G.has(s,'ancilla'))G.configure(s,'factories',policy.distance===3&&chapter>=5?2:1);
     let m=G.metrics(s);
@@ -63,8 +65,21 @@ function play(strategy='compact',workload='dynamics',options={}) {
         lastPrice=s.elapsed;measurements.priceChecks++;
       }
     }
+    // Annual studies use reversible public plans, not injected receipts or resource/time changes.
+    const study=s.job?.study?G.content.projects.find(p=>p.id===s.job.study):!s.job?G.content.projects.find(p=>p.historyYear&&required.has(p.id)&&G.studyStatus(s,p.id).available&&!G.studyStatus(s,p.id).complete):null;
+    if(study){
+      if(['parity-checks','model-boundary'].includes(study.study.kind))G.configure(s,'distance',3);
+      if(study.study.kind==='scaled-memory')G.configure(s,'distance',5);
+      if(study.study.kind==='factory-footprint')G.configure(s,'factories',1);
+      if(study.study.kind==='memory-latency')G.configure(s,'factories',0);
+      if(study.study.kind==='maintenance-budget')G.configure(s,'service',.5);
+      if(study.study.kind==='mitigation-budget'){G.configure(s,'theta',65);G.configure(s,'shots',2);G.configure(s,'mitigate',true);if(s.job?.study)G.configure(s,'service',0);}
+      if(study.study.kind==='ansatz-budget'){G.configure(s,'theta',20);G.configure(s,'shots',2);if(s.job?.study)G.configure(s,'service',0);}
+      if(study.study.kind==='supply-budget'){G.configure(s,'factories',2);G.configure(s,'logicalRecipe','compact');}
+      m=G.metrics(s);
+    }
     // Balance the next advance's storage requirement against staff and the full-bank bonus.
-    const available=G.content.projects.filter(p=>required.has(p.id)&&G.projectStatus(s,p.id).available);
+    const available=G.content.projects.filter(p=>required.has(p.id)&&G.projectStatus(s,p.id).available).sort((a,b)=>(a.historyYear||9999)-(b.historyYear||9999));
     const next=available[0];
     const planned=['workflow','storage1','storage2',policy.dissemination,...(policy.pricing===false?[]:['pricing']),'autoCalibration','automation',...(chapter>=3?['storage3']:[]),...(chapter>=4?['scheduler','workshop',policy.rollout]:[]),...(chapter>=(policy.synthesisAfter??4)?['synthesis']:[])];
     const nextEngineering=planned.map(id=>G.content.engineering.find(e=>e.id===id)).find(e=>e&&G.engineeringStatus(s,e.id).available);
@@ -82,7 +97,7 @@ function play(strategy='compact',workload='dynamics',options={}) {
     const moduleTarget=chapter>=3?(policy.distance===3?2:3):G.has(s,'nisq')?2:G.has(s,'rb')?1:0;
     if(s.module<moduleTarget)upgrade('hardware');
     if(s.rack<moduleTarget)upgrade('rack');
-    const pulseTarget=chapter>=5?(policy.distance===3?8:7):chapter>=4?(policy.distance===3?5:4):chapter>=3?(policy.distance===3?4:3):G.has(s,'nisq')?2:0;
+    const pulseTarget=Math.max(study&&['parity-checks','model-boundary'].includes(study.study.kind)?4:0,chapter>=5?(policy.distance===3?8:7):chapter>=4?(policy.distance===3?5:4):chapter>=3?(policy.distance===3?4:3):G.has(s,'nisq')?2:0);
     if(s.pulse<pulseTarget)upgrade('pulse');
     m=G.metrics(s);
     if(m.fullBank&&chapter>=2&&!snapshots.fullStore)snapshots.fullStore=copy(s);
@@ -129,6 +144,7 @@ function play(strategy='compact',workload='dynamics',options={}) {
       if(p.id==='accounting'&&G.projectStatus(s,p.id).ready&&!snapshots.factory)snapshots.factory=copy(s);
       action('discovery',p.id,()=>G.buyProject(s,p.id));
     }
+    if(!s.job&&study&&!G.studyStatus(s,study.id).complete)action('experiment',study.id,()=>G.startStudy(s,study.id));
     if(!s.job){
       m=G.metrics(s);
       const needed=G.content.projects.filter(p=>required.has(p.id)&&G.projectStatus(s,p.id).available&&p.qualification&&!G.qualificationNow(s,p.qualification));

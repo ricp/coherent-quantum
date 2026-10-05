@@ -17,7 +17,7 @@
   const stage = s => has(s,'accounting') ? 5 : has(s,'threshold') ? 4 : has(s,'classical') ? 3 : has(s,'coupled') ? 2 : has(s,'nakamura') ? 1 : 0;
   const campusDefaults = () => ({campusRevision:1,objectiveResults:[],precisionResults:[],orders:[],orderSerial:0,trialSerial:0,chipStock:0,supportStock:0,logicalRecipe:'balanced',controllerProfile:'balanced',completedRecipes:{},endingRecord:null,epilogue:false});
   function newGame(seed = 424242) {
-    return {...campusDefaults(),version:2,notebooks:1,designs:0,engineering:[],price:8,autoPrice:false,autoCalibration:false,automation:0,analysisShare:1,workshops:0,fabrication:.5,fabricated:0,integrated:0,started:false,paused:false,elapsed:0,funds:60,effort:0,done:[],qualified:[],module:0,rack:0,staff:1,pulse:0,decoder:0,drift:.3,distance:3,factories:0,calibration:0,service:0,theta:20,shots:1,mitigate:false,credits:0,reputation:0,seed:seed>>>0,job:null,result:null,tutorial:null,completed:[],ended:false,volume:.2,sound:false,theme:'dark',log:[]};
+    return {...campusDefaults(),researchRevision:1,researchResults:[],version:2,notebooks:1,designs:0,engineering:[],price:8,autoPrice:false,autoCalibration:false,automation:0,analysisShare:1,workshops:0,fabrication:.5,fabricated:0,integrated:0,started:false,paused:false,elapsed:0,funds:60,effort:0,done:[],qualified:[],module:0,rack:0,staff:1,pulse:0,decoder:0,drift:.3,distance:3,factories:0,calibration:0,service:0,theta:20,shots:1,mitigate:false,credits:0,reputation:0,seed:seed>>>0,job:null,result:null,tutorial:null,completed:[],ended:false,volume:.2,sound:false,theme:'dark',log:[]};
   }
   function random(s) {
     s.seed = (Math.imul(s.seed,1664525)+1013904223)>>>0;
@@ -158,10 +158,12 @@
     const project=C.projects.find(p=>p.id===id);
     if(!project)return {available:false,ready:false,reasons:['Unknown discovery']};
     if(has(s,id))return {available:false,ready:false,reasons:['Already discovered']};
-    const available=project.requires.every(key=>has(s,key))&&(!project.optional||s.campusRevision===1);
+    const available=project.requires.every(key=>has(s,key))&&(!project.optional||s.campusRevision===1)&&(!project.historyYear||s.researchRevision===1)&&(id!=='audit'||s.researchRevision!==1||C.projects.filter(p=>p.historyYear).every(p=>has(s,p.id)));
     const reasons=[];
     if(!available)reasons.push('Complete the prerequisite discoveries');
-    if(id==='audit'&&!s.epilogue&&s.job&&s.completed.some(key=>['dynamics','molecule'].includes(key)))reasons.push('Finish or explicitly cancel the current apparatus job before completing the campaign; its entry costs stay spent.');
+    if(project.historyYear&&!s.researchResults?.some(receipt=>receipt.id===id))reasons.push('Complete its fresh historical study before purchasing this discovery');
+    if(id==='audit'&&s.researchRevision===1&&C.projects.some(p=>p.historyYear&&!has(s,p.id)))reasons.push('Purchase all eleven 2015–2025 historical discoveries before the gift ending');
+    if((id==='audit'||project.historyYear&&has(s,'audit')&&C.projects.filter(p=>p.historyYear&&!has(s,p.id)).length===1)&&!s.epilogue&&s.job&&s.completed.some(key=>['dynamics','molecule'].includes(key)))reasons.push('Finish or explicitly cancel the current apparatus job before completing the campaign; its entry costs stay spent.');
     if(project.qualification&&!qualificationNow(s,project.qualification))reasons.push(project.qualification==='coupled'?'Support at least two active physical qubits':'Required evidence: '+(C.experiments.find(e=>e.id===project.qualification)?.name||project.qualification));
     if(s.funds<project.cost.funds)reasons.push('Need '+Math.ceil(project.cost.funds-s.funds)+' more funding');
     if(s.effort<project.cost.effort)reasons.push('Need '+Math.ceil(project.cost.effort-s.effort)+' more research effort');
@@ -234,6 +236,70 @@
     s.job={id,workload:false,progress:0,duration:e.seconds,shots:samples,theta:s.theta,mitigate:s.mitigate,bias:metrics(s).bias};
     if(id==='vqe'&&s.campusRevision===1){s.job.recipeRevision=1;s.job.trial=++s.trialSerial;}
     return true;
+  }
+  const studyContextKeys=['done','engineering','module','rack','fabricated','integrated','pulse','decoder','drift','distance','factories','calibration','service','autoCalibration','controllerProfile','logicalRecipe'];
+  function studyContext(s) {return Object.fromEntries(studyContextKeys.map(key=>[key,Array.isArray(s[key])?[...s[key]]:s[key]]));}
+  function studyConditions(s,kind,tutorial=null) {
+    const m=metrics(s),reasons=[];
+    const require=(ok,message)=>{if(!ok)reasons.push(message);};
+    if(kind==='parity-checks')require(s.distance===3&&m.memoryOK,'Use distance 3 and currently qualified protected memory');
+    else if(kind==='feedback-budget')require(m.gatesOK&&m.feedback<=20,'Qualify the logical gate stack with feedback ≤20 μs');
+    else if(kind==='mitigation-budget'){
+      require(Math.abs((tutorial?.theta??s.theta)-65)<=1,'Prepare θ =65° ±1°');
+      require((tutorial?tutorial.shots/3:1024*4**s.shots)>=16384,'Acquire at least 16,384 shots per Pauli group');
+      require(tutorial?tutorial.mitigate:s.mitigate,'Use the declared mitigation overhead');
+      if(tutorial)require(tutorial.qualified,'The fresh measured interval must qualify the two-spin ground reference');
+    }else if(kind==='ansatz-budget'){
+      require(Math.abs((tutorial?.theta??s.theta)-20)<=1,'Prepare θ =20° ±1° to expose the ansatz mismatch');
+      require((tutorial?tutorial.shots/3:1024*4**s.shots)>=16384,'Acquire at least 16,384 shots per Pauli group');
+      if(tutorial)require(tutorial.ansatzError>.5&&tutorial.statistical<=.12&&!tutorial.qualified,'The fresh precise trial must expose a preparation error above 0.5');
+    }else if(kind==='factory-footprint')require(s.factories===1&&m.factoryOK&&m.slots>=2,'Qualify exactly one factory and retain two application slots');
+    else if(kind==='maintenance-budget')require(m.memoryOK&&m.calibrationDuty>=m.maintenance&&s.service<=.5,'Qualify memory while covering maintenance and assigning service ≤50%');
+    else if(kind==='model-boundary')require(s.distance===3&&m.gatesOK,'Qualify the authored distance-3 logical gate stack');
+    else if(kind==='memory-latency')require(m.memoryOK&&m.feedback<=40&&s.factories===0,'Qualify memory with no allocated factories and feedback ≤40 μs; compare the separate authored 20 μs gate budget');
+    else if(kind==='scaled-memory')require(s.distance===5&&m.memoryOK&&m.slots>=12,'Qualify distance-5 memory with at least twelve application slots');
+    else if(kind==='decoder-budget')require(m.gatesOK&&m.syndromeRate<=.8*m.decoderRate&&m.feedback<=20,'Qualify gates, retain 20% streaming headroom, and feedback ≤20 μs');
+    else if(kind==='supply-budget'){
+      const w=workloadRecipe(s,'dynamics'),status=workloadStatus(s,'dynamics');
+      require(m.factoryOK&&m.slots>=w.width&&status.factoryTime<=status.gateTime,'Supply the selected Dynamics recipe within its gate time and full application footprint');
+    }else reasons.push('Unknown historical study criterion');
+    return reasons;
+  }
+  function researchStatus(s) {
+    const enabled=s.researchRevision===1,reasons=[];
+    if(enabled)reasons.push('Historical research programme already enabled');
+    if(s.campusRevision!==1)reasons.push('Enter the expanded campus first');
+    if(s.job)reasons.push('Finish or cancel the captured apparatus job before entering');
+    if(s.ended)reasons.push('Continue the preserved laboratory before entering');
+    return {enabled,ready:!reasons.length,reasons,completed:(s.researchResults||[]).length,purchased:C.projects.filter(p=>p.historyYear&&has(s,p.id)).length,total:C.projects.filter(p=>p.historyYear).length};
+  }
+  function enterResearchProgramme(s) {
+    if(!researchStatus(s).ready)return false;
+    s.researchRevision=1;note(s,'The 2015–2025 historical research programme is open. Existing evidence and the first ending are preserved; each study needs a fresh paid experiment.','engineering');return true;
+  }
+  function studyStatus(s,id) {
+    const project=C.projects.find(p=>p.id===id&&p.historyYear),receipt=(s.researchResults||[]).find(r=>r.id===id)||null,reasons=[];
+    if(!project)return {available:false,ready:false,complete:false,reasons:['Unknown historical study']};
+    const available=s.researchRevision===1&&project.requires.every(id=>has(s,id));
+    if(!available)reasons.push('Enter the historical programme and purchase its prerequisite discoveries');
+    if(receipt||has(s,id))reasons.push('This fresh study is already recorded');
+    reasons.push(...experimentStatus(s,project.study.experiment).reasons,...studyConditions(s,project.study.kind));
+    if(s.paused)reasons.push('Resume laboratory time');
+    return {project,available,complete:!!receipt,ready:available&&!reasons.length&&!s.ended,reasons,receipt,recipe:experimentRecipe(s,project.study.experiment)};
+  }
+  function startStudy(s,id) {
+    const status=studyStatus(s,id);if(!status.ready||!startExperiment(s,status.project.study.experiment))return false;
+    s.job.study=id;note(s,'Fresh historical study scheduled: '+status.project.title+'. Acquisition costs are spent; successful evidence unlocks a separately priced discovery.','event');return true;
+  }
+  function finishStudy(s,job) {
+    if(!job.study)return;
+    const project=C.projects.find(p=>p.id===job.study&&p.historyYear);
+    const context=studyContext(s),tutorial=job.id==='vqe'?JSON.parse(JSON.stringify(s.tutorial)):null;
+    const reasons=studyConditions(s,project.study.kind,tutorial),passed=!reasons.length;
+    s.result.study={id:project.id,passed};
+    if(passed&&!s.researchResults.some(r=>r.id===project.id))s.researchResults.push({id:project.id,experiment:job.id,time:s.elapsed,context,tutorial,...(project.study.kind==='memory-latency'?{stricterFeedbackReady:metrics(s).feedback<=20}:{})});
+    s.result.message=passed?'Fresh historical study accepted. Its discovery is now purchasable; no separate study grant was paid.':'Historical study failed: '+reasons.join('; ')+'. Acquisition costs stay spent; no study evidence was recorded.';
+    note(s,s.result.message,passed?'breakthrough':'warning');
   }
   function campusStatus(s) {
     const enabled=s.campusRevision===1,reasons=[];
@@ -366,7 +432,7 @@
     }
     if(job.id==='factory'){
       s.result.message=m.factoryOK?'Factory schedule rehearsed. Credits represent planning; no quantum states are stored.':'Factory qualification lost. Check the current gate stack and layout.';
-      if(m.factoryOK){s.credits+=24;qualify(s,'factory','The board requests more qubits. The decoder requests a chair.');}
+      if(m.factoryOK){s.credits=Math.min(2000,s.credits+24);qualify(s,'factory','The board requests more qubits. The decoder requests a chair.');}
     }
   }
   function workloadRecipe(s,id,recipeId=s.logicalRecipe||'balanced') {
@@ -415,7 +481,7 @@
     return workloadStatus({...s,job:null,credits:Math.max(s.credits,w.magic*w.repetitions),funds:Math.max(s.funds,w.fee)},id,recipe);
   }
   function checkEnding(s) {
-    if(!s.ended&&!s.epilogue&&has(s,'audit')&&s.completed.some(id=>['dynamics','molecule'].includes(id))){s.ended=true;if(s.campusRevision===1&&!s.endingRecord)s.endingRecord=endingSnapshot(s);s.job=null;note(s,'Useful at last. A modeled scientific scenario is complete. For Keir, one qubit in return.','ending');}
+    if(!s.ended&&!s.epilogue&&(s.researchRevision!==1||C.projects.filter(p=>p.historyYear).every(p=>has(s,p.id)))&&has(s,'audit')&&s.completed.some(id=>['dynamics','molecule'].includes(id))){s.ended=true;if(s.campusRevision===1&&!s.endingRecord)s.endingRecord=endingSnapshot(s);s.job=null;note(s,'Useful at last. A modeled scientific scenario is complete. For Keir, one qubit in return.','ending');}
   }
   function tick(s,seconds) {
     if(!s.started||s.paused||s.ended||!Number.isFinite(seconds)||seconds<=0)return;
@@ -454,9 +520,9 @@
         s.result.message='Classical oracle check: entry '+index+' is '+target+'. All modeled oracle and repetition costs were counted; no speedup is claimed.';
       }
       if(!s.completed.includes(w.id)){s.completed.push(w.id);if(s.campusRevision===1)s.completedRecipes[w.id]=w.recipe;s.funds+=w.payout;s.reputation+=2;s.effort=Math.min(metrics(s).effortCap,s.effort+100);note(s,w.name+'. '+w.validation,'workload');}
-      if(has(s,'audit')&&!s.epilogue&&!s.endingRecord&&['dynamics','molecule'].includes(w.id)&&s.campusRevision===1)s.endingRecord=endingSnapshot(s,w.recipe);
+      if(has(s,'audit')&&(s.researchRevision!==1||C.projects.filter(p=>p.historyYear).every(p=>has(s,p.id)))&&!s.epilogue&&!s.endingRecord&&['dynamics','molecule'].includes(w.id)&&s.campusRevision===1)s.endingRecord=endingSnapshot(s,w.recipe);
       checkEnding(s);
-    }else finishExperiment(s,job);
+    }else {finishExperiment(s,job);finishStudy(s,job);}
   }
   function pause(s) {if(!s.started)return false;s.paused=!s.paused;return true;}
   function cancel(s) {if(!s.job)return false;s.job=null;note(s,'Experiment cancelled. The apparatus is available again. Entry costs are not refunded.','event');return true;}
@@ -466,18 +532,23 @@
     let envelope;try{envelope=JSON.parse(text);}catch{throw new Error('This file is not valid JSON. Your current laboratory is unchanged.');}
     if(envelope?.game!=='coherent'||envelope.version!==2||envelope.state?.version!==2)throw new Error(envelope?.version===1?'This is a short-campaign baseline save. It remains preserved; the deeper campaign begins in a new laboratory.':'This is not a supported Coherent save.');
     const input=envelope.state,base=newGame(),s={},campus=campusDefaults(),campusKeys=Object.keys(campus);
+    const researchKeys=['researchRevision','researchResults'],researchCount=researchKeys.filter(key=>key in input).length;
+    if(researchCount&&researchCount!==2)throw new Error('Save has an incomplete historical research block.');
+    s.researchRevision=researchCount?input.researchRevision:0;s.researchResults=researchCount?input.researchResults:[];
+    if(![0,1].includes(s.researchRevision)||!Array.isArray(s.researchResults)||s.researchResults.length>11||s.researchRevision===0&&s.researchResults.length)throw new Error('Invalid historical research configuration.');
     // A known in-progress campus rollout added recipe receipts before any workload finished.
     // Accept only its complete previous block, never repair partial saves or infer history.
     if(input.campusRevision===1&&!('completedRecipes' in input)&&campusKeys.filter(key=>key!=='completedRecipes').every(key=>key in input)&&Array.isArray(input.completed)&&input.completed.length===0&&input.endingRecord===null&&input.epilogue===false)input.completedRecipes={};
     const campusCount=campusKeys.filter(key=>key in input).length;
     if(campusCount&&campusCount!==campusKeys.length)throw new Error('Save has an incomplete campus state block.');
     Object.assign(s,campusCount?Object.fromEntries(campusKeys.map(key=>[key,input[key]])):{...campus,campusRevision:0});
+    if(s.researchRevision===1&&s.campusRevision!==1)throw new Error('Historical research requires the expanded campus.');
     if(![0,1].includes(s.campusRevision)||!Array.isArray(s.objectiveResults)||s.objectiveResults.length>6||!Array.isArray(s.precisionResults)||s.precisionResults.length>6||!Array.isArray(s.orders)||s.orders.length>2||!Number.isInteger(s.orderSerial)||s.orderSerial<0||s.orderSerial>1e9||!Number.isInteger(s.trialSerial)||s.trialSerial<0||s.trialSerial>1e9||typeof s.epilogue!=='boolean'||!['balanced','compact','parallel'].includes(s.logicalRecipe)||!['balanced','streaming','response'].includes(s.controllerProfile)||(!s.completedRecipes||Array.isArray(s.completedRecipes)||typeof s.completedRecipes!=='object')||[s.chipStock,s.supportStock].some(n=>typeof n!=='number'||!Number.isFinite(n)||n<0||n>8192))throw new Error('Invalid campus configuration.');
     if(s.campusRevision===0&&(s.objectiveResults.length||s.precisionResults.length||s.orders.length||s.orderSerial||s.trialSerial||s.chipStock||s.supportStock||s.logicalRecipe!=='balanced'||s.controllerProfile!=='balanced'||Object.keys(s.completedRecipes).length||s.endingRecord!==null||s.epilogue))throw new Error('Legacy laboratory cannot contain earned campus progress.');
     const ranges={elapsed:[0,1e9],funds:[0,1e12],effort:[0,1e9],module:[0,6],rack:[0,6],staff:[0,MAX_STAFF],notebooks:[1,64],designs:[0,1e9],price:[.5,200],automation:[0,16],analysisShare:[0,1],workshops:[0,12],fabrication:[0,1],fabricated:[0,8192],integrated:[0,8192],pulse:[0,8],decoder:[0,5],drift:[.005,1],distance:[3,9],factories:[0,3],calibration:[0,.6],service:[0,.9],theta:[0,90],shots:[0,3],credits:[0,2000],reputation:[0,1000],seed:[0,4294967295],volume:[0,1]};
     const integers=['notebooks','automation','workshops','module','rack','staff','pulse','decoder','distance','factories','shots','reputation','seed'];
     for(const [key,value] of Object.entries(base)){
-      if(campusKeys.includes(key))continue;
+      if(campusKeys.includes(key)||researchKeys.includes(key))continue;
       if(!(key in input))throw new Error('Save is missing '+key+'.');
       if(ranges[key]){const n=input[key],[min,max]=ranges[key];if(typeof n!=='number'||!Number.isFinite(n)||n<min||n>max||(integers.includes(key)&&!Number.isInteger(n)))throw new Error('Invalid '+key+' in save.');s[key]=n;}
       else if(typeof value==='boolean'){if(typeof input[key]!=='boolean')throw new Error('Invalid '+key+' in save.');s[key]=input[key];}
@@ -542,6 +613,31 @@
       const task=s.result.task,receipt=(task.precision?s.precisionResults:s.objectiveResults).find(receipt=>receipt.id===task.id&&receipt.trial===task.trial),tutorial=s.tutorial;
       if(!receipt||['theta','shots','modeledShots','mitigate','readoutBias'].some(key=>receipt.result[key]!==tutorial[key])||receipt.result.groups.some((group,i)=>group.plus!==tutorial.groups[i].plus||group.minus!==tutorial.groups[i].minus))throw new Error('Successful current task is missing its matching fresh receipt.');
     }
+    const studyIds=new Set();
+    for(const receipt of s.researchResults){
+      const project=C.projects.find(p=>p.id===receipt?.id&&p.historyYear),context=receipt?.context;
+      if(s.researchRevision!==1||!project||studyIds.has(project.id)||receipt.experiment!==project.study.experiment||!number(receipt.time,0,s.elapsed)||project.requires.some(id=>!has(s,id))||!context||Array.isArray(context)||Object.keys(context).length!==studyContextKeys.length||studyContextKeys.some(key=>!(key in context)))throw new Error('Invalid historical study receipt identity or prerequisites.');
+      validateIds(context.done,C.projects.map(p=>p.id),'historical study discoveries');validateIds(context.engineering,C.engineering.map(e=>e.id),'historical study engineering');
+      if(context.done.includes(project.id)||context.done.some(id=>!has(s,id))||context.engineering.some(id=>!hasEngineering(s,id))||project.requires.some(id=>!context.done.includes(id)))throw new Error('Historical study context cannot invent or omit prerequisite discoveries.');
+      for(const key of studyContextKeys){
+        if(ranges[key]&&!number(context[key],...ranges[key],integers.includes(key)))throw new Error('Invalid historical study context '+key+'.');
+      }
+      const captured={...newGame(),...context};
+      if(![3,5,7,9].includes(context.distance)||typeof context.autoCalibration!=='boolean'||!['balanced','streaming','response'].includes(context.controllerProfile)||!['balanced','compact','parallel'].includes(context.logicalRecipe)||context.controllerProfile!=='balanced'&&!has(captured,'controller2026')||context.logicalRecipe!=='balanced'&&!has(captured,'state-readiness')||context.factories&&!has(captured,'ancilla')||context.distance!==3&&!has(captured,'surface')||context.module&&!has(captured,'rb')||context.rack&&!has(captured,'divincenzo')||context.pulse&&!has(captured,'rb')||context.decoder&&!has(captured,'decoder')||context.service&&!has(captured,'nisq')||context.calibration&&!has(captured,'rb')||context.autoCalibration&&!hasEngineering(captured,'autoCalibration')||(context.fabricated||context.integrated)&&!hasEngineering(captured,'workshop'))throw new Error('Historical study context contains unavailable configuration.');
+      for(const p of C.projects)if(has(captured,p.id)&&p.requires.some(id=>!has(captured,id)))throw new Error('Historical study context has missing discovery prerequisites.');
+      for(const e of C.engineering)if(hasEngineering(captured,e.id)&&(e.requires.some(id=>!has(captured,id))||e.engineeringRequires.some(id=>!hasEngineering(captured,id))||e.group&&C.engineering.some(other=>other.id!==e.id&&other.group===e.group&&hasEngineering(captured,other.id))))throw new Error('Historical study context has invalid engineering prerequisites.');
+      if(project.study.experiment==='vqe')validateTutorial(receipt.tutorial,true);else if(receipt.tutorial!==null)throw new Error('Only VQE historical studies can contain sampled tutorial evidence.');
+      if(project.study.kind==='memory-latency'?receipt.stricterFeedbackReady!==(metrics(captured).feedback<=20):receipt.stricterFeedbackReady!==undefined)throw new Error('Historical memory and feedback comparison disagree.');
+      if(studyConditions(captured,project.study.kind,receipt.tutorial).length)throw new Error('Historical study receipt does not meet its declared numerical criterion.');
+      studyIds.add(project.id);
+    }
+    for(const receipt of s.researchResults)for(const id of receipt.context.done.filter(id=>C.projects.find(p=>p.id===id)?.historyYear))if(!s.researchResults.some(previous=>previous.id===id&&previous.time<=receipt.time))throw new Error('Historical study context claims future or missing annual evidence.');
+    if(s.researchRevision===0&&s.done.some(id=>C.projects.find(p=>p.id===id)?.historyYear)||s.done.some(id=>C.projects.find(p=>p.id===id)?.historyYear&&!studyIds.has(id)))throw new Error('Purchased historical discoveries require their fresh study receipts.');
+    if(s.result?.study!==undefined){
+      const recorded=s.result.study,project=C.projects.find(p=>p.id===recorded?.id&&p.historyYear),receipt=s.researchResults.find(r=>r.id===recorded?.id);
+      if(s.researchRevision!==1||!project||project.study.experiment!==s.result.id||typeof recorded.passed!=='boolean'||project.requires.some(id=>!has(s,id))||recorded.passed&&!receipt)throw new Error('Invalid recorded historical study result.');
+      if(recorded.passed&&project.study.experiment==='vqe'&&(['theta','shots','modeledShots','mitigate','readoutBias'].some(key=>receipt.tutorial[key]!==s.tutorial[key])||receipt.tutorial.groups.some((g,i)=>g.plus!==s.tutorial.groups[i].plus||g.minus!==s.tutorial.groups[i].minus)))throw new Error('Successful historical study is missing its matching captured samples.');
+    }
     const orderIds=new Set();
     for(const order of s.orders){
       const offer=C.procurementOffers.find(offer=>offer.id===order?.offer);
@@ -570,13 +666,19 @@
         const item=j.objective!==undefined?C.objectives.find(item=>item.id===j.objective):j.request!==undefined?C.precisionRequests.find(item=>item.id===j.request):null;
         if((j.objective!==undefined||j.request!==undefined)&&(!item||item.requires.some(id=>!has(s,id))||(j.objective?s.objectiveResults:s.precisionResults).some(receipt=>receipt.id===item.id)))throw new Error('Invalid active measurement objective or request.');
       }else if(j.recipeRevision!==undefined||j.trial!==undefined||j.objective!==undefined||j.request!==undefined)throw new Error('Legacy or unrelated job cannot claim fresh campus evidence.');
+      if(j.study!==undefined){
+        const project=C.projects.find(p=>p.id===j.study&&p.historyYear);
+        if(s.researchRevision!==1||!project||j.workload||j.id!==project.study.experiment||j.objective!==undefined||j.request!==undefined||s.researchResults.some(r=>r.id===project.id)||has(s,project.id)||project.requires.some(id=>!has(s,id)))throw new Error('Invalid captured historical study job.');
+        if(j.id==='vqe'&&studyConditions({...s,theta:j.theta,shots:sampleCounts.indexOf(j.shots),mitigate:j.mitigate},project.study.kind).length)throw new Error('Captured historical preparation does not meet its study plan.');
+      }
       if(j.workload&&(j.recipe!==undefined&&!C.dynamicsRecipes.some(recipe=>recipe.id===j.recipe)||j.id!=='dynamics'&&j.recipe&&j.recipe!=='balanced'||j.recipe&&j.recipe!=='balanced'&&!has(s,'state-readiness')))throw new Error('Invalid captured workload recipe.');
       if(j.workload&&s.completed.includes(j.id))throw new Error('A completed workload cannot still be running.');
     }
-    if(!s.started&&(s.paused||s.elapsed||s.done.length||s.qualified.length||s.completed.length||s.job||s.result||s.tutorial||s.objectiveResults.length||s.precisionResults.length||s.orders.length||s.chipStock||s.supportStock||s.trialSerial||s.orderSerial))throw new Error('An unstarted laboratory cannot contain progress.');
+    if(!s.started&&(s.researchResults.length||s.paused||s.elapsed||s.done.length||s.qualified.length||s.completed.length||s.job||s.result||s.tutorial||s.objectiveResults.length||s.precisionResults.length||s.orders.length||s.chipStock||s.supportStock||s.trialSerial||s.orderSerial))throw new Error('An unstarted laboratory cannot contain progress.');
+    if(s.researchRevision===1&&!s.epilogue&&s.ended&&C.projects.some(p=>p.historyYear&&!has(s,p.id)))throw new Error('Mandatory historical discoveries are missing from this new campaign ending.');
     if(s.ended&&s.job)throw new Error('A completed campaign cannot contain an active job.');
     if(s.ended&&(!has(s,'audit')||!s.completed.some(id=>['dynamics','molecule'].includes(id))))throw new Error('Ending requirements are missing.');
-    return JSON.parse(JSON.stringify(s));
+    return JSON.parse(JSON.stringify(Object.fromEntries(Object.keys(base).map(key=>[key,s[key]]))));
   }
-  return {content:C,POOLS,MAX_STAFF,newGame,stage,has,hasEngineering,assign,engineeringStatus,buyEngineering,metrics,patchSize,upgradeInfo,buyUpgrade,qualificationNow,projectStatus,buyProject,configure,campusStatus,enterCampus,continueLaboratory,objectiveStatus,precisionStatus,startObjective,startPrecisionRequest,procurementStatus,orderEquipment,experimentRecipe,experimentStatus,startExperiment,calibrate,tutorialEnergy,workloadRecipe,workloadStatus,startWorkload,liveWorkloadStatus,tick,pause,cancel,serialize,parseSave};
+  return {content:C,POOLS,MAX_STAFF,newGame,stage,has,hasEngineering,assign,engineeringStatus,buyEngineering,metrics,patchSize,upgradeInfo,buyUpgrade,qualificationNow,projectStatus,buyProject,configure,campusStatus,enterCampus,continueLaboratory,objectiveStatus,precisionStatus,startObjective,startPrecisionRequest,procurementStatus,orderEquipment,experimentRecipe,experimentStatus,startExperiment,calibrate,tutorialEnergy,workloadRecipe,workloadStatus,startWorkload,liveWorkloadStatus,researchStatus,enterResearchProgramme,studyStatus,startStudy,tick,pause,cancel,serialize,parseSave};
 });

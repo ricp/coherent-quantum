@@ -1,0 +1,15 @@
+# The missing years, with the foundations retained
+
+User scope: fill 2015–2025, add purchasable discoveries that lengthen the campaign, and require all eleven before the gift ending in new games. A later correction explicitly requires the full original history to remain visible. Branch: `feature/research-history-2015-2026`; local commits only.
+
+The default archive is the complete 1982–2026 timeline containing all 44 game discoveries. All 33 prior discoveries remain, with eleven annual studies inserted chronologically. Each year from 2015 through 2026 is represented. Eight verified additions bring the bibliography to 51 academic sources. Publication/preprint landmarks and the game’s prerequisite order remain distinct; the timeline does not pretend that cited review dates are invention dates. The game-order collection and all-source collection remain available.
+
+Each annual discovery requires a newly paid study using the existing apparatus, then a separate research purchase. These are authored educational objectives, not reproductions of the cited papers or universal hardware upgrades. Their choices use preparation/precision/bias, current protected memory, code distance/footprint, calibration/service allocation, decoder throughput/feedback, and factory footprint/supply. Original physical-error, workload and revenue coefficients remain unchanged.
+
+The 2018 study deliberately measures an unsuitable preparation precisely; study success is distinct from a ground-energy result. The 2022 study temporarily allocates zero factories, keeps memory qualified, and records whether actual feedback meets a separate 20 μs comparison. It requires no impossible decoder downgrade. The 2025 study covers partial supply/footprint feasibility; it does not replace full workload risk/runtime qualification or simulate cultivation acceptance.
+
+New saves use a complete `researchRevision:1,researchResults:[]` block. A complete existing save with both fields absent is read as the prior edition without invented receipts. Partial blocks fail. Existing completed gifts remain earned; users may explicitly Continue, then join the extension while idle. A preserved original milestone is never replaced by postgame studies. Entry costs stay spent on cancellation/failure, and fresh evidence/purchases cannot repeat. Recorded VQE groups and logical-model inputs are revalidated on import.
+
+Research purchases total 15,950 funding, 28,800 effort and 4,090 designs, plus acquisition fees and real laboratory occupation. The six paired simulated campus routes add about six to nine laboratory minutes; independent legal 44/44 routes are also covered. This does not claim eleven new subsystems, human enjoyment, an optimal route or a completed normal-Chrome playthrough of this new edition.
+
+Scientific review, intent tests, legal simulations, native UI and current evidence boundaries are recorded separately in the verification report. Historical campus and normal-Chrome reports retain their original source scopes.
