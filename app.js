@@ -18,7 +18,7 @@
     if(key){const [name,identity]=key,attribute=name.replace(/[A-Z]/g,c=>'-'+c.toLowerCase()),replacement=container.querySelector('[data-'+attribute+'="'+identity+'"]');(replacement&&!replacement.disabled?replacement:container.querySelector('button:not(:disabled)'))?.focus({preventScroll:true});}
   };
   let s=G.newGame(),view='lab',archive='history',experiment='signal',workload='dynamics',experimentChosen=false;
-  let protectedSave=false,lastSave=0,lastSaveAttempt=0,savedAt='',lastResult='',taskFeedback='',lastEnding=false,audio=null,animation=0,noticeKind='',baselineRaw=null;
+  let protectedSave=false,lastSave=0,lastSaveAttempt=0,savedAt='',lastResult='',taskFeedback='',lastEnding=false,audio=null,soundKit=null,soundWanted=false,audioRequest=0,animation=0,noticeKind='',baselineRaw=null;
   try {const raw=localStorage.getItem(KEY);baselineRaw=localStorage.getItem('coherent.v1');show('baseline-notice',raw===null&&baselineRaw!==null);show('settings-baseline',baselineRaw!==null);if(raw!==null){s=G.parseSave(raw);write('save-status','Loaded local save');}}
   catch(error){protectedSave=true;write('save-status','Stored save unreadable');notice('Your stored save could not be loaded: '+error.message+' It is preserved. Import a valid save or explicitly start a new laboratory to replace it.');}
   lastEnding=s.ended;lastResult=JSON.stringify(s.result);taskFeedback=s.result?.task||s.result?.study?s.result.message:'';if(s.ended)view='ending';
@@ -42,18 +42,15 @@
   }
   function tone(kind='click') {
     if(!s.sound||!audio||audio.state!=='running'||s.volume<=0||document.hidden)return;
-    const notes=kind==='chapter'?[261.63,329.63,392,523.25]:kind==='result'?[392,523.25]:[440];
-    for(let i=0;i<notes.length;i++){
-      const oscillator=audio.createOscillator(),gain=audio.createGain(),start=audio.currentTime+i*.11;
-      oscillator.type='sine';oscillator.frequency.value=notes[i];gain.gain.setValueAtTime(0,start);gain.gain.linearRampToValueAtTime(s.volume*.15,start+.012);gain.gain.exponentialRampToValueAtTime(.0001,start+.24);
-      oscillator.connect(gain);gain.connect(audio.destination);oscillator.start(start);oscillator.stop(start+.25);
-    }
+    soundKit?.setVolume(s.volume);soundKit?.play(kind);
   }
+  function cancelSounds(){audioRequest++;soundWanted=!!(s.sound&&audio?.state==='running');soundKit?.stop();}
   async function toggleSound(){
-    if(s.sound&&audio?.state==='running'){G.configure(s,'sound',false);await audio.suspend();}
-    else try {audio=audio||new (window.AudioContext||window.webkitAudioContext)();await audio.resume();G.configure(s,'sound',true);tone('result');}
-    catch {notice('Sound could not start in this browser. The laboratory continues silently.');G.configure(s,'sound',false);}
-    save();render();
+    const wanted=!(soundWanted||s.sound&&audio?.state==='running'),request=++audioRequest;soundWanted=wanted;
+    if(!wanted){G.configure(s,'sound',false);soundKit?.stop();if(audio)await audio.suspend();}
+    else try {audio=audio||new (window.AudioContext||window.webkitAudioContext)();soundKit=soundKit||CoherentSound.create(audio);await audio.resume();if(request!==audioRequest||!soundWanted)return;if(audio.state!=='running')throw new Error('Audio context did not start');G.configure(s,'sound',true);tone('enable');}
+    catch {if(request===audioRequest){notice('Sound could not start in this browser. The laboratory continues silently.');G.configure(s,'sound',false);soundWanted=false;soundKit?.stop();}}
+    if(request===audioRequest){save();render();}
   }
   function act(action){
     const before=G.stage(s),focused=document.activeElement;
@@ -403,7 +400,8 @@
   function motionActive(){return view==='lab'&&!document.hidden&&!s.paused&&!s.ended&&(s.job||G.metrics(s).creditRate>0&&s.credits<2000)&&!matchMedia('(prefers-reduced-motion: reduce)').matches;}
   function animate(time){animation=0;if(!motionActive())return;draw(time);animation=requestAnimationFrame(animate);}
   function ensureAnimation(){if(!animation&&motionActive())animation=requestAnimationFrame(animate);}
-  document.addEventListener('coherent-inspect',renderInspector);
+  document.addEventListener('coherent-inspect',event=>{renderInspector();if(event.detail?.type)tone(event.detail.type);});
+  document.addEventListener('coherent-focus',event=>{if(event.detail?.type)tone(event.detail.type);});
   document.addEventListener('click',event=>{
     const b=event.target.closest('button');if(!b||b.disabled)return;
     if(b.dataset.view)setView(b.dataset.view);
@@ -453,7 +451,7 @@
     else if(b.id==='auto-calibration')act(()=>G.configure(s,'autoCalibration',!s.autoCalibration));
     else if(b.id==='import-button')$('import-file').click();
     else if(b.id==='confirm-reset'){
-      const preferences={theme:s.theme,volume:s.volume,sound:s.sound};s=Object.assign(G.newGame(),preferences);protectedSave=false;savedAt='';lastEnding=false;lastResult='';taskFeedback='';experiment='signal';experimentChosen=false;view='lab';notice('');document.querySelectorAll('dialog[open]').forEach(d=>d.close());write('experiment-feedback','');write('settings-feedback','New laboratory started.');save();render();$('main').scrollIntoView({block:'start'});
+      const preferences={theme:s.theme,volume:s.volume,sound:s.sound};s=Object.assign(G.newGame(),preferences);cancelSounds();soundKit?.setVolume(s.volume);protectedSave=false;savedAt='';lastEnding=false;lastResult='';taskFeedback='';experiment='signal';experimentChosen=false;view='lab';notice('');document.querySelectorAll('dialog[open]').forEach(d=>d.close());write('experiment-feedback','');write('settings-feedback','New laboratory started.');save();render();$('main').scrollIntoView({block:'start'});
     }
     else if(b.id==='ending-lab')setView('lab');
     else if(b.id==='enter-campus')act(()=>G.enterCampus(s));
@@ -464,7 +462,7 @@
   const controls={theta:['theta',1], 'shot-count':['shots',1], 'factory-count':['factories',1],calibration:['calibration',.01],service:['service',.01],'analysis-share':['analysisShare',.01],fabrication:['fabrication',.01],volume:['volume',.01]};
   document.addEventListener('input',event=>{
     const target=event.target;if(target.id==='paper-search'){renderResearch();return;}
-    if(controls[target.id]){const [key,scale]=controls[target.id];if(G.configure(s,key,Number(target.value)*scale)){clearTaskFeedback();render();save();}}
+    if(controls[target.id]){const [key,scale]=controls[target.id];if(G.configure(s,key,Number(target.value)*scale)){if(key==='volume')soundKit?.setVolume(s.volume);clearTaskFeedback();render();save();}}
     else if(target.id==='mitigate')act(()=>G.configure(s,'mitigate',target.checked));
   });
   $('contract-price').addEventListener('change',event=>{if(!G.configure(s,'price',Number(event.target.value)))event.target.value=s.price;else clearTaskFeedback();render();save();});
@@ -474,7 +472,7 @@
     const file=event.target.files[0];if(!file)return;
     try {
       if(file.size>250000)throw new Error('Save is larger than 250 KB.');
-      const imported=G.parseSave(await file.text());s=imported;protectedSave=false;lastEnding=s.ended;lastResult=JSON.stringify(s.result);taskFeedback=s.result?.task||s.result?.study?s.result.message:'';experiment='';experimentChosen=false;view=s.ended?'ending':'lab';notice('');write('experiment-feedback','');save();write('settings-feedback','Imported '+file.name+'. '+(s.paused?'The laboratory remains paused.':'The laboratory resumes visible play.'));render();ensureAnimation();
+      const imported=G.parseSave(await file.text());s=imported;cancelSounds();soundKit?.setVolume(s.volume);protectedSave=false;lastEnding=s.ended;lastResult=JSON.stringify(s.result);taskFeedback=s.result?.task||s.result?.study?s.result.message:'';experiment='';experimentChosen=false;view=s.ended?'ending':'lab';notice('');write('experiment-feedback','');save();write('settings-feedback','Imported '+file.name+'. '+(s.paused?'The laboratory remains paused.':'The laboratory resumes visible play.'));render();ensureAnimation();
     }catch(error){write('settings-feedback','Import failed: '+error.message+' Your current laboratory is unchanged.');}
     event.target.value='';
   });
@@ -488,8 +486,8 @@
     if(s.started&&!s.paused&&!s.ended&&s.elapsed-lastSave>=10&&now-lastSaveAttempt>=10000)save();
     render();ensureAnimation();
   },100);
-  document.addEventListener('visibilitychange',()=>{previous=performance.now();if(document.hidden){if(s.started)save();if(animation)cancelAnimationFrame(animation);animation=0;}else{render();ensureAnimation();}});
-  window.addEventListener('pagehide',()=>{if(s.started)save();});
+  document.addEventListener('visibilitychange',()=>{previous=performance.now();if(document.hidden){cancelSounds();if(s.started)save();if(animation)cancelAnimationFrame(animation);animation=0;}else{render();ensureAnimation();}});
+  window.addEventListener('pagehide',()=>{cancelSounds();if(s.started)save();});
   window.addEventListener('resize',()=>draw());matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',()=>{draw();ensureAnimation();});
   $('chapter-dialog').addEventListener('close',()=>{($('run-experiment').disabled?$('pause-toggle'):$('run-experiment')).focus({preventScroll:true});});
   render();ensureAnimation();
