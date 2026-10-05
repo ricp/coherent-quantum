@@ -119,6 +119,8 @@
     else if(camera==='planning'){title='A schedule needs fresh resources';detail=has('ancilla')?s.factories+' allocated factories · '+num(m.modelFactoryRate,3)+' accepted states / μs under the selected model. Rehearsal credits are classical bookkeeping.':'The foundry is planned. Qualified memory, logical operations and fresh-state supply open its schedule.';target=phase===5?'workload-section':'discoveries-section';label=phase===5?'Compare complete workload budgets':'Visit the next research';}
     else if(camera==='fabrication'){title='The commissioning dock';detail=G.hasEngineering(s,'workshop')?s.workshops+' construction teams · '+num(m.fabricationRate,2)+' installed and '+num(m.integrationRate,2)+' supported positions / lab s. Active capacity needs both streams.':'Construction teams and delivery commitments open after the workshop engineering advance.';target=G.hasEngineering(s,'workshop')?'workshop-control':'engineering-section';label=G.hasEngineering(s,'workshop')?'Balance commissioning streams':'Inspect workshop engineering';}
     else if(camera==='service'){title='A gallery with two kinds of customer';detail=has('nisq')?num(m.delivered,2)+' known-preparation batches / lab s · '+num(m.revenue,2)+' funding / lab s. Customer work competes with analysis and explicit experiments.':'Known-preparation services open with the noisy processor. Precision work later needs fresh trial evidence.';target=has('nisq')?'service-control':'discoveries-section';label=has('nisq')?'Balance customer and analysis duty':'Visit the next research';}
+    else if(camera==='warehouse'){title='Received stock still needs commissioning';detail=num(s.chipStock||0,1)+' chip assemblies · '+num(s.supportStock||0,1)+' control/cooling assemblies · '+(s.orders?.length||0)+' incoming orders. '+(s.paused||s.ended||!s.started?'Planned':'Current')+' funded prefab flow: '+num(m.prefabFabricationRate,2)+' chip + '+num(m.prefabIntegrationRate,2)+' support / lab s. Receipt is not installed capacity.';target=$('procurement-section').hidden?'next-title':'procurement-section';label=target==='next-title'?'Review the receiving-dock prerequisites':'Inspect deliveries and stock';}
+    else if(camera==='operations'){title='The next constraint, in one room';detail=$('next-copy').textContent;target='next-title';label='Inspect the next action and budget';}
     if($(target)?.hidden){target='run-experiment';label='Return to the next experiment';}
     const u=upgrade&&G.upgradeInfo(s,upgrade),purchase=u?.available&&!u.max?'<button type="button" data-upgrade="'+upgrade+'" '+(!u.ready?'disabled':'')+'>'+esc(u.label)+' · '+num(u.cost)+' funding · '+num(u.designs)+' designs ↗</button>':'';
     const readings=camera==='control'?[['Q37','2026 · feedback'],['Q41','Accuracy and throughput']]:camera==='cryostat'?[['Q38','2026 · adaptive control']]:camera==='planning'?[['Q40','Cultivation evidence'],['Q43','2026 · state readiness']]:camera==='memory'?[['Q42','2026 · connectivity']]:[];
@@ -369,7 +371,7 @@
     }
     draw();renderStation(m,phase);
   }
-  function draw(time=performance.now()){const record=view==='ending'?s.endingRecord:null;if(window.CoherentArt)CoherentArt.draw(s,{workload:record?.workload||workload,recipe:record?.recipe||(s.job?.workload?s.job.recipe:s.logicalRecipe),view,time});}
+  function draw(time=performance.now()){const record=view==='ending'?s.endingRecord:null;if(window.CoherentArt)CoherentArt.draw(s,{workload:record?.workload||workload,recipe:record?.recipe||(s.job?.workload?s.job.recipe:s.logicalRecipe),bottleneck:view==='ending'?'Recorded milestone. Continue the laboratory for another question.':$('next-copy').textContent,nextAction:$('next-title').textContent,view,time});}
   function motionActive(){return view==='lab'&&!document.hidden&&!s.paused&&!s.ended&&(s.job||G.metrics(s).creditRate>0&&s.credits<2000)&&!matchMedia('(prefers-reduced-motion: reduce)').matches;}
   function animate(time){animation=0;if(!motionActive())return;draw(time);animation=requestAnimationFrame(animate);}
   function ensureAnimation(){if(!animation&&motionActive())animation=requestAnimationFrame(animate);}
@@ -391,7 +393,7 @@
     else if(b.dataset.engineering)act(()=>G.buyEngineering(s,b.dataset.engineering));
     else if(b.dataset.assign)act(()=>G.assign(s,b.dataset.assign,Number(b.dataset.delta)));
     else if(b.dataset.upgrade)act(()=>G.buyUpgrade(s,b.dataset.upgrade));
-    else if(b.dataset.stationTarget){const target=$(b.dataset.stationTarget);target.scrollIntoView({block:'center'});(target.matches('button,input,select')?target:target.querySelector('button:not(:disabled),input:not(:disabled),select:not(:disabled)'))?.focus({preventScroll:true});}
+    else if(b.dataset.stationTarget){const target=$(b.dataset.stationTarget);target.scrollIntoView({block:'center'});(target.matches('button,input,select,[tabindex]')?target:target.querySelector('button:not(:disabled),input:not(:disabled),select:not(:disabled)'))?.focus({preventScroll:true});}
     else if(b.dataset.objective)act(()=>G.startObjective(s,b.dataset.objective));
     else if(b.dataset.precisionRequest)act(()=>G.startPrecisionRequest(s,b.dataset.precisionRequest));
     else if(b.dataset.orderEquipment)act(()=>G.orderEquipment(s,b.dataset.offer,b.dataset.kind));

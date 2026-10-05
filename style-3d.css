@@ -108,3 +108,11 @@ main{padding:22px 32px 28px}
 #three-hover{position:absolute;z-index:2;pointer-events:none;padding:9px 12px;max-width:min(270px,calc(100% - 24px));box-sizing:border-box;border:1px solid var(--teal);border-radius:4px;background:var(--panel);box-shadow:0 8px 24px #0004;color:var(--ink);font:10px/1.5 var(--mono)}
 #three-hover[hidden]{display:none}
 #three-toolbar button.three-hover-station{color:var(--teal);border-color:var(--teal)}
+
+@media(min-width:1001px){#three-stations{display:flex;flex:1;min-width:0;gap:5px;overflow-x:auto;padding:3px 2px;scrollbar-width:thin;scrollbar-color:var(--teal) var(--bg)}#three-toolbar::before{display:none}#three-toolbar>button{flex-shrink:0}}
+
+.three-viewport{position:relative}
+#three-facility-controls{position:absolute;right:16px;bottom:16px;z-index:2;min-height:40px;padding:9px 13px;border:1px solid var(--teal);border-radius:4px;background:var(--panel);box-shadow:0 5px 20px #0004;color:var(--teal);font:11px/1.4 var(--mono);cursor:pointer}
+#three-facility-controls:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+#three-facility-controls[hidden]{display:none}
+@media(max-width:660px){#three-facility-controls{right:10px;bottom:10px;min-height:44px;font-size:10px}}
