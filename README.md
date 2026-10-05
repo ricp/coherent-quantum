@@ -22,7 +22,7 @@ Code distance trades protection against footprint and duration, while factories 
 
 Drag the 3D laboratory to orbit and use the mouse wheel to zoom. Focus its canvas and press + or − for keyboard zoom. Re-select a camera station to restore its framing; Reset returns to Overview. Mouse zoom enters Manual inspection, preserving your chosen view during ordinary updates. The desktop camera toolbar keeps 2D view on the same row; narrow desktop layouts scroll that toolbar. Touch layouts retain vertical page scrolling.
 
-Settings provide light/dark appearance, manual save, JSON export/import, and a confirmed reset. Sound is off initially and always requires a click to start. Reduced motion follows the browser/OS preference. All controls support keyboard operation.
+Settings provide light/dark appearance, manual save, JSON export/import, and a confirmed reset. New games enable sound after the first genuine interaction; saved mute choices remain respected. Reduced motion follows the browser/OS preference. All controls support keyboard operation.
 
 ## Saves
 
@@ -71,4 +71,4 @@ Both editions credit **Made by Richard Piacentini and GPT-X**, with Richard’s 
 
 Instrument sounds use original procedural Web Audio: fourteen brief apparatus signatures and refreshed action, result and chapter cues. New games have sound enabled; the first genuine mouse/touch or activation-key interaction unlocks playback, and saved mute preferences are preserved. Use the header Sound button and Settings volume control. Hover, orbit, normal rendering and automatic experiment tours do not create apparatus cues. The [independent AI audio review](INSTRUMENT-SOUND-REVIEW.md) records measured signal bounds, native role/activation/cancellation checks and hearing limitations. The complete suite now has **92 passing intent tests**.
 
-The proposed **Lab Companion** has [independent AI onboarding/gameplay design consensus](LAB-COMPANION-DESIGN-REVIEW.md): optional guided opening, current-action and blocker explanations, captured-result meaning, contextual glossary and existing inspector/control/paper links. This is a reviewed recommendation; the help feature has not been implemented.
+The **[Lab Companion](LAB-COMPANION.md)** is implemented in both editions. Open **Help ?**, press **?**, choose **Explain** beside a paid control, or select **Help with this instrument**. It explains the actual next action, blockers and captured results, with an earned opening guide, live causal diagrams, searchable wordbook and chapter references. **Show me** highlights existing controls without changing or using them. The complete suite has **97 passing intent tests**; [independent AI implementation review](LAB-COMPANION-IMPLEMENTATION-REVIEW.md) records the bounded native checks and remaining human/device limitations.
