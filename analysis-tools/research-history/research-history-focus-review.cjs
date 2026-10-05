@@ -1,0 +1,15 @@
+/* Native regression for available automated/manual maintenance control inspection only. */
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),{spawnSync}=require('node:child_process');
+const root=path.resolve(process.argv[2]||path.resolve(__dirname,'..','..')),out=path.resolve(process.argv[3]||require('node:os').tmpdir()),fixture=path.resolve(process.argv[4]||path.join(out,'research-history-ui-before-history2020.json')),G=require(path.join(root,'game.js')),session='history-maintenance-focus-'+process.pid;
+const state=G.parseSave(fs.readFileSync(fixture,'utf8'));if(!state.paused)G.pause(state);const paused=path.join(out,'history-maintenance-private-paused.json');fs.writeFileSync(paused,G.serialize(state));
+function run(...args){const p=spawnSync('agent-browser',['--session',session,...args],{encoding:'utf8',timeout:40000});if(p.status!==0)throw Error(p.stderr+p.stdout);return p.stdout;}
+const evaluate=code=>JSON.parse(run('eval',code)),cases=[];
+try{
+ run('open','http://127.0.0.1:5586/index-3d.html');run('click','[data-dialog="settings-dialog"]');run('upload','#import-file',paused);run('click','[data-close="settings-dialog"]');
+ for(const width of [375,320])for(const automatic of [true,false]){
+  run('set','viewport',String(width),'900');run('click','[data-view="lab"]');if(evaluate('JSON.parse(localStorage.getItem("coherent.v2")).state.autoCalibration')!==automatic)run('click','#auto-calibration');run('click','[data-view="research"]');run('click','[data-archive="history"]');const before=evaluate('localStorage.getItem("coherent.v2")');run('focus','#archive-list [data-study-inspect="history2020"]');run('press','Enter');
+  const result=evaluate(`(()=>{const r=document.activeElement.getBoundingClientRect();return{width:innerWidth,height:innerHeight,focus:document.activeElement.id,disabled:document.activeElement.disabled,visible:document.activeElement.matches(':focus-visible'),overflow:document.documentElement.scrollWidth>innerWidth,rect:{left:r.left,right:r.right,top:r.top,bottom:r.bottom}}})()`),after=evaluate('localStorage.getItem("coherent.v2")');
+  if(result.focus!==(automatic?'auto-calibration':'calibration')||result.disabled||!result.visible||result.overflow||result.rect.top<0||result.rect.bottom>result.height||before!==after)throw Error('Maintenance inspection lost usable focus or mutated state');run('screenshot',path.join(out,'history-maintenance-'+width+'-'+(automatic?'auto':'manual')+'.png'));cases.push({automatic,...result,serializedStateUnchanged:before===after});
+ }
+ const sourceHashes=Object.fromEntries(['app.js','game.js','content.js'].map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,f))).digest('hex')]));fs.writeFileSync(path.join(out,'research-history-focus-results.json'),JSON.stringify({evidenceKind:'isolated native control inspection with an earned public-action fixture',sourceHashes,cases},null,2));console.log(JSON.stringify({sourceHashes,cases}));
+}finally{run('close');}
