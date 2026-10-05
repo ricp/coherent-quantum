@@ -1,0 +1,78 @@
+{
+  "tap": {
+    "camera": "cryostat",
+    "canvas": {
+      "height": 280,
+      "width": 339,
+      "x": 18,
+      "y": 84.640625
+    },
+    "constraint": "Support covers the installed footprint. More hardware still needs matching support.",
+    "driver": false,
+    "eye": [
+      -2.2787193802812338,
+      7.018832402817196,
+      20.04011302253596
+    ],
+    "focus": "",
+    "frames": 6,
+    "heading": "Cryostat / copper stages",
+    "overflow": false,
+    "panel": {
+      "height": 1258.421875,
+      "width": 339,
+      "x": 18,
+      "y": 364.640625
+    },
+    "panelHidden": false,
+    "purpose": "Staged cooling is shown as a schematic cutaway. The game combines control and cooling support into one commissioned footprint; it does not simulate temperatures.",
+    "readouts": "Installed3,548Physical qubits after commissioningSupport capacity3,548Control and cooling footprintActive3,548The smaller installed/support footprintCalibration duty37%Competes for apparatus time",
+    "selection": "cryostat-stack:0",
+    "target": [
+      -7.999999999999999,
+      3.2999999999999994,
+      10.6
+    ],
+    "width": 375,
+    "zoom": 11.648111445554845
+  },
+  "scroll": {
+    "camera": "cryostat",
+    "canvas": {
+      "height": 440,
+      "width": 339,
+      "x": 18,
+      "y": 466.640625
+    },
+    "constraint": "Support covers the installed footprint. More hardware still needs matching support.",
+    "driver": false,
+    "eye": [
+      5.628318584070797,
+      7.799999999999998,
+      28.78938053097345
+    ],
+    "focus": "three-canvas",
+    "frames": 7,
+    "heading": "Cryostat / copper stages",
+    "overflow": false,
+    "panel": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 0
+    },
+    "panelHidden": true,
+    "purpose": "Staged cooling is shown as a schematic cutaway. The game combines control and cooling support into one commissioned footprint; it does not simulate temperatures.",
+    "readouts": "Installed3,548Physical qubits after commissioningSupport capacity3,548Control and cooling footprintActive3,548The smaller installed/support footprintCalibration duty37%Competes for apparatus time",
+    "selection": "",
+    "target": [
+      -8,
+      3,
+      10.799999999999995
+    ],
+    "width": 375,
+    "zoom": 23.07355367768684
+  },
+  "nativeCDPTouch": true,
+  "stateUnchanged": true
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "point": {
+      "id": "control-rack:1",
+      "x": 527.8703118246963,
+      "y": 508.17858205391013
+    },
+    "x": 527.8703118246963,
+    "y": 508.17858205391013,
+    "camera": "control",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 85.09375
+    },
+    "constraint": "Noise is below the selected threshold; footprint, decoder and gate requirements still apply.",
+    "driver": false,
+    "eye": [
+      28.64166999783756,
+      4.447085498594417,
+      -10.511244503568022
+    ],
+    "focus": "three-inspector-title",
+    "frames": 64,
+    "heading": "Control rack 2",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 85.09375
+    },
+    "panelHidden": false,
+    "purpose": "Classical control prepares known states and applies the chosen pulse sequence. Refinement changes the game\u2019s declared noise scenario, rather than revealing a quantum state.",
+    "readouts": "Effective noise0.029%Selected stochastic scenarioRB estimate0.132%A distinct characterization modelDrift0.005Maintenance changes this game parameterExperiment duty19%Fraction available to the apparatus",
+    "selection": "control-rack:1",
+    "target": [
+      24.799999999999997,
+      1.95,
+      -16.849999999999998
+    ],
+    "width": 1440,
+    "zoom": 7.821360853657269
+  }
+]

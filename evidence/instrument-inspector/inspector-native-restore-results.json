@@ -1,0 +1,35 @@
+{
+  "before": {
+    "at": [
+      29,
+      1.65,
+      -19
+    ],
+    "camera": "control",
+    "eye": [
+      40.30434782608695,
+      4.128260869565219,
+      -4.217391304347821
+    ],
+    "orbited": true,
+    "width": 1372
+  },
+  "after": {
+    "at": [
+      29,
+      1.65,
+      -19
+    ],
+    "camera": "control",
+    "eye": [
+      40.30434782608695,
+      4.128260869565219,
+      -4.217391304347821
+    ],
+    "orbited": true,
+    "width": 1372
+  },
+  "stateUnchanged": true,
+  "focus": "three-open-instrument",
+  "numberedSibling": "control-rack:2"
+}

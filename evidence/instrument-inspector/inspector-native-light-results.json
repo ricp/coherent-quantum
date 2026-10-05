@@ -1,0 +1,38 @@
+{
+  "camera": "control",
+  "canvas": {
+    "height": 620,
+    "width": 1002,
+    "x": 34,
+    "y": 85.234375
+  },
+  "constraint": "Streaming and feedback fit their current budgets. This does not certify a complete workload.",
+  "driver": false,
+  "eye": [
+    39.64166999783756,
+    4.447085498594417,
+    -14.51124450356803
+  ],
+  "focus": "three-inspector-title",
+  "frames": 429,
+  "heading": "Decoder rack 1",
+  "overflow": false,
+  "panel": {
+    "height": 620,
+    "width": 370,
+    "x": 1036,
+    "y": 85.234375
+  },
+  "panelHidden": false,
+  "purpose": "Check ancilla evidence enters a classical decoder. Syndrome events report error evidence; they do not reveal the unknown data state.",
+  "readouts": "Syndrome demand1,608 / \u03bcsAll allocated ideal patchesStreaming capacity4,096 / \u03bcsSeparate from decoding accuracyFeedback latency10 \u03bcsSeparate from streaming throughputController profilebalancedAuthored game tradeoff",
+  "selection": "decoder-rack:0",
+  "target": [
+    35.8,
+    1.95,
+    -20.850000000000005
+  ],
+  "width": 1440,
+  "zoom": 7.821360853657269,
+  "theme": "light"
+}

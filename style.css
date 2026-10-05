@@ -82,3 +82,6 @@
 
 @media(max-width:660px){.history-row{grid-template-columns:36px minmax(0,1fr);gap:12px}.history-actions{grid-column:2;grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:400px){.instrument-readouts .readout:nth-child(2) .readout-value{font-size:clamp(11px,3.2vw,14px);letter-spacing:-.7px;white-space:nowrap}}
+
+/* The creator signature keeps the existing source credits and model notes. */
+.app-footer.creator-footer{display:block}.app-footer .creator-footer-top,.app-footer .creator-footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:18px;width:auto}.app-footer .creator-footer-top{margin-bottom:16px}.creator-credit{display:flex;align-items:center;flex-wrap:wrap;gap:5px;font-size:13px}.creator-credit a{display:inline-flex;align-items:center;gap:7px;font-weight:600}.creator-credit svg{width:17px;height:17px;flex-shrink:0}.creator-model{color:var(--ink)}.creator-footer-top em{font:400 19px var(--serif);color:var(--copper)}@media(max-width:660px){.app-footer .creator-footer-top,.app-footer .creator-footer-bottom{flex-direction:column;align-items:start;gap:14px}.app-footer .creator-footer-top{margin-bottom:19px}}

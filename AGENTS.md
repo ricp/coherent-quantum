@@ -23,7 +23,7 @@ Read the relevant files before implementing:
 - `RESEARCH-HISTORY-DESIGN.md`, `RESEARCH-HISTORY-VERIFICATION.md`, `RESEARCH-HISTORY-ENGINE-REPORT.md`, `RESEARCH-HISTORY-SCIENCE-REVIEW.md`, `RESEARCH-HISTORY-GAMEPLAY-REVIEW.md`, `RESEARCH-HISTORY-3D-REVIEW.md`: current full timeline, eleven mandatory fresh studies, persistence, pacing, and bounded AI/native acceptance. Earlier campus completion remains historical.
 - `QUANTUM-FRONTIER-REVIEW.md`, `CAMPUS-GAMEPLAY-UI-REVIEW.md`, `CAMPUS-VISUAL-REVIEW.md`, `CAMPUS-ENDING-VISUAL-REVIEW.md`, `CAMPUS-EXPORT-REVIEW.md`: actual independent AI implementation reviews and resolved findings.
 - `CAMPUS-COMPLETION-SCIENCE-AUDIT.md`, `CAMPUS-COMPLETION-GAMEPLAY-AUDIT.md`, `CAMPUS-COMPLETION-VISUAL-AUDIT.md`: final bounded AI acceptance, resolved camera/caption/guidance/focus/archive findings, and reproducible evidence scopes.
-- `INSTRUMENT-INSPECTOR.md`: current equipment inspection, interaction contracts and verification boundaries.
+- `INSTRUMENT-INSPECTOR.md` and `CAMPUS-INSTRUMENT-INSPECTION-REVIEW.md`: current equipment inspection, actual independent AI acceptance and bounded revision-specific evidence.
 - `original-game.html`: unmodified reference snapshot; do not edit it to implement the new game.
 - `analysis-tools/`: executable audits of the original game.
 - `evidence/` and `source-audit.json`: original-game checks, simulated states, and browser evidence.

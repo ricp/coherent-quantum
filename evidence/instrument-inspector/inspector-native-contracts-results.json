@@ -1,0 +1,85 @@
+[
+  {
+    "case": "actual ordinary decoder purchase",
+    "quote": {
+      "available": true,
+      "cost": 1440,
+      "designs": 240,
+      "detail": "More streaming throughput and shorter feedback latency",
+      "label": "Upgrade classical decoding",
+      "max": false,
+      "ready": true,
+      "reasons": []
+    },
+    "before": {
+      "funds": 3923.096391151332,
+      "designs": 16806.32548068496,
+      "decoder": 3
+    },
+    "after": {
+      "funds": 2483.096391151332,
+      "designs": 16566.32548068496,
+      "decoder": 4
+    },
+    "camera": "control",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 85.09375
+    },
+    "constraint": "Streaming and feedback fit their current budgets. This does not certify a complete workload.",
+    "driver": false,
+    "eye": [
+      39.64166999783756,
+      4.447085498594417,
+      -14.51124450356803
+    ],
+    "focus": "",
+    "frames": 71,
+    "heading": "Decoder rack 1",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 85.09375
+    },
+    "panelHidden": false,
+    "purpose": "Check ancilla evidence enters a classical decoder. Syndrome events report error evidence; they do not reveal the unknown data state.",
+    "readouts": "Syndrome demand1,728 / \u03bcsAll allocated ideal patchesStreaming capacity16,384 / \u03bcsSeparate from decoding accuracyFeedback latency5 \u03bcsSeparate from streaming throughputController profilebalancedAuthored game tradeoff",
+    "selection": "decoder-rack:0",
+    "target": [
+      35.8,
+      1.95,
+      -20.850000000000005
+    ],
+    "width": 1440,
+    "zoom": 7.821360853657269
+  },
+  {
+    "case": "paused no job",
+    "framesBefore": 71,
+    "framesAfter": 71,
+    "tourDisabled": true
+  },
+  {
+    "case": "2D closes inspector",
+    "hidden": true
+  },
+  {
+    "case": "reduced motion static",
+    "framesBefore": 74,
+    "framesAfter": 74
+  },
+  {
+    "case": "existing allocation controls routing",
+    "focus": "<button type=\"button\" data-assign=\"staff\" data-delta=\"-1\" aria-label=\"Release one researcher\">\u2212</button>"
+  },
+  {
+    "case": "actual WebGL context loss",
+    "panelHidden": true,
+    "available": false,
+    "driverActive": false
+  }
+]
