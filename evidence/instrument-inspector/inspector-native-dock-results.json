@@ -1,0 +1,104 @@
+[
+  {
+    "case": "commissioning cell",
+    "point": [
+      -33,
+      1.2,
+      28.7
+    ],
+    "nativePixel": {
+      "x": 558.191317136062,
+      "y": 497.34110322700246
+    },
+    "hover": "commissioning-cell:0",
+    "camera": "fabrication",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 85.09375
+    },
+    "constraint": "Both chip and support commissioning matter. Their smaller footprint limits active capacity.",
+    "driver": false,
+    "eye": [
+      -27.605935732225262,
+      3.089891414799473,
+      29.554335850126076
+    ],
+    "focus": "three-inspector-title",
+    "frames": 59,
+    "heading": "Commissioning cell 1",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 85.09375
+    },
+    "panelHidden": false,
+    "purpose": "Funded construction teams commission chip and support capacity. Delivered equipment is stock until workshop time and funding convert it into usable capacity.",
+    "readouts": "Construction teams2Campus-wide team allocationChip commissioning1.68 / lab sPlanned funded rateSupport commissioning1.68 / lab sPlanned funded rateChip share50%The remainder commissions support",
+    "selection": "commissioning-cell:0",
+    "target": [
+      -33,
+      1.25,
+      28.699999999999996
+    ],
+    "width": 1440,
+    "zoom": 5.762900267048501
+  },
+  {
+    "case": "owned dock deck",
+    "point": [
+      -38,
+      0.328,
+      36
+    ],
+    "nativePixel": {
+      "x": 619.8142198807363,
+      "y": 717.8241384555054
+    },
+    "hover": "commissioning-crane:0",
+    "camera": "fabrication",
+    "canvas": {
+      "height": 620,
+      "width": 1002,
+      "x": 34,
+      "y": 85.09375
+    },
+    "constraint": "Both chip and support commissioning matter. Their smaller footprint limits active capacity.",
+    "driver": false,
+    "eye": [
+      -13.112397196409596,
+      14.926941822333765,
+      62.014544625924174
+    ],
+    "focus": "three-inspector-title",
+    "frames": 63,
+    "heading": "Commissioning dock / overhead crane",
+    "overflow": false,
+    "panel": {
+      "height": 620,
+      "width": 370,
+      "x": 1036,
+      "y": 85.09375
+    },
+    "panelHidden": false,
+    "purpose": "Funded construction teams commission chip and support capacity. Delivered equipment is stock until workshop time and funding convert it into usable capacity.",
+    "readouts": "Construction teams2Campus-wide team allocationChip commissioning1.68 / lab sPlanned funded rateSupport commissioning1.68 / lab sPlanned funded rateChip share50%The remainder commissions support",
+    "selection": "commissioning-crane:0",
+    "target": [
+      -31.000000000000004,
+      3.3,
+      32.5
+    ],
+    "width": 1440,
+    "zoom": 36.41785900728678
+  },
+  {
+    "case": "already selected facility empty floor opens actual existing controls",
+    "hover": "fabrication",
+    "focus": "<button type=\"button\" data-station-target=\"workshop-control\">Balance commissioning streams \u2192</button>",
+    "inspected": ""
+  }
+]

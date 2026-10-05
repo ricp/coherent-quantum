@@ -1,0 +1,29 @@
+# Campus offline and criterion 7 evidence review
+
+Independent AI reviewer; 2026-10-05. Scope: isolated `campus-offline-review` browser only. No source/Git edits, actual Chrome interaction, or user save changes.
+
+Verified source hashes: `instrument-3d.js` SHA256 `7992d2fdf096316dfb88bcbbccdf28d575e816317e76518c08673e49138ad9c8`; `app.js` SHA256 `de90b7fca18cf871c0a3b7f45dd8caec289bc024d82579dde0ae11a9a64a1233`.
+
+## Actual offline checks
+
+- Before a cold `http://127.0.0.1:8016/index-3d.html` load, the documented browser network route aborted `https://**`. The game, local Three kit, and renderer initialized; both normal/italic Instrument Serif font faces loaded. All ten observed resource requests were loopback: two CSS files; content, game, 2D instrument, 3D instrument, and app JS; bundled Three JS; two bundled TTF fonts. No CDN request occurred. The first experiment completed through the native Begin button and reported “A signal from repeated known preparations.”
+- Imported the paused late fixture through Settings. The late primary Overview rendered, fonts remained loaded, and next action/resource controls remained present. Screenshot: `evidence/campus/campus-offline-local-http-late.png`.
+- With documented `set offline on`, `navigator.onLine` was false. The already-loaded late game accepted the native Memory camera, Resume lab, and Pause lab. Laboratory time advanced from 49:44 to 49:52; Pause stopped the GPU driver. Screenshot: `evidence/campus/campus-offline-loaded-memory.png`.
+- A cold HTTP reload in that complete-network-disabled mode correctly showed `ERR_INTERNET_DISCONNECTED`: loopback HTTP is also disabled. This is distinct from losing external Internet while keeping the local server reachable. There is no service worker/offline HTTP cache claim.
+- Ordinary direct `file:///Users/ricp/code/AI/singular/index-3d.html` loading initialized the game, bundled Three, renderer, and both fonts without a file-access/security flag. All script/style URLs were local `file:` URLs. Early and imported late views rendered: `evidence/campus/campus-offline-local-file-early.png`, `evidence/campus/campus-offline-local-file-late.png`. File navigation reset the navigator online flag to true; explicitly reapplying offline mode gave false and the late native import/camera remained usable. The flag reset prevents treating that file-navigation observation alone as proof of persistent browser network emulation.
+
+Source inspection agrees: classic local scripts/styles and local font faces, no active fetch/XHR/WebSocket/EventSource/service-worker dependency. Academic and inspiration links use the Internet only when chosen. Hardware Wi-Fi/airplane mode, a global plain-HTTP Internet block, every external paper opening, other browser engines, and physical-device offline behavior were not tested. The HTTPS block plus the complete loopback-only runtime inventory establishes the tested CDN-independent primary game load, not a universal network firewall test.
+
+## Four chapter compositions and native interaction
+
+Existing accepted native sheets cover engine stages 1, 4, and 5. Added stage 3 / Chapter IV paused Overview from the existing legal automated `evidence/coherent-depth/cautious-3.json` fixture, with only pause applied before serialization and native import. Current parser accepted it. At 09:10 it has 25 active/installed/supported qubits, 17 research seats, three research floors, three control racks, one decoder rack, and a distance-3 patch of nine data plus eight check qubits. The native geometry is unblank and distinct from the earlier annex and later factory campus. Screenshot: `evidence/campus/campus-fourth-chapter-phase3.png`. This establishes static compositions in four chapters; it is isolated fixture QA, not earned human progress.
+
+Captured `evidence/campus/campus-purposeful-interaction.webm`: verified VP8, 1440×1100, 8.6 seconds, 583,561 bytes. The fixture was imported through native Settings inside the recording because recording creates a fresh context. Then native Whole campus → Resume lab → Fabrication (focus + Enter) → Pause lab. Two actual legal local 64-unit orders advanced from 12 seconds remaining / 40% to 8.9012 / 55.494%, then 5.8999 / 70.5005%. The clock changed 51:22 → 51:25 → 51:28. Running diagnostics showed delivery/construction/service/research/calibration activity and 30 Hz requested cadence. After Pause, driver false, cadence zero, all activity false, frames 140 → 140 across a two-second hold. No injected ticks or state changes were used during the interaction.
+
+The recording was visually checked at 2.5 seconds (Whole campus) and 5.5 seconds (Fabrication); both show the native integrated UI and full unblank canvas. Evidence frames: `evidence/campus/campus-recording-campus-frame.png`, `evidence/campus/campus-recording-fabrication-frame.png`; final static pause: `evidence/campus/campus-recording-final-paused.png`; exact observations: `evidence/campus/campus-purposeful-interaction-results.json`. The recorded VP8 is QA evidence, not a claim of export-quality cinematography or physical-device FPS.
+
+The first preview server on 8016 stopped during a retake (confirmed connection refused independently); a separate loopback-only server on 8017 completed the final recording. The server outage is not a game defect. Earlier failed/short recording attempts are not the accepted final evidence.
+
+## Conclusion
+
+The tested primary early/late game requires bundled local assets, with no observed CDN dependency. Complete connection disable and reachable local-server mode have different cold-load behavior, documented above. Criterion 7 now has four native chapter compositions plus a short purposeful native interaction recording. These checks do not establish human enjoyment, full earned Chrome campaign completion, or every acceptance criterion; those remain separately scoped evidence.

@@ -1,0 +1,1433 @@
+{
+  "evidenceKind": "independent deterministic legal public-action gameplay simulations; not user Chrome or human enjoyment",
+  "sourceHashes": {
+    "game.js": "85da1ac8d7dff065fee62f4d40a979472ed9f8d60c618be79548fc759a765e83",
+    "content.js": "f158bfec87b44590ff3c901da2c893334accc670b83a4f5dd06be313886bc6b2",
+    "tests/playthrough.cjs": "a9b23bb4061faca3ce1147cfab77a59f0bce8cdbb48b43807e5229886d8608e3",
+    "tests/campus-playthrough.cjs": "10b739589a99eacaf04b99d5ab5c25250e7b2e6e329f847864b78caf819ac15b"
+  },
+  "runs": [
+    {
+      "policy": "local",
+      "seconds": 5490,
+      "ended": true,
+      "discoveries": 41,
+      "annualReceipts": 11,
+      "annualPurchases": 11,
+      "frontier": 6,
+      "precision": 6,
+      "completed": [
+        "dynamics"
+      ],
+      "trackedLongestGap": 397,
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 473
+        },
+        {
+          "chapter": 4,
+          "at": 1162
+        },
+        {
+          "chapter": 5,
+          "at": 3564
+        }
+      ],
+      "studies": [
+        {
+          "id": "history2015",
+          "at": 979,
+          "fee": 40,
+          "apparatusSeconds": 10,
+          "plan": {
+            "distance": 3,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.20660791492653963,
+            "maintenance": 0.18660791492653964,
+            "feedback": 80,
+            "decoderRate": 64,
+            "syndromeRate": 8,
+            "slots": 1,
+            "memoryOK": true,
+            "gatesOK": false,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2016",
+          "at": 2767,
+          "fee": 65,
+          "apparatusSeconds": 12,
+          "plan": {
+            "distance": 3,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.33197719497102834,
+            "maintenance": 0.3119771949710283,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 624,
+            "slots": 75,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2017",
+          "at": 2824,
+          "fee": 131,
+          "apparatusSeconds": 24,
+          "plan": {
+            "distance": 3,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.33216577537846953,
+            "maintenance": 0.3121657753784695,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 624,
+            "slots": 75,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2018",
+          "at": 2861,
+          "fee": 131,
+          "apparatusSeconds": 24,
+          "plan": {
+            "distance": 3,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 20,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.3334315298297052,
+            "maintenance": 0.3134315298297052,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 656,
+            "slots": 79,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2019",
+          "at": 3105,
+          "fee": 80,
+          "apparatusSeconds": 12,
+          "plan": {
+            "distance": 3,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.34014521049733604,
+            "maintenance": 0.320145210497336,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 832,
+            "slots": 97,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2020",
+          "at": 3150,
+          "fee": 40,
+          "apparatusSeconds": 10,
+          "plan": {
+            "distance": 3,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.5,
+            "calibration": 0.3386834870208521,
+            "maintenance": 0.3186834870208521,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 856,
+            "slots": 100,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2021",
+          "at": 3195,
+          "fee": 65,
+          "apparatusSeconds": 12,
+          "plan": {
+            "distance": 3,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.341614403555691,
+            "maintenance": 0.321614403555691,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 880,
+            "slots": 103,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2022",
+          "at": 3247,
+          "fee": 40,
+          "apparatusSeconds": 10,
+          "plan": {
+            "distance": 3,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.3424516595092692,
+            "maintenance": 0.3224516595092692,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 904,
+            "slots": 110,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2023",
+          "at": 3299,
+          "fee": 40,
+          "apparatusSeconds": 10,
+          "plan": {
+            "distance": 5,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.343334846493831,
+            "maintenance": 0.323334846493831,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 960,
+            "slots": 33,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2024",
+          "at": 3431,
+          "fee": 65,
+          "apparatusSeconds": 12,
+          "plan": {
+            "distance": 3,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.3459441015627777,
+            "maintenance": 0.3259441015627777,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1032,
+            "slots": 122,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2025",
+          "at": 3605,
+          "fee": 80,
+          "apparatusSeconds": 12,
+          "plan": {
+            "distance": 3,
+            "factories": 2,
+            "profile": "balanced",
+            "recipe": "compact",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.3485648508609208,
+            "maintenance": 0.3285648508609208,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1128,
+            "slots": 130,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        }
+      ],
+      "completions": [
+        {
+          "id": "history2015",
+          "at": 992,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": true,
+          "plan": {
+            "distance": 3,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.20660791492653963,
+            "maintenance": 0.18660791492653964,
+            "feedback": 80,
+            "decoderRate": 64,
+            "syndromeRate": 8,
+            "slots": 1,
+            "memoryOK": true,
+            "gatesOK": false,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2016",
+          "at": 2785,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": true,
+          "plan": {
+            "distance": 3,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.33197719497102834,
+            "maintenance": 0.3119771949710283,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 624,
+            "slots": 75,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2017",
+          "at": 2860,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": true,
+          "plan": {
+            "distance": 3,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0,
+            "calibration": 0.3096515611627207,
+            "maintenance": 0.28965156116272067,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 656,
+            "slots": 79,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2018",
+          "at": 2897,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 3,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 20,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0,
+            "calibration": 0.31086349290532134,
+            "maintenance": 0.2908634929053213,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 688,
+            "slots": 83,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2019",
+          "at": 3123,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 3,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.34014521049733604,
+            "maintenance": 0.320145210497336,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 832,
+            "slots": 97,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2020",
+          "at": 3165,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 3,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.5,
+            "calibration": 0.3386834870208521,
+            "maintenance": 0.3186834870208521,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 856,
+            "slots": 100,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2021",
+          "at": 3213,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 3,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.341614403555691,
+            "maintenance": 0.321614403555691,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 880,
+            "slots": 103,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2022",
+          "at": 3262,
+          "passed": true,
+          "receiptsAdded": 1,
+          "comparison": true,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 3,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.3424516595092692,
+            "maintenance": 0.3224516595092692,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 904,
+            "slots": 110,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2023",
+          "at": 3314,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 5,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.343334846493831,
+            "maintenance": 0.323334846493831,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 960,
+            "slots": 33,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2024",
+          "at": 3449,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 3,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.3459441015627777,
+            "maintenance": 0.3259441015627777,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1032,
+            "slots": 122,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2025",
+          "at": 3623,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 3,
+            "factories": 2,
+            "profile": "balanced",
+            "recipe": "compact",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.55,
+            "calibration": 0.3485648508609208,
+            "maintenance": 0.3285648508609208,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1128,
+            "slots": 130,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        }
+      ],
+      "purchases": [
+        {
+          "id": "history2015",
+          "at": 992,
+          "cost": {
+            "funds": 450,
+            "effort": 900,
+            "designs": 120
+          }
+        },
+        {
+          "id": "history2016",
+          "at": 2823,
+          "cost": {
+            "funds": 650,
+            "effort": 1200,
+            "designs": 150
+          }
+        },
+        {
+          "id": "history2017",
+          "at": 2860,
+          "cost": {
+            "funds": 850,
+            "effort": 1500,
+            "designs": 200
+          }
+        },
+        {
+          "id": "history2018",
+          "at": 2901,
+          "cost": {
+            "funds": 950,
+            "effort": 1700,
+            "designs": 220
+          }
+        },
+        {
+          "id": "history2019",
+          "at": 3149,
+          "cost": {
+            "funds": 1200,
+            "effort": 2200,
+            "designs": 300
+          }
+        },
+        {
+          "id": "history2020",
+          "at": 3194,
+          "cost": {
+            "funds": 1350,
+            "effort": 2500,
+            "designs": 320
+          }
+        },
+        {
+          "id": "history2021",
+          "at": 3246,
+          "cost": {
+            "funds": 1500,
+            "effort": 2800,
+            "designs": 380
+          }
+        },
+        {
+          "id": "history2022",
+          "at": 3298,
+          "cost": {
+            "funds": 1700,
+            "effort": 3100,
+            "designs": 450
+          }
+        },
+        {
+          "id": "history2023",
+          "at": 3359,
+          "cost": {
+            "funds": 2100,
+            "effort": 3600,
+            "designs": 550
+          }
+        },
+        {
+          "id": "history2024",
+          "at": 3449,
+          "cost": {
+            "funds": 2400,
+            "effort": 4300,
+            "designs": 650
+          }
+        },
+        {
+          "id": "history2025",
+          "at": 3741,
+          "cost": {
+            "funds": 2800,
+            "effort": 5000,
+            "designs": 750
+          }
+        }
+      ],
+      "apparatusSeconds": 148,
+      "annualLabSeconds": 220,
+      "studyEntryFees": 777,
+      "roundTripSnapshots": 16
+    },
+    {
+      "policy": "bulk",
+      "seconds": 5034,
+      "ended": true,
+      "discoveries": 41,
+      "annualReceipts": 11,
+      "annualPurchases": 11,
+      "frontier": 6,
+      "precision": 6,
+      "completed": [
+        "dynamics"
+      ],
+      "trackedLongestGap": 205,
+      "chapters": [
+        {
+          "chapter": 0,
+          "at": 0
+        },
+        {
+          "chapter": 1,
+          "at": 57
+        },
+        {
+          "chapter": 2,
+          "at": 166
+        },
+        {
+          "chapter": 3,
+          "at": 494
+        },
+        {
+          "chapter": 4,
+          "at": 1270
+        },
+        {
+          "chapter": 5,
+          "at": 3718
+        }
+      ],
+      "studies": [
+        {
+          "id": "history2015",
+          "at": 1176,
+          "fee": 40,
+          "apparatusSeconds": 10,
+          "plan": {
+            "distance": 3,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.24243593608312547,
+            "maintenance": 0.22243593608312548,
+            "feedback": 80,
+            "decoderRate": 64,
+            "syndromeRate": 32,
+            "slots": 4,
+            "memoryOK": true,
+            "gatesOK": false,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2016",
+          "at": 2883,
+          "fee": 65,
+          "apparatusSeconds": 12,
+          "plan": {
+            "distance": 5,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.34656229181341547,
+            "maintenance": 0.32656229181341545,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 864,
+            "slots": 33,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2017",
+          "at": 3017,
+          "fee": 131,
+          "apparatusSeconds": 24,
+          "plan": {
+            "distance": 5,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.34720061281951187,
+            "maintenance": 0.32720061281951185,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 888,
+            "slots": 34,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2018",
+          "at": 3054,
+          "fee": 131,
+          "apparatusSeconds": 24,
+          "plan": {
+            "distance": 5,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 20,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.3490471941385449,
+            "maintenance": 0.3290471941385449,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 936,
+            "slots": 36,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2019",
+          "at": 3298,
+          "fee": 80,
+          "apparatusSeconds": 12,
+          "plan": {
+            "distance": 5,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.35667247222062093,
+            "maintenance": 0.3366724722206209,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1248,
+            "slots": 45,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2020",
+          "at": 3341,
+          "fee": 40,
+          "apparatusSeconds": 10,
+          "plan": {
+            "distance": 5,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.5,
+            "calibration": 0.34848993154590324,
+            "maintenance": 0.3284899315459032,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1248,
+            "slots": 45,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2021",
+          "at": 3385,
+          "fee": 65,
+          "apparatusSeconds": 12,
+          "plan": {
+            "distance": 3,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.35765437101610703,
+            "maintenance": 0.337654371016107,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1240,
+            "slots": 148,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2022",
+          "at": 3434,
+          "fee": 40,
+          "apparatusSeconds": 10,
+          "plan": {
+            "distance": 5,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.3582003978332201,
+            "maintenance": 0.3382003978332201,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1320,
+            "slots": 52,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2023",
+          "at": 3484,
+          "fee": 40,
+          "apparatusSeconds": 10,
+          "plan": {
+            "distance": 5,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.3587971435712336,
+            "maintenance": 0.3387971435712336,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1344,
+            "slots": 49,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2024",
+          "at": 3542,
+          "fee": 65,
+          "apparatusSeconds": 12,
+          "plan": {
+            "distance": 5,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.3595306109094947,
+            "maintenance": 0.33953061090949466,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1368,
+            "slots": 50,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2025",
+          "at": 3943,
+          "fee": 80,
+          "apparatusSeconds": 12,
+          "plan": {
+            "distance": 5,
+            "factories": 2,
+            "profile": "balanced",
+            "recipe": "compact",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.363978317327585,
+            "maintenance": 0.343978317327585,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1608,
+            "slots": 56,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        }
+      ],
+      "completions": [
+        {
+          "id": "history2015",
+          "at": 1189,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": true,
+          "plan": {
+            "distance": 3,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.24243593608312547,
+            "maintenance": 0.22243593608312548,
+            "feedback": 80,
+            "decoderRate": 64,
+            "syndromeRate": 32,
+            "slots": 4,
+            "memoryOK": true,
+            "gatesOK": false,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2016",
+          "at": 2901,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": true,
+          "plan": {
+            "distance": 5,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.34656229181341547,
+            "maintenance": 0.32656229181341545,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 864,
+            "slots": 33,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2017",
+          "at": 3053,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": true,
+          "plan": {
+            "distance": 5,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0,
+            "calibration": 0.31876392440777906,
+            "maintenance": 0.29876392440777905,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 936,
+            "slots": 36,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2018",
+          "at": 3090,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 5,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 20,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0,
+            "calibration": 0.3204989927713907,
+            "maintenance": 0.3004989927713907,
+            "feedback": 20,
+            "decoderRate": 1024,
+            "syndromeRate": 1008,
+            "slots": 39,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2019",
+          "at": 3316,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 5,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.35667247222062093,
+            "maintenance": 0.3366724722206209,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1248,
+            "slots": 45,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2020",
+          "at": 3356,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 5,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.5,
+            "calibration": 0.34848993154590324,
+            "maintenance": 0.3284899315459032,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1248,
+            "slots": 45,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2021",
+          "at": 3403,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 3,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.35765437101610703,
+            "maintenance": 0.337654371016107,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1240,
+            "slots": 148,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2022",
+          "at": 3449,
+          "passed": true,
+          "receiptsAdded": 1,
+          "comparison": true,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 5,
+            "factories": 0,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.3582003978332201,
+            "maintenance": 0.3382003978332201,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1320,
+            "slots": 52,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": false
+          }
+        },
+        {
+          "id": "history2023",
+          "at": 3499,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 5,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.3587971435712336,
+            "maintenance": 0.3387971435712336,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1344,
+            "slots": 49,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2024",
+          "at": 3560,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 5,
+            "factories": 1,
+            "profile": "balanced",
+            "recipe": "balanced",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.3595306109094947,
+            "maintenance": 0.33953061090949466,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1368,
+            "slots": 50,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        },
+        {
+          "id": "history2025",
+          "at": 3962,
+          "passed": true,
+          "receiptsAdded": 1,
+          "actualTutorialQualified": false,
+          "plan": {
+            "distance": 5,
+            "factories": 2,
+            "profile": "balanced",
+            "recipe": "compact",
+            "theta": 65,
+            "shots": 16384,
+            "mitigate": true,
+            "service": 0.7,
+            "calibration": 0.363978317327585,
+            "maintenance": 0.343978317327585,
+            "feedback": 10,
+            "decoderRate": 4096,
+            "syndromeRate": 1608,
+            "slots": 56,
+            "memoryOK": true,
+            "gatesOK": true,
+            "factoryOK": true
+          }
+        }
+      ],
+      "purchases": [
+        {
+          "id": "history2015",
+          "at": 1201,
+          "cost": {
+            "funds": 450,
+            "effort": 900,
+            "designs": 120
+          }
+        },
+        {
+          "id": "history2016",
+          "at": 3016,
+          "cost": {
+            "funds": 650,
+            "effort": 1200,
+            "designs": 150
+          }
+        },
+        {
+          "id": "history2017",
+          "at": 3053,
+          "cost": {
+            "funds": 850,
+            "effort": 1500,
+            "designs": 200
+          }
+        },
+        {
+          "id": "history2018",
+          "at": 3093,
+          "cost": {
+            "funds": 950,
+            "effort": 1700,
+            "designs": 220
+          }
+        },
+        {
+          "id": "history2019",
+          "at": 3340,
+          "cost": {
+            "funds": 1200,
+            "effort": 2200,
+            "designs": 300
+          }
+        },
+        {
+          "id": "history2020",
+          "at": 3383,
+          "cost": {
+            "funds": 1350,
+            "effort": 2500,
+            "designs": 320
+          }
+        },
+        {
+          "id": "history2021",
+          "at": 3433,
+          "cost": {
+            "funds": 1500,
+            "effort": 2800,
+            "designs": 380
+          }
+        },
+        {
+          "id": "history2022",
+          "at": 3483,
+          "cost": {
+            "funds": 1700,
+            "effort": 3100,
+            "designs": 450
+          }
+        },
+        {
+          "id": "history2023",
+          "at": 3541,
+          "cost": {
+            "funds": 2100,
+            "effort": 3600,
+            "designs": 550
+          }
+        },
+        {
+          "id": "history2024",
+          "at": 3609,
+          "cost": {
+            "funds": 2400,
+            "effort": 4300,
+            "designs": 650
+          }
+        },
+        {
+          "id": "history2025",
+          "at": 4012,
+          "cost": {
+            "funds": 2800,
+            "effort": 5000,
+            "designs": 750
+          }
+        }
+      ],
+      "apparatusSeconds": 148,
+      "annualLabSeconds": 221,
+      "studyEntryFees": 777,
+      "roundTripSnapshots": 16
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "footprints": [
+    {
+      "fixture": "stress-maximum.json",
+      "description": "481 complete patch-sized units. 481 application, 0 routing, 0 factory and 0 spare units. 16 physical qubits remain outside complete patches. These are fictional allocation units, not a real factory tile layout.",
+      "diagnostics": {
+        "available": true,
+        "calls": 13,
+        "camera": "oblique",
+        "chapter": 4,
+        "enabled": true,
+        "frames": 22,
+        "geometries": 6,
+        "height": 420,
+        "model": {
+          "chapter": 4,
+          "kinds": {
+            "application": 481,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "physical": 17,
+          "remaining": 16,
+          "requested": {
+            "application": 481,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 481
+        },
+        "pixelRatio": 1.5,
+        "scene": "laboratory",
+        "textures": 6,
+        "triangles": 22272,
+        "width": 834
+      },
+      "legend": "Application481Routing0Factories0Spare0",
+      "overflow": false
+    },
+    {
+      "fixture": "memory-d3.json",
+      "description": "Ideal rotated d = 3 patch: 9 data + 8 check ancillas = 17 physical qubits. Teal squares mark X checks, copper squares Z checks, and circular pads data. Connections are schematic; detection highlights never reveal the unknown data state.",
+      "diagnostics": {
+        "available": true,
+        "calls": 26,
+        "camera": "oblique",
+        "chapter": 3,
+        "enabled": true,
+        "frames": 23,
+        "geometries": 6,
+        "height": 420,
+        "model": {
+          "ancilla": 8,
+          "chapter": 3,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "pixelRatio": 1.5,
+        "scene": "laboratory",
+        "textures": 6,
+        "triangles": 15636,
+        "width": 834
+      },
+      "legend": "",
+      "overflow": false
+    },
+    {
+      "fixture": "memory-d5.json",
+      "description": "Ideal rotated d = 5 patch: 25 data + 24 check ancillas = 49 physical qubits. Teal squares mark X checks, copper squares Z checks, and circular pads data. Connections are schematic; detection highlights never reveal the unknown data state.",
+      "diagnostics": {
+        "available": true,
+        "calls": 26,
+        "camera": "oblique",
+        "chapter": 3,
+        "enabled": true,
+        "frames": 24,
+        "geometries": 6,
+        "height": 420,
+        "model": {
+          "ancilla": 24,
+          "chapter": 3,
+          "data": 25,
+          "distance": 5,
+          "physical": 49
+        },
+        "pixelRatio": 1.5,
+        "scene": "laboratory",
+        "textures": 6,
+        "triangles": 38548,
+        "width": 834
+      },
+      "legend": "",
+      "overflow": false
+    },
+    {
+      "fixture": "memory-d7.json",
+      "description": "Ideal rotated d = 7 patch: 49 data + 48 check ancillas = 97 physical qubits. Teal squares mark X checks, copper squares Z checks, and circular pads data. Connections are schematic; detection highlights never reveal the unknown data state.",
+      "diagnostics": {
+        "available": true,
+        "calls": 26,
+        "camera": "oblique",
+        "chapter": 3,
+        "enabled": true,
+        "frames": 25,
+        "geometries": 6,
+        "height": 420,
+        "model": {
+          "ancilla": 48,
+          "chapter": 3,
+          "data": 49,
+          "distance": 7,
+          "physical": 97
+        },
+        "pixelRatio": 1.5,
+        "scene": "laboratory",
+        "textures": 6,
+        "triangles": 73684,
+        "width": 834
+      },
+      "legend": "",
+      "overflow": false
+    },
+    {
+      "fixture": "memory-d9.json",
+      "description": "Ideal rotated d = 9 patch: 81 data + 80 check ancillas = 161 physical qubits. Teal squares mark X checks, copper squares Z checks, and circular pads data. Connections are schematic; detection highlights never reveal the unknown data state.",
+      "diagnostics": {
+        "available": true,
+        "calls": 26,
+        "camera": "oblique",
+        "chapter": 3,
+        "enabled": true,
+        "frames": 26,
+        "geometries": 6,
+        "height": 420,
+        "model": {
+          "ancilla": 80,
+          "chapter": 3,
+          "data": 81,
+          "distance": 9,
+          "physical": 161
+        },
+        "pixelRatio": 1.5,
+        "scene": "laboratory",
+        "textures": 6,
+        "triangles": 121044,
+        "width": 834
+      },
+      "legend": "",
+      "overflow": false
+    },
+    {
+      "fixture": "schedule-unqualified.json",
+      "description": "One-execution stages use proportional modeled durations. Gates, fresh states and feedback overlap; preparation, readout and classical overhead follow. 1 repetition \u00b7 unqualified \u03bcs for the full task. The factory is unqualified; dashed fresh-state cells denote missing timing, not a finite rate.",
+      "diagnostics": {
+        "available": true,
+        "calls": 25,
+        "camera": "oblique",
+        "chapter": 5,
+        "enabled": true,
+        "frames": 27,
+        "geometries": 13,
+        "height": 420,
+        "model": {
+          "chapter": 5,
+          "finish": null,
+          "lanes": [
+            {
+              "duration": 80,
+              "name": "PREPARE",
+              "start": 0
+            },
+            {
+              "duration": 2400,
+              "name": "OPERATE",
+              "start": 80
+            },
+            {
+              "duration": null,
+              "name": "FRESH STATES",
+              "start": 80
+            },
+            {
+              "duration": 4000,
+              "name": "FEEDBACK",
+              "start": 80
+            },
+            {
+              "duration": 40,
+              "name": "READOUT",
+              "start": 4080
+            },
+            {
+              "duration": 60,
+              "name": "CLASSICAL",
+              "start": 4120
+            }
+          ],
+          "qualified": false,
+          "repetitions": 1,
+          "runtime": null,
+          "workload": "dynamics"
+        },
+        "pixelRatio": 1.5,
+        "scene": "laboratory",
+        "textures": 13,
+        "triangles": 14546,
+        "width": 834
+      },
+      "legend": "Preparation80 \u03bcsOperations2,400 \u03bcsFresh statesunqualifiedFeedback4,000 \u03bcsReadout40 \u03bcsClassical60 \u03bcs",
+      "overflow": false
+    }
+  ],
+  "resourceCycles": [
+    {
+      "cycle": 0,
+      "chapter": 0,
+      "geometries": 10,
+      "textures": 8
+    },
+    {
+      "cycle": 0,
+      "chapter": 1,
+      "geometries": 10,
+      "textures": 8
+    },
+    {
+      "cycle": 0,
+      "chapter": 2,
+      "geometries": 6,
+      "textures": 6
+    },
+    {
+      "cycle": 0,
+      "chapter": 3,
+      "geometries": 6,
+      "textures": 6
+    },
+    {
+      "cycle": 0,
+      "chapter": 4,
+      "geometries": 7,
+      "textures": 7
+    },
+    {
+      "cycle": 0,
+      "chapter": 5,
+      "geometries": 12,
+      "textures": 12
+    },
+    {
+      "cycle": 0,
+      "chapter": 6,
+      "geometries": 11,
+      "textures": 11
+    },
+    {
+      "cycle": 1,
+      "chapter": 0,
+      "geometries": 10,
+      "textures": 8
+    },
+    {
+      "cycle": 1,
+      "chapter": 1,
+      "geometries": 10,
+      "textures": 8
+    },
+    {
+      "cycle": 1,
+      "chapter": 2,
+      "geometries": 6,
+      "textures": 6
+    },
+    {
+      "cycle": 1,
+      "chapter": 3,
+      "geometries": 6,
+      "textures": 6
+    },
+    {
+      "cycle": 1,
+      "chapter": 4,
+      "geometries": 7,
+      "textures": 7
+    },
+    {
+      "cycle": 1,
+      "chapter": 5,
+      "geometries": 12,
+      "textures": 12
+    },
+    {
+      "cycle": 1,
+      "chapter": 6,
+      "geometries": 11,
+      "textures": 11
+    }
+  ],
+  "keyboardCamera": {
+    "focused": "Top",
+    "mode": "top",
+    "unchanged": true
+  },
+  "twoDimensionalToggle": {
+    "canvas": "none",
+    "enabled": false,
+    "legend": "none",
+    "machine": "block",
+    "unchanged": true
+  },
+  "pausedResize": {
+    "canvasBuffer": [
+      421,
+      400
+    ],
+    "devicePixelRatio": 3,
+    "diagnostics": {
+      "available": true,
+      "calls": 26,
+      "camera": "oblique",
+      "chapter": 3,
+      "enabled": true,
+      "frames": 49,
+      "geometries": 6,
+      "height": 320,
+      "model": {
+        "ancilla": 80,
+        "chapter": 3,
+        "data": 81,
+        "distance": 9,
+        "physical": 161
+      },
+      "pixelRatio": 1.25,
+      "scene": "laboratory",
+      "textures": 6,
+      "triangles": 121044,
+      "width": 337
+    },
+    "pointerFine": true
+  },
+  "runtimeErrors": ""
+}

@@ -1,0 +1,17 @@
+✔ New campaigns require eleven paid discoveries, each gated by its own fresh study (44.629583ms)
+✔ Historical results do not replace a fresh paid trial; cancellation and failure retain spent costs (0.671667ms)
+✔ Study evidence and discovery payments occur once without inventing a repeat grant (0.260292ms)
+✔ Captured VQE settings survive edits, pause and restore; a precise bad ansatz is valid teaching evidence (5.862791ms)
+✔ Strict imports recompute study context and measured intervals instead of trusting passed flags (7.9105ms)
+✔ Memory and factory allocation remain distinct; irreversible decoder upgrades do not block 2022 (4.022167ms)
+✔ Old completed gifts remain earned; opt-in and continued research preserve the first ending (3.674541ms)
+✔ A opted-in final discovery cannot discard a paid job when an earlier Audit is already owned (4.429708ms)
+✔ Repeated factory studies respect the 2,000 rehearsal-credit storage ceiling (0.356584ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 117.676584

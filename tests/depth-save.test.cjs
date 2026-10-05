@@ -16,7 +16,7 @@ function rejectsWithoutReplacement(s,mutate,label,reason){
 }
 // Constructed unit fixture: prerequisite history only, not a legal campaign or pacing result.
 function engineeringFixture(){
-  const s=opening();s.done=G.content.projects.map(p=>p.id);s.qualified=G.content.experiments.map(e=>e.id);s.reputation=s.qualified.length;
+  const s=opening();s.researchRevision=0;s.done=G.content.projects.filter(p=>!p.historyYear).map(p=>p.id);s.qualified=G.content.experiments.map(e=>e.id);s.reputation=s.qualified.length;
   return s;
 }
 

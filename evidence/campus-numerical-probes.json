@@ -1,0 +1,247 @@
+{
+  "evidenceKind": "constructed numerical model fixture; not legal earned progression",
+  "sourceHashes": {
+    "game.js": "9754289c53199152b2c3513a7076f0cdf0898e78f2a8849e6635d286e09da90f",
+    "content.js": "add0070e1449aa74f8cdc8b74115ccba84fa378d4ae3ae86ee3080a992b434fb"
+  },
+  "scenarios": [
+    {
+      "evidenceKind": "constructed numerical model fixture; not legal earned progression",
+      "mix": "throughput",
+      "profile": "balanced",
+      "active": 3000,
+      "distance": 5,
+      "factories": 3,
+      "pEff": 0.000036038671875,
+      "pL": 1e-8,
+      "syndrome": 1464,
+      "decoder": 1024,
+      "feedback": 20,
+      "runtime": null,
+      "risk": 1,
+      "ready": false,
+      "reasons": [
+        "Qualify the current logical gate stack",
+        "Need a currently qualified factory for fresh states",
+        "Decoder cannot keep up with all allocated patches",
+        "Model risk 100.00% exceeds 4%",
+        "Modeled time exceeds the recipe ceiling"
+      ]
+    },
+    {
+      "evidenceKind": "constructed numerical model fixture; not legal earned progression",
+      "mix": "throughput",
+      "profile": "streaming",
+      "active": 3000,
+      "distance": 5,
+      "factories": 3,
+      "pEff": 0.000036038671875,
+      "pL": 1e-8,
+      "syndrome": 1464,
+      "decoder": 2048,
+      "feedback": 30,
+      "runtime": 6180,
+      "risk": 0.0025752,
+      "ready": true,
+      "reasons": []
+    },
+    {
+      "evidenceKind": "constructed numerical model fixture; not legal earned progression",
+      "mix": "throughput",
+      "profile": "response",
+      "active": 3000,
+      "distance": 5,
+      "factories": 3,
+      "pEff": 0.000036038671875,
+      "pL": 1e-8,
+      "syndrome": 1464,
+      "decoder": 768,
+      "feedback": 10,
+      "runtime": null,
+      "risk": 1,
+      "ready": false,
+      "reasons": [
+        "Qualify the current logical gate stack",
+        "Need a currently qualified factory for fresh states",
+        "Decoder cannot keep up with all allocated patches",
+        "Model risk 100.00% exceeds 4%",
+        "Modeled time exceeds the recipe ceiling"
+      ]
+    },
+    {
+      "evidenceKind": "constructed numerical model fixture; not legal earned progression",
+      "mix": "response",
+      "profile": "balanced",
+      "active": 769,
+      "distance": 3,
+      "factories": 2,
+      "pEff": 0.000036038671875,
+      "pL": 0.000001298785870513916,
+      "syndrome": 360,
+      "decoder": 1024,
+      "feedback": 20,
+      "runtime": 4180,
+      "risk": 0.10542206964111328,
+      "ready": false,
+      "reasons": [
+        "Model risk 10.54% exceeds 4%"
+      ]
+    },
+    {
+      "evidenceKind": "constructed numerical model fixture; not legal earned progression",
+      "mix": "response",
+      "profile": "streaming",
+      "active": 769,
+      "distance": 3,
+      "factories": 2,
+      "pEff": 0.000036038671875,
+      "pL": 0.000001298785870513916,
+      "syndrome": 360,
+      "decoder": 2048,
+      "feedback": 30,
+      "runtime": 6180,
+      "risk": 0.1885443653540039,
+      "ready": false,
+      "reasons": [
+        "Model risk 18.85% exceeds 4%"
+      ]
+    },
+    {
+      "evidenceKind": "constructed numerical model fixture; not legal earned progression",
+      "mix": "response",
+      "profile": "response",
+      "active": 769,
+      "distance": 3,
+      "factories": 2,
+      "pEff": 0.000036038671875,
+      "pL": 0.000001298785870513916,
+      "syndrome": 360,
+      "decoder": 768,
+      "feedback": 10,
+      "runtime": 2580,
+      "risk": 0.03892423307080078,
+      "ready": true,
+      "reasons": []
+    },
+    {
+      "evidenceKind": "constructed numerical model fixture; not legal earned progression",
+      "mix": "same32data-d5",
+      "recipe": "balanced",
+      "factories": 1,
+      "runtime": 7860,
+      "risk": 0.0031128,
+      "credits": 192,
+      "parts": {
+        "memory": 0.0014976,
+        "gates": 0.000096,
+        "states": 0.0000192,
+        "preparation": 0.001,
+        "other": 0.0005
+      },
+      "width": 32,
+      "dataWidth": 32,
+      "workspace": 0,
+      "ready": true
+    },
+    {
+      "evidenceKind": "constructed numerical model fixture; not legal earned progression",
+      "mix": "same32data-d5",
+      "recipe": "compact",
+      "factories": 1,
+      "runtime": 6580,
+      "risk": 0.0026968,
+      "credits": 128,
+      "parts": {
+        "memory": 0.001088,
+        "gates": 0.000096,
+        "states": 0.0000128,
+        "preparation": 0.001,
+        "other": 0.0005
+      },
+      "width": 32,
+      "dataWidth": 32,
+      "workspace": 0,
+      "ready": true
+    },
+    {
+      "evidenceKind": "constructed numerical model fixture; not legal earned progression",
+      "mix": "same32data-d5",
+      "recipe": "parallel",
+      "factories": 1,
+      "runtime": 10420,
+      "risk": 0.004469600000000001,
+      "credits": 256,
+      "parts": {
+        "memory": 0.002816,
+        "gates": 0.000128,
+        "states": 0.0000256,
+        "preparation": 0.001,
+        "other": 0.0005
+      },
+      "width": 40,
+      "dataWidth": 32,
+      "workspace": 8,
+      "ready": true
+    },
+    {
+      "evidenceKind": "constructed numerical model fixture; not legal earned progression",
+      "mix": "same32data-d5",
+      "recipe": "balanced",
+      "factories": 3,
+      "runtime": 4180,
+      "risk": 0.0019352,
+      "credits": 192,
+      "parts": {
+        "memory": 0.00032,
+        "gates": 0.000096,
+        "states": 0.0000192,
+        "preparation": 0.001,
+        "other": 0.0005
+      },
+      "width": 32,
+      "dataWidth": 32,
+      "workspace": 0,
+      "ready": true
+    },
+    {
+      "evidenceKind": "constructed numerical model fixture; not legal earned progression",
+      "mix": "same32data-d5",
+      "recipe": "compact",
+      "factories": 3,
+      "runtime": 6580,
+      "risk": 0.0026968,
+      "credits": 128,
+      "parts": {
+        "memory": 0.001088,
+        "gates": 0.000096,
+        "states": 0.0000128,
+        "preparation": 0.001,
+        "other": 0.0005
+      },
+      "width": 32,
+      "dataWidth": 32,
+      "workspace": 0,
+      "ready": true
+    },
+    {
+      "evidenceKind": "constructed numerical model fixture; not legal earned progression",
+      "mix": "same32data-d5",
+      "recipe": "parallel",
+      "factories": 3,
+      "runtime": 3593.3333333333335,
+      "risk": 0.0017389333333333334,
+      "credits": 256,
+      "parts": {
+        "memory": 0.00008533333333333339,
+        "gates": 0.000128,
+        "states": 0.0000256,
+        "preparation": 0.001,
+        "other": 0.0005
+      },
+      "width": 40,
+      "dataWidth": 32,
+      "workspace": 8,
+      "ready": true
+    }
+  ]
+}

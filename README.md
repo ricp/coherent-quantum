@@ -4,7 +4,7 @@ A private gift for Keir: an incremental game about fragile superconducting qubit
 
 ## Play
 
-Open **`index.html`** in a modern browser. No installation, account, build step, or internet connection is needed to play. Academic links open external primary sources when selected.
+Open **[index-3d.html](index-3d.html)** for the growing Three.js research campus, or **[index.html](index.html)** for the 2D instrument. No installation, account, build step, or internet connection is needed to play the checked-in game. The 3D toolkit and fonts are bundled locally. Academic links open external primary sources when selected.
 
 For a local browser preview, run this command in the repository and open [localhost](http://127.0.0.1:8000):
 
@@ -12,13 +12,17 @@ For a local browser preview, run this command in the repository and open [localh
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Begin with the first experiment. The next-step panel points to evidence, discoveries, and engineering constraints. Six chapters introduce calibration, noisy circuits, protected memory, logical allocation, and named workload budgets. The research archive contains all 30 discoveries and 36 primary sources, available before purchase. A separate collection explains 14 classical engineering advances and their game assumptions.
+Begin with the first experiment. The next-step panel points to evidence, discoveries, and engineering constraints. Six chapters introduce calibration, noisy circuits, protected memory, logical allocation, and named workload budgets. The full research timeline retains every foundation from 1982 through 2026: 44 discoveries and 51 academic sources, including each year from 2015 onward. All sources are readable before purchase. A separate collection explains 14 classical engineering advances and their game assumptions.
 
 Research assignments and notebook storage compete for earned trust. Notes are bounded; a full bank produces engineering designs four times faster, while spending a discovery loses that bonus. Qualified customer contracts and classical analysis stations compete for shared controller capacity. Pricing, calibration, and hypothetical fabrication versus control/cooling integration introduce new investment decisions; paid workflow tools later improve their production. These loops adapt the strategies in Keir’s original game.
 
-Code distance still trades protection against footprint and duration, while magic-state factories compete with application slots. The ending requires an audited scientific resource scenario. Toy factor and search certificates remain optional. Progress advances during visible, unpaused play.
+Six finite measurement goals and six fresh precision requests separate angle error, sampling uncertainty and residual bias. Upfront equipment quotes trade small quick deliveries against bulk commitments; received stock still needs paid workshop commissioning. Classical controller profiles trade streaming capacity against feedback latency.
 
-Settings provide light/dark appearance, manual save, JSON export/import, and a confirmed reset. Sound is off initially and always requires a click to start. Reduced motion follows the browser/OS preference. All controls support keyboard operation.
+Code distance trades protection against footprint and duration, while factories compete with application slots. Three plans for the same 32-site task count workspace, depth and fresh-state supply. New games require all eleven dated 2015–2025 discoveries before the audited scientific resource scenario can unlock the gift ending. Each requires a fresh paid study, then a separate research purchase. Toy factor and search certificates remain optional; deliberate continued play preserves the first ending and one-time rewards. Progress advances during visible, unpaused play.
+
+Drag the 3D laboratory to orbit and use the mouse wheel to zoom. Focus its canvas and press + or − for keyboard zoom. Re-select a camera station to restore its framing; Reset returns to Overview. Mouse zoom enters Manual inspection, preserving your chosen view during ordinary updates. The desktop camera toolbar keeps 2D view on the same row; narrow desktop layouts scroll that toolbar. Touch layouts retain vertical page scrolling.
+
+Settings provide light/dark appearance, manual save, JSON export/import, and a confirmed reset. New games enable sound after the first genuine interaction; saved mute choices remain respected. Reduced motion follows the browser/OS preference. All controls support keyboard operation.
 
 ## Saves
 
@@ -26,7 +30,9 @@ The game saves to this browser's local storage under `coherent.v2`, on actions, 
 
 Earlier `coherent.v1` runs are preserved separately and can be exported through Settings. Their short-campaign economy is not migrated into the deeper campaign. Starting or resetting the new laboratory does not delete that earlier run.
 
-Hidden, closed, paused, and chapter-transition screens receive no progress. Reopening resumes the recorded state without offline catch-up. Imported paused games remain paused. Invalid imports leave the current laboratory unchanged; an unreadable stored save is preserved until an explicit import or reset replaces it. If storage is unavailable, the game remains playable in memory and clearly asks for an export.
+Hidden, closed, paused, and chapter-transition screens receive no progress. Reopening resumes the recorded state without offline catch-up. Imported paused games remain paused. Earlier valid version-two runs offer an explicit, idle campus opt-in; old balances and evidence remain intact and no new task rewards are inferred. Invalid imports leave the current laboratory unchanged; an unreadable stored save is preserved until an explicit import or reset replaces it. If storage is unavailable, the game remains playable in memory and clearly asks for an export.
+
+The research extension also preserves earlier version-two saves. No old experiment becomes a fresh dated receipt. An earlier completed gift stays earned: Continue first, then explicitly enter the historical programme while idle to play the new studies without replacing the first milestone.
 
 ## Scientific scope
 
@@ -37,8 +43,8 @@ Read [MODEL.md](MODEL.md) for equations and assumptions, [PAPERS.md](PAPERS.md) 
 ## Verify
 
 ```sh
-node --test tests/game.test.cjs tests/economy.test.cjs tests/depth-save.test.cjs
-node tests/playthrough.cjs --matrix --write-evidence
+npm test
+node tests/campus-playthrough.cjs
 node tests/contrast.cjs
 ```
 
@@ -46,8 +52,23 @@ The deterministic engine tests cover intent: real costs and prerequisites, bound
 
 `evidence/coherent/` and [VERIFICATION.md](VERIFICATION.md) preserve the short baseline. The user's first run finished in 15:33 laboratory time with 27/30 discoveries, versus 1h33 for Singular Value. The deeper revision on `feature/campaign-depth` has independent AI game-design, quantum, and code-review acceptance. Its 20 legal matrix runs finish in 69–82 minutes; the fastest tested comparison takes 62:10. These are automated main-ending routes, not measured human playtimes. Long action gaps still reach 7:25, and explicit experiment jobs occupy only a small share of the run. [DEPTH-VERIFICATION.md](DEPTH-VERIFICATION.md) records the current checks, comparisons, recovery evidence, and limitations; [CAMPAIGN-DEPTH.md](CAMPAIGN-DEPTH.md) explains the adaptation. The provisional 90-minute first-human-play target and enjoyment remain unverified.
 
-## Small by design
+The prior research-campus revision is documented in [CAMPUS-DESIGN.md](CAMPUS-DESIGN.md) and [CAMPUS-VERIFICATION.md](CAMPUS-VERIFICATION.md). Independent **AI** implementation reviews cover [quantum models](QUANTUM-FRONTIER-REVIEW.md), [gameplay controls](CAMPUS-GAMEPLAY-UI-REVIEW.md) and [3D presentation](CAMPUS-VISUAL-REVIEW.md). [CHROME-PLAYTEST.md](CHROME-PLAYTEST.md) records its earned normal Chrome completion at **78:19**, with all **33 then-existing discoveries**, all **four workloads**, and all **six frontier objectives and six precision requests**, using ordinary controls and earned resources. This is historical evidence for the prior edition, not a full browser completion of the expanded 44-discovery edition. Final download, paid-job preservation and ending presentation checks for that edition are recorded in [CAMPUS-EXPORT-REVIEW.md](CAMPUS-EXPORT-REVIEW.md) and [CAMPUS-ENDING-VISUAL-REVIEW.md](CAMPUS-ENDING-VISUAL-REVIEW.md).
 
-Static HTML, CSS, and JavaScript. `content.js` holds campaign data and citations; `game.js` is the DOM-free engine; `app.js` binds controls and persistence; `instrument.js` draws the original canvas scenes. Browser APIs supply audio, dialogs, downloads, and storage. Node's built-in test runner supplies engine verification. There are no runtime dependencies or analytics.
+The research-history extension has **82 passing engine tests**, legal 44/44 completion routes, and independent AI science/gameplay/3D reviews. Six paired campus simulations finish the new programme in **83:54–92:06**, adding approximately six to nine minutes to the same older policies. These are simulated strategies, not measured human play times. [RESEARCH-HISTORY-VERIFICATION.md](RESEARCH-HISTORY-VERIFICATION.md) distinguishes current native browser checks, simulations and source hashes. [RESEARCH-HISTORY-CHROME-PLAYTEST.md](RESEARCH-HISTORY-CHROME-PLAYTEST.md) records a fresh ordinary-Chrome completion at **93:05**, with **44/44 discoveries**, all eleven fresh annual study receipts, all four workloads and all twelve finite tasks. It used ordinary controls and earned resources without imports, injected resources or time acceleration. The AI player knew the implementation; blind human enjoyment and physical-device performance remain unverified.
 
-Instrument Serif is bundled under its [SIL Open Font License](assets/OFL.txt). This repository stays local: commit only, no push, publication, or contact with Keir without the user's instruction.
+## Structure
+
+Static HTML, CSS, and JavaScript. `content.js` holds campaign data and citations; `game.js` is the DOM-free engine; `app.js` binds controls and persistence; `instrument.js` draws the original canvas scenes. `instrument-3d.js` presents the same engine as an original procedural campus with ten selectable facilities, whole-campus and top cameras. The Chapter IV delivery warehouse shows separate chip/support stock, actual delivery progress and funded commissioning; the operations centre shows live apparatus work, decoder constraints and existing next-step guidance. [CAMPUS-OPERATIONS-LOGISTICS.md](CAMPUS-OPERATIONS-LOGISTICS.md) and its [independent AI review](CAMPUS-OPERATIONS-LOGISTICS-VISUAL-REVIEW.md) record camera, interaction, motion and narrow-screen checks. The [working instrument inspector](INSTRUMENT-INSPECTOR.md) now opens actual numbered equipment in fourteen categories, with cutaways, live campus readings, current constraints, cost-aware investment previews, relevant controls and primary papers. Follow this experiment visits its schematic workflow using actual job progress. The Instrument bench provides keyboard access; Escape restores the opening camera and focus. The complete suite has **87 passing intent tests**. Three.js is vendored under its [MIT license](assets/three/LICENSE.txt), with a full 2D fallback. Browser APIs supply audio, dialogs, downloads, and storage. Node's built-in test runner supplies engine verification. There are no external runtime requests or analytics.
+
+To regenerate the checked-in 3D bundle and entry page after relevant source changes, run `npm ci` and `npm run build:3d`. No build is required just to play.
+
+Instrument Serif is bundled under its [SIL Open Font License](assets/OFL.txt). The user explicitly authorized uploading this repository to `ricp/coherent-quantum` on 5 October 2026. Deployment and contact with Keir still require explicit authorization.
+
+
+The final completion polish is recorded in [visual](CAMPUS-COMPLETION-VISUAL-AUDIT.md), [gameplay](CAMPUS-COMPLETION-GAMEPLAY-AUDIT.md) and [science](CAMPUS-COMPLETION-SCIENCE-AUDIT.md) audits. It improves whole-campus framing, removes stale imported milestone captions, surfaces qualified workload grants, fixes offscreen research focus, and clarifies source dates. Reproducible targeted audit tools live under `analysis-tools/`; generated QA imports stay outside Git.
+
+Both editions credit **Made by Richard Piacentini and GPT-X**, with Richard’s name and LinkedIn mark linking to [his profile](https://www.linkedin.com/in/richardpiacentini/). The [desktop/mobile footer mockup](prototypes/creator-footer-preview.html) precedes the implementation; native desktop, 375/320 and light-appearance evidence is saved in `evidence/creator-footer/`. The [independent AI instrument review](CAMPUS-INSTRUMENT-INSPECTION-REVIEW.md) records the completed inspector and its precise revision scopes.
+
+Instrument sounds use original procedural Web Audio: fourteen brief apparatus signatures and refreshed action, result and chapter cues. New games have sound enabled; the first genuine mouse/touch or activation-key interaction unlocks playback, and saved mute preferences are preserved. Use the header Sound button and Settings volume control. Hover, orbit, normal rendering and automatic experiment tours do not create apparatus cues. The [independent AI audio review](INSTRUMENT-SOUND-REVIEW.md) records measured signal bounds, native role/activation/cancellation checks and hearing limitations. The complete suite now has **92 passing intent tests**.
+
+The **[Lab Companion](LAB-COMPANION.md)** is implemented in both editions. Open **Help ?**, press **?**, choose **Explain** beside a paid control, or select **Help with this instrument**. It explains the actual next action, blockers and captured results, with an earned opening guide, live causal diagrams, searchable wordbook and chapter references. **Show me** highlights existing controls without changing or using them. The complete suite has **97 passing intent tests**; [independent AI implementation review](LAB-COMPANION-IMPLEMENTATION-REVIEW.md) records the bounded native checks and remaining human/device limitations.

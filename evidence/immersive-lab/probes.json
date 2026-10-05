@@ -1,0 +1,2628 @@
+{
+  "unstarted": {
+    "after": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 67,
+      "camera": "overview",
+      "chapter": 0,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": true,
+      "frames": 2,
+      "geometries": 17,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 1,
+        "chapter": 0,
+        "coax": 10,
+        "controlRacks": 1,
+        "decoderRacks": 0,
+        "desks": 1,
+        "installed": 1,
+        "modulePackages": 1,
+        "notebooks": 1,
+        "researchSeats": 1,
+        "researchers": 1,
+        "supported": 1
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 17,
+      "triangles": 36792,
+      "visible": true,
+      "width": 1372
+    },
+    "before": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 67,
+      "camera": "overview",
+      "chapter": 0,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": true,
+      "frames": 2,
+      "geometries": 17,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 1,
+        "chapter": 0,
+        "coax": 10,
+        "controlRacks": 1,
+        "decoderRacks": 0,
+        "desks": 1,
+        "installed": 1,
+        "modulePackages": 1,
+        "notebooks": 1,
+        "researchSeats": 1,
+        "researchers": 1,
+        "supported": 1
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 17,
+      "triangles": 36792,
+      "visible": true,
+      "width": 1372
+    },
+    "delta": 0,
+    "ms": 650
+  },
+  "paused": {
+    "after": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 80,
+      "camera": "overview",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": true,
+      "frames": 3,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 23,
+      "triangles": 116976,
+      "visible": true,
+      "width": 1372
+    },
+    "before": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 80,
+      "camera": "overview",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": true,
+      "frames": 3,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 23,
+      "triangles": 116976,
+      "visible": true,
+      "width": 1372
+    },
+    "delta": 0,
+    "ms": 650
+  },
+  "ended": {
+    "after": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 94,
+      "camera": "overview",
+      "chapter": 5,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": true,
+      "frames": 4,
+      "geometries": 29,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 4422,
+        "allocation": {
+          "kinds": {
+            "application": 249,
+            "factory": 8,
+            "routing": 2,
+            "spare": 1
+          },
+          "remaining": 2,
+          "requested": {
+            "application": 249,
+            "factory": 8,
+            "routing": 2,
+            "spare": 1
+          },
+          "shortage": 0,
+          "total": 260
+        },
+        "analysisStations": 4,
+        "chapter": 5,
+        "chipCommissioningGroups": 4,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 8,
+        "installed": 4422,
+        "modulePackages": 3,
+        "notebooks": 1,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 36,
+        "researchSeats": 31,
+        "researchers": 31,
+        "schedule": {
+          "finish": 2580,
+          "lanes": [
+            {
+              "duration": 80,
+              "name": "Preparation",
+              "start": 0
+            },
+            {
+              "duration": 2400,
+              "name": "Operations",
+              "start": 80
+            },
+            {
+              "duration": 2304,
+              "name": "Fresh states",
+              "start": 80
+            },
+            {
+              "duration": 2000,
+              "name": "Feedback",
+              "start": 80
+            },
+            {
+              "duration": 40,
+              "name": "Readout",
+              "start": 2480
+            },
+            {
+              "duration": 60,
+              "name": "Classical",
+              "start": 2520
+            }
+          ],
+          "qualified": true,
+          "repetitions": 1,
+          "runtime": 2580,
+          "workload": "dynamics"
+        },
+        "supportCommissioningGroups": 4,
+        "supported": 4422,
+        "workshopCells": 2,
+        "workshops": 2
+      },
+      "pixelRatio": 1,
+      "scene": "ending",
+      "textures": 29,
+      "triangles": 157058,
+      "visible": true,
+      "width": 1372
+    },
+    "before": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 94,
+      "camera": "overview",
+      "chapter": 5,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": true,
+      "frames": 4,
+      "geometries": 29,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 4422,
+        "allocation": {
+          "kinds": {
+            "application": 249,
+            "factory": 8,
+            "routing": 2,
+            "spare": 1
+          },
+          "remaining": 2,
+          "requested": {
+            "application": 249,
+            "factory": 8,
+            "routing": 2,
+            "spare": 1
+          },
+          "shortage": 0,
+          "total": 260
+        },
+        "analysisStations": 4,
+        "chapter": 5,
+        "chipCommissioningGroups": 4,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 8,
+        "installed": 4422,
+        "modulePackages": 3,
+        "notebooks": 1,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 36,
+        "researchSeats": 31,
+        "researchers": 31,
+        "schedule": {
+          "finish": 2580,
+          "lanes": [
+            {
+              "duration": 80,
+              "name": "Preparation",
+              "start": 0
+            },
+            {
+              "duration": 2400,
+              "name": "Operations",
+              "start": 80
+            },
+            {
+              "duration": 2304,
+              "name": "Fresh states",
+              "start": 80
+            },
+            {
+              "duration": 2000,
+              "name": "Feedback",
+              "start": 80
+            },
+            {
+              "duration": 40,
+              "name": "Readout",
+              "start": 2480
+            },
+            {
+              "duration": 60,
+              "name": "Classical",
+              "start": 2520
+            }
+          ],
+          "qualified": true,
+          "repetitions": 1,
+          "runtime": 2580,
+          "workload": "dynamics"
+        },
+        "supportCommissioningGroups": 4,
+        "supported": 4422,
+        "workshopCells": 2,
+        "workshops": 2
+      },
+      "pixelRatio": 1,
+      "scene": "ending",
+      "textures": 29,
+      "triangles": 157058,
+      "visible": true,
+      "width": 1372
+    },
+    "delta": 0,
+    "ms": 650
+  },
+  "zeroFlow": {
+    "after": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 45,
+      "camera": "overview",
+      "chapter": 1,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": true,
+      "frames": 15,
+      "geometries": 17,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 1,
+        "chapter": 1,
+        "coax": 10,
+        "controlRacks": 1,
+        "decoderRacks": 0,
+        "desks": 0,
+        "installed": 1,
+        "modulePackages": 1,
+        "notebooks": 1,
+        "researchSeats": 0,
+        "researchers": 0,
+        "supported": 1
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 18,
+      "triangles": 25290,
+      "visible": true,
+      "width": 1372
+    },
+    "before": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 45,
+      "camera": "overview",
+      "chapter": 1,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": true,
+      "frames": 15,
+      "geometries": 17,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 1,
+        "chapter": 1,
+        "coax": 10,
+        "controlRacks": 1,
+        "decoderRacks": 0,
+        "desks": 0,
+        "installed": 1,
+        "modulePackages": 1,
+        "notebooks": 1,
+        "researchSeats": 0,
+        "researchers": 0,
+        "supported": 1
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 18,
+      "triangles": 25290,
+      "visible": true,
+      "width": 1372
+    },
+    "delta": 0,
+    "ms": 650
+  },
+  "fullBanks": {
+    "after": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 48,
+      "camera": "overview",
+      "chapter": 1,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": true,
+      "frames": 33,
+      "geometries": 17,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 1,
+        "chapter": 1,
+        "coax": 10,
+        "controlRacks": 1,
+        "decoderRacks": 0,
+        "desks": 1,
+        "installed": 1,
+        "modulePackages": 1,
+        "notebooks": 1,
+        "researchSeats": 1,
+        "researchers": 1,
+        "supported": 1
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 18,
+      "triangles": 26364,
+      "visible": true,
+      "width": 1372
+    },
+    "before": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 48,
+      "camera": "overview",
+      "chapter": 1,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": true,
+      "frames": 33,
+      "geometries": 17,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 1,
+        "chapter": 1,
+        "coax": 10,
+        "controlRacks": 1,
+        "decoderRacks": 0,
+        "desks": 1,
+        "installed": 1,
+        "modulePackages": 1,
+        "notebooks": 1,
+        "researchSeats": 1,
+        "researchers": 1,
+        "supported": 1
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 18,
+      "triangles": 26364,
+      "visible": true,
+      "width": 1372
+    },
+    "delta": 0,
+    "ms": 650
+  },
+  "running": {
+    "after": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 30,
+      "calls": 62,
+      "camera": "overview",
+      "chapter": 4,
+      "driverActive": true,
+      "enabled": true,
+      "followExperiment": true,
+      "frames": 64,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77676,
+      "visible": true,
+      "width": 1372
+    },
+    "before": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 30,
+      "calls": 62,
+      "camera": "overview",
+      "chapter": 4,
+      "driverActive": true,
+      "enabled": true,
+      "followExperiment": true,
+      "frames": 44,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77676,
+      "visible": true,
+      "width": 1372
+    },
+    "delta": 20,
+    "ms": 900
+  },
+  "pauseCameraFlight": {
+    "after": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 57,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 71,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77238,
+      "visible": true,
+      "width": 1372
+    },
+    "before": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 57,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 71,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77238,
+      "visible": true,
+      "width": 1372
+    },
+    "delta": 0,
+    "ms": 650
+  },
+  "researchView": {
+    "after": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 60,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 72,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": false,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77662,
+      "visible": false,
+      "width": 1372
+    },
+    "before": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 60,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 72,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": false,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77662,
+      "visible": false,
+      "width": 1372
+    },
+    "delta": 0,
+    "ms": 650
+  },
+  "reduced": {
+    "after": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 60,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 73,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77662,
+      "visible": true,
+      "width": 1372
+    },
+    "before": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 60,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 73,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77662,
+      "visible": true,
+      "width": 1372
+    },
+    "delta": 0,
+    "ms": 650
+  },
+  "constructedChapterModal": {
+    "after": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 60,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 74,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77662,
+      "visible": false,
+      "width": 1372
+    },
+    "before": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 60,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 74,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77662,
+      "visible": false,
+      "width": 1372
+    },
+    "delta": 0,
+    "ms": 650
+  },
+  "hiddenTab": {
+    "after": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 60,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 75,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77662,
+      "visible": false,
+      "width": 1372
+    },
+    "before": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 60,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 75,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77662,
+      "visible": false,
+      "width": 1372
+    },
+    "delta": 0,
+    "hiddenAfter": true,
+    "hiddenBefore": true
+  },
+  "constructedPageHide": {
+    "after": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 30,
+      "calls": 60,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": true,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 86,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77662,
+      "visible": true,
+      "width": 1372
+    },
+    "before": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 30,
+      "calls": 60,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 77,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77662,
+      "visible": true,
+      "width": 1372
+    },
+    "delta": 9,
+    "ms": 450
+  },
+  "constructedPageShow": {
+    "after": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 30,
+      "calls": 60,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": true,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 103,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77662,
+      "visible": true,
+      "width": 1372
+    },
+    "before": {
+      "activity": {
+        "automation": true,
+        "calibration": true,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": true
+      },
+      "available": true,
+      "cadence": 30,
+      "calls": 60,
+      "camera": "cryostat",
+      "chapter": 4,
+      "driverActive": true,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 92,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "allocation": {
+          "kinds": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "remaining": 8,
+          "requested": {
+            "application": 1,
+            "factory": 0,
+            "routing": 0,
+            "spare": 0
+          },
+          "shortage": 0,
+          "total": 1
+        },
+        "analysisStations": 3,
+        "chapter": 4,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 77662,
+      "visible": true,
+      "width": 1372
+    },
+    "delta": 11,
+    "ms": 450
+  },
+  "keyboardCamera": {
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 60,
+      "camera": "top",
+      "chapter": 3,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 105,
+      "geometries": 23,
+      "height": 620,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "analysisStations": 3,
+        "chapter": 3,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 80,
+          "data": 81,
+          "distance": 9,
+          "physical": 161
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 116620,
+      "visible": true,
+      "width": 1372
+    },
+    "unchanged": true,
+    "focused": "Top"
+  },
+  "twoD": {
+    "canvas": "none",
+    "enabled": false,
+    "machine": "block",
+    "unchanged": true
+  },
+  "fullscreen": {
+    "actionInFullscreen": true,
+    "size": [
+      1414,
+      705
+    ],
+    "target": ""
+  },
+  "fullscreenReturned": true,
+  "wheelScroll": {
+    "after": 637,
+    "before": 387
+  },
+  "mobile375": {
+    "description": "Your laboratory grows with staff, control racks, processor modules, pulse tools, decoder capacity and commissioning. Visible apparatus is schematic; exact measurements and scientific assumptions remain inspectable.",
+    "diagnostics": {
+      "activity": {
+        "automation": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "research": false,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 60,
+      "camera": "top",
+      "chapter": 3,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 109,
+      "geometries": 23,
+      "height": 440,
+      "inViewport": true,
+      "model": {
+        "active": 25,
+        "analysisStations": 3,
+        "chapter": 3,
+        "chipCommissioningGroups": 0,
+        "coax": 24,
+        "controlRacks": 4,
+        "decoderRacks": 1,
+        "desks": 8,
+        "installed": 25,
+        "modulePackages": 3,
+        "notebooks": 4,
+        "patch": {
+          "ancilla": 80,
+          "data": 81,
+          "distance": 9,
+          "physical": 161
+        },
+        "processorSites": 25,
+        "researchSeats": 22,
+        "researchers": 22,
+        "supportCommissioningGroups": 0,
+        "supported": 81
+      },
+      "pixelRatio": 1.25,
+      "scene": "laboratory",
+      "textures": 24,
+      "triangles": 116620,
+      "visible": true,
+      "width": 339
+    },
+    "errors": [],
+    "focus": "The complete facility",
+    "growth": "25 installed \u00b7 81 supported \u00b7 22 researchers \u00b7 4 control racks",
+    "legend": "Active physical25Calibration duty21%Planned service3.98 / lab sPlanned research56.4 / lab s",
+    "overflow": false,
+    "buffer": [
+      423,
+      550
+    ]
+  },
+  "stress": [
+    {
+      "fixture": "stress-maximum.json",
+      "description": "Your laboratory grows with staff, control racks, processor modules, pulse tools, decoder capacity and commissioning. Visible apparatus is schematic; exact measurements and scientific assumptions remain inspectable.",
+      "diagnostics": {
+        "activity": {
+          "automation": false,
+          "calibration": false,
+          "construction": false,
+          "experiment": false,
+          "memory": false,
+          "rehearsal": false,
+          "research": false,
+          "services": false
+        },
+        "available": true,
+        "cadence": 0,
+        "calls": 62,
+        "camera": "overview",
+        "chapter": 4,
+        "driverActive": false,
+        "enabled": true,
+        "followExperiment": false,
+        "frames": 112,
+        "geometries": 26,
+        "height": 620,
+        "inViewport": true,
+        "model": {
+          "active": 8193,
+          "allocation": {
+            "kinds": {
+              "application": 481,
+              "factory": 0,
+              "routing": 0,
+              "spare": 0
+            },
+            "remaining": 16,
+            "requested": {
+              "application": 481,
+              "factory": 0,
+              "routing": 0,
+              "spare": 0
+            },
+            "shortage": 0,
+            "total": 481
+          },
+          "analysisStations": 3,
+          "chapter": 4,
+          "chipCommissioningGroups": 4,
+          "coax": 30,
+          "controlRacks": 7,
+          "decoderRacks": 1,
+          "desks": 8,
+          "installed": 8193,
+          "modulePackages": 7,
+          "notebooks": 4,
+          "patch": {
+            "ancilla": 8,
+            "data": 9,
+            "distance": 3,
+            "physical": 17
+          },
+          "processorSites": 36,
+          "researchSeats": 22,
+          "researchers": 22,
+          "supportCommissioningGroups": 4,
+          "supported": 8193
+        },
+        "pixelRatio": 1,
+        "scene": "laboratory",
+        "textures": 27,
+        "triangles": 103456,
+        "visible": true,
+        "width": 1372
+      },
+      "errors": [],
+      "focus": "Your quantum laboratory",
+      "growth": "8,193 installed \u00b7 8,193 supported \u00b7 22 researchers \u00b7 7 control racks",
+      "legend": "Active physical8,193Calibration duty36%Planned service6.31 / lab sPlanned research56.4 / lab s",
+      "overflow": false
+    },
+    {
+      "fixture": "memory-d3.json",
+      "description": "Ideal d = 3 rotated patch: 9 data + 8 check ancillas = 17 physical qubits. Teal X / copper Z checks. Detection highlights never reveal an unknown data state.",
+      "diagnostics": {
+        "activity": {
+          "automation": false,
+          "calibration": false,
+          "construction": false,
+          "experiment": false,
+          "memory": false,
+          "rehearsal": false,
+          "research": false,
+          "services": false
+        },
+        "available": true,
+        "cadence": 0,
+        "calls": 51,
+        "camera": "memory",
+        "chapter": 3,
+        "driverActive": false,
+        "enabled": true,
+        "followExperiment": false,
+        "frames": 114,
+        "geometries": 23,
+        "height": 620,
+        "inViewport": true,
+        "model": {
+          "active": 25,
+          "analysisStations": 3,
+          "chapter": 3,
+          "chipCommissioningGroups": 0,
+          "coax": 24,
+          "controlRacks": 4,
+          "decoderRacks": 1,
+          "desks": 8,
+          "installed": 25,
+          "modulePackages": 3,
+          "notebooks": 4,
+          "patch": {
+            "ancilla": 8,
+            "data": 9,
+            "distance": 3,
+            "physical": 17
+          },
+          "processorSites": 25,
+          "researchSeats": 22,
+          "researchers": 22,
+          "supportCommissioningGroups": 0,
+          "supported": 81
+        },
+        "pixelRatio": 1,
+        "scene": "laboratory",
+        "textures": 24,
+        "triangles": 63738,
+        "visible": true,
+        "width": 1372
+      },
+      "errors": [],
+      "focus": "Protected memory, with its assumptions intact",
+      "growth": "25 installed \u00b7 81 supported \u00b7 22 researchers \u00b7 4 control racks",
+      "legend": "Data9Check ancillas8Physical / ideal patch17",
+      "overflow": false
+    },
+    {
+      "fixture": "memory-d5.json",
+      "description": "Ideal d = 5 rotated patch: 25 data + 24 check ancillas = 49 physical qubits. Teal X / copper Z checks. Detection highlights never reveal an unknown data state.",
+      "diagnostics": {
+        "activity": {
+          "automation": false,
+          "calibration": false,
+          "construction": false,
+          "experiment": false,
+          "memory": false,
+          "rehearsal": false,
+          "research": false,
+          "services": false
+        },
+        "available": true,
+        "cadence": 0,
+        "calls": 51,
+        "camera": "memory",
+        "chapter": 3,
+        "driverActive": false,
+        "enabled": true,
+        "followExperiment": false,
+        "frames": 116,
+        "geometries": 18,
+        "height": 620,
+        "inViewport": true,
+        "model": {
+          "active": 25,
+          "analysisStations": 3,
+          "chapter": 3,
+          "chipCommissioningGroups": 0,
+          "coax": 24,
+          "controlRacks": 4,
+          "decoderRacks": 1,
+          "desks": 8,
+          "installed": 25,
+          "modulePackages": 3,
+          "notebooks": 4,
+          "patch": {
+            "ancilla": 24,
+            "data": 25,
+            "distance": 5,
+            "physical": 49
+          },
+          "processorSites": 25,
+          "researchSeats": 22,
+          "researchers": 22,
+          "supportCommissioningGroups": 0,
+          "supported": 81
+        },
+        "pixelRatio": 1,
+        "scene": "laboratory",
+        "textures": 19,
+        "triangles": 72378,
+        "visible": true,
+        "width": 1372
+      },
+      "errors": [],
+      "focus": "Protected memory, with its assumptions intact",
+      "growth": "25 installed \u00b7 81 supported \u00b7 22 researchers \u00b7 4 control racks",
+      "legend": "Data25Check ancillas24Physical / ideal patch49",
+      "overflow": false
+    },
+    {
+      "fixture": "memory-d7.json",
+      "description": "Ideal d = 7 rotated patch: 49 data + 48 check ancillas = 97 physical qubits. Teal X / copper Z checks. Detection highlights never reveal an unknown data state.",
+      "diagnostics": {
+        "activity": {
+          "automation": false,
+          "calibration": false,
+          "construction": false,
+          "experiment": false,
+          "memory": false,
+          "rehearsal": false,
+          "research": false,
+          "services": false
+        },
+        "available": true,
+        "cadence": 0,
+        "calls": 51,
+        "camera": "memory",
+        "chapter": 3,
+        "driverActive": false,
+        "enabled": true,
+        "followExperiment": false,
+        "frames": 118,
+        "geometries": 18,
+        "height": 620,
+        "inViewport": true,
+        "model": {
+          "active": 25,
+          "analysisStations": 3,
+          "chapter": 3,
+          "chipCommissioningGroups": 0,
+          "coax": 24,
+          "controlRacks": 4,
+          "decoderRacks": 1,
+          "desks": 8,
+          "installed": 25,
+          "modulePackages": 3,
+          "notebooks": 4,
+          "patch": {
+            "ancilla": 48,
+            "data": 49,
+            "distance": 7,
+            "physical": 97
+          },
+          "processorSites": 25,
+          "researchSeats": 22,
+          "researchers": 22,
+          "supportCommissioningGroups": 0,
+          "supported": 81
+        },
+        "pixelRatio": 1,
+        "scene": "laboratory",
+        "textures": 19,
+        "triangles": 85722,
+        "visible": true,
+        "width": 1372
+      },
+      "errors": [],
+      "focus": "Protected memory, with its assumptions intact",
+      "growth": "25 installed \u00b7 81 supported \u00b7 22 researchers \u00b7 4 control racks",
+      "legend": "Data49Check ancillas48Physical / ideal patch97",
+      "overflow": false
+    },
+    {
+      "fixture": "memory-d9.json",
+      "description": "Ideal d = 9 rotated patch: 81 data + 80 check ancillas = 161 physical qubits. Teal X / copper Z checks. Detection highlights never reveal an unknown data state.",
+      "diagnostics": {
+        "activity": {
+          "automation": false,
+          "calibration": false,
+          "construction": false,
+          "experiment": false,
+          "memory": false,
+          "rehearsal": false,
+          "research": false,
+          "services": false
+        },
+        "available": true,
+        "cadence": 0,
+        "calls": 51,
+        "camera": "memory",
+        "chapter": 3,
+        "driverActive": false,
+        "enabled": true,
+        "followExperiment": false,
+        "frames": 120,
+        "geometries": 18,
+        "height": 620,
+        "inViewport": true,
+        "model": {
+          "active": 25,
+          "analysisStations": 3,
+          "chapter": 3,
+          "chipCommissioningGroups": 0,
+          "coax": 24,
+          "controlRacks": 4,
+          "decoderRacks": 1,
+          "desks": 8,
+          "installed": 25,
+          "modulePackages": 3,
+          "notebooks": 4,
+          "patch": {
+            "ancilla": 80,
+            "data": 81,
+            "distance": 9,
+            "physical": 161
+          },
+          "processorSites": 25,
+          "researchSeats": 22,
+          "researchers": 22,
+          "supportCommissioningGroups": 0,
+          "supported": 81
+        },
+        "pixelRatio": 1,
+        "scene": "laboratory",
+        "textures": 19,
+        "triangles": 103770,
+        "visible": true,
+        "width": 1372
+      },
+      "errors": [],
+      "focus": "Protected memory, with its assumptions intact",
+      "growth": "25 installed \u00b7 81 supported \u00b7 22 researchers \u00b7 4 control racks",
+      "legend": "Data81Check ancillas80Physical / ideal patch161",
+      "overflow": false
+    },
+    {
+      "fixture": "schedule-unqualified.json",
+      "description": "Parallel operations, fresh states and feedback overlap. The six lanes use one-execution modeled durations; Full modeled time remains unqualified because fresh-state timing is missing. Downstream bar positions show a lower bound; the schedule has no qualified finish. Laboratory seconds use a separate pacing clock; the cursor follows that clock, not the lane \u03bcs scale.",
+      "diagnostics": {
+        "activity": {
+          "automation": false,
+          "calibration": false,
+          "construction": false,
+          "experiment": false,
+          "memory": false,
+          "rehearsal": false,
+          "research": false,
+          "services": false
+        },
+        "available": true,
+        "cadence": 0,
+        "calls": 70,
+        "camera": "planning",
+        "chapter": 5,
+        "driverActive": false,
+        "enabled": true,
+        "followExperiment": false,
+        "frames": 122,
+        "geometries": 27,
+        "height": 620,
+        "inViewport": true,
+        "model": {
+          "active": 1258,
+          "allocation": {
+            "kinds": {
+              "application": 71,
+              "factory": 0,
+              "routing": 2,
+              "spare": 1
+            },
+            "remaining": 0,
+            "requested": {
+              "application": 71,
+              "factory": 0,
+              "routing": 2,
+              "spare": 1
+            },
+            "shortage": 0,
+            "total": 74
+          },
+          "analysisStations": 3,
+          "chapter": 5,
+          "chipCommissioningGroups": 3,
+          "coax": 26,
+          "controlRacks": 4,
+          "decoderRacks": 3,
+          "desks": 8,
+          "installed": 1258,
+          "modulePackages": 3,
+          "notebooks": 3,
+          "patch": {
+            "ancilla": 8,
+            "data": 9,
+            "distance": 3,
+            "physical": 17
+          },
+          "processorSites": 36,
+          "researchSeats": 28,
+          "researchers": 28,
+          "schedule": {
+            "finish": null,
+            "lanes": [
+              {
+                "duration": 80,
+                "name": "Preparation",
+                "start": 0
+              },
+              {
+                "duration": 2400,
+                "name": "Operations",
+                "start": 80
+              },
+              {
+                "duration": null,
+                "name": "Fresh states",
+                "start": 80
+              },
+              {
+                "duration": 4000,
+                "name": "Feedback",
+                "start": 80
+              },
+              {
+                "duration": 40,
+                "name": "Readout",
+                "start": 4080
+              },
+              {
+                "duration": 60,
+                "name": "Classical",
+                "start": 4120
+              }
+            ],
+            "qualified": false,
+            "repetitions": 1,
+            "runtime": null,
+            "workload": "dynamics"
+          },
+          "supportCommissioningGroups": 3,
+          "supported": 1258,
+          "workshopCells": 2,
+          "workshops": 2
+        },
+        "pixelRatio": 1,
+        "scene": "laboratory",
+        "textures": 28,
+        "triangles": 94840,
+        "visible": true,
+        "width": 1372
+      },
+      "errors": [],
+      "focus": "The complete useful-work schedule",
+      "growth": "1,258 installed \u00b7 1,258 supported \u00b7 28 researchers \u00b7 4 control racks",
+      "legend": "Preparation80 \u03bcsOperations2,400 \u03bcsFresh statesunqualifiedFeedback4,000 \u03bcsReadout40 \u03bcsClassical60 \u03bcs",
+      "overflow": false
+    },
+    {
+      "fixture": "renderer-stress-all-equipment.json",
+      "description": "The complete laboratory, from one known signal to a named useful resource scenario. Modeled completion: no large fault-tolerant quantum computation or large quantum answer was produced.",
+      "diagnostics": {
+        "activity": {
+          "automation": false,
+          "calibration": false,
+          "construction": false,
+          "experiment": false,
+          "memory": false,
+          "rehearsal": false,
+          "research": false,
+          "services": false
+        },
+        "available": true,
+        "cadence": 0,
+        "calls": 87,
+        "camera": "overview",
+        "chapter": 5,
+        "driverActive": false,
+        "enabled": true,
+        "followExperiment": false,
+        "frames": 124,
+        "geometries": 34,
+        "height": 620,
+        "inViewport": true,
+        "model": {
+          "active": 8193,
+          "allocation": {
+            "kinds": {
+              "application": 39,
+              "factory": 8,
+              "routing": 2,
+              "spare": 1
+            },
+            "remaining": 143,
+            "requested": {
+              "application": 39,
+              "factory": 8,
+              "routing": 2,
+              "spare": 1
+            },
+            "shortage": 0,
+            "total": 50
+          },
+          "analysisStations": 16,
+          "chapter": 5,
+          "chipCommissioningGroups": 4,
+          "coax": 32,
+          "controlRacks": 7,
+          "decoderRacks": 6,
+          "desks": 8,
+          "installed": 8193,
+          "modulePackages": 7,
+          "notebooks": 1,
+          "patch": {
+            "ancilla": 80,
+            "data": 81,
+            "distance": 9,
+            "physical": 161
+          },
+          "processorSites": 36,
+          "researchSeats": 32,
+          "researchers": 32,
+          "schedule": {
+            "finish": 7380,
+            "lanes": [
+              {
+                "duration": 80,
+                "name": "Preparation",
+                "start": 0
+              },
+              {
+                "duration": 7200,
+                "name": "Operations",
+                "start": 80
+              },
+              {
+                "duration": 6912,
+                "name": "Fresh states",
+                "start": 80
+              },
+              {
+                "duration": 500,
+                "name": "Feedback",
+                "start": 80
+              },
+              {
+                "duration": 40,
+                "name": "Readout",
+                "start": 7280
+              },
+              {
+                "duration": 60,
+                "name": "Classical",
+                "start": 7320
+              }
+            ],
+            "qualified": true,
+            "repetitions": 1,
+            "runtime": 7380,
+            "workload": "dynamics"
+          },
+          "supportCommissioningGroups": 4,
+          "supported": 8193,
+          "workshopCells": 12,
+          "workshops": 12
+        },
+        "pixelRatio": 1,
+        "scene": "ending",
+        "textures": 34,
+        "triangles": 160208,
+        "visible": true,
+        "width": 1372
+      },
+      "errors": [],
+      "focus": "Your quantum laboratory",
+      "growth": "8,193 installed \u00b7 8,193 supported \u00b7 32 researchers \u00b7 7 control racks",
+      "legend": "Active physical8,193Calibration duty42%Planned service2.99 / lab sPlanned research192 / lab s",
+      "overflow": false
+    }
+  ],
+  "resourceCycles": [
+    {
+      "cycle": 0,
+      "chapter": 0,
+      "geometries": 17,
+      "textures": 18
+    },
+    {
+      "cycle": 0,
+      "chapter": 1,
+      "geometries": 17,
+      "textures": 18
+    },
+    {
+      "cycle": 0,
+      "chapter": 2,
+      "geometries": 18,
+      "textures": 19
+    },
+    {
+      "cycle": 0,
+      "chapter": 3,
+      "geometries": 21,
+      "textures": 22
+    },
+    {
+      "cycle": 0,
+      "chapter": 4,
+      "geometries": 23,
+      "textures": 24
+    },
+    {
+      "cycle": 0,
+      "chapter": 5,
+      "geometries": 28,
+      "textures": 28
+    },
+    {
+      "cycle": 0,
+      "chapter": 6,
+      "geometries": 29,
+      "textures": 29
+    },
+    {
+      "cycle": 1,
+      "chapter": 0,
+      "geometries": 17,
+      "textures": 18
+    },
+    {
+      "cycle": 1,
+      "chapter": 1,
+      "geometries": 17,
+      "textures": 18
+    },
+    {
+      "cycle": 1,
+      "chapter": 2,
+      "geometries": 18,
+      "textures": 19
+    },
+    {
+      "cycle": 1,
+      "chapter": 3,
+      "geometries": 21,
+      "textures": 22
+    },
+    {
+      "cycle": 1,
+      "chapter": 4,
+      "geometries": 23,
+      "textures": 24
+    },
+    {
+      "cycle": 1,
+      "chapter": 5,
+      "geometries": 28,
+      "textures": 28
+    },
+    {
+      "cycle": 1,
+      "chapter": 6,
+      "geometries": 29,
+      "textures": 29
+    }
+  ],
+  "errors": [],
+  "tabInventoryBefore": "\u2192 [t1] index-3d.html - file:///Users/ricp/.codex/worktrees/three-dimensional-lab/singular/index-3d.html"
+}

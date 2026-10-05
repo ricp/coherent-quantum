@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-05",
+  "scope": "Isolated native browser at loopback5668; no user browser/save touched",
+  "mockup": "prototypes/creator-footer-preview.html, shown before game edits",
+  "text": "Made by Richard Piacentini and GPT-X",
+  "profile": "https://www.linkedin.com/in/richardpiacentini/",
+  "checks": {
+    "2D_and_3D_footer": "present",
+    "LinkedIn_name_and_vector_mark": "single accessible link, opens in new tab with noopener/noreferrer",
+    "native_keyboard_focus": "Richard Piacentini on LinkedIn",
+    "model_notes_button": "opens existing Fragile things. Careful claims. dialog",
+    "existing_inspiration_links": "Paperclips and Singular Value retained",
+    "desktop375320": "visually checked, no horizontal overflow",
+    "dark_and_light": "visually checked",
+    "intent_tests": {
+      "passed": 87,
+      "failed": 0,
+      "skipped": 0
+    },
+    "contrast": {
+      "pairs": 50,
+      "minimum": 4.58,
+      "failed": 0
+    },
+    "build3D": "passed"
+  },
+  "scientific_engine": "unchanged",
+  "inspection_renderer": "f249b6f6bc1144a829816b767be9e8b5a21ab516ca82f158d4d0fae75b18e553",
+  "current_index_3d": "da505cf75177fb62946ff0c4d9ada69bf23606d5c6d012ca9444181c3bbec1a8",
+  "scope_boundary": "Inspector reviewer accepted pre-credit entry-page hash269fcbfd. Footer-only source/style change independently checked by lead, not relabeled as a specialist review of the new footer."
+}

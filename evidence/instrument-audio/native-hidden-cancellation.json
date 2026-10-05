@@ -1,0 +1,36 @@
+{
+  "events": [],
+  "kit": {
+    "context": "running",
+    "groups": 0,
+    "lastKind": "",
+    "played": 0,
+    "sources": 0,
+    "volume": 0
+  },
+  "label": "Sound on",
+  "visibility": [
+    {
+      "hidden": true,
+      "kit": {
+        "context": "running",
+        "groups": 0,
+        "lastKind": "",
+        "played": 0,
+        "sources": 0,
+        "volume": 0
+      }
+    },
+    {
+      "hidden": false,
+      "kit": {
+        "context": "running",
+        "groups": 0,
+        "lastKind": "",
+        "played": 0,
+        "sources": 0,
+        "volume": 0
+      }
+    }
+  ]
+}

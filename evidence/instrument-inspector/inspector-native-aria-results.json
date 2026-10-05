@@ -1,0 +1,658 @@
+{
+  "evidenceKind": "final wording-only delta: ordinary paid2025factory study through actual walltime after strict legal fixture import in private origin",
+  "rows": [
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 4%. Current station: Logical scheduling hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "planning",
+      "component": "factory-bay:0",
+      "eye": [
+        49.406866768824536,
+        23.98373715877976,
+        45.46474371418024
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 4%",
+      "target": [
+        19.37052650471428,
+        2.800622857001529,
+        7.708279052502572
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 7%. Current station: Logical scheduling hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "planning",
+      "component": "factory-bay:0",
+      "eye": [
+        38,
+        5.799999999999997,
+        25
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 7%",
+      "target": [
+        29.15,
+        2.7,
+        11.6
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 9%. Current station: Logical scheduling hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "planning",
+      "component": "factory-bay:0",
+      "eye": [
+        38,
+        5.799999999999997,
+        25
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 9%",
+      "target": [
+        29.15,
+        2.7,
+        11.6
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 12%. Current station: Logical scheduling hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "planning",
+      "component": "factory-bay:0",
+      "eye": [
+        38,
+        5.799999999999997,
+        25
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 12%",
+      "target": [
+        29.15,
+        2.7,
+        11.6
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 15%. Current station: Logical scheduling hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "planning",
+      "component": "factory-bay:0",
+      "eye": [
+        38,
+        5.799999999999997,
+        25
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 15%",
+      "target": [
+        29.15,
+        2.7,
+        11.6
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 18%. Current station: Logical scheduling hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "planning",
+      "component": "factory-bay:0",
+      "eye": [
+        38,
+        5.799999999999997,
+        25
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 18%",
+      "target": [
+        29.15,
+        2.7,
+        11.6
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 21%. Current station: Logical scheduling hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "planning",
+      "component": "factory-bay:0",
+      "eye": [
+        38,
+        5.799999999999997,
+        25
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 21%",
+      "target": [
+        29.15,
+        2.7,
+        11.6
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 24%. Current station: Logical scheduling hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "planning",
+      "component": "factory-bay:0",
+      "eye": [
+        38,
+        5.799999999999997,
+        25
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 24%",
+      "target": [
+        29.15,
+        2.7,
+        11.6
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 27%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        38.920653059840205,
+        5.500787755551927,
+        18.785591846078542
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 27%",
+      "target": [
+        29.115475510255987,
+        2.4583285717919434,
+        4.557004092222352
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 29%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        41.99465801562314,
+        4.501736144922479,
+        -1.9639416054562029
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 29%",
+      "target": [
+        29.00020032441413,
+        1.6514022708989256,
+        -18.959133819517028
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 33%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        42,
+        4.500000000000002,
+        -2
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 33%",
+      "target": [
+        29,
+        1.65,
+        -19
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 36%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        42,
+        4.500000000000002,
+        -2
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 36%",
+      "target": [
+        29,
+        1.65,
+        -19
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 38%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        42,
+        4.500000000000002,
+        -2
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 38%",
+      "target": [
+        29,
+        1.65,
+        -19
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 41%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        42,
+        4.500000000000002,
+        -2
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 41%",
+      "target": [
+        29,
+        1.65,
+        -19
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 44%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        42,
+        4.500000000000002,
+        -2
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 44%",
+      "target": [
+        29,
+        1.65,
+        -19
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 47%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        42,
+        4.500000000000002,
+        -2
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 47%",
+      "target": [
+        29,
+        1.65,
+        -19
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 50%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        42,
+        4.500000000000002,
+        -2
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 50%",
+      "target": [
+        29,
+        1.65,
+        -19
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 53%. Current station: Processor island. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "processor",
+      "component": "factory-bay:0",
+      "eye": [
+        27.066341128605487,
+        6.6253896521085816,
+        10.584543992748188
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 53%",
+      "target": [
+        15.57648640773527,
+        1.6891519146441054,
+        -3.3392341423578156
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 56%. Current station: Processor island. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "processor",
+      "component": "factory-bay:0",
+      "eye": [
+        15.3,
+        8.300000000000002,
+        20.5
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 56%",
+      "target": [
+        5,
+        1.72,
+        9
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 58%. Current station: Processor island. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "processor",
+      "component": "factory-bay:0",
+      "eye": [
+        15.3,
+        8.300000000000002,
+        20.5
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 58%",
+      "target": [
+        5,
+        1.72,
+        9
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 62%. Current station: Processor island. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "processor",
+      "component": "factory-bay:0",
+      "eye": [
+        15.3,
+        8.300000000000002,
+        20.5
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 62%",
+      "target": [
+        5,
+        1.72,
+        9
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 64%. Current station: Processor island. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "processor",
+      "component": "factory-bay:0",
+      "eye": [
+        15.3,
+        8.300000000000002,
+        20.5
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 64%",
+      "target": [
+        5,
+        1.72,
+        9
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 67%. Current station: Processor island. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "processor",
+      "component": "factory-bay:0",
+      "eye": [
+        15.3,
+        8.300000000000002,
+        20.5
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 67%",
+      "target": [
+        5,
+        1.72,
+        9
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 70%. Current station: Processor island. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "processor",
+      "component": "factory-bay:0",
+      "eye": [
+        15.3,
+        8.300000000000002,
+        20.5
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 70%",
+      "target": [
+        5,
+        1.72,
+        9
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 73%. Current station: Processor island. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "processor",
+      "component": "factory-bay:0",
+      "eye": [
+        15.3,
+        8.300000000000002,
+        20.5
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 73%",
+      "target": [
+        5,
+        1.72,
+        9
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 76%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        16.416786609563623,
+        8.141056587402934,
+        19.558887688569985
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 76%",
+      "target": [
+        6.0038531321920185,
+        1.7170720950311065,
+        7.828838012442645
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 79%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        38.96212739990101,
+        4.93235640001409,
+        0.560005000083418
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 79%",
+      "target": [
+        26.26932799991102,
+        1.6579644600002594,
+        -15.814215999896197
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 82%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        42,
+        4.500000000000002,
+        -2
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 82%",
+      "target": [
+        29,
+        1.65,
+        -19
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 84%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        42,
+        4.500000000000002,
+        -2
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 84%",
+      "target": [
+        29,
+        1.65,
+        -19
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 88%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        42,
+        4.500000000000002,
+        -2
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 88%",
+      "target": [
+        29,
+        1.65,
+        -19
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 91%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        42,
+        4.500000000000002,
+        -2
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 91%",
+      "target": [
+        29,
+        1.65,
+        -19
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 93%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        42,
+        4.500000000000002,
+        -2
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 93%",
+      "target": [
+        29,
+        1.65,
+        -19
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 96%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        42,
+        4.500000000000002,
+        -2
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 96%",
+      "target": [
+        29,
+        1.65,
+        -19
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Following experiment: Rehearse the factory \u00b7 99%. Current station: Control and decoder hall. The adjacent inspector retains the selected instrument and live laboratory readings.",
+      "camera": "control",
+      "component": "factory-bay:0",
+      "eye": [
+        42,
+        4.500000000000002,
+        -2
+      ],
+      "focus": "three-inspector-tour",
+      "label": "Rehearse the factory \u00b7 99%",
+      "target": [
+        29,
+        1.65,
+        -19
+      ],
+      "tour": true
+    },
+    {
+      "aria": "Open instrument: Fresh-state factory bay 1. Its cutaway shows schematic hardware; the adjacent panel contains live laboratory readings and controls.",
+      "camera": "planning",
+      "component": "factory-bay:0",
+      "eye": [
+        42.008649430900064,
+        5.069756769620509,
+        2.1283876722891932
+      ],
+      "focus": "three-inspector-close",
+      "label": "Apparatus idle",
+      "target": [
+        30.611813255815612,
+        1.6782774255406248,
+        -10.375385210109451
+      ],
+      "tour": false
+    },
+    {
+      "aria": "Open instrument: Fresh-state factory bay 1. Its cutaway shows schematic hardware; the adjacent panel contains live laboratory readings and controls.",
+      "camera": "planning",
+      "component": "factory-bay:0",
+      "eye": [
+        42.02133674599797,
+        6.514882043635709,
+        12.65958582294235
+      ],
+      "focus": "three-inspector-close",
+      "label": "Apparatus idle",
+      "target": [
+        34.7,
+        1.75,
+        11.5
+      ],
+      "tour": false
+    }
+  ],
+  "seenCameras": [
+    "control",
+    "planning",
+    "processor"
+  ]
+}

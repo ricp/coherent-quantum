@@ -1,0 +1,192 @@
+{
+  "evidenceKind": "independent isolated native fixture QA; not earned Chrome play",
+  "rendererSHA256": "f974ce18592c0b1117779d798cb2198bb68cb717918d3ac1e26094753b40a697",
+  "appSHA256": "977976b1ba6c4102c66d484797d7ee04d0a7a23f803a3c415d726056cb4da02e",
+  "mobilePlanning": {
+    "scene": "ending",
+    "camera": "planning",
+    "schedule": {
+      "workload": "molecule",
+      "lanes": [
+        {
+          "name": "Preparation",
+          "start": 0,
+          "duration": 60
+        },
+        {
+          "name": "Operations",
+          "start": 60,
+          "duration": 2280
+        },
+        {
+          "name": "Fresh states",
+          "start": 60,
+          "duration": 1152
+        },
+        {
+          "name": "Feedback",
+          "start": 60,
+          "duration": 1900
+        },
+        {
+          "name": "Readout",
+          "start": 2340,
+          "duration": 30
+        },
+        {
+          "name": "Classical",
+          "start": 2370,
+          "duration": 90
+        }
+      ],
+      "qualified": true,
+      "finish": 2460,
+      "runtime": 4920,
+      "repetitions": 2
+    },
+    "caption": "Recorded milestone \u00b7 An electronic energy, carefully \u00b7 modeled resource scenario",
+    "description": "The complete laboratory, from one known signal to a named useful resource scenario. Modeled completion: no large fault-tolerant quantum computation or large quantum answer was produced. Planning previews the recorded workload and recipe using current laboratory resources. Parallel operations, fresh states and feedback overlap. The six lanes use one-execution modeled durations; 2 repetitions give 4,920 \u03bcs full modeled time. Laboratory seconds use a separate pacing clock; the cursor follows that clock, not the lane \u03bcs scale.",
+    "overflow": false,
+    "viewport": [
+      375,
+      900
+    ],
+    "driver": false,
+    "activity": {
+      "research": false,
+      "deliveries": false,
+      "services": false,
+      "calibration": false,
+      "construction": false,
+      "experiment": false,
+      "memory": false,
+      "rehearsal": false,
+      "automation": false
+    }
+  },
+  "desktopPlanning": {
+    "scene": "ending",
+    "camera": "planning",
+    "schedule": {
+      "workload": "molecule",
+      "lanes": [
+        {
+          "name": "Preparation",
+          "start": 0,
+          "duration": 60
+        },
+        {
+          "name": "Operations",
+          "start": 60,
+          "duration": 2280
+        },
+        {
+          "name": "Fresh states",
+          "start": 60,
+          "duration": 1152
+        },
+        {
+          "name": "Feedback",
+          "start": 60,
+          "duration": 1900
+        },
+        {
+          "name": "Readout",
+          "start": 2340,
+          "duration": 30
+        },
+        {
+          "name": "Classical",
+          "start": 2370,
+          "duration": 90
+        }
+      ],
+      "qualified": true,
+      "finish": 2460,
+      "runtime": 4920,
+      "repetitions": 2
+    },
+    "caption": "Recorded milestone \u00b7 An electronic energy, carefully \u00b7 modeled resource scenario",
+    "description": "The complete laboratory, from one known signal to a named useful resource scenario. Modeled completion: no large fault-tolerant quantum computation or large quantum answer was produced. Planning previews the recorded workload and recipe using current laboratory resources. Parallel operations, fresh states and feedback overlap. The six lanes use one-execution modeled durations; 2 repetitions give 4,920 \u03bcs full modeled time. Laboratory seconds use a separate pacing clock; the cursor follows that clock, not the lane \u03bcs scale.",
+    "overflow": false,
+    "viewport": [
+      1440,
+      1100
+    ],
+    "driver": false,
+    "activity": {
+      "research": false,
+      "deliveries": false,
+      "services": false,
+      "calibration": false,
+      "construction": false,
+      "experiment": false,
+      "memory": false,
+      "rehearsal": false,
+      "automation": false
+    }
+  },
+  "manualCampus": {
+    "scene": "ending",
+    "camera": "campus",
+    "schedule": {
+      "workload": "molecule",
+      "lanes": [
+        {
+          "name": "Preparation",
+          "start": 0,
+          "duration": 60
+        },
+        {
+          "name": "Operations",
+          "start": 60,
+          "duration": 2280
+        },
+        {
+          "name": "Fresh states",
+          "start": 60,
+          "duration": 1152
+        },
+        {
+          "name": "Feedback",
+          "start": 60,
+          "duration": 1900
+        },
+        {
+          "name": "Readout",
+          "start": 2340,
+          "duration": 30
+        },
+        {
+          "name": "Classical",
+          "start": 2370,
+          "duration": 90
+        }
+      ],
+      "qualified": true,
+      "finish": 2460,
+      "runtime": 4920,
+      "repetitions": 2
+    },
+    "caption": "Recorded milestone \u00b7 An electronic energy, carefully \u00b7 modeled resource scenario",
+    "description": "The complete laboratory, from one known signal to a named useful resource scenario. Modeled completion: no large fault-tolerant quantum computation or large quantum answer was produced.",
+    "overflow": false,
+    "viewport": [
+      1440,
+      1100
+    ],
+    "driver": false,
+    "activity": {
+      "research": false,
+      "deliveries": false,
+      "services": false,
+      "calibration": false,
+      "construction": false,
+      "experiment": false,
+      "memory": false,
+      "rehearsal": false,
+      "automation": false
+    }
+  },
+  "pageErrors": ""
+}

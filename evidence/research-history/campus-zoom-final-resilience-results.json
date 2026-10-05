@@ -1,0 +1,450 @@
+{
+  "settled": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "cryostat",
+      "cameraOrbited": true,
+      "zoomEnabled": true,
+      "zoomMin": 1.5,
+      "zoomMax": 450,
+      "zoomDistance": 17.241809649801848,
+      "cameraEye": [
+        2.0000000000000018,
+        7.800000000000001,
+        24
+      ],
+      "cameraTarget": [
+        -8,
+        3.0000000000000004,
+        10.799999999999997
+      ],
+      "frames": 8,
+      "calls": 64,
+      "triangles": 91348,
+      "geometries": 39,
+      "textures": 37,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 1,
+        "modulePackages": 4,
+        "installed": 5022,
+        "supported": 5022,
+        "active": 5022,
+        "coax": 32,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 2,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 102,
+          "kinds": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "requested": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 24
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 4000
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 7680
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 2000
+            },
+            {
+              "name": "Readout",
+              "start": 7760,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 7800,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 7860,
+          "runtime": 7860,
+          "repetitions": 1
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "canvasHidden": false,
+    "status": "A quiet record of the completed resource scenario.",
+    "toggle": "2D view"
+  },
+  "idle": {
+    "d": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "cryostat",
+      "cameraOrbited": true,
+      "zoomEnabled": true,
+      "zoomMin": 1.5,
+      "zoomMax": 450,
+      "zoomDistance": 17.241809649801848,
+      "cameraEye": [
+        2.0000000000000018,
+        7.800000000000001,
+        24
+      ],
+      "cameraTarget": [
+        -8,
+        3.0000000000000004,
+        10.799999999999997
+      ],
+      "frames": 8,
+      "calls": 64,
+      "triangles": 91348,
+      "geometries": 39,
+      "textures": 37,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 1,
+        "modulePackages": 4,
+        "installed": 5022,
+        "supported": 5022,
+        "active": 5022,
+        "coax": 32,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 2,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 102,
+          "kinds": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "requested": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 24
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 4000
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 7680
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 2000
+            },
+            {
+              "name": "Readout",
+              "start": 7760,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 7800,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 7860,
+          "runtime": 7860,
+          "repetitions": 1
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "canvasHidden": false,
+    "status": "A quiet record of the completed resource scenario.",
+    "toggle": "2D view"
+  },
+  "fallback": {
+    "d": {
+      "available": false,
+      "enabled": false,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "cryostat",
+      "cameraOrbited": true,
+      "zoomEnabled": true,
+      "zoomMin": 1.5,
+      "zoomMax": 450,
+      "zoomDistance": 17.241809649801848,
+      "cameraEye": [
+        2.0000000000000018,
+        7.800000000000001,
+        24
+      ],
+      "cameraTarget": [
+        -8,
+        3.0000000000000004,
+        10.799999999999997
+      ],
+      "frames": 8,
+      "calls": 64,
+      "triangles": 91348,
+      "geometries": 39,
+      "textures": 37,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": false,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 38,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 1,
+        "modulePackages": 4,
+        "installed": 5022,
+        "supported": 5022,
+        "active": 5022,
+        "coax": 32,
+        "controlRacks": 5,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 2,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 102,
+          "kinds": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "requested": {
+            "application": 95,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 24
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 4000
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 7680
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 2000
+            },
+            {
+              "name": "Readout",
+              "start": 7760,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 7800,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 7860,
+          "runtime": 7860,
+          "repetitions": 1
+        }
+      },
+      "visible": false,
+      "inViewport": false
+    },
+    "canvasHidden": true,
+    "status": "The 3D graphics context was lost. Reload to reinitialize the laboratory. The complete 2D instrument remains available.",
+    "toggle": "3D unavailable"
+  },
+  "errors": ""
+}

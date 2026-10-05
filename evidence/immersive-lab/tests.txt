@@ -1,0 +1,55 @@
+
+> test
+> node --test tests/*.test.cjs
+
+✔ A legal v2 opening restores a paused job without inventing offline progress or awards (2.746208ms)
+✔ Incomplete or mistyped depth fields cannot silently reset a running laboratory (1.6855ms)
+✔ Impossible economic values cannot create negative resources or unbounded controller ownership (0.687625ms)
+✔ Imported assignments and banked effort must fit earned trust and purchased storage (0.338375ms)
+✔ Save imports cannot bypass engineering prerequisites or own both sides of a permanent choice (0.959875ms)
+✔ V2 restoration preserves operating choices and partial construction without fractional physical qubits (0.328666ms)
+✔ Baseline v1 saves receive an explicit no-migration error and cannot replace v2 progress (0.246667ms)
+✔ Researchers and notebooks share earned trust; a greedy allocation can recover without resetting (1.678208ms)
+✔ Removing notebook space cannot silently destroy banked research (0.21275ms)
+✔ A full research bank accelerates designs; spending notes removes that bonus (0.129041ms)
+✔ Storage tiers change capacity rather than fabricating notes or scientific evidence (0.085083ms)
+✔ Contracts pay only for qualified work actually delivered within demand and customer capacity (0.299875ms)
+✔ Paid automation consumes shared capacity before customers and stops when none is allocated (0.095125ms)
+✔ Owned automation can be idled to recover customer revenue without selling stations or resetting (0.130042ms)
+✔ Unavailable or malformed automation duty cannot be configured or imported (0.524709ms)
+✔ Calibration, frontier experiments and services share one apparatus budget (0.274875ms)
+✔ Manual calibration reserves the apparatus and pauses services, automation and commissioning (0.2245ms)
+✔ Fabricated chips require integration; construction split produces the actual limiting resource (0.21025ms)
+✔ Dissemination and rollout choices are exclusive investments with different consequences (0.199041ms)
+✔ The frontier policy legally finishes and remains resumable (365.517ms)
+✔ The revenue policy legally finishes and remains resumable (308.935125ms)
+✔ The infrastructure policy legally finishes and remains resumable (300.227584ms)
+✔ The cautious policy legally finishes and remains resumable (287.69ms)
+✔ The first experiment satisfies the opening within a minute, without fabricated resources (2.069792ms)
+✔ Research cannot bypass prerequisites, qualifications, or costs (0.210625ms)
+✔ Installed qubits alone do not create active capacity or certify a computation (0.322292ms)
+✔ Distance consumes exact ideal patch footprint; protection is conditional on the noise regime (0.153958ms)
+✔ Factory and routing allocations are reversible, and decoder load includes reserved patches (0.111834ms)
+✔ Historical memory discoveries do not qualify degraded memory or an unqualified gate stack (0.097833ms)
+✔ The variational tutorial computes a real classical reference and keeps uncertainty separate (6.734667ms)
+✔ Factory waits increase idle exposure, risk, and runtime; repetition costs are complete (0.251875ms)
+✔ Workloads recheck current conditions and recover rather than silently certify a failing schedule (0.326625ms)
+✔ Pausing freezes resources and jobs, and a saved job resumes without offline time (0.692458ms)
+✔ Malformed saves are rejected; unavailable upgrades and incomplete endings cannot be imported (0.7275ms)
+✔ Malformed tutorial groups and inconsistent shot accounting cannot replace a valid laboratory (2.875958ms)
+✔ A restored job retains captured settings, while impossible jobs are rejected before they can run (1.590541ms)
+✔ Measurement results, certificates, and unavailable configuration are validated before rendering (1.384667ms)
+✔ All thirty discoveries have reviewed primary citations available without buying them (0.136042ms)
+✔ Shot precision and mitigation consume resources; actual samples differ from modeled overhead (0.122959ms)
+✔ Toy workload results contain actual classical factor and oracle certificates (0.585583ms)
+✔ A compact legal strategy finishes all six chapters with the required scientific discoveries (480.296125ms)
+✔ A wide legal strategy finishes all six chapters with the required scientific discoveries (335.489917ms)
+✔ The electronic workload offers an alternate legal ending without inventing an energy result (341.94875ms)
+ℹ tests 43
+ℹ suites 0
+ℹ pass 43
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1320.437458

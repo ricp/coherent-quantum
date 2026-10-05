@@ -1,0 +1,14 @@
+{
+  "name": "coherent-private-gift",
+  "private": true,
+  "scripts": {
+    "build:3d": "node scripts/build-three.mjs",
+    "test": "node --test tests/*.test.cjs"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

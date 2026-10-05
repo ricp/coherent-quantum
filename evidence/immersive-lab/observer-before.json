@@ -1,0 +1,382 @@
+{
+  "diagnostics": {
+    "activity": {
+      "automation": false,
+      "calibration": true,
+      "construction": false,
+      "experiment": true,
+      "memory": false,
+      "rehearsal": false,
+      "research": true,
+      "services": false
+    },
+    "available": true,
+    "cadence": 0,
+    "calls": 75,
+    "camera": "planning",
+    "chapter": 5,
+    "driverActive": false,
+    "enabled": true,
+    "followExperiment": false,
+    "frames": 5,
+    "geometries": 29,
+    "height": 620,
+    "inViewport": false,
+    "model": {
+      "active": 4422,
+      "allocation": {
+        "kinds": {
+          "application": 249,
+          "factory": 8,
+          "routing": 2,
+          "spare": 1
+        },
+        "remaining": 2,
+        "requested": {
+          "application": 249,
+          "factory": 8,
+          "routing": 2,
+          "spare": 1
+        },
+        "shortage": 0,
+        "total": 260
+      },
+      "analysisStations": 4,
+      "chapter": 5,
+      "chipCommissioningGroups": 4,
+      "coax": 32,
+      "controlRacks": 4,
+      "decoderRacks": 4,
+      "desks": 8,
+      "installed": 4422,
+      "modulePackages": 3,
+      "notebooks": 1,
+      "patch": {
+        "ancilla": 8,
+        "data": 9,
+        "distance": 3,
+        "physical": 17
+      },
+      "processorSites": 36,
+      "researchSeats": 31,
+      "researchers": 31,
+      "schedule": {
+        "finish": 2580,
+        "lanes": [
+          {
+            "duration": 80,
+            "name": "Preparation",
+            "start": 0
+          },
+          {
+            "duration": 2400,
+            "name": "Operations",
+            "start": 80
+          },
+          {
+            "duration": 2304,
+            "name": "Fresh states",
+            "start": 80
+          },
+          {
+            "duration": 2000,
+            "name": "Feedback",
+            "start": 80
+          },
+          {
+            "duration": 40,
+            "name": "Readout",
+            "start": 2480
+          },
+          {
+            "duration": 60,
+            "name": "Classical",
+            "start": 2520
+          }
+        ],
+        "qualified": true,
+        "repetitions": 1,
+        "runtime": 2580,
+        "workload": "dynamics"
+      },
+      "supportCommissioningGroups": 4,
+      "supported": 4422,
+      "workshopCells": 2,
+      "workshops": 2
+    },
+    "pixelRatio": 1,
+    "scene": "laboratory",
+    "textures": 29,
+    "triangles": 104846,
+    "visible": false,
+    "width": 1372
+  },
+  "errors": [],
+  "history": [
+    [
+      {
+        "bottom": 1089.59375,
+        "intersects": true,
+        "time": 232.09999999776483,
+        "top": 469.59375
+      }
+    ],
+    [
+      {
+        "bottom": -2220.90625,
+        "intersects": false,
+        "time": 830.2999999970198,
+        "top": -2840.90625
+      },
+      {
+        "bottom": 768.234375,
+        "intersects": true,
+        "time": 843.6999999992549,
+        "top": 148.234375
+      }
+    ]
+  ],
+  "rect": {
+    "bottom": 853.234375,
+    "height": 620,
+    "left": 34,
+    "right": 1406,
+    "top": 233.234375,
+    "width": 1372,
+    "x": 34,
+    "y": 233.234375
+  },
+  "viewport": [
+    1440,
+    1050
+  ],
+  "sample": {
+    "after": {
+      "activity": {
+        "automation": false,
+        "calibration": true,
+        "construction": false,
+        "experiment": true,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 75,
+      "camera": "planning",
+      "chapter": 5,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 5,
+      "geometries": 29,
+      "height": 620,
+      "inViewport": false,
+      "model": {
+        "active": 4422,
+        "allocation": {
+          "kinds": {
+            "application": 249,
+            "factory": 8,
+            "routing": 2,
+            "spare": 1
+          },
+          "remaining": 2,
+          "requested": {
+            "application": 249,
+            "factory": 8,
+            "routing": 2,
+            "spare": 1
+          },
+          "shortage": 0,
+          "total": 260
+        },
+        "analysisStations": 4,
+        "chapter": 5,
+        "chipCommissioningGroups": 4,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 8,
+        "installed": 4422,
+        "modulePackages": 3,
+        "notebooks": 1,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 36,
+        "researchSeats": 31,
+        "researchers": 31,
+        "schedule": {
+          "finish": 2580,
+          "lanes": [
+            {
+              "duration": 80,
+              "name": "Preparation",
+              "start": 0
+            },
+            {
+              "duration": 2400,
+              "name": "Operations",
+              "start": 80
+            },
+            {
+              "duration": 2304,
+              "name": "Fresh states",
+              "start": 80
+            },
+            {
+              "duration": 2000,
+              "name": "Feedback",
+              "start": 80
+            },
+            {
+              "duration": 40,
+              "name": "Readout",
+              "start": 2480
+            },
+            {
+              "duration": 60,
+              "name": "Classical",
+              "start": 2520
+            }
+          ],
+          "qualified": true,
+          "repetitions": 1,
+          "runtime": 2580,
+          "workload": "dynamics"
+        },
+        "supportCommissioningGroups": 4,
+        "supported": 4422,
+        "workshopCells": 2,
+        "workshops": 2
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 29,
+      "triangles": 104846,
+      "visible": false,
+      "width": 1372
+    },
+    "before": {
+      "activity": {
+        "automation": false,
+        "calibration": true,
+        "construction": false,
+        "experiment": true,
+        "memory": false,
+        "rehearsal": false,
+        "research": true,
+        "services": false
+      },
+      "available": true,
+      "cadence": 0,
+      "calls": 75,
+      "camera": "planning",
+      "chapter": 5,
+      "driverActive": false,
+      "enabled": true,
+      "followExperiment": false,
+      "frames": 5,
+      "geometries": 29,
+      "height": 620,
+      "inViewport": false,
+      "model": {
+        "active": 4422,
+        "allocation": {
+          "kinds": {
+            "application": 249,
+            "factory": 8,
+            "routing": 2,
+            "spare": 1
+          },
+          "remaining": 2,
+          "requested": {
+            "application": 249,
+            "factory": 8,
+            "routing": 2,
+            "spare": 1
+          },
+          "shortage": 0,
+          "total": 260
+        },
+        "analysisStations": 4,
+        "chapter": 5,
+        "chipCommissioningGroups": 4,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 8,
+        "installed": 4422,
+        "modulePackages": 3,
+        "notebooks": 1,
+        "patch": {
+          "ancilla": 8,
+          "data": 9,
+          "distance": 3,
+          "physical": 17
+        },
+        "processorSites": 36,
+        "researchSeats": 31,
+        "researchers": 31,
+        "schedule": {
+          "finish": 2580,
+          "lanes": [
+            {
+              "duration": 80,
+              "name": "Preparation",
+              "start": 0
+            },
+            {
+              "duration": 2400,
+              "name": "Operations",
+              "start": 80
+            },
+            {
+              "duration": 2304,
+              "name": "Fresh states",
+              "start": 80
+            },
+            {
+              "duration": 2000,
+              "name": "Feedback",
+              "start": 80
+            },
+            {
+              "duration": 40,
+              "name": "Readout",
+              "start": 2480
+            },
+            {
+              "duration": 60,
+              "name": "Classical",
+              "start": 2520
+            }
+          ],
+          "qualified": true,
+          "repetitions": 1,
+          "runtime": 2580,
+          "workload": "dynamics"
+        },
+        "supportCommissioningGroups": 4,
+        "supported": 4422,
+        "workshopCells": 2,
+        "workshops": 2
+      },
+      "pixelRatio": 1,
+      "scene": "laboratory",
+      "textures": 29,
+      "triangles": 104846,
+      "visible": false,
+      "width": 1372
+    },
+    "delta": 0,
+    "ms": 650
+  },
+  "rendererSha256": "0b7298079590a3ffc71e938aa6287f936ea4b748fb019f142c4d2a49561e298b"
+}

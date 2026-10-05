@@ -1,0 +1,74 @@
+{
+  "evidenceKind": "isolated native control inspection with an earned public-action fixture",
+  "sourceHashes": {
+    "app.js": "ba68a7f5f88671f7cf83840907903af72e972a70d612504ce7e0b888a3cb0b41",
+    "game.js": "85da1ac8d7dff065fee62f4d40a979472ed9f8d60c618be79548fc759a765e83",
+    "content.js": "f158bfec87b44590ff3c901da2c893334accc670b83a4f5dd06be313886bc6b2"
+  },
+  "cases": [
+    {
+      "automatic": true,
+      "disabled": false,
+      "focus": "auto-calibration",
+      "height": 900,
+      "overflow": false,
+      "rect": {
+        "bottom": 534.421875,
+        "left": 36,
+        "right": 339,
+        "top": 492.421875
+      },
+      "visible": true,
+      "width": 375,
+      "serializedStateUnchanged": true
+    },
+    {
+      "automatic": false,
+      "disabled": false,
+      "focus": "calibration",
+      "height": 900,
+      "overflow": false,
+      "rect": {
+        "bottom": 407.859375,
+        "left": 36,
+        "right": 339,
+        "top": 391.859375
+      },
+      "visible": true,
+      "width": 375,
+      "serializedStateUnchanged": true
+    },
+    {
+      "automatic": true,
+      "disabled": false,
+      "focus": "auto-calibration",
+      "height": 900,
+      "overflow": false,
+      "rect": {
+        "bottom": 534.640625,
+        "left": 36,
+        "right": 284,
+        "top": 492.640625
+      },
+      "visible": true,
+      "width": 320,
+      "serializedStateUnchanged": true
+    },
+    {
+      "automatic": false,
+      "disabled": false,
+      "focus": "calibration",
+      "height": 900,
+      "overflow": false,
+      "rect": {
+        "bottom": 407.359375,
+        "left": 36,
+        "right": 284,
+        "top": 391.359375
+      },
+      "visible": true,
+      "width": 320,
+      "serializedStateUnchanged": true
+    }
+  ]
+}

@@ -1,0 +1,296 @@
+{
+  "evidenceKind": "isolated native browser QA with legal saved fixtures; not earned Chrome play",
+  "fixture": "/tmp/campus-pending-order.json",
+  "url": "http://127.0.0.1:8017/index-3d.html",
+  "recordingNote": "Fixture imported again through native Settings because the recording creates a fresh context.",
+  "before": {
+    "elapsed": "PAUSED 51:22",
+    "viewport": [
+      1440,
+      1100
+    ],
+    "chapter": 5,
+    "modelChapter": 5,
+    "camera": "campus",
+    "driver": false,
+    "cadence": 0,
+    "frames": 3,
+    "activity": {
+      "research": false,
+      "deliveries": false,
+      "services": false,
+      "calibration": false,
+      "construction": false,
+      "experiment": false,
+      "memory": false,
+      "rehearsal": false,
+      "automation": false
+    },
+    "campus": {
+      "width": 110,
+      "depth": 85,
+      "researchFloors": 4,
+      "controlHallLength": 36,
+      "cryostatCohorts": 5,
+      "orders": [
+        {
+          "id": 1,
+          "offer": "local",
+          "kind": "chip",
+          "units": 64,
+          "seconds": 20,
+          "remaining": 12,
+          "progress": 0.4
+        },
+        {
+          "id": 2,
+          "offer": "local",
+          "kind": "support",
+          "units": 64,
+          "seconds": 20,
+          "remaining": 12,
+          "progress": 0.4
+        }
+      ],
+      "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+      "stock": {
+        "chip": 0,
+        "support": 0
+      },
+      "chipCrates": 0,
+      "supportCrates": 0
+    }
+  },
+  "running": {
+    "elapsed": "LAB 51:25",
+    "viewport": [
+      1440,
+      1100
+    ],
+    "chapter": 5,
+    "modelChapter": 5,
+    "camera": "campus",
+    "driver": true,
+    "cadence": 30,
+    "frames": 70,
+    "activity": {
+      "research": true,
+      "deliveries": true,
+      "services": true,
+      "calibration": true,
+      "construction": true,
+      "experiment": false,
+      "memory": false,
+      "rehearsal": true,
+      "automation": true
+    },
+    "campus": {
+      "width": 110,
+      "depth": 85,
+      "researchFloors": 4,
+      "controlHallLength": 36,
+      "cryostatCohorts": 5,
+      "orders": [
+        {
+          "id": 1,
+          "offer": "local",
+          "kind": "chip",
+          "units": 64,
+          "seconds": 20,
+          "remaining": 8.901200000002975,
+          "progress": 0.5549399999998512
+        },
+        {
+          "id": 2,
+          "offer": "local",
+          "kind": "support",
+          "units": 64,
+          "seconds": 20,
+          "remaining": 8.901200000002975,
+          "progress": 0.5549399999998512
+        }
+      ],
+      "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+      "stock": {
+        "chip": 0,
+        "support": 0
+      },
+      "chipCrates": 0,
+      "supportCrates": 0
+    }
+  },
+  "fabrication": {
+    "elapsed": "LAB 51:28",
+    "viewport": [
+      1440,
+      1100
+    ],
+    "chapter": 5,
+    "modelChapter": 5,
+    "camera": "fabrication",
+    "driver": true,
+    "cadence": 30,
+    "frames": 139,
+    "activity": {
+      "research": true,
+      "deliveries": true,
+      "services": true,
+      "calibration": true,
+      "construction": true,
+      "experiment": false,
+      "memory": false,
+      "rehearsal": true,
+      "automation": true
+    },
+    "campus": {
+      "width": 110,
+      "depth": 85,
+      "researchFloors": 4,
+      "controlHallLength": 36,
+      "cryostatCohorts": 5,
+      "orders": [
+        {
+          "id": 1,
+          "offer": "local",
+          "kind": "chip",
+          "units": 64,
+          "seconds": 20,
+          "remaining": 5.899900000005958,
+          "progress": 0.7050049999997021
+        },
+        {
+          "id": 2,
+          "offer": "local",
+          "kind": "support",
+          "units": 64,
+          "seconds": 20,
+          "remaining": 5.899900000005958,
+          "progress": 0.7050049999997021
+        }
+      ],
+      "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+      "stock": {
+        "chip": 0,
+        "support": 0
+      },
+      "chipCrates": 0,
+      "supportCrates": 0
+    }
+  },
+  "paused": {
+    "elapsed": "PAUSED 51:28",
+    "viewport": [
+      1440,
+      1100
+    ],
+    "chapter": 5,
+    "modelChapter": 5,
+    "camera": "fabrication",
+    "driver": false,
+    "cadence": 0,
+    "frames": 140,
+    "activity": {
+      "research": false,
+      "deliveries": false,
+      "services": false,
+      "calibration": false,
+      "construction": false,
+      "experiment": false,
+      "memory": false,
+      "rehearsal": false,
+      "automation": false
+    },
+    "campus": {
+      "width": 110,
+      "depth": 85,
+      "researchFloors": 4,
+      "controlHallLength": 36,
+      "cryostatCohorts": 5,
+      "orders": [
+        {
+          "id": 1,
+          "offer": "local",
+          "kind": "chip",
+          "units": 64,
+          "seconds": 20,
+          "remaining": 5.899900000005958,
+          "progress": 0.7050049999997021
+        },
+        {
+          "id": 2,
+          "offer": "local",
+          "kind": "support",
+          "units": 64,
+          "seconds": 20,
+          "remaining": 5.899900000005958,
+          "progress": 0.7050049999997021
+        }
+      ],
+      "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+      "stock": {
+        "chip": 0,
+        "support": 0
+      },
+      "chipCrates": 0,
+      "supportCrates": 0
+    }
+  },
+  "afterPauseHold": {
+    "elapsed": "PAUSED 51:28",
+    "viewport": [
+      1440,
+      1100
+    ],
+    "chapter": 5,
+    "modelChapter": 5,
+    "camera": "fabrication",
+    "driver": false,
+    "cadence": 0,
+    "frames": 140,
+    "activity": {
+      "research": false,
+      "deliveries": false,
+      "services": false,
+      "calibration": false,
+      "construction": false,
+      "experiment": false,
+      "memory": false,
+      "rehearsal": false,
+      "automation": false
+    },
+    "campus": {
+      "width": 110,
+      "depth": 85,
+      "researchFloors": 4,
+      "controlHallLength": 36,
+      "cryostatCohorts": 5,
+      "orders": [
+        {
+          "id": 1,
+          "offer": "local",
+          "kind": "chip",
+          "units": 64,
+          "seconds": 20,
+          "remaining": 5.899900000005958,
+          "progress": 0.7050049999997021
+        },
+        {
+          "id": 2,
+          "offer": "local",
+          "kind": "support",
+          "units": 64,
+          "seconds": 20,
+          "remaining": 5.899900000005958,
+          "progress": 0.7050049999997021
+        }
+      ],
+      "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+      "stock": {
+        "chip": 0,
+        "support": 0
+      },
+      "chipCrates": 0,
+      "supportCrates": 0
+    }
+  }
+}

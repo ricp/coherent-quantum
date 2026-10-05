@@ -1,0 +1,837 @@
+{
+  "reviewDate": "2026-10-05",
+  "method": "Deterministic read-only Node calculations. No browser access, source writes, time injection or live game mutation.",
+  "source": {
+    "singular": "a386c26313cb73a77ef8d03cd9cfcea363ac85355099e83af422841dad93b796",
+    "coherent": "8c82dbef4b72c2d38e565b5ab12344538b1096a075e09a3e760d21d158e84847",
+    "content": "0bd72d8ecca580c6d4baf0b1d50e6fcea7fa071712227f0df635fec668ddffbe"
+  },
+  "counts": {
+    "evidenceKind": "Source inventory",
+    "singularProjects": 84,
+    "singularActions": 16,
+    "singularState": 89,
+    "coherentProjects": 30,
+    "coherentEngineering": 14,
+    "coherentExperiments": 10,
+    "coherentWorkloads": 4,
+    "coherentState": 45
+  },
+  "keirSize": {
+    "base": {
+      "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+      "description": "Fixed hardware/data sensitivity; optimal learning rate per size; base price held for comparison",
+      "inputs": {
+        "width": 1000,
+        "layers": 4,
+        "tokens": 10000000,
+        "gpus": 10,
+        "trainFrac": 0.5,
+        "lr": -3.767043098398698,
+        "priceLog": -1.203686644666985,
+        "moe": 1,
+        "agents": 0,
+        "flags": {
+          "training": true,
+          "api": true
+        }
+      },
+      "result": {
+        "parameters": 3001000,
+        "memoryLimit": 40000016384,
+        "activeParams": 3001000,
+        "capability": 12.049313449479117,
+        "trainTokensPerSecond": 1388564.92280351,
+        "servingCapacity": 4165.69476841053,
+        "agentWork": 0,
+        "revenue": 260.61583518742316
+      }
+    },
+    "larger": {
+      "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+      "description": "Fixed hardware/data sensitivity; optimal learning rate per size; base price held for comparison",
+      "inputs": {
+        "width": 1414,
+        "layers": 4,
+        "tokens": 10000000,
+        "gpus": 10,
+        "trainFrac": 0.5,
+        "lr": -3.8723428544296237,
+        "priceLog": -1.203686644666985,
+        "moe": 1,
+        "agents": 0,
+        "flags": {
+          "training": true,
+          "api": true
+        }
+      },
+      "result": {
+        "parameters": 5999602,
+        "memoryLimit": 40000016384,
+        "activeParams": 5999602,
+        "capability": 13.295183893750385,
+        "trainTokensPerSecond": 694559.9613663262,
+        "servingCapacity": 2083.6798840989786,
+        "agentWork": 0,
+        "revenue": 130.36000077962788
+      }
+    },
+    "expertRouting": {
+      "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+      "description": "Fixed hardware/data sensitivity; optimal learning rate per size; base price held for comparison",
+      "inputs": {
+        "width": 1000,
+        "layers": 4,
+        "tokens": 10000000,
+        "gpus": 10,
+        "trainFrac": 0.5,
+        "lr": -3.767043098398698,
+        "priceLog": -1.203686644666985,
+        "moe": 8,
+        "agents": 0,
+        "flags": {
+          "training": true,
+          "api": true
+        }
+      },
+      "result": {
+        "parameters": 3001000,
+        "memoryLimit": 40000016384,
+        "activeParams": 375125,
+        "capability": 12.049313449479117,
+        "trainTokensPerSecond": 11108519.38242808,
+        "servingCapacity": 33325.55814728424,
+        "agentWork": 0,
+        "revenue": 260.61583518742316
+      }
+    },
+    "agentCapacity": {
+      "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+      "description": "Fixed hardware/data sensitivity; optimal learning rate per size; base price held for comparison",
+      "inputs": {
+        "width": 1000,
+        "layers": 4,
+        "tokens": 10000000,
+        "gpus": 10,
+        "trainFrac": 0.5,
+        "lr": -3.767043098398698,
+        "priceLog": -1.203686644666985,
+        "moe": 1,
+        "agents": 4165.69476841053,
+        "flags": {
+          "training": true,
+          "api": true
+        }
+      },
+      "result": {
+        "parameters": 3001000,
+        "memoryLimit": 40000016384,
+        "activeParams": 3001000,
+        "capability": 12.049313449479117,
+        "trainTokensPerSecond": 1388564.92280351,
+        "servingCapacity": 4165.69476841053,
+        "agentWork": 4165.69476841053,
+        "revenue": 0
+      }
+    }
+  },
+  "bitcoin": {
+    "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+    "description": "One ordinary engine half-funds buy followed by one half-holdings sale; fixed trend/noise; no ticks",
+    "inputs": {
+      "startingFunding": 1000000000,
+      "startingHoldings": 0,
+      "trend": 100,
+      "noise": 0,
+      "buySlices": 20,
+      "sellSlices": 20,
+      "ticks": 0
+    },
+    "result": {
+      "before": {
+        "funding": 1000000000,
+        "holdings": 0,
+        "price": 100,
+        "trend": 100,
+        "noise": 0,
+        "markedValue": 0,
+        "markedWealth": 1000000000
+      },
+      "afterBuy": {
+        "funding": 500000000,
+        "holdings": 4771444.623670565,
+        "price": 115.48753999779234,
+        "trend": 100,
+        "noise": 0,
+        "markedValue": 551042401.8234056,
+        "markedWealth": 1051042401.8234056
+      },
+      "afterSellHalf": {
+        "funding": 759436852.5269066,
+        "holdings": 2385722.3118352834,
+        "price": 103.87188499944808,
+        "trend": 100,
+        "noise": 0,
+        "markedValue": 247809473.61557198,
+        "markedWealth": 1007246326.1424786
+      }
+    }
+  },
+  "bitcoinRoundtrip": {
+    "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+    "description": "Immediate half-funds buy, then 40 ordinary half-holdings sales. Residual coins are valued at the final quote; no market time or noise change. This isolates the original slice-accounting artifact.",
+    "inputs": {
+      "startingFunding": 1000000000,
+      "startingHoldings": 0,
+      "trend": 100,
+      "noise": 0,
+      "buyCount": 1,
+      "halfSaleCount": 40,
+      "buySlices": 20,
+      "sellSlices": 20,
+      "ticks": 0
+    },
+    "result": {
+      "initial": {
+        "funding": 1000000000,
+        "holdings": 0,
+        "price": 100,
+        "trend": 100,
+        "noise": 0,
+        "markedValue": 0,
+        "markedWealth": 1000000000
+      },
+      "final": {
+        "funding": 1000989743.9019115,
+        "holdings": 0.000004339603605031301,
+        "price": 100,
+        "trend": 100,
+        "noise": 0,
+        "markedValue": 0.00043396036050313006,
+        "markedWealth": 1000989743.9023454
+      },
+      "markedWealthDelta": 989743.9023454189,
+      "cashDelta": 989743.9019114971,
+      "residualCoinValue": 0.00043396036050313006
+    }
+  },
+  "coherentCombos": {
+    "fullAnalysis": {
+      "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+      "description": "Metric sensitivity with constructed unlock flags; prerequisite-complete saved-state validity is deliberately not claimed. Compare unsupportedChip with rackLimitedBase; other cases with halfAnalysis.",
+      "inputs": {
+        "module": 2,
+        "rack": 3,
+        "staff": 6,
+        "notebooks": 4,
+        "reputation": 8,
+        "pulse": 2,
+        "drift": 0.1,
+        "service": 0.9,
+        "calibration": 0.2,
+        "automation": 4,
+        "autoPrice": true,
+        "analysisShare": 1,
+        "effort": 1920,
+        "done": [
+          "feynman",
+          "deutsch",
+          "nisq",
+          "surface",
+          "surgery",
+          "ancilla"
+        ],
+        "engineering": [
+          "storage1",
+          "workflow"
+        ],
+        "qualified": [
+          "circuit"
+        ]
+      },
+      "result": {
+        "active": 25,
+        "trust": 19,
+        "effortCap": 1920,
+        "fullBank": true,
+        "designRate": 7.717162897326306,
+        "designBonus": 4,
+        "sharedCapacity": 7.5600000000000005,
+        "automationRunning": 4,
+        "customerCapacity": 3.5600000000000005,
+        "price": 8.77768136329665,
+        "demand": 3.56,
+        "delivered": 3.56,
+        "revenue": 31.248545653336077,
+        "netFunding": 31.948545653336073,
+        "maintenance": 0.20060791492653965,
+        "pEff": 0.0033000000000000004,
+        "totalPatches": 1,
+        "syndromeRate": 8,
+        "decoderRate": 64,
+        "decoderOK": true,
+        "slots": 0
+      }
+    },
+    "halfAnalysis": {
+      "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+      "description": "Metric sensitivity with constructed unlock flags; prerequisite-complete saved-state validity is deliberately not claimed. Compare unsupportedChip with rackLimitedBase; other cases with halfAnalysis.",
+      "inputs": {
+        "module": 2,
+        "rack": 3,
+        "staff": 6,
+        "notebooks": 4,
+        "reputation": 8,
+        "pulse": 2,
+        "drift": 0.1,
+        "service": 0.9,
+        "calibration": 0.2,
+        "automation": 4,
+        "autoPrice": true,
+        "analysisShare": 0.5,
+        "effort": 1920,
+        "done": [
+          "feynman",
+          "deutsch",
+          "nisq",
+          "surface",
+          "surgery",
+          "ancilla"
+        ],
+        "engineering": [
+          "storage1",
+          "workflow"
+        ],
+        "qualified": [
+          "circuit"
+        ]
+      },
+      "result": {
+        "active": 25,
+        "trust": 19,
+        "effortCap": 1920,
+        "fullBank": true,
+        "designRate": 4.717162897326307,
+        "designBonus": 4,
+        "sharedCapacity": 7.5600000000000005,
+        "automationRunning": 2,
+        "customerCapacity": 5.5600000000000005,
+        "price": 6.383757594975291,
+        "demand": 5.560000000000001,
+        "delivered": 5.5600000000000005,
+        "revenue": 35.49369222806262,
+        "netFunding": 36.39369222806262,
+        "maintenance": 0.20060791492653965,
+        "pEff": 0.0033000000000000004,
+        "totalPatches": 1,
+        "syndromeRate": 8,
+        "decoderRate": 64,
+        "decoderOK": true,
+        "slots": 0
+      }
+    },
+    "emptyAnalysis": {
+      "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+      "description": "Metric sensitivity with constructed unlock flags; prerequisite-complete saved-state validity is deliberately not claimed. Compare unsupportedChip with rackLimitedBase; other cases with halfAnalysis.",
+      "inputs": {
+        "module": 2,
+        "rack": 3,
+        "staff": 6,
+        "notebooks": 4,
+        "reputation": 8,
+        "pulse": 2,
+        "drift": 0.1,
+        "service": 0.9,
+        "calibration": 0.2,
+        "automation": 4,
+        "autoPrice": true,
+        "analysisShare": 0,
+        "effort": 1920,
+        "done": [
+          "feynman",
+          "deutsch",
+          "nisq",
+          "surface",
+          "surgery",
+          "ancilla"
+        ],
+        "engineering": [
+          "storage1",
+          "workflow"
+        ],
+        "qualified": [
+          "circuit"
+        ]
+      },
+      "result": {
+        "active": 25,
+        "trust": 19,
+        "effortCap": 1920,
+        "fullBank": true,
+        "designRate": 1.7171628973263064,
+        "designBonus": 4,
+        "sharedCapacity": 7.5600000000000005,
+        "automationRunning": 0,
+        "customerCapacity": 7.5600000000000005,
+        "price": 5.125746207598906,
+        "demand": 7.560000000000001,
+        "delivered": 7.5600000000000005,
+        "revenue": 38.75064132944774,
+        "netFunding": 39.85064132944774,
+        "maintenance": 0.20060791492653965,
+        "pEff": 0.0033000000000000004,
+        "totalPatches": 1,
+        "syndromeRate": 8,
+        "decoderRate": 64,
+        "decoderOK": true,
+        "slots": 0
+      }
+    },
+    "spentBank": {
+      "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+      "description": "Metric sensitivity with constructed unlock flags; prerequisite-complete saved-state validity is deliberately not claimed. Compare unsupportedChip with rackLimitedBase; other cases with halfAnalysis.",
+      "inputs": {
+        "module": 2,
+        "rack": 3,
+        "staff": 6,
+        "notebooks": 4,
+        "reputation": 8,
+        "pulse": 2,
+        "drift": 0.1,
+        "service": 0.9,
+        "calibration": 0.2,
+        "automation": 4,
+        "autoPrice": true,
+        "analysisShare": 0.5,
+        "effort": 0,
+        "done": [
+          "feynman",
+          "deutsch",
+          "nisq",
+          "surface",
+          "surgery",
+          "ancilla"
+        ],
+        "engineering": [
+          "storage1",
+          "workflow"
+        ],
+        "qualified": [
+          "circuit"
+        ]
+      },
+      "result": {
+        "active": 25,
+        "trust": 19,
+        "effortCap": 1920,
+        "fullBank": false,
+        "designRate": 1.1792907243315767,
+        "designBonus": 1,
+        "sharedCapacity": 7.5600000000000005,
+        "automationRunning": 2,
+        "customerCapacity": 5.5600000000000005,
+        "price": 6.383757594975291,
+        "demand": 5.560000000000001,
+        "delivered": 5.5600000000000005,
+        "revenue": 35.49369222806262,
+        "netFunding": 36.39369222806262,
+        "maintenance": 0.20060791492653965,
+        "pEff": 0.0033000000000000004,
+        "totalPatches": 1,
+        "syndromeRate": 8,
+        "decoderRate": 64,
+        "decoderOK": true,
+        "slots": 0
+      }
+    },
+    "storageExpansion": {
+      "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+      "description": "Metric sensitivity with constructed unlock flags; prerequisite-complete saved-state validity is deliberately not claimed. Compare unsupportedChip with rackLimitedBase; other cases with halfAnalysis.",
+      "inputs": {
+        "module": 2,
+        "rack": 3,
+        "staff": 6,
+        "notebooks": 5,
+        "reputation": 8,
+        "pulse": 2,
+        "drift": 0.1,
+        "service": 0.9,
+        "calibration": 0.2,
+        "automation": 4,
+        "autoPrice": true,
+        "analysisShare": 0.5,
+        "effort": 1920,
+        "done": [
+          "feynman",
+          "deutsch",
+          "nisq",
+          "surface",
+          "surgery",
+          "ancilla"
+        ],
+        "engineering": [
+          "storage1",
+          "workflow"
+        ],
+        "qualified": [
+          "circuit"
+        ]
+      },
+      "result": {
+        "active": 25,
+        "trust": 19,
+        "effortCap": 2400,
+        "fullBank": false,
+        "designRate": 1.1792907243315767,
+        "designBonus": 1,
+        "sharedCapacity": 7.5600000000000005,
+        "automationRunning": 2,
+        "customerCapacity": 5.5600000000000005,
+        "price": 6.383757594975291,
+        "demand": 5.560000000000001,
+        "delivered": 5.5600000000000005,
+        "revenue": 35.49369222806262,
+        "netFunding": 36.39369222806262,
+        "maintenance": 0.20060791492653965,
+        "pEff": 0.0033000000000000004,
+        "totalPatches": 1,
+        "syndromeRate": 8,
+        "decoderRate": 64,
+        "decoderOK": true,
+        "slots": 0
+      }
+    },
+    "rackLimitedBase": {
+      "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+      "description": "Metric sensitivity with constructed unlock flags; prerequisite-complete saved-state validity is deliberately not claimed. Compare unsupportedChip with rackLimitedBase; other cases with halfAnalysis.",
+      "inputs": {
+        "module": 2,
+        "rack": 2,
+        "staff": 6,
+        "notebooks": 4,
+        "reputation": 8,
+        "pulse": 2,
+        "drift": 0.1,
+        "service": 0.9,
+        "calibration": 0.2,
+        "automation": 4,
+        "autoPrice": true,
+        "analysisShare": 0.5,
+        "effort": 1920,
+        "done": [
+          "feynman",
+          "deutsch",
+          "nisq",
+          "surface",
+          "surgery",
+          "ancilla"
+        ],
+        "engineering": [
+          "storage1",
+          "workflow"
+        ],
+        "qualified": [
+          "circuit"
+        ]
+      },
+      "result": {
+        "active": 25,
+        "trust": 19,
+        "effortCap": 1920,
+        "fullBank": true,
+        "designRate": 4.717162897326307,
+        "designBonus": 4,
+        "sharedCapacity": 5.4,
+        "automationRunning": 2,
+        "customerCapacity": 3.4000000000000004,
+        "price": 9.070784919777598,
+        "demand": 3.400000000000001,
+        "delivered": 3.4000000000000004,
+        "revenue": 30.840668727243838,
+        "netFunding": 31.840668727243838,
+        "maintenance": 0.20060791492653965,
+        "pEff": 0.0033000000000000004,
+        "totalPatches": 1,
+        "syndromeRate": 8,
+        "decoderRate": 64,
+        "decoderOK": true,
+        "slots": 0
+      }
+    },
+    "unsupportedChip": {
+      "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+      "description": "Metric sensitivity with constructed unlock flags; prerequisite-complete saved-state validity is deliberately not claimed. Compare unsupportedChip with rackLimitedBase; other cases with halfAnalysis.",
+      "inputs": {
+        "module": 4,
+        "rack": 2,
+        "staff": 6,
+        "notebooks": 4,
+        "reputation": 8,
+        "pulse": 2,
+        "drift": 0.1,
+        "service": 0.9,
+        "calibration": 0.2,
+        "automation": 4,
+        "autoPrice": true,
+        "analysisShare": 0.5,
+        "effort": 1920,
+        "done": [
+          "feynman",
+          "deutsch",
+          "nisq",
+          "surface",
+          "surgery",
+          "ancilla"
+        ],
+        "engineering": [
+          "storage1",
+          "workflow"
+        ],
+        "qualified": [
+          "circuit"
+        ]
+      },
+      "result": {
+        "active": 25,
+        "trust": 19,
+        "effortCap": 1920,
+        "fullBank": true,
+        "designRate": 4.717162897326307,
+        "designBonus": 4,
+        "sharedCapacity": 5.4,
+        "automationRunning": 2,
+        "customerCapacity": 3.4000000000000004,
+        "price": 9.070784919777598,
+        "demand": 3.400000000000001,
+        "delivered": 3.4000000000000004,
+        "revenue": 30.840668727243838,
+        "netFunding": 31.64066872724384,
+        "maintenance": 0.20060791492653965,
+        "pEff": 0.0033000000000000004,
+        "totalPatches": 1,
+        "syndromeRate": 8,
+        "decoderRate": 64,
+        "decoderOK": true,
+        "slots": 0
+      }
+    },
+    "rackExpansion": {
+      "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+      "description": "Metric sensitivity with constructed unlock flags; prerequisite-complete saved-state validity is deliberately not claimed. Compare unsupportedChip with rackLimitedBase; other cases with halfAnalysis.",
+      "inputs": {
+        "module": 2,
+        "rack": 4,
+        "staff": 6,
+        "notebooks": 4,
+        "reputation": 8,
+        "pulse": 2,
+        "drift": 0.1,
+        "service": 0.9,
+        "calibration": 0.2,
+        "automation": 4,
+        "autoPrice": true,
+        "analysisShare": 0.5,
+        "effort": 1920,
+        "done": [
+          "feynman",
+          "deutsch",
+          "nisq",
+          "surface",
+          "surgery",
+          "ancilla"
+        ],
+        "engineering": [
+          "storage1",
+          "workflow"
+        ],
+        "qualified": [
+          "circuit"
+        ]
+      },
+      "result": {
+        "active": 25,
+        "trust": 19,
+        "effortCap": 1920,
+        "fullBank": true,
+        "designRate": 4.717162897326307,
+        "designBonus": 4,
+        "sharedCapacity": 9.72,
+        "automationRunning": 2,
+        "customerCapacity": 7.720000000000001,
+        "price": 5.049638749716115,
+        "demand": 7.72,
+        "delivered": 7.72,
+        "revenue": 38.983211147808404,
+        "netFunding": 39.7832111478084,
+        "maintenance": 0.20060791492653965,
+        "pEff": 0.0033000000000000004,
+        "totalPatches": 1,
+        "syndromeRate": 8,
+        "decoderRate": 64,
+        "decoderOK": true,
+        "slots": 0
+      }
+    },
+    "open": {
+      "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+      "description": "Metric sensitivity with constructed unlock flags; prerequisite-complete saved-state validity is deliberately not claimed. Compare unsupportedChip with rackLimitedBase; other cases with halfAnalysis.",
+      "inputs": {
+        "module": 2,
+        "rack": 3,
+        "staff": 6,
+        "notebooks": 4,
+        "reputation": 8,
+        "pulse": 2,
+        "drift": 0.1,
+        "service": 0.9,
+        "calibration": 0.2,
+        "automation": 4,
+        "autoPrice": true,
+        "analysisShare": 0.5,
+        "effort": 1920,
+        "done": [
+          "feynman",
+          "deutsch",
+          "nisq",
+          "surface",
+          "surgery",
+          "ancilla"
+        ],
+        "engineering": [
+          "storage1",
+          "workflow",
+          "open"
+        ],
+        "qualified": [
+          "circuit"
+        ]
+      },
+      "result": {
+        "active": 25,
+        "trust": 23,
+        "effortCap": 1920,
+        "fullBank": true,
+        "designRate": 4.717162897326307,
+        "designBonus": 4,
+        "sharedCapacity": 7.5600000000000005,
+        "automationRunning": 2,
+        "customerCapacity": 5.5600000000000005,
+        "price": 7.3315508830767255,
+        "demand": 5.5600000000000005,
+        "delivered": 5.5600000000000005,
+        "revenue": 40.763422909906595,
+        "netFunding": 41.66342290990659,
+        "maintenance": 0.20060791492653965,
+        "pEff": 0.0033000000000000004,
+        "totalPatches": 1,
+        "syndromeRate": 8,
+        "decoderRate": 64,
+        "decoderOK": true,
+        "slots": 0
+      }
+    },
+    "proprietary": {
+      "evidenceKind": "Constructed source/metric probe: not an earned campaign, valid save, browser action or human playtest",
+      "description": "Metric sensitivity with constructed unlock flags; prerequisite-complete saved-state validity is deliberately not claimed. Compare unsupportedChip with rackLimitedBase; other cases with halfAnalysis.",
+      "inputs": {
+        "module": 2,
+        "rack": 3,
+        "staff": 6,
+        "notebooks": 4,
+        "reputation": 8,
+        "pulse": 2,
+        "drift": 0.1,
+        "service": 0.9,
+        "calibration": 0.2,
+        "automation": 4,
+        "autoPrice": true,
+        "analysisShare": 0.5,
+        "effort": 1920,
+        "done": [
+          "feynman",
+          "deutsch",
+          "nisq",
+          "surface",
+          "surgery",
+          "ancilla"
+        ],
+        "engineering": [
+          "storage1",
+          "workflow",
+          "proprietary"
+        ],
+        "qualified": [
+          "circuit"
+        ]
+      },
+      "result": {
+        "active": 25,
+        "trust": 19,
+        "effortCap": 1920,
+        "fullBank": true,
+        "designRate": 4.717162897326307,
+        "designBonus": 4,
+        "sharedCapacity": 7.5600000000000005,
+        "automationRunning": 2,
+        "customerCapacity": 5.5600000000000005,
+        "price": 9.575636392462938,
+        "demand": 5.560000000000001,
+        "delivered": 5.5600000000000005,
+        "revenue": 53.24053834209394,
+        "netFunding": 54.14053834209394,
+        "maintenance": 0.20060791492653965,
+        "pEff": 0.0033000000000000004,
+        "totalPatches": 1,
+        "syndromeRate": 8,
+        "decoderRate": 64,
+        "decoderOK": true,
+        "slots": 0
+      }
+    }
+  },
+  "optionalEnding": {
+    "evidenceKind": "Read-only replay of an existing legal engine-generated fixture; not the active Chrome run or a new human playthrough",
+    "fixture": "evidence/coherent-3d/frontier-ending.json",
+    "fixtureHash": "3e27983fe3485aebd4c869eebdc64e1b260ab54aae791159d95b487a0fcda98b",
+    "completedDiscoveries": 27,
+    "ended": true,
+    "missing": [
+      {
+        "id": "factoring",
+        "status": {
+          "available": true,
+          "ready": false,
+          "reasons": [
+            "Need 1570 more funding",
+            "Need 2320 more research effort",
+            "Expand notebook capacity to 10000"
+          ]
+        }
+      },
+      {
+        "id": "grover",
+        "status": {
+          "available": true,
+          "ready": false,
+          "reasons": [
+            "Need 1570 more funding",
+            "Need 4320 more research effort",
+            "Expand notebook capacity to 12000"
+          ]
+        }
+      },
+      {
+        "id": "chemistry",
+        "status": {
+          "available": true,
+          "ready": false,
+          "reasons": [
+            "Need 3370 more funding",
+            "Need 16320 more research effort",
+            "Expand notebook capacity to 24000"
+          ]
+        }
+      }
+    ]
+  }
+}

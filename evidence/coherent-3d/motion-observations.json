@@ -1,0 +1,79 @@
+[
+  {
+    "control": {
+      "after": 80,
+      "chapter": 1,
+      "frames": 10,
+      "progress": "A signal from repeated known preparations."
+    }
+  },
+  {
+    "control": {
+      "after": 117,
+      "chapter": 1,
+      "frames": 80,
+      "progress": "A signal from repeated known preparations."
+    }
+  },
+  {
+    "control": {
+      "after": 117,
+      "chapter": 1,
+      "frames": 117,
+      "progress": "A signal from repeated known preparations."
+    }
+  },
+  {
+    "memory": {
+      "after": 237,
+      "before": 125,
+      "description": "Ideal rotated d = 3 patch: 9 data + 8 check ancillas = 17 physical qubits. Teal squares mark X checks, copper squares Z checks, and circular pads data. Connections are schematic; detection highlights never reveal the unknown data state. Check highlights are illustrative detection events; they never reveal the unknown data state."
+    }
+  },
+  {
+    "workload": {
+      "after": 355,
+      "before": 243,
+      "model": {
+        "chapter": 5,
+        "finish": 2580,
+        "lanes": [
+          {
+            "duration": 80,
+            "name": "PREPARE",
+            "start": 0
+          },
+          {
+            "duration": 2400,
+            "name": "OPERATE",
+            "start": 80
+          },
+          {
+            "duration": 2304,
+            "name": "FRESH STATES",
+            "start": 80
+          },
+          {
+            "duration": 2000,
+            "name": "FEEDBACK",
+            "start": 80
+          },
+          {
+            "duration": 40,
+            "name": "READOUT",
+            "start": 2480
+          },
+          {
+            "duration": 60,
+            "name": "CLASSICAL",
+            "start": 2520
+          }
+        ],
+        "qualified": true,
+        "repetitions": 1,
+        "runtime": 2580,
+        "workload": "dynamics"
+      }
+    }
+  }
+]

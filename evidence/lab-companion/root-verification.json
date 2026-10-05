@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-05",
+  "origin": "http://127.0.0.1:5684/",
+  "scope": "Root isolated native desktop 3D and 375px 2D Help checks; no earned campaign completion claimed",
+  "tests": {
+    "pass": 97,
+    "fail": 0,
+    "skip": 0,
+    "syntax": "pass",
+    "build3d": "pass; no generated diff",
+    "paletteContrast": {
+      "pairs": 50,
+      "minimum": 4.58,
+      "failures": 0
+    }
+  },
+  "desktop": {
+    "viewport": [
+      1280,
+      900
+    ],
+    "barLeft": 33,
+    "barRight": 1247,
+    "actionGroupLeft": 858.84375,
+    "actionGroupRight": 1229,
+    "escapeReturnFocus": "help-toggle",
+    "instrumentHelpEscape": "Help closed; inspector preserved; equipment Help trigger focus restored"
+  },
+  "mobile2D": {
+    "viewport": [
+      375,
+      800
+    ],
+    "wordbookOpen": true,
+    "search": "ansatz",
+    "visibleTerms": [
+      "Ansatz"
+    ],
+    "focusAfterLaterUpdates": "companion-search",
+    "horizontalOverflow": false
+  },
+  "sources": {
+    "app.js": "fa53a7f4021a81c401d4b9d2931c132ff15e9cd7b87b2ced9aa28cb1a4753ee8",
+    "companion.js": "d1a0422e6713ba6b86649f1399ea07a1cc4db13ec7bcd89ab4c952745687ff1a",
+    "game.js": "2d5d8eb4f7896a783758ec07f23382f44385785d669e5fb5e00e675720b445c4",
+    "index.html": "759763bc59167501f9579f16571b254bb293ab88de8028e9466cb8d7a7cfe3b0",
+    "index-3d.html": "1373530fcfc60329fe88a85562686b5a033422836175605e467d3d4366027c01",
+    "style.css": "be36483c98b8c1c89da3ca6f4055fcbfa9d747476713c2b92a1028b319468504",
+    "style-3d.css": "1e44f62cb8d99ffa93d0ef00c646d6126dab005be98ecb3e87ec6c4cf2ce8a7c",
+    "instrument-3d.js": "57da023f4f2d9a26a426266af3db041401228bc06b1423dcc662a628d72370d9",
+    "tests/companion.test.cjs": "6b9987f0239e8e5d98138d1802e5e9383665bb1ff86635993d5e2f303a1a66cd"
+  },
+  "screenshots": [
+    "desktop-help.png",
+    "desktop-right-action.png",
+    "2d-wordbook-375.png",
+    "light-320.png"
+  ],
+  "limitations": [
+    "Narrow viewport emulation is not a physical phone test",
+    "No blind human comprehension or enjoyment claim",
+    "Independent review records separate fixture import and touch scopes"
+  ],
+  "postHelpReviewSceneChange": {
+    "file": "instrument-3d.js",
+    "change": "Only floor plaque text changed from ENTRY / SINGULAR VALUE INSPIRED to ENTRY",
+    "sha256": "7d1fb4e9ea5c04304099ae5e23a3a7f75f0588ed69b17234eb225268b8eebe9b",
+    "syntax": "pass",
+    "nativeReload": "3D service view loads without an error; screenshot does not frame the floor plaque"
+  },
+  "mobile3DLight": {
+    "viewport": [
+      320,
+      700
+    ],
+    "panel": {
+      "x": 12,
+      "y": 12,
+      "width": 296,
+      "height": 598
+    },
+    "horizontalOverflow": false,
+    "focus": "companion-title",
+    "themeChange": "ordinary Settings control"
+  },
+  "webglFallback": {
+    "fault": "Deliberate WEBGL_lose_context extension call in isolated QA; actual browser context-loss callback",
+    "threeFallback": true,
+    "complete2DStatus": true,
+    "ordinaryHelpClick": "opened",
+    "focus": "companion-title"
+  },
+  "reducedMotion": {
+    "emulatedPreference": true,
+    "ordinaryBlockedPromptClick": "works",
+    "helpVisible": true,
+    "panelAnimation": "none"
+  },
+  "developIntegration": {
+    "conflictResolution": "Current recipe/captured-aware 2D renderer; older mobile readout CSS retained; Chapter VI legend adds classical processing",
+    "tests": {
+      "pass": 97,
+      "fail": 0,
+      "skip": 0
+    },
+    "endedNativeImport": {
+      "strictParser": true,
+      "endingCaption": "The earned ending is preserved. Help remains available.",
+      "opening": "3 / 3 earned",
+      "showMeFocus": "workload-section",
+      "visibleTarget": true,
+      "highlightCount": 1,
+      "saveUnchanged": true,
+      "helpClosed": true
+    },
+    "sources": {
+      "app.js": "76a1a7d6c1a692c04023f85076bc562ee6bc33d6a0bc015a21f36699c507f12d",
+      "companion.js": "d1a0422e6713ba6b86649f1399ea07a1cc4db13ec7bcd89ab4c952745687ff1a",
+      "game.js": "2d5d8eb4f7896a783758ec07f23382f44385785d669e5fb5e00e675720b445c4",
+      "index.html": "759763bc59167501f9579f16571b254bb293ab88de8028e9466cb8d7a7cfe3b0",
+      "index-3d.html": "1373530fcfc60329fe88a85562686b5a033422836175605e467d3d4366027c01",
+      "style.css": "8d85546c62ad7ddecc60554a5c26e577d1bca2c761cbe791c6b1c205c98c5ac1",
+      "style-3d.css": "1e44f62cb8d99ffa93d0ef00c646d6126dab005be98ecb3e87ec6c4cf2ce8a7c",
+      "instrument-3d.js": "7d1fb4e9ea5c04304099ae5e23a3a7f75f0588ed69b17234eb225268b8eebe9b",
+      "tests/companion.test.cjs": "6b9987f0239e8e5d98138d1802e5e9383665bb1ff86635993d5e2f303a1a66cd"
+    }
+  }
+}

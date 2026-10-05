@@ -1,0 +1,44 @@
+{
+  "creationFailure": {
+    "description": "",
+    "diagnostics": {
+      "activity": {},
+      "available": false,
+      "cadence": 0,
+      "calls": 0,
+      "camera": "overview",
+      "chapter": 1,
+      "driverActive": false,
+      "enabled": false,
+      "followExperiment": true,
+      "frames": 0,
+      "geometries": 0,
+      "height": 0,
+      "inViewport": false,
+      "model": {},
+      "pixelRatio": 0,
+      "scene": "laboratory",
+      "textures": 0,
+      "triangles": 0,
+      "visible": false,
+      "width": 0
+    },
+    "errors": [],
+    "focus": "Your quantum laboratory",
+    "growth": "",
+    "legend": "",
+    "overflow": false,
+    "twoDimensionalMachine": "block"
+  },
+  "continuedGameElapsed": 58.2005,
+  "exportedJob": {
+    "id": "ramsey",
+    "workload": false,
+    "progress": 2.2005,
+    "duration": 7,
+    "shots": 512,
+    "theta": 20,
+    "mitigate": false,
+    "bias": 0.04
+  }
+}

@@ -1,0 +1,340 @@
+{
+  "evidenceKind": "legal public-action automated campus fixtures; not human enjoyment or browser evidence",
+  "sourceHashes": {
+    "game.js": "66bd3bbb40fca08b1f90194312f485a4868b8377c1fa02932803c17ff994f6dc",
+    "content.js": "26181066d2a55682ec8c42fa649aa0daa954e96d868de293192c2e295a34b66f",
+    "tests/campus-playthrough.cjs": "0d1b1129934027398d59fbd46677cb462717296a90b4bf0bcac12ce6ba74a527"
+  },
+  "runs": [
+    {
+      "evidenceKind": "legal public-action automated campus fixture; not human enjoyment or browser evidence",
+      "policy": "local",
+      "seed": 1,
+      "ended": true,
+      "seconds": 5132,
+      "frontier": [
+        "landscape",
+        "precision",
+        "reference30",
+        "bias-floor",
+        "reference60",
+        "final-check"
+      ],
+      "precision": [
+        "desk30",
+        "desk45",
+        "desk60",
+        "desk65",
+        "audit30",
+        "audit45"
+      ],
+      "modern": [
+        "controller2026",
+        "adaptive2026",
+        "state-readiness"
+      ],
+      "orders": 24,
+      "busy": 553,
+      "taskBusy": 408,
+      "longestNoAction": 435,
+      "failures": {}
+    },
+    {
+      "evidenceKind": "legal public-action automated campus fixture; not human enjoyment or browser evidence",
+      "policy": "bulk",
+      "seed": 1,
+      "ended": true,
+      "seconds": 4518,
+      "frontier": [
+        "landscape",
+        "precision",
+        "reference30",
+        "bias-floor",
+        "reference60",
+        "final-check"
+      ],
+      "precision": [
+        "desk30",
+        "desk45",
+        "desk60",
+        "desk65",
+        "audit30",
+        "audit45"
+      ],
+      "modern": [
+        "controller2026",
+        "adaptive2026",
+        "state-readiness"
+      ],
+      "orders": 8,
+      "busy": 904,
+      "taskBusy": 728,
+      "longestNoAction": 223,
+      "failures": {}
+    },
+    {
+      "evidenceKind": "legal public-action automated campus fixture; not human enjoyment or browser evidence",
+      "policy": "local",
+      "seed": 42,
+      "ended": true,
+      "seconds": 5132,
+      "frontier": [
+        "landscape",
+        "precision",
+        "reference30",
+        "bias-floor",
+        "reference60",
+        "final-check"
+      ],
+      "precision": [
+        "desk30",
+        "desk45",
+        "desk60",
+        "desk65",
+        "audit30",
+        "audit45"
+      ],
+      "modern": [
+        "controller2026",
+        "adaptive2026",
+        "state-readiness"
+      ],
+      "orders": 24,
+      "busy": 553,
+      "taskBusy": 408,
+      "longestNoAction": 435,
+      "failures": {}
+    },
+    {
+      "evidenceKind": "legal public-action automated campus fixture; not human enjoyment or browser evidence",
+      "policy": "bulk",
+      "seed": 42,
+      "ended": true,
+      "seconds": 4518,
+      "frontier": [
+        "landscape",
+        "precision",
+        "reference30",
+        "bias-floor",
+        "reference60",
+        "final-check"
+      ],
+      "precision": [
+        "desk30",
+        "desk45",
+        "desk60",
+        "desk65",
+        "audit30",
+        "audit45"
+      ],
+      "modern": [
+        "controller2026",
+        "adaptive2026",
+        "state-readiness"
+      ],
+      "orders": 8,
+      "busy": 904,
+      "taskBusy": 728,
+      "longestNoAction": 223,
+      "failures": {}
+    },
+    {
+      "evidenceKind": "legal public-action automated campus fixture; not human enjoyment or browser evidence",
+      "policy": "local",
+      "seed": 1337,
+      "ended": true,
+      "seconds": 5132,
+      "frontier": [
+        "landscape",
+        "precision",
+        "reference30",
+        "bias-floor",
+        "reference60",
+        "final-check"
+      ],
+      "precision": [
+        "desk30",
+        "desk45",
+        "desk60",
+        "desk65",
+        "audit30",
+        "audit45"
+      ],
+      "modern": [
+        "controller2026",
+        "adaptive2026",
+        "state-readiness"
+      ],
+      "orders": 24,
+      "busy": 553,
+      "taskBusy": 408,
+      "longestNoAction": 435,
+      "failures": {}
+    },
+    {
+      "evidenceKind": "legal public-action automated campus fixture; not human enjoyment or browser evidence",
+      "policy": "bulk",
+      "seed": 1337,
+      "ended": true,
+      "seconds": 4518,
+      "frontier": [
+        "landscape",
+        "precision",
+        "reference30",
+        "bias-floor",
+        "reference60",
+        "final-check"
+      ],
+      "precision": [
+        "desk30",
+        "desk45",
+        "desk60",
+        "desk65",
+        "audit30",
+        "audit45"
+      ],
+      "modern": [
+        "controller2026",
+        "adaptive2026",
+        "state-readiness"
+      ],
+      "orders": 8,
+      "busy": 904,
+      "taskBusy": 728,
+      "longestNoAction": 223,
+      "failures": {}
+    },
+    {
+      "evidenceKind": "legal public-action automated campus fixture; not human enjoyment or browser evidence",
+      "policy": "local",
+      "seed": 424242,
+      "ended": true,
+      "seconds": 5132,
+      "frontier": [
+        "landscape",
+        "precision",
+        "reference30",
+        "bias-floor",
+        "reference60",
+        "final-check"
+      ],
+      "precision": [
+        "desk30",
+        "desk45",
+        "desk60",
+        "desk65",
+        "audit30",
+        "audit45"
+      ],
+      "modern": [
+        "controller2026",
+        "adaptive2026",
+        "state-readiness"
+      ],
+      "orders": 24,
+      "busy": 553,
+      "taskBusy": 408,
+      "longestNoAction": 435,
+      "failures": {}
+    },
+    {
+      "evidenceKind": "legal public-action automated campus fixture; not human enjoyment or browser evidence",
+      "policy": "bulk",
+      "seed": 424242,
+      "ended": true,
+      "seconds": 4518,
+      "frontier": [
+        "landscape",
+        "precision",
+        "reference30",
+        "bias-floor",
+        "reference60",
+        "final-check"
+      ],
+      "precision": [
+        "desk30",
+        "desk45",
+        "desk60",
+        "desk65",
+        "audit30",
+        "audit45"
+      ],
+      "modern": [
+        "controller2026",
+        "adaptive2026",
+        "state-readiness"
+      ],
+      "orders": 8,
+      "busy": 904,
+      "taskBusy": 728,
+      "longestNoAction": 223,
+      "failures": {}
+    },
+    {
+      "evidenceKind": "legal public-action automated campus fixture; not human enjoyment or browser evidence",
+      "policy": "local",
+      "seed": 4294967295,
+      "ended": true,
+      "seconds": 5132,
+      "frontier": [
+        "landscape",
+        "precision",
+        "reference30",
+        "bias-floor",
+        "reference60",
+        "final-check"
+      ],
+      "precision": [
+        "desk30",
+        "desk45",
+        "desk60",
+        "desk65",
+        "audit30",
+        "audit45"
+      ],
+      "modern": [
+        "controller2026",
+        "adaptive2026",
+        "state-readiness"
+      ],
+      "orders": 24,
+      "busy": 553,
+      "taskBusy": 408,
+      "longestNoAction": 435,
+      "failures": {}
+    },
+    {
+      "evidenceKind": "legal public-action automated campus fixture; not human enjoyment or browser evidence",
+      "policy": "bulk",
+      "seed": 4294967295,
+      "ended": true,
+      "seconds": 4518,
+      "frontier": [
+        "landscape",
+        "precision",
+        "reference30",
+        "bias-floor",
+        "reference60",
+        "final-check"
+      ],
+      "precision": [
+        "desk30",
+        "desk45",
+        "desk60",
+        "desk65",
+        "audit30",
+        "audit45"
+      ],
+      "modern": [
+        "controller2026",
+        "adaptive2026",
+        "state-readiness"
+      ],
+      "orders": 8,
+      "busy": 904,
+      "taskBusy": 728,
+      "longestNoAction": 223,
+      "failures": {}
+    }
+  ]
+}

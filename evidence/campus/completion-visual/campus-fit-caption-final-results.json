@@ -1,0 +1,1476 @@
+{
+  "reloadedEnding": {
+    "diag": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 1,
+      "calls": 121,
+      "triangles": 140504,
+      "geometries": 38,
+      "textures": 36,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": true,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 36,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 2,
+        "modulePackages": 3,
+        "installed": 8193,
+        "supported": 8193,
+        "active": 8193,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 29,
+        "researchSeats": 29,
+        "researchers": 29,
+        "notebooks": 5,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 3,
+          "data": 9,
+          "ancilla": 8,
+          "physical": 17
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 481,
+          "kinds": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 16
+        },
+        "schedule": {
+          "workload": "molecule",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 60
+            },
+            {
+              "name": "Operations",
+              "start": 60,
+              "duration": 2280
+            },
+            {
+              "name": "Fresh states",
+              "start": 60,
+              "duration": 1152
+            },
+            {
+              "name": "Feedback",
+              "start": 60,
+              "duration": 1900
+            },
+            {
+              "name": "Readout",
+              "start": 2340,
+              "duration": 30
+            },
+            {
+              "name": "Classical",
+              "start": 2370,
+              "duration": 90
+            }
+          ],
+          "qualified": true,
+          "finish": 2460,
+          "runtime": 4920,
+          "repetitions": 2
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 61.5,
+      "y": 172.953125,
+      "width": 1532,
+      "height": 620,
+      "top": 172.953125,
+      "right": 1593.5,
+      "bottom": 792.953125,
+      "left": 61.5
+    },
+    "caption": "Recorded milestone \u00b7 An electronic energy, carefully \u00b7 modeled resource scenario",
+    "description": "The complete laboratory, from one known signal to a named useful resource scenario. Modeled completion: no large fault-tolerant quantum computation or large quantum answer was produced.",
+    "overflow": false,
+    "viewport": [
+      1655,
+      965
+    ]
+  },
+  "returnToLab": {
+    "diag": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 2,
+      "calls": 121,
+      "triangles": 140504,
+      "geometries": 38,
+      "textures": 36,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": true,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 36,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 2,
+        "modulePackages": 3,
+        "installed": 8193,
+        "supported": 8193,
+        "active": 8193,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 29,
+        "researchSeats": 29,
+        "researchers": 29,
+        "notebooks": 5,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 3,
+          "data": 9,
+          "ancilla": 8,
+          "physical": 17
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 481,
+          "kinds": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 16
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 2400
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 2304
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 2000
+            },
+            {
+              "name": "Readout",
+              "start": 2480,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 2520,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 2580,
+          "runtime": 2580,
+          "repetitions": 1
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 61.5,
+      "y": 172.09375,
+      "width": 1532,
+      "height": 620,
+      "top": 172.09375,
+      "right": 1593.5,
+      "bottom": 792.09375,
+      "left": 61.5
+    },
+    "caption": "",
+    "description": "A schematic 110 \u00d7 85 research campus. Its buildings and finite equipment cohorts express game progression, not real qubits-per-refrigerator or square-metres-per-qubit laws. Planned foundations identify wings awaiting research.",
+    "overflow": false,
+    "viewport": [
+      1655,
+      965
+    ]
+  },
+  "endingAgain": {
+    "diag": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 3,
+      "calls": 121,
+      "triangles": 140504,
+      "geometries": 38,
+      "textures": 36,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": true,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 36,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 2,
+        "modulePackages": 3,
+        "installed": 8193,
+        "supported": 8193,
+        "active": 8193,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 29,
+        "researchSeats": 29,
+        "researchers": 29,
+        "notebooks": 5,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 3,
+          "data": 9,
+          "ancilla": 8,
+          "physical": 17
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 481,
+          "kinds": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 16
+        },
+        "schedule": {
+          "workload": "molecule",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 60
+            },
+            {
+              "name": "Operations",
+              "start": 60,
+              "duration": 2280
+            },
+            {
+              "name": "Fresh states",
+              "start": 60,
+              "duration": 1152
+            },
+            {
+              "name": "Feedback",
+              "start": 60,
+              "duration": 1900
+            },
+            {
+              "name": "Readout",
+              "start": 2340,
+              "duration": 30
+            },
+            {
+              "name": "Classical",
+              "start": 2370,
+              "duration": 90
+            }
+          ],
+          "qualified": true,
+          "finish": 2460,
+          "runtime": 4920,
+          "repetitions": 2
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 61.5,
+      "y": 211.953125,
+      "width": 1532,
+      "height": 620,
+      "top": 211.953125,
+      "right": 1593.5,
+      "bottom": 831.953125,
+      "left": 61.5
+    },
+    "caption": "Recorded milestone \u00b7 An electronic energy, carefully \u00b7 modeled resource scenario",
+    "description": "The complete laboratory, from one known signal to a named useful resource scenario. Modeled completion: no large fault-tolerant quantum computation or large quantum answer was produced.",
+    "overflow": false,
+    "viewport": [
+      1655,
+      965
+    ]
+  },
+  "endingToEarly": {
+    "diag": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 1,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 4,
+      "calls": 87,
+      "triangles": 46814,
+      "geometries": 24,
+      "textures": 23,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": true,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 1,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 1,
+          "controlHallLength": 22,
+          "cryostatCohorts": 0,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "modulePackages": 1,
+        "installed": 1,
+        "supported": 1,
+        "active": 1,
+        "coax": 10,
+        "controlRacks": 1,
+        "decoderRacks": 0,
+        "desks": 3,
+        "researchSeats": 3,
+        "researchers": 3,
+        "notebooks": 1
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 61.5,
+      "y": 130.609375,
+      "width": 1532,
+      "height": 620,
+      "top": 130.609375,
+      "right": 1593.5,
+      "bottom": 750.609375,
+      "left": 61.5
+    },
+    "caption": "",
+    "description": "A schematic 110 \u00d7 85 research campus. Its buildings and finite equipment cohorts express game progression, not real qubits-per-refrigerator or square-metres-per-qubit laws. Planned foundations identify wings awaiting research.",
+    "overflow": false,
+    "viewport": [
+      1655,
+      965
+    ]
+  },
+  "pausedWorkload": {
+    "diag": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 5,
+      "calls": 121,
+      "triangles": 132618,
+      "geometries": 38,
+      "textures": 36,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": true,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 36,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 1,
+        "modulePackages": 4,
+        "installed": 3358,
+        "supported": 3358,
+        "active": 3358,
+        "coax": 30,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 5,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 68,
+          "kinds": {
+            "application": 61,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "requested": {
+            "application": 61,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 26
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 4000
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 7680
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 2000
+            },
+            {
+              "name": "Readout",
+              "start": 7760,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 7800,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 7860,
+          "runtime": 7860,
+          "repetitions": 1
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 61.5,
+      "y": 214.09375,
+      "width": 1532,
+      "height": 620,
+      "top": 214.09375,
+      "right": 1593.5,
+      "bottom": 834.09375,
+      "left": 61.5
+    },
+    "caption": "",
+    "description": "A schematic 110 \u00d7 85 research campus. Its buildings and finite equipment cohorts express game progression, not real qubits-per-refrigerator or square-metres-per-qubit laws. Planned foundations identify wings awaiting research.",
+    "overflow": false,
+    "viewport": [
+      1655,
+      965
+    ]
+  },
+  "runningWorkload": {
+    "diag": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 5,
+      "camera": "planning",
+      "cameraOrbited": false,
+      "cameraEye": [
+        76.99973701324738,
+        51.999688461846894,
+        92.99954145899545
+      ],
+      "cameraTarget": [
+        16.00008867373838,
+        1.8206775180776155e-05,
+        19.999943356699436
+      ],
+      "frames": 6,
+      "calls": 97,
+      "triangles": 90026,
+      "geometries": 38,
+      "textures": 36,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": true,
+      "cadence": 30,
+      "driverActive": true,
+      "activity": {
+        "research": true,
+        "deliveries": false,
+        "services": false,
+        "calibration": true,
+        "construction": false,
+        "experiment": true,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 36,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 1,
+        "modulePackages": 4,
+        "installed": 3358,
+        "supported": 3358,
+        "active": 3358,
+        "coax": 30,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 32,
+        "researchSeats": 32,
+        "researchers": 32,
+        "notebooks": 5,
+        "processorSites": 36,
+        "chipCommissioningGroups": 3,
+        "supportCommissioningGroups": 3,
+        "patch": {
+          "distance": 5,
+          "data": 25,
+          "ancilla": 24,
+          "physical": 49
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 68,
+          "kinds": {
+            "application": 61,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "requested": {
+            "application": 61,
+            "routing": 2,
+            "factory": 4,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 26
+        },
+        "schedule": {
+          "workload": "dynamics",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 80
+            },
+            {
+              "name": "Operations",
+              "start": 80,
+              "duration": 4000
+            },
+            {
+              "name": "Fresh states",
+              "start": 80,
+              "duration": 7680
+            },
+            {
+              "name": "Feedback",
+              "start": 80,
+              "duration": 2000
+            },
+            {
+              "name": "Readout",
+              "start": 7760,
+              "duration": 40
+            },
+            {
+              "name": "Classical",
+              "start": 7800,
+              "duration": 60
+            }
+          ],
+          "qualified": true,
+          "finish": 7860,
+          "runtime": 7860,
+          "repetitions": 1
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 61.5,
+      "y": 190.234375,
+      "width": 1532,
+      "height": 620,
+      "top": 190.234375,
+      "right": 1593.5,
+      "bottom": 810.234375,
+      "left": 61.5
+    },
+    "caption": "The complete resource recipe \u00b7 cursor follows laboratory pacing",
+    "description": "Parallel operations, fresh states and feedback overlap. The six lanes use one-execution modeled durations; 1 repetition gives 7,860 \u03bcs full modeled time. Laboratory seconds use a separate pacing clock; the cursor follows that clock, not the lane \u03bcs scale.",
+    "overflow": false,
+    "viewport": [
+      1655,
+      965
+    ]
+  },
+  "activeJobImportToEarly": {
+    "diag": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 1,
+      "camera": "overview",
+      "cameraOrbited": false,
+      "cameraEye": [
+        12,
+        9.299999999999997,
+        31.000000000000004
+      ],
+      "cameraTarget": [
+        -8,
+        2.8,
+        11
+      ],
+      "frames": 8,
+      "calls": 80,
+      "triangles": 46424,
+      "geometries": 19,
+      "textures": 18,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": true,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 1,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 1,
+          "controlHallLength": 22,
+          "cryostatCohorts": 0,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "modulePackages": 1,
+        "installed": 1,
+        "supported": 1,
+        "active": 1,
+        "coax": 10,
+        "controlRacks": 1,
+        "decoderRacks": 0,
+        "desks": 3,
+        "researchSeats": 3,
+        "researchers": 3,
+        "notebooks": 1
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 61.5,
+      "y": 130.609375,
+      "width": 1532,
+      "height": 620,
+      "top": 130.609375,
+      "right": 1593.5,
+      "bottom": 750.609375,
+      "left": 61.5
+    },
+    "caption": "",
+    "description": "Your laboratory grows with staff, control racks, processor modules, pulse tools, decoder capacity and commissioning. Visible apparatus is schematic; exact measurements and scientific assumptions remain inspectable.",
+    "overflow": false,
+    "viewport": [
+      1655,
+      965
+    ]
+  },
+  "runningEarlyJob": {
+    "diag": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 1,
+      "camera": "cryostat",
+      "cameraOrbited": false,
+      "cameraEye": [
+        11.999908232186723,
+        9.299986234828006,
+        30.99993576253071
+      ],
+      "cameraTarget": [
+        -8,
+        2.8000018353562655,
+        10.999998164643737
+      ],
+      "frames": 9,
+      "calls": 60,
+      "triangles": 34820,
+      "geometries": 19,
+      "textures": 18,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": true,
+      "cadence": 30,
+      "driverActive": true,
+      "activity": {
+        "research": true,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": true,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 1,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 1,
+          "controlHallLength": 22,
+          "cryostatCohorts": 0,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "modulePackages": 1,
+        "installed": 1,
+        "supported": 1,
+        "active": 1,
+        "coax": 10,
+        "controlRacks": 1,
+        "decoderRacks": 0,
+        "desks": 3,
+        "researchSeats": 3,
+        "researchers": 3,
+        "notebooks": 1
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 61.5,
+      "y": 148.75,
+      "width": 1532,
+      "height": 620,
+      "top": 148.75,
+      "right": 1593.5,
+      "bottom": 768.75,
+      "left": 61.5
+    },
+    "caption": "Known preparation \u2192 control \u2192 readout \u00b7 schematic workflow",
+    "description": "A schematic dilution refrigerator: copper stages, suspended coax and a known-preparation circuit. Geometry and temperature behavior are illustrative.",
+    "overflow": false,
+    "viewport": [
+      1655,
+      965
+    ]
+  },
+  "pausedEarlyJob": {
+    "diag": {
+      "available": true,
+      "enabled": true,
+      "scene": "laboratory",
+      "chapter": 1,
+      "camera": "cryostat",
+      "cameraOrbited": false,
+      "cameraEye": [
+        2.0000000000000018,
+        7.799999999999998,
+        24
+      ],
+      "cameraTarget": [
+        -8,
+        3,
+        10.799999999999999
+      ],
+      "frames": 10,
+      "calls": 53,
+      "triangles": 34610,
+      "geometries": 19,
+      "textures": 18,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": true,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 1,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 1,
+          "controlHallLength": 22,
+          "cryostatCohorts": 0,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "modulePackages": 1,
+        "installed": 1,
+        "supported": 1,
+        "active": 1,
+        "coax": 10,
+        "controlRacks": 1,
+        "decoderRacks": 0,
+        "desks": 3,
+        "researchSeats": 3,
+        "researchers": 3,
+        "notebooks": 1
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 61.5,
+      "y": 172.75,
+      "width": 1532,
+      "height": 620,
+      "top": 172.75,
+      "right": 1593.5,
+      "bottom": 792.75,
+      "left": 61.5
+    },
+    "caption": "Known preparation \u2192 control \u2192 readout \u00b7 schematic workflow",
+    "description": "A schematic dilution refrigerator: copper stages, suspended coax and a known-preparation circuit. Geometry and temperature behavior are illustrative.",
+    "overflow": false,
+    "viewport": [
+      1655,
+      965
+    ]
+  },
+  "activeJobToEnding": {
+    "diag": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "cameraEye": [
+        77,
+        51.99999999999999,
+        93
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 11,
+      "calls": 121,
+      "triangles": 140504,
+      "geometries": 38,
+      "textures": 36,
+      "width": 1532,
+      "height": 620,
+      "pixelRatio": 1,
+      "followExperiment": true,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 36,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 2,
+        "modulePackages": 3,
+        "installed": 8193,
+        "supported": 8193,
+        "active": 8193,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 29,
+        "researchSeats": 29,
+        "researchers": 29,
+        "notebooks": 5,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 3,
+          "data": 9,
+          "ancilla": 8,
+          "physical": 17
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 481,
+          "kinds": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 16
+        },
+        "schedule": {
+          "workload": "molecule",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 60
+            },
+            {
+              "name": "Operations",
+              "start": 60,
+              "duration": 2280
+            },
+            {
+              "name": "Fresh states",
+              "start": 60,
+              "duration": 1152
+            },
+            {
+              "name": "Feedback",
+              "start": 60,
+              "duration": 1900
+            },
+            {
+              "name": "Readout",
+              "start": 2340,
+              "duration": 30
+            },
+            {
+              "name": "Classical",
+              "start": 2370,
+              "duration": 90
+            }
+          ],
+          "qualified": true,
+          "finish": 2460,
+          "runtime": 4920,
+          "repetitions": 2
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 61.5,
+      "y": 253.953125,
+      "width": 1532,
+      "height": 620,
+      "top": 253.953125,
+      "right": 1593.5,
+      "bottom": 873.953125,
+      "left": 61.5
+    },
+    "caption": "Recorded milestone \u00b7 An electronic energy, carefully \u00b7 modeled resource scenario",
+    "description": "The complete laboratory, from one known signal to a named useful resource scenario. Modeled completion: no large fault-tolerant quantum computation or large quantum answer was produced.",
+    "overflow": false,
+    "viewport": [
+      1655,
+      965
+    ]
+  },
+  "ending375": {
+    "diag": {
+      "available": true,
+      "enabled": true,
+      "scene": "ending",
+      "chapter": 5,
+      "camera": "campus",
+      "cameraOrbited": false,
+      "cameraEye": [
+        171.30563798219586,
+        132.3916913946588,
+        205.85756676557864
+      ],
+      "cameraTarget": [
+        16,
+        0,
+        20
+      ],
+      "frames": 12,
+      "calls": 94,
+      "triangles": 93768,
+      "geometries": 38,
+      "textures": 36,
+      "width": 337,
+      "height": 440,
+      "pixelRatio": 1,
+      "followExperiment": true,
+      "cadence": 0,
+      "driverActive": false,
+      "activity": {
+        "research": false,
+        "deliveries": false,
+        "services": false,
+        "calibration": false,
+        "construction": false,
+        "experiment": false,
+        "memory": false,
+        "rehearsal": false,
+        "automation": false
+      },
+      "model": {
+        "chapter": 5,
+        "campus": {
+          "width": 110,
+          "depth": 85,
+          "researchFloors": 4,
+          "controlHallLength": 36,
+          "cryostatCohorts": 6,
+          "orders": [],
+          "coordinateScale": "schematic; equipment cohorts are not qubits per refrigerator",
+          "stock": {
+            "chip": 0,
+            "support": 0
+          },
+          "chipCrates": 0,
+          "supportCrates": 0
+        },
+        "factoryBays": 2,
+        "modulePackages": 3,
+        "installed": 8193,
+        "supported": 8193,
+        "active": 8193,
+        "coax": 32,
+        "controlRacks": 4,
+        "decoderRacks": 4,
+        "desks": 29,
+        "researchSeats": 29,
+        "researchers": 29,
+        "notebooks": 5,
+        "processorSites": 36,
+        "chipCommissioningGroups": 4,
+        "supportCommissioningGroups": 4,
+        "patch": {
+          "distance": 3,
+          "data": 9,
+          "ancilla": 8,
+          "physical": 17
+        },
+        "analysisStations": 4,
+        "workshopCells": 2,
+        "workshops": 2,
+        "allocation": {
+          "total": 481,
+          "kinds": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "requested": {
+            "application": 470,
+            "routing": 2,
+            "factory": 8,
+            "spare": 1
+          },
+          "shortage": 0,
+          "remaining": 16
+        },
+        "schedule": {
+          "workload": "molecule",
+          "lanes": [
+            {
+              "name": "Preparation",
+              "start": 0,
+              "duration": 60
+            },
+            {
+              "name": "Operations",
+              "start": 60,
+              "duration": 2280
+            },
+            {
+              "name": "Fresh states",
+              "start": 60,
+              "duration": 1152
+            },
+            {
+              "name": "Feedback",
+              "start": 60,
+              "duration": 1900
+            },
+            {
+              "name": "Readout",
+              "start": 2340,
+              "duration": 30
+            },
+            {
+              "name": "Classical",
+              "start": 2370,
+              "duration": 90
+            }
+          ],
+          "qualified": true,
+          "finish": 2460,
+          "runtime": 4920,
+          "repetitions": 2
+        }
+      },
+      "visible": true,
+      "inViewport": true
+    },
+    "rect": {
+      "x": 19,
+      "y": 230.1875,
+      "width": 337,
+      "height": 440,
+      "top": 230.1875,
+      "right": 356,
+      "bottom": 670.1875,
+      "left": 19
+    },
+    "caption": "Recorded milestone \u00b7 An electronic energy, carefully \u00b7 modeled resource scenario",
+    "description": "The complete laboratory, from one known signal to a named useful resource scenario. Modeled completion: no large fault-tolerant quantum computation or large quantum answer was produced.",
+    "overflow": false,
+    "viewport": [
+      375,
+      900
+    ]
+  },
+  "errors": ""
+}
