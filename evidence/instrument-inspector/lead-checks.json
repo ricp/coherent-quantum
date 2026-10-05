@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-05",
+  "scope": "Lead isolated native QA, fresh first-signal game; not a complete campaign playthrough",
+  "observed_renderer": "f6b756c6a5a3d80fed8381b4eb26aa4f905a0e288fa0fc4aa440043b5dcc7537",
+  "checks": {
+    "ordinary_first_signal": "completed using paid ordinary controls",
+    "early_road_crossing": "distinct pavement and asphalt surfaces; visible road markings, screenshot preserved",
+    "cryostat": "visible copper-stage cutaway and live one-qubit readings, screenshot preserved",
+    "primary_paper": "Q04 opens A Quantum Engineer\u2019s Guide to Superconducting Qubits, arXiv and DOI links; closing restores Q04 button focus and same cryostat selection",
+    "intent_tests": {
+      "passed": 87,
+      "failed": 0,
+      "skipped": 0
+    },
+    "build_3d": "passed",
+    "syntax": "app.js, inspector.js, instrument-3d.js passed",
+    "palette_contrast": {
+      "pairs": 50,
+      "minimum": 4.58,
+      "failed": 0
+    }
+  },
+  "final_delta_scope": "Later renderer d823 camera directions and c7a5 manufacturing architectural classification were checked independently; no changes to the lead-reviewed early pavement, cryostat or paper binding. Final acceptance report records those scopes.",
+  "limitations": [
+    "Not a blind human enjoyment review",
+    "Physical-device FPS not measured",
+    "Paper button verification confirms existing local notes and link targets, not a fresh scientific review"
+  ]
+}
