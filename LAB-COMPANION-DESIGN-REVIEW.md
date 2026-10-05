@@ -1,5 +1,7 @@
 # Lab Companion — independent AI onboarding/gameplay design review
 
+Historical design checkpoint. The subsequent implementation and its separate acceptance evidence are documented in [LAB-COMPANION.md](LAB-COMPANION.md) and [LAB-COMPANION-IMPLEMENTATION-REVIEW.md](LAB-COMPANION-IMPLEMENTATION-REVIEW.md). The original design-only scope below is preserved.
+
 5 October 2026. Design recommendation only. Read-only review of the current Coherent interface and engine in `/Users/ricp/code/AI/singular`; no game, source, Git, browser, user save or audio work was changed. This is an independent AI review, not a credentialed human review, implemented feature, native UI test, or proof of human comprehension.
 
 ## Recommended direction
