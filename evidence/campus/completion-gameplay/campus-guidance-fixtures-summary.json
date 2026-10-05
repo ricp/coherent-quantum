@@ -1,0 +1,92 @@
+{
+  "evidenceKind": "legal public-action simulation fixture; not user Chrome",
+  "fixtures": [
+    {
+      "name": "earned-dynamics",
+      "elapsed": 4242,
+      "funds": 600.2770659863595,
+      "done": 29,
+      "completed": [],
+      "job": null,
+      "audit": {
+        "available": true,
+        "ready": false,
+        "reasons": [
+          "Need 9400 more funding"
+        ]
+      },
+      "ready": [
+        "dynamics"
+      ]
+    },
+    {
+      "name": "unqualified",
+      "elapsed": 4242,
+      "funds": 600.2770659863595,
+      "done": 29,
+      "completed": [],
+      "job": null,
+      "audit": {
+        "available": true,
+        "ready": false,
+        "reasons": [
+          "Need 9400 more funding"
+        ]
+      },
+      "ready": []
+    },
+    {
+      "name": "audit-ready",
+      "elapsed": 4452,
+      "funds": 10032.547810374032,
+      "done": 29,
+      "completed": [],
+      "job": null,
+      "audit": {
+        "available": true,
+        "ready": true,
+        "reasons": []
+      },
+      "ready": [
+        "dynamics"
+      ]
+    },
+    {
+      "name": "occupied",
+      "elapsed": 4242,
+      "funds": 0.27706598635950286,
+      "done": 29,
+      "completed": [],
+      "job": "dynamics",
+      "audit": {
+        "available": true,
+        "ready": false,
+        "reasons": [
+          "Need 10000 more funding"
+        ]
+      },
+      "ready": []
+    },
+    {
+      "name": "molecule-only",
+      "elapsed": 4362,
+      "funds": 464.0262095129413,
+      "done": 30,
+      "completed": [
+        "dynamics"
+      ],
+      "job": null,
+      "audit": {
+        "available": true,
+        "ready": false,
+        "reasons": [
+          "Need 9536 more funding",
+          "Need 18295 more research effort"
+        ]
+      },
+      "ready": [
+        "molecule"
+      ]
+    }
+  ]
+}

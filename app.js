@@ -365,11 +365,11 @@
     else if(b.dataset.action==='save')save(true);
     else if(b.id==='run-experiment'){
       const next=nextDiscovery(),m=G.metrics(s),opportunity=qualifiedWorkOpportunity(next,G.stage(s)),blocker=next?researchBlocker(next,m):'';
-      if(opportunity){workload=opportunity.id;render();$('workload-section').scrollIntoView({block:'start'});$('workload-list').querySelector('[data-workload="'+workload+'"]').focus({preventScroll:true});}
+      if(opportunity){workload=opportunity.id;render();const target=$('workload-list').querySelector('[data-workload="'+workload+'"]');target.scrollIntoView({block:'center'});target.focus({preventScroll:true});}
       else if(G.stage(s)===5&&(!next||isOptional(next)))$('workload-section').scrollIntoView({block:'start'});
       else if(!experimentChosen&&next&&(!next.qualification||G.qualificationNow(s,next.qualification))){
         if(blocker==='capacity'||blocker==='designs'||blocker==='effort'||blocker==='funding'&&has('nisq')){const target=blocker==='funding'?$('service-control'):$('economy-section');target.scrollIntoView({block:'start'});target.querySelector('button:not(:disabled),input:not(:disabled)')?.focus({preventScroll:true});}
-        else{$('discoveries-section').scrollIntoView({block:'start'});$('discovery-list').querySelector('[data-project="'+next.id+'"]:not(:disabled)')?.focus({preventScroll:true});}
+        else{const target=$('discovery-list').querySelector('[data-project="'+next.id+'"]:not(:disabled)');(target||$('discoveries-section')).scrollIntoView({block:target?'center':'start'});target?.focus({preventScroll:true});}
       }
       else if(experiment)act(()=>G.startExperiment(s,experiment));
     }

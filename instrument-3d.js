@@ -348,6 +348,7 @@
   }
   function draw(s,opts={}){
     const enteringEnding=opts.view==='ending'&&!viewEnding;
+    if(viewEnding&&opts.view!=='ending'||state&&state!==s){text($('three-event-caption'),'');followJob=null;}
     if(state&&state!==s){cue.hidden=true;pendingFocus=null;}state=s;options=opts;metrics=G.metrics(s);if(model.campus){model.campus.orders=procurement(s);model.campus.stock={chip:s.chipStock||0,support:s.supportStock||0};}if(s.ended||opts.view&&opts.view!=='lab')cue.hidden=true;viewEnding=opts.view==='ending';if(enteringEnding){pendingFocus='campus';pendingInspect=false;}const destination=viewEnding?$('ending-view'):figure;if(host.parentElement!==destination)destination.insertBefore(host,viewEnding?$('ending-art'):machine);host.classList.toggle('three-ending',viewEnding);
     if(!renderer&&available&&visible())initialize();display();original.draw(s,opts);if(renderer&&available&&enabled)followExperiment(s);if(!renderer||!available||!enabled||!visible()){stop();return;}
     size();const next=structural(s,metrics,opts.workload);if(next!==signature){build(s,metrics,opts.workload);signature=next;}if(pendingFocus){const id=pendingFocus;pendingFocus=null;setCamera(id);if(pendingInspect){host.querySelector('[data-camera='+id+']')?.focus({preventScroll:true});pendingInspect=false;}}

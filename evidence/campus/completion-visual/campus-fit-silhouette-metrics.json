@@ -1,0 +1,262 @@
+{
+  "endingDesktop": {
+    "canvas": [
+      1532,
+      620
+    ],
+    "box": [
+      287,
+      33,
+      1270,
+      573
+    ],
+    "widthPct": 64.2,
+    "heightPct": 87.1,
+    "marginsLTRB": [
+      287,
+      33,
+      262,
+      47
+    ]
+  },
+  "earlyDesktop": {
+    "canvas": [
+      1532,
+      620
+    ],
+    "box": [
+      287,
+      90,
+      1270,
+      573
+    ],
+    "widthPct": 64.2,
+    "heightPct": 77.9,
+    "marginsLTRB": [
+      287,
+      90,
+      262,
+      47
+    ]
+  },
+  "early1000": {
+    "canvas": [
+      948,
+      560
+    ],
+    "box": [
+      90,
+      99,
+      877,
+      473
+    ],
+    "widthPct": 83.0,
+    "heightPct": 66.8,
+    "marginsLTRB": [
+      90,
+      99,
+      71,
+      87
+    ]
+  },
+  "early375": {
+    "canvas": [
+      339,
+      440
+    ],
+    "box": [
+      18,
+      137,
+      325,
+      276
+    ],
+    "widthPct": 90.6,
+    "heightPct": 31.6,
+    "marginsLTRB": [
+      18,
+      137,
+      14,
+      164
+    ]
+  },
+  "early320": {
+    "canvas": [
+      284,
+      440
+    ],
+    "box": [
+      14,
+      148,
+      274,
+      266
+    ],
+    "widthPct": 91.5,
+    "heightPct": 26.8,
+    "marginsLTRB": [
+      14,
+      148,
+      10,
+      174
+    ]
+  },
+  "middleDesktop": {
+    "canvas": [
+      1532,
+      620
+    ],
+    "box": [
+      287,
+      53,
+      1270,
+      573
+    ],
+    "widthPct": 64.2,
+    "heightPct": 83.9,
+    "marginsLTRB": [
+      287,
+      53,
+      262,
+      47
+    ]
+  },
+  "middle1000": {
+    "canvas": [
+      948,
+      560
+    ],
+    "box": [
+      90,
+      68,
+      877,
+      473
+    ],
+    "widthPct": 83.0,
+    "heightPct": 72.3,
+    "marginsLTRB": [
+      90,
+      68,
+      71,
+      87
+    ]
+  },
+  "middle375": {
+    "canvas": [
+      339,
+      440
+    ],
+    "box": [
+      18,
+      127,
+      325,
+      276
+    ],
+    "widthPct": 90.6,
+    "heightPct": 33.9,
+    "marginsLTRB": [
+      18,
+      127,
+      14,
+      164
+    ]
+  },
+  "middle320": {
+    "canvas": [
+      284,
+      440
+    ],
+    "box": [
+      14,
+      140,
+      274,
+      266
+    ],
+    "widthPct": 91.5,
+    "heightPct": 28.6,
+    "marginsLTRB": [
+      14,
+      140,
+      10,
+      174
+    ]
+  },
+  "lateDesktop": {
+    "canvas": [
+      1532,
+      620
+    ],
+    "box": [
+      287,
+      33,
+      1270,
+      573
+    ],
+    "widthPct": 64.2,
+    "heightPct": 87.1,
+    "marginsLTRB": [
+      287,
+      33,
+      262,
+      47
+    ]
+  },
+  "late1000": {
+    "canvas": [
+      948,
+      560
+    ],
+    "box": [
+      90,
+      52,
+      877,
+      473
+    ],
+    "widthPct": 83.0,
+    "heightPct": 75.2,
+    "marginsLTRB": [
+      90,
+      52,
+      71,
+      87
+    ]
+  },
+  "late375": {
+    "canvas": [
+      339,
+      440
+    ],
+    "box": [
+      18,
+      120,
+      325,
+      276
+    ],
+    "widthPct": 90.6,
+    "heightPct": 35.5,
+    "marginsLTRB": [
+      18,
+      120,
+      14,
+      164
+    ]
+  },
+  "late320": {
+    "canvas": [
+      284,
+      440
+    ],
+    "box": [
+      14,
+      134,
+      274,
+      266
+    ],
+    "widthPct": 91.5,
+    "heightPct": 30.0,
+    "marginsLTRB": [
+      14,
+      134,
+      10,
+      174
+    ]
+  }
+}

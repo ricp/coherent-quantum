@@ -57,3 +57,6 @@ Static HTML, CSS, and JavaScript. `content.js` holds campaign data and citations
 To regenerate the checked-in 3D bundle and entry page after relevant source changes, run `npm ci` and `npm run build:3d`. No build is required just to play.
 
 Instrument Serif is bundled under its [SIL Open Font License](assets/OFL.txt). This repository stays local: commit only, no push, publication, or contact with Keir without the user's instruction.
+
+
+The final completion polish is recorded in [visual](CAMPUS-COMPLETION-VISUAL-AUDIT.md), [gameplay](CAMPUS-COMPLETION-GAMEPLAY-AUDIT.md) and [science](CAMPUS-COMPLETION-SCIENCE-AUDIT.md) audits. It improves whole-campus framing, removes stale imported milestone captions, surfaces qualified workload grants, fixes offscreen research focus, and clarifies source dates. Reproducible targeted audit tools live under `analysis-tools/`; generated QA imports stay outside Git.

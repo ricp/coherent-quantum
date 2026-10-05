@@ -1,0 +1,43 @@
+{
+  "review": "Independent AI quantum completion audit, 2026-10-05",
+  "source_sha256": {
+    "content.js": "add0070e1449aa74f8cdc8b74115ccba84fa378d4ae3ae86ee3080a992b434fb",
+    "app.js": "db007efa3808fc90aa0781c565411ea6adf1fac31bd1ec61e92e01d88de402f7",
+    "index.html": "153d883f3f2350225fc23e516be43365961e3b568face27f6c6175ed02f23405",
+    "index-3d.html": "feba654fae1f023deb5bf8fc20e3309e63489ec46a4ec4671550a6e0a04daf35"
+  },
+  "native_scope": {
+    "viewports": [[1440, 1000], [390, 844]],
+    "discoveries": 33,
+    "all_papers": 43,
+    "frontier_papers": 11,
+    "modern_discovery_years": [2026, 2026, 2026],
+    "narrow_page_scroll_width": 390,
+    "narrow_dialog_client_width": 364,
+    "narrow_dialog_scroll_width": 364,
+    "uncaught_browser_errors_observed": 0,
+    "campaign_started": false,
+    "user_chrome_touched": false,
+    "isolated_browser_closed": true,
+    "temporary_server_stopped": true
+  },
+  "accepted_screenshots": [
+    "screenshots/archive-desktop-intro.png",
+    "screenshots/archive-desktop-modern.png",
+    "screenshots/archive-narrow-modern.png",
+    "screenshots/state-readiness-desktop.png",
+    "screenshots/state-readiness-narrow-top.png",
+    "screenshots/state-readiness-narrow-cultivation.png",
+    "screenshots/q09-correction-desktop.png",
+    "screenshots/q09-correction-narrow.png",
+    "screenshots/archive-modern-search-static-desktop.png",
+    "screenshots/controller-study-desktop.png",
+    "screenshots/adaptive-study-desktop.png",
+    "screenshots/adaptive-study-narrow.png",
+    "screenshots/archive-final-frontier-narrow.png"
+  ],
+  "excluded_incidental_capture": {
+    "path": "screenshots/archive-desktop-modern-search.png",
+    "reason": "Concurrent Live Server source reload reset the pre-start view to the laboratory; this frame is not archive evidence."
+  }
+}

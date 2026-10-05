@@ -20,6 +20,7 @@ Read the relevant files before implementing:
 - `CAMPAIGN-DEPTH.md` and `DEPTH-VERIFICATION.md`: historical depth adaptation and its remaining human-play limitations.
 - `CAMPUS-DESIGN.md`, `CAMPUS-VERIFICATION.md`, `CHROME-PLAYTEST.md`: current campus mechanics, earned completion and verification boundaries.
 - `QUANTUM-FRONTIER-REVIEW.md`, `CAMPUS-GAMEPLAY-UI-REVIEW.md`, `CAMPUS-VISUAL-REVIEW.md`, `CAMPUS-ENDING-VISUAL-REVIEW.md`, `CAMPUS-EXPORT-REVIEW.md`: actual independent AI implementation reviews and resolved findings.
+- `CAMPUS-COMPLETION-SCIENCE-AUDIT.md`, `CAMPUS-COMPLETION-GAMEPLAY-AUDIT.md`, `CAMPUS-COMPLETION-VISUAL-AUDIT.md`: final bounded AI acceptance, resolved camera/caption/guidance/focus/archive findings, and reproducible evidence scopes.
 - `original-game.html`: unmodified reference snapshot; do not edit it to implement the new game.
 - `analysis-tools/`: executable audits of the original game.
 - `evidence/` and `source-audit.json`: original-game checks, simulated states, and browser evidence.
