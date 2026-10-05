@@ -65,7 +65,7 @@ The ready annual-study hint displayed an extra period after its criterion. The p
 - evidence/fresh-chrome/history-chrome-2025-factory-study.jpg
 - evidence/fresh-chrome/history-chrome-all-annual-studies.jpg
 
-The final native acceptance below supersedes the in-progress milestone status.
+The earlier pending items below are superseded by the final native acceptance section.
 
 ## Late-run native continuation
 
@@ -79,7 +79,7 @@ Search was inspected (.16 percent risk, two executions, 1,050 modeled microsecon
 
 The final Hubbard scenario was inspected (.66 percent risk, two executions, 7,960 modeled microseconds) and started at 91:38 with 450 funding, 192 credits and 28 apparatus seconds. The native Audit purchase remained disabled throughout these post-Dynamics jobs despite affordable resources, explicitly requiring finish or nonrefunded cancellation. This avoided silently removing paid work.
 
-The end audit was held until the fourth workload finished. No further pulse upgrade was purchased: the current selected conditional model already qualified.
+The end audit is intentionally being held until the fourth workload finishes. No further pulse upgrade was purchased: the current selected conditional model already qualified.
 
 
 ## Final native completion and recovery
@@ -106,7 +106,7 @@ macOS privacy denied file-content reads, even after automatic approval allowed t
 - evidence/fresh-chrome/history-chrome-full-earned-timeline.jpg
 - evidence/fresh-chrome/history-chrome-download-metadata.json
 
-The owned live tab remains preserved as a deliverable at http://127.0.0.1:5634/index-3d.html. It displays the recorded ending after Continue; the current laboratory is paused at 93:51 and the first completion is 93:05. The user’s separate existing save was not changed. The lead owns Git and repository preservation.
+The owned live tab remains preserved as a deliverable at http://127.0.0.1:5634/index-3d.html. It is paused after Continue; the first completion is 93:05. The lead owns Git and repository preservation.
 
 
 ## Final source and acceptance scope
@@ -126,16 +126,12 @@ The live fresh run establishes a complete earned ordinary-UI route and truthful 
 
 ## Final preservation whitelist
 
-The lead may preserve this Markdown report, evidence/fresh-chrome/history-chrome-events.ndjson, /tmp/history-chrome-final-ax.txt, evidence/fresh-chrome/history-chrome-download-metadata.json, and the fifteen JPEGs listed in this report and the handoff. The final statistics proof is evidence/fresh-chrome/history-chrome-final-recorded-ending.jpg; it visibly shows 93:05, 44 discoveries, 3,499 qubits and distance five. evidence/fresh-chrome/history-chrome-recorded-milestone.jpg shows the same preserved record and focus. No raw user save or constructed save belongs in the repository. The actual Downloads JSON and PNG remain outside the preservation whitelist.
+The lead may preserve this Markdown report, evidence/fresh-chrome/history-chrome-events.ndjson, evidence/fresh-chrome/history-chrome-final-ax.txt, evidence/fresh-chrome/history-chrome-download-metadata.json, and the fifteen JPEGs listed in this report and the handoff. The final statistics proof is evidence/fresh-chrome/history-chrome-final-recorded-ending.jpg; it visibly shows 93:05, 44 discoveries, 3,499 qubits and distance five. evidence/fresh-chrome/history-chrome-recorded-milestone.jpg shows the same preserved record and focus. No raw user save or constructed save belongs in the repository. The actual Downloads JSON and PNG remain outside the preservation whitelist.
 
 The owned Chrome tab 730430418 remains at http://127.0.0.1:5634/index-3d.html, showing the preserved ending while the continued laboratory is paused at 93:51. Its owned server session 54919 is left running. Existing user tabs, including dev.localhost:5500, were not touched.
 
-## Final source scope and reproduction
+## Lead acceptance and reproduction
 
-The engine and campaign content stayed unchanged throughout the ordinary run: game SHA256 `85da1ac8d7dff065fee62f4d40a979472ed9f8d60c618be79548fc759a765e83`, content `f158bfec87b44590ff3c901da2c893334accc670b83a4f5dd06be313886bc6b2`. Presentation evolved during the run; earlier milestones are not retroactively claimed against the final presentation hash. The final initial-ending Save/Reload used app `893447953e62124fcfbc52db680555346974d6b946eed27fb6d910e6afd7a376` and renderer `6ce2109d28d662a94e4f73976d19ee91bf84f1023349819ccf2d4a4847ef7c22`. The focused recorded-ending navigation recheck used app `7ad033594947e9d541ad4f4b72ac771722b756eda20057b3b38eebd87c89c26c`, the same renderer and stylesheet `01d03608780e441fe0f2babda5710e4790d392f56bbceb66edf1ebe286e2f189`. Source syntax, regenerated entry/bundle reproducibility and whitespace checks pass; all 50 contrast pairs pass with minimum 4.58. The 82 engine tests were already passed on this unchanged engine; they were not unnecessarily repeated for the final copy/navigation correction.
+The lead and independent AI gameplay reviewer reached consensus on the implemented fixes and bounded evidence above. Syntax, regenerated 3D entry/bundle reproducibility and whitespace checks pass; all 50 contrast pairs pass, minimum 4.58. Download file contents remain unverified because of macOS file-access restrictions.
 
 To reproduce the navigation intent check in an earned completed laboratory: Continue, Pause, Save locally and Reload; open Research / Full timeline, then View recorded completion. Confirm the first completion statistics remain fixed and the visible postcard receives focus. Use Tab to Return to the laboratory and Enter; confirm the current paused clock, balances, discoveries and completed workloads remain unchanged. No imports are needed.
-
-The lead finalized this preserved report from the reviewer’s actual native acceptance and snapshots. The independent AI reviewer and lead reached consensus on the implemented fixes and this bounded evidence. No human enjoyment, blind human pacing, physical-device performance or independent download-content inspection is claimed.
-
-Final recorded statistics: `evidence/fresh-chrome/history-chrome-final-recorded-ending.jpg`.

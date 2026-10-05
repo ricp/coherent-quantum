@@ -1,0 +1,94 @@
+Browser tab: 730430418, Title: "Coherent 3D — one qubit in return", URL: "http://127.0.0.1:5634/index-3d.html".
+1 AXWebArea Coherent 3D — one qubit in return, URL: 127.0.0.1:5634/index-3d.html
+	2 link Description: Skip to the laboratory, Value: 127.0.0.1:5634/index-3d.html#main
+	3 container
+		4 link Description: Coherent laboratory, Value: 127.0.0.1:5634/index-3d.html#main
+		5 container Game navigation
+			6 checkbox Laboratory, Value: 0
+			7 checkbox Research 44, Value: 0
+				8 text Research 
+				9 text 44
+			10 checkbox Journal, Value: 0
+		11 checkbox Sound off, Value: 0, ID: sound-toggle
+		12 button Resume, ID: pause-toggle
+		13 button Settings
+	14 text CHAPTER VI / USEFUL WORK
+	15 container Description: Campaign chapters, ID: chapter-progress
+		16 container Description: First signal, reached, Help: First signal
+		17 container Description: Control room, reached, Help: Control room
+		18 container Description: Noisy circuits, reached, Help: Noisy circuits
+		19 container Description: Protected memory, reached, Help: Protected memory
+		20 container Description: Logical machine, reached, Help: Logical machine
+		21 container Description: Useful work, current, Help: Useful work
+	22 text PAUSED 93:51
+	460 container Description: Campaign ending, ID: ending-view
+		461 text USEFUL AT LAST
+		462 heading The machine has a purpose., Value: 1
+			463 text The machine
+			464 text has a purpose.
+		465 text Modeled scenario completion. No large-system magnetization is computed in this browser.
+		466 container three-lab
+			467 container Description: Explore your laboratory, ID: three-toolbar
+				468 container Description: Laboratory camera stations, ID: three-stations
+					469 checkbox Overview, Value: 0
+					470 checkbox Whole campus, Value: 1
+					471 checkbox Operations centre, Value: 0
+					472 checkbox Delivery warehouse, Value: 0
+					473 checkbox Cryostat, Value: 0
+					474 checkbox Control / decoder, Value: 0
+					475 checkbox Research, Value: 0
+					476 checkbox Processor, Value: 0
+					477 checkbox Memory, Value: 0
+					478 checkbox Planning, Value: 0
+					479 checkbox Fabrication, Value: 0
+					480 checkbox Service gallery, Value: 0
+					481 checkbox Top, Value: 0
+					482 checkbox Reset, Value: 0
+				483 checkbox Follow experiment, Value: 1, ID: three-follow
+				484 button Expand lab, ID: three-expand
+				485 button Resume lab, ID: three-pause
+				486 checkbox 2D view, Value: 1, ID: three-toggle
+			487 container three-focus-heading
+				488 text The whole research campus / schematic scale
+				489 text 3,555 installed · 3,611 supported · 32 researchers · 4 control racks
+			490 container ID: three-canvas, Description: A schematic 110 × 85 research campus. Any moving commissioning markers show active funded prefab streams, not literal crate counts or additional stock. Its buildings and finite equipment cohorts express game progression, not real qubits-per-refrigerator or square-metres-per-qubit laws. Planned foundations identify wings awaiting research., Help: Select a facility, then use Facility controls for its live details and actions. Drag to orbit; mouse wheel or focused + / − keys to zoom.
+			491 definition list three-key
+				492 container Active physical
+					493 text Active physical
+				494 text 3,555
+				495 container Calibration duty
+					496 text Calibration duty
+				497 text 29%
+				498 container Planned service
+					499 text Planned service
+				500 text 0.75 / lab s
+				501 container Planned research
+					502 text Planned research
+				503 text 153.6 / lab s
+			504 text A schematic 110 × 85 research campus. Any moving commissioning markers show active funded prefab streams, not literal crate counts or additional stock. Its buildings and finite equipment cohorts express game progression, not real qubits-per-refrigerator or square-metres-per-qubit laws. Planned foundations identify wings awaiting research.
+			505 text Laboratory paused. Camera controls still work; all activity is still.
+		506 image Description: A visual record of your laboratory growing from one qubit into a useful instrument, ID: ending-art
+		507 text From one qubit to a useful instrument.
+		508 text Here is one qubit in return.
+		509 container ending-stats
+			510 text 93:05
+			511 text visible laboratory time
+			512 text 44
+			513 text discoveries
+			514 text 3,499
+			515 text physical qubits supported
+			516 text 5
+			517 text code distance
+		518 button Save the run postcard, ID: postcard-button
+		519 button Return to the laboratory, ID: ending-lab
+		520 button Export the save
+		521 text Modeled scenario completion. The browser did not execute a large fault-tolerant quantum computation or invent a scientific result.
+	453 container
+		454 text One qubit in return.
+		455 button Model & assumptions
+		456 text Inspired by 
+		457 link Description: Paperclips ↗, Value: decisionproblem.com/paperclips/index2.html
+		458 text  and 
+		459 link Description: Singular Value ↗, Value: singularvalue.org/
+
+The focused UI element is 518 button Save the run postcard, ID: postcard-button
