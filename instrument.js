@@ -235,13 +235,13 @@
     a.x.fillStyle=p.bg;a.x.fillRect(0,0,1200,720);box(a,24,24,1152,672,null,p.line,9);
     text(a,'COHERENT.',64,69,p.ink,21,'left',sans);text(a,'ONE QUBIT IN RETURN',1136,69,p.copper,12,'right');
     text(a,'The machine has a purpose.',600,150,p.ink,63,'center',serif);
-    text(a,'For Keir, who turned one neuron into a world.',600,219,p.ink,29,'center',serif);
+    text(a,'From one qubit to a useful instrument.',600,219,p.ink,29,'center',serif);
     text(a,'Here is one qubit in return.',600,256,p.copper,31,'center',serif);
     a.x.save();a.x.translate(110,290);evolution({x:a.x,w:980,h:210,p},s);a.x.restore();
     const record=s.endingRecord,seconds=Math.floor(record?.elapsed??s.elapsed),clock=Math.floor(seconds/60)+'m '+seconds%60+'s';
     const stats=[[clock,'visible laboratory time'],[(record?.discoveries??s.done.length)+' / '+C.projects.length,'research discoveries'],[num(record?.active??m.active),'active physical qubits'],record?[String(record.distance),'code distance at milestone']:[String(s.completed.length),'named recipes completed']];
     stats.forEach(([value,label],i)=>{const x=168+i*288;text(a,value,x,550,p.ink,28,'center',mono);text(a,label,x,583,p.muted,12,'center',sans);});
-    line(a,64,622,1136,622,p.line);text(a,'Modeled scenario completion · no large quantum result is computed.',64,656,p.muted,11,'left',sans);text(a,'Inspired by Singular Value · singularvalue.org',1136,656,p.copper,11,'right',sans);
+    line(a,64,622,1136,622,p.line);text(a,'Modeled scenario completion · no large quantum result is computed.',64,656,p.muted,11,'left',sans);text(a,'Inspired by Paperclips · decisionproblem.com/paperclips',1136,648,p.copper,11,'right',sans);text(a,'and Singular Value · singularvalue.org',1136,670,p.copper,11,'right',sans);
     return canvas;
   }
   window.CoherentArt={draw,postcard};
