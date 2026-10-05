@@ -365,7 +365,7 @@
     show('auto-calibration',G.hasEngineering(s,'autoCalibration'));write('auto-calibration',s.autoCalibration?'Automatic calibration on · use manual':'Keep calibration on target');$('auto-calibration').setAttribute('aria-pressed',String(s.autoCalibration));$('auto-calibration').disabled=s.ended||!!s.job?.workload;
     ['theta','shot-count','mitigate'].forEach(id=>$(id).disabled=!!s.job||s.ended);
     $('factory-count').disabled=!!s.job?.workload||s.ended;$('calibration').disabled=!!s.job?.workload||s.job?.id==='calibrate'||s.ended||s.autoCalibration;
-    railHelp={title:$('next-title').textContent,hint:$('next-copy').textContent,action:s.job?{type:'job',navigation:true}:studyNeeded?{type:'study',id:next.id,navigation:true}:opportunity?{type:'workload',id:opportunity.id,navigation:true}:workNext?{type:'workload',id:workload,navigation:true}:researchNext?{type:'project',id:next.id,navigation:true}:e?{type:'experiment',id:e.id}:null,target:s.job?'cancel-job':studyNeeded?'[data-study-details="'+next.id+'"]':researchNext&&['capacity','designs','effort'].includes(blocker)?'economy-section':researchNext&&blocker==='funding'&&has('nisq')?'service-control':researchNext?'[data-project="'+next.id+'"]':workNext?'workload-section':'run-experiment'};
+    railHelp={source:$('run-experiment'),title:$('next-title').textContent,hint:$('next-copy').textContent,action:s.job?{type:'job',navigation:true}:studyNeeded?{type:'study',id:next.id,navigation:true}:opportunity?{type:'workload',id:opportunity.id,navigation:true}:workNext?{type:'workload',id:workload,navigation:true}:researchNext?{type:'project',id:next.id,navigation:true}:e?{type:'experiment',id:e.id}:null,target:s.job?'cancel-job':studyNeeded?'[data-study-details="'+next.id+'"]':researchNext&&['capacity','designs','effort'].includes(blocker)?'economy-section':researchNext&&blocker==='funding'&&has('nisq')?'service-control':researchNext?'[data-project="'+next.id+'"]':workNext?'workload-section':'run-experiment'};
   }
   function render(){
     const phase=G.stage(s),chapter=C.chapters[phase],m=G.metrics(s);
@@ -440,11 +440,11 @@
   function renderCompanion(){
     if(!helpOpen||!window.CoherentCompanion)return;
     const host=$('three-lab'),instrument=helpContext?.instrument&&host?.dataset.component&&window.CoherentInspector?CoherentInspector.describe(s,host.dataset.component.split(':')[0]):null;
-    const context=helpContext?.action?{...helpContext}:{...railHelp},source=helpContext?.source;
+    const context=helpContext?.action?{...helpContext}:{...railHelp},source=helpContext?.source||(!helpContext?.instrument?railHelp.source:null);
     context.shellReasons=[];
     if(source?.isConnected&&source.disabled)context.shellReasons.push('The current control is disabled. Its requirements, current pause and apparatus reservation apply.');
     if(source?.isConnected&&source.closest('[hidden]'))context.shellReasons.push('This control is currently locked or outside the displayed page. Show me will use the visible next-step fallback.');
-    if(instrument){context.instrument=instrument;context.title=host.dataset.componentName;context.hint=instrument.purpose;context.target=instrument.target;}
+    if(instrument){context.action=instrument.quote?{type:'upgrade',id:instrument.quote.id}:null;context.instrument=instrument;context.title=host.dataset.componentName;context.hint=instrument.purpose;context.target=instrument.target;}
     const data=CoherentCompanion.describe(s,context);
     write('companion-context',helpContext?'Selected control':'Current next action');write('companion-action-title',data.title);write('companion-explanation',data.explanation);
     write('companion-block-title',data.reasons.length?'What is holding this up?':'This action has no reported blocker');
