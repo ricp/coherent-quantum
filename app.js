@@ -21,7 +21,7 @@
   let protectedSave=false,lastSave=0,lastSaveAttempt=0,savedAt='',lastResult='',taskFeedback='',lastEnding=false,audio=null,animation=0,noticeKind='',baselineRaw=null;
   try {const raw=localStorage.getItem(KEY);baselineRaw=localStorage.getItem('coherent.v1');show('baseline-notice',raw===null&&baselineRaw!==null);show('settings-baseline',baselineRaw!==null);if(raw!==null){s=G.parseSave(raw);write('save-status','Loaded local save');}}
   catch(error){protectedSave=true;write('save-status','Stored save unreadable');notice('Your stored save could not be loaded: '+error.message+' It is preserved. Import a valid save or explicitly start a new laboratory to replace it.');}
-  lastEnding=s.ended;lastResult=JSON.stringify(s.result);taskFeedback=s.result?.task?s.result.message:'';if(s.ended)view='ending';
+  lastEnding=s.ended;lastResult=JSON.stringify(s.result);taskFeedback=s.result?.task||s.result?.study?s.result.message:'';if(s.ended)view='ending';
   function clearTaskFeedback(){if(taskFeedback){taskFeedback='';write('experiment-feedback','');}}
   function notice(message,kind=''){noticeKind=kind;write('notice',message);show('notice',!!message);}
   function save(explicit=false) {
@@ -193,8 +193,9 @@
   function renderResearch(){
     const query=$('paper-search').value.trim().toLowerCase();
     const activeStudy=s.job?.study?C.projects.find(p=>p.id===s.job.study):null;
-    show('research-study-progress',!!activeStudy);show('research-study-running',!!activeStudy);show('research-cancel-study',!!activeStudy);
+    show('research-study-progress',!!activeStudy);show('research-study-running',!!activeStudy||!!s.result?.study);show('research-cancel-study',!!activeStudy);
     if(activeStudy){$('research-study-progress').value=s.job.progress/s.job.duration;write('research-study-running',(s.paused?'Paused: ':'Running: ')+activeStudy.title+' · '+pct(s.job.progress/s.job.duration,0));}
+    else if(s.result?.study)write('research-study-running','Last study: '+C.projects.find(p=>p.id===s.result.study.id).title+' · '+s.result.message);
     const paperCollection=archive==='papers'||archive==='frontier',year=p=>Math.max(...(p.date.match(/\d{4}/g)||[0]).map(Number));
     const timelineYear=p=>p.historyYear||(['controller2026','adaptive2026','state-readiness'].includes(p.id)?2026:Math.min(...(C.papers[p.papers[0]].date.match(/\d{4}/g)||[0]).map(Number)));
     const items=archive==='history'?[...C.projects].sort((a,b)=>timelineYear(a)-timelineYear(b)):archive==='frontier'?papers.filter(p=>year(p)>=2024).sort((a,b)=>year(b)-year(a)):archive==='papers'?papers:archive==='engineering'?C.engineering:C.projects;
@@ -380,7 +381,7 @@
     else if(b.dataset.paper)paperNotes(b.dataset.paper);
     else if(b.dataset.dialog)$(b.dataset.dialog).showModal();
     else if(b.dataset.close)$(b.dataset.close).close();
-    else if(b.dataset.studyInspect){const p=C.projects.find(p=>p.id===b.dataset.studyInspect);setView('lab');const id=p.study.experiment==='vqe'?'noisy-controls':p.study.kind==='maintenance-budget'?'calibration':p.study.experiment==='gates'?(has('controller2026')?'controller-profile-control':'upgrade-list'):'memory-controls';const target=$(id);target.scrollIntoView({block:'center'});(target.matches('input')?target:target.querySelector('button:not(:disabled),input:not(:disabled),select:not(:disabled)'))?.focus({preventScroll:true});}
+    else if(b.dataset.studyInspect){const p=C.projects.find(p=>p.id===b.dataset.studyInspect);setView('lab');const id=p.study.experiment==='vqe'?'noisy-controls':p.study.kind==='maintenance-budget'?'allocation-controls':p.study.experiment==='gates'?(has('controller2026')?'controller-profile-control':'upgrade-list'):'memory-controls';const target=$(id);target.scrollIntoView({block:'center'});(target.matches('input')?target:target.querySelector('button:not(:disabled),input:not(:disabled),select:not(:disabled)'))?.focus({preventScroll:true});}
     else if(b.id==='research-cancel-study')act(()=>G.cancel(s));
     else if(b.dataset.study)act(()=>G.startStudy(s,b.dataset.study));
     else if(b.id==='enter-research')act(()=>G.enterResearchProgramme(s));
@@ -441,7 +442,7 @@
     const file=event.target.files[0];if(!file)return;
     try {
       if(file.size>250000)throw new Error('Save is larger than 250 KB.');
-      const imported=G.parseSave(await file.text());s=imported;protectedSave=false;lastEnding=s.ended;lastResult=JSON.stringify(s.result);taskFeedback=s.result?.task?s.result.message:'';experiment='';experimentChosen=false;view=s.ended?'ending':'lab';notice('');write('experiment-feedback','');save();write('settings-feedback','Imported '+file.name+'. '+(s.paused?'The laboratory remains paused.':'The laboratory resumes visible play.'));render();ensureAnimation();
+      const imported=G.parseSave(await file.text());s=imported;protectedSave=false;lastEnding=s.ended;lastResult=JSON.stringify(s.result);taskFeedback=s.result?.task||s.result?.study?s.result.message:'';experiment='';experimentChosen=false;view=s.ended?'ending':'lab';notice('');write('experiment-feedback','');save();write('settings-feedback','Imported '+file.name+'. '+(s.paused?'The laboratory remains paused.':'The laboratory resumes visible play.'));render();ensureAnimation();
     }catch(error){write('settings-feedback','Import failed: '+error.message+' Your current laboratory is unchanged.');}
     event.target.value='';
   });
@@ -451,7 +452,7 @@
     if(document.hidden||$('chapter-dialog').open)return;
     const before=G.stage(s);G.tick(s,dt);afterChange(before);
     const result=JSON.stringify(s.result);
-    if(result!==lastResult){lastResult=result;if(s.result){taskFeedback=s.result.task?s.result.message:'';write('experiment-feedback',s.result.message);tone('result');save();}}
+    if(result!==lastResult){lastResult=result;if(s.result){taskFeedback=s.result.task||s.result.study?s.result.message:'';write('experiment-feedback',s.result.message);tone('result');save();}}
     if(s.started&&!s.paused&&!s.ended&&s.elapsed-lastSave>=10&&now-lastSaveAttempt>=10000)save();
     render();ensureAnimation();
   },100);

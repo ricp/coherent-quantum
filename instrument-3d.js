@@ -59,15 +59,17 @@
       const shape=new T.Shape(),r=.065;shape.moveTo(-.5+r,-.5);shape.lineTo(.5-r,-.5);shape.quadraticCurveTo(.5,-.5,.5,-.5+r);shape.lineTo(.5,.5-r);shape.quadraticCurveTo(.5,.5,.5-r,.5);shape.lineTo(-.5+r,.5);shape.quadraticCurveTo(-.5,.5,-.5,.5-r);shape.lineTo(-.5,-.5+r);shape.quadraticCurveTo(-.5,-.5,-.5+r,-.5);
       geometryPool={box:geo(new T.BoxGeometry(1,1,1)),bevel:geo(new T.ExtrudeGeometry(shape,{depth:1,bevelEnabled:true,bevelSegments:2,steps:1,bevelSize:.025,bevelThickness:.025,curveSegments:3}).translate(0,0,-.5).rotateX(-Math.PI/2)),cylinder:geo(new T.CylinderGeometry(1,1,1,24)),line:geo(new T.CylinderGeometry(1,1,1,8)),sphere:geo(new T.SphereGeometry(1,12,8)),ring:geo(new T.TorusGeometry(1,.035,5,40).rotateX(Math.PI/2)),shell:geo(new T.CylinderGeometry(1,1,1,48,1,true,Math.PI*.44,Math.PI*1.16)),plane:geo(new T.PlaneGeometry(1,1))};
       assembly=new T.Group();scene.add(assembly);camera=new T.PerspectiveCamera(37,1,.1,500);
-      controls=new kit.OrbitControls(camera,canvas);controls.enableDamping=false;controls.enableZoom=false;controls.enablePan=false;controls.minPolarAngle=.08;controls.maxPolarAngle=Math.PI*.47;controls.minAzimuthAngle=-Math.PI*.45;controls.maxAzimuthAngle=Math.PI*.45;canvas.style.touchAction='pan-y';
-      controls.addEventListener('start',()=>{cameraOrbited=true;cameraMove=null;follow=false;autoFocused=false;$('three-follow').setAttribute('aria-pressed','false');$('three-follow').textContent='Manual inspection';});
+      controls=new kit.OrbitControls(camera,canvas);controls.enableDamping=false;controls.enableZoom=fine.matches;controls.enablePan=false;controls.minPolarAngle=.08;controls.maxPolarAngle=Math.PI*.47;controls.minAzimuthAngle=-Math.PI*.45;controls.maxAzimuthAngle=Math.PI*.45;canvas.style.touchAction='pan-y';
+      controls.addEventListener('start',manualInspection);
       controls.addEventListener('change',()=>{dirty=true;ensureDriver();});
+      canvas.tabIndex=0;canvas.title='Drag to orbit; mouse wheel or focused + / − keys to zoom. Re-select a camera to restore its view.';
+      canvas.addEventListener('keydown',event=>{if(!['+','=','-'].includes(event.key)||!enabled||!available||!visible()||event.ctrlKey||event.metaKey||event.altKey)return;event.preventDefault();manualInspection();camera.position.sub(controls.target).multiplyScalar(event.key==='-'?1.15:1/1.15).clampLength(controls.minDistance,controls.maxDistance).add(controls.target);controls.update();dirty=true;ensureDriver();});
       canvas.addEventListener('webglcontextlost',event=>{event.preventDefault();fallback('The 3D graphics context was lost. Reload to reinitialize the laboratory.');});
       window.addEventListener('pagehide',event=>{stop();if(event.persisted)return;observer.disconnect();controls.dispose();clear();pooledGeometries.forEach(g=>g.dispose());pooledMaterials.forEach(m=>m.dispose());Object.values(screens).forEach(s=>{s.texture.dispose();s.material.dispose();});environment.dispose();renderer.dispose();});
       window.addEventListener('pageshow',event=>{if(event.persisted){dirty=true;ensureDriver();}});
       document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else{dirty=true;ensureDriver();}});
       document.addEventListener('fullscreenchange',()=>{text($('three-expand'),document.fullscreenElement===(host.closest('main')||host)?'Exit expanded lab':'Expand lab');dirty=true;ensureDriver();});
-      text(status,'A cutaway superconducting laboratory. Choose a wing to inspect; drag to orbit on desktop.');return true;
+      text(status,'A cutaway superconducting laboratory. Drag to orbit; use the mouse wheel or focused + / − keys to zoom.');return true;
     }catch(error){fallback('WebGL 2 is unavailable in this browser.');return false;}
   }
   function clear(){
@@ -86,7 +88,7 @@
   function point(x,y,z){return new T.Vector3(x+origin[0],y+origin[1],z+origin[2]);}
   function locate(mesh,x,y,z){mesh.position.copy(point(x,y,z));}
   function place(id,fn){origin=wings[id];const oldTargets=new Set(Object.keys(targets));fn();for(const key of Object.keys(targets))if(!oldTargets.has(key)){const t=targets[key];t.at=t.at.map((n,i)=>n+origin[i]);t.eye=t.eye.map((n,i)=>n+origin[i]);}origin=[0,0,0];}
-  function cable(points,mat='copper',radius=.035){const curve=new T.CatmullRomCurve3(points.map(p=>point(...p))),g=new T.TubeGeometry(curve,48,radius,6,false);transient.push(g);assembly.add(new T.Mesh(g,palette[mat]));return curve;}
+  function cable(points,mat='copper',radius=.035,floorRoute=false){const curve=new T.CatmullRomCurve3(points.map(p=>point(...p)),false,floorRoute?'catmullrom':'centripetal',floorRoute?0:.5),g=new T.TubeGeometry(curve,48,radius,6,false);transient.push(g);assembly.add(new T.Mesh(g,palette[mat]));return curve;}
   function plaque(value,x,y,z,w=2,vertical=false,color='#bad8d8'){
     const c=document.createElement('canvas');c.width=512;c.height=64;const ctx=c.getContext('2d');ctx.font='23px monospace';ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(value,256,32);const map=new T.CanvasTexture(c);map.colorSpace=T.SRGBColorSpace;const mat=new T.MeshBasicMaterial({map,transparent:true,depthWrite:false}),g=new T.PlaneGeometry(w,w/8),mesh=new T.Mesh(g,mat);if(!vertical)mesh.rotation.x=-Math.PI/2;locate(mesh,x,y,z);assembly.add(mesh);transient.push(map,mat,g);
   }
@@ -186,8 +188,9 @@
     const lid=new T.Mesh(geometryPool.shell,palette.glass);locate(lid,0,2.3,z);lid.scale.set(2.18,2.15,2.18);assembly.add(lid);
     box(.1,.92,z+.18,.9,.12,.63,'ceramic',true);box(.1,1.0,z+.18,.72,.045,.49,'silicon');transmon(.1,1.04,z+.18,.87);plaque('MIXING STAGE / SCHEMATIC',0,.56,2.02,3.8);
     for(let j=0;j<2;j++){cylinder(-3.2+j*.76,.94,-1.1,.23,1.12,'graphite');cylinder(-3.2+j*.76,1.58,-1.1,.19,.1,'silver');line([-3.2+j*.76,1.62,-1.1],[-2.75,2.1,-.4],.065,'silver');}
-    movables.controlPath=cable([[34.45,1.65,-24.07],[26,.3,-16],[16,.3,-2],[2.72,.3,1.8],[2.58,4.62,.2],[1.7,6.18,-.4],[.5,3.1,-.25],[.1,1.13,-.22]],'copper',.046);
-    movables.readoutPath=cable([[.1,1.14,-.22],[-1.45,4.2,-.2],[-1.6,6.21,-.4],[-2.67,4.4,.4],[-2.85,.34,2.24],[16,.34,-2],[26,.34,-16],[34.35,1.9,-24.03]],'silver',.043);
+    // Floor routes use zero tension so their bends cannot dip beneath the floor.
+    movables.controlPath=cable([[34.45,1.65,-24.07],[26,.3,-16],[16,.3,-2],[2.72,.3,1.8],[2.58,4.62,.2],[1.7,6.18,-.4],[.5,3.1,-.25],[.1,1.13,-.22]],'copper',.046,true);
+    movables.readoutPath=cable([[.1,1.14,-.22],[-1.45,4.2,-.2],[-1.6,6.21,-.4],[-2.67,4.4,.4],[-2.85,.34,2.24],[16,.34,-2],[26,.34,-16],[34.35,1.9,-24.03]],'silver',.043,true);
     targets.cryostat={at:[0,3,-.2],eye:[10,7.8,13],title:'The copper heart of the laboratory',radius:5};
     for(let i=0;i<1+s.module;i++){const x=-2.03+i*.67;box(x,.74,2.22,.51,.52,.62,'graphite',true);box(x,1.023,2.22,.38,.055,.47,'copper');box(x,.76,2.547,.31,.18,.025,'silicon');for(const side of [-1,1])box(x+side*.205,.79,2.557,.022,.14,.02,'gold',false,false);}
     plaque('INSTALLED CHIP MODULES / SCHEMATIC',0,.52,2.79,4.6);model.modulePackages=1+s.module;model.installed=m.installed;model.supported=m.capacity;model.active=m.active;model.coax=coax;
@@ -279,15 +282,17 @@
     if(!targets[cameraMode])setCamera('overview',true);else if(frames===0)setCamera(cameraMode,true);else if(cameraMode==='overview'&&!cameraOrbited&&old.chapter!==model.chapter)setCamera('overview');display();
   }
   function size(){
-    if(!renderer||!enabled||!available||!visible())return false;const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return false;const dpr=Math.min(fine.matches&&w>=660?1.5:1.25,devicePixelRatio||1);controls.enableRotate=fine.matches&&w>=500;
+    if(!renderer||!enabled||!available||!visible())return false;const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return false;const dpr=Math.min(fine.matches&&w>=660?1.5:1.25,devicePixelRatio||1);controls.enableRotate=fine.matches&&w>=500;controls.enableZoom=fine.matches;
     if(w!==width||h!==height||renderer.getPixelRatio()!==dpr){width=w;height=h;renderer.setPixelRatio(dpr);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();dirty=true;if(!cameraMove&&!cameraOrbited)setCamera(cameraMode,true);}return true;
   }
   function cameraDestination(id){const target=targets[id]||targets.overview,at=new T.Vector3(...target.at),eye=new T.Vector3(...target.eye),ratio=width&&height?width/height:1.7,mobile=id==='campus'?Math.max(1,1.95/ratio):ratio<1.05?Math.min(1.75,1.05/ratio):1;eye.sub(at).multiplyScalar(mobile).add(at);if(ratio<1.05&&!['overview','campus','top','research'].includes(id))eye.y=target.eye[1];if(ratio<1.05&&id==='memory'){eye.set(...target.eye);eye.y+=4*(mobile-1);}if(id==='overview'&&model.chapter<=1)eye.y=9.3;return {at,eye,target};}
   function setCamera(id,instant=false){
     if(!camera||!controls||!targets.overview)return;cameraOrbited=false;cameraMode=id==='reset'?'overview':id;if(!targets[cameraMode])cameraMode='overview';const destination=cameraDestination(cameraMode);text($('three-focus-title'),destination.target.title);cameraButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.camera===cameraMode)));
+    controls.minDistance=Math.max(1.5,destination.target.radius*.12);controls.maxDistance=Math.max(450,2*destination.eye.distanceTo(destination.at));camera.far=controls.maxDistance+160;camera.updateProjectionMatrix();
     if(instant||reduced.matches||state?.paused||state?.ended){camera.position.copy(destination.eye);controls.target.copy(destination.at);camera.lookAt(destination.at);controls.update();cameraMove=null;}
     else cameraMove={from:camera.position.clone(),fromTarget:controls.target.clone(),to:destination.eye,toTarget:destination.at,start:performance.now()};dirty=true;ensureDriver();
   }
+  function manualInspection(){cameraOrbited=true;cameraMove=null;follow=false;autoFocused=false;$('three-follow').setAttribute('aria-pressed','false');$('three-follow').textContent='Manual inspection';}
   function activityFor(s,m){const running=!!s.started&&!s.paused&&!s.ended,research=running&&(m.effortRate>0&&s.effort<m.effortCap-1e-6||m.designRate>0&&s.designs<1e9);return {research,deliveries:running&&(s.orders?.length||0)>0,services:running&&m.delivered>0,calibration:running&&m.calibrationDuty>0,construction:running&&(m.fabricationRate>0||m.integrationRate>0),experiment:running&&!!s.job&&(s.job.id==='calibrate'||m.experimentDuty>0),memory:running&&s.job?.id==='memory'&&m.experimentDuty>0,rehearsal:running&&m.factoryOK&&s.credits<2000&&(!s.job||s.job.id==='factory'),automation:research&&m.automationRunning>0};}
   function jobProgress(time){if(!state?.job)return 0;const id=state.job.id+(state.job.workload?'task':'');if(observed.id!==id||observed.progress!==state.job.progress)observed={id,progress:state.job.progress,time};const dt=Math.min(.1,Math.max(0,(time-observed.time)/1000)),duty=state.job.id==='calibrate'?1:metrics.experimentDuty;return Math.min(1,(state.job.progress+(reduced.matches?0:dt*duty))/state.job.duration);}
   function animate(time){
@@ -382,6 +387,6 @@
   reduced.addEventListener('change',()=>{cameraMove=null;revealAt=0;assembly&&(assembly.position.y=0);dirty=true;stop();if(state)draw(state,options);});fine.addEventListener('change',()=>{dirty=true;if(state)draw(state,options);});
   window.addEventListener('resize',()=>{dirty=true;if(state)draw(state,options);});
   window.CoherentArt={draw,postcard:original.postcard};
-  window.Coherent3D=Object.freeze({get diagnostics(){return Object.freeze({available,enabled,scene:viewEnding?'ending':'laboratory',chapter:state?G.stage(state):null,camera:cameraMode,cameraOrbited,cameraEye:camera?.position.toArray()||null,cameraTarget:controls?.target.toArray()||null,frames,calls:renderer?.info.render.calls||0,triangles:renderer?.info.render.triangles||0,geometries:renderer?.info.memory.geometries||0,textures:renderer?.info.memory.textures||0,width,height,pixelRatio:renderer?.getPixelRatio()||0,followExperiment:follow,cadence:motionActive()?(fine.matches&&width>=660?30:20):0,driverActive:!!driver,activity:{...activity},model:JSON.parse(JSON.stringify(model)),visible:visible(),inViewport});}});
+  window.Coherent3D=Object.freeze({get diagnostics(){return Object.freeze({available,enabled,scene:viewEnding?'ending':'laboratory',chapter:state?G.stage(state):null,camera:cameraMode,cameraOrbited,zoomEnabled:!!controls?.enableZoom,zoomMin:controls?.minDistance||null,zoomMax:controls?.maxDistance||null,zoomDistance:camera&&controls?camera.position.distanceTo(controls.target):null,cameraEye:camera?.position.toArray()||null,cameraTarget:controls?.target.toArray()||null,frames,calls:renderer?.info.render.calls||0,triangles:renderer?.info.render.triangles||0,geometries:renderer?.info.memory.geometries||0,textures:renderer?.info.memory.textures||0,width,height,pixelRatio:renderer?.getPixelRatio()||0,followExperiment:follow,cadence:motionActive()?(fine.matches&&width>=660?30:20):0,driverActive:!!driver,activity:{...activity},model:JSON.parse(JSON.stringify(model)),visible:visible(),inViewport});}});
   if(!available)fallback('The local 3D toolkit could not load.');
 })();

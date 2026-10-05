@@ -86,6 +86,7 @@ main{padding:22px 32px 28px}
 @media(max-width:660px){#three-event-caption{padding:9px 13px;font-size:10px}}
 
 #three-stations{display:contents}
+@media(min-width:1001px){#three-toolbar{flex-wrap:nowrap;overflow-x:auto;gap:5px}#three-toolbar::before{white-space:nowrap;flex-shrink:0}#three-toolbar button{white-space:nowrap;flex-shrink:0;padding-inline:7px}}
 @media(max-width:660px){#three-toolbar::before{display:none}#three-stations{display:flex;gap:5px;flex-wrap:nowrap;width:100%;overflow-x:auto;padding:3px 2px 8px;scrollbar-width:thin;scrollbar-color:var(--teal) var(--bg)}#three-stations button{flex-shrink:0}#three-toolbar>button{flex:1 1 42%;min-width:0}}
 
 #main:fullscreen #lab-view .headline-row{display:none}
@@ -100,3 +101,5 @@ main{padding:22px 32px 28px}
 
 .station-reading{display:flex;gap:8px 17px;flex-wrap:wrap;margin-top:10px}
 .station-reading button{font-size:10px;color:var(--copper);min-height:30px;text-align:left}
+
+#three-canvas:focus-visible{outline:2px solid var(--teal);outline-offset:-3px}

@@ -1,5 +1,7 @@
 # Research campus verification
 
+**Historical scope:** this report records the prior 33-discovery/43-source edition. The current 44-discovery/51-source extension and its 82 tests are recorded in [RESEARCH-HISTORY-VERIFICATION.md](RESEARCH-HISTORY-VERIFICATION.md). The earned 78:19 Chrome run below does not verify a fresh full campaign with the eleven new mandatory studies.
+
 Branch: `feature/quantum-research-campus`, from `c8cd43a`. Private local development, 5 October 2026. Scientific and 3D implementation reviews have reached bounded independent AI consensus. The normal Chrome continuation is solved at **78:19** with every discovery, workload and finite task complete. Human enjoyment and physical-device frame rate remain unverified.
 
 ## Engine and intent tests
