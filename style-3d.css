@@ -116,3 +116,57 @@ main{padding:22px 32px 28px}
 #three-facility-controls:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
 #three-facility-controls[hidden]{display:none}
 @media(max-width:660px){#three-facility-controls{right:10px;bottom:10px;min-height:44px;font-size:10px}}
+
+/* A working instrument bench: physical parts stay in the scene, exact readings stay legible. */
+#three-instrument-access{display:flex;align-items:center;gap:10px;padding:9px 18px;border-bottom:1px solid var(--line);background:var(--bg)}
+#three-instrument-access[hidden]{display:none}
+#three-instrument-access label{font:9px var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--copper);white-space:nowrap}
+#three-part-select{flex:1;min-width:0;max-width:450px;padding:8px 11px;min-height:38px;border:1px solid var(--line);border-radius:4px;background:var(--panel);color:var(--ink);font:11px var(--mono)}
+#three-open-instrument{min-height:38px;padding:8px 12px;color:var(--teal);font:11px var(--mono);border:1px solid var(--teal);border-radius:4px;white-space:nowrap}
+.three-viewport.three-inspecting{display:grid;grid-template-columns:minmax(0,1fr) 370px;align-items:start;background:#06141d}
+#three-inspector{height:620px;overflow-y:auto;box-sizing:border-box;padding:21px 22px;border-left:1px solid var(--line);background:var(--panel);scrollbar-width:thin;scrollbar-color:var(--copper) var(--bg)}
+#three-inspector[hidden]{display:none}
+.inspector-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#three-inspector-kind{font-size:8px;letter-spacing:.12em;color:var(--copper)}
+#three-inspector-close{width:35px;height:35px;flex-shrink:0;border:1px solid var(--line);border-radius:50%;color:var(--ink);font-size:22px;line-height:1}
+#three-inspector h3{font:400 32px/1.08 var(--serif);letter-spacing:-.5px;margin:10px 0 17px;color:var(--ink)}
+#three-inspector-title:focus-visible{outline:2px solid var(--teal);outline-offset:5px}
+#three-inspector-parts{display:flex;overflow-x:auto;gap:6px;padding:2px 0 10px;scrollbar-width:thin}
+#three-inspector-parts button{flex-shrink:0;max-width:190px;min-height:32px;padding:6px 9px;border:1px solid var(--line);border-radius:3px;color:var(--muted);font:9px/1.4 var(--mono)}
+#three-inspector-parts button[aria-pressed=true]{color:var(--copper);border-color:var(--copper)}
+#three-inspector-body>p{font-size:12px;line-height:1.75;color:var(--muted);margin:10px 0}
+.inspector-readouts{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:17px 0;border-block:1px solid var(--line)}
+.inspector-readouts>div{padding:13px 7px 12px 0;min-width:0}
+.inspector-readouts dt{font-size:10px;color:var(--muted);margin-bottom:6px;line-height:1.4}
+.inspector-readouts dd{margin:0;font:18px/1.35 var(--mono);color:var(--teal);overflow-wrap:anywhere}
+.inspector-readouts small{display:block;color:var(--muted);font-size:9px;line-height:1.5;margin-top:4px}
+.inspector-constraint{padding:12px 14px;border-left:2px solid var(--copper);background:var(--bg);font-size:12px;line-height:1.7;color:var(--ink)}
+.inspector-captured{font:10px/1.65 var(--mono);color:var(--muted)}
+#three-inspector details{margin:15px 0;padding:11px 12px;border:1px solid var(--line);border-radius:4px;background:var(--bg)}
+#three-inspector summary{cursor:pointer;color:var(--copper);font:11px/1.6 var(--mono)}
+#three-inspector details dl{margin:13px 0 8px}
+#three-inspector details dl>div{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font:10px/1.6 var(--mono)}
+#three-inspector details dd{margin:0;color:var(--teal);text-align:right}
+#three-inspector details p{font:10px/1.7 var(--mono);color:var(--muted)}
+.inspector-buy,.inspector-controls,.inspector-navigation button{width:100%;min-height:42px;margin-top:8px;padding:9px 12px;text-align:left;border:1px solid var(--line);border-radius:4px;color:var(--teal);background:var(--bg);font:11px/1.6 var(--mono)}
+.inspector-buy{border-color:var(--teal)}
+#three-inspector button:disabled{opacity:.5;cursor:default}
+#three-inspector button:focus-visible,#three-instrument-access button:focus-visible,#three-part-select:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.inspector-papers{display:flex;flex-wrap:wrap;gap:7px 13px;margin:13px 0}
+.inspector-papers button{min-height:30px;font-size:10px;color:var(--copper);text-align:left}
+#three-inspector-workflow{margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.inspector-flow-heading{font:9px/1.7 var(--mono);color:var(--copper);text-transform:uppercase;letter-spacing:.08em}
+.inspector-flow-list{list-style:none;padding:0;margin:10px 0;display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.inspector-flow-list li{padding:9px 10px;border:1px solid var(--line);border-radius:3px;color:var(--muted);font:10px/1.5 var(--mono)}
+.inspector-flow-list li[data-current=true]{border-color:var(--teal);color:var(--teal);background:var(--soft)}
+#three-inspector-workflow progress{width:100%;height:4px;accent-color:var(--teal)}
+#three-inspector-workflow p{font-size:10px;line-height:1.7;color:var(--muted)}
+.inspector-navigation{margin-top:12px;padding-top:6px;border-top:1px solid var(--line)}
+#three-inspector-tour[aria-pressed=true]{border-color:var(--copper);color:var(--copper)}
+@media(max-width:1000px){.three-viewport.three-inspecting{grid-template-columns:minmax(0,1fr) 320px}#three-inspector{height:560px;padding:17px}#three-inspector h3{font-size:28px}}
+@media(max-width:760px){.three-viewport.three-inspecting{display:block}#three-inspector{height:auto;max-height:none;border-left:0;border-top:1px solid var(--copper);padding:19px}#three-instrument-access{flex-wrap:wrap;padding:10px 12px;gap:8px}#three-instrument-access label{width:100%}#three-part-select{width:100%;max-width:none}#three-open-instrument{font-size:10px;min-height:40px}#three-inspector h3{font-size:30px}.inspector-readouts dd{font-size:19px}}
+
+.three-viewport{scroll-margin-top:85px}
+.three-viewport.three-inspecting #three-canvas{height:min(620px,calc(100vh - 115px))!important;min-height:360px}
+#three-inspector{height:min(620px,calc(100vh - 115px));min-height:360px}
+@media(max-width:760px){.three-viewport.three-inspecting #three-canvas{height:280px!important;min-height:280px}#three-inspector{height:auto;min-height:0}}
