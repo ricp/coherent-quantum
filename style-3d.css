@@ -170,3 +170,4 @@ main{padding:22px 32px 28px}
 .three-viewport.three-inspecting #three-canvas{height:min(620px,calc(100vh - 115px))!important;min-height:360px}
 #three-inspector{height:min(620px,calc(100vh - 115px));min-height:360px}
 @media(max-width:760px){.three-viewport.three-inspecting #three-canvas{height:280px!important;min-height:280px}#three-inspector{height:auto;min-height:0}}
+.lab-command-bar .lab-action-group{display:flex;align-items:center;gap:8px;margin-left:auto;flex-shrink:0}.lab-command-bar .lab-action-group .help-explain{margin:0;min-height:36px}@media(max-width:660px){.lab-command-bar .lab-action-group{min-width:0}.lab-command-bar .lab-action-group .help-explain{min-height:40px;padding:7px}}
